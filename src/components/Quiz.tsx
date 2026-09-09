@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import type { QuizItem } from '../content/config';
+import { EASE_OUT, DURATION_BASE, DURATION_FAST, getReducedMotion } from '../lib/motion';
 
 interface QuizProps {
   questions: QuizItem[];
@@ -14,6 +16,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
     new Array(questions ? questions.length : 0).fill(null)
   );
   const [isComplete, setIsComplete] = useState(false);
+  const isReduced = getReducedMotion();
 
   if (!questions || questions.length === 0) {
     return <div className="p-4 text-slate-500">No quiz questions available for this topic.</div>;
@@ -42,7 +45,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
 
   const handleNextQuestion = () => {
     if (currentIndex < questions.length - 1) {
-      setCurrentIndex((prev) => prev + 1);
+      setCurrentIndex((prev) => (prev + 1));
       setSelectedOption(null);
       setIsAnswered(false);
     } else {
@@ -103,12 +106,15 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
           })}
         </div>
 
-        <button
+        <motion.button
           onClick={handleRestart}
-          className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold rounded-full text-xs transition-all shadow-md"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ duration: DURATION_FAST }}
+          className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold rounded-full text-xs shadow-md"
         >
           Restart Question Bank
-        </button>
+        </motion.button>
       </div>
     );
   }
@@ -125,19 +131,21 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
         </span>
       </div>
 
-      {/* Track Progress Bar */}
+      {/* Smooth Animating Progress Bar */}
       <div className="w-full bg-slate-900 h-2 rounded-full mb-8 overflow-hidden border border-slate-800">
-        <div
-          className="bg-blue-500 h-full rounded-full transition-all duration-300"
-          style={{ width: `${progressPercent}%` }}
-        ></div>
+        <motion.div
+          className="bg-blue-500 h-full rounded-full"
+          initial={false}
+          animate={{ width: `${progressPercent}%` }}
+          transition={{ duration: DURATION_BASE, ease: EASE_OUT }}
+        />
       </div>
 
       <h3 className="text-xl md:text-2xl font-bold text-white mb-6 leading-snug tracking-tight">{currentQ.question}</h3>
 
       <div className="space-y-3 mb-8">
         {currentQ.options.map((option, idx) => {
-          let btnClass = 'w-full text-left p-4 rounded-2xl font-medium text-slate-200 transition-all border ';
+          let btnClass = 'w-full text-left p-4 rounded-2xl font-medium text-slate-200 transition-colors border ';
 
           if (!isAnswered) {
             if (selectedOption === idx) {
@@ -156,50 +164,64 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
           }
 
           return (
-            <button
+            <motion.button
               key={idx}
               onClick={() => handleSelectOption(idx)}
               disabled={isAnswered}
+              whileHover={!isAnswered && !isReduced ? { scale: 1.01 } : undefined}
+              whileTap={!isAnswered && !isReduced ? { scale: 0.99 } : undefined}
+              transition={{ duration: DURATION_FAST }}
               className={btnClass}
             >
               <span className="inline-block w-8 font-bold text-slate-400">{String.fromCharCode(65 + idx)}.</span>
               <span>{option}</span>
-            </button>
+            </motion.button>
           );
         })}
       </div>
 
       {!isAnswered ? (
-        <button
+        <motion.button
           onClick={handleSubmitAnswer}
           disabled={selectedOption === null}
+          whileHover={selectedOption !== null && !isReduced ? { scale: 1.02 } : undefined}
+          whileTap={selectedOption !== null && !isReduced ? { scale: 0.98 } : undefined}
+          transition={{ duration: DURATION_FAST }}
           className={`px-7 py-3 rounded-full font-extrabold text-xs shadow-md transition-all ${
             selectedOption !== null ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-slate-800 text-slate-500 cursor-not-allowed'
           }`}
         >
           Submit Answer
-        </button>
+        </motion.button>
       ) : (
         <div className="space-y-5">
-          <div
-            className={`p-5 rounded-2xl border ${
-              selectedOption === currentQ.correctIndex
-                ? 'border-emerald-500/50 bg-emerald-950/40 text-emerald-200'
-                : 'border-rose-500/50 bg-rose-950/40 text-rose-200'
-            }`}
-          >
-            <p className="font-bold text-sm mb-1">
-              {selectedOption === currentQ.correctIndex ? '✓ Correct Explanation' : '✗ Incorrect Explanation'}
-            </p>
-            <p className="text-xs text-slate-300 leading-relaxed">{currentQ.explanation}</p>
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              initial={isReduced ? { opacity: 1 } : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: DURATION_BASE, ease: EASE_OUT }}
+              className={`p-5 rounded-2xl border ${
+                selectedOption === currentQ.correctIndex
+                  ? 'border-emerald-500/50 bg-emerald-950/40 text-emerald-200'
+                  : 'border-rose-500/50 bg-rose-950/40 text-rose-200'
+              }`}
+            >
+              <p className="font-bold text-sm mb-1">
+                {selectedOption === currentQ.correctIndex ? '✓ Correct Explanation' : '✗ Incorrect Explanation'}
+              </p>
+              <p className="text-xs text-slate-300 leading-relaxed">{currentQ.explanation}</p>
+            </motion.div>
+          </AnimatePresence>
 
-          <button
+          <motion.button
             onClick={handleNextQuestion}
-            className="px-7 py-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold rounded-full text-xs transition-all shadow-md"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: DURATION_FAST }}
+            className="px-7 py-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold rounded-full text-xs shadow-md"
           >
             {currentIndex < questions.length - 1 ? 'Next Question →' : 'View Quiz Score →'}
-          </button>
+          </motion.button>
         </div>
       )}
     </div>
