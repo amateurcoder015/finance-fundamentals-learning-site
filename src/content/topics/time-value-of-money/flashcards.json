@@ -1,0 +1,22 @@
+[
+  {
+    "front": "What is the core principle of the Time Value of Money (TVM)?",
+    "back": "A dollar today is worth more than a dollar in the future because today's dollar can earn interest or investment returns."
+  },
+  {
+    "front": "What is the formula for the Future Value (FV) of a single cash flow?",
+    "back": "FV = PV × (1 + r)^n, where PV is present value, r is interest rate per period, and n is number of periods."
+  },
+  {
+    "front": "How does an Annuity Due differ from an Ordinary Annuity in terms of PV formula?",
+    "back": "PV(Annuity Due) = PV(Ordinary Annuity) × (1 + r), because payments occur at the beginning of each period instead of the end."
+  },
+  {
+    "front": "What is the formula for calculating the Present Value of a Perpetuity?",
+    "back": "PV = PMT / r, where PMT is the recurring periodic payment and r is the discount rate."
+  },
+  {
+    "front": "What effect does a higher discount rate have on Present Value?",
+    "back": "A higher discount rate decreases the Present Value of future cash flows."
+  }
+]

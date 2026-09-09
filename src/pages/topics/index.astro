@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { getTopicSlug } from '../../utils/topic-loader';
+
+const allTopics = await getCollection('topics');
+allTopics.sort((a, b) => new Date(b.data.dateAdded).getTime() - new Date(a.data.dateAdded).getTime());
+---
+
+<BaseLayout title="All Topics — Personal Finance Fundamentals">
+  <div class="mb-10 border-b border-stone-200 dark:border-slate-800 pb-6">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
+      All Learning Topics
+    </h1>
+    <p class="text-lg text-slate-600 dark:text-slate-300">
+      Browse all finance concepts added to the platform ({allTopics.length} total).
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {allTopics.map((topic) => {
+      const slug = getTopicSlug(topic);
+      return (
+        <a
+          href={`/topics/${slug}`}
+          class="group block bg-white dark:bg-[#131B2E] border border-stone-200 dark:border-slate-800 rounded-xl p-6 hover:-translate-y-0.5 hover:shadow-lg hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-200 flex flex-col justify-between relative overflow-hidden"
+        >
+          <div class="absolute top-0 left-0 right-0 h-1 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-xs uppercase font-extrabold tracking-wide px-2.5 py-1 rounded bg-[#1D4ED8]/10 text-[#1D4ED8] dark:text-blue-400">
+                {topic.data.category}
+              </span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-stone-100 dark:bg-slate-800 text-stone-600 dark:text-slate-400 capitalize">
+                {topic.data.difficulty}
+              </span>
+            </div>
+
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-[#1D4ED8] dark:group-hover:text-blue-400 transition-colors">
+              {topic.data.title}
+            </h2>
+
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 mb-6">
+              {topic.data.description}
+            </p>
+          </div>
+
+          <div class="text-xs text-slate-400 dark:text-slate-500 border-t border-stone-100 dark:border-slate-800/80 pt-4 flex justify-between items-center font-medium">
+            <span>Added {new Date(topic.data.dateAdded).toLocaleDateString()}</span>
+            <span class="font-bold text-[#1D4ED8] dark:text-blue-400 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+              <span>View Topic</span>
+              <span>→</span>
+            </span>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+</BaseLayout>

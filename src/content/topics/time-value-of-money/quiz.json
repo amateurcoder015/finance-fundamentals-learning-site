@@ -1,0 +1,47 @@
+[
+  {
+    "question": "If you deposit $1,000 today at an annual interest rate of 10% compounded annually, how much will you have at the end of 3 years?",
+    "options": ["$1,300.00", "$1,331.00", "$1,210.00", "$1,400.00"],
+    "correctIndex": 1,
+    "explanation": "FV = PV * (1 + r)^n = $1,000 * (1.10)^3 = $1,000 * 1.331 = $1,331.00."
+  },
+  {
+    "question": "What is the primary difference between an Ordinary Annuity and an Annuity Due?",
+    "options": [
+      "Ordinary annuity payments occur at the start of each period; annuity due payments occur at the end.",
+      "Ordinary annuity payments occur at the end of each period; annuity due payments occur at the start.",
+      "An ordinary annuity pays interest forever, while an annuity due has a fixed end date.",
+      "There is no functional difference between the two."
+    ],
+    "correctIndex": 1,
+    "explanation": "Ordinary annuity payments occur at the end of each period (e.g. bond coupons), while annuity due payments occur at the beginning of each period (e.g. rent payments)."
+  },
+  {
+    "question": "What is the Present Value of a perpetuity that pays $500 annually if the required discount rate is 5%?",
+    "options": ["$2,500", "$10,000", "$5,000", "$50,000"],
+    "correctIndex": 1,
+    "explanation": "PV of a perpetuity = PMT / r = $500 / 0.05 = $10,000."
+  },
+  {
+    "question": "As the compounding frequency per year increases (e.g., from annual to monthly), what happens to the Future Value of a deposit?",
+    "options": [
+      "Future Value decreases because interest is split into smaller fractions.",
+      "Future Value increases because interest accumulates and earns interest more frequently.",
+      "Future Value remains unchanged.",
+      "Future Value becomes zero."
+    ],
+    "correctIndex": 1,
+    "explanation": "More frequent compounding means interest earned in earlier sub-periods generates interest in subsequent sub-periods, increasing total Future Value."
+  },
+  {
+    "question": "If the annual discount rate increases, what happens to the Present Value of a future cash flow?",
+    "options": [
+      "Present Value increases",
+      "Present Value decreases",
+      "Present Value stays the same",
+      "Present Value fluctuates unpredictably"
+    ],
+    "correctIndex": 1,
+    "explanation": "PV = FV / (1 + r)^n. A higher discount rate (r) increases the denominator, which reduces the Present Value."
+  }
+]

@@ -1,0 +1,13 @@
+graph LR
+    subgraph Timeline["Cash Flow Timeline (t = 0 to t = 3)"]
+        T0["t = 0 (Today)<br/>Present Value: PV"]
+        T1["t = 1 Year<br/>Cash Flow: PMT_1"]
+        T2["t = 2 Years<br/>Cash Flow: PMT_2"]
+        T3["t = 3 Years<br/>Future Value: FV"]
+    end
+
+    T0 -- "Compounding: (1 + r)^1" --> T1
+    T1 -- "Compounding: (1 + r)^2" --> T2
+    T2 -- "Compounding: (1 + r)^3" --> T3
+
+    T3 -. "Discounting back: 1 / (1+r)^3" .-> T0

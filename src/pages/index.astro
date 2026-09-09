@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../content/config';
+import { getTopicSlug } from '../utils/topic-loader';
+
+const allTopics = await getCollection('topics');
+
+const topicsByCategory = CATEGORIES.map((category) => {
+  const topics = allTopics.filter((t) => t.data.category === category);
+  return {
+    category,
+    topics,
+  };
+}).filter((group) => group.topics.length > 0);
+
+// Category Icons mapping
+const categoryIcons: Record<string, string> = {
+  "Corporate Finance": "🏢",
+  "Financial Statements": "📊",
+  "Equities": "📈",
+  "Fixed Income": "📜",
+  "Derivatives": "🔀",
+  "Portfolio Management": "💼",
+  "Economics": "🌐",
+};
+---
+
+<BaseLayout title="Personal Finance Fundamentals — Daily Knowledge Base">
+  <!-- Hero Section with Dark Hero Band style -->
+  <div class="bg-[#0B1120] text-white rounded-2xl p-8 md:p-14 mb-12 shadow-xl border border-slate-800 relative overflow-hidden">
+    <div class="absolute -right-16 -top-16 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative z-10 max-w-3xl">
+      <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
+        <span>✦</span> Daily & Weekly Learning Engine
+      </span>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-6">
+        Master Finance <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">From First Principles</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-300 font-normal leading-relaxed mb-8 max-w-2xl">
+        A structured, long-term personal finance knowledge repository covering Corporate Finance, Statements, Valuation, Fixed Income, Equities, Derivatives, and Economics.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="/topics/time-value-of-money"
+          class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:shadow-blue-500/25 transition-all text-sm flex items-center gap-2"
+        >
+          <span>Explore Seed Topic</span>
+          <span>→</span>
+        </a>
+        <a
+          href="/categories"
+          class="px-6 py-3 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold rounded-lg border border-slate-700 transition-colors text-sm"
+        >
+          Browse All Categories
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topics Grid grouped by Category -->
+  {allTopics.length === 0 ? (
+    <div class="p-12 text-center bg-white dark:bg-[#131B2E] border border-stone-200 dark:border-slate-800 rounded-xl">
+      <p class="text-slate-600 dark:text-slate-400 mb-4">No topics found yet.</p>
+      <p class="text-sm text-slate-500 font-mono">Run `npm run new-topic` to add your first topic!</p>
+    </div>
+  ) : (
+    <div class="space-y-12">
+      {topicsByCategory.map((group) => (
+        <section class="space-y-6">
+          <div class="flex justify-between items-end border-b border-stone-200 dark:border-slate-800 pb-3">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">{categoryIcons[group.category] || "📁"}</span>
+              <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">{group.category}</h2>
+            </div>
+            <a
+              href={`/categories/${group.category.toLowerCase().replace(/\s+/g, '-')}`}
+              class="text-xs uppercase tracking-wider font-extrabold text-[#1D4ED8] dark:text-blue-400 hover:underline flex items-center gap-1"
+            >
+              <span>Browse Domain ({group.topics.length})</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {group.topics.map((topic) => {
+              const slug = getTopicSlug(topic);
+              return (
+                <a
+                  href={`/topics/${slug}`}
+                  class="group block bg-white dark:bg-[#131B2E] border border-stone-200 dark:border-slate-800 rounded-xl p-6 hover:-translate-y-0.5 hover:shadow-lg hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-200 flex flex-col justify-between relative overflow-hidden"
+                >
+                  <div class="absolute top-0 left-0 right-0 h-1 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                  <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                      <span class="text-xs uppercase font-extrabold tracking-wide px-2.5 py-1 rounded bg-[#1D4ED8]/10 text-[#1D4ED8] dark:text-blue-400">
+                        {topic.data.category}
+                      </span>
+                      <span class="text-xs font-semibold px-2 py-0.5 rounded bg-stone-100 dark:bg-slate-800 text-stone-600 dark:text-slate-400 capitalize">
+                        {topic.data.difficulty}
+                      </span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-[#1D4ED8] dark:group-hover:text-blue-400 transition-colors">
+                      {topic.data.title}
+                    </h3>
+
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 mb-6">
+                      {topic.data.description}
+                    </p>
+                  </div>
+
+                  <div class="text-xs text-slate-400 dark:text-slate-500 border-t border-stone-100 dark:border-slate-800/80 pt-4 flex justify-between items-center font-medium">
+                    <span>Added {new Date(topic.data.dateAdded).toLocaleDateString()}</span>
+                    <span class="font-bold text-[#1D4ED8] dark:text-blue-400 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                      <span>Read Topic</span>
+                      <span>→</span>
+                    </span>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+    </div>
+  )}
+</BaseLayout>

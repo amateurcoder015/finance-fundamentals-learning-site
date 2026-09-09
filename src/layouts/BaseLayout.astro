@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import ThemeToggle from '../components/ThemeToggle';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Personal Finance Fundamentals",
+  description = "Master core finance concepts: corporate finance, financial statements, valuation, fixed income, equities, and more."
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Finance Fundamentals</title>
+    <meta name="description" content={description} />
+    <!-- Inline script to prevent Dark Mode FOUC -->
+    <script is:inline>
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-[#FAFAF9] dark:bg-[#0B1120] text-[#111827] dark:text-[#F3F4F6] min-h-screen flex flex-col font-sans transition-colors duration-200">
+    <!-- Dark Nav Band (#0B1120) -->
+    <header class="bg-[#0B1120] text-white border-b border-slate-800/80 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+        <a href="/" class="group flex items-center gap-2.5 text-xl font-bold tracking-tight text-white">
+          <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-extrabold text-sm shadow-sm group-hover:bg-blue-500 transition-colors">
+            FF
+          </span>
+          <span>Finance<span class="text-blue-500 font-extrabold">Fundamentals</span></span>
+        </a>
+
+        <nav class="flex items-center space-x-6 text-sm font-medium">
+          <a
+            href="/"
+            class={pathname === '/' ? "text-blue-400 font-semibold" : "text-slate-300 hover:text-white transition-colors"}
+          >
+            Home
+          </a>
+          <a
+            href="/topics"
+            class={pathname.startsWith('/topics') ? "text-blue-400 font-semibold" : "text-slate-300 hover:text-white transition-colors"}
+          >
+            All Topics
+          </a>
+          <a
+            href="/categories"
+            class={pathname.startsWith('/categories') ? "text-blue-400 font-semibold" : "text-slate-300 hover:text-white transition-colors"}
+          >
+            Categories
+          </a>
+
+          <div class="pl-2 border-l border-slate-800">
+            <ThemeToggle client:load />
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 py-8 md:py-12">
+      <slot />
+    </main>
+
+    <footer class="bg-[#0B1120] text-slate-400 border-t border-slate-800/80 py-8 text-center text-xs">
+      <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>© 2026 Personal Finance Fundamentals — High-yield core learning platform.</p>
+        <div class="flex space-x-6">
+          <a href="/" class="hover:text-slate-200 transition-colors">Home</a>
+          <a href="/topics" class="hover:text-slate-200 transition-colors">Topics</a>
+          <a href="/categories" class="hover:text-slate-200 transition-colors">Categories</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

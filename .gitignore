@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+.astro/
+
+# System / IDE
+.DS_Store
+*.log
+.env
+.env.*

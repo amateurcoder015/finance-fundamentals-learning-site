@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { loadTopicAuxiliaryData, getTopicSlug } from '../../utils/topic-loader';
+import MermaidDiagram from '../../components/MermaidDiagram';
+import Quiz from '../../components/Quiz';
+import Flashcards from '../../components/Flashcards';
+
+export async function getStaticPaths() {
+  const topics = await getCollection('topics');
+  return topics.map((topic) => {
+    const slug = getTopicSlug(topic);
+    return {
+      params: { slug },
+      props: { topic, slug },
+    };
+  });
+}
+
+const { topic, slug } = Astro.props;
+const { Content } = await topic.render();
+const auxiliary = loadTopicAuxiliaryData(slug);
+---
+
+<BaseLayout title={topic.data.title} description={topic.data.description}>
+  <!-- Header Zone -->
+  <div class="mb-10 pb-8 border-b border-stone-200 dark:border-slate-800">
+    <!-- Row 1: Badges & Metadata -->
+    <div class="flex flex-wrap items-center gap-3 mb-4">
+      <a
+        href={`/categories/${topic.data.category.toLowerCase().replace(/\s+/g, '-')}`}
+        class="text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-[#1D4ED8]/10 text-[#1D4ED8] dark:text-blue-400 hover:bg-[#1D4ED8]/20 transition-colors"
+      >
+        {topic.data.category}
+      </a>
+      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-stone-200/70 dark:bg-slate-800 text-stone-700 dark:text-slate-300 capitalize">
+        Difficulty: {topic.data.difficulty}
+      </span>
+      <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+        Added {new Date(topic.data.dateAdded).toLocaleDateString()}
+      </span>
+    </div>
+
+    <!-- Row 2: Page Title -->
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mb-4 leading-tight">
+      {topic.data.title}
+    </h1>
+
+    <!-- Row 3: Description -->
+    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed mb-6">
+      {topic.data.description}
+    </p>
+
+    <!-- Row 4: Tag Pills -->
+    {topic.data.tags && topic.data.tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 pt-1">
+        {topic.data.tags.map((tag) => (
+          <span class="text-xs font-mono bg-stone-100 dark:bg-slate-800/80 text-stone-600 dark:text-slate-400 px-2.5 py-1 rounded-md border border-stone-200 dark:border-slate-700/60 hover:border-blue-400 transition-colors">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <div class="space-y-14">
+    <!-- Section 1: Note content (MDX inside styled prose container, centered 70ch) -->
+    <section class="bg-white dark:bg-[#131B2E] p-8 md:p-12 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm">
+      <div class="prose dark:prose-invert max-w-prose mx-auto">
+        <Content />
+      </div>
+    </section>
+
+    <!-- Section 2: Visual Concept Diagram Card -->
+    <section class="bg-white dark:bg-[#131B2E] p-6 md:p-8 rounded-2xl border border-stone-200 dark:border-slate-800 shadow-sm">
+      <div class="flex items-center justify-between mb-4 pb-3 border-b border-stone-200 dark:border-slate-800">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-slate-400 dark:text-slate-500">
+          Diagram & Flowchart
+        </span>
+        <span class="text-xs text-slate-400">Interactive SVG</span>
+      </div>
+      <MermaidDiagram client:load code={auxiliary.diagram} />
+    </section>
+
+    <!-- Practice Divider -->
+    <div class="relative flex py-4 items-center">
+      <div class="flex-grow border-t border-stone-300 dark:border-slate-800"></div>
+      <span class="flex-shrink mx-4 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/80 text-[#1D4ED8] dark:text-blue-300 font-bold text-xs uppercase tracking-widest border border-blue-200 dark:border-blue-900">
+        Practice & Mastery
+      </span>
+      <div class="flex-grow border-t border-stone-300 dark:border-slate-800"></div>
+    </div>
+
+    <!-- Section 3: Interactive Flashcards Widget -->
+    <section class="space-y-3">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2 px-1">
+        <span>📇</span> Concept Flashcards
+      </h2>
+      <Flashcards client:load cards={auxiliary.flashcards} />
+    </section>
+
+    <!-- Section 4: Interactive Quiz Widget -->
+    <section class="space-y-3">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2 px-1">
+        <span>📝</span> Knowledge Verification Quiz
+      </h2>
+      <Quiz client:load questions={auxiliary.quiz} />
+    </section>
+  </div>
+</BaseLayout>

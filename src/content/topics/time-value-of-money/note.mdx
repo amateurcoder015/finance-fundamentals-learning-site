@@ -1,0 +1,75 @@
+---
+title: "Time Value of Money"
+description: "Core financial principle establishing that a dollar today is worth more than a dollar tomorrow due to its potential earning capacity."
+category: "Corporate Finance"
+difficulty: "beginner"
+dateAdded: "2026-09-09"
+tags: ["time-value-of-money", "present-value", "future-value", "annuities", "corporate-finance"]
+---
+
+# Time Value of Money (TVM)
+
+The **Time Value of Money (TVM)** is the foundational bedrock of finance, valuation, corporate capital budgeting, and investment management. At its core, TVM states that a dollar received today is worth **more** than a dollar received in the future.
+
+This core premise holds true because money available today can be invested to earn interest or investment returns, increasing its nominal value over time.
+
+---
+
+## 1. Core Variables & Concepts
+
+When solving TVM problems, we work with five fundamental variables:
+
+- **$PV$ (Present Value)**: The current value of a future sum of money or stream of cash flows discounted at a specific interest rate.
+- **$FV$ (Future Value)**: The value of a current asset or cash flow at a specified date in the future based on an assumed rate of growth.
+- **$r$ (Interest Rate / Discount Rate)**: The annual interest rate or required rate of return per period.
+- **$n$ (Number of Periods)**: The total number of compounding or discounting time periods.
+- **$PMT$ (Payment)**: Equal, periodic cash payments made or received each period.
+
+---
+
+## 2. Fundamental TVM Formulas
+
+### Single Cash Flows
+
+- **Future Value of a Single Cash Flow**:
+  $$FV = PV \times (1 + r)^n$$
+
+- **Present Value of a Single Cash Flow**:
+  $$PV = \frac{FV}{(1 + r)^n}$$
+
+### Compounding Frequency
+When interest compounds $m$ times per year (e.g. monthly where $m = 12$, semi-annually where $m = 2$), the periodic interest rate becomes $r / m$ and the total number of periods becomes $n \times m$:
+
+$$FV = PV \times \left(1 + \frac{r}{m}\right)^{n \times m}$$
+
+---
+
+## 3. Annuities & Perpetuities
+
+### Ordinary Annuity vs. Annuity Due
+An **annuity** is a sequence of equal cash flows occurring at equal intervals.
+
+1. **Ordinary Annuity**: Cash flows occur at the **END** of each period (e.g., standard bond coupon payments).
+   $$PV_{\text{ordinary}} = PMT \times \left[ \frac{1 - (1 + r)^{-n}}{r} \right]$$
+
+2. **Annuity Due**: Cash flows occur at the **BEGINNING** of each period (e.g., apartment lease rent payments). Cash flows earn 1 additional period of interest:
+   $$PV_{\text{due}} = PV_{\text{ordinary}} \times (1 + r)$$
+
+### Perpetuity
+A **perpetuity** is a continuous stream of equal cash flows that continues forever.
+
+$$PV_{\text{perpetuity}} = \frac{PMT}{r}$$
+
+---
+
+## 4. Practical Financial Application
+
+Suppose an investor deposits **$10,000** today into an account yielding an **8% annual return**, compounded annually for **5 years**.
+
+- $PV = \$10,000$
+- $r = 0.08$
+- $n = 5$
+
+$$FV = 10,000 \times (1 + 0.08)^5 = 10,000 \times 1.4693 = \$14,693.28$$
+
+The investor earns **$4,693.28** in cumulative compound interest over 5 years.
