@@ -20,6 +20,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
   }
 
   const currentQ = questions[currentIndex];
+  const progressPercent = Math.round(((currentIndex + 1) / questions.length) * 100);
 
   const handleSelectOption = (index: number) => {
     if (isAnswered) return;
@@ -61,10 +62,10 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
   if (isComplete) {
     const percentage = Math.round((score / questions.length) * 100);
     return (
-      <div className="p-6 md:p-8 bg-white dark:bg-[#131B2E] border border-stone-200 dark:border-slate-800 rounded-xl shadow-sm border-l-4 border-l-blue-600">
-        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Quiz Results</h3>
-        <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-          Your Final Score: <span className="font-extrabold text-blue-600 dark:text-blue-400">{score}</span> / {questions.length} ({percentage}%)
+      <div className="bg-[#0B172A] text-white p-6 md:p-10 rounded-3xl border border-slate-800 shadow-2xl">
+        <h3 className="text-2xl md:text-3xl font-black text-white mb-2">Quiz Summary</h3>
+        <p className="text-lg text-slate-300 mb-8">
+          Final Score: <span className="font-extrabold text-blue-400">{score}</span> / {questions.length} ({percentage}%)
         </p>
 
         <div className="space-y-4 mb-8">
@@ -74,27 +75,27 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
             return (
               <div
                 key={idx}
-                className={`p-4 border rounded-lg ${
+                className={`p-5 rounded-2xl border ${
                   isCorrect
-                    ? 'border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/70 dark:bg-emerald-950/30'
-                    : 'border-rose-200 dark:border-rose-900/60 bg-rose-50/70 dark:bg-rose-950/30'
+                    ? 'border-emerald-500/40 bg-emerald-950/30 text-white'
+                    : 'border-rose-500/40 bg-rose-950/30 text-white'
                 }`}
               >
-                <p className="font-semibold text-slate-900 dark:text-slate-100 mb-1">
+                <p className="font-bold text-base mb-1">
                   Q{idx + 1}: {q.question}
                 </p>
-                <p className="text-sm text-slate-700 dark:text-slate-300">
-                  Your Answer:{' '}
-                  <span className={isCorrect ? 'font-bold text-[#16A34A]' : 'font-bold text-[#DC2626]'}>
+                <p className="text-xs text-slate-300">
+                  Your Choice:{' '}
+                  <span className={isCorrect ? 'font-bold text-emerald-400' : 'font-bold text-rose-400'}>
                     {userAnswer !== null ? q.options[userAnswer] : 'None'}
                   </span>
                 </p>
                 {!isCorrect && (
-                  <p className="text-sm text-slate-700 dark:text-slate-300">
-                    Correct Answer: <span className="font-bold text-[#16A34A]">{q.options[q.correctIndex]}</span>
+                  <p className="text-xs text-slate-300">
+                    Correct Choice: <span className="font-bold text-emerald-400">{q.options[q.correctIndex]}</span>
                   </p>
                 )}
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 italic border-t border-slate-200/50 dark:border-slate-800 pt-2">
+                <p className="text-xs text-slate-400 mt-2 italic border-t border-slate-800 pt-2">
                   {q.explanation}
                 </p>
               </div>
@@ -104,44 +105,53 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
 
         <button
           onClick={handleRestart}
-          className="px-6 py-2.5 bg-[#1D4ED8] hover:bg-[#1E40AF] text-white font-semibold rounded-lg shadow-sm transition-colors"
+          className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold rounded-full text-xs transition-all shadow-md"
         >
-          Restart Quiz
+          Restart Question Bank
         </button>
       </div>
     );
   }
 
   return (
-    <div className="p-6 md:p-8 bg-blue-500/[0.04] dark:bg-slate-900/40 border border-blue-200/60 dark:border-blue-900/40 rounded-xl shadow-sm border-l-4 border-l-[#1D4ED8]">
-      <div className="flex justify-between items-center mb-4 pb-3 border-b border-blue-100 dark:border-slate-800">
-        <span className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+    <div className="bg-[#0B172A] text-white p-6 md:p-10 rounded-3xl border border-slate-800 shadow-2xl">
+      {/* Top Header & Progress */}
+      <div className="flex justify-between items-center mb-3">
+        <span className="text-xs font-black text-slate-400 uppercase tracking-widest">
           Question {currentIndex + 1} of {questions.length}
         </span>
-        <span className="text-xs font-bold px-2.5 py-1 rounded bg-blue-100 dark:bg-blue-950 text-[#1D4ED8] dark:text-blue-300">
+        <span className="text-xs font-mono font-bold text-blue-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">
           Score: {score}
         </span>
       </div>
 
-      <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6 leading-snug">{currentQ.question}</h3>
+      {/* Track Progress Bar */}
+      <div className="w-full bg-slate-900 h-2 rounded-full mb-8 overflow-hidden border border-slate-800">
+        <div
+          className="bg-blue-500 h-full rounded-full transition-all duration-300"
+          style={{ width: `${progressPercent}%` }}
+        ></div>
+      </div>
 
-      <div className="space-y-3 mb-6">
+      <h3 className="text-xl md:text-2xl font-bold text-white mb-6 leading-snug tracking-tight">{currentQ.question}</h3>
+
+      <div className="space-y-3 mb-8">
         {currentQ.options.map((option, idx) => {
-          let btnClass = 'w-full text-left p-4 rounded-lg font-medium text-slate-800 dark:text-slate-200 transition-all border ';
+          let btnClass = 'w-full text-left p-4 rounded-2xl font-medium text-slate-200 transition-all border ';
 
           if (!isAnswered) {
             if (selectedOption === idx) {
-              btnClass += 'border-[#1D4ED8] bg-blue-50 dark:bg-blue-950/60 ring-2 ring-[#1D4ED8] font-semibold';
+              btnClass += 'border-blue-500 bg-[#0F2448] text-white font-bold ring-2 ring-blue-500/50 shadow-md';
             } else {
-              btnClass += 'border-stone-200 dark:border-slate-700/80 bg-white dark:bg-[#131B2E] hover:border-blue-300 dark:hover:border-blue-700';
+              btnClass += 'border-slate-800 bg-[#080F1E] hover:border-slate-700 hover:bg-[#0B132B]';
             }
           } else {
             if (idx === currentQ.correctIndex) {
-              btnClass += 'border-[#16A34A] bg-emerald-50 dark:bg-emerald-950/60 font-bold text-emerald-950 dark:text-emerald-200';
+              btnClass += 'border-emerald-500 bg-emerald-950/60 font-bold text-emerald-200';
             } else if (selectedOption === idx) {
-              btnClass += 'border-[#DC2626] bg-rose-50 dark:bg-rose-950/60 font-bold text-rose-950 dark:text-rose-200';
+              btnClass += 'border-rose-500 bg-rose-950/60 font-bold text-rose-200';
             } else {
-              btnClass += 'border-stone-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/30 opacity-50';
+              btnClass += 'border-slate-900 bg-slate-950/40 opacity-40';
             }
           }
 
@@ -152,7 +162,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
               disabled={isAnswered}
               className={btnClass}
             >
-              <span className="inline-block w-7 font-bold text-slate-400 dark:text-slate-500">{String.fromCharCode(65 + idx)}.</span>
+              <span className="inline-block w-8 font-bold text-slate-400">{String.fromCharCode(65 + idx)}.</span>
               <span>{option}</span>
             </button>
           );
@@ -163,32 +173,32 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
         <button
           onClick={handleSubmitAnswer}
           disabled={selectedOption === null}
-          className={`px-6 py-2.5 rounded-lg font-semibold text-white shadow-sm transition-colors ${
-            selectedOption !== null ? 'bg-[#1D4ED8] hover:bg-[#1E40AF]' : 'bg-slate-300 dark:bg-slate-700 cursor-not-allowed'
+          className={`px-7 py-3 rounded-full font-extrabold text-xs shadow-md transition-all ${
+            selectedOption !== null ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-slate-800 text-slate-500 cursor-not-allowed'
           }`}
         >
           Submit Answer
         </button>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-5">
           <div
-            className={`p-4 border rounded-lg ${
+            className={`p-5 rounded-2xl border ${
               selectedOption === currentQ.correctIndex
-                ? 'border-emerald-300 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950/50 text-emerald-950 dark:text-emerald-200'
-                : 'border-rose-300 dark:border-rose-800 bg-rose-50 dark:bg-rose-950/50 text-rose-950 dark:text-rose-200'
+                ? 'border-emerald-500/50 bg-emerald-950/40 text-emerald-200'
+                : 'border-rose-500/50 bg-rose-950/40 text-rose-200'
             }`}
           >
-            <p className="font-bold mb-1 flex items-center gap-1.5">
-              <span>{selectedOption === currentQ.correctIndex ? '✓ Correct Answer' : '✗ Incorrect Answer'}</span>
+            <p className="font-bold text-sm mb-1">
+              {selectedOption === currentQ.correctIndex ? '✓ Correct Explanation' : '✗ Incorrect Explanation'}
             </p>
-            <p className="text-sm leading-relaxed">{currentQ.explanation}</p>
+            <p className="text-xs text-slate-300 leading-relaxed">{currentQ.explanation}</p>
           </div>
 
           <button
             onClick={handleNextQuestion}
-            className="px-6 py-2.5 bg-[#1D4ED8] hover:bg-[#1E40AF] text-white font-semibold rounded-lg shadow-sm transition-colors"
+            className="px-7 py-3 bg-blue-600 hover:bg-blue-500 text-white font-extrabold rounded-full text-xs transition-all shadow-md"
           >
-            {currentIndex < questions.length - 1 ? 'Next Question →' : 'View Final Score →'}
+            {currentIndex < questions.length - 1 ? 'Next Question →' : 'View Quiz Score →'}
           </button>
         </div>
       )}

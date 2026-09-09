@@ -6,15 +6,15 @@
 
 @layer base {
   body {
-    @apply bg-[#FAFAF9] dark:bg-[#0B1120] text-[#111827] dark:text-[#F3F4F6] antialiased transition-colors duration-200;
+    @apply bg-white dark:bg-[#060B14] text-[#0F172A] dark:text-[#F8FAFC] antialiased transition-colors duration-200 font-sans;
   }
 }
 
-/* Custom Math Styling Overrides for KaTeX */
+/* Preparoo KaTeX Math Styling Overrides */
 .katex-display {
-  @apply my-6 overflow-x-auto p-4 bg-stone-100/60 dark:bg-slate-900/60 rounded-lg border border-stone-200 dark:border-slate-800 text-center;
+  @apply my-8 overflow-x-auto p-6 bg-slate-50 dark:bg-[#0B172A] rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center shadow-inner;
 }
 
 .katex {
-  font-size: 1.08em;
+  font-size: 1.1em;
 }

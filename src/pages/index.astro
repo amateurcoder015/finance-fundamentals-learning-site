@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { CATEGORIES } from '../content/config';
 import { getTopicSlug } from '../utils/topic-loader';
+import Quiz from '../components/Quiz';
+import Flashcards from '../components/Flashcards';
 
 const allTopics = await getCollection('topics');
 
@@ -14,7 +16,8 @@ const topicsByCategory = CATEGORIES.map((category) => {
   };
 }).filter((group) => group.topics.length > 0);
 
-// Category Icons mapping
+const seedTopic = allTopics.find((t) => getTopicSlug(t) === 'time-value-of-money') || allTopics[0];
+
 const categoryIcons: Record<string, string> = {
   "Corporate Finance": "🏢",
   "Financial Statements": "📊",
@@ -26,105 +29,225 @@ const categoryIcons: Record<string, string> = {
 };
 ---
 
-<BaseLayout title="Personal Finance Fundamentals — Daily Knowledge Base">
-  <!-- Hero Section with Dark Hero Band style -->
-  <div class="bg-[#0B1120] text-white rounded-2xl p-8 md:p-14 mb-12 shadow-xl border border-slate-800 relative overflow-hidden">
-    <div class="absolute -right-16 -top-16 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="relative z-10 max-w-3xl">
-      <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-6">
-        <span>✦</span> Daily & Weekly Learning Engine
+<BaseLayout title="Make Finance Feel Simple — FinancePrep">
+  
+  <!-- Preparoo Signature Massive Hero Section -->
+  <div class="flex flex-col items-center text-center pt-4 pb-8 md:py-12">
+    
+    <!-- Ultra Bold Display Headline (Preparoo style) -->
+    <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[104px] font-black tracking-tighter text-[#0F172A] dark:text-white leading-[0.98] max-w-5xl mb-6">
+      Make Finance<sup>®</sup> feel simple
+    </h1>
+
+    <!-- Filter Pills (Preparoo level / category pills) -->
+    <div class="flex flex-wrap justify-center items-center gap-2 md:gap-3 mb-6">
+      <span class="px-6 py-2.5 rounded-full bg-[#0B172A] text-white text-xs font-extrabold shadow-md cursor-pointer">
+        All Domains
       </span>
-      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-white mb-6">
-        Master Finance <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-300">From First Principles</span>
-      </h1>
-      <p class="text-lg md:text-xl text-slate-300 font-normal leading-relaxed mb-8 max-w-2xl">
-        A structured, long-term personal finance knowledge repository covering Corporate Finance, Statements, Valuation, Fixed Income, Equities, Derivatives, and Economics.
-      </p>
-
-      <div class="flex flex-wrap gap-4">
+      {CATEGORIES.map((cat) => (
         <a
-          href="/topics/time-value-of-money"
-          class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:shadow-blue-500/25 transition-all text-sm flex items-center gap-2"
+          href={`/categories/${cat.toLowerCase().replace(/\s+/g, '-')}`}
+          class="px-5 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all"
         >
-          <span>Explore Seed Topic</span>
-          <span>→</span>
+          {cat}
         </a>
-        <a
-          href="/categories"
-          class="px-6 py-3 bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold rounded-lg border border-slate-700 transition-colors text-sm"
-        >
-          Browse All Categories
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Topics Grid grouped by Category -->
-  {allTopics.length === 0 ? (
-    <div class="p-12 text-center bg-white dark:bg-[#131B2E] border border-stone-200 dark:border-slate-800 rounded-xl">
-      <p class="text-slate-600 dark:text-slate-400 mb-4">No topics found yet.</p>
-      <p class="text-sm text-slate-500 font-mono">Run `npm run new-topic` to add your first topic!</p>
-    </div>
-  ) : (
-    <div class="space-y-12">
-      {topicsByCategory.map((group) => (
-        <section class="space-y-6">
-          <div class="flex justify-between items-end border-b border-stone-200 dark:border-slate-800 pb-3">
-            <div class="flex items-center gap-3">
-              <span class="text-2xl">{categoryIcons[group.category] || "📁"}</span>
-              <h2 class="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">{group.category}</h2>
-            </div>
-            <a
-              href={`/categories/${group.category.toLowerCase().replace(/\s+/g, '-')}`}
-              class="text-xs uppercase tracking-wider font-extrabold text-[#1D4ED8] dark:text-blue-400 hover:underline flex items-center gap-1"
-            >
-              <span>Browse Domain ({group.topics.length})</span>
-              <span>→</span>
-            </a>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {group.topics.map((topic) => {
-              const slug = getTopicSlug(topic);
-              return (
-                <a
-                  href={`/topics/${slug}`}
-                  class="group block bg-white dark:bg-[#131B2E] border border-stone-200 dark:border-slate-800 rounded-xl p-6 hover:-translate-y-0.5 hover:shadow-lg hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-200 flex flex-col justify-between relative overflow-hidden"
-                >
-                  <div class="absolute top-0 left-0 right-0 h-1 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-                  <div>
-                    <div class="flex items-center justify-between gap-2 mb-3">
-                      <span class="text-xs uppercase font-extrabold tracking-wide px-2.5 py-1 rounded bg-[#1D4ED8]/10 text-[#1D4ED8] dark:text-blue-400">
-                        {topic.data.category}
-                      </span>
-                      <span class="text-xs font-semibold px-2 py-0.5 rounded bg-stone-100 dark:bg-slate-800 text-stone-600 dark:text-slate-400 capitalize">
-                        {topic.data.difficulty}
-                      </span>
-                    </div>
-
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-[#1D4ED8] dark:group-hover:text-blue-400 transition-colors">
-                      {topic.data.title}
-                    </h3>
-
-                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 mb-6">
-                      {topic.data.description}
-                    </p>
-                  </div>
-
-                  <div class="text-xs text-slate-400 dark:text-slate-500 border-t border-stone-100 dark:border-slate-800/80 pt-4 flex justify-between items-center font-medium">
-                    <span>Added {new Date(topic.data.dateAdded).toLocaleDateString()}</span>
-                    <span class="font-bold text-[#1D4ED8] dark:text-blue-400 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-                      <span>Read Topic</span>
-                      <span>→</span>
-                    </span>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </section>
       ))}
     </div>
-  )}
+
+    <!-- Subtitle -->
+    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl">
+      Simple explanations. Structured practice. Only what matters.
+    </p>
+
+  </div>
+
+  <!-- Preparoo Dark Navy Feature Showcase Container (#0B172A) -->
+  <div class="bg-[#0B172A] text-white rounded-[32px] md:rounded-[40px] p-6 sm:p-10 md:p-14 shadow-2xl relative border border-slate-800 my-8">
+    
+    <!-- Top Horizontal Tab Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pb-8 mb-8 border-b border-slate-800 text-center">
+      <div class="py-2 text-xs uppercase font-extrabold tracking-wider text-white border-b-2 border-white pb-3">
+        Interactive Flashcards
+      </div>
+      <div class="py-2 text-xs uppercase font-extrabold tracking-wider text-slate-400 border-b-2 border-transparent pb-3 hover:text-white transition-colors">
+        Question Bank & Quiz
+      </div>
+      <div class="py-2 text-xs uppercase font-extrabold tracking-wider text-slate-400 border-b-2 border-transparent pb-3 hover:text-white transition-colors">
+        Blueprint Notes
+      </div>
+      <div class="py-2 text-xs uppercase font-extrabold tracking-wider text-slate-400 border-b-2 border-transparent pb-3 hover:text-white transition-colors">
+        Mermaid Diagrams
+      </div>
+    </div>
+
+    <!-- Feature Sandbox Layout: Left Vertical Tabs + Right Mock Browser Window -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <!-- Left Vertical Feature Selector Cards (Preparoo Image 2 style) -->
+      <div class="lg:col-span-4 space-y-4">
+        
+        <div class="p-5 rounded-2xl bg-[#0F1E36] border border-blue-500/40 shadow-lg">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl">📇</span>
+            <h4 class="font-extrabold text-white text-base">Flashcards</h4>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed pl-8">
+            Stuff you actually need to remember for TVM, valuation, and finance exams.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl">📝</span>
+            <h4 class="font-bold text-slate-300 text-base">Blueprint Notes</h4>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed pl-8">
+            Simple explanations that make formulas click without textbook fluff.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
+          <div class="flex items-center gap-3 mb-1">
+            <span class="text-xl">📊</span>
+            <h4 class="font-bold text-slate-300 text-base">Mock Tests & Quiz</h4>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed pl-8">
+            Practice what's likely to show up with step-by-step explanations.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Right Mock Browser Window (Preparoo fin.preparoo.app window style) -->
+      <div class="lg:col-span-8 bg-slate-900/90 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+        
+        <!-- Window Top Bar -->
+        <div class="bg-[#0B132B] px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+          </div>
+          <div class="bg-slate-950/80 px-6 py-1 rounded-full text-xs font-mono text-slate-400 border border-slate-800/80">
+            financeprep.app / time-value-of-money
+          </div>
+          <div class="w-12"></div>
+        </div>
+
+        <!-- Inner Window Content Showcase -->
+        <div class="p-6 md:p-8 bg-[#060B14]">
+          <div class="max-w-xl mx-auto">
+            <div class="mb-4 flex justify-between items-center text-xs font-extrabold text-slate-400 uppercase tracking-widest">
+              <span>Corporate Finance</span>
+              <span>1 / 5 Flashcards</span>
+            </div>
+            
+            <div class="w-full bg-slate-800 h-1.5 rounded-full mb-6 overflow-hidden">
+              <div class="bg-blue-500 h-full w-1/5 rounded-full"></div>
+            </div>
+
+            <!-- Dark Flashcard Mock Box (Preparoo Image 2 style) -->
+            <div class="bg-[#0B172A] p-8 md:p-10 rounded-2xl border border-slate-800 text-center shadow-xl min-h-[180px] flex flex-col justify-center items-center">
+              <span class="text-[10px] uppercase font-black text-blue-400 tracking-widest mb-3 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-800">
+                Core Principle
+              </span>
+              <p class="text-lg md:text-xl font-bold text-white leading-relaxed">
+                What is the core principle of the Time Value of Money (TVM)?
+              </p>
+              <p class="text-xs text-slate-400 mt-4 italic">
+                Tap card to reveal answer
+              </p>
+            </div>
+            
+            <div class="mt-6 text-center">
+              <a
+                href="/topics/time-value-of-money"
+                class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs shadow-lg transition-all"
+              >
+                <span>Launch Interactive Lesson</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Topics Grid Section grouped by Category -->
+  <div class="my-16 space-y-14">
+    
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-[#0F172A] dark:text-white tracking-tight mb-3">
+        Structured Learning Notes
+      </h2>
+      <p class="text-slate-600 dark:text-slate-400 font-medium text-base">
+        Deep dives into foundational topics across 7 core financial disciplines.
+      </p>
+    </div>
+
+    {topicsByCategory.map((group) => (
+      <section class="space-y-6">
+        <div class="flex justify-between items-end border-b border-slate-200 dark:border-slate-800 pb-4">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl">{categoryIcons[group.category] || "📁"}</span>
+            <div>
+              <h3 class="text-2xl font-black text-[#0F172A] dark:text-white tracking-tight">{group.category}</h3>
+              <p class="text-xs text-slate-500 font-medium">Core CFA & Financial Fundamentals</p>
+            </div>
+          </div>
+          <a
+            href={`/categories/${group.category.toLowerCase().replace(/\s+/g, '-')}`}
+            class="text-xs uppercase font-extrabold tracking-wider text-[#0F172A] dark:text-white hover:underline flex items-center gap-1"
+          >
+            <span>Browse Category ({group.topics.length})</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {group.topics.map((topic) => {
+            const slug = getTopicSlug(topic);
+            return (
+              <a
+                href={`/topics/${slug}`}
+                class="group block bg-white dark:bg-[#0F1E36] border border-slate-200 dark:border-slate-800/80 rounded-2xl p-7 hover:border-[#0F172A] dark:hover:border-blue-500/60 hover:shadow-xl transition-all duration-200 flex flex-col justify-between"
+              >
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-4">
+                    <span class="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-[#0B172A] text-white dark:bg-blue-950 dark:text-blue-300">
+                      {topic.data.category}
+                    </span>
+                    <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 capitalize">
+                      {topic.data.difficulty}
+                    </span>
+                  </div>
+
+                  <h4 class="text-2xl font-black text-[#0F172A] dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors tracking-tight">
+                    {topic.data.title}
+                  </h4>
+
+                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3 mb-6">
+                    {topic.data.description}
+                  </p>
+                </div>
+
+                <div class="text-xs text-slate-400 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800 pt-4 flex justify-between items-center font-bold">
+                  <span>Added {new Date(topic.data.dateAdded).toLocaleDateString()}</span>
+                  <span class="text-[#0F172A] dark:text-blue-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    <span>Study Note</span>
+                    <span>→</span>
+                  </span>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    ))}
+
+  </div>
 </BaseLayout>
