@@ -8,9 +8,23 @@
   body {
     @apply bg-white dark:bg-[#060B14] text-[#0F172A] dark:text-[#F8FAFC] antialiased transition-colors duration-200 font-sans;
   }
+
+  /* Global Keyboard Focus Ring (WCAG AA Accessibility) */
+  :focus-visible {
+    @apply outline-none ring-2 ring-blue-600 dark:ring-blue-400 ring-offset-2 ring-offset-white dark:ring-offset-[#060B14];
+  }
 }
 
-/* Preparoo KaTeX Math Styling Overrides */
+/* Custom Scrollbar Utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* KaTeX Math Styling Overrides */
 .katex-display {
   @apply my-8 overflow-x-auto p-6 bg-slate-50 dark:bg-[#0B172A] rounded-2xl border border-slate-200/80 dark:border-slate-800 text-center shadow-inner;
 }
