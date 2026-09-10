@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What happens to quantity demanded when price rises, all else equal?",
+    "options": ["It rises", "It falls", "It stays the same", "It becomes zero"],
+    "correctIndex": 1,
+    "explanation": "This is the law of demand: price and quantity demanded move in opposite directions, which is why the demand curve slopes downward."
+  },
+  {
+    "question": "A market has a price set ABOVE equilibrium. What results?",
+    "options": ["A shortage", "A surplus", "No effect", "Equilibrium is unaffected"],
+    "correctIndex": 1,
+    "explanation": "Above equilibrium, quantity supplied exceeds quantity demanded, creating a surplus that pushes sellers to lower prices."
+  },
+  {
+    "question": "If consumer incomes rise and the good is a normal good, what happens to the demand curve?",
+    "options": ["It shifts left", "It shifts right", "It stays fixed, only price moves along it", "Supply shifts instead"],
+    "correctIndex": 1,
+    "explanation": "Rising income increases demand for normal goods at every price point, shifting the whole demand curve to the right."
+  },
+  {
+    "question": "Demand for insulin barely changes even when its price rises sharply. This means demand is:",
+    "options": ["Elastic", "Inelastic", "Undefined", "Equal to supply"],
+    "correctIndex": 1,
+    "explanation": "When quantity demanded is not very responsive to price changes, demand is described as inelastic — common for necessities with few substitutes."
+  },
+  {
+    "question": "A movement ALONG the demand curve (as opposed to a shift) is caused by:",
+    "options": ["A change in consumer income", "A change in the good's own price", "A change in technology", "A change in the price of a substitute good"],
+    "correctIndex": 1,
+    "explanation": "Movements along a curve are driven only by the good's own price changing; every other factor causes the curve itself to shift."
+  }
+]

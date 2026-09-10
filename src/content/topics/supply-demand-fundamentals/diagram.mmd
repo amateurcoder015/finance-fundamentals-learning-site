@@ -1,0 +1,15 @@
+graph LR
+    subgraph Market["Supply & Demand Equilibrium"]
+        direction TB
+        A["Price rises above equilibrium"] --> B["Quantity supplied > Quantity demanded"]
+        B --> C["Surplus"]
+        C --> D["Sellers lower prices"]
+        D --> E["Price moves back to equilibrium"]
+
+        F["Price falls below equilibrium"] --> G["Quantity demanded > Quantity supplied"]
+        G --> H["Shortage"]
+        H --> I["Buyers bid prices up"]
+        I --> E
+
+        E["Equilibrium: Qty Supplied = Qty Demanded"]
+    end
