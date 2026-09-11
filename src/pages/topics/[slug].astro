@@ -65,7 +65,7 @@ const jsonLd = {
     <div class="mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
 
       <!-- Domain Badges & Metadata -->
-      <HeroItem client:load>
+      <HeroItem>
         <div class="flex flex-wrap items-center gap-3 mb-4">
           <a
             href={`/categories/${topic.data.category.toLowerCase().replace(/\s+/g, '-')}`}
@@ -83,21 +83,21 @@ const jsonLd = {
       </HeroItem>
 
       <!-- Page Title (single H1) -->
-      <HeroItem client:load>
+      <HeroItem>
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#0F172A] dark:text-white mb-4 leading-tight">
           {topic.data.title}
         </h1>
       </HeroItem>
 
       <!-- Subtitle Description -->
-      <HeroItem client:load>
+      <HeroItem>
         <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed mb-6 font-medium">
           {topic.data.description}
         </p>
       </HeroItem>
 
       <!-- Tag Pills -->
-      <HeroItem client:load>
+      <HeroItem>
         <div class="flex flex-wrap gap-2 pt-1">
           {topic.data.tags.map((tag) => (
             <span class="text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">

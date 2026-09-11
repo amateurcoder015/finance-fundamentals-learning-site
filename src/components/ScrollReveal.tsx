@@ -41,9 +41,9 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className 
   if (stagger) {
     return (
       <motion.div
-        initial="hidden"
+        initial={false}
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         variants={containerVariants}
         className={className}
       >
@@ -54,9 +54,9 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className 
 
   return (
     <motion.div
-      initial="hidden"
+      initial={false}
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       variants={itemVariants}
       className={className}
     >
@@ -85,7 +85,7 @@ export const ScrollItem: React.FC<{ children: React.ReactNode; className?: strin
   };
 
   return (
-    <motion.div variants={itemVariants} className={className}>
+    <motion.div initial={false} whileInView="visible" variants={itemVariants} className={className}>
       {children}
     </motion.div>
   );

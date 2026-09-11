@@ -26,7 +26,7 @@ export const HeroMotion: React.FC<HeroMotionProps> = ({ children }) => {
 
   return (
     <motion.div
-      initial="hidden"
+      initial={false}
       animate="visible"
       variants={containerVariants}
     >
@@ -55,7 +55,7 @@ export const HeroItem: React.FC<{ children: React.ReactNode; className?: string 
   };
 
   return (
-    <motion.div variants={itemVariants} className={className}>
+    <motion.div initial={false} animate="visible" variants={itemVariants} className={className}>
       {children}
     </motion.div>
   );
