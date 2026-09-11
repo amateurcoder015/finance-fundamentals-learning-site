@@ -14,7 +14,7 @@ export const HeroMotion: React.FC<HeroMotionProps> = ({ children }) => {
   }
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
@@ -26,7 +26,7 @@ export const HeroMotion: React.FC<HeroMotionProps> = ({ children }) => {
 
   return (
     <motion.div
-      initial={false}
+      initial="visible"
       animate="visible"
       variants={containerVariants}
     >
@@ -43,7 +43,7 @@ export const HeroItem: React.FC<{ children: React.ReactNode; className?: string 
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 14 },
+    hidden: { opacity: 1, y: 0 },
     visible: {
       opacity: 1,
       y: 0,
@@ -55,7 +55,7 @@ export const HeroItem: React.FC<{ children: React.ReactNode; className?: string 
   };
 
   return (
-    <motion.div initial={false} animate="visible" variants={itemVariants} className={className}>
+    <motion.div initial="visible" animate="visible" variants={itemVariants} className={className}>
       {children}
     </motion.div>
   );
