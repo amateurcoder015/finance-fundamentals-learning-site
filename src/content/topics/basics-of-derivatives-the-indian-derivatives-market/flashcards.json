@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is a financial derivative?",
+    "back": "A contract whose value is derived from the price performance of an underlying asset, such as a stock, index, commodity, currency, or interest rate."
+  },
+  {
+    "front": "What role do hedgers play in the derivatives market?",
+    "back": "Hedgers use derivatives to reduce or eliminate existing price risk on assets they hold or plan to buy/sell in the future."
+  },
+  {
+    "front": "How do speculators differ from hedgers?",
+    "back": "Speculators do not hold an underlying asset exposure; they deliberately take on price risk in expectation of earning directional profits."
+  },
+  {
+    "front": "What is the primary role of an arbitrageur?",
+    "back": "Arbitrageurs exploit temporary price discrepancies between markets or instruments to capture risk-free profits, bringing market prices back into alignment."
+  },
+  {
+    "front": "What is the key difference between a Futures contract and an Option contract?",
+    "back": "Futures create a binding obligation on both parties to fulfill the contract, whereas Options give the buyer the right, but not the obligation, to execute."
+  },
+  {
+    "front": "What is the difference between Forwards and Futures?",
+    "back": "Forwards are customized, private OTC contracts with credit risk, while Futures are standardized, exchange-traded contracts backed by central clearing."
+  },
+  {
+    "front": "What is 'Basis' in derivatives pricing?",
+    "back": "Basis is the price difference between the current spot price of an asset and its futures contract price (Basis = Spot Price - Futures Price)."
+  }
+]

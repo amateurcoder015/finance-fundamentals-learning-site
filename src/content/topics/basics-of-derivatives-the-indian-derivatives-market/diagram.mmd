@@ -1,0 +1,25 @@
+graph TD
+    subgraph MarketMap["Derivatives Market Framework"]
+        direction TB
+        
+        UA["Underlying Assets<br/>(Equities, Indices, Commodities, Currencies)"] --> DT
+        
+        subgraph DT["Derivative Instruments"]
+            Fwd["Forwards (Custom OTC)"]
+            Fut["Futures (Exchange Standardized)"]
+            Opt["Options (Right, No Obligation)"]
+            Swp["Swaps (Exchange Cash Flows)"]
+        end
+
+        DT --> MP
+
+        subgraph MP["Market Participants & Strategies"]
+            H["Hedgers<br/>(Reduce Existing Price Exposure)"]
+            S["Speculators<br/>(Take Risk for Directional Gains)"]
+            A["Arbitrageurs<br/>(Exploit Mispricings Across Markets)"]
+        end
+
+        H --> OutH["Risk Reduction & Price Certainty"]
+        S --> OutS["Leveraged Capital & Market Liquidity"]
+        A --> OutA["Price Alignment & Market Efficiency"]
+    end

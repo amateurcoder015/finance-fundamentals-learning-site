@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the primary defining characteristic of a financial derivative?",
+    "options": [
+      "It represents direct ownership equity in a public corporation",
+      "Its value is derived from the price movement of an underlying asset or benchmark",
+      "It guarantees a fixed interest payment backed by government reserves",
+      "It can only be traded in physical commodity markets"
+    ],
+    "correctIndex": 1,
+    "explanation": "A derivative is a contract whose financial value depends on or is derived from an underlying asset, index, or rate."
+  },
+  {
+    "question": "Which market participant enters derivative contracts specifically to offset or eliminate price risk in an underlying asset?",
+    "options": [
+      "Speculator",
+      "Arbitrageur",
+      "Hedger",
+      "Market Maker"
+    ],
+    "correctIndex": 2,
+    "explanation": "Hedgers use derivatives to reduce or eliminate existing price risk associated with underlying assets they own or plan to purchase."
+  },
+  {
+    "question": "What is a major structural difference between forward contracts and futures contracts?",
+    "options": [
+      "Forwards are exchange-traded and standardized, while futures are private OTC agreements",
+      "Futures are standardized and exchange-traded, while forwards are customized OTC agreements",
+      "Forwards require daily mark-to-market margin payments, while futures do not",
+      "Futures only exist for agricultural products, whereas forwards cover equities"
+    ],
+    "correctIndex": 1,
+    "explanation": "Futures are standardized contracts traded on organized exchanges with clearinghouse guarantees, whereas forwards are customized bilateral agreements traded over-the-counter."
+  },
+  {
+    "question": "How do arbitrageurs assist in maintaining healthy, efficient financial markets?",
+    "options": [
+      "By taking large unhedged directional bets to drive market momentum",
+      "By setting fixed maximum and minimum price boundaries for options",
+      "By exploiting mispricings across markets, keeping cash and derivative prices in alignment",
+      "By providing regulatory oversight for exchange transactions"
+    ],
+    "correctIndex": 2,
+    "explanation": "Arbitrageurs buy underpriced assets and sell overpriced equivalents simultaneously, closing pricing gaps and maintaining price efficiency between markets."
+  },
+  {
+    "question": "An investor buys a derivative contract that grants the right, but not the obligation, to purchase Nifty 50 index at 24,000 before a specific date. This instrument is a:",
+    "options": [
+      "Futures contract",
+      "Call option",
+      "Put option",
+      "Interest rate swap"
+    ],
+    "correctIndex": 1,
+    "explanation": "A call option gives the buyer the right (without obligation) to purchase an underlying asset at a specified strike price."
+  },
+  {
+    "question": "Why is leverage considered a double-edged sword for derivatives traders?",
+    "options": [
+      "It eliminates market risk while increasing transaction fees",
+      "It allows small capital outlays to amplify both potential profits and potential losses",
+      "It restricts contract sizes to small retail limits",
+      "It guarantees fixed returns regardless of market volatility"
+    ],
+    "correctIndex": 1,
+    "explanation": "Leverage enables a small initial margin to control a large contract value, magnifying percentage gains if the market moves favorably, but also magnifying losses if it moves against the position."
+  }
+]
