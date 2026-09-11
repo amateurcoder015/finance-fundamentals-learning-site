@@ -65,10 +65,10 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
   if (isComplete) {
     const percentage = Math.round((score / questions.length) * 100);
     return (
-      <div className="bg-[#0B172A] text-white p-6 md:p-10 rounded-3xl border border-slate-800 shadow-2xl">
-        <h3 className="text-2xl md:text-3xl font-black text-white mb-2">Quiz Summary</h3>
-        <p className="text-lg text-slate-300 mb-8">
-          Final Score: <span className="font-extrabold text-blue-400">{score}</span> / {questions.length} ({percentage}%)
+      <div className="bg-slate-50 dark:bg-[#0B172A] text-slate-900 dark:text-white p-6 md:p-10 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-xl transition-colors duration-200">
+        <h3 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-2">Quiz Summary</h3>
+        <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
+          Final Score: <span className="font-extrabold text-blue-600 dark:text-blue-400">{score}</span> / {questions.length} ({percentage}%)
         </p>
 
         <div className="space-y-4 mb-8">
@@ -80,25 +80,25 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
                 key={idx}
                 className={`p-5 rounded-2xl border ${
                   isCorrect
-                    ? 'border-emerald-500/40 bg-emerald-950/30 text-white'
-                    : 'border-rose-500/40 bg-rose-950/30 text-white'
+                    ? 'border-emerald-300 dark:border-emerald-500/40 bg-emerald-50 dark:bg-emerald-950/30 text-slate-900 dark:text-white'
+                    : 'border-rose-300 dark:border-rose-500/40 bg-rose-50 dark:bg-rose-950/30 text-slate-900 dark:text-white'
                 }`}
               >
                 <p className="font-bold text-base mb-1">
                   Q{idx + 1}: {q.question}
                 </p>
-                <p className="text-xs text-slate-300">
+                <p className="text-xs text-slate-700 dark:text-slate-300">
                   Your Choice:{' '}
-                  <span className={isCorrect ? 'font-bold text-emerald-400' : 'font-bold text-rose-400'}>
+                  <span className={isCorrect ? 'font-bold text-emerald-700 dark:text-emerald-400' : 'font-bold text-rose-700 dark:text-rose-400'}>
                     {userAnswer !== null ? q.options[userAnswer] : 'None'}
                   </span>
                 </p>
                 {!isCorrect && (
-                  <p className="text-xs text-slate-300">
-                    Correct Choice: <span className="font-bold text-emerald-400">{q.options[q.correctIndex]}</span>
+                  <p className="text-xs text-slate-700 dark:text-slate-300">
+                    Correct Choice: <span className="font-bold text-emerald-700 dark:text-emerald-400">{q.options[q.correctIndex]}</span>
                   </p>
                 )}
-                <p className="text-xs text-slate-400 mt-2 italic border-t border-slate-800 pt-2">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 italic border-t border-slate-200 dark:border-slate-800 pt-2">
                   {q.explanation}
                 </p>
               </div>
@@ -120,46 +120,46 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
   }
 
   return (
-    <div className="bg-[#0B172A] text-white p-6 md:p-10 rounded-3xl border border-slate-800 shadow-2xl">
+    <div className="bg-slate-50 dark:bg-[#0B172A] text-slate-900 dark:text-white p-6 md:p-10 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-xl transition-colors duration-200">
       {/* Top Header & Progress */}
       <div className="flex justify-between items-center mb-3">
-        <span className="text-xs font-black text-slate-400 uppercase tracking-widest">
+        <span className="text-xs font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">
           Question {currentIndex + 1} of {questions.length}
         </span>
-        <span className="text-xs font-mono font-bold text-blue-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">
+        <span className="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 bg-white dark:bg-slate-900 px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800 shadow-sm">
           Score: {score}
         </span>
       </div>
 
       {/* Smooth Animating Progress Bar */}
-      <div className="w-full bg-slate-900 h-2 rounded-full mb-8 overflow-hidden border border-slate-800">
+      <div className="w-full bg-slate-200 dark:bg-slate-900 h-2 rounded-full mb-8 overflow-hidden border border-slate-300/60 dark:border-slate-800">
         <motion.div
-          className="bg-blue-500 h-full rounded-full"
+          className="bg-blue-600 dark:bg-blue-500 h-full rounded-full"
           initial={false}
           animate={{ width: `${progressPercent}%` }}
           transition={{ duration: DURATION_BASE, ease: EASE_OUT }}
         />
       </div>
 
-      <h3 className="text-xl md:text-2xl font-bold text-white mb-6 leading-snug tracking-tight">{currentQ.question}</h3>
+      <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-6 leading-snug tracking-tight">{currentQ.question}</h3>
 
       <div className="space-y-3 mb-8">
         {currentQ.options.map((option, idx) => {
-          let btnClass = 'w-full text-left p-4 rounded-2xl font-medium text-slate-200 transition-colors border ';
+          let btnClass = 'w-full text-left p-4 rounded-2xl font-medium transition-colors border shadow-sm ';
 
           if (!isAnswered) {
             if (selectedOption === idx) {
-              btnClass += 'border-blue-500 bg-[#0F2448] text-white font-bold ring-2 ring-blue-500/50 shadow-md';
+              btnClass += 'border-blue-600 dark:border-blue-500 bg-blue-50 dark:bg-[#0F2448] text-blue-950 dark:text-white font-bold ring-2 ring-blue-500/50 shadow-md';
             } else {
-              btnClass += 'border-slate-800 bg-[#080F1E] hover:border-slate-700 hover:bg-[#0B132B]';
+              btnClass += 'border-slate-200 dark:border-slate-800 bg-white dark:bg-[#080F1E] text-slate-800 dark:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-slate-100 dark:hover:bg-[#0B132B]';
             }
           } else {
             if (idx === currentQ.correctIndex) {
-              btnClass += 'border-emerald-500 bg-emerald-950/60 font-bold text-emerald-200';
+              btnClass += 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/60 font-bold text-emerald-900 dark:text-emerald-200';
             } else if (selectedOption === idx) {
-              btnClass += 'border-rose-500 bg-rose-950/60 font-bold text-rose-200';
+              btnClass += 'border-rose-500 bg-rose-50 dark:bg-rose-950/60 font-bold text-rose-900 dark:text-rose-200';
             } else {
-              btnClass += 'border-slate-900 bg-slate-950/40 opacity-40';
+              btnClass += 'border-slate-200 dark:border-slate-900 bg-slate-100 dark:bg-slate-950/40 text-slate-400 dark:text-slate-600 opacity-60';
             }
           }
 
@@ -173,7 +173,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
               transition={{ duration: DURATION_FAST }}
               className={btnClass}
             >
-              <span className="inline-block w-8 font-bold text-slate-400">{String.fromCharCode(65 + idx)}.</span>
+              <span className="inline-block w-8 font-bold text-slate-400 dark:text-slate-500">{String.fromCharCode(65 + idx)}.</span>
               <span>{option}</span>
             </motion.button>
           );
@@ -188,7 +188,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
           whileTap={selectedOption !== null && !isReduced ? { scale: 0.98 } : undefined}
           transition={{ duration: DURATION_FAST }}
           className={`px-7 py-3 rounded-full font-extrabold text-xs shadow-md transition-all ${
-            selectedOption !== null ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-slate-800 text-slate-500 cursor-not-allowed'
+            selectedOption !== null ? 'bg-blue-600 hover:bg-blue-500 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed'
           }`}
         >
           Submit Answer
@@ -202,14 +202,14 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
               transition={{ duration: DURATION_BASE, ease: EASE_OUT }}
               className={`p-5 rounded-2xl border ${
                 selectedOption === currentQ.correctIndex
-                  ? 'border-emerald-500/50 bg-emerald-950/40 text-emerald-200'
-                  : 'border-rose-500/50 bg-rose-950/40 text-rose-200'
+                  ? 'border-emerald-300 dark:border-emerald-500/50 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200'
+                  : 'border-rose-300 dark:border-rose-500/50 bg-rose-50 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200'
               }`}
             >
               <p className="font-bold text-sm mb-1">
                 {selectedOption === currentQ.correctIndex ? '✓ Correct Explanation' : '✗ Incorrect Explanation'}
               </p>
-              <p className="text-xs text-slate-300 leading-relaxed">{currentQ.explanation}</p>
+              <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">{currentQ.explanation}</p>
             </motion.div>
           </AnimatePresence>
 
