@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is a forward contract?",
+    "back": "A customized, private OTC agreement between two counterparties to buy or sell an asset at a set future date for a price agreed today."
+  },
+  {
+    "front": "What is a futures contract?",
+    "back": "A standardized derivative contract traded on a regulated exchange to buy or sell an asset at a set price on a specified future date."
+  },
+  {
+    "front": "How is counterparty risk managed in futures markets?",
+    "back": "The central clearinghouse acts as the counterparty to every trade via novation, enforcing initial margins and daily mark-to-market settlements."
+  },
+  {
+    "front": "What does 'Mark-to-Market' (MTM) mean?",
+    "back": "The daily process of revaluing open futures positions at closing prices and settling daily gains/losses in cash to reset risk to zero."
+  },
+  {
+    "front": "Why are forwards less liquid than futures?",
+    "back": "Forwards are customized private agreements tailored to specific counterparties, making them difficult to trade or unwind before maturity."
+  },
+  {
+    "front": "When is a forward contract preferred over a futures contract?",
+    "back": "When a business requires a bespoke hedge tailored to a specific non-standard quantity, unique product grade, or precise delivery date."
+  },
+  {
+    "front": "What is the payoff formula for a long forward or futures position at expiry?",
+    "back": "Payoff = Spot Price at Expiry (S_T) minus Contracted Price (K)."
+  }
+]

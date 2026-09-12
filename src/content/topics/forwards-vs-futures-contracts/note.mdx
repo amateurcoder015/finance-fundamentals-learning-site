@@ -1,0 +1,91 @@
+---
+title: "Forwards vs. Futures Contracts"
+description: "A detailed comparison of forward and futures contracts, exploring standardization, counterparty risk, daily mark-to-market settlement, and real-world hedging applications."
+category: "Derivatives"
+difficulty: "beginner"
+dateAdded: "2026-09-12"
+tags: ["forwards", "futures", "derivatives", "mark-to-market", "clearinghouse", "counterparty-risk", "hedging"]
+---
+
+Forward and futures contracts represent two foundational instruments in the derivatives universe. Both allow market participants to lock in a price today for buying or selling an asset at a specified future date. However, structural differences in contract design, trading venue, risk management, and settlement distinguish them in practice.
+
+## 1. What is a Forward Contract?
+
+A **forward contract** is a customized, bilateral agreement negotiated privately over-the-counter (OTC) between two counterparties. In a forward contract, the buyer (long position) agrees to purchase an underlying asset, and the seller (short position) agrees to deliver or settle it on a specified future date at a agreed price fixed at inception.
+
+Key features of forward contracts include:
+
+- **Tailor-Made Terms**: The quantity, quality grade, delivery location, and settlement date are customized to meet the exact requirements of both parties.
+- **Bilateral Agreement**: Traded directly between corporations, financial institutions, or commercial entities without an intervening exchange.
+- **Settlement at Expiry**: Cash or physical delivery occurs only on the final maturity date.
+
+## 2. What is a Futures Contract?
+
+A **futures contract** is essentially a standardized forward contract traded on an organized, regulated derivatives exchange. Like a forward, it establishes a binding commitment to buy or sell an asset at a predetermined price in the future.
+
+Key features of futures contracts include:
+
+- **Standardized Specifications**: Lot sizes, tick sizes, grade standards, and expiration dates are pre-set by the exchange.
+- **Exchange-Traded Order Book**: Buyers and sellers trade anonymously on an electronic order book with price-time priority.
+- **Central Clearing & Margining**: Backed by a central counterparty clearinghouse that collects upfront margins and manages default risk.
+
+## 3. Core Mechanics & Worked Example
+
+Consider a commercial grain miller and a farming enterprise negotiating a contract for 1,000 bushels of wheat:
+
+- **Agreed Forward/Futures Price ($K$)**: \$6.00 per bushel
+- **Contract Expiration ($T$)**: 3 months from today
+
+At the expiration date, the actual prevailing cash market price ($\text{Spot Price } S_T$) determines the financial outcome for both parties:
+
+### Scenario A: Spot Price Rises to \$7.00 per Bushel ($S_T > K$)
+- **Long Position (Buyer)**: Profit of $\$7.00 - \$6.00 = +\$1.00$ per bushel ($+\$1,000$ total gain). The buyer acquires wheat worth \$7,000 for the contracted \$6,000.
+- **Short Position (Seller)**: Loss of $\$6.00 - \$7.00 = -\$1.00$ per bushel ($-\$1,000$ total loss).
+
+### Scenario B: Spot Price Drops to \$5.00 per Bushel ($S_T < K$)
+- **Long Position (Buyer)**: Loss of $\$5.00 - \$6.00 = -\$1.00$ per bushel ($-\$1,000$ total loss).
+- **Short Position (Seller)**: Profit of $\$6.00 - \$5.00 = +\$1.00$ per bushel ($+\$1,000$ total gain).
+
+The linear payoff at expiry for both forwards and futures is expressed as:
+
+$$
+\text{Payoff}_{\text{Long}} = S_T - K
+$$
+
+$$
+\text{Payoff}_{\text{Short}} = K - S_T
+$$
+
+## 4. Key Differences: Forwards vs. Futures
+
+| Feature | Forward Contracts | Futures Contracts |
+| :--- | :--- | :--- |
+| **Trading Venue** | Over-the-Counter (OTC) / Private Negotiation | Regulated Stock/Commodity Exchange |
+| **Contract Terms** | Customized (tailor-made quantity & dates) | Standardized (fixed lot sizes & expiries) |
+| **Counterparty Risk** | Direct risk of default by the other party | Virtually eliminated via Central Clearinghouse |
+| **Settlement Schedule** | Single settlement at contract maturity | **Marked-to-Market (MTM)** daily |
+| **Market Liquidity** | Low liquidity (hard to exit before expiry) | High liquidity (easy to close or square off) |
+| **Margin Requirements** | Rare; negotiated privately between parties | Mandatory upfront Initial Margin & Variation Margin |
+| **Regulatory Oversight** | Light / Bilateral contract law | Strict exchange and regulatory oversight |
+
+## 5. How Central Clearing & Mark-to-Market Reduce Risk
+
+The primary weakness of forward contracts is **counterparty credit risk**: if the spot price moves drastically, the losing party has an incentive to default.
+
+Futures markets mitigate this default risk through two interlocking mechanisms:
+
+1. **Novation by Central Counterparty (CCP)**: When a trade is executed on an exchange, the clearinghouse steps between the buyer and seller. The clearinghouse becomes the buyer to every seller and seller to every buyer, guaranteeing financial performance.
+2. **Daily Mark-to-Market (MTM) Settlement**: At the end of each trading day, open futures positions are revalued to the day's closing settlement price. Gains are credited and losses are debited directly to participants' margin accounts in cash:
+
+$$
+\text{Daily MTM P\&L} = (\text{Settlement Price}_{\text{Today}} - \text{Settlement Price}_{\text{Yesterday}}) \times \text{Lot Size}
+$$
+
+By settling profits and losses every 24 hours, accumulated risk is reset to zero daily, preventing massive uncollateralized losses from building up over months.
+
+## 6. Practical Applications: When to Use Which?
+
+Both instruments fulfill distinct commercial hedging and trading strategies:
+
+- **Use Forwards When**: A business requires a **customized, bespoke hedge** for an unconventional quantity, non-standard commodity grade, or precise future calendar date (e.g., an airline hedging currency for a specific aircraft delivery payment date).
+- **Use Futures When**: A trader or investor needs **liquid, exchange-traded exposure** to hedge an equity portfolio, speculate on market movements, or execute quick, low-cost risk adjustments with instant execution and guaranteed settlement.

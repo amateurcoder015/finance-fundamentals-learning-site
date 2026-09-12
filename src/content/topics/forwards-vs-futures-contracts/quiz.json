@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the primary operational distinction between a forward contract and a futures contract?",
+    "options": [
+      "Forwards require upfront option premiums, while futures do not",
+      "Forwards are customized bilateral OTC agreements, while futures are standardized exchange-traded contracts",
+      "Futures can only be used for physical agricultural commodities",
+      "Forwards are settled daily, while futures settle only at expiry"
+    ],
+    "correctIndex": 1,
+    "explanation": "Forward contracts are privately negotiated OTC agreements tailored between two parties, whereas futures are standardized contracts traded on organized exchanges."
+  },
+  {
+    "question": "Why do exchange-traded futures contracts carry far less counterparty default risk than forward contracts?",
+    "options": [
+      "Futures contracts do not involve money changing hands",
+      "The exchange clearinghouse acts as the central counterparty to all trades, backed by daily mark-to-market margining",
+      "Futures prices never change during the life of the contract",
+      "Governments directly guarantee all futures trader profits"
+    ],
+    "correctIndex": 1,
+    "explanation": "The Central Counterparty (CCP) clearinghouse guarantees settlement for every trade, collecting initial and variation margins to eliminate bilateral default risk."
+  },
+  {
+    "question": "What does 'daily mark-to-market (MTM)' settlement mean in futures markets?",
+    "options": [
+      "Positions are physically delivered to buyers every 24 hours",
+      "Profits and losses are calculated at the end of each day based on settlement prices and credited or debited to margin accounts",
+      "Traders must re-negotiate their contract price every day with the broker",
+      "The clearinghouse cancels contracts if prices move more than 1%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mark-to-market revalues open positions at the daily closing price, settling cash gains and losses daily to prevent uncollateralized risk from accumulating."
+  },
+  {
+    "question": "When would a corporate business prefer using a forward contract over a futures contract?",
+    "options": [
+      "When they require an instant, liquid position that can be sold in seconds",
+      "When they need a customized contract matching an exact non-standard quantity and precise delivery date",
+      "When they want to eliminate counterparty risk completely",
+      "When they want to trade anonymously on a public order book"
+    ],
+    "correctIndex": 1,
+    "explanation": "Forward contracts allow customization of exact lot quantities, delivery dates, and specific product grades to fit bespoke commercial hedging requirements."
+  },
+  {
+    "question": "Why are futures contracts generally much more liquid than forward contracts?",
+    "options": [
+      "Because futures terms are standardized, allowing participants to easily buy, sell, or square off positions on an exchange",
+      "Because forward contracts are illegal in most countries",
+      "Because futures contracts have no expiration dates",
+      "Because forwards require double the margin of futures"
+    ],
+    "correctIndex": 0,
+    "explanation": "Standardized lot sizes, uniform expiration dates, and centralized exchange order books make futures highly liquid and easy to unwind prior to expiration."
+  },
+  {
+    "question": "A trader takes a long position in 1 lot of futures (lot size 100) at $50. At the end of Day 1, the settlement price is $53. What is the daily MTM result?",
+    "options": [
+      "The trader loses $300",
+      "The trader receives a cash credit of $300 into their margin account",
+      "Nothing happens until contract maturity in 3 months",
+      "The contract is automatically cancelled by the exchange"
+    ],
+    "correctIndex": 1,
+    "explanation": "The long position gained $3 per unit ($53 - $50). For a lot size of 100, the trader receives a daily MTM cash credit of $300 ($3 x 100)."
+  }
+]

@@ -1,0 +1,20 @@
+graph TD
+    subgraph Comparison["Contract Lifecycle Comparison: Forwards vs. Futures"]
+        direction TB
+
+        Start["Initiation: Agreement to Buy/Sell at Future Date (Price K)"] --> FwdBranch
+        Start --> FutBranch
+
+        subgraph FwdBranch["Forward Contract (OTC / Private)"]
+            Fwd1["Private Bilateral Negotiation"] --> Fwd2["No Daily Cash Flows<br/>(Credit Risk Accumulates)"]
+            Fwd2 --> Fwd3["Single Settlement at Expiry<br/>(Cash or Physical Delivery)"]
+        end
+
+        subgraph FutBranch["Futures Contract (Exchange-Traded)"]
+            Fut1["Exchange Order Book Matching"] --> Fut2["Daily Mark-to-Market (MTM)<br/>(CCP Margins Reset Daily Risk)"]
+            Fut2 --> Fut3["Final Cash or Physical Settlement<br/>(Position Can Be Squared Off Anytime)"]
+        end
+
+        Fwd3 --> Outcome["Financial Risk & Return Realized"]
+        Fut3 --> Outcome
+    end
