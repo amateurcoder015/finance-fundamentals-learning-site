@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is Lot Size in a futures contract?",
+    "back": "The standardized fixed quantity of the underlying asset represented by a single futures contract."
+  },
+  {
+    "front": "How is Contract Value (Notional Value) calculated for a futures position?",
+    "back": "Contract Value = Futures Price x Lot Size."
+  },
+  {
+    "front": "What is the difference between Trading Volume and Open Interest?",
+    "back": "Trading Volume counts total contracts traded during a period; Open Interest counts total active un-settled contracts outstanding."
+  },
+  {
+    "front": "What is the difference between Initial Margin and Maintenance Margin?",
+    "back": "Initial Margin is collateral required upfront to open a position; Maintenance Margin is the minimum balance required to keep it open without triggering a margin call."
+  },
+  {
+    "front": "What is a Margin Call?",
+    "back": "A demand by a broker for additional funds when daily MTM losses push a trader's account balance below the maintenance margin threshold."
+  },
+  {
+    "front": "What is Contract Rollover?",
+    "back": "Closing an expiring futures contract near maturity and opening an equivalent position in a later month to maintain continuous market exposure."
+  },
+  {
+    "front": "What is Tick Size?",
+    "back": "The minimum price movement increment permitted by an exchange in futures quotations."
+  }
+]

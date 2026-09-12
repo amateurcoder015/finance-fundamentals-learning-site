@@ -1,0 +1,92 @@
+---
+title: "Futures Contract Specifications & Terminology"
+description: "An essential breakdown of standardized futures contract specifications, core market terminology, margin mechanics, open interest, and contract rollover."
+category: "Derivatives"
+difficulty: "beginner"
+dateAdded: "2026-09-12"
+tags: ["futures", "contract-specifications", "lot-size", "open-interest", "margins", "rollover", "derivatives"]
+---
+
+For a futures contract to trade seamlessly on an electronic exchange among thousands of anonymous buyers and sellers, every term of the contract—except the price—must be fixed in advance. These predetermined rules are known as **contract specifications**.
+
+## 1. Why Standardization Matters
+
+In private over-the-counter (OTC) forward contracts, counterparties negotiate every detail: quantity, delivery date, quality grade, and settlement location. While flexible, this customization makes forwards illiquid and difficult to trade or square off before expiry.
+
+Derivatives exchanges solve this illiquidity through **standardization**. By fixing all contract terms into standardized specifications, buyers and sellers trade fungible, identical contracts. Traders can open or close positions in seconds with complete confidence in what the contract represents.
+
+## 2. Core Contract Specification Elements
+
+Exchanges establish five primary contract specification parameters:
+
+### A. Underlying Asset
+The specific asset or benchmark upon which the futures contract is based—such as a specific equity stock, a broad stock market index, a physical commodity (e.g., crude oil, gold), or an interest rate benchmark.
+
+### B. Contract Size (Lot Size)
+The standardized fixed quantity of the underlying asset represented by a single futures contract. For example, a single equity futures contract might represent 250 shares of a stock, or a gold futures contract might represent 100 troy ounces.
+
+### C. Expiration & Contract Cycle
+Futures contracts trade in a rolling sequence of expiration months—often categorized into:
+- **Near Month**: The contract maturing closest to the current date (usually the most liquid).
+- **Next Month**: The contract maturing in the following month.
+- **Far Month**: The contract maturing two or more months out.
+
+### D. Tick Size & Minimum Price Movement
+The smallest allowable incremental change in the futures price quotation set by the exchange. For instance, if a contract has a tick size of \$0.05, prices can move from \$100.00 to \$100.05 or \$99.95, but cannot be quoted at \$100.02.
+
+### E. Settlement Method
+Determines how open contracts are closed on the final expiration date:
+- **Cash Settlement**: The final profit or loss is settled in cash based on the official closing spot price, without any physical delivery. Common for index futures.
+- **Physical Settlement**: The seller delivers the physical asset (or underlying shares) to the buyer upon contract expiry in exchange for the settlement price.
+
+## 3. Essential Futures Terminology
+
+Understanding futures trading requires familiarity with core market terms:
+
+- **Contract Value (Notional Value)**: The total financial value represented by one futures contract, calculated by multiplying the futures price by the lot size.
+- **Long Position**: A position opened by a buyer who expects the underlying asset price to rise.
+- **Short Position**: A position opened by a seller who expects the underlying asset price to fall.
+- **Trading Volume**: The total number of contracts bought and sold during a specified time period (e.g., a single trading day). Volume measures transaction activity.
+- **Open Interest (OI)**: The total number of outstanding futures contracts that remain active and un-settled at any given point in time. Unlike volume, open interest measures capital commitment and market depth.
+- **Initial Margin**: The upfront collateral required by the exchange/broker from both buyer and seller to open a futures position.
+- **Maintenance Margin**: The minimum collateral balance that must be maintained in the trader's margin account to keep a position open. If market losses push the account balance below the maintenance threshold, the trader receives a **margin call** requiring top-up funds.
+- **Contract Rollover**: The process of closing an expiring futures position near maturity and simultaneously opening an equivalent position in a later expiration month, allowing traders to maintain continuous market exposure without taking delivery.
+
+## 4. Worked Example: Contract Value & Margin Calculations
+
+Suppose an investor decides to take a long position in a hypothetical stock index futures contract:
+
+- **Futures Price ($P_{\text{futures}}$)**: \$2,000 per index point
+- **Lot Size ($L$)**: 50 units per contract
+- **Initial Margin Requirement ($m$)**: 12% of contract value
+- **Maintenance Margin Requirement**: 8% of contract value
+
+### Step 1: Calculate Contract Value ($V$)
+
+$$
+V = P_{\text{futures}} \times L
+$$
+
+$$
+V = \$2,000 \times 50 = \$100,000 \text{ per contract}
+$$
+
+### Step 2: Calculate Initial Margin Required ($M_{\text{initial}}$)
+
+$$
+M_{\text{initial}} = V \times m
+$$
+
+$$
+M_{\text{initial}} = \$100,000 \times 0.12 = \$12,000
+$$
+
+The investor must deposit **\$12,000** upfront to open one contract controlling **\$100,000** worth of market exposure.
+
+### Step 3: Calculate Maintenance Margin Threshold ($M_{\text{maint}}$)
+
+$$
+M_{\text{maint}} = \$100,000 \times 0.08 = \$8,000
+$$
+
+If daily Mark-to-Market losses cause the investor's margin account balance to drop below **\$8,000**, the broker issues a margin call requiring the investor to deposit funds to restore the account back to the \$12,000 initial margin level.

@@ -1,0 +1,25 @@
+graph TD
+    subgraph Anatomy["Anatomy & Lifecycle of a Futures Contract"]
+        direction TB
+        
+        UA["Underlying Asset<br/>(Stock, Index, Commodity, Currency)"] --> CS
+        
+        subgraph CS["Contract Specifications (Standardized)"]
+            LS["Lot Size / Contract Multiplier"]
+            EX["Expiry Cycle (Near / Next / Far)"]
+            TS["Tick Size (Min Price Move)"]
+            SM["Settlement Method (Cash vs Physical)"]
+        end
+
+        CS --> CV["Calculated Contract Value<br/>(Price x Lot Size)"]
+
+        CV --> MF
+
+        subgraph MF["Margin Flow & Risk Containment"]
+            IM["Initial Margin Posted Upfront<br/>(Collateral to Open Position)"] --> MTM["Daily Mark-to-Market (MTM)<br/>(Revalue & Cash Settle Gains/Losses)"]
+            MTM --> Check{"Account Balance < Maintenance Margin?"}
+            Check -- Yes --> MC["Margin Call<br/>(Deposit Top-Up Funds)"]
+            Check -- No --> Hold["Maintain Position / Rollover at Expiry"]
+            MC --> IM
+        end
+    end

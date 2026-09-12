@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What does 'lot size' or 'contract size' specify in a futures contract?",
+    "options": [
+      "The total monetary profit a trader is guaranteed to make",
+      "The standardized fixed quantity of the underlying asset represented by one contract",
+      "The total number of contracts traded on an exchange in a day",
+      "The maximum price fluctuation allowed per trading session"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lot size is the standardized fixed quantity of the underlying asset (e.g., 250 shares, 100 troy ounces) contained in a single futures contract."
+  },
+  {
+    "question": "How does Open Interest (OI) differ from daily Trading Volume in futures markets?",
+    "options": [
+      "Volume measures active un-settled contracts, while OI measures total daily transactions",
+      "Volume measures total contracts bought and sold during a day, while OI measures total active contracts outstanding",
+      "Volume applies only to options, while OI applies only to futures",
+      "Open interest resets to zero at the end of every trading day"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trading volume reflects transaction activity during a single period, whereas Open Interest counts the total number of outstanding active contracts that have not yet been closed or settled."
+  },
+  {
+    "question": "What triggered event occurs when a futures trader's margin account drops below the Maintenance Margin level?",
+    "options": [
+      "The contract automatically doubles in size",
+      "The trader receives a margin call requiring them to deposit top-up funds",
+      "The exchange waives all further margin requirements",
+      "The position is converted into a private forward contract"
+    ],
+    "correctIndex": 1,
+    "explanation": "When account balance falls below maintenance margin, the broker issues a margin call requiring the trader to deposit funds restoring the account to the initial margin level."
+  },
+  {
+    "question": "Why do market participants execute a 'contract rollover' near a futures expiration date?",
+    "options": [
+      "To avoid physical delivery or cash settlement while maintaining continuous market exposure in a later month",
+      "To default on their loss-making contracts without penalty",
+      "To change the underlying asset of their futures contract",
+      "To convert futures into spot cash positions"
+    ],
+    "correctIndex": 0,
+    "explanation": "A rollover involves closing a near-month contract close to expiry and opening an equivalent position in a later month, extending market exposure without taking delivery."
+  },
+  {
+    "question": "If a stock index futures contract is priced at $1,500 with a lot size of 200, and the initial margin is 10%, what is the required initial margin per contract?",
+    "options": [
+      "$15,000",
+      "$30,000",
+      "$300,000",
+      "$3,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "Contract Value = $1,500 x 200 = $300,000. Initial Margin = 10% of $300,000 = $30,000."
+  },
+  {
+    "question": "What is the minimum incremental price movement allowed in a futures contract quotation called?",
+    "options": [
+      "Lot size",
+      "Tick size",
+      "Base margin",
+      "Spread ratio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tick size is the smallest allowable price increment specified by the exchange for a futures quotation."
+  }
+]
