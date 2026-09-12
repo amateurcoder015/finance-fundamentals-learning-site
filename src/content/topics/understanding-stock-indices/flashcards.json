@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is a stock market index?",
+    "back": "A statistical benchmark that tracks the combined price performance of a selected basket of stocks representing a market or sector."
+  },
+  {
+    "front": "How does a Price-Weighted Index determine stock influence?",
+    "back": "Stocks with higher absolute share prices receive higher weights in the index, regardless of total company market value."
+  },
+  {
+    "front": "What is Free-Float Market Capitalization?",
+    "back": "The total market value of a company's shares that are available for open public trading, excluding locked promoter or government stakes."
+  },
+  {
+    "front": "Why is Free-Float weighting preferred for benchmark indices?",
+    "back": "It ensures the index reflects actual investable market opportunity and liquidity rather than closely held, un-tradeable shares."
+  },
+  {
+    "front": "What are the four primary practical uses of stock indices?",
+    "back": "1. Portfolio benchmarking 2. Underlying for index futures/options 3. Basis for index funds & ETFs 4. Macro market sentiment gauge."
+  },
+  {
+    "front": "What does Index Rebalancing achieve?",
+    "back": "Periodic review and updating of member stocks to ensure the index remains accurate, diversified, and representative of the market."
+  },
+  {
+    "front": "How do index futures help investors manage risk?",
+    "back": "Investors can short index futures to hedge against systematic market-wide corrections without liquidating their underlying stock portfolios."
+  }
+]

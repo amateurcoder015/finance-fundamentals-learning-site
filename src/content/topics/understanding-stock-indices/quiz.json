@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the primary function of a stock market index?",
+    "options": [
+      "To set minimum prices for individual stock transactions",
+      "To summarize the collective price performance of a basket of stocks into a single numerical benchmark",
+      "To guarantee risk-free returns for passive mutual funds",
+      "To regulate company dividend announcements"
+    ],
+    "correctIndex": 1,
+    "explanation": "A stock index acts as an economic barometer, tracking the price movements of a representative basket of stocks to provide a single benchmark for market performance."
+  },
+  {
+    "question": "In a price-weighted stock index, which constituent stock exerts the greatest influence on the index movement?",
+    "options": [
+      "The stock with the largest total market capitalization",
+      "The stock with the highest absolute share price",
+      "The stock with the highest daily trading volume",
+      "The stock with the most outstanding shares"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a price-weighted index, stocks are weighted solely by their absolute share price, giving higher-priced stocks greater influence regardless of total company valuation."
+  },
+  {
+    "question": "Why do modern global indices prefer free-float market-cap weighting over full market-cap weighting?",
+    "options": [
+      "It restricts individual stock prices from moving too fast",
+      "It weights stocks only by shares available for public trading, reflecting true investable opportunity",
+      "It eliminates the need for periodic index rebalancing",
+      "It ensures equal representation for small-cap and large-cap stocks"
+    ],
+    "correctIndex": 1,
+    "explanation": "Free-float market capitalization excludes locked-in promoter holdings and government stakes, reflecting only the shares readily available to public investors."
+  },
+  {
+    "question": "What occurs during a periodic index rebalancing review?",
+    "options": [
+      "All stock prices in the index are reset to zero",
+      "Underperforming or illiquid stocks are replaced with eligible candidate stocks to maintain representativeness",
+      "Dividend payments are compulsorily redistributed among all shareholders",
+      "The index divisor is permanently locked"
+    ],
+    "correctIndex": 1,
+    "explanation": "Periodic rebalancing updates index constituent lists by dropping non-compliant stocks and adding qualified companies based on market cap and liquidity criteria."
+  },
+  {
+    "question": "Why are broad market stock indices particularly popular as underlying assets for futures and options derivatives?",
+    "options": [
+      "They eliminate the possibility of options expiring worthless",
+      "They allow investors to hedge systematic market risk across an entire portfolio with a single contract",
+      "They are immune to changes in interest rates and macroeconomic news",
+      "They carry zero margin requirements for market participants"
+    ],
+    "correctIndex": 1,
+    "explanation": "Index derivatives enable market participants to hedge systematic (market-wide) risk efficiently using a single exchange-traded contract."
+  },
+  {
+    "question": "Which quality is essential for a stock index to serve as an effective benchmark?",
+    "options": [
+      "High constituent liquidity and representativeness of its target market segment",
+      "A fixed list of constituents that never changes over time",
+      "Exclusion of all dividend-paying companies",
+      "Restricting trading exclusively to institutional funds"
+    ],
+    "correctIndex": 0,
+    "explanation": "A high-quality index must accurately represent its target market segment and consist of liquid stocks that investors can trade cleanly."
+  }
+]

@@ -1,0 +1,23 @@
+graph TD
+    subgraph Construction["Index Construction & Ecosystem"]
+        direction TB
+        
+        IS["Individual Stocks<br/>(Market Prices & Outstanding Shares)"] --> WM
+        
+        subgraph WM["Weighting Methodology"]
+            PW["Price-Weighted"]
+            MCW["Full Market-Cap"]
+            FF["Free-Float Market-Cap<br/>(Publicly Investable Shares)"]
+        end
+
+        WM --> IV["Calculated Index Value<br/>(Statistical Benchmark)"]
+
+        IV --> Uses
+
+        subgraph Uses["Practical Applications"]
+            B["Portfolio Benchmarking<br/>(Evaluate Fund Performance)"]
+            D["Derivatives Underlying<br/>(Index Futures & Index Options)"]
+            P["Passive Investment<br/>(Index Funds & ETFs)"]
+            S["Macro Sentiment Gauge<br/>(Economic Health Indicator)"]
+        end
+    end
