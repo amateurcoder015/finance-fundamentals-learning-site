@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is the payoff formula for a Long Futures position at expiration?",
+    "back": "Profit/Loss = (Spot Price at Expiry - Contracted Futures Price) x Lot Size."
+  },
+  {
+    "front": "What is the payoff formula for a Short Futures position at expiration?",
+    "back": "Profit/Loss = (Contracted Futures Price - Spot Price at Expiry) x Lot Size."
+  },
+  {
+    "front": "Why are futures payoff diagrams linear and symmetric?",
+    "back": "Futures create a binding obligation on both parties (no right to walk away), so P&L moves 1-to-1 symmetrically with price changes."
+  },
+  {
+    "front": "What is the Break-Even Point for a futures position?",
+    "back": "The contracted futures price (K) itself, because no upfront premium is paid to enter a futures contract."
+  },
+  {
+    "front": "How do futures payoffs differ fundamentally from options payoffs?",
+    "back": "Futures payoffs are linear with uncapped upside/downside risk; options payoffs are non-linear with capped downside for option buyers."
+  },
+  {
+    "front": "What does a horizontal line at Y = 0 represent on a payoff chart?",
+    "back": "The Break-Even Line, separating the profitable region (above 0) from the loss-making region (below 0)."
+  },
+  {
+    "front": "Why is futures trading called a zero-sum game?",
+    "back": "Every dollar gained by a long futures holder is exactly matched by a dollar lost by the short futures counterparty."
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "question": "Why is the payoff profile of a futures contract linear and symmetric?",
+    "options": [
+      "Because option premiums limit the downside for buyers",
+      "Because a futures contract represents a binding obligation for both buyer and seller, causing P&L to move one-for-one with price changes",
+      "Because stock exchanges fix the maximum profit a trader can make",
+      "Because margin accounts are reset only at contract maturity"
+    ],
+    "correctIndex": 1,
+    "explanation": "Unlike options (which give a right without obligation), a futures contract is a binding obligation. Every $1 move in the underlying asset causes a constant $1 gain or loss per unit."
+  },
+  {
+    "question": "A trader takes a long futures position in 1 contract (lot size 200) at a price of $150. At expiration, the spot price settles at $165. What is the trader's net profit or loss?",
+    "options": [
+      "Loss of $3,000",
+      "Profit of $3,000",
+      "Profit of $15,000",
+      "Break-even ($0)"
+    ],
+    "correctIndex": 1,
+    "explanation": "P&L = (Expiry Price - Contract Price) x Lot Size = ($165 - $150) x 200 = $15 x 200 = +$3,000 profit."
+  },
+  {
+    "question": "A trader enters a short futures position in 1 contract (lot size 100) at a price of $80. At expiration, the spot price rises to $88. What is the net outcome?",
+    "options": [
+      "Profit of $800",
+      "Loss of $800",
+      "Loss of $8,800",
+      "Profit of $800 after margin adjustment"
+    ],
+    "correctIndex": 1,
+    "explanation": "P&L = (Contract Price - Expiry Price) x Lot Size = ($80 - $88) x 100 = -$8 x 100 = -$800 loss."
+  },
+  {
+    "question": "What is the break-even price at expiration for a futures contract entered at price K?",
+    "options": [
+      "K + Initial Margin",
+      "K - Maintenance Margin",
+      "Exactly K (the contract price itself)",
+      "K + Option Premium"
+    ],
+    "correctIndex": 2,
+    "explanation": "Because no upfront option premium is paid to open a futures contract, break-even occurs exactly when the expiration spot price equals the contracted futures price (S_T = K)."
+  },
+  {
+    "question": "How does the downside risk profile of a long futures contract compare to a long call option?",
+    "options": [
+      "Both have downside loss capped at zero",
+      "A long call option's downside is capped at the premium paid, whereas a long futures contract faces 1-to-1 downside risk down to zero price",
+      "A long futures contract has less downside risk than a call option",
+      "Futures contracts carry no risk because of central clearing"
+    ],
+    "correctIndex": 1,
+    "explanation": "Option buyers pay a non-refundable premium that caps their downside risk. Futures buyers pay no premium, meaning losses accumulate 1-to-1 as price declines."
+  },
+  {
+    "question": "On a standard futures payoff chart, what is plotted along the horizontal axis (X-axis)?",
+    "options": [
+      "The net profit or loss in dollars",
+      "The expiration/settlement spot price of the underlying asset",
+      "The total margin deposited by the trader",
+      "The total daily trading volume"
+    ],
+    "correctIndex": 1,
+    "explanation": "The horizontal X-axis plots the range of possible underlying spot prices at expiration, while the vertical Y-axis plots profit/loss."
+  }
+]

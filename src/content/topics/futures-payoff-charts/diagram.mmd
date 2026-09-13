@@ -1,0 +1,24 @@
+graph TD
+    subgraph PayoffLogic["Futures Payoff Outcome Logic"]
+        direction TB
+        
+        K["Contracted Futures Price (K)"] --> Compare{"Compare Spot Price at Expiry (S_T) to K"}
+        
+        Compare -- "S_T > K (Price Rose)" --> HighOutcome
+        Compare -- "S_T = K (Price Unchanged)" --> EqualOutcome
+        Compare -- "S_T < K (Price Fell)" --> LowOutcome
+        
+        subgraph HighOutcome["Price Rises (S_T > K)"]
+            L1["Long Futures: PROFIT (+1:1)"]
+            S1["Short Futures: LOSS (-1:1)"]
+        end
+
+        subgraph EqualOutcome["Break-Even Point (S_T = K)"]
+            BEP["Zero Net Profit or Loss<br/>(No Upfront Premium Paid)"]
+        end
+
+        subgraph LowOutcome["Price Falls (S_T < K)"]
+            L2["Long Futures: LOSS (-1:1)"]
+            S2["Short Futures: PROFIT (+1:1)"]
+        end
+    end
