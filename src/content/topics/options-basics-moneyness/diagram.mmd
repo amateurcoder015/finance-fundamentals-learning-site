@@ -1,0 +1,34 @@
+graph TD
+    subgraph OptionsTaxonomy["Options Contract Structure & Counterparties"]
+        direction TB
+        Opt["Options Contract (Right vs. Obligation)"] --> Call["Call Option (Right to BUY)"]
+        Opt --> Put["Put Option (Right to SELL)"]
+
+        subgraph CallBranches["Call Counterparties"]
+            Call --> CBuyer["Buyer / Holder (Long)<br/>• Pays Premium<br/>• Has RIGHT to Buy<br/>• Downside Cap: Premium Paid"]
+            Call --> CSeller["Seller / Writer (Short)<br/>• Collects Premium<br/>• Has OBLIGATION to Sell<br/>• Downside: Unlimited"]
+        end
+
+        subgraph PutBranches["Put Counterparties"]
+            Put --> PBuyer["Buyer / Holder (Long)<br/>• Pays Premium<br/>• Has RIGHT to Sell<br/>• Downside Cap: Premium Paid"]
+            Put --> PSeller["Seller / Writer (Short)<br/>• Collects Premium<br/>• Has OBLIGATION to Buy<br/>• Downside: Large"]
+        end
+    end
+
+    subgraph MoneynessLogic["Moneyness Classification (Spot Price S vs. Strike Price K)"]
+        direction TB
+        MoneynessNode["Compare Spot Price (S) to Strike Price (K)"] --> CallMoneyness["Call Option Rules"]
+        MoneynessNode --> PutMoneyness["Put Option Rules"]
+
+        subgraph CallMoneyness["Call Option Moneyness"]
+            C_ITM["S > K : In-the-Money (ITM)"]
+            C_ATM["S = K : At-the-Money (ATM)"]
+            C_OTM["S < K : Out-of-the-Money (OTM)"]
+        end
+
+        subgraph PutMoneyness["Put Option Moneyness"]
+            P_ITM["S < K : In-the-Money (ITM)"]
+            P_ATM["S = K : At-the-Money (ATM)"]
+            P_OTM["S > K : Out-of-the-Money (OTM)"]
+        end
+    end

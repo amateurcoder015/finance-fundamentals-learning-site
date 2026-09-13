@@ -1,0 +1,26 @@
+[
+  {
+    "front": "What is a Call Option?",
+    "back": "A financial contract granting the buyer the right (not obligation) to BUY the underlying asset at the specified strike price on or before expiration."
+  },
+  {
+    "front": "What is a Put Option?",
+    "back": "A financial contract granting the buyer the right (not obligation) to SELL the underlying asset at the specified strike price on or before expiration."
+  },
+  {
+    "front": "How do rights and risk profiles differ between an Option Buyer and an Option Seller?",
+    "back": "The Buyer pays a premium and holds the RIGHT to exercise (downside capped at premium). The Seller receives the premium and assumes the OBLIGATION to perform if exercised."
+  },
+  {
+    "front": "What is the rule for an In-the-Money (ITM) Call option?",
+    "back": "Spot Price is greater than Strike Price (S > K). Exercising allows buying the asset below current market value."
+  },
+  {
+    "front": "What is the rule for an In-the-Money (ITM) Put option?",
+    "back": "Spot Price is less than Strike Price (S < K). Exercising allows selling the asset above current market value."
+  },
+  {
+    "front": "What does At-the-Money (ATM) mean for both Calls and Puts?",
+    "back": "Spot Price equals Strike Price (S = K). Neither option possesses intrinsic exercise profit."
+  }
+]

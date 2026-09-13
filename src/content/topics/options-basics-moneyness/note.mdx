@@ -1,0 +1,96 @@
+---
+title: "Options Basics & Moneyness"
+description: "A foundational guide to options contracts, rights vs. obligations, calls vs. puts, buyers vs. sellers, exercise styles, and ITM/ATM/OTM moneyness classification."
+category: "Derivatives"
+difficulty: "beginner"
+dateAdded: "2026-09-13"
+tags: ["options", "call-option", "put-option", "moneyness", "itm", "atm", "otm", "derivatives"]
+---
+
+An **option** is one of the most versatile financial instruments in modern capital markets. Unlike futures and forward contracts—which mandate a binding transaction—options introduce flexibility by separating financial rights from financial obligations.
+
+## 1. What is an Option? (Options vs. Futures)
+
+An **option** is a financial derivative contract that grants its buyer the **RIGHT**, but **NOT the obligation**, to buy or sell a specified quantity of an underlying asset at a pre-determined price on or before a specified expiration date.
+
+### The Fundamental Distinction: Options vs. Futures
+
+| Feature | Futures / Forward Contract | Option Contract |
+| :--- | :--- | :--- |
+| **Obligation** | Binding obligation on **both** buyer and seller | Obligation on the **seller only**; buyer holds a choice |
+| **Upfront Fee** | None (only margin collateral deposits) | Buyer pays non-refundable **Premium** to seller |
+| **Downside Risk** | Symmetric 1-to-1 risk for both parties | Capped at premium paid for buyer; asymmetric |
+
+Because the buyer has the choice to walk away if the market moves unfavorably, this privilege must be purchased by paying an upfront fee called the **Option Premium**.
+
+## 2. The Two Types of Options: Calls and Puts
+
+All option contracts belong to one of two fundamental categories:
+
+### 1. Call Option (Right to BUY)
+A **Call Option** grants the buyer the right to **BUY** the underlying asset at the agreed strike price.
+- **Bullish Outlook**: Investors purchase calls when they expect the underlying asset's price to **rise**.
+- **Intuition**: If the market price jumps to \$150, holding a call to buy at \$100 allows you to purchase the asset far below market value.
+
+### 2. Put Option (Right to SELL)
+A **Put Option** grants the buyer the right to **SELL** the underlying asset at the agreed strike price.
+- **Bearish Outlook / Hedging**: Investors purchase puts when they expect the underlying asset's price to **fall** (or to protect an existing stock portfolio against market crashes).
+- **Intuition**: If the market price collapses to \$60, holding a put to sell at \$100 allows you to exit your position far above market value.
+
+## 3. The Two Sides of Every Option Trade
+
+Every option transaction requires two counterparties with opposing rights and risk profiles:
+
+### 1. Option Buyer / Holder (Long Position)
+- **Pays** the option premium to the seller at trade inception.
+- **Acquires the RIGHT** to exercise or abandon the contract.
+- **Risk Profile**: Maximum downside loss is strictly limited to the premium paid ($-\text{Premium}$). Upside profit potential is large or unlimited.
+
+### 2. Option Seller / Writer (Short Position)
+- **Receives** the option premium upfront.
+- **Assumes the OBLIGATION** to fulfill the trade if the buyer chooses to exercise.
+- **Risk Profile**: Maximum profit is capped at the premium received ($+\text{Premium}$). Downside loss is large or unlimited.
+
+## 4. Key Options Terminology
+
+To navigate options trading and analysis, master these core definitions:
+
+- **Strike Price (Exercise Price, $K$)**: The fixed, agreed-upon price per share at which the buyer can exercise their right to buy or sell the asset.
+- **Option Premium**: The market price paid by the buyer to the seller for acquiring the option contract.
+- **Expiration Date (Expiry)**: The final date on which the option contract is valid; after expiry, the option becomes worthless.
+- **European vs. American Exercise Style**:
+  - **European-Style Option**: Can only be exercised on its exact expiration date.
+  - **American-Style Option**: Can be exercised at any time up to and including its expiration date.
+
+## 5. Moneyness: ITM, ATM, and OTM
+
+**Moneyness** describes the intrinsic profitability of an option if it were exercised immediately at current market prices, comparing the current **Spot Price ($S$)** to the **Strike Price ($K$)**.
+
+```
+In-the-Money (ITM)    → Exercising yields positive intrinsic value
+At-the-Money (ATM)    → Spot price equals Strike price (S = K)
+Out-of-the-Money (OTM) → Exercising yields zero intrinsic value (worthless if expired today)
+```
+
+### 1. Call Option Moneyness Rules
+- **In-the-Money (ITM Call)**: $S > K$ (Spot price is *above* strike price). You can buy below current market price.
+- **At-the-Money (ATM Call)**: $S = K$ (Spot price *equals* strike price).
+- **Out-of-the-Money (OTM Call)**: $S < K$ (Spot price is *below* strike price). Buying at strike would cost more than current market price.
+
+### 2. Put Option Moneyness Rules
+- **In-the-Money (ITM Put)**: $S < K$ (Spot price is *below* strike price). You can sell above current market price.
+- **At-the-Money (ATM Put)**: $S = K$ (Spot price *equals* strike price).
+- **Out-of-the-Money (OTM Put)**: $S > K$ (Spot price is *above* strike price). Selling at strike would receive less than current market price.
+
+## 6. Worked Example: Moneyness Classification
+
+Suppose a stock currently trades at a **Spot Price ($S$) of \$100**. The table below classifies Call and Put options across three different strike prices ($K$):
+
+| Strike Price ($K$) | Call Option ($S = \$100$) | Put Option ($S = \$100$) | Explanation |
+| :--- | :--- | :--- | :--- |
+| **\$90 Strike** | **In-the-Money (ITM)** | **Out-of-the-Money (OTM)** | Call allows buying at \$90 (Save \$10); Put allows selling at \$90 (Worse than spot). |
+| **\$100 Strike** | **At-the-Money (ATM)** | **At-the-Money (ATM)** | Strike equals current spot price exactly ($S = K$). |
+| **\$110 Strike** | **Out-of-the-Money (OTM)** | **In-the-Money (ITM)** | Call allows buying at \$110 (Worse than spot); Put allows selling at \$110 (Gain \$10). |
+
+### Key Rule of Thumb
+For any given spot and strike price, if a **Call is In-the-Money**, the corresponding **Put at the same strike is Out-of-the-Money** (and vice versa).

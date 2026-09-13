@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the primary conceptual difference between an options contract and a futures contract?",
+    "options": [
+      "Options grant the buyer the right without obligation, whereas futures obligate both parties to fulfill the trade.",
+      "Options require daily mark-to-market margin settlements, whereas futures require no margin.",
+      "Futures contracts are only traded on physical commodities, whereas options are only traded on equities.",
+      "Futures grant the buyer a right to walk away, whereas options force both parties to settle at expiration."
+    ],
+    "correctIndex": 0,
+    "explanation": "An option buyer acquires the choice (right) to exercise or abandon the contract, while futures contracts create mandatory obligations for both buyer and seller."
+  },
+  {
+    "question": "An investor purchases a Call Option on a stock. What right does this contract grant?",
+    "options": [
+      "The right to buy the underlying stock at the strike price.",
+      "The right to sell the underlying stock at the strike price.",
+      "The obligation to sell the underlying stock at market price.",
+      "The right to collect quarterly dividend payments directly from the exchange."
+    ],
+    "correctIndex": 0,
+    "explanation": "A Call Option gives the buyer the right to buy the underlying asset at the strike price, while a Put Option gives the right to sell."
+  },
+  {
+    "question": "Which counterparty in an option transaction receives the premium upfront and assumes the legal obligation if the trade is exercised?",
+    "options": [
+      "The Option Seller / Writer (Short position).",
+      "The Option Buyer / Holder (Long position).",
+      "The Derivatives Clearinghouse Authority.",
+      "The Primary Market Underwriter."
+    ],
+    "correctIndex": 0,
+    "explanation": "The option seller (writer) collects the upfront premium from the buyer and assumes the obligation to honor the contract if the buyer exercises."
+  },
+  {
+    "question": "If a stock's current spot price is $120 and an investor holds a Call Option with a strike price of $100, how is the option classified?",
+    "options": [
+      "In-the-Money (ITM)",
+      "At-the-Money (ATM)",
+      "Out-of-the-Money (OTM)",
+      "Over-the-Counter (OTC)"
+    ],
+    "correctIndex": 0,
+    "explanation": "For a Call Option, when spot price exceeds strike price (S = $120 > K = $100), the option is In-the-Money (ITM) because exercising grants a $20 intrinsic advantage."
+  },
+  {
+    "question": "If a stock's current spot price is $85 and an investor holds a Put Option with a strike price of $100, how is the option classified?",
+    "options": [
+      "In-the-Money (ITM)",
+      "At-the-Money (ATM)",
+      "Out-of-the-Money (OTM)",
+      "Non-Deliverable (NDF)"
+    ],
+    "correctIndex": 0,
+    "explanation": "For a Put Option, when spot price is below strike price (S = $85 < K = $100), the option is In-the-Money (ITM) because it permits selling $15 above current market value."
+  },
+  {
+    "question": "An option contract that can be exercised only on its exact expiration date is called a:",
+    "options": [
+      "European-style option",
+      "American-style option",
+      "Bermudan-style option",
+      "Asian-style option"
+    ],
+    "correctIndex": 0,
+    "explanation": "European-style options restrict exercise to the expiration date only, whereas American-style options allow exercise on any business day up to expiration."
+  }
+]
