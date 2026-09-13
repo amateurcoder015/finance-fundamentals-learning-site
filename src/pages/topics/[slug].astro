@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { loadTopicAuxiliaryData, getTopicSlug } from '../../utils/topic-loader';
 import MermaidDiagram from '../../components/MermaidDiagram';
+import PayoffChart from '../../components/PayoffChart';
 import Quiz from '../../components/Quiz';
 import Flashcards from '../../components/Flashcards';
 import { HeroMotion, HeroItem } from '../../components/HeroMotion';
@@ -119,21 +120,36 @@ const jsonLd = {
       </section>
     </ScrollReveal>
 
-    <!-- Section 2: Visual Concept Diagram Card -->
-    <ScrollReveal client:load>
-      <section class="bg-white dark:bg-[#0F1E36] p-6 sm:p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
-        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-200 dark:border-slate-800">
-          <div>
-            <span class="text-xs uppercase font-black tracking-widest text-slate-400 dark:text-slate-400">
-              Visual Model
-            </span>
-            <h2 class="text-2xl font-black text-[#0F172A] dark:text-white tracking-tight">Concept Diagram</h2>
+    <!-- Section 2: Visual Concept Model Card (Payoff Chart or Mermaid Diagram) -->
+    {auxiliary.payoffChart ? (
+      <ScrollReveal client:load>
+        <section class="bg-white dark:bg-[#0F1E36] p-6 sm:p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+          <PayoffChart
+            client:load
+            positions={auxiliary.payoffChart.positions}
+            priceRange={auxiliary.payoffChart.priceRange}
+            title={auxiliary.payoffChart.title}
+            description={auxiliary.payoffChart.description}
+          />
+        </section>
+      </ScrollReveal>
+    ) : (
+      <ScrollReveal client:load>
+        <section class="bg-white dark:bg-[#0F1E36] p-6 sm:p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-200 dark:border-slate-800">
+            <div>
+              <span class="text-xs uppercase font-black tracking-widest text-slate-400 dark:text-slate-400">
+                Visual Model
+              </span>
+              <h2 class="text-2xl font-black text-[#0F172A] dark:text-white tracking-tight">Concept Diagram</h2>
+            </div>
+            <span class="text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-500 px-3 py-1 rounded-full">SVG Model</span>
           </div>
-          <span class="text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-500 px-3 py-1 rounded-full">SVG Model</span>
-        </div>
-        <MermaidDiagram client:load code={auxiliary.diagram} />
-      </section>
-    </ScrollReveal>
+          <MermaidDiagram client:load code={auxiliary.diagram} />
+        </section>
+      </ScrollReveal>
+    )}
+
 
     <!-- Practice Divider -->
     <ScrollReveal client:load>

@@ -1,0 +1,19 @@
+{
+  "title": "Futures Payoff Diagram: Long vs. Short Positions",
+  "description": "Interactive payoff lines for $500 contract price and 100 share lot size matching the worked examples.",
+  "priceRange": [350, 650],
+  "positions": [
+    {
+      "type": "long-futures",
+      "contractPrice": 500,
+      "lotSize": 100,
+      "label": "Long Futures (Buy @ $500)"
+    },
+    {
+      "type": "short-futures",
+      "contractPrice": 500,
+      "lotSize": 100,
+      "label": "Short Futures (Sell @ $500)"
+    }
+  ]
+}

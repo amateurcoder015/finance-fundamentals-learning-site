@@ -47,6 +47,35 @@ export const flashcardItemSchema = z.object({
 export const flashcardsSchema = z.array(flashcardItemSchema).min(1, "flashcards.json must contain at least 1 flashcard");
 export type FlashcardItem = z.infer<typeof flashcardItemSchema>;
 
+// Payoff Chart Zod Schema
+export const positionTypeSchema = z.enum([
+  "long-futures",
+  "short-futures",
+  "long-call",
+  "short-call",
+  "long-put",
+  "short-put"
+]);
+
+export const positionSchema = z.object({
+  type: positionTypeSchema,
+  contractPrice: z.number().optional(),
+  strike: z.number().optional(),
+  premium: z.number().optional(),
+  lotSize: z.number().default(1),
+  label: z.string().optional(),
+});
+
+export const payoffChartSchema = z.object({
+  title: z.string().optional(),
+  description: z.string().optional(),
+  priceRange: z.tuple([z.number(), z.number()]).optional(),
+  positions: z.array(positionSchema).min(1, "payoffChart must contain at least 1 position"),
+});
+
+export type Position = z.infer<typeof positionSchema>;
+export type PayoffChartData = z.infer<typeof payoffChartSchema>;
+
 const topicsCollection = defineCollection({
   type: 'content',
   schema: topicFrontmatterSchema,
@@ -55,3 +84,4 @@ const topicsCollection = defineCollection({
 export const collections = {
   topics: topicsCollection,
 };
+

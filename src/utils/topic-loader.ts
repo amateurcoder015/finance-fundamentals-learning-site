@@ -1,11 +1,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { quizSchema, flashcardsSchema, type QuizItem, type FlashcardItem } from '../content/config';
+import {
+  quizSchema,
+  flashcardsSchema,
+  payoffChartSchema,
+  type QuizItem,
+  type FlashcardItem,
+  type PayoffChartData,
+} from '../content/config';
 
 export interface TopicAuxiliaryData {
   diagram: string;
   quiz: QuizItem[];
   flashcards: FlashcardItem[];
+  payoffChart?: PayoffChartData;
 }
 
 /**
@@ -16,7 +24,7 @@ export function getTopicSlug(entry: { slug: string }): string {
 }
 
 /**
- * Reads and strictly validates auxiliary topic files (diagram.mmd, quiz.json, flashcards.json).
+ * Reads and strictly validates auxiliary topic files (diagram.mmd, quiz.json, flashcards.json, optional payoff-chart.json).
  * Throws loud, clear descriptive errors if files are missing or fail Zod schema validation.
  */
 export function loadTopicAuxiliaryData(slug: string): TopicAuxiliaryData {
@@ -26,6 +34,7 @@ export function loadTopicAuxiliaryData(slug: string): TopicAuxiliaryData {
   const diagramPath = path.join(topicDir, 'diagram.mmd');
   const quizPath = path.join(topicDir, 'quiz.json');
   const flashcardsPath = path.join(topicDir, 'flashcards.json');
+  const payoffChartPath = path.join(topicDir, 'payoff-chart.json');
 
   if (!fs.existsSync(diagramPath)) {
     throw new Error(`[Content Validation Error] Missing diagram.mmd for topic '${cleanSlug}' at ${diagramPath}`);
@@ -63,9 +72,30 @@ export function loadTopicAuxiliaryData(slug: string): TopicAuxiliaryData {
     throw new Error(`[Content Validation Error] Malformed flashcards.json in topic '${cleanSlug}':\n` + JSON.stringify(flashcardsParsed.error.format(), null, 2));
   }
 
+  let payoffChart: PayoffChartData | undefined = undefined;
+  if (fs.existsSync(payoffChartPath)) {
+    let payoffChartRaw: unknown;
+    try {
+      payoffChartRaw = JSON.parse(fs.readFileSync(payoffChartPath, 'utf-8'));
+    } catch (err) {
+      throw new Error(`[Content Validation Error] Invalid JSON in payoff-chart.json for topic '${cleanSlug}'`);
+    }
+
+    const payoffChartParsed = payoffChartSchema.safeParse(payoffChartRaw);
+    if (!payoffChartParsed.success) {
+      throw new Error(
+        `[Content Validation Error] Malformed payoff-chart.json in topic '${cleanSlug}':\n` +
+          JSON.stringify(payoffChartParsed.error.format(), null, 2)
+      );
+    }
+    payoffChart = payoffChartParsed.data;
+  }
+
   return {
     diagram,
     quiz: quizParsed.data,
     flashcards: flashcardsParsed.data,
+    payoffChart,
   };
 }
+
