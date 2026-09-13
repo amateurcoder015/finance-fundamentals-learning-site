@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What primarily determines the theoretical pricing of a financial futures contract?",
+    "options": [
+      "The current spot price plus the net cost of carry until contract expiration based on no-arbitrage principles.",
+      "The consensus speculative forecast of future spot prices among market analysts.",
+      "The total trading volume executed on the derivatives exchange during the previous session.",
+      "The initial margin requirement set by the clearinghouse."
+    ],
+    "correctIndex": 0,
+    "explanation": "Futures prices are anchored to current spot prices via the cost-of-carry model and no-arbitrage principle, rather than being simple speculative predictions of future spot prices."
+  },
+  {
+    "question": "According to the continuous cost-of-carry model F = S × e^(rT), if an underlying stock has a spot price (S) of $100, the annual risk-free rate (r) is 5%, time to expiry (T) is 1.0 year, and q = 0, what is the theoretical futures price? (e^0.05 ≈ 1.05127)",
+    "options": [
+      "$100.00",
+      "$105.00",
+      "$105.13",
+      "$110.25"
+    ],
+    "correctIndex": 2,
+    "explanation": "Applying F = 100 × e^(0.05 × 1.0) = 100 × 1.05127 ≈ $105.13. The $5.13 premium reflects the continuously compounded interest cost of carrying the asset for 1 year."
+  },
+  {
+    "question": "Why does an expected continuous cash dividend yield (q) on an equity index lower the theoretical futures price relative to the spot price?",
+    "options": [
+      "Dividends reduce the risk-free interest rate charged by clearinghouses.",
+      "Futures contract holders do not receive dividend payments made by the underlying stocks during the contract period.",
+      "Dividend payments increase the storage and insurance costs of holding equity contracts.",
+      "Dividends increase the likelihood of default by short position holders."
+    ],
+    "correctIndex": 1,
+    "explanation": "Holding the physical asset grants dividend income, whereas holding a futures contract does not. Because the futures buyer misses out on cash dividends, expected dividends reduce the net cost of carry (r - q), lowering the theoretical futures price."
+  },
+  {
+    "question": "Which of the following market conditions correctly defines a market in 'backwardation'?",
+    "options": [
+      "The futures price is higher than the current spot price (F > S).",
+      "The futures price is lower than the current spot price (F < S).",
+      "The futures price is exactly equal to the initial margin deposit.",
+      "The futures price is rising at a constant linear rate toward infinity."
+    ],
+    "correctIndex": 1,
+    "explanation": "Backwardation occurs when the futures price is below the spot price (F < S). This typically occurs when dividend yields exceed interest rates (q > r) or when physical commodities carry a high convenience yield."
+  },
+  {
+    "question": "What fundamental market force guarantees that the futures price (F) converges to the spot price (S) at contract expiration (T = 0)?",
+    "options": [
+      "Exchange regulation capping maximum daily price fluctuations.",
+      "No-arbitrage enforcement through simultaneous cash-and-carry trading at expiration.",
+      "Mandatory cash settlement fees charged on all open derivatives positions.",
+      "Interest rate adjustments implemented by central banks on contract settlement dates."
+    ],
+    "correctIndex": 1,
+    "explanation": "At expiration, a futures contract becomes an immediate delivery instrument. If F ≠ S at expiration, arbitrageurs would execute instantaneous trades (buying the cheaper market and selling the expensive market) until prices converge."
+  },
+  {
+    "question": "If a stock index futures contract at expiry is trading at $108 while the spot price is $102, how would arbitrageurs capitalize on this mispricing?",
+    "options": [
+      "Sell the overpriced futures contract and buy the underlying spot asset.",
+      "Buy the overpriced futures contract and sell short the underlying spot asset.",
+      "Wait for the clearinghouse to cancel the futures contract automatically.",
+      "Pay a higher dividend to lower the spot price."
+    ],
+    "correctIndex": 0,
+    "explanation": "Arbitrageurs would buy spot at $102 and sell futures at $108, immediately delivering the asset to lock in a risk-free profit of $6 per contract."
+  }
+]

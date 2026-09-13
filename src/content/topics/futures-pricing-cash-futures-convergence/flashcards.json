@@ -1,0 +1,26 @@
+[
+  {
+    "front": "What is the continuous Cost-of-Carry formula for a simple financial asset with no dividends?",
+    "back": "F = S × e^(rT), where F is the futures price, S is the current spot price, r is the annual risk-free rate, and T is time to expiration in years."
+  },
+  {
+    "front": "How does an expected dividend yield (q) alter the continuous futures pricing formula?",
+    "back": "F = S × e^((r - q)T). Because futures holders do not receive dividends, expected dividend yields lower the net cost of carry, reducing the theoretical futures price."
+  },
+  {
+    "front": "What is Contango?",
+    "back": "A market condition where the futures price is higher than the current spot price (F > S), creating an upward-sloping futures price curve over time."
+  },
+  {
+    "front": "What is Backwardation?",
+    "back": "A market condition where the futures price is lower than the current spot price (F < S), often caused by high dividend yields (q > r) or high convenience yields in commodities."
+  },
+  {
+    "front": "What is Cash-Futures Convergence?",
+    "back": "The process where the futures price gradually equals the spot price (F = S) as time to contract expiration approaches zero (T → 0)."
+  },
+  {
+    "front": "Why must futures prices converge to spot prices at contract expiry?",
+    "back": "At expiration, futures contracts turn into immediate spot delivery. Any price difference (F ≠ S) creates instantaneous risk-free arbitrage that forces prices together."
+  }
+]

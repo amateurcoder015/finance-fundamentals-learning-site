@@ -1,0 +1,27 @@
+graph TD
+    subgraph PricingModel["Cost-of-Carry Futures Pricing Model"]
+        direction TB
+        S["Spot Price (S)"] --> CarryCalc["Cost of Carry Net Calculation"]
+        
+        subgraph CarryFactors["Carrying Factors"]
+            Fin["+ Risk-Free Interest (r)"]
+            Stor["+ Storage / Insurance"]
+            Div["- Dividend Yield (q)"]
+            Conv["- Convenience Yield"]
+        end
+
+        CarryFactors --> CarryCalc
+        CarryCalc --> Formula["F = S × e^((r - q)T)"]
+        Formula --> FPrice["Theoretical Futures Price (F)"]
+    end
+
+    subgraph ConvergenceLogic["Cash-Futures Convergence Over Time"]
+        direction TB
+        FPrice --> TimeFlow{"Time to Expiry (T) Decreases"}
+        
+        TimeFlow -- "T > 0 (During Contract Life)" --> MarketState["Basis Exists (F ≠ S)<br/>Contango (F > S) or Backwardation (F < S)"]
+        TimeFlow -- "T → 0 (Approaching Expiry)" --> Decay["Carrying Cost Premium/Discount Decays to Zero"]
+        
+        Decay --> ExpiryAlign["Convergence at Expiry (F = S)"]
+        ExpiryAlign --> ArbitrageCheck["Enforced by Instantaneous No-Arbitrage"]
+    end
