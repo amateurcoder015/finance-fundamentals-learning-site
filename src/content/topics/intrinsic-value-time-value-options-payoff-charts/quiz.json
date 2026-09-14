@@ -1,0 +1,68 @@
+[
+  {
+    "question": "If a Call Option has a strike price (K) of $100, the underlying stock spot price (S) is $108, and the option premium is $11, what is the intrinsic value of the option?",
+    "options": [
+      "$8.00",
+      "$3.00",
+      "$11.00",
+      "$0.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "Call Intrinsic Value = max(Spot - Strike, 0) = max(108 - 100, 0) = $8.00."
+  },
+  {
+    "question": "In the scenario above (Strike K = $100, Spot S = $108, Premium = $11), what is the time value of the Call option?",
+    "options": [
+      "$3.00",
+      "$8.00",
+      "$11.00",
+      "$0.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "Time Value = Option Premium - Intrinsic Value = $11 - $8 = $3.00."
+  },
+  {
+    "question": "What happens to the time value of an option contract as time remaining to expiration approaches zero (T → 0)?",
+    "options": [
+      "Time value decays continuously toward zero.",
+      "Time value increases exponentially due to margin calls.",
+      "Time value remains constant regardless of time.",
+      "Time value transforms automatically into dividend yield."
+    ],
+    "correctIndex": 0,
+    "explanation": "As expiration approaches, uncertainty diminishes, causing time value to decay to zero (time decay / Theta). At expiration, the option is worth strictly its intrinsic value."
+  },
+  {
+    "question": "What is the break-even underlying spot price at expiration for a Long Call option with a strike price of $100 and a premium paid of $10?",
+    "options": [
+      "$110",
+      "$90",
+      "$100",
+      "$120"
+    ],
+    "correctIndex": 0,
+    "explanation": "For a Long Call, Break-Even = Strike + Premium = $100 + $10 = $110."
+  },
+  {
+    "question": "What is the break-even underlying spot price at expiration for a Long Put option with a strike price of $100 and a premium paid of $10?",
+    "options": [
+      "$90",
+      "$110",
+      "$100",
+      "$80"
+    ],
+    "correctIndex": 0,
+    "explanation": "For a Long Put, Break-Even = Strike - Premium = $100 - $10 = $90."
+  },
+  {
+    "question": "What is the key visual and structural difference between an options payoff diagram and a futures payoff diagram?",
+    "options": [
+      "Options payoffs feature a kinked elbow at the strike price with flat risk-capped regions, whereas futures payoffs are strictly linear.",
+      "Futures payoffs feature horizontal flat lines, whereas options payoffs are vertical lines.",
+      "Options payoffs are identical to futures payoffs in every respect.",
+      "Futures payoffs only exist in profit territory, whereas options payoffs only exist in loss territory."
+    ],
+    "correctIndex": 0,
+    "explanation": "Options feature non-linear, kinked payoffs at the strike price where buyer risk is capped at the premium paid, contrasting with linear, 1:1 symmetric futures payoffs."
+  }
+]

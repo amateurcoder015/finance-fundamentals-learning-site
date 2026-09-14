@@ -127,10 +127,51 @@ export default function PayoffChart({
 
   const yZero = scaleY(0);
 
-  // Reference points (break-even / contract prices)
-  const breakEvens = Array.from(
-    new Set(positions.map((p) => p.contractPrice ?? p.strike).filter(Boolean))
-  ) as number[];
+  // Reference points: Strike prices and Break-even points
+  const referenceMarkers: { price: number; label: string; type: 'strike' | 'breakeven' }[] = [];
+
+  positions.forEach((pos) => {
+    const k = pos.contractPrice ?? pos.strike;
+    const p = pos.premium ?? 0;
+
+    if (k !== undefined) {
+      referenceMarkers.push({
+        price: k,
+        label: pos.type.includes('futures') ? `Contract Price: $${k}` : `Strike Price (K): $${k}`,
+        type: 'strike',
+      });
+
+      if (p > 0) {
+        if (pos.type.includes('call')) {
+          const be = k + p;
+          referenceMarkers.push({
+            price: be,
+            label: `Break-Even: $${be}`,
+            type: 'breakeven',
+          });
+        } else if (pos.type.includes('put')) {
+          const be = k - p;
+          referenceMarkers.push({
+            price: be,
+            label: `Break-Even: $${be}`,
+            type: 'breakeven',
+          });
+        }
+      } else if (pos.type.includes('futures')) {
+        referenceMarkers.push({
+          price: k,
+          label: `Break-Even: $${k}`,
+          type: 'breakeven',
+        });
+      }
+    }
+  });
+
+  // Deduplicate markers by price & type
+  const uniqueMarkers = Array.from(
+    new Map(referenceMarkers.map((m) => [`${m.type}-${m.price}`, m])).values()
+  );
+
 
   // Generate path data for net payoff line
   const netPoints = samplePrices.map((st) => {
@@ -389,39 +430,56 @@ export default function PayoffChart({
             Zero P&L Break-even
           </text>
 
-          {/* Vertical Break-even Price Line(s) */}
-          {breakEvens.map((bePrice) => {
-            const xBE = scaleX(bePrice);
+          {/* Vertical Strike & Break-even Reference Lines */}
+          {uniqueMarkers.map((marker, idx) => {
+            const xM = scaleX(marker.price);
+            if (xM < padLeft || xM > svgWidth - padRight) return null;
+            const isBE = marker.type === 'breakeven';
+            const yOffset = isBE ? padTop - 28 : padTop - 6;
+
             return (
-              <g key={`be-${bePrice}`}>
+              <g key={`marker-${idx}-${marker.price}`}>
                 <line
-                  x1={xBE}
+                  x1={xM}
                   y1={padTop}
-                  x2={xBE}
+                  x2={xM}
                   y2={svgHeight - padBottom}
-                  className="stroke-amber-500/80 dark:stroke-amber-400/80"
+                  className={
+                    isBE
+                      ? 'stroke-emerald-500/80 dark:stroke-emerald-400/80'
+                      : 'stroke-amber-500/80 dark:stroke-amber-400/80'
+                  }
                   strokeWidth="1.5"
                   strokeDasharray="4 4"
                 />
                 <rect
-                  x={xBE - 45}
-                  y={padTop - 28}
-                  width="90"
-                  height="22"
+                  x={xM - 50}
+                  y={yOffset}
+                  width="100"
+                  height="20"
                   rx="6"
-                  className="fill-amber-500/10 dark:fill-amber-400/20 stroke-amber-500/30 dark:stroke-amber-400/40"
+                  className={
+                    isBE
+                      ? 'fill-emerald-500/10 dark:fill-emerald-400/20 stroke-emerald-500/30 dark:stroke-emerald-400/40'
+                      : 'fill-amber-500/10 dark:fill-amber-400/20 stroke-amber-500/30 dark:stroke-amber-400/40'
+                  }
                 />
                 <text
-                  x={xBE}
-                  y={padTop - 13}
+                  x={xM}
+                  y={yOffset + 14}
                   textAnchor="middle"
-                  className="fill-amber-700 dark:fill-amber-300 font-extrabold text-[10px]"
+                  className={
+                    isBE
+                      ? 'fill-emerald-700 dark:fill-emerald-300 font-extrabold text-[10px]'
+                      : 'fill-amber-700 dark:fill-amber-300 font-extrabold text-[10px]'
+                  }
                 >
-                  Contract Price: ${bePrice}
+                  {marker.label}
                 </text>
               </g>
             );
           })}
+
 
           {/* Draw Individual Position Lines if activeTab === 'combined' and multiple positions */}
           {activeTab === 'combined' &&

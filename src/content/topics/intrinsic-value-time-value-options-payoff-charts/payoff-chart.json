@@ -1,0 +1,35 @@
+{
+  "title": "Interactive Options Payoff Diagram: Four Basic Positions",
+  "description": "Explore Long Call, Short Call, Long Put, and Short Put payoff profiles for Strike K = $100 and Premium P = $10.",
+  "priceRange": [60, 140],
+  "positions": [
+    {
+      "type": "long-call",
+      "strike": 100,
+      "premium": 10,
+      "lotSize": 1,
+      "label": "Long Call ($100 Strike, $10 Prem)"
+    },
+    {
+      "type": "short-call",
+      "strike": 100,
+      "premium": 10,
+      "lotSize": 1,
+      "label": "Short Call ($100 Strike, $10 Prem)"
+    },
+    {
+      "type": "long-put",
+      "strike": 100,
+      "premium": 10,
+      "lotSize": 1,
+      "label": "Long Put ($100 Strike, $10 Prem)"
+    },
+    {
+      "type": "short-put",
+      "strike": 100,
+      "premium": 10,
+      "lotSize": 1,
+      "label": "Short Put ($100 Strike, $10 Prem)"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "front": "What is the formula for Call Intrinsic Value?",
+    "back": "Intrinsic Value (Call) = max(Spot Price - Strike Price, 0). OTM and ATM calls have zero intrinsic value."
+  },
+  {
+    "front": "What is the formula for Put Intrinsic Value?",
+    "back": "Intrinsic Value (Put) = max(Strike Price - Spot Price, 0). OTM and ATM puts have zero intrinsic value."
+  },
+  {
+    "front": "How is an Option Premium decomposed?",
+    "back": "Option Premium = Intrinsic Value + Time Value. Time Value reflects extrinsic opportunity and decays to zero at expiration."
+  },
+  {
+    "front": "What is the Break-Even price formula for Call positions (Long Call and Short Call)?",
+    "back": "Break-Even Price = Strike Price + Premium (K + P)."
+  },
+  {
+    "front": "What is the Break-Even price formula for Put positions (Long Put and Short Put)?",
+    "back": "Break-Even Price = Strike Price - Premium (K - P)."
+  },
+  {
+    "front": "What is the primary visual difference between an Option payoff line and a Futures payoff line?",
+    "back": "An Option payoff line has a distinct kinked elbow at the strike price with flat risk-capped bounds, whereas a Futures payoff line is strictly linear and symmetric."
+  }
+]

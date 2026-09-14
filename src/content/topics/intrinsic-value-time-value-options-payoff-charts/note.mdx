@@ -1,0 +1,116 @@
+---
+title: "Intrinsic Value, Time Value & Options Payoff Charts"
+description: "An in-depth guide to decomposing option premiums into intrinsic value and time value, calculating break-even points, and plotting payoff diagrams for the four basic option positions."
+category: "Derivatives"
+difficulty: "intermediate"
+dateAdded: "2026-09-14"
+tags: ["options", "intrinsic-value", "time-value", "payoff-diagram", "call-option", "put-option", "derivatives"]
+---
+
+Understanding how options are valued requires looking beyond the single market price (premium). An option's premium is composed of two distinct components: **Intrinsic Value** and **Time Value**.
+
+## 1. Decomposing Option Premium
+
+Every option premium paid by a buyer or collected by a seller can be decomposed into:
+
+$$
+\text{Option Premium} = \text{Intrinsic Value} + \text{Time Value}
+$$
+
+- **Intrinsic Value**: The immediate financial benefit if the option were exercised today.
+- **Time Value**: The additional premium paid for the remaining time before expiration, reflecting the probability of favorable future price moves.
+
+## 2. Intrinsic Value Explained
+
+**Intrinsic Value** measures the amount by which an option is in-the-money ($ITM$). It can never be negative ($\ge 0$). If an option is out-of-the-money ($OTM$) or at-the-money ($ATM$), its intrinsic value is exactly **zero**.
+
+### Intrinsic Value Formulas
+- **Call Option Intrinsic Value**:
+  $$
+  \text{Intrinsic Value}_{\text{Call}} = \max(S - K, 0)
+  $$
+- **Put Option Intrinsic Value**:
+  $$
+  \text{Intrinsic Value}_{\text{Put}} = \max(K - S, 0)
+  $$
+
+*Where $S$ is the current spot price and $K$ is the strike price.*
+
+## 3. Time Value & Time Decay
+
+**Time Value** (also called extrinsic value) represents the premium portion exceeding intrinsic value:
+
+$$
+\text{Time Value} = \text{Option Premium} - \text{Intrinsic Value}
+$$
+
+### Why Buyers Pay for Time Value
+Buyers pay time value because time represents opportunity. As long as time remains before expiration, there is a statistical probability that market price fluctuations will move the underlying asset deeper into-the-money, increasing the option's payout.
+
+### Time Decay (Theta)
+As the expiration date approaches ($T \to 0$), uncertainty diminishes. The probability of significant price shifts drops, causing time value to decay continuously toward zero. At contract expiration, **time value is zero**, and the option is worth strictly its intrinsic value.
+
+## 4. Worked Example: Premium Decomposition
+
+Suppose a stock's current **Spot Price ($S$) is \$105**. Let's analyze three options contracts:
+
+### Case A: Call Option ($K = \$100$, Premium = \$8)
+- **Intrinsic Value**: $\max(\$105 - \$100, 0) = \$5$ ($ITM$)
+- **Time Value**: $\$8 - \$5 = \$3$
+
+### Case B: Put Option ($K = \$110$, Premium = \$8)
+- **Intrinsic Value**: $\max(\$110 - \$105, 0) = \$5$ ($ITM$)
+- **Time Value**: $\$8 - \$5 = \$3$
+
+### Case C: Put Option ($K = \$100$, Premium = \$3)
+- **Intrinsic Value**: $\max(\$100 - \$105, 0) = \$0$ ($OTM$)
+- **Time Value**: $\$3 - \$0 = \$3$ (100% time value)
+
+| Contract Type | Strike ($K$) | Spot ($S$) | Total Premium | Intrinsic Value | Time Value |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Call** | \$100 | \$105 | \$8.00 | **\$5.00** | **\$3.00** |
+| **Put** | \$110 | \$105 | \$8.00 | **\$5.00** | **\$3.00** |
+| **Put** | \$100 | \$105 | \$3.00 | **\$0.00** | **\$3.00** |
+
+## 5. Payoff Diagrams for the Four Basic Option Positions
+
+At expiration, time value decays to zero. The net profit or loss ($\text{P\&L}$) per contract at expiration ($S_T$) is determined by the intrinsic value minus the initial premium paid/received ($P$).
+
+Using our standard parameters (**Strike $K = \$100$, Premium $P = \$10$, Lot Size = 1 share**):
+
+### 1. Long Call Position
+- **Concept**: Bullish strategy. Buyer pays \$10 premium for the right to buy at \$100.
+- **Payoff Formula**: $\text{P\&L} = \max(S_T - 100, 0) - 10$
+- **Max Loss**: $-\$10$ (Limited to premium paid)
+- **Max Profit**: Unlimited (as $S_T \to \infty$)
+- **Break-Even Price**: $K + P = \$100 + \$10 = \$110$
+
+### 2. Short Call Position
+- **Concept**: Bearish/neutral strategy. Seller receives \$10 premium, obligated to sell at \$100 if exercised.
+- **Payoff Formula**: $\text{P\&L} = 10 - \max(S_T - 100, 0)$
+- **Max Profit**: $+\$10$ (Limited to premium received)
+- **Max Loss**: Unlimited (as $S_T \to \infty$)
+- **Break-Even Price**: $K + P = \$100 + \$10 = \$110$
+
+### 3. Long Put Position
+- **Concept**: Bearish strategy. Buyer pays \$10 premium for the right to sell at \$100.
+- **Payoff Formula**: $\text{P\&L} = \max(100 - S_T, 0) - 10$
+- **Max Loss**: $-\$10$ (Limited to premium paid)
+- **Max Profit**: $\$100 - \$10 = +\$90$ (Capped because spot price cannot drop below \$0)
+- **Break-Even Price**: $K - P = \$100 - \$10 = \$90$
+
+### 4. Short Put Position
+- **Concept**: Bullish/neutral strategy. Seller receives \$10 premium, obligated to buy at \$100 if exercised.
+- **Payoff Formula**: $\text{P\&L} = 10 - \max(100 - S_T, 0)$
+- **Max Profit**: $+\$10$ (Limited to premium received)
+- **Max Loss**: $-(\$100 - \$10) = -\$90$ (Occurs if stock drops to \$0)
+- **Break-Even Price**: $K - P = \$100 - \$10 = \$90$
+
+## 6. Contrast with Futures: The Kinked Payoff Profile
+
+The key visual difference between futures and options payoffs is the **kink at the strike price ($K$)**:
+
+- **Futures Payoffs**: Linear and continuous across all asset prices ($1:1$ symmetric gain and loss slope).
+- **Options Payoffs**: Non-linear with a **kinked elbow** at the strike price ($K$). On one side of the strike price, the payoff line becomes horizontal (reflecting capped loss for buyers or capped profit for sellers).
+
+This asymmetric, kinked structure allows option traders to customize risk-reward profiles that are impossible with linear futures contracts.

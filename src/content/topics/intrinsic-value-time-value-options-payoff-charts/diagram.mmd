@@ -1,0 +1,20 @@
+graph TD
+    subgraph ValueDecomposition["Option Premium Value Decomposition"]
+        direction TB
+        P["Total Option Premium"] --> IV["Intrinsic Value (Real Exercise Value Today)"]
+        P --> TV["Time Value (Extrinsic Uncertainty Premium)"]
+
+        subgraph IntrinsicCalc["Intrinsic Value Calculation"]
+            IV --> CallIV["Call Intrinsic Value:<br/>max(Spot Price - Strike Price, 0)"]
+            IV --> PutIV["Put Intrinsic Value:<br/>max(Strike Price - Spot Price, 0)"]
+            
+            CallIV --> Rules["ITM > 0 | OTM & ATM = 0"]
+            PutIV --> Rules
+        end
+
+        subgraph TimeValCalc["Time Value Dynamics"]
+            TV --> Formula["Time Value = Premium - Intrinsic Value"]
+            Formula --> TimeDecay["Time Decay (Theta):<br/>Decays toward Zero as Time to Expiry (T → 0)"]
+            TimeDecay --> ExpiryVal["At Expiry: Premium = Intrinsic Value"]
+        end
+    end
