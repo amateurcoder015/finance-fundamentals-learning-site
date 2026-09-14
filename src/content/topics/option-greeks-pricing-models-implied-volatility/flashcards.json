@@ -1,0 +1,26 @@
+[
+  {
+    "front": "What is Delta (Δ)?",
+    "back": "The Greek measuring option price sensitivity per $1 move in spot price (∂V/∂S), ranging from 0 to +1.0 for Calls and -1.0 to 0 for Puts."
+  },
+  {
+    "front": "What is Gamma (Γ)?",
+    "back": "The Greek measuring the rate of change of Delta per $1 move in spot price (∂²V/∂S²). It is highest for At-the-Money options near expiration."
+  },
+  {
+    "front": "What is Theta (Θ)?",
+    "back": "The Greek measuring option price sensitivity to the passage of time (time decay). It is negative for option buyers as extrinsic value erodes."
+  },
+  {
+    "front": "What is Vega (ν)?",
+    "back": "The Greek measuring option price sensitivity to a 1% change in implied volatility (∂V/∂σ). Long options have positive Vega."
+  },
+  {
+    "front": "What is Rho (ρ)?",
+    "back": "The Greek measuring option price sensitivity to a 1% change in the risk-free interest rate (∂V/∂r)."
+  },
+  {
+    "front": "What is Implied Volatility (IV)?",
+    "back": "The forward-looking volatility value derived by taking an option's observed market price and solving backward through a pricing model like Black-Scholes."
+  }
+]

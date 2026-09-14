@@ -1,0 +1,33 @@
+graph TD
+    subgraph ModelInputs["Option Pricing Model Inputs"]
+        direction TB
+        S["Spot Price (S)"]
+        K["Strike Price (K)"]
+        T["Time to Expiry (T)"]
+        Vol["Volatility (σ)"]
+        R["Risk-Free Rate (r)"]
+    end
+
+    subgraph PricingModels["Quantitative Pricing Engines"]
+        ModelInputs --> BS["Black-Scholes Model<br/>(European, Closed-Form)"]
+        ModelInputs --> Binomial["Binomial Tree Model<br/>(American, Discrete Steps)"]
+    end
+
+    subgraph PricingOutputs["Valuation & Sensitivity Outputs"]
+        BS --> TheoreticalPrice["Theoretical Fair Value Price (C / P)"]
+        Binomial --> TheoreticalPrice
+
+        TheoreticalPrice --> Greeks["The 5 Option Greeks (Risk Sensitivities)"]
+        
+        Greeks --> Delta["Delta (Δ): ∂V/∂S<br/>Spot Price Sensitivity"]
+        Greeks --> Gamma["Gamma (Γ): ∂²V/∂S²<br/>Delta Acceleration"]
+        Greeks --> Theta["Theta (Θ): ∂V/∂T<br/>Time Decay (per day)"]
+        Greeks --> Vega["Vega (ν): ∂V/∂σ<br/>Volatility Sensitivity"]
+        Greeks --> Rho["Rho (ρ): ∂V/∂r<br/>Interest Rate Sensitivity"]
+    end
+
+    subgraph ImpliedVolSolver["Implied Volatility (IV) Reverse Engine"]
+        MktPrice["Observed Market Price (C_market)"] --> IVSolver["Reverse Black-Scholes Solver"]
+        S & K & T & R --> IVSolver
+        IVSolver --> OutputIV["Implied Volatility (IV)<br/>Market Forward Expectation"]
+    end

@@ -1,0 +1,68 @@
+[
+  {
+    "question": "Which option Greek measures the sensitivity of an option's price to a $1 change in the underlying spot price?",
+    "options": [
+      "Delta (Δ)",
+      "Gamma (Γ)",
+      "Theta (Θ)",
+      "Vega (ν)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Delta (∂V/∂S) measures price sensitivity per $1 change in the underlying asset price and serves as a rough proxy for the probability of expiring In-the-Money."
+  },
+  {
+    "question": "Why is Gamma (Γ) highest for At-the-Money (ATM) options nearing expiration?",
+    "options": [
+      "Because ATM options near expiry experience the most rapid shifts in Delta for small underlying spot price moves.",
+      "Because ATM options near expiry have the highest interest rate sensitivity (Rho).",
+      "Because ATM options near expiry have zero time decay.",
+      "Because ATM options near expiry are guaranteed to be exercised."
+    ],
+    "correctIndex": 0,
+    "explanation": "Gamma measures the rate of change of Delta. Near expiration, small price moves near the strike dramatically shift an ATM option between ITM (Delta ~1.0) and OTM (Delta ~0.0)."
+  },
+  {
+    "question": "Why is Theta (Θ) typically negative for option buyers?",
+    "options": [
+      "Because option time value decays continuously toward zero as expiration approaches.",
+      "Because option buyers must pay daily interest margin to the exchange.",
+      "Because underlying asset spot prices always decline over time.",
+      "Because dividend payments reduce option delta every day."
+    ],
+    "correctIndex": 0,
+    "explanation": "Theta measures time decay. As time to expiration diminishes (T → 0), the extrinsic time value of an option erodes, causing a daily price loss for option holders."
+  },
+  {
+    "question": "What is the primary advantage of the Binomial Option Pricing Model over the Black-Scholes model?",
+    "options": [
+      "It can evaluate American-style options by checking for early exercise at discrete nodes in a price tree.",
+      "It does not require knowing the underlying spot price.",
+      "It assumes volatility is infinite and interest rates are zero.",
+      "It provides a closed-form formula that eliminates all math calculation."
+    ],
+    "correctIndex": 0,
+    "explanation": "The Binomial model uses discrete time steps, enabling evaluation of early exercise features of American-style options at every node."
+  },
+  {
+    "question": "How is Implied Volatility (IV) derived in options trading?",
+    "options": [
+      "By solving backward through a pricing model using the observed market price to find the matching volatility.",
+      "By calculating the historical standard deviation of stock returns over the past 30 days.",
+      "By asking clearinghouses to assign arbitrary risk numbers to each stock.",
+      "By adding the annual dividend yield to the risk-free interest rate."
+    ],
+    "correctIndex": 0,
+    "explanation": "Implied volatility is obtained by taking the actual observed market price of an option and solving backward through the pricing model for the volatility parameter (σ)."
+  },
+  {
+    "question": "Which Greek measures option price sensitivity to a 1% change in implied volatility (σ)?",
+    "options": [
+      "Vega (ν)",
+      "Rho (ρ)",
+      "Delta (Δ)",
+      "Theta (Θ)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Vega (∂V/∂σ) measures the sensitivity of the option price to a 1% shift in implied volatility."
+  }
+]

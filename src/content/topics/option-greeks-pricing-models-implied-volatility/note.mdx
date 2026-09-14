@@ -1,0 +1,124 @@
+---
+title: "Option Greeks, Pricing Models & Implied Volatility"
+description: "An advanced guide to option valuation models (Black-Scholes and Binomial), the option Greeks (Delta, Gamma, Theta, Vega, Rho), and implied volatility."
+category: "Derivatives"
+difficulty: "advanced"
+dateAdded: "2026-09-14"
+tags: ["options", "black-scholes", "greeks", "delta", "gamma", "theta", "vega", "implied-volatility", "derivatives"]
+---
+
+Unlike futures contracts—where pricing is a linear function of spot price and financing costs—options possess non-linear, kinked payoffs. Evaluating an option's fair value requires a mathematical model capable of synthesizing multiple interacting market variables.
+
+## 1. Why Options Require Quantitative Pricing Models
+
+An option's fair market value is influenced simultaneously by five core inputs:
+1. **Spot Price ($S$)**: Current market price of the underlying asset.
+2. **Strike Price ($K$)**: Contracted exercise price.
+3. **Time to Expiry ($T$)**: Remaining contract life in years.
+4. **Volatility ($\sigma$)**: Expected annualized price fluctuation of the underlying asset.
+5. **Risk-Free Interest Rate ($r$)**: Prevailing yield on risk-free government debt.
+
+Because these variables interact non-linearly, financial economists developed quantitative models to compute an option's theoretical fair value.
+
+## 2. Option Pricing Models Explained
+
+### 1. The Black-Scholes-Merton Model (1973)
+The Black-Scholes model provides a closed-form analytical formula to price **European-style options**.
+
+#### Core Assumptions
+- Asset prices follow a continuous lognormal random walk (geometric Brownian motion).
+- Risk-free interest rate ($r$) and volatility ($\sigma$) remain constant over the contract life.
+- Continuous trading with zero transaction costs or taxes.
+- No early exercise permitted prior to expiration.
+
+#### The Black-Scholes Formula
+
+$$
+C = S \cdot N(d_1) - K \cdot e^{-rT} \cdot N(d_2)
+$$
+
+$$
+P = K \cdot e^{-rT} \cdot N(-d_2) - S \cdot N(-d_1)
+$$
+
+*Where:*
+
+$$
+d_1 = \frac{\ln(S / K) + \left(r + \frac{\sigma^2}{2}\right)T}{\sigma \sqrt{T}}
+$$
+
+$$
+d_2 = d_1 - \sigma \sqrt{T}
+$$
+
+- $N(x)$ = Cumulative distribution function of the standard normal distribution.
+- $e^{-rT}$ = Present value discount factor.
+
+### 2. The Binomial Option Pricing Model (Cox-Ross-Rubinstein)
+The **Binomial Model** uses a discrete-time framework, modeling price movement as a decision tree of discrete up ($u$) and down ($d$) price steps over time.
+
+- **Primary Advantage**: Unlike Black-Scholes, the Binomial model can evaluate **American-style options** by testing for optimal early exercise at every node in the tree.
+
+## 3. The Option Greeks: Risk Sensitivities
+
+The **Greeks** are partial derivatives of the option pricing formula. They measure how much an option's theoretical price changes when one underlying variable changes while all others remain constant.
+
+| Greek | Mathematical Derivative | What It Measures | Typical Range / Behavior |
+| :--- | :--- | :--- | :--- |
+| **Delta ($\Delta$)** | $\frac{\partial V}{\partial S}$ | Price sensitivity per \$1 change in spot price | Call: $0 \text{ to } +1.0$<br/>Put: $-1.0 \text{ to } 0$ |
+| **Gamma ($\Gamma$)** | $\frac{\partial \Delta}{\partial S} = \frac{\partial^2 V}{\partial S^2}$ | Rate of change of Delta per \$1 change in spot | Always positive for long options; highest for $ATM$ |
+| **Theta ($\Theta$)** | $\frac{\partial V}{\partial T}$ | Option price decay per day passage of time | Negative for buyers (loss per day); accelerates near expiry |
+| **Vega ($\nu$)** | $\frac{\partial V}{\partial \sigma}$ | Price sensitivity per $1\%$ change in volatility | Always positive for long options; highest for $ATM$ |
+| **Rho ($\rho$)** | $\frac{\partial V}{\partial r}$ | Price sensitivity per $1\%$ change in interest rate | Positive for Calls, negative for Puts; minor impact |
+
+### Detailed Breakdown of Each Greek
+
+#### 1. Delta ($\Delta$)
+- **Concept**: If a call option has a Delta of $+0.60$, a \$1 increase in the stock price increases the option's price by approximately **\$0.60**.
+- **Probability Proxy**: Delta also serves as a rough approximation of the market-implied probability that the option will expire In-the-Money ($ITM$). An $ATM$ call has a Delta of $\approx +0.50$ ($50\%$ probability).
+
+#### 2. Gamma ($\Gamma$)
+- **Concept**: Gamma measures the curvature or acceleration of Delta. If Delta is $+0.50$ and Gamma is $+0.05$, a \$1 stock increase boosts Delta to $+0.55$.
+- **Behavior**: Gamma is highest for **At-the-Money ($ATM$)** options nearing expiration, reflecting sharp sensitivity to whether the option finishes ITM or OTM.
+
+#### 3. Theta ($\Theta$)
+- **Concept**: Represents time decay—the dollar amount an option loses each day as expiration approaches, assuming all other factors remain constant.
+- **Behavior**: Time decay is non-linear; it accelerates rapidly during the final 30 to 45 days before expiration.
+
+#### 4. Vega ($\nu$)
+- **Concept**: Measures the change in option price for a $1\%$ change in implied volatility ($\sigma$). If Vega is $+0.15$, a $1\%$ rise in volatility increases option premium by **\$0.15**.
+- **Behavior**: Vega is highest for long-dated, At-the-Money ($ATM$) options.
+
+#### 5. Rho ($\rho$)
+- **Concept**: Measures sensitivity to interest rate changes ($r$). A Call Rho of $+0.04$ means a $1\%$ rise in interest rates increases option value by **\$0.04**.
+
+## 4. Why the Greeks Matter Practically
+
+Traders and institutional market makers use the Greeks to manage complex options portfolios without recalculating full pricing equations:
+
+1. **Delta-Neutral Hedging**: A market maker who sells 10 call options ($\Delta = +0.50$ per contract, total $\Delta = +5.0$) can hedge directional risk by shorting 500 shares of underlying stock ($\Delta = -5.0$), creating a zero net Delta position.
+2. **Volatility Trading**: A trader expecting a volatility spike can build a **Vega-positive, Delta-neutral** position (e.g., buying an $ATM$ straddle) to profit purely from rising volatility without taking a directional market stance.
+
+## 5. Implied Volatility (IV): "Working Backward"
+
+While historical volatility measures actual past price fluctuations, **Implied Volatility (IV)** is forward-looking.
+
+### How Implied Volatility is Derived
+Instead of plugging an estimated volatility into the Black-Scholes formula to calculate price:
+
+$$
+\text{Model Inputs } (S, K, T, r, \mathbf{\sigma}) \implies \text{Option Price } (C)
+$$
+
+Traders take the **observed market price** ($C_{\text{market}}$) from the exchange and solve backward for the unknown volatility parameter ($\sigma_{\text{implied}}$):
+
+$$
+\text{Market Price } (C_{\text{market}}) + (S, K, T, r) \implies \text{Implied Volatility } (\sigma_{\text{implied}})
+$$
+
+### Significance of Implied Volatility
+Implied volatility reflects the market's collective consensus expectation of future asset price uncertainty over the contract's lifetime. High IV indicates high expected price swings (demanding higher option premiums), while low IV indicates expected price stability.
+
+## 6. Conceptual Exploration
+
+Understanding Black-Scholes mathematics, the five Greeks, and implied volatility solvers forms the quantitative bedrock of modern derivatives trading, risk management, and quantitative finance.
