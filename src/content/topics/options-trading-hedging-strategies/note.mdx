@@ -1,0 +1,127 @@
+---
+title: "Options Trading & Hedging Strategies"
+description: "An advanced guide to multi-leg options strategies including Protective Puts, Covered Calls, Bull Call Spreads, Bear Put Spreads, and Straddles."
+category: "Derivatives"
+difficulty: "advanced"
+dateAdded: "2026-09-15"
+tags: ["options", "options-strategies", "protective-put", "covered-call", "bull-call-spread", "bear-put-spread", "straddle", "derivatives"]
+---
+
+Single-leg options (long call, short call, long put, short put) provide basic building blocks for directional exposure. By combining multiple option legs—or combining options with underlying stock—traders can engineer custom risk-reward profiles that target specific market conditions, cap maximum losses, or profit from volatility.
+
+## 1. Multi-Leg Strategy Overview
+
+Options strategies generally fall into three functional categories:
+1. **Hedging & Income Strategies**: Combine an underlying stock position with options to protect capital or generate yield (Protective Put, Covered Call).
+2. **Vertical Spreads**: Combine buying and selling options of the same type at different strike prices to reduce upfront premium costs (Bull Call Spread, Bear Put Spread).
+3. **Volatility Strategies**: Combine calls and puts to profit from large price swings regardless of direction (Long Straddle).
+
+---
+
+## 2. Protective Put (Portfolio Insurance)
+
+A **Protective Put** combines a long stock position with a long put option at strike $K$. It acts as an insurance policy, capping downside losses while keeping upside potential open.
+
+### Strategy Structure
+- **Leg 1**: Long 100 Shares of Underlying Stock (Purchased at $S_0$).
+- **Leg 2**: Long 1 Put Option (Strike $K$, Premium $P$).
+
+### Payoff Characteristics & Worked Example
+Suppose an investor owns 100 shares of Stock A at $S_0 = 100$ and buys a \$100 Put Option for a **\$5 premium** ($P = 5$):
+
+- **Downside Protection**: If the stock collapses to \$60, the put allows selling at \$100.
+  - Net P&L = ($100 - 100) - 5 = **-$5 (Max Loss)**
+- **Upside Retention**: If the stock jumps to \$140, the put expires unused.
+  - Net P&L = ($140 - 100) - 5 = **+$35**
+- **Break-Even Price**: $S_0 + P = 100 + 5 = \mathbf{105}$
+
+---
+
+## 3. Covered Call (Income & Mild Downside Buffer)
+
+A **Covered Call** combines a long stock position with a short call option. Investors execute covered calls to generate income from stock portfolios during neutral to mildly bullish markets.
+
+### Strategy Structure
+- **Leg 1**: Long 100 Shares of Underlying Stock (Purchased at $S_0$).
+- **Leg 2**: Short 1 Call Option (Strike $K$, Premium $P$), where $K \ge S_0$.
+
+### Payoff Characteristics & Worked Example
+Suppose an investor owns 100 shares at $S_0 = 100$ and sells a \$105 Call Option for a **\$4 premium** ($P = 4$):
+
+- **Income Generation**: The \$4 premium provides an immediate cash inflow, lowering the net cost basis of the stock to \$96.
+- **Capped Upside**: If the stock rallies to \$130, the investor is obligated to sell at \$105.
+  - Max Profit = ($K - S_0) + P = (105 - 100) + 4 = \mathbf{+\$9}$
+- **Break-Even Price**: $S_0 - P = 100 - 4 = \mathbf{\$96}$
+
+---
+
+## 4. Bull Call Spread (Vertical Bullish Spread)
+
+A **Bull Call Spread** is constructed by buying a call option at a lower strike price ($K_1$) and selling a call option at a higher strike price ($K_2$) with the same expiration date.
+
+### Strategy Structure
+- **Leg 1**: Long Call (Strike $K_1$, Premium $P_1$).
+- **Leg 2**: Short Call (Strike $K_2$, Premium $P_2$), where $K_1 < K_2$ and $P_1 > P_2$.
+
+### Payoff Formulas & Worked Example
+Suppose a trader executes a Bull Call Spread:
+- **Buy \$100 Call** for $P_1 = 8$
+- **Sell \$110 Call** for $P_2 = 3$
+
+1. **Net Premium Paid**: $P_1 - P_2 = 8 - 3 = \mathbf{\$5}$
+2. **Maximum Loss**: Limited to Net Premium Paid = $\mathbf{\$5}$ (occurs if $S_T \le 100$)
+3. **Maximum Profit**: $(K_2 - K_1) - (P_1 - P_2) = (110 - 100) - 5 = \mathbf{+\$5}$ (occurs if $S_T \ge 110$)
+4. **Break-Even Price**: $K_1 + (P_1 - P_2) = 100 + 5 = \mathbf{\$105}$
+
+---
+
+## 5. Bear Put Spread (Vertical Bearish Spread)
+
+A **Bear Put Spread** is constructed by buying a put option at a higher strike price ($K_2$) and selling a put option at a lower strike price ($K_1$).
+
+### Strategy Structure
+- **Leg 1**: Long Put (Strike $K_2$, Premium $P_2$).
+- **Leg 2**: Short Put (Strike $K_1$, Premium $P_1$), where $K_1 < K_2$ and $P_2 > P_1$.
+
+### Payoff Formulas & Worked Example
+Suppose a trader executes a Bear Put Spread:
+- **Buy \$100 Put** for $P_2 = 8$
+- **Sell \$90 Put** for $P_1 = 3$
+
+1. **Net Premium Paid**: $P_2 - P_1 = 8 - 3 = \mathbf{\$5}$
+2. **Maximum Loss**: Limited to Net Premium Paid = $\mathbf{\$5}$ (occurs if $S_T \ge 100$)
+3. **Maximum Profit**: $(K_2 - K_1) - (P_2 - P_1) = (100 - 90) - 5 = \mathbf{+\$5}$ (occurs if $S_T \le 90$)
+4. **Break-Even Price**: $K_2 - (P_2 - P_1) = 100 - 5 = \mathbf{\$95}$
+
+
+---
+
+## 6. Long Straddle (Pure Volatility Strategy)
+
+A **Long Straddle** is constructed by buying both a Call option and a Put option at the exact same strike price ($K$) and expiration date. It expresses a neutral-directional, high-volatility market view.
+
+### Strategy Structure
+- **Leg 1**: Long Call (Strike $K$, Premium $P_C$).
+- **Leg 2**: Long Put (Strike $K$, Premium $P_P$).
+
+### Payoff Profile & Worked Example
+Suppose a trader buys a \$100 Call for $P_C = 5$ and a \$100 Put for $P_P = 5$:
+
+- **Total Premium Paid**: $P_C + P_P = 5 + 5 = \mathbf{\$10}$
+- **V-Shaped Payoff Curve**: The trader profits if the stock moves dramatically in **either direction**.
+- **Maximum Loss**: Total Premium Paid = **\$10** (occurs if stock finishes exactly at $S_T = 100$)
+- **Upper Break-Even**: $K + (P_C + P_P) = 100 + 10 = \mathbf{\$110}$
+- **Lower Break-Even**: $K - (P_C + P_P) = 100 - 10 = \mathbf{\$90}$
+
+---
+
+## 7. Summary Matrix: Strategy Comparison
+
+| Strategy Name | Component Legs | Market View Needed | Maximum Profit | Maximum Loss | Break-Even Price(s) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Protective Put** | Long Stock + Long Put ($K$) | Bullish with downside insurance | Unlimited | ($S_0 - K$) + $P$ | $S_0 + P$ |
+| **Covered Call** | Long Stock + Short Call ($K$) | Neutral to mildly bullish | ($K - S_0$) + $P$ | $S_0 - P$ (Stock drops to 0) | $S_0 - P$ |
+| **Bull Call Spread** | Long Call ($K_1$) + Short Call ($K_2$) | Moderately bullish | ($K_2 - K_1$) - Net Prem | Net Premium Paid | $K_1$ + Net Prem |
+| **Bear Put Spread** | Long Put ($K_2$) + Short Put ($K_1$) | Moderately bearish | ($K_2 - K_1$) - Net Prem | Net Premium Paid | $K_2$ - Net Prem |
+| **Long Straddle** | Long Call ($K$) + Long Put ($K$) | High volatility (Any direction) | Unlimited (Upside) / $K$ - Prem | Total Premium Paid | $K \pm \text{Total Prem}$ |
+

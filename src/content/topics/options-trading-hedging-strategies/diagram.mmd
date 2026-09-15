@@ -1,0 +1,21 @@
+graph TD
+    subgraph OptionsTaxonomy["Options Strategies Taxonomy"]
+        direction TB
+        OptStrat["Options Trading & Hedging Strategies"] --> Hedging["1. Hedging & Income Strategies"]
+        OptStrat --> Spreads["2. Directional Vertical Spreads"]
+        OptStrat --> Volatility["3. Volatility Strategies"]
+
+        subgraph HedgingGroup["Hedging & Income"]
+            Hedging --> ProtPut["Protective Put<br/>• Long Stock + Long Put<br/>• Downside Capped, Upside Open"]
+            Hedging --> CovCall["Covered Call<br/>• Long Stock + Short Call<br/>• Income Yield, Upside Capped"]
+        end
+
+        subgraph SpreadsGroup["Vertical Spreads"]
+            Spreads --> BullCall["Bull Call Spread<br/>• Long Call (K1) + Short Call (K2)<br/>• Moderately Bullish, Capped Risk"]
+            Spreads --> BearPut["Bear Put Spread<br/>• Long Put (K2) + Short Put (K1)<br/>• Moderately Bearish, Capped Risk"]
+        end
+
+        subgraph VolatilityGroup["Volatility Focus"]
+            Volatility --> Straddle["Long Straddle<br/>• Long Call (K) + Long Put (K)<br/>• Profits from High Volatility (V-Shape)"]
+        end
+    end

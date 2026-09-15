@@ -1,0 +1,21 @@
+{
+  "title": "Multi-Leg Options Strategy Payoff: Bull Call Spread Example",
+  "description": "Visualizing Long Call ($100 Strike) + Short Call ($110 Strike) net payoff profile, capping both max loss ($5) and max profit ($5).",
+  "priceRange": [70, 140],
+  "positions": [
+    {
+      "type": "long-call",
+      "strike": 100,
+      "premium": 8,
+      "lotSize": 1,
+      "label": "Long Call ($100 Strike, $8 Prem)"
+    },
+    {
+      "type": "short-call",
+      "strike": 110,
+      "premium": 3,
+      "lotSize": 1,
+      "label": "Short Call ($110 Strike, $3 Prem)"
+    }
+  ]
+}

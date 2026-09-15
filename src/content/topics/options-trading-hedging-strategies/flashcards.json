@@ -1,0 +1,26 @@
+[
+  {
+    "front": "What is a Protective Put strategy?",
+    "back": "Combining Long Stock with a Long Put option to establish a downside price floor, protecting capital while keeping upside potential open."
+  },
+  {
+    "front": "What is a Covered Call strategy?",
+    "back": "Combining Long Stock with a Short Call option to generate income from premium in neutral to mildly bullish markets, in exchange for capping upside profit."
+  },
+  {
+    "front": "What is the structure of a Bull Call Spread?",
+    "back": "Buying a lower-strike Call (K1) and selling a higher-strike Call (K2) at the same expiry to reduce net premium cost for a moderately bullish view."
+  },
+  {
+    "front": "What is the structure of a Bear Put Spread?",
+    "back": "Buying a higher-strike Put (K2) and selling a lower-strike Put (K1) at the same expiry to reduce net put cost for a moderately bearish view."
+  },
+  {
+    "front": "What market view is expressed by a Long Straddle?",
+    "back": "High market volatility. Buying both a Call and Put at the same strike and expiry profits from a significant price move in EITHER direction."
+  },
+  {
+    "front": "How do you calculate the Break-Even points for a Long Straddle?",
+    "back": "Upper Break-Even = Strike + Total Premium Paid (PC + PP); Lower Break-Even = Strike - Total Premium Paid (PC + PP)."
+  }
+]

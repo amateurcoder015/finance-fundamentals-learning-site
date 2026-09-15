@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the primary risk management objective of executing a Protective Put strategy (Long Stock + Long Put)?",
+    "options": [
+      "To cap maximum downside loss on an existing stock position while leaving upside profit potential open.",
+      "To generate guaranteed cash dividend income every month.",
+      "To eliminate all margin requirements for stock purchases.",
+      "To guarantee a risk-free arbitrage profit regardless of market conditions."
+    ],
+    "correctIndex": 0,
+    "explanation": "A Protective Put acts as an insurance policy. The long put establishes a price floor below the strike price, capping loss while retaining upside stock gains."
+  },
+  {
+    "question": "Why does a Covered Call strategy (Long Stock + Short Call) cap the investor's maximum upside profit?",
+    "options": [
+      "The short call obligates the investor to sell their stock at the strike price if the stock price rallies above it.",
+      "The clearinghouse automatically liquidates the stock position whenever prices rise.",
+      "The premium collected from the short call must be returned if the stock price rises.",
+      "The put option component forces the investor to buy more stock."
+    ],
+    "correctIndex": 0,
+    "explanation": "In a Covered Call, selling the call option obligates the holder to deliver stock at strike K if exercised, capping upside profit at (K - S0) + Premium."
+  },
+  {
+    "question": "How does a Bull Call Spread (Long Call at K1 + Short Call at K2) reduce net upfront cost compared to buying a standalone Long Call?",
+    "options": [
+      "The premium collected from selling the higher-strike call offsets part of the premium paid for the lower-strike call.",
+      "The exchange waives all clearing fees for multi-leg orders.",
+      "The lower-strike call is provided free of charge by market makers.",
+      "The short call guarantees a continuous risk-free interest refund."
+    ],
+    "correctIndex": 0,
+    "explanation": "By selling a higher-strike call (K2), the trader collects premium P2 which reduces the net cash outlay to P1 - P2, in exchange for capping maximum upside at K2."
+  },
+  {
+    "question": "If a trader buys a $100 Call for $8 and sells a $110 Call for $3 (Bull Call Spread), what is the maximum profit potential at expiration?",
+    "options": [
+      "$5.00",
+      "$10.00",
+      "$8.00",
+      "Unlimited"
+    ],
+    "correctIndex": 0,
+    "explanation": "Net Premium Paid = $8 - $3 = $5. Max Profit = (K2 - K1) - Net Premium = ($110 - $100) - $5 = $5.00 (achieved if ST ≥ $110)."
+  },
+  {
+    "question": "What market expectation is expressed when a trader buys a Long Straddle (Long Call + Long Put at the same strike and expiry)?",
+    "options": [
+      "An expectation of high price volatility in either direction.",
+      "An expectation that the stock price will remain perfectly stationary at the strike.",
+      "An expectation of rising interest rates only.",
+      "An expectation that dividend yields will drop to zero."
+    ],
+    "correctIndex": 0,
+    "explanation": "A Long Straddle is a pure volatility strategy. The trader profits if the stock makes a significant price move in either direction beyond the upper or lower break-even points."
+  },
+  {
+    "question": "What is the maximum loss for a Long Straddle with a $100 strike where the Call premium is $5 and the Put premium is $5?",
+    "options": [
+      "$10.00",
+      "$5.00",
+      "$100.00",
+      "Unlimited"
+    ],
+    "correctIndex": 0,
+    "explanation": "The maximum loss for a Long Straddle is limited to the total upfront premium paid (PC + PP = $5 + $5 = $10.00), which occurs if the stock finishes exactly at $100 at expiry."
+  }
+]
