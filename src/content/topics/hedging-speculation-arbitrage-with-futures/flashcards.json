@@ -1,0 +1,26 @@
+[
+  {
+    "front": "What is a Short Hedge in futures markets?",
+    "back": "Selling futures contracts to lock in a sale price and protect an existing underlying asset portfolio against price declines."
+  },
+  {
+    "front": "What is a Long Hedge in futures markets?",
+    "back": "Buying futures contracts to lock in a purchase price and protect against price increases on anticipated future purchases."
+  },
+  {
+    "front": "How does margin leverage impact speculative returns in futures trading?",
+    "back": "Because margin is only a fraction of notional value (e.g. 10%), small percentage spot price moves yield magnified percentage gains or losses on invested capital."
+  },
+  {
+    "front": "What is Cash-and-Carry Arbitrage?",
+    "back": "A strategy executed when futures are overpriced relative to cost-of-carry: borrow cash, buy the spot asset, and sell futures contracts to capture a risk-free spread."
+  },
+  {
+    "front": "What are the primary motivations of Hedgers, Speculators, and Arbitrageurs?",
+    "back": "Hedgers seek risk reduction; Speculators seek high leveraged returns by accepting risk; Arbitrageurs seek risk-free profits by eliminating mispricings."
+  },
+  {
+    "front": "Why does hedging eliminate potential upside gains alongside downside losses?",
+    "back": "A futures hedge creates a 1:1 opposite P&L offset. When the spot asset rises, the short futures position loses an identical amount, resulting in a flat net P&L."
+  }
+]

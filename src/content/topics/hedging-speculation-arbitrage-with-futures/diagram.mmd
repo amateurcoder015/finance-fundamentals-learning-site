@@ -1,0 +1,25 @@
+graph TD
+    subgraph MarketParticipants["Futures Market Participants Taxonomy"]
+        direction TB
+        Futures["Futures Market Applications"] --> Hedger["1. Hedger"]
+        Futures --> Speculator["2. Speculator"]
+        Futures --> Arbitrageur["3. Arbitrageur"]
+
+        subgraph HedgerBranch["Hedging Mechanics"]
+            Hedger --> H_Goal["Motivation: Reduce / Eliminate Existing Risk"]
+            H_Goal --> H_Action["Typical Actions:<br/>• Short Hedge (Protect Asset Value)<br/>• Long Hedge (Lock Purchase Cost)"]
+            H_Action --> H_Risk["Risk Profile: Capped Downside,<br/>Surrendered Upside (Flat Net P&L)"]
+        end
+
+        subgraph SpeculatorBranch["Speculation Mechanics"]
+            Speculator --> S_Goal["Motivation: Profit from Directional Views"]
+            S_Goal --> S_Action["Typical Actions:<br/>• Long Futures (Bullish Bet)<br/>• Short Futures (Bearish Bet)"]
+            S_Action --> S_Risk["Risk Profile: High Risk & Leverage<br/>(Amplified Margin Returns)"]
+        end
+
+        subgraph ArbitrageurBranch["Arbitrage Mechanics"]
+            Arbitrageur --> A_Goal["Motivation: Capture Risk-Free Mispricings"]
+            A_Goal --> A_Action["Typical Actions:<br/>• Cash & Carry (F > Cost-of-Carry)<br/>• Reverse Cash & Carry (F < Cost-of-Carry)"]
+            A_Action --> A_Risk["Risk Profile: Zero Market Risk,<br/>Small & Short-Lived Spreads"]
+        end
+    end

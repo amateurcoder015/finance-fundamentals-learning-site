@@ -1,0 +1,19 @@
+{
+  "title": "Short Hedge Payoff: Offsetting Exposure & Net Zero Risk",
+  "description": "Visualizing how a Long Asset position combined with a Short Futures contract creates a flat, risk-free net P&L profile.",
+  "priceRange": [350, 650],
+  "positions": [
+    {
+      "type": "long-futures",
+      "contractPrice": 500,
+      "lotSize": 100,
+      "label": "Underlying Asset (Long @ $500)"
+    },
+    {
+      "type": "short-futures",
+      "contractPrice": 500,
+      "lotSize": 100,
+      "label": "Short Futures (Sell @ $500)"
+    }
+  ]
+}

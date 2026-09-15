@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What type of hedge should an asset owner execute to protect the value of their physical portfolio against a potential market decline?",
+    "options": [
+      "A Short Hedge (selling futures contracts).",
+      "A Long Hedge (buying futures contracts).",
+      "A Cash-and-Carry Arbitrage.",
+      "A Reverse Cash-and-Carry Arbitrage."
+    ],
+    "correctIndex": 0,
+    "explanation": "A Short Hedge involves selling futures contracts to lock in a sale price, offsetting physical asset losses with futures short gains if prices decline."
+  },
+  {
+    "question": "What is the primary financial trade-off when hedging an underlying asset with futures contracts?",
+    "options": [
+      "Hedging caps potential upside gains while eliminating downside losses.",
+      "Hedging doubles the potential downside loss if prices fall.",
+      "Hedging eliminates margin requirements for all exchange members.",
+      "Hedging guarantees a fixed cash dividend payment from the exchange."
+    ],
+    "correctIndex": 0,
+    "explanation": "Hedging creates a symmetric offset; locking in a fixed price protects against price drops but also surrenders potential gains if prices rise."
+  },
+  {
+    "question": "If a speculator puts up $5,000 in initial margin for a $50,000 notional futures contract (10x leverage), how does a 5% increase in the contract's price impact their margin investment?",
+    "options": [
+      "+50% return on invested margin",
+      "+5% return on invested margin",
+      "+100% return on invested margin",
+      "0% return on invested margin"
+    ],
+    "correctIndex": 0,
+    "explanation": "A 5% move on $50,000 equals a $2,500 profit. Relative to the $5,000 initial margin, the return is $2,500 / $5,000 = +50%."
+  },
+  {
+    "question": "What set of simultaneous transactions constitutes a Cash-and-Carry Arbitrage when the futures contract is overpriced relative to cost-of-carry (F > S × e^rT)?",
+    "options": [
+      "Borrow cash at risk-free rate, buy the spot asset, and sell futures contracts.",
+      "Sell short the spot asset, invest cash at risk-free rate, and buy futures contracts.",
+      "Buy futures contracts and buy call options simultaneously.",
+      "Sell futures contracts and deposit margin at the clearinghouse."
+    ],
+    "correctIndex": 0,
+    "explanation": "Cash-and-Carry involves borrowing money at rate r, buying the physical spot asset at S, and shorting the overpriced futures contract at F to lock in a risk-free spread."
+  },
+  {
+    "question": "Why are arbitrage opportunities in liquid derivatives markets typically small and short-lived?",
+    "options": [
+      "Simultaneous buy and sell orders from arbitrageurs rapidly force spot and futures prices back into theoretical equilibrium.",
+      "Exchanges prohibit traders from placing more than one trade per day.",
+      "Clearinghouses automatically freeze funds whenever prices diverge.",
+      "Interest rates change constantly every second to prevent arbitrage."
+    ],
+    "correctIndex": 0,
+    "explanation": "Arbitrageurs act swiftly; buying spot and selling futures creates price pressure that instantly eliminates mispricings and restores market efficiency."
+  },
+  {
+    "question": "Which market participant type actively accepts price risk from hedgers in pursuit of leveraged speculative profits?",
+    "options": [
+      "Speculators",
+      "Arbitrageurs",
+      "Clearinghouse Custodians",
+      "Regulatory Officers"
+    ],
+    "correctIndex": 0,
+    "explanation": "Speculators willingly assume price risk transferred by hedgers, providing liquidity and price discovery to the derivatives market."
+  }
+]
