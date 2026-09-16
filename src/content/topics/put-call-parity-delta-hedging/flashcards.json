@@ -1,0 +1,26 @@
+[
+  {
+    "front": "What is the Put-Call Parity formula for European options (no dividends)?",
+    "back": "C + K × e^(-rT) = P + S, where C is Call premium, P is Put premium, S is spot price, and K × e^(-rT) is present value of strike."
+  },
+  {
+    "front": "Why must Put-Call Parity hold in efficient markets?",
+    "back": "A Fiduciary Call (C + PV(K)) and a Protective Put (P + S) generate identical payoffs under all future outcomes. If their costs differed, risk-free arbitrage would occur."
+  },
+  {
+    "front": "What does Delta-Neutral mean?",
+    "back": "A portfolio condition where the net sum of all Deltas equals zero (∑Δ = 0), insulating portfolio value from small spot price fluctuations."
+  },
+  {
+    "front": "How do you calculate stock shares needed to Delta-hedge a short option position?",
+    "back": "Required Shares = Total Option Contracts × Lot Size × Option Delta."
+  },
+  {
+    "front": "Why do Delta hedges require dynamic rebalancing over time?",
+    "back": "Because Gamma causes Delta to change whenever spot prices move. Traders must continuously buy or sell stock to maintain net zero Delta."
+  },
+  {
+    "front": "What happens if Put-Call Parity is violated in the market?",
+    "back": "A risk-free arbitrage opportunity is created. Arbitrageurs buy the cheaper portfolio and sell the expensive portfolio until parity is restored."
+  }
+]

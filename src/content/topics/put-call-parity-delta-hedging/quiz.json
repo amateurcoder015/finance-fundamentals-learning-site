@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What does the European Put-Call Parity formula state for options on an asset paying zero dividends?",
+    "options": [
+      "C + K × e^(-rT) = P + S",
+      "C - P = S + K × e^(-rT)",
+      "C × P = S × K × e^(-rT)",
+      "C + S = P + K × (1 + r)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Put-Call Parity states that Call + Present Value of Strike = Put + Spot (C + K × e^(-rT) = P + S)."
+  },
+  {
+    "question": "According to Put-Call Parity, if a European Call premium C = $8.00, spot price S = $100, strike K = $100, and PV(K) = $95.12, what is the theoretical fair value of the European Put (P)?",
+    "options": [
+      "$3.12",
+      "$4.88",
+      "$8.00",
+      "$13.12"
+    ],
+    "correctIndex": 0,
+    "explanation": "P = C + PV(K) - S = $8.00 + $95.12 - $100 = $3.12."
+  },
+  {
+    "question": "Why does a pricing dislocation where C + PV(K) ≠ P + S create an instantaneous risk-free arbitrage opportunity?",
+    "options": [
+      "Because both portfolios produce identical payoffs under all future market outcomes, allowing a trader to buy the cheap side and sell the expensive side for guaranteed profit.",
+      "Because exchanges automatically refund losses whenever parity fails.",
+      "Because central banks step in to fix options prices at expiration.",
+      "Because delta hedging guarantees zero transaction costs."
+    ],
+    "correctIndex": 0,
+    "explanation": "A Fiduciary Call and Protective Put yield identical payoffs at expiration. If their costs differ today, buying the undervalued portfolio and shorting the overvalued one locks in risk-free arbitrage."
+  },
+  {
+    "question": "What is the defining technical feature of a Delta-Neutral portfolio?",
+    "options": [
+      "The sum of all position Deltas equals zero (∑Δ = 0), neutralizing small directional price risk.",
+      "The portfolio holds zero cash reserves.",
+      "The portfolio consists entirely of risk-free government bonds.",
+      "All option contracts held in the portfolio are At-the-Money."
+    ],
+    "correctIndex": 0,
+    "explanation": "A Delta-neutral portfolio balances positive and negative option and stock Deltas to zero, insulating portfolio value from small spot price moves."
+  },
+  {
+    "question": "A market maker sells 5 Call option contracts (each covering 100 shares) with a Delta of +0.60. How many shares of underlying stock must the market maker buy to establish a Delta-neutral hedge?",
+    "options": [
+      "300 shares",
+      "500 shares",
+      "600 shares",
+      "100 shares"
+    ],
+    "correctIndex": 0,
+    "explanation": "Total Option Delta = -5 contracts × 100 shares × (+0.60) = -300 Δ. To offset to zero, the market maker must buy 300 shares (+300 Δ)."
+  },
+  {
+    "question": "Why does a Delta-neutral hedge require continuous periodic rebalancing (dynamic hedging) over time?",
+    "options": [
+      "Because Delta changes as spot prices move (measured by Gamma), breaking initial Delta-neutrality.",
+      "Because stock exchanges cancel option contracts every week.",
+      "Because risk-free interest rates drop to zero every afternoon.",
+      "Because initial margin requirements double every day."
+    ],
+    "correctIndex": 0,
+    "explanation": "Gamma measures how fast Delta changes per $1 spot move. As stock prices fluctuate, Delta shifts, forcing traders to buy or sell stock to maintain net zero Delta."
+  }
+]

@@ -1,0 +1,138 @@
+---
+title: "Put-Call Parity & Delta Hedging"
+description: "An advanced guide to the mathematical relationship of put-call parity, no-arbitrage enforcement, and dynamic delta-neutral hedging."
+category: "Derivatives"
+difficulty: "advanced"
+dateAdded: "2026-09-16"
+tags: ["options", "put-call-parity", "delta-hedging", "delta-neutral", "arbitrage", "greeks", "derivatives"]
+---
+
+Options pricing is not arbitrary. Two foundational principles govern modern options market making and pricing integrity: **Put-Call Parity** (which maintains static price equilibrium across options and spot markets) and **Delta Hedging** (which enables market makers to manage directional risk dynamically).
+
+## 1. The Put-Call Parity Principle
+
+**Put-Call Parity** defines a mandatory mathematical relationship linking European Call prices, European Put prices, the spot price of the underlying asset, and the present value of the strike price.
+
+### The Put-Call Parity Formula
+
+For European options with the same strike price ($K$) and expiration date ($T$):
+
+$$
+C + K \cdot e^{-rT} = P + S
+$$
+
+*Or in discrete compounding format:*
+
+$$
+C + \frac{K}{(1+r)^T} = P + S
+$$
+
+*Where:*
+- $C$ = European Call Option Premium
+- $P$ = European Put Option Premium
+- $S$ = Current Spot Price of Underlying Asset
+- $K$ = Strike Price (Exercise Price)
+- $r$ = Annualized Risk-Free Interest Rate
+- $T$ = Time to Expiration (in years)
+- $K \cdot e^{-rT}$ = Present Value of Strike Price ($PV(K)$)
+
+*(Note: This basic formula assumes zero cash dividends paid during the contract period).*
+
+---
+
+## 2. Conceptual Intuition: Portfolio Equivalence
+
+To understand why Put-Call Parity must hold, consider two separate investment portfolios created today:
+
+1. **Portfolio 1 (Fiduciary Call)**:
+   - Long 1 European Call Option (Strike $K$)
+   - Long 1 Zero-Coupon Risk-Free Bond with face value $K$ maturing at expiry ($PV = K \cdot e^{-rT}$)
+2. **Portfolio 2 (Protective Put)**:
+   - Long 1 European Put Option (Strike $K$)
+   - Long 1 Share of Underlying Stock (Current Spot $S$)
+
+### Payoff Verification at Expiration ($T$)
+
+| Expiration Outcome | Portfolio 1 Payoff (Call + Bond) | Portfolio 2 Payoff (Put + Stock) |
+| :--- | :--- | :--- |
+| **Stock Rises ($S_T > K$)** | Call pays $(S_T - K)$ + Bond pays $K$ = **$S_T$** | Put pays $\$0$ + Stock is worth $S_T$ = **$S_T$** |
+| **Stock Falls ($S_T \le K$)** | Call pays $\$0$ + Bond pays $K$ = **$K$** | Put pays $(K - S_T)$ + Stock is worth $S_T$ = **$K$** |
+
+### The No-Arbitrage Conclusion
+Because Portfolio 1 and Portfolio 2 generate **identical economic payoffs under every possible market outcome**, they **must cost the exact same amount to construct today**. If their costs differed, an immediate risk-free arbitrage opportunity would exist.
+
+---
+
+## 3. No-Arbitrage Enforcement & Worked Example
+
+If market prices dislocate such that $C + K \cdot e^{-rT} \neq P + S$, arbitrageurs execute simultaneous trades (buying the cheaper portfolio and selling the overpriced portfolio) until supply-demand pressure restores exact parity.
+
+### Worked Numerical Example
+Suppose an asset has the following parameters:
+- **Current Spot Price ($S$)**: \$100
+- **Strike Price ($K$)**: \$100
+- **Risk-Free Rate ($r$)**: $5\%$ ($0.05$)
+- **Time to Expiry ($T$)**: $1.0$ year ($e^{-0.05} \approx 0.9512$)
+- **European Call Premium ($C$)**: \$8.00
+
+#### Step 1: Calculate Present Value of Strike Price
+$$
+PV(K) = \$100 \times e^{-0.05} = \$100 \times 0.9512 = \$95.12
+$$
+
+#### Step 2: Solve for Theoretical Put Price ($P$)
+Using Put-Call Parity ($C + PV(K) = P + S$):
+
+$$
+\$8.00 + \$95.12 = P + \$100
+$$
+
+$$
+\$103.12 = P + \$100 \implies P = \$103.12 - \$100 = \mathbf{\$3.12}
+$$
+
+The theoretical fair value of the Put option is **\$3.12**.
+
+---
+
+## 4. Delta Hedging & Delta-Neutrality
+
+While Put-Call Parity ensures static market pricing alignment, **Delta Hedging** allows option sellers and market makers to manage ongoing directional price risk.
+
+### What is Delta-Neutrality?
+Recall that **Delta ($\Delta$)** measures an option's price change for a \$1 move in the spot price. 
+
+A **Delta-Neutral Position** is a combined portfolio of options and underlying assets structured so that the net sum of all Deltas equals **zero** ($\sum \Delta = 0$). Small fluctuations in the underlying stock price produce zero net change in portfolio value.
+
+### Worked Sizing Example: Hedging Short Calls
+A market maker sells (shorts) **10 Call Option contracts** ($L = 100$ shares per contract, total 1,000 option shares). The call option currently has a **Delta of $+0.60$**.
+
+#### Step 1: Calculate Short Option Delta
+$$
+\text{Short Option Delta} = -10 \text{ contracts} \times 100 \text{ shares} \times (+0.60) = \mathbf{-600 \Delta}
+$$
+
+#### Step 2: Determine Offsetting Stock Position
+To offset $-600 \Delta$ to zero, the market maker must acquire positive Delta by buying underlying stock (each share has a Delta of $+1.0$):
+
+$$
+\text{Required Shares} = \frac{+600 \Delta}{+1.0} = \mathbf{600 \text{ shares}}
+$$
+
+By purchasing **600 shares of underlying stock**, the market maker achieves a net Delta of zero ($-600 + 600 = 0$).
+
+---
+
+## 5. Dynamic Hedging & The Role of Gamma
+
+Delta hedging is not a static "one-and-done" transaction. A Delta hedge is only effective for small, immediate spot price movements because **Delta changes continuously**.
+
+### The Role of Gamma ($\Gamma$)
+Recall that **Gamma** measures the rate of change of Delta per \$1 move in spot price ($\Gamma = \frac{\partial \Delta}{\partial S}$).
+
+- If the stock price rises, the call option's Delta increases from $+0.60$ to $+0.65$. The short option position becomes $-650 \Delta$.
+- To maintain Delta-neutrality, the market maker must buy **50 additional shares** of stock.
+- If the stock price falls, the call option's Delta decreases to $+0.55$. The short option position becomes $-550 \Delta$, requiring the market maker to sell **50 shares**.
+
+### Dynamic Rebalancing
+This process of continuously adjusting the underlying stock position as spot prices move is called **Dynamic Delta Hedging**. It is how institutional options desks manage multi-million dollar derivatives portfolios while remaining insulated from directional market swings.

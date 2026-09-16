@@ -1,0 +1,28 @@
+graph TD
+    subgraph ParityEquivalence["Put-Call Parity Equivalence (C + PV(K) = P + S)"]
+        direction TB
+        Fiduciary["Portfolio 1: Fiduciary Call<br/>(Long Call C + PV(K) Bond)"]
+        Protective["Portfolio 2: Protective Put<br/>(Long Put P + Spot Stock S)"]
+
+        Fiduciary --> OutcomeHigh["If S_T > K : Payoff = S_T"]
+        Protective --> OutcomeHigh
+
+        Fiduciary --> OutcomeLow["If S_T ≤ K : Payoff = K"]
+        Protective --> OutcomeLow
+
+        OutcomeHigh --> EqualPayoff["Identical Payoffs Under All Outcomes"]
+        OutcomeLow --> EqualPayoff
+        EqualPayoff --> ParityLaw["Must Cost Same Today (No-Arbitrage)"]
+    end
+
+    subgraph DeltaHedgingLoop["Dynamic Delta-Neutral Hedging Loop"]
+        direction TB
+        OptPos["Option Position Sold<br/>(e.g., Short 10 Calls @ Δ = +0.60)"] --> CalcDelta["Compute Total Position Delta<br/>(Total = -600 Δ)"]
+        CalcDelta --> HedgeSize["Size Offsetting Stock Position<br/>(Buy +600 Shares @ Δ = +1.0)"]
+        HedgeSize --> NeutralState["Net Portfolio Delta = 0 (Delta-Neutral)"]
+        
+        NeutralState --> SpotMove{"Spot Price Moves"}
+        SpotMove --> GammaEffect["Gamma Causes Delta to Shift"]
+        GammaEffect --> Rebalance["Rebalance Stock Inventory<br/>(Buy/Sell Shares)"]
+        Rebalance --> NeutralState
+    end
