@@ -1,0 +1,107 @@
+---
+title: "Open Interest & Put-Call Ratio"
+description: "A practical guide to open interest mechanics, volume vs. open interest distinctions, trend validation, and the Put-Call Ratio (PCR) sentiment indicator."
+category: "Derivatives"
+difficulty: "intermediate"
+dateAdded: "2026-09-17"
+tags: ["futures", "options", "open-interest", "volume", "put-call-ratio", "sentiment-indicator", "derivatives"]
+---
+
+In derivatives markets, price alone does not tell the full story. To evaluate the true strength of a price movement, traders analyze two critical liquidity and participation metrics: **Open Interest (OI)** and the **Put-Call Ratio (PCR)**.
+
+## 1. Recap: What is Open Interest?
+
+As introduced in our discussion of contract specifications, **Open Interest (OI)** represents the total number of outstanding, active derivative contracts (futures or options) that have been created and remain open on an exchange—meaning they have not yet been closed out by an opposing trade, settled via physical delivery, or expired.
+
+Unlike shares of stock (where the total number of outstanding shares remains fixed unless the company issues new equity), the total number of futures or options contracts is **dynamic** and expands or contracts constantly based on market participant activity.
+
+---
+
+## 2. How Open Interest Changes: Counterparty Mechanics
+
+Open interest does not automatically increase every time a trade occurs. The change in open interest depends on the specific intentions of both the buyer and the seller:
+
+| Buyer Action | Seller Action | Effect on Open Interest | Net Change |
+| :--- | :--- | :--- | :--- |
+| **Opening New Long** | **Opening New Short** | A brand new contract is created | **+1 Contract** |
+| **Opening New Long** | **Closing Existing Long** | An existing contract is transferred | **0 (Unchanged)** |
+| **Closing Existing Short**| **Opening New Short** | An existing contract is transferred | **0 (Unchanged)** |
+| **Closing Existing Short**| **Closing Existing Long** | An existing contract is liquidated | **-1 Contract** |
+
+### Conceptual Walkthrough
+Suppose an exchange opens with **0 open interest**:
+1. Trader A buys 1 contract (new long) and Trader B sells 1 contract (new short) $\implies$ **Open Interest = 1**.
+2. Trader C buys 1 contract (new long) from Trader A (closing existing long) $\implies$ **Open Interest = 1** (Ownership transferred).
+3. Trader C (closing long) sells 1 contract to Trader B (closing short) $\implies$ **Open Interest = 0** (Contract extinguished).
+
+---
+
+## 3. Open Interest vs. Trading Volume
+
+It is essential to distinguish between trading volume and open interest:
+
+- **Trading Volume**: Measures **activity and liquidity**. It represents the total number of contracts traded over a specific time period (e.g., a single trading session). Volume accumulates throughout the day and resets to zero at the start of every session.
+- **Open Interest**: Measures **capital commitment and open exposure**. It represents the number of active positions currently open in the market. Open interest carries forward from session to session until contracts expire or are closed out.
+
+```
+Volume        → Total transactions completed today (Resets daily)
+Open Interest → Total active positions remaining open (Carries forward)
+```
+
+---
+
+## 4. Using Open Interest to Validate Price Trends
+
+Analysts combine price action with open interest changes to evaluate the institutional conviction behind a market trend:
+
+| Price Trend | Open Interest Change | Market Interpretation | Trend Conviction |
+| :--- | :--- | :--- | :--- |
+| **Rising ↑** | **Rising ↑** | New capital is entering to buy contracts | **Strong Bullish Trend** |
+| **Rising ↑** | **Falling ↓** | Rally is driven by short sellers closing (short covering) | **Weakening Rally (Reversal Risk)** |
+| **Falling ↓** | **Rising ↑** | New capital is entering to sell short | **Strong Bearish Trend** |
+| **Falling ↓** | **Falling ↓** | Decline is driven by long position liquidation | **Weakening Decline (Potential Bottom)** |
+
+### Analytical Caveat
+Open interest provides valuable context regarding money flow, but it is **not a standalone predictive signal**. It should always be combined with volume analysis, chart patterns, and fundamental factors.
+
+---
+
+## 5. The Put-Call Ratio (PCR)
+
+The **Put-Call Ratio (PCR)** is a widely followed market sentiment indicator that compares the volume or open interest of put options to call options.
+
+### The PCR Formula
+
+$$
+\text{PCR} = \frac{\text{Total Put Open Interest (or Volume)}}{\text{Total Call Open Interest (or Volume)}}
+$$
+
+### Interpreting the Put-Call Ratio
+
+- **Standard Sentiment View**:
+  - **High PCR ($> 1.0$)**: Indicates that put volume/OI exceeds call volume/OI, signaling **bearish market sentiment** or heavy downside hedging by institutional investors.
+  - **Low PCR ($< 1.0$)**: Indicates that call volume/OI exceeds put volume/OI, signaling **bullish market sentiment** or speculative upside buying.
+- **Contrarian Sentiment View**:
+  - Professional traders often use PCR as a **contrarian indicator** at market extremes.
+  - An **excessively high PCR** suggests that the market has become overly bearish and fully hedged. When almost everyone has already bought puts, selling pressure dries up, frequently triggering a sharp **bullish short-squeeze reversal**.
+  - Conversely, an **excessively low PCR** signals extreme complacency and over-bullish euphoria, leaving the market vulnerable to a surprise correction.
+
+*(Note: PCR interpretation varies across individual equities, broad stock indices, and commodities. It is a sentiment gauge rather than a rigid predictive rule).*
+
+---
+
+## 6. Worked Example: Calculating PCR
+
+Suppose an analyst reviews the options open interest table for a stock market index:
+- **Total Put Open Interest**: 1,200,000 contracts
+- **Total Call Open Interest**: 800,000 contracts
+
+### Step-by-Step Calculation
+$$
+\text{PCR}_{\text{OI}} = \frac{1,200,000}{800,000} = \mathbf{1.50}
+$$
+
+### Interpretation
+The resulting PCR of **1.50** indicates that for every 1.0 open call contract, there are 1.5 open put contracts in the market. 
+- *Standard View*: Reflects cautious or bearish institutional positioning with heavy protective put hedging.
+- *Contrarian View*: Analysts monitor if 1.50 represents an extreme high reading relative to historical baseline averages, looking for potential bullish reversal setups.

@@ -1,0 +1,31 @@
+graph TD
+    subgraph OIDynamics["Open Interest (OI) Counterparty Dynamics"]
+        direction TB
+        Trade["Derivative Trade Executed"] --> Combination{"Buyer & Seller Profile"}
+        
+        Combination -->|"Buyer: New / Seller: New"| NewNew["New Buyer + New Seller"]
+        Combination -->|"Buyer: New / Seller: Existing"| NewExist1["New Buyer + Existing Seller"]
+        Combination -->|"Buyer: Existing / Seller: New"| NewExist2["Existing Buyer + New Seller"]
+        Combination -->|"Buyer: Existing / Seller: Existing"| ExistExist["Existing Buyer + Existing Seller"]
+        
+        NewNew --> OIUp["Open Interest Increases (+1 Contract)"]
+        NewExist1 --> OISame["Open Interest Unchanged (0 Net Change)"]
+        NewExist2 --> OISame
+        ExistExist --> OIDown["Open Interest Decreases (-1 Contract)"]
+    end
+
+    subgraph PCRSentiment["Put-Call Ratio (PCR) & Sentiment Analysis"]
+        direction TB
+        Data["Put OI / Call OI Data"] --> CalcPCR["Calculate PCR = Put OI / Call OI"]
+        
+        CalcPCR --> Interpretation{"Sentiment & Market Interpretation"}
+        
+        Interpretation -->|"High PCR (> 1.0)"| HighPCR["Predominantly Puts Traded / Held"]
+        Interpretation -->|"Low PCR (< 1.0)"| LowPCR["Predominantly Calls Traded / Held"]
+        
+        HighPCR --> StandardBearish["Standard View: Bearish / Heavy Hedging"]
+        HighPCR --> ContrarianBullish["Contrarian View: Over-Pessimistic (Bullish Reversal Potential)"]
+        
+        LowPCR --> StandardBullish["Standard View: Bullish / Strong Buying"]
+        LowPCR --> ContrarianBearish["Contrarian View: Over-Optimistic (Bearish Reversal Potential)"]
+    end

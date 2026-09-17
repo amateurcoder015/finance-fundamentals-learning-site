@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What happens to Open Interest when a NEW buyer trades with a NEW seller?",
+    "back": "Open Interest INCREASES by +1 contract, because a brand-new derivative contract is created."
+  },
+  {
+    "front": "What happens to Open Interest when an EXISTING long closes their position with an EXISTING short who is also closing?",
+    "back": "Open Interest DECREASES by -1 contract, as the contract is settled/removed from the market."
+  },
+  {
+    "front": "What happens to Open Interest when a NEW buyer trades with an EXISTING holder closing their position?",
+    "back": "Open Interest remains UNCHANGED (0 net change), as ownership of the existing contract is simply transferred."
+  },
+  {
+    "front": "What is the key difference between Volume and Open Interest?",
+    "back": "Volume measures total contracts traded over a specific period (resets daily). Open Interest measures total active contracts currently outstanding (does not reset daily)."
+  },
+  {
+    "front": "What is the formula for the Put-Call Ratio (PCR)?",
+    "back": "PCR = Put Open Interest (or Volume) / Call Open Interest (or Volume)."
+  },
+  {
+    "front": "How is a high Put-Call Ratio (PCR > 1.0) interpreted under standard vs. contrarian views?",
+    "back": "Standard view: Bearish sentiment or heavy hedging activity. Contrarian view: Excessive pessimism / over-hedging that may signal a bullish market reversal."
+  },
+  {
+    "front": "What does a rising stock price accompanied by rising Open Interest suggest?",
+    "back": "It suggests new money entering the market to open long positions, confirming strong trend conviction."
+  }
+]

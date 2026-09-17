@@ -1,0 +1,68 @@
+[
+  {
+    "question": "If Trader A (opening a long position) buys 10 futures contracts from Trader B (opening a short position), what is the net change in market Open Interest?",
+    "options": [
+      "Open Interest increases by 10 contracts",
+      "Open Interest increases by 20 contracts",
+      "Open Interest remains unchanged",
+      "Open Interest decreases by 10 contracts"
+    ],
+    "correctIndex": 0,
+    "explanation": "When a new buyer enters a transaction with a new seller, brand-new contracts are created, increasing Open Interest by 10 contracts."
+  },
+  {
+    "question": "Trader X holds a long futures contract and sells it to Trader Y, who is also closing an existing short position. How does this trade affect Open Interest?",
+    "options": [
+      "Open Interest decreases by 1 contract",
+      "Open Interest increases by 1 contract",
+      "Open Interest remains unchanged",
+      "Open Interest doubles"
+    ],
+    "correctIndex": 0,
+    "explanation": "When an existing position holder closes with another existing holder who is also closing, the contract is offset and removed from circulation, reducing Open Interest by 1."
+  },
+  {
+    "question": "What is the key structural difference between Trading Volume and Open Interest?",
+    "options": [
+      "Volume measures total contracts traded over a time window (resets daily), while Open Interest counts total active, open contracts existing at a given moment.",
+      "Volume only applies to call options, while Open Interest only applies to put options.",
+      "Volume measures cash settlement value, while Open Interest measures physical delivery value.",
+      "Volume never changes, while Open Interest changes continuously during market hours."
+    ],
+    "correctIndex": 0,
+    "explanation": "Trading Volume is a cumulative counter of transaction activity over a specific timeframe (e.g., daily), whereas Open Interest is a snapshot count of open, un-cleared contracts."
+  },
+  {
+    "question": "Suppose an underlying index has 1,200,000 active Put contracts and 800,000 active Call contracts. What is the Put-Call Ratio (PCR) based on Open Interest?",
+    "options": [
+      "1.50",
+      "0.67",
+      "2.00",
+      "0.40"
+    ],
+    "correctIndex": 0,
+    "explanation": "PCR = Put Open Interest / Call Open Interest = 1,200,000 / 800,000 = 1.50."
+  },
+  {
+    "question": "From a contrarian sentiment perspective, how might an unusually high Put-Call Ratio (e.g., PCR = 1.60) be interpreted by market analysts?",
+    "options": [
+      "As a potential bullish reversal signal, because extreme bearish consensus or heavy hedging often leaves market participants over-hedged and short of put buyers.",
+      "As a guaranteed price crash indicator that requires immediate short selling.",
+      "As evidence that call option liquidity has completely vanished.",
+      "As a sign that dividend yields are about to increase."
+    ],
+    "correctIndex": 0,
+    "explanation": "Contrarians view extreme PCR highs as signals of over-pessimistic sentiment. When nearly everyone has hedged with puts, selling pressure may be exhausted, creating conditions for a bullish reversal."
+  },
+  {
+    "question": "Why should the Put-Call Ratio (PCR) never be used as a standalone, exclusive buy/sell trading signal?",
+    "options": [
+      "Because PCR is a broad sentiment/hedging gauge with subjective threshold levels that requires confirmation from price action, macroeconomic context, and volume.",
+      "Because exchange clearinghouses alter PCR values arbitrarily every hour.",
+      "Because PCR only applies to physical commodities, not stock index derivatives.",
+      "Because high PCR values automatically trigger exchange trading halts."
+    ],
+    "correctIndex": 0,
+    "explanation": "PCR is an interpretive sentiment indicator. High put volume can reflect institutional portfolio hedging rather than speculative directional betting, so it must be evaluated alongside other market indicators."
+  }
+]
