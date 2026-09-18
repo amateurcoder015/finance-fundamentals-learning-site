@@ -1,0 +1,27 @@
+graph TD
+    subgraph OrderTypes["Order Types Submitted by Investor"]
+        direction TB
+        Investor["Investor / Trader"] --> Choice{"Select Order Type"}
+        Choice --> MarketOrd["Market Order<br/>(Immediate Execution at Best Price)"]
+        Choice --> LimitOrd["Limit Order<br/>(Execution at Specified Price or Better)"]
+        Choice --> StopLossOrd["Stop-Loss Order<br/>(Passive Until Trigger Price Reached)"]
+    end
+
+    subgraph OrderLifecycle["Exchange Execution & Matching Lifecycle"]
+        direction TB
+        MarketOrd --> Broker["Broker / Trading Member<br/>(Risk & Margin Verification)"]
+        LimitOrd --> Broker
+        StopLossOrd --> Broker
+        
+        Broker --> Network["Exchange Telecommunication Routing"]
+        Network --> OrderBook["Central Limit Order Book"]
+        
+        OrderBook --> MatchingEngine{"Price-Time Priority<br/>Matching Engine"}
+        
+        MatchingEngine -->|"1. Price Priority"| CheckPrice["Evaluate Best Bid / Ask Price Level"]
+        CheckPrice -->|"2. Time Priority"| CheckTime["Order Timestamp Priority (FIFO)"]
+        
+        CheckTime --> MatchSuccess["Matched Trade Generated"]
+        MatchSuccess --> Clearinghouse["Clearing & Settlement"]
+        Clearinghouse --> ConfirmedPos["Confirmed Long / Short Position"]
+    end

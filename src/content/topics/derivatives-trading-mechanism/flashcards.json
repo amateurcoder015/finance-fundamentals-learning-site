@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is Price-Time Priority in an exchange matching engine?",
+    "back": "The execution rule where orders with better prices are filled first (Price Priority), and orders at the same price are filled in order of arrival timestamp (Time Priority)."
+  },
+  {
+    "front": "What is a Market Order?",
+    "back": "An order to buy or sell a derivative contract immediately at the best available current market price in the order book."
+  },
+  {
+    "front": "What is a Limit Order?",
+    "back": "An order to buy or sell a derivative contract only at a specified price or better (buy at limit or lower; sell at limit or higher)."
+  },
+  {
+    "front": "What is a Stop-Loss Order?",
+    "back": "A defensive order that remains inactive until a specified trigger price is reached, at which point it activates into a market or limit order to cap potential losses."
+  },
+  {
+    "front": "What is the key trade-off between a Market Order and a Limit Order?",
+    "back": "Market orders prioritize execution speed (immediate fill) over price certainty. Limit orders prioritize price certainty (fill at price or better) over execution speed."
+  },
+  {
+    "front": "Why must underlying assets have high liquidity for derivatives trading eligibility?",
+    "back": "High spot liquidity enables market makers and traders to easily buy or sell underlying shares to hedge derivative positions without causing extreme price impact."
+  },
+  {
+    "front": "What risk arises if derivatives are listed on small-cap or illiquid stocks?",
+    "back": "Small spot trading volumes make the underlying easy to manipulate, leading to erratic derivative pricing, wide bid-ask spreads, and hedging failures."
+  }
+]

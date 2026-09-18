@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the correct general sequence of operational steps when an investor places a derivative trade on an exchange?",
+    "options": [
+      "Investor → Broker Verification → Exchange Matching Engine → Cleared Trade & Confirmed Position",
+      "Investor → Exchange Clearinghouse → Broker Verification → Private OTC Settlement",
+      "Broker → Investor Approval → Spot Delivery → Exchange Listing",
+      "Exchange Matching Engine → Investor Order Placement → Broker Clearing → Spot Market Purchase"
+    ],
+    "correctIndex": 0,
+    "explanation": "The order originates with the investor, passes through the broker for risk and margin checks, reaches the central exchange matching engine, and once matched, is cleared into a confirmed position."
+  },
+  {
+    "question": "Under the Price-Time Priority matching rule, which buy order will be executed first against an incoming sell order?",
+    "options": [
+      "A buy order with a HIGHER bid price, regardless of when it arrived",
+      "A buy order with a LOWER bid price, regardless of when it arrived",
+      "The buy order with the smallest contract quantity",
+      "The buy order submitted by the largest institutional broker"
+    ],
+    "correctIndex": 0,
+    "explanation": "Price priority always takes precedence first: buyers offering a higher price get filled before buyers offering lower prices. Time priority is only used to break ties between orders at the exact same price."
+  },
+  {
+    "question": "If two sell limit orders are submitted to the order book at the exact same price of $50.00, how does the matching engine determine execution priority?",
+    "options": [
+      "The sell order logged with the EARLIER timestamp (Time Priority) is executed first.",
+      "The sell order logged with the LATER timestamp is executed first.",
+      "The matching engine splits the execution randomly between both traders.",
+      "Both orders are cancelled immediately due to price duplication."
+    ],
+    "correctIndex": 0,
+    "explanation": "When prices are identical, the matching engine applies Time Priority (FIFO—First In, First Out), executing the order with the earlier submission timestamp first."
+  },
+  {
+    "question": "What is the primary operational trade-off of using a Market Order compared to a Limit Order?",
+    "options": [
+      "Market orders guarantee immediate execution speed but do not guarantee a specific execution price, while limit orders guarantee price protection but may remain unfilled.",
+      "Market orders guarantee a fixed execution price, while limit orders execute at random prices.",
+      "Market orders are free of broker commissions, while limit orders incur double fees.",
+      "Market orders only apply to physical commodity contracts, while limit orders only apply to stock indices."
+    ],
+    "correctIndex": 0,
+    "explanation": "Market orders prioritize execution speed (filling instantly at best available market prices), whereas limit orders prioritize price protection (filling only at the limit price or better)."
+  },
+  {
+    "question": "How does a Stop-Loss Order function in an exchange order book?",
+    "options": [
+      "It remains passive until a pre-set trigger price is reached, at which point it activates into a live market or limit order to manage downside risk.",
+      "It immediately cancels all existing positions across all exchanges at market open.",
+      "It automatically doubles the trader's position size whenever prices drop.",
+      "It guarantees that options premiums will never decay over time."
+    ],
+    "correctIndex": 0,
+    "explanation": "A stop-loss order sits inactive until the market reaches a specified trigger price, whereupon it converts into an active order to exit a position and limit potential losses."
+  },
+  {
+    "question": "Why do stock exchanges enforce strict liquidity and market capitalization eligibility criteria before listing derivatives contracts on an underlying asset?",
+    "options": [
+      "Because illiquid underlying stocks are prone to price manipulation and wide bid-ask spreads, which would disrupt hedging and fair settlement in the derivatives market.",
+      "Because small-cap companies are legally prohibited from owning computers.",
+      "Because derivative contracts can only be written on foreign currency exchange rates.",
+      "Because clearinghouses require physical warehouse delivery for all derivative listings."
+    ],
+    "correctIndex": 0,
+    "explanation": "High underlying liquidity and market capitalization ensure that market makers can hedge positions efficiently in the spot market without causing erratic price spikes or manipulation."
+  }
+]
