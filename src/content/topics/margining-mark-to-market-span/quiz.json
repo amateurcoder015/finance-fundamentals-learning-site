@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the primary purpose of requiring Initial Margin collateral when opening an exchange-traded derivative position?",
+    "options": [
+      "To serve as a financial performance bond protecting the clearing house against potential default losses from adverse price moves.",
+      "To pay full purchase price for the underlying asset upfront.",
+      "To cover annual exchange listing and broker marketing fees.",
+      "To guarantee that option implied volatility will remain fixed."
+    ],
+    "correctIndex": 0,
+    "explanation": "Initial margin acts as a performance bond posted by both long and short position holders, ensuring the clearing house is protected against single-day adverse price movements."
+  },
+  {
+    "question": "How does daily Mark-to-Market (MTM) settlement function for open futures positions?",
+    "options": [
+      "At the end of each session, open positions are revalued against the daily settlement price, and unrealized gains/losses are immediately settled in cash.",
+      "Positions are revalued only once when the contract reaches final expiration.",
+      "Gains are credited daily, but losses are deferred until contract expiration.",
+      "Trading brokers manually set MTM values based on individual client negotiation."
+    ],
+    "correctIndex": 0,
+    "explanation": "Daily MTM revalues all open positions every afternoon to the official daily settlement price, transferring cash profits to winning accounts and deducting cash losses from losing accounts."
+  },
+  {
+    "question": "What event triggers a formal Margin Call on a derivative trading account?",
+    "options": [
+      "When accumulated MTM losses cause the account balance to fall below the Maintenance Margin threshold.",
+      "When the underlying asset's trading volume increases by more than 10%.",
+      "Whenever a trader places a limit order instead of a market order.",
+      "When a futures contract approaches 30 days prior to expiration."
+    ],
+    "correctIndex": 0,
+    "explanation": "If adverse price moves erode the margin account equity below the designated maintenance margin level, a margin call is issued requiring the trader to deposit additional variation margin."
+  },
+  {
+    "question": "What happens if a trader fails to deposit required Variation Margin following a margin call?",
+    "options": [
+      "The clearing member or broker has the legal right to forcibly liquidate the trader's position in the market to cap further losses.",
+      "The exchange doubles the trader's initial margin credit limit automatically.",
+      "The contract is converted into a physical stock dividend certificate.",
+      "The margin call is waived and rolled over to the next calendar year."
+    ],
+    "correctIndex": 0,
+    "explanation": "Failure to meet a margin call prompts the broker or clearing member to forcibly close out (liquidate) the position in the market to prevent debt accumulation beyond collateral buffers."
+  },
+  {
+    "question": "Why does a Portfolio-Based Margining system (such as SPAN) typically require LESS total margin for a well-hedged portfolio than traditional isolated margining?",
+    "options": [
+      "Because portfolio systems evaluate how combined positions interact across scenarios, recognizing that gains on hedging legs offset losses on primary legs.",
+      "Because portfolio systems charge zero margin on all options contracts.",
+      "Because portfolio systems eliminate clearinghouse novation requirements.",
+      "Because hedged portfolios are legally exempt from daily mark-to-market settlement."
+    ],
+    "correctIndex": 0,
+    "explanation": "Portfolio-based margining evaluates combined portfolio scenario losses. Offsetting risk between long and short legs (or futures and protective options) reduces net portfolio risk, unlocking margin credits."
+  },
+  {
+    "question": "How does a Scenario-Based Risk Assessment calculate the required margin for a complex derivatives portfolio?",
+    "options": [
+      "It simulates portfolio value changes across a grid of hypothetical price and volatility shifts, setting margin based on the worst plausible scenario loss.",
+      "It multiplies total contract nominal value by a fixed 50% flat rate.",
+      "It averages the historical closing prices of the underlying asset over the past 10 years.",
+      "It measures only the downside risk of call options while ignoring futures contracts."
+    ],
+    "correctIndex": 0,
+    "explanation": "Scenario-based risk models test a portfolio against a matrix of price shifts (up/down) and volatility changes to identify the maximum plausible loss across all scenarios."
+  }
+]

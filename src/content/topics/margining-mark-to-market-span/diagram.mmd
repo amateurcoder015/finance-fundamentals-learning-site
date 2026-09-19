@@ -1,0 +1,30 @@
+graph TD
+    subgraph DailyMTMLifecycle["Daily Margining & MTM Flow"]
+        direction TB
+        OpenPos["Open Derivative Position"] --> PostInitial["Post Initial Margin Collateral"]
+        PostInitial --> SessionClose["Daily Session Close"]
+        
+        SessionClose --> MTMCalc["Calculate Mark-to-Market (MTM)<br/>(Settlement Price vs. Entry/Prior Price)"]
+        MTMCalc --> UpdateBalance["Update Margin Account Balance"]
+        
+        UpdateBalance --> LevelCheck{"Account Balance vs.<br/>Maintenance Margin Limit"}
+        
+        LevelCheck -->|"Above Maintenance"| Safe["Position Remains Active"]
+        Safe --> SessionClose
+        
+        LevelCheck -->|"Below Maintenance"| MarginCall["Margin Call Issued<br/>(Request Variation Margin)"]
+        
+        MarginCall --> ActionChoice{"Trader Response"}
+        ActionChoice -->|"Deposit Variation Margin"| Restored["Balance Restored to Initial Margin"]
+        Restored --> SessionClose
+        
+        ActionChoice -->|"Fails to Deposit"| Liquidated["Broker Forcibly Liquidates Position"]
+    end
+
+    subgraph PortfolioMargining["Portfolio-Based Margining (Scenario Analysis)"]
+        direction TB
+        Combined["Combined Portfolio<br/>(Futures + Options Legs)"] --> Scenarios["Scenario Matrix Analysis<br/>(Price Shifts ± Volatility Shifts)"]
+        Scenarios --> WorstLoss["Identify Worst Plausible Loss Across Scenarios"]
+        WorstLoss --> CreditOffset["Apply Spread & Hedging Risk Credits"]
+        CreditOffset --> NetMargin["Total Portfolio Initial Margin Required"]
+    end

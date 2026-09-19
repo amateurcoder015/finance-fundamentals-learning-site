@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is Initial Margin?",
+    "back": "The minimum collateral required to open a new derivative position, calibrated to cover a severe one-day potential price move."
+  },
+  {
+    "front": "What is Maintenance Margin?",
+    "back": "The minimum account equity threshold required to keep an open position active without triggering a margin call."
+  },
+  {
+    "front": "What triggers a Margin Call?",
+    "back": "Daily MTM losses causing account equity to fall below the Maintenance Margin level."
+  },
+  {
+    "front": "What is Variation Margin?",
+    "back": "The additional cash deposited by a trader to restore an account back up to the Initial Margin level after receiving a margin call."
+  },
+  {
+    "front": "How does daily Mark-to-Market (MTM) settlement work?",
+    "back": "Positions are revalued every session against the daily settlement price, with cash profits credited and cash losses debited daily."
+  },
+  {
+    "front": "What is Portfolio-Based Margining (SPAN-style approach)?",
+    "back": "A scenario-based system that sets margin by evaluating combined portfolio gains and losses across multiple price and volatility scenarios."
+  },
+  {
+    "front": "Why does Portfolio Margining benefit hedged strategies?",
+    "back": "It recognizes risk offsets between opposing positions, reducing overall worst-scenario loss and lowering total collateral requirements."
+  }
+]
