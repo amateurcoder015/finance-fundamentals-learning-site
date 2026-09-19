@@ -1,0 +1,27 @@
+graph TD
+    subgraph ExecutionPhase["Trade Execution & Novation"]
+        direction TB
+        Buyer["Buyer (Long)"] & Seller["Seller (Short)"] --> Trade["Trade Executed on Exchange"]
+        Trade --> ClearingCorp["Clearing Corporation"]
+        
+        ClearingCorp -->|"Novation Step 1"| LegBuyer["Clearing Corp becomes Seller to Buyer"]
+        ClearingCorp -->|"Novation Step 2"| LegSeller["Clearing Corp becomes Buyer to Seller"]
+    end
+
+    subgraph PostTradePhase["Post-Trade Risk & Settlement Lifecycle"]
+        direction TB
+        LegBuyer & LegSeller --> MTM["Daily Margining & Mark-to-Market (MTM)"]
+        
+        MTM --> ExpiryCheck{"Contract Expiry Reached?"}
+        
+        ExpiryCheck -->|"No"| ContinuousMTM["Daily Cash Gain/Loss Adjustment"]
+        ContinuousMTM --> MTM
+        
+        ExpiryCheck -->|"Yes"| SettlementType{"Settlement Mode"}
+        
+        SettlementType -->|"Index / Rates"| CashSettle["Cash Settlement<br/>(Net PnL Paid in Cash)"]
+        SettlementType -->|"Single Stock / Commodity"| PhysSettle["Physical Settlement<br/>(Underlying Asset Delivered)"]
+        
+        CashSettle --> ClosedPos["Contract Extinguished / Closed"]
+        PhysSettle --> ClosedPos
+    end

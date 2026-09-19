@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is Novation in clearing house operations?",
+    "back": "The legal process where the clearing corporation interposes itself as the buyer to every seller and seller to every buyer, eliminating bilateral counterparty risk."
+  },
+  {
+    "front": "What is a Clearing Member?",
+    "back": "A financial entity authorized by the clearing corporation to settle trades, maintain collateral, and meet margin calls on behalf of itself or trading brokers."
+  },
+  {
+    "front": "What is Cash Settlement?",
+    "back": "A final settlement method where no physical asset changes hands; the net financial gain or loss is settled purely via cash transfer."
+  },
+  {
+    "front": "What is Physical Settlement?",
+    "back": "A final settlement method where the actual underlying asset (shares, commodities) is physically delivered in exchange for payment."
+  },
+  {
+    "front": "Why are Stock Index Derivatives cash-settled?",
+    "back": "Because a stock index is a synthetic mathematical benchmark; physically delivering proportional shares of every component stock is logistically impractical."
+  },
+  {
+    "front": "What is Clearing House Interoperability?",
+    "back": "A framework allowing market participants to trade on different exchange venues while clearing through a single interoperable clearing house to net margins."
+  },
+  {
+    "front": "What are the 5 core steps of the Clearing Process Flow?",
+    "back": "1. Trade Execution → 2. Transmission to Clearing Corp → 3. Novation → 4. Daily Margining & MTM → 5. Final Settlement."
+  }
+]

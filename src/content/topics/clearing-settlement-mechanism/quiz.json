@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the legal process of Novation performed by a Clearing Corporation?",
+    "options": [
+      "The clearing house steps into an executed trade, replacing the direct buyer-seller contract with two separate contracts where it becomes the counterparty to both sides.",
+      "The clearing house cancels all option contracts when market volatility increases.",
+      "The clearing house converts all cash margin deposits into government bonds.",
+      "The clearing house transfers trading floor licenses between stockbrokers."
+    ],
+    "correctIndex": 0,
+    "explanation": "Novation is the legal substitution of counterparties. The clearing corporation becomes the buyer to every seller and the seller to every buyer, eliminating bilateral counterparty default risk."
+  },
+  {
+    "question": "How does a Clearing Member differ conceptually from a Trading Member on a financial exchange?",
+    "options": [
+      "A Trading Member executes buy/sell orders, while a Clearing Member is authorized to settle trades, maintain collateral accounts, and manage margin obligations with the clearing house.",
+      "A Trading Member manages central bank reserves, while a Clearing Member sets interest rates.",
+      "A Trading Member only trades commodities, while a Clearing Member only trades foreign currencies.",
+      "There is no difference; the terms are completely identical in exchange operations."
+    ],
+    "correctIndex": 0,
+    "explanation": "Trading members handle client order execution on the exchange floor or engine, whereas clearing members assume financial responsibility for settling transactions and depositing margin with the clearing corporation."
+  },
+  {
+    "question": "Why are stock index futures and options contracts almost universally settled via Cash Settlement rather than physical delivery?",
+    "options": [
+      "Because physically packaging and delivering a theoretical basket of hundreds of weighted index stocks is practically impossible and inefficient.",
+      "Because stock index values are illegal to trade physically.",
+      "Because cash settlement avoids exchange trading fees.",
+      "Because index derivatives expire every hour."
+    ],
+    "correctIndex": 0,
+    "explanation": "A stock index is a mathematical benchmark representing a broad basket of equities. Physically delivering proportional shares of every company in an index is logistically impractical, making cash settlement essential."
+  },
+  {
+    "question": "What is the primary operational advantage of Clearing House Interoperability for market participants?",
+    "options": [
+      "It allows market participants to execute trades across different exchanges while consolidating and netting their margin requirements within a single chosen clearing corporation.",
+      "It guarantees that options premiums will remain constant across all months.",
+      "It eliminates the need for initial margin deposits.",
+      "It allows investors to trade without submitting orders to a broker."
+    ],
+    "correctIndex": 0,
+    "explanation": "Interoperability permits traders to clear trades executed on multiple exchange venues through a single interoperable clearing house, netting offsetting positions to optimize capital efficiency."
+  },
+  {
+    "question": "What is the main operational difference between Cash Settlement and Physical Settlement at contract expiration?",
+    "options": [
+      "Cash settlement transfers only the net financial gain or loss in money, while physical settlement requires actual delivery of the underlying asset in exchange for full contract value.",
+      "Cash settlement occurs daily, while physical settlement occurs every minute.",
+      "Cash settlement is only used for agricultural crops, while physical settlement is used for stock indices.",
+      "Cash settlement requires physical warehouse storage certificates."
+    ],
+    "correctIndex": 0,
+    "explanation": "In cash settlement, no asset moves—only net cash PnL is debited/credited. In physical settlement, the physical commodity or underlying shares must be physically transferred to the buyer."
+  },
+  {
+    "question": "How does daily Mark-to-Market (MTM) settlement differ from Final Settlement at expiration?",
+    "options": [
+      "Daily MTM revalues open futures positions at the end of each session to settle daily unrealized PnL, whereas final settlement extinguishes the contract permanently upon expiration.",
+      "Daily MTM requires physical share delivery every afternoon, while final settlement requires cash payment.",
+      "Daily MTM applies only to options contracts, while final settlement applies only to forward contracts.",
+      "Daily MTM is performed manually by retail investors, while final settlement is automated."
+    ],
+    "correctIndex": 0,
+    "explanation": "Daily MTM is a continuous daily risk-management process that collects losses and credits gains at session end. Final settlement happens once when the contract reaches expiry, closing out open interest permanently."
+  }
+]
