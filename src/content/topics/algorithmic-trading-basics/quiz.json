@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the primary definition of Algorithmic Trading?",
+    "options": [
+      "Using pre-programmed computer software to place and manage order execution automatically based on rules like price, timing, and volume.",
+      "Manually entering limit orders through a broker's mobile application.",
+      "Trading exclusively in physical commodity warehouses using paper certificates.",
+      "Creating financial models to calculate dividend payments at year-end."
+    ],
+    "correctIndex": 0,
+    "explanation": "Algorithmic trading uses automated software programs to evaluate market data and transmit order instructions based on pre-programmed parameters."
+  },
+  {
+    "question": "Why do institutional investment funds use Execution Algorithms to slice large block orders into smaller child orders?",
+    "options": [
+      "To minimize market impact, preventing a single massive order from pushing prices unfavorably against the fund.",
+      "To avoid paying clearinghouse settlement fees.",
+      "To convert futures contracts into equity stock certificates.",
+      "To hide the identity of the stock exchange."
+    ],
+    "correctIndex": 0,
+    "explanation": "Submitting a huge single order into an order book can exhaust resting liquidity and push prices against the trader (market impact). Slicing orders over time achieves a better average execution price."
+  },
+  {
+    "question": "How does a Mean-Reversion strategy differ fundamentally from a Trend-Following strategy?",
+    "options": [
+      "Mean-reversion bets that extreme price moves will snap back toward a historical average, whereas trend-following trades in the direction of an established price trend.",
+      "Mean-reversion only trades call options, whereas trend-following only trades physical commodities.",
+      "Mean-reversion operates manually, whereas trend-following operates algorithmically.",
+      "Mean-reversion requires zero risk controls, whereas trend-following requires strict capital limits."
+    ],
+    "correctIndex": 0,
+    "explanation": "Trend-following assumes price momentum will continue in the same direction, while mean-reversion assumes prices will return to their baseline statistical mean after temporary overextensions."
+  },
+  {
+    "question": "Which characteristic specifically defines High-Frequency Trading (HFT) as a specialized subset of algorithmic trading?",
+    "options": [
+      "Ultra-fast low-latency order execution, high order submission rates, and very short holding periods with minimal overnight inventory.",
+      "Holding long-term stock positions for several years.",
+      "Exclusively trading unlisted over-the-counter forward agreements.",
+      "Manually negotiating bond coupon rates over telephone lines."
+    ],
+    "correctIndex": 0,
+    "explanation": "HFT relies on specialized low-latency computer infrastructure to execute rapid trades in fractions of a second, typically closing out positions before the trading session ends."
+  },
+  {
+    "question": "Why are pre-trade risk controls and kill switches vital components of an algorithmic trading framework?",
+    "options": [
+      "Because software defects or runaway algorithms can execute thousands of erroneous trades per second before a human can intervene manually.",
+      "Because stock exchanges shut down permanently if an order is cancelled.",
+      "Because algorithms are incapable of connecting to electronic order books.",
+      "Because regulatory agencies require all algorithms to be written in paper ledger format."
+    ],
+    "correctIndex": 0,
+    "explanation": "Due to the extreme execution speed of automated software, flawed algorithms can rapidly trigger massive capital losses or market disruption without pre-trade limits and emergency kill switches."
+  },
+  {
+    "question": "Why is an understanding of algorithmic trading and price-time priority relevant to individual retail investors?",
+    "options": [
+      "Because retail orders enter electronic order books where automated algorithms and institutional programs act as primary execution counterparties.",
+      "Because retail investors are required by law to write custom C++ trading algorithms.",
+      "Because algorithms guarantee that retail traders will never experience a trading loss.",
+      "Because option Greeks are only calculated for algorithmic accounts."
+    ],
+    "correctIndex": 0,
+    "explanation": "Modern markets are heavily driven by automated order flow; understanding how algorithms match orders and process liquidity helps retail traders select appropriate order types and manage slippage."
+  }
+]

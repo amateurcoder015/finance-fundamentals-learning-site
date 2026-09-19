@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is Algorithmic Trading?",
+    "back": "The use of automated computer software to place and manage trades based on pre-programmed rules such as price, volume, and timing."
+  },
+  {
+    "front": "What is Market Impact?",
+    "back": "The adverse price shift caused by a trader's own large order volume pushing through resting order book liquidity."
+  },
+  {
+    "front": "Why do institutional investors slice large orders into smaller child orders?",
+    "back": "To minimize market impact and achieve a better overall average fill price by absorbing liquidity gradually over time."
+  },
+  {
+    "front": "What is a Trend-Following algorithmic strategy?",
+    "back": "A strategy that uses technical indicators to enter positions in the direction of an established upward or downward price trend."
+  },
+  {
+    "front": "What is a Mean-Reversion algorithmic strategy?",
+    "back": "A strategy that bets asset prices will return to their historical baseline average after temporary extreme price overextensions."
+  },
+  {
+    "front": "What defines High-Frequency Trading (HFT)?",
+    "back": "A specialized subset of algo trading using ultra-low latency infrastructure, high order submission rates, and very short position holding periods."
+  },
+  {
+    "front": "What is the purpose of an algorithmic Emergency Kill Switch?",
+    "back": "A safeguard mechanism that immediately disconnects a malfunctioning algorithm and cancels all resting orders to prevent runaway losses."
+  }
+]

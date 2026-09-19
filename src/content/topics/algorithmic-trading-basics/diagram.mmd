@@ -1,0 +1,26 @@
+graph TD
+    subgraph AlgoCategories["Core Algorithmic Trading Strategies"]
+        direction TB
+        Main["Algorithmic Trading"] --> ExecAlgo["Execution Algorithms<br/>(Slicing)"]
+        Main --> TrendAlgo["Trend-Following<br/>(Momentum)"]
+        Main --> MeanAlgo["Mean-Reversion<br/>(Snapback)"]
+        Main --> ArbAlgo["Arbitrage<br/>(Discrepancies)"]
+        
+        ExecAlgo --> ExecDesc["Minimizes Market Impact by Slicing Orders"]
+        TrendAlgo --> TrendDesc["Enters Positions in Direction of Price Trend"]
+        MeanAlgo --> MeanDesc["Bets Price Will Revert to Historical Average"]
+        ArbAlgo --> ArbDesc["Exploits Microsecond Price Mispricings"]
+    end
+
+    subgraph AlgoBenefits["Why Algorithms Are Used"]
+        direction TB
+        Benefits["Core Advantages"] --> Speed["Speed<br/>(Instantaneous)"]
+        Benefits --> Discipline["Discipline<br/>(Emotionless)"]
+        Benefits --> MarketImpact["Market Impact<br/>(Efficiency)"]
+        Benefits --> Scale["Scale<br/>(Multi-Asset)"]
+        
+        Speed --> Purpose["Enhanced Execution & Market Quality"]
+        Discipline --> Purpose
+        MarketImpact --> Purpose
+        Scale --> Purpose
+    end
