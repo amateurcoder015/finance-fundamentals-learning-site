@@ -1,0 +1,28 @@
+graph TD
+    subgraph LimitLevels["Three Levels of Position Limits"]
+        direction TB
+        ClientLimit["Client-Level Limit<br/>(Individual Participant Cap)"] --> TotalExposure["Total Risk Exposure Control"]
+        MemberLimit["Trading Member-Level Limit<br/>(Broker Aggregate Cap)"] --> TotalExposure
+        MarketLimit["Market-Wide Position Limit<br/>(Overall Contract Cap)"] --> TotalExposure
+    end
+
+    subgraph BreachEnforcement["Limit Breach & Enforcement Workflow"]
+        direction TB
+        TotalExposure --> BreachEvent{"Limit Breached?"}
+        
+        BreachEvent -->|"No"| Normal["Normal Trading Operations"]
+        
+        BreachEvent -->|"Yes"| SquareOff["Square-Off Mode Activated<br/>(Only Position-Reducing Trades Permitted)"]
+        SquareOff --> MandatoryRed["Mandatory Position Reduction Required"]
+        
+        MandatoryRed --> ComplianceCheck{"Complied within Deadline?"}
+        ComplianceCheck -->|"Yes"| Restored["Position Restored within Limits"]
+        ComplianceCheck -->|"No"| Enforcement["Forced Liquidation & Penalties<br/>(Fines, Trading Suspension)"]
+    end
+
+    subgraph LayersOfDefense["Multi-Layered Risk Architecture"]
+        direction TB
+        MarginDef["Margining & Daily MTM<br/>(Protective Collateral)"] --> SystemicSafety["Overall Market Integrity & Stability"]
+        LimitDef["Position Limits<br/>(Preventive Caps)"] --> SystemicSafety
+        EnforceDef["Monitoring & Enforcement<br/>(Regulatory Oversight)"] --> SystemicSafety
+    end

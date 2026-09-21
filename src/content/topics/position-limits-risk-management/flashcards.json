@@ -1,0 +1,26 @@
+[
+  {
+    "front": "Why do Position Limits exist in derivatives trading?",
+    "back": "To prevent individual traders or firms from building excessive risk concentrations that could cause market manipulation or systemic clearing defaults."
+  },
+  {
+    "front": "What are the three levels of Position Limits?",
+    "back": "1. Client-Level Limits, 2. Trading Member (Broker)-Level Limits, and 3. Market-Wide Position Limits (MWPL)."
+  },
+  {
+    "front": "How do Position Limits differ from Margining?",
+    "back": "Position limits are PREVENTIVE caps on maximum exposure size. Margining is a PROTECTIVE collateral buffer against active position losses."
+  },
+  {
+    "front": "What is a Market-Wide Position Limit (MWPL)?",
+    "back": "An overall cap on the total open interest permitted across all market participants combined in a single derivative contract."
+  },
+  {
+    "front": "What happens when an account breaches a Position Limit?",
+    "back": "The account enters square-off mode (allowing only position-reducing orders) and must reduce excess contracts before facing forced liquidation and fines."
+  },
+  {
+    "front": "What is the 'Layers of Defense' framework in derivatives risk management?",
+    "back": "A multi-tiered safety system combining listing criteria, position limits, margining, price bands, and clearing guarantee funds to maintain market stability."
+  }
+]

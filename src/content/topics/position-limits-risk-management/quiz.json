@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the primary preventive purpose of enforcing Position Limits in exchange-traded derivatives markets?",
+    "options": [
+      "To prevent individual traders or institutions from building excessively large, concentrated positions that could cause market manipulation or systemic collapse.",
+      "To eliminate exchange trading commissions on large orders.",
+      "To force all derivatives traders to physically deliver commodities every month.",
+      "To ensure options premiums remain constant across all strike prices."
+    ],
+    "correctIndex": 0,
+    "explanation": "Position limits act as preventive caps that prevent excessive concentration risk, market cornering, and potential clearing house default contagion."
+  },
+  {
+    "question": "How do Position Limits differ fundamentally from Margining in an exchange risk management framework?",
+    "options": [
+      "Position limits are preventive controls that restrict how large a position can grow, whereas margining is a protective control that collects collateral against active position losses.",
+      "Position limits only apply to options, whereas margining only applies to spot shares.",
+      "Position limits are set by individual retail traders, whereas margining is set by central banks.",
+      "Position limits require daily cash transfers, whereas margining requires physical stock delivery."
+    ],
+    "correctIndex": 0,
+    "explanation": "Position limits prevent dangerously large risk concentrations before they build up, while margining ensures collateral is available to absorb daily MTM losses on open trades."
+  },
+  {
+    "question": "Which level of position limits caps the total combined open interest allowed across all market participants in a specific contract?",
+    "options": [
+      "Market-Wide Position Limit (MWPL)",
+      "Client-Level Position Limit",
+      "Trading Member-Level Limit",
+      "Personal Brokerage Limit"
+    ],
+    "correctIndex": 0,
+    "explanation": "The Market-Wide Position Limit (MWPL) sets an overall cap on total open interest across the entire market to prevent derivative volume from overwhelming the cash market."
+  },
+  {
+    "question": "What immediately happens to a trader's account when a position limit is breached on an exchange?",
+    "options": [
+      "The account is placed in square-off mode, permitting only position-reducing or closing trades until compliance is restored.",
+      "The trader's existing positions are doubled automatically by the exchange.",
+      "The trader receives a cash bonus from the clearing house.",
+      "The exchange cancels all market orders across all other trading members."
+    ],
+    "correctIndex": 0,
+    "explanation": "Upon a limit breach, the account is restricted to square-off mode—blocking any new orders that expand exposure and allowing only orders that close out existing contracts."
+  },
+  {
+    "question": "What happens if a market participant fails to reduce an oversized position after breaching a position limit deadline?",
+    "options": [
+      "The exchange or broker forcibly liquidates excess contracts in the open market and imposes administrative or financial penalties.",
+      "The clearing house absorbs the excess position as a permanent asset.",
+      "The breach is ignored if the participant pays higher option premiums.",
+      "The trading member is granted an automatic lifetime limit exemption."
+    ],
+    "correctIndex": 0,
+    "explanation": "Non-compliance with position limit reduction deadlines prompts mandatory forced liquidation by the broker or exchange, alongside fines or trading suspensions."
+  },
+  {
+    "question": "Why is a 'Layers of Defense' approach essential for exchange risk management?",
+    "options": [
+      "Because no single risk control is sufficient alone; combining eligibility filters, position limits, margining, price bands, and clearing funds ensures systemic resilience.",
+      "Because regulators require each stock exchange to operate 5 separate clearing houses.",
+      "Because layers of defense eliminate the need for computer trading terminals.",
+      "Because option Greeks can only be calculated when 5 separate limits are active."
+    ],
+    "correctIndex": 0,
+    "explanation": "A multi-layered defense system ensures that if one control is challenged by market volatility, secondary and tertiary safeguards (like margins and guarantee funds) maintain market solvency."
+  }
+]
