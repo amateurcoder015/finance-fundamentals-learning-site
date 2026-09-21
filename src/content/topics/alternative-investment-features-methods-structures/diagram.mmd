@@ -1,0 +1,20 @@
+graph TD
+    subgraph AssetCategories["Main Alternative Investment Categories"]
+        direction TB
+        Main["Alternative Investments"] --> PrivCap["Private Capital<br/>(Private Equity & Private Credit)"]
+        Main --> RealAssets["Real Assets & Infrastructure<br/>(Real Estate, Energy, Toll Roads)"]
+        Main --> NatRes["Natural Resources<br/>(Farmland, Timber, Commodities)"]
+        Main --> HedgeFunds["Hedge Funds<br/>(Long/Short, Arbitrage, Macro)"]
+        Main --> DigitalAssets["Digital Assets<br/>(Crypto & Tokenized Assets)"]
+    end
+
+    subgraph FundStructure["Common Limited Partnership & Fee Structure"]
+        direction TB
+        GP["General Partner (GP)<br/>(Fund Sponsor / Manager)"] & LPs["Limited Partners (LPs)<br/>(Institutional / HNWI Investors)"] --> Fund["Limited Partnership Fund"]
+        
+        Fund --> Investments["Private Assets & Portfolio Companies"]
+        Investments --> Returns["Fund Profits & Distribution"]
+        
+        Returns --> MgmtFee["Management Fee<br/>(Fixed % of AUM for Ops)"]
+        Returns --> PerfFee["Performance Fee / Carried Interest<br/>(% of Profits Above Hurdle Rate)"]
+    end

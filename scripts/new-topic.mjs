@@ -9,7 +9,8 @@ const CATEGORIES = [
   "Fixed Income",
   "Derivatives",
   "Portfolio Management",
-  "Economics"
+  "Economics",
+  "Alternative Investments"
 ];
 
 function slugify(text) {

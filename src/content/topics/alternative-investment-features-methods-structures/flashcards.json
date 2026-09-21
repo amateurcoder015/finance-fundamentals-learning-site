@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What defines Alternative Investments?",
+    "back": "Assets outside traditional public equities and fixed income, characterized by illiquidity, lower transparency, and periodic appraisal valuations."
+  },
+  {
+    "front": "What is an Illiquidity Premium?",
+    "back": "The additional expected return demanded by investors for locking up capital in assets that cannot be sold quickly at fair market value."
+  },
+  {
+    "front": "What is the role of a General Partner (GP)?",
+    "back": "The fund manager who controls investment decisions, operates portfolio assets, and assumes operational liability."
+  },
+  {
+    "front": "What is the role of a Limited Partner (LP)?",
+    "back": "An investor who provides capital commitments to a fund, with passive operational involvement and liability limited to their investment."
+  },
+  {
+    "front": "What is a Fund-of-Funds (FoF)?",
+    "back": "A fund that invests in a portfolio of other alternative funds, offering manager diversification at the cost of an extra fee layer."
+  },
+  {
+    "front": "How do Management Fees and Performance Fees differ?",
+    "back": "Management fees are fixed annual % fees covering operational costs. Performance fees (carried interest) are % shares of profits above a hurdle rate."
+  },
+  {
+    "front": "What is a Co-Investment?",
+    "back": "An agreement allowing an LP to invest capital directly alongside a GP in a specific acquisition, typically with reduced or zero management fees."
+  }
+]

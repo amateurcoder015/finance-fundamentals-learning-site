@@ -10,12 +10,16 @@ import InteractiveFlashcardsPreview from '../components/InteractiveFlashcardsPre
 const allTopics = await getCollection('topics');
 
 const topicsByCategory = CATEGORIES.map((category) => {
-  const topics = allTopics.filter((t) => t.data.category === category);
+  const sortedTopics = allTopics
+    .filter((t) => t.data.category === category)
+    .sort((a, b) => new Date(a.data.dateAdded).getTime() - new Date(b.data.dateAdded).getTime());
+
   return {
     category,
-    topics,
+    totalCount: sortedTopics.length,
+    topics: sortedTopics.slice(0, 3),
   };
-}).filter((group) => group.topics.length > 0);
+}).filter((group) => group.totalCount > 0);
 
 const categoryIcons: Record<string, string> = {
   "Corporate Finance": "🏢",
@@ -25,6 +29,7 @@ const categoryIcons: Record<string, string> = {
   "Derivatives": "🔀",
   "Portfolio Management": "💼",
   "Economics": "🌐",
+  "Alternative Investments": "💎",
 };
 ---
 
@@ -79,7 +84,7 @@ const categoryIcons: Record<string, string> = {
         Structured Learning Notes
       </h2>
       <p class="text-slate-600 dark:text-slate-400 font-medium text-base">
-        Deep dives into foundational topics across 7 core financial disciplines.
+        Deep dives into foundational topics across 8 core financial disciplines.
       </p>
     </ScrollReveal>
 
@@ -97,7 +102,7 @@ const categoryIcons: Record<string, string> = {
             href={`/categories/${group.category.toLowerCase().replace(/\s+/g, '-')}`}
             class="text-xs uppercase font-extrabold tracking-wider text-[#0F172A] dark:text-white hover:underline flex items-center gap-1"
           >
-            <span>Browse Category ({group.topics.length})</span>
+            <span>Browse Category ({group.totalCount})</span>
             <span>→</span>
           </a>
         </ScrollReveal>

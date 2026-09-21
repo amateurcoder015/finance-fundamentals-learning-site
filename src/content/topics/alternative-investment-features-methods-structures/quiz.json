@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What is the primary defining characteristic that distinguishes Alternative Investments from traditional asset classes?",
+    "options": [
+      "Alternative investments encompass non-traditional assets (such as private capital and real assets) that are generally less liquid, not continuously traded on public exchanges, and less transparent.",
+      "Alternative investments are guaranteed by central banks to produce positive annual returns.",
+      "Alternative investments only consist of short-term government treasury bills.",
+      "Alternative investments are strictly limited to retail investors with under $1,000 in capital."
+    ],
+    "correctIndex": 0,
+    "explanation": "Alternative investments are defined by what they are not: they lie outside traditional long-only public equities and bonds, featuring illiquidity, periodic appraisal valuations, and lower regulatory disclosure."
+  },
+  {
+    "question": "In a private fund Limited Partnership structure, how do the roles of the General Partner (GP) and Limited Partners (LPs) differ?",
+    "options": [
+      "The GP manages fund operations and investment selection with full operational liability, while LPs provide capital and have liability limited to their investment.",
+      "The GP provides all fund capital, while LPs manage daily business operations.",
+      "The GP is a government regulator, while LPs are public stock exchanges.",
+      "LPs manage daily asset sales, while the GP receives no management fees."
+    ],
+    "correctIndex": 0,
+    "explanation": "The General Partner (GP) is the fund manager responsible for investment decisions and operations. Limited Partners (LPs) supply capital commitments with passive operational involvement and limited liability."
+  },
+  {
+    "question": "Why do investors in illiquid alternative funds demand an 'Illiquidity Premium'?",
+    "options": [
+      "To compensate for locking up capital for multi-year periods where assets cannot be sold quickly at fair value during market volatility.",
+      "To pay for automated high-frequency trading algorithms.",
+      "To cover mandatory stock exchange listing fees.",
+      "Because illiquid funds are exempt from performance fees."
+    ],
+    "correctIndex": 0,
+    "explanation": "Illiquid assets cannot be converted into cash quickly without significant price concessions. Investors require an illiquidity premium (higher expected return) to lock up their capital over multi-year horizons."
+  },
+  {
+    "question": "What is the core difference between a Management Fee and a Performance Fee (Carried Interest) in an alternative fund?",
+    "options": [
+      "A Management Fee is a fixed percentage of AUM paid annually for fund operations, while a Performance Fee is earned only when fund profits exceed a hurdle rate.",
+      "A Management Fee is paid only when the fund goes bankrupt, while a Performance Fee is paid daily.",
+      "A Management Fee applies only to public stocks, while a Performance Fee applies only to government bonds.",
+      "Management Fees are paid by GPs to LPs, while Performance Fees are paid by regulators."
+    ],
+    "correctIndex": 0,
+    "explanation": "Management fees cover ongoing fund administration and are charged regardless of performance (e.g., 2% of AUM). Performance fees reward managers with a share of net profits (e.g., 20%) above a hurdle rate."
+  },
+  {
+    "question": "What is a primary drawback of investing through a Fund-of-Funds (FoF) structure?",
+    "options": [
+      "The investor incurs an additional layer of management and performance fees on top of the underlying fund fees.",
+      "The investor is prohibited from holding more than one asset class.",
+      "Fund-of-funds are legally required to invest 100% of capital in physical gold.",
+      "Fund-of-funds eliminate all diversification benefits."
+    ],
+    "correctIndex": 0,
+    "explanation": "A Fund-of-Funds provides instant manager diversification and access, but charges an extra layer of fees (fee-on-fee drag) on top of the fees collected by underlying fund managers."
+  },
+  {
+    "question": "Why do institutional portfolio managers add alternative investments to traditional stock and bond portfolios?",
+    "options": [
+      "To achieve portfolio diversification through low correlation with public markets, enhance risk-adjusted returns, and access inflation-hedging real assets.",
+      "Because alternative assets guarantee zero annual volatility.",
+      "Because public stock markets no longer allow equity trading.",
+      "To eliminate the need for manager due diligence."
+    ],
+    "correctIndex": 0,
+    "explanation": "Alternatives provide strategic benefits including low correlation with traditional assets, inflation protection via real assets, and access to private economic growth."
+  }
+]
