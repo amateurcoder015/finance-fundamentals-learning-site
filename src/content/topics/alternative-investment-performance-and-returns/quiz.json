@@ -1,0 +1,68 @@
+[
+  {
+    "question": "Why are traditional Time-Weighted Returns (TWR) generally unsuitable for measuring the performance of private equity or real estate funds?",
+    "options": [
+      "Because alternative funds involve irregular, manager-controlled capital calls and distributions over time, making money-weighted returns (IRR) necessary.",
+      "Because public stock exchanges forbid calculating TWR on private assets.",
+      "Because TWR assumes zero management fees.",
+      "Because TWR can only be calculated for physical commodity warehouses."
+    ],
+    "correctIndex": 0,
+    "explanation": "TWR assumes a fixed capital base and continuous liquidity. In private funds, the manager controls when capital is drawn down and returned, requiring money-weighted metrics (IRR) that account for cash flow timing."
+  },
+  {
+    "question": "Conceptually, what does the Internal Rate of Return (IRR) represent in private fund performance evaluation?",
+    "options": [
+      "The annual discount rate that sets the Net Present Value (NPV) of all capital calls, distributions, and residual values to zero.",
+      "The simple average dividend yield paid by portfolio companies in Year 1.",
+      "The maximum interest rate charged by commercial banks for leverage.",
+      "The percentage of total fund capital invested in government bonds."
+    ],
+    "correctIndex": 0,
+    "explanation": "IRR is the money-weighted discount rate ($r$) that equates the present value of all cash drawdowns and cash distributions (plus remaining NAV) to zero."
+  },
+  {
+    "question": "Which alternative performance multiple measures REALIZED cash returns specifically ('cash-on-cash return') delivered back to investors?",
+    "options": [
+      "DPI (Distributions to Paid-In)",
+      "RVPI (Residual Value to Paid-In)",
+      "TVPI (Total Value to Paid-In)",
+      "AUM (Assets Under Management)"
+    ],
+    "correctIndex": 0,
+    "explanation": "DPI measures actual cumulative cash distributions returned to investors relative to total capital drawn down, representing realized return."
+  },
+  {
+    "question": "What is the mathematical and conceptual relationship between TVPI, DPI, and RVPI?",
+    "options": [
+      "TVPI = DPI + RVPI (Total Value created equals Realized Cash Returns plus Unrealized Remaining Value).",
+      "TVPI = DPI × RVPI.",
+      "TVPI = DPI - RVPI.",
+      "TVPI = RVPI / DPI."
+    ],
+    "correctIndex": 0,
+    "explanation": "Total Value to Paid-In (TVPI) is the sum of realized returns (DPI) and unrealized remaining asset valuations (RVPI)."
+  },
+  {
+    "question": "Why is evaluating DPI alongside TVPI critical when analyzing a private fund's reported performance?",
+    "options": [
+      "A high TVPI driven mostly by RVPI indicates that much of the reported performance is still based on estimated paper valuations rather than realized cash in hand.",
+      "Because DPI is the only metric required by international accounting standards.",
+      "Because RVPI measures management fees rather than asset value.",
+      "Because high DPI guarantees that future capital calls will be cancelled."
+    ],
+    "correctIndex": 0,
+    "explanation": "TVPI includes unrealized residual value (RVPI). Examining DPI reveals how much of that total value has actually been converted into realized cash distributions returned to LPs."
+  },
+  {
+    "question": "What causes the 'J-Curve Effect' in early-stage private equity and real estate funds?",
+    "options": [
+      "Management fees, organizational setup costs, and initial capital drawdowns occur before acquired portfolio assets have time to mature and generate value.",
+      "Stock markets automatically collapse whenever a new private fund is launched.",
+      "General Partners are legally required to report negative returns during the first 5 years.",
+      "Interest rates drop to zero during early fund drawdowns."
+    ],
+    "correctIndex": 0,
+    "explanation": "Early in a fund's life, management fees and setup expenses create negative cumulative returns before portfolio investments mature and produce profitable exit distributions."
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "front": "Why are Money-Weighted Returns (IRR) used for Alternative Investment funds?",
+    "back": "Because cash drawdowns (calls) and returns (distributions) occur at irregular times controlled by the fund manager rather than as a single lump sum."
+  },
+  {
+    "front": "What is the Internal Rate of Return (IRR)?",
+    "back": "The discount rate that sets the Net Present Value (NPV) of all cash drawdowns, distributions, and remaining asset values to zero."
+  },
+  {
+    "front": "What is TVPI (Total Value to Paid-In)?",
+    "back": "The multiple measuring total value created (cumulative cash distributions plus remaining NAV) relative to total capital paid in."
+  },
+  {
+    "front": "What is DPI (Distributions to Paid-In)?",
+    "back": "The multiple measuring realized cash returned to investors relative to total capital paid in ('cash-on-cash return')."
+  },
+  {
+    "front": "What is RVPI (Residual Value to Paid-In)?",
+    "back": "The multiple measuring the estimated unrealized Net Asset Value (NAV) remaining in the fund relative to total capital paid in."
+  },
+  {
+    "front": "What is the formula linking TVPI, DPI, and RVPI?",
+    "back": "TVPI = DPI + RVPI (Total Value Multiple equals Realized Multiple plus Unrealized Multiple)."
+  },
+  {
+    "front": "What is the J-Curve Effect?",
+    "back": "The initial dip in private fund cumulative returns caused by early fees and setup costs before mature investments generate profitable distributions."
+  }
+]

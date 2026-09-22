@@ -1,0 +1,24 @@
+graph TD
+    subgraph MoneyWeightedReturn["Money-Weighted Return (IRR) Mechanics"]
+        direction TB
+        Outflows["Capital Called<br/>(Cash Outflows over Time)"] & Inflows["Distributions & NAV<br/>(Cash Inflows over Time)"] --> IRRCalc["Internal Rate of Return (IRR)"]
+        IRRCalc --> IRRConcept["Discount Rate setting NPV = 0<br/>(Accounts for Cash Flow Timing & Size)"]
+    end
+
+    subgraph MultipleRatios["Private Fund Multiple Ratios (TVPI = DPI + RVPI)"]
+        direction TB
+        PaidIn["Paid-In Capital<br/>(Total Drawn Down)"] --> Split1["Cumulative Cash Distributions"]
+        PaidIn --> Split2["Residual Value (Unrealized NAV)"]
+        
+        Split1 --> DPI["DPI Ratio<br/>(Distributions / Paid-In)"]
+        Split2 --> RVPI["RVPI Ratio<br/>(Residual Value / Paid-In)"]
+        
+        DPI & RVPI --> TVPI["Total Value Multiple (TVPI = DPI + RVPI)<br/>(Total Value Created / Paid-In)"]
+    end
+
+    subgraph JCurveLifecycle["The J-Curve Performance Lifecycle"]
+        direction TB
+        Early["Early Years (Years 1-3)<br/>Fees, Setup & Initial Outflows"] --> NegReturns["Negative / Low Net Returns<br/>(Dip in J-Curve)"]
+        NegReturns --> Maturity["Later Years (Years 4-10)<br/>Investments Mature & Exit"]
+        Maturity --> PosReturns["Positive Net Realized Returns<br/>(Upward Trend in J-Curve)"]
+    end
