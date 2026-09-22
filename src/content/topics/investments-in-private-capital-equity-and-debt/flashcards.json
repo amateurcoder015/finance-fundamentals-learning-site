@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is Venture Capital (VC)?",
+    "back": "Private equity capital provided to early-stage, high-risk startups with high growth potential, structured in minority investment rounds as company milestones are met."
+  },
+  {
+    "front": "What is Growth Equity?",
+    "back": "Minority equity investments in established private companies with proven business models and expanding revenues, seeking capital to scale operations without giving up full operating control."
+  },
+  {
+    "front": "What is a Leveraged Buyout (LBO)?",
+    "back": "The acquisition of a mature, cash-flow-generative company using a combination of equity and a significant amount of borrowed debt, intended to amplify equity returns upon debt paydown and exit."
+  },
+  {
+    "front": "How does leverage amplify equity returns in an LBO?",
+    "back": "By funding a large portion of the purchase price with debt, the required equity investment is smaller. Any enterprise value growth or cash flow debt repayment generates a higher percentage return on the sponsor's equity stake."
+  },
+  {
+    "front": "What is Direct Lending in private debt?",
+    "back": "Senior secured loans extended directly by non-bank credit funds to private companies, carrying higher floating interest rates to compensate for illiquidity and credit risk."
+  },
+  {
+    "front": "What is Mezzanine Debt?",
+    "back": "Subordinated debt sitting between senior credit and equity in the capital structure, often featuring higher interest rates and equity kickers (such as warrants or conversion rights)."
+  },
+  {
+    "front": "What are the three main Private Equity exit routes?",
+    "back": "1. Strategic Sale (sale to a corporate operating buyer)\n2. Secondary Buyout (sale to another PE sponsor)\n3. Initial Public Offering (IPO on a public stock exchange)"
+  }
+]

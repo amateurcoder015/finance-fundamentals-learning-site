@@ -1,0 +1,26 @@
+graph TD
+    PC["Private Capital"] --> PE["Private Equity<br/>(Equity Ownership)"]
+    PC --> PD["Private Debt<br/>(Direct Lending & Credit)"]
+
+    subgraph PE_Stages ["Private Equity by Company Stage"]
+        VC["Venture Capital<br/>(Early Stage / Pre-Revenue)"] --> GE["Growth Equity<br/>(Expansion / Scaled Revenue)"]
+        GE --> LBO["Buyouts & LBOs<br/>(Mature / Cash-Flow Positive)"]
+    end
+
+    PE --> PE_Stages
+
+    subgraph PD_Strategies ["Private Debt Strategies"]
+        DL["Direct Lending<br/>(Senior Secured Loans)"]
+        MEZ["Mezzanine Debt<br/>(Subordinated + Warrants)"]
+        DD["Distressed Debt<br/>(Restructuring / Workout)"]
+    end
+
+    PD --> DL
+    PD --> MEZ
+    PD --> DD
+
+    subgraph PE_Value_Flow ["Value Creation & Exit Flow"]
+        VC_Drivers["Value Drivers<br/>• Operational Efficiency<br/>• Revenue Expansion<br/>• Financial Leverage"] --> Exits["Exit Mechanisms<br/>• Strategic Sale (Trade Sale)<br/>• Secondary Buyout (PE-to-PE)<br/>• Initial Public Offering (IPO)"]
+    end
+
+    LBO -.-> PE_Value_Flow

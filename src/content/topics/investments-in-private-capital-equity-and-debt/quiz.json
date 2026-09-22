@@ -1,0 +1,68 @@
+[
+  {
+    "question": "Which private equity strategy focuses on investing in mature, cash-flow-generative companies by acquiring controlling stakes using a substantial portion of borrowed debt?",
+    "options": [
+      "Venture Capital",
+      "Growth Equity",
+      "Leveraged Buyouts (LBOs)",
+      "Distressed Debt"
+    ],
+    "correctIndex": 2,
+    "explanation": "Leveraged Buyouts (LBOs) involve acquiring mature, established businesses with predictable cash flows, funding a large percentage of the purchase price with debt to amplify equity returns."
+  },
+  {
+    "question": "In a Leveraged Buyout (LBO), how does debt financing affect the equity investor's return profile?",
+    "options": [
+      "Debt eliminates operational risk and guarantees a positive cash yield.",
+      "Debt reduces upfront equity required, amplifying both percentage gains on upside and percentage losses on downside.",
+      "Debt increases the initial equity commitment while capping maximum potential returns.",
+      "Debt converts equity ownership into fixed-income senior debt."
+    ],
+    "correctIndex": 1,
+    "explanation": "Financial leverage reduces the initial equity capital required from sponsors. This magnifies percentage gains when enterprise value expands or debt is paid down, but also magnifies potential losses if company value declines."
+  },
+  {
+    "question": "How does Growth Equity differ from Venture Capital?",
+    "options": [
+      "Growth Equity targets early seed-stage startups with no revenue.",
+      "Growth Equity acquires 100% controlling ownership through hostile takeovers.",
+      "Growth Equity invests minority capital in established private companies with proven revenues seeking expansion.",
+      "Growth Equity buys distressed debt securities of bankrupt companies."
+    ],
+    "correctIndex": 2,
+    "explanation": "Growth Equity targets mature, growing private companies with proven business models and revenues. Investors acquire minority stakes to fund expansion without taking total control or facing seed-stage concept failure risk."
+  },
+  {
+    "question": "What primary feature distinguishes Mezzanine Debt within the private credit market?",
+    "options": [
+      "It is senior secured debt with the first claim on company assets.",
+      "It sits between senior debt and equity, often featuring subordinated terms combined with equity kickers like warrants.",
+      "It represents pure equity ownership with voting rights and no interest payments.",
+      "It consists exclusively of short-term commercial paper issued by public corporations."
+    ],
+    "correctIndex": 1,
+    "explanation": "Mezzanine debt is a hybrid credit instrument positioned below senior debt. It offers higher interest rates to reflect subordination and frequently includes equity participation features (warrants or conversion rights)."
+  },
+  {
+    "question": "Which private equity exit route involves selling a portfolio company to an operating corporation in the same or complementary industry?",
+    "options": [
+      "Strategic Sale (Trade Sale)",
+      "Secondary Buyout",
+      "Initial Public Offering (IPO)",
+      "Distressed Restructuring"
+    ],
+    "correctIndex": 0,
+    "explanation": "A Strategic Sale (or Trade Sale) occurs when a private equity sponsor sells its portfolio company to a corporate operating buyer seeking strategic synergies, operational scale, or technology acquisition."
+  },
+  {
+    "question": "What is the primary objective of a Distressed Debt private capital strategy?",
+    "options": [
+      "Lending seed capital to early-stage technology startups.",
+      "Purchasing debt of financially troubled firms at steep discounts to profit from restructuring or debt-to-equity conversions.",
+      "Providing low-yield mortgage financing for prime commercial real estate.",
+      "Underwriting high-grade public corporate bond offerings."
+    ],
+    "correctIndex": 1,
+    "explanation": "Distressed debt investors buy corporate debt of struggling or bankrupt firms at heavily discounted prices, aiming to generate profits via corporate turnaround or by converting debt into controlling equity during bankruptcy workouts."
+  }
+]
