@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { CATEGORIES } from '../content/config';
 import { getTopicSlug } from '../utils/topic-loader';
-import { HeroMotion, HeroItem } from '../components/HeroMotion';
+import HeroLayeredComposition from '../components/HeroLayeredComposition';
 import { ScrollReveal, ScrollItem } from '../components/ScrollReveal';
 import InteractiveFlashcardsPreview from '../components/InteractiveFlashcardsPreview';
 
@@ -35,78 +35,62 @@ const categoryIcons: Record<string, string> = {
 
 <BaseLayout title="Make Finance Feel Simple — Finance Fundamentals">
 
-  <!-- Staggered Entrance Hero Section -->
-  <HeroMotion client:load>
-    <div class="flex flex-col items-center text-center pt-4 pb-8 md:py-10">
-
-      <!-- Display Headline -->
-      <HeroItem client:load>
-        <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[104px] font-black tracking-tighter text-[#0F172A] dark:text-white leading-[0.98] max-w-5xl mb-6">
-          Make Finance feel simple
-        </h1>
-      </HeroItem>
-
-      <!-- Category Filter Pills Row -->
-      <HeroItem client:load>
-        <div class="flex flex-wrap justify-center items-center gap-2 md:gap-3 mb-6">
-          <span class="px-6 py-2.5 rounded-full bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] text-xs font-extrabold shadow-md">
-            All Domains
-          </span>
-          {CATEGORIES.map((cat) => (
-            <a
-              href={`/categories/${cat.toLowerCase().replace(/\s+/g, '-')}`}
-              class="px-5 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all hover:scale-[1.02]"
-            >
-              {cat}
-            </a>
-          ))}
-        </div>
-      </HeroItem>
-
-      <!-- Subtitle -->
-      <HeroItem client:load>
-        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium max-w-2xl">
-          Simple explanations. Structured practice. Only what matters.
-        </p>
-      </HeroItem>
-
-    </div>
-  </HeroMotion>
+  <!-- Dimensional Layered Hero Composition -->
+  <HeroLayeredComposition client:load categories={CATEGORIES} />
 
   <!-- Interactive 3D Showcase Sandbox Island -->
   <InteractiveFlashcardsPreview client:load />
 
   <!-- Scroll-Triggered Topics Grid Section -->
-  <div class="my-16 space-y-16">
+  <div class="my-20 space-y-20">
 
-    <ScrollReveal client:load className="text-center max-w-2xl mx-auto mb-10">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-[#0F172A] dark:text-white tracking-tight mb-3">
+    {/* Section Header */}
+    <ScrollReveal client:load className="text-center max-w-3xl mx-auto space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/80 border border-blue-200/80 dark:border-blue-800/80 shadow-sm text-blue-700 dark:text-blue-300 text-xs font-extrabold tracking-widest uppercase">
+        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+        <span>Curated Knowledge Catalog · 8 Disciplines</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F172A] dark:text-white tracking-tight leading-tight">
         Structured Learning Notes
       </h2>
-      <p class="text-slate-600 dark:text-slate-400 font-medium text-base">
-        Deep dives into foundational topics across 8 core financial disciplines.
+      
+      <p class="text-slate-600 dark:text-slate-300 font-medium text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+        Deep dives into foundational topics across core financial disciplines, crafted with clear explanations and zero textbook fluff.
       </p>
     </ScrollReveal>
 
+    {/* Category Groups */}
     {topicsByCategory.map((group) => (
-      <section class="space-y-6">
-        <ScrollReveal client:load className="flex justify-between items-end border-b border-slate-200 dark:border-slate-800 pb-4">
-          <div class="flex items-center gap-3">
-            <span class="text-3xl">{categoryIcons[group.category] || "📁"}</span>
+      <section class="space-y-8 bg-slate-50/60 dark:bg-[#070D19]/60 p-6 sm:p-8 md:p-10 rounded-[36px] border border-slate-200/70 dark:border-slate-800/80 backdrop-blur-sm">
+        
+        {/* Elevated Category Banner Header */}
+        <ScrollReveal client:load className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-200/80 dark:border-slate-800/80">
+          <div class="flex items-center gap-4">
+            <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white dark:bg-[#0F1E36] border border-slate-200 dark:border-slate-800 shadow-md flex items-center justify-center text-3xl shrink-0">
+              {categoryIcons[group.category] || "📁"}
+            </div>
             <div>
-              <h3 class="text-2xl font-black text-[#0F172A] dark:text-white tracking-tight">{group.category}</h3>
-              <p class="text-xs text-slate-500 font-medium">Core Financial Fundamentals</p>
+              <div className="flex items-center gap-2">
+                <h3 class="text-2xl sm:text-3xl font-black text-[#0F172A] dark:text-white tracking-tight">{group.category}</h3>
+                <span className="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                  {group.totalCount} {group.totalCount === 1 ? 'Topic' : 'Topics'}
+                </span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium mt-0.5">Core Financial Fundamentals & Study Guides</p>
             </div>
           </div>
+
           <a
             href={`/categories/${group.category.toLowerCase().replace(/\s+/g, '-')}`}
-            class="text-xs uppercase font-extrabold tracking-wider text-[#0F172A] dark:text-white hover:underline flex items-center gap-1"
+            class="px-5 py-2.5 rounded-full bg-white dark:bg-[#0F1E36] hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-800 dark:text-slate-200 text-xs font-black transition-all shadow-sm border border-slate-200 dark:border-slate-800 flex items-center gap-2 group shrink-0"
           >
             <span>Browse Category ({group.totalCount})</span>
-            <span>→</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
           </a>
         </ScrollReveal>
 
+        {/* Topic Cards Grid */}
         <ScrollReveal client:load stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {group.topics.map((topic) => {
             const slug = getTopicSlug(topic);
@@ -114,32 +98,47 @@ const categoryIcons: Record<string, string> = {
               <ScrollItem client:load>
                 <a
                   href={`/topics/${slug}`}
-                  class="group block bg-white dark:bg-[#0F1E36] border border-slate-200 dark:border-slate-800/80 rounded-2xl p-7 hover:-translate-y-1.5 hover:shadow-2xl hover:border-[#0F172A] dark:hover:border-blue-500/60 transition-all duration-200 flex flex-col justify-between"
+                  class="group relative block bg-white dark:bg-[#0E1A2F] border border-slate-200/90 dark:border-slate-800/90 rounded-[28px] p-7 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(29,78,216,0.18)] dark:hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] hover:border-blue-500/50 dark:hover:border-blue-500/60 transition-all duration-300 flex flex-col justify-between h-full overflow-hidden"
                 >
+                  {/* Glowing Accent Top Bar on Hover */}
+                  <div class="absolute top-0 left-6 right-6 h-1 rounded-b-full bg-gradient-to-r from-blue-600 via-indigo-500 to-sky-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
                   <div>
-                    <div class="flex items-center justify-between gap-2 mb-4">
-                      <span class="text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full bg-[#0F172A] text-white dark:bg-blue-950 dark:text-blue-300">
+                    {/* Topic Header Chips */}
+                    <div class="flex items-center justify-between gap-2 mb-5">
+                      <span class="text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full bg-slate-900 text-white dark:bg-blue-950 dark:text-blue-300 border border-transparent dark:border-blue-800/60 shadow-sm">
                         {topic.data.category}
                       </span>
-                      <span class="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 capitalize">
+                      
+                      <span class:list={[
+                        'text-xs font-bold px-3 py-0.5 rounded-full capitalize shadow-sm',
+                        topic.data.difficulty === 'beginner' && 'bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800/80',
+                        topic.data.difficulty === 'intermediate' && 'bg-amber-50 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border border-amber-200/80 dark:border-amber-800/80',
+                        topic.data.difficulty === 'advanced' && 'bg-rose-50 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-200/80 dark:border-rose-800/80',
+                        !['beginner', 'intermediate', 'advanced'].includes(topic.data.difficulty) && 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300',
+                      ]}>
                         {topic.data.difficulty}
                       </span>
                     </div>
 
-                    <h4 class="text-2xl font-black text-[#0F172A] dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors tracking-tight">
+                    {/* Title */}
+                    <h4 class="text-xl sm:text-2xl font-black text-[#0F172A] dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors tracking-tight leading-snug">
                       {topic.data.title}
                     </h4>
 
-                    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3 mb-6">
+                    {/* Description */}
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3 mb-6 font-medium">
                       {topic.data.description}
                     </p>
                   </div>
 
-                  <div class="text-xs text-slate-400 dark:text-slate-400 border-t border-slate-100 dark:border-slate-800 pt-4 flex justify-between items-center font-bold">
-                    <span>Added {new Date(topic.data.dateAdded).toLocaleDateString()}</span>
-                    <span class="text-[#0F172A] dark:text-blue-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  {/* Footer Bar */}
+                  <div class="text-xs text-slate-400 dark:text-slate-500 border-t border-slate-100 dark:border-slate-800/80 pt-4 flex justify-between items-center font-bold">
+                    <span class="text-[11px]">Added {new Date(topic.data.dateAdded).toLocaleDateString()}</span>
+                    
+                    <span class="text-xs font-extrabold text-blue-600 dark:text-blue-400 flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/60 dark:border-blue-800/60 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-600 dark:group-hover:text-white transition-all duration-200 shadow-sm">
                       <span>Study Note</span>
-                      <span>→</span>
+                      <span class="group-hover:translate-x-0.5 transition-transform">→</span>
                     </span>
                   </div>
                 </a>

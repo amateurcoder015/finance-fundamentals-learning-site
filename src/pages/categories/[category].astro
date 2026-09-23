@@ -55,7 +55,12 @@ const { categoryName, topics } = Astro.props;
                 <span class="text-xs uppercase font-extrabold tracking-wide px-2.5 py-1 rounded bg-[#1D4ED8]/10 text-[#1D4ED8] dark:text-blue-400">
                   {topic.data.category}
                 </span>
-                <span class="text-xs font-semibold px-2 py-0.5 rounded bg-stone-100 dark:bg-slate-800 text-stone-600 dark:text-slate-400 capitalize">
+                <span class:list={[
+                  'text-xs font-semibold px-2.5 py-0.5 rounded-full capitalize',
+                  topic.data.difficulty === 'beginner' && 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60',
+                  topic.data.difficulty === 'intermediate' && 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60',
+                  topic.data.difficulty === 'advanced' && 'bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800/60',
+                ]}>
                   {topic.data.difficulty}
                 </span>
               </div>

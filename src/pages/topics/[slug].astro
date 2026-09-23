@@ -6,17 +6,18 @@ import MermaidDiagram from '../../components/MermaidDiagram';
 import PayoffChart from '../../components/PayoffChart';
 import Quiz from '../../components/Quiz';
 import Flashcards from '../../components/Flashcards';
+import ReadingProgress from '../../components/ReadingProgress';
 import { HeroMotion, HeroItem } from '../../components/HeroMotion';
 import { ScrollReveal } from '../../components/ScrollReveal';
 
 export async function getStaticPaths() {
   const topics = await getCollection('topics');
-  return topics.map((topic, index) => {
-    const slug = getTopicSlug(topic);
+  return topics.map((indexTopic, index) => {
+    const slug = getTopicSlug(indexTopic);
     const nextTopic = topics[(index + 1) % topics.length];
     return {
       params: { slug },
-      props: { topic, slug, nextTopic },
+      props: { topic: indexTopic, slug, nextTopic },
     };
   });
 }
@@ -27,9 +28,11 @@ const auxiliary = loadTopicAuxiliaryData(slug);
 
 const formattedDate = new Date(topic.data.dateAdded).toLocaleDateString('en-US', {
   year: 'numeric',
-  month: 'long',
+  month: 'short',
   day: 'numeric'
 });
+
+const estReadTime = Math.max(4, Math.ceil(topic.body.split(/\s+/).length / 200));
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -50,8 +53,24 @@ const jsonLd = {
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
+  <!-- Reading Progress Bar -->
+  <ReadingProgress client:load />
+
+  {/* =========================================================================
+      ULTRA-CLEAN AMBIENT BACKDROP (SUBTLE ORBS & DELICATE DOT GRID)
+     ========================================================================= */}
+  <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10" aria-hidden="true">
+    {/* Delicate Dot Grid Watermark */}
+    <div class="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.07] dark:opacity-[0.05]"></div>
+
+    {/* Soft Ambient Glow Orbs */}
+    <div class="absolute -top-32 right-1/4 w-[750px] h-[750px] rounded-full bg-blue-500/10 dark:bg-blue-600/15 blur-[140px]"></div>
+    <div class="absolute top-[40%] -left-32 w-[650px] h-[650px] rounded-full bg-indigo-500/10 dark:bg-indigo-600/15 blur-[140px]"></div>
+    <div class="absolute bottom-0 right-10 w-[700px] h-[700px] rounded-full bg-cyan-500/10 dark:bg-sky-600/15 blur-[140px]"></div>
+  </div>
+
   <!-- Breadcrumbs Navigation -->
-  <nav class="flex items-center space-x-2 text-xs font-semibold text-slate-500 dark:text-slate-400 mb-6 overflow-x-auto no-scrollbar" aria-label="Breadcrumb">
+  <nav class="flex items-center space-x-2 text-xs font-semibold text-slate-500 dark:text-slate-400 mb-6 overflow-x-auto no-scrollbar relative z-10" aria-label="Breadcrumb">
     <a href="/" class="hover:text-[#0F172A] dark:hover:text-white transition-colors">Dashboard</a>
     <span>/</span>
     <a href={`/categories/${topic.data.category.toLowerCase().replace(/\s+/g, '-')}`} class="hover:text-[#0F172A] dark:hover:text-white transition-colors">
@@ -61,31 +80,47 @@ const jsonLd = {
     <span class="text-[#0F172A] dark:text-white font-bold truncate">{topic.data.title}</span>
   </nav>
 
-  <!-- Staggered Header Zone -->
+  <!-- Magazine-Grade Header Banner -->
   <HeroMotion client:load>
-    <div class="mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
+    <div class="relative bg-white dark:bg-[#0E1A2F] p-8 sm:p-12 md:p-14 rounded-[32px] border border-slate-200/90 dark:border-slate-800/90 shadow-[0_15px_40px_-15px_rgba(15,23,42,0.08)] dark:shadow-[0_20px_45px_-15px_rgba(0,0,0,0.6)] mb-12 overflow-hidden z-10">
+      
+      {/* Top Gradient Line Accent */}
+      <div class="absolute top-0 left-8 right-8 h-1.5 rounded-b-full bg-gradient-to-r from-blue-600 via-indigo-500 to-sky-400"></div>
 
       <!-- Domain Badges & Metadata -->
       <HeroItem>
-        <div class="flex flex-wrap items-center gap-3 mb-4">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
           <a
             href={`/categories/${topic.data.category.toLowerCase().replace(/\s+/g, '-')}`}
-            class="text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-[#0F172A] text-white dark:bg-blue-950 dark:text-blue-300 shadow-sm"
+            class="text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-[#0F172A] text-white dark:bg-blue-950 dark:text-blue-300 shadow-sm border border-transparent dark:border-blue-800/60"
           >
             {topic.data.category}
           </a>
-          <span class="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 capitalize">
+
+          <span class:list={[
+            'text-xs font-bold px-3 py-1 rounded-full capitalize shadow-sm',
+            topic.data.difficulty === 'beginner' && 'bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800/80',
+            topic.data.difficulty === 'intermediate' && 'bg-amber-50 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border border-amber-200/80 dark:border-amber-800/80',
+            topic.data.difficulty === 'advanced' && 'bg-rose-50 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-200/80 dark:border-rose-800/80',
+            !['beginner', 'intermediate', 'advanced'].includes(topic.data.difficulty) && 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300',
+          ]}>
             Level: {topic.data.difficulty}
           </span>
-          <span class="text-xs text-slate-400 font-semibold">
+
+          <span class="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 px-3 py-1 rounded-full border border-slate-200/60 dark:border-slate-800/60 flex items-center gap-1.5">
+            <span>⏱</span>
+            <span>{estReadTime} min read</span>
+          </span>
+
+          <span class="text-xs text-slate-400 font-medium ml-auto hidden sm:inline">
             Added {formattedDate}
           </span>
         </div>
       </HeroItem>
 
-      <!-- Page Title (single H1) -->
+      <!-- Page Title -->
       <HeroItem>
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#0F172A] dark:text-white mb-4 leading-tight">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#0F172A] dark:text-white mb-4 leading-[1.05]">
           {topic.data.title}
         </h1>
       </HeroItem>
@@ -101,7 +136,7 @@ const jsonLd = {
       <HeroItem>
         <div class="flex flex-wrap gap-2 pt-1">
           {topic.data.tags.map((tag) => (
-            <span class="text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">
+            <span class="text-xs font-mono bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full border border-slate-200 dark:border-slate-800 shadow-sm">
               #{tag}
             </span>
           ))}
@@ -110,105 +145,163 @@ const jsonLd = {
     </div>
   </HeroMotion>
 
-  <div class="space-y-16">
-    <!-- Section 1: Note content (MDX inside styled prose container) -->
-    <ScrollReveal client:load>
-      <section class="bg-white dark:bg-[#0F1E36] p-6 sm:p-10 md:p-14 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
-        <div class="prose dark:prose-invert max-w-prose mx-auto">
-          <Content />
+  <!-- Main 2-Column Responsive Layout (Sidebar + Content Canvas) -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start my-8 relative z-10">
+
+    <!-- Left Sticky Sidebar (Desktop Only) -->
+    <aside class="lg:col-span-3 lg:sticky lg:top-24 space-y-6 hidden lg:block">
+      
+      {/* Quick Jump Navigation Box */}
+      <div class="bg-white dark:bg-[#0E1A2F] p-6 rounded-3xl border border-slate-200/90 dark:border-slate-800/90 shadow-md space-y-4">
+        <div class="text-xs uppercase font-black tracking-widest text-slate-400 dark:text-slate-500 border-b border-slate-200 dark:border-slate-800 pb-2">
+          Page Navigation
         </div>
-      </section>
-    </ScrollReveal>
-
-    <!-- Section 2: Visual Concept Model Card (Payoff Chart or Mermaid Diagram) -->
-    {auxiliary.payoffChart ? (
-      <ScrollReveal client:load>
-        <section class="bg-white dark:bg-[#0F1E36] p-6 sm:p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
-          <PayoffChart
-            client:load
-            positions={auxiliary.payoffChart.positions}
-            priceRange={auxiliary.payoffChart.priceRange}
-            title={auxiliary.payoffChart.title}
-            description={auxiliary.payoffChart.description}
-          />
-        </section>
-      </ScrollReveal>
-    ) : (
-      <ScrollReveal client:load>
-        <section class="bg-white dark:bg-[#0F1E36] p-6 sm:p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
-          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-200 dark:border-slate-800">
-            <div>
-              <span class="text-xs uppercase font-black tracking-widest text-slate-400 dark:text-slate-400">
-                Visual Model
-              </span>
-              <h2 class="text-2xl font-black text-[#0F172A] dark:text-white tracking-tight">Concept Diagram</h2>
-            </div>
-            <span class="text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-500 px-3 py-1 rounded-full">SVG Model</span>
-          </div>
-          <MermaidDiagram client:load code={auxiliary.diagram} />
-        </section>
-      </ScrollReveal>
-    )}
-
-
-    <!-- Practice Divider -->
-    <ScrollReveal client:load>
-      <div class="relative flex py-4 items-center">
-        <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
-        <span class="flex-shrink mx-4 px-6 py-2 rounded-full bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] font-black text-xs uppercase tracking-widest shadow-md">
-          Structured Practice & Mastery
-        </span>
-        <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
-      </div>
-    </ScrollReveal>
-
-    <!-- Section 3: Interactive Flashcards Widget -->
-    <ScrollReveal client:load>
-      <section class="space-y-4">
-        <div class="flex items-center gap-3 px-1">
-          <span class="text-2xl" aria-hidden="true">📇</span>
-          <div>
-            <h2 class="text-2xl font-black text-[#0F172A] dark:text-white tracking-tight">Flashcard Deck</h2>
-            <p class="text-xs text-slate-500 font-medium">Stuff you actually need to remember</p>
-          </div>
-        </div>
-        <Flashcards client:load cards={auxiliary.flashcards} />
-      </section>
-    </ScrollReveal>
-
-    <!-- Section 4: Interactive Quiz Widget -->
-    <ScrollReveal client:load>
-      <section class="space-y-4">
-        <div class="flex items-center gap-3 px-1">
-          <span class="text-2xl" aria-hidden="true">📝</span>
-          <div>
-            <h2 class="text-2xl font-black text-[#0F172A] dark:text-white tracking-tight">Question Bank & Quiz</h2>
-            <p class="text-xs text-slate-500 font-medium">Practice what's likely to show up on exam day</p>
-          </div>
-        </div>
-        <Quiz client:load questions={auxiliary.quiz} />
-      </section>
-    </ScrollReveal>
-
-    <!-- Bottom Navigation Scaffold (Back to all topics / Next topic) -->
-    <ScrollReveal client:load>
-      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <a
-          href="/topics"
-          class="min-h-[44px] inline-flex items-center px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all"
-        >
-          ← Back to All Topics
-        </a>
-        {nextTopic && (
-          <a
-            href={`/topics/${getTopicSlug(nextTopic)}`}
-            class="min-h-[44px] inline-flex items-center px-6 py-2.5 rounded-full bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] text-xs font-bold transition-all shadow-sm hover:scale-[1.02]"
-          >
-            <span>Next: {nextTopic.data.title}</span>
-            <span class="ml-1">→</span>
+        
+        <nav class="space-y-2 text-xs font-bold text-slate-600 dark:text-slate-300">
+          <a href="#notes-content" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-950/60 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+            <span>📝</span>
+            <span>Study Notes & Mechanics</span>
           </a>
-        )}
+
+          <a href="#visual-model" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-950/60 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+            <span>🔄</span>
+            <span>Visual Concept Model</span>
+          </a>
+
+          <a href="#flashcards-deck" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-950/60 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+            <span>📇</span>
+            <span>Flashcards ({auxiliary.flashcards.length})</span>
+          </a>
+
+          <a href="#quiz-section" class="flex items-center gap-2 p-2 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-950/60 hover:text-blue-600 dark:hover:text-blue-400 transition-all">
+            <span>📊</span>
+            <span>Practice Quiz ({auxiliary.quiz.length})</span>
+          </a>
+        </nav>
       </div>
-    </ScrollReveal>
+
+      {/* Key Tip Card */}
+      <div class="p-6 rounded-3xl bg-gradient-to-br from-blue-600 via-indigo-600 to-sky-500 text-white shadow-lg space-y-2">
+        <div class="flex items-center gap-2 text-xs uppercase font-extrabold tracking-widest opacity-90">
+          <span>💡</span>
+          <span>Exam Focus</span>
+        </div>
+        <p class="text-xs leading-relaxed font-medium">
+          Master core mechanics, terminology, and order priorities to build exam-ready confidence.
+        </p>
+      </div>
+    </aside>
+
+    <!-- Right Main Reading Canvas -->
+    <main class="lg:col-span-9 space-y-16">
+
+      <!-- Section 1: Note content (MDX inside styled prose container) -->
+      <ScrollReveal client:load>
+        <section id="notes-content" class="relative bg-white dark:bg-[#0E1A2F] p-8 sm:p-12 md:p-14 rounded-[32px] border border-slate-200/90 dark:border-slate-800/90 shadow-xl overflow-hidden">
+          {/* Top Gradient Line Accent */}
+          <div class="absolute top-0 left-8 right-8 h-1.5 rounded-b-full bg-gradient-to-r from-blue-600 via-indigo-500 to-sky-400"></div>
+
+          <div class="prose dark:prose-invert max-w-none">
+            <Content />
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <!-- Section 2: Visual Concept Model Card (Payoff Chart or Mermaid Diagram) -->
+      {auxiliary.payoffChart ? (
+        <ScrollReveal client:load>
+          <section id="visual-model" class="bg-white dark:bg-[#0E1A2F] p-8 sm:p-10 md:p-12 rounded-[32px] border border-slate-200/90 dark:border-slate-800/90 shadow-xl">
+            <PayoffChart
+              client:load
+              positions={auxiliary.payoffChart.positions}
+              priceRange={auxiliary.payoffChart.priceRange}
+              title={auxiliary.payoffChart.title}
+              description={auxiliary.payoffChart.description}
+            />
+          </section>
+        </ScrollReveal>
+      ) : (
+        <ScrollReveal client:load>
+          <section id="visual-model" class="bg-white dark:bg-[#0E1A2F] p-8 sm:p-10 md:p-12 rounded-[32px] border border-slate-200/90 dark:border-slate-800/90 shadow-xl">
+            <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-200 dark:border-slate-800">
+              <div class="flex items-center gap-3">
+                <span class="text-3xl">🔄</span>
+                <div>
+                  <span class="text-xs uppercase font-black tracking-widest text-slate-400 dark:text-slate-500">
+                    Visual Architecture Flow
+                  </span>
+                  <h2 class="text-2xl font-black text-[#0F172A] dark:text-white tracking-tight">Concept Diagram</h2>
+                </div>
+              </div>
+              <span class="text-xs font-mono bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800 font-bold">
+                SVG Flowchart
+              </span>
+            </div>
+            <MermaidDiagram client:load code={auxiliary.diagram} />
+          </section>
+        </ScrollReveal>
+      )}
+
+      <!-- Practice Divider -->
+      <ScrollReveal client:load>
+        <div class="relative flex py-4 items-center">
+          <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+          <span class="flex-shrink mx-4 px-6 py-2.5 rounded-full bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] font-black text-xs uppercase tracking-widest shadow-md">
+            Structured Practice & Mastery
+          </span>
+          <div class="flex-grow border-t border-slate-200 dark:border-slate-800"></div>
+        </div>
+      </ScrollReveal>
+
+      <!-- Section 3: Interactive Flashcards Widget -->
+      <ScrollReveal client:load>
+        <section id="flashcards-deck" class="space-y-6">
+          <div class="flex items-center gap-3 px-1">
+            <span class="text-3xl" aria-hidden="true">📇</span>
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] dark:text-white tracking-tight">Flashcard Deck</h2>
+              <p class="text-xs sm:text-sm text-slate-500 font-medium">Active recall practice for key formulas and definitions</p>
+            </div>
+          </div>
+          <Flashcards client:visible cards={auxiliary.flashcards} />
+        </section>
+      </ScrollReveal>
+
+      <!-- Section 4: Interactive Quiz Widget -->
+      <ScrollReveal client:load>
+        <section id="quiz-section" class="space-y-6">
+          <div class="flex items-center gap-3 px-1">
+            <span class="text-3xl" aria-hidden="true">📊</span>
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-black text-[#0F172A] dark:text-white tracking-tight">Question Bank & Quiz</h2>
+              <p class="text-xs sm:text-sm text-slate-500 font-medium">Multiple-choice practice questions with detailed explanations</p>
+            </div>
+          </div>
+          <Quiz client:visible questions={auxiliary.quiz} />
+        </section>
+      </ScrollReveal>
+
+      <!-- Bottom Navigation Scaffold (Back to all topics / Next topic) -->
+      <ScrollReveal client:load>
+        <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <a
+            href="/topics"
+            class="min-h-[44px] inline-flex items-center px-6 py-2.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-all"
+          >
+            ← Back to All Topics
+          </a>
+          {nextTopic && (
+            <a
+              href={`/topics/${getTopicSlug(nextTopic)}`}
+              class="min-h-[44px] inline-flex items-center px-6 py-2.5 rounded-full bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] text-xs font-bold transition-all shadow-sm hover:scale-[1.02]"
+            >
+              <span>Next: {nextTopic.data.title}</span>
+              <span class="ml-1">→</span>
+            </a>
+          )}
+        </div>
+      </ScrollReveal>
+
+    </main>
   </div>
 </BaseLayout>
