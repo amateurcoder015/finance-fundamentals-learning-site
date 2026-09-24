@@ -1,0 +1,28 @@
+graph TD
+    RA["Real Assets<br/>(Physical & Tangible Assets)"] --> RE["Real Estate<br/>(Property & Land)"]
+    RA --> INF["Infrastructure<br/>(Essential Systems & Networks)"]
+
+    subgraph RE_Vehicles ["Ways to Invest in Real Estate"]
+        DO["Direct Ownership<br/>(Full Control / High Illiquidity)"]
+        PF["Private Real Estate Funds<br/>(Pooled GP/LP Funds)"]
+        REIT["REITs<br/>(Exchange-Traded / Public Liquidity)"]
+    end
+
+    RE --> DO
+    RE --> PF
+    RE --> REIT
+
+    subgraph RE_Spectrum ["Real Estate Risk & Return Spectrum"]
+        C["Core<br/>(Stabilized / Lower Risk)"] --> CP["Core-Plus<br/>(Light Updates / Moderate)"]
+        CP --> VA["Value-Add<br/>(Repositioning / Moderate-High)"]
+        VA --> OP["Opportunistic<br/>(Development / High Risk)"]
+    end
+
+    RE -.-> RE_Spectrum
+
+    subgraph INF_Sectors ["Infrastructure Sectors & Features"]
+        INF_S["Sectors: Transport, Utilities, Energy, Telecoms"]
+        INF_F["Cash Flow Profile: Essential Services, Regulated Rates, Bond-Like Cash Flows"]
+    end
+
+    INF --> INF_Sectors

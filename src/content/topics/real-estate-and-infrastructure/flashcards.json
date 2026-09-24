@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What defines a 'real asset' compared to a financial asset?",
+    "back": "Real assets are physical, tangible assets (such as real estate and infrastructure) whose value derives from their physical substance and operational utility, generating non-financial income like rent or user fees."
+  },
+  {
+    "front": "How do REITs differ from direct real estate ownership in terms of liquidity and management?",
+    "back": "REITs offer exchange-traded public market liquidity, professional asset management, and low capital minimums, whereas direct ownership is highly illiquid, capital-intensive, and requires direct active property management."
+  },
+  {
+    "front": "What is the formula for the Capitalization Rate (Cap Rate) of a real estate property?",
+    "back": "Cap Rate = Net Operating Income (NOI) / Property Value. It measures the unleveraged ongoing income yield of a commercial real estate property."
+  },
+  {
+    "front": "How does an increase in a property's market Cap Rate affect its implied valuation?",
+    "back": "An increase in Cap Rate decreases implied property valuation (Valuation = NOI / Cap Rate), reflecting higher required income yield or higher perceived asset risk."
+  },
+  {
+    "front": "What are the four primary strategies on the real estate risk/return spectrum?",
+    "back": "1. Core (lowest risk, fully leased)\n2. Core-Plus (minor operational updates)\n3. Value-Add (renovations & re-tenanting)\n4. Opportunistic (highest risk, ground-up development & distressed turnarounds)"
+  },
+  {
+    "front": "Why do infrastructure investments typically produce predictable, bond-like cash flows?",
+    "back": "Infrastructure assets provide essential services with high entry barriers, inelastic demand, and revenue governed by regulated tariffs or long-term concession agreements."
+  },
+  {
+    "front": "How do real assets provide inflation-hedging benefits to institutional portfolios?",
+    "back": "Commercial lease contracts and infrastructure tariffs often include explicit CPI escalation clauses or periodic rate resets, allowing net income streams to adjust upward with inflation."
+  }
+]

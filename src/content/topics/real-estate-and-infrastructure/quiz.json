@@ -1,0 +1,79 @@
+[
+  {
+    "question": "Which real estate investment vehicle allows individual investors to access exchange-traded public liquidity, low capital minimums, and tax pass-through dividend income?",
+    "options": [
+      "Direct Property Ownership",
+      "Private Real Estate Funds",
+      "Real Estate Investment Trusts (REITs)",
+      "Opportunistic Land Syndicates"
+    ],
+    "correctIndex": 2,
+    "explanation": "Real Estate Investment Trusts (REITs) are publicly traded corporations that pass through taxable income as dividends, providing investors with exchange-traded liquidity and low investment minimums."
+  },
+  {
+    "question": "A commercial property generates a Net Operating Income (NOI) of $450,000 annually. If an investor acquires the property for $7,500,000, what is the property's Capitalization Rate (Cap Rate)?",
+    "options": [
+      "4.5%",
+      "5.5%",
+      "6.0%",
+      "7.5%"
+    ],
+    "correctIndex": 2,
+    "explanation": "The Cap Rate is calculated as NOI divided by Property Value: $450,000 ÷ $7,500,000 = 0.060, or 6.0%."
+  },
+  {
+    "question": "If market demand for commercial real estate increases and required cap rates for similar properties compress from 6.0% down to 5.0%, what happens to the implied property valuation for a building with fixed NOI?",
+    "options": [
+      "The implied property valuation increases.",
+      "The implied property valuation decreases.",
+      "The implied property valuation remains unchanged.",
+      "The property valuation drops to zero."
+    ],
+    "correctIndex": 0,
+    "explanation": "Because Property Value = NOI ÷ Cap Rate, a lower cap rate denominator results in a higher implied property valuation."
+  },
+  {
+    "question": "Which real estate strategy is characterized by ground-up property development, acquiring distressed properties out of foreclosure, and relying primarily on capital gains rather than immediate cash yields?",
+    "options": [
+      "Core Real Estate",
+      "Core-Plus Real Estate",
+      "Value-Add Real Estate",
+      "Opportunistic Real Estate"
+    ],
+    "correctIndex": 3,
+    "explanation": "Opportunistic real estate strategies carry the highest risk and return expectations, focusing on major development, land entitlement, or distressed turnarounds with minimal initial cash flow."
+  },
+  {
+    "question": "What primary feature enables core real estate to provide predictable income with conservative risk?",
+    "options": [
+      "High leverage and speculative land holdings",
+      "Stabilized occupancy in prime metro locations with long-term creditworthy tenants",
+      "Focus on ground-up construction in undeveloped rural markets",
+      "Exemption from local property taxes and building codes"
+    ],
+    "correctIndex": 1,
+    "explanation": "Core real estate focuses on fully-leased, prime Class A properties with established credit tenants, providing low-volatility income streams and requiring low leverage."
+  },
+  {
+    "question": "Why do infrastructure investments often generate stable, bond-like cash flows for institutional investors?",
+    "options": [
+      "They trade continuously on public equity exchanges with high daily price fluctuation.",
+      "They provide essential monopoly-like services backed by long-term concession contracts or regulated rate frameworks.",
+      "They rely strictly on short-term retail consumer spending during economic booms.",
+      "They are unhedged against inflation and carry high technology obsolescence risk."
+    ],
+    "correctIndex": 1,
+    "explanation": "Infrastructure assets (like water networks or toll roads) deliver essential public services with high entry barriers and regulated tariffs or long-term concession agreements, generating steady, inflation-linked cash flows."
+  },
+  {
+    "question": "How do real assets generally assist multi-asset institutional portfolios during inflationary periods?",
+    "options": [
+      "By eliminating all credit risk and operational expenses.",
+      "By locking in fixed nominal cash flows that never change.",
+      "By generating rental income and tariffs that frequently adjust upward alongside consumer price indices.",
+      "By converting tangible properties into public growth equities."
+    ],
+    "correctIndex": 2,
+    "explanation": "Real asset revenue contracts (such as commercial leases and infrastructure tariffs) often contain CPI escalators or periodic rent resets, allowing income yields to keep pace with inflation."
+  }
+]
