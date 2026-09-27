@@ -1,0 +1,29 @@
+graph TD
+    NR["Natural Resources<br/>(Physical Assets & Commodities)"] --> SUB["Resource Sub-Categories"]
+    NR --> EXP["Exposure Vehicles<br/>(Illiquid / Direct → Liquid / Indirect)"]
+
+    subgraph Sub_Categories ["Resource Sub-Categories"]
+        ENG["Energy<br/>(Crude Oil, Gas, Renewables)"]
+        MET["Metals<br/>(Precious Gold & Base Copper)"]
+        AGR["Agriculture<br/>(Grains, Livestock, Softs)"]
+        LND["Land-Based Assets<br/>(Timberland & Farmland)"]
+    end
+
+    SUB --> ENG
+    SUB --> MET
+    SUB --> AGR
+    SUB --> LND
+
+    subgraph Exposure_Vehicles ["Ways to Gain Exposure"]
+        DO["Direct Ownership<br/>(Physical Bullion / Producing Land)"] --> NRF["Natural Resource Funds<br/>(Private GP/LP Real Asset Funds)"]
+        NRF --> FUT["Commodity Derivatives<br/>(Futures / Options Contracts)"]
+        FUT --> EQU["Natural Resource Equities<br/>(Public Mining & Energy Stocks)"]
+    end
+
+    EXP --> DO
+
+    subgraph Key_Drivers ["Primary Economic Drivers"]
+        DRV["Supply-Demand Shocks • Inflation Protection • Low Equity Correlation"]
+    end
+
+    NR -.-> Key_Drivers

@@ -1,0 +1,79 @@
+[
+  {
+    "question": "Which natural resource asset sub-category generates income primarily through biological growth cycles and harvesting rather than contractual property rental leases?",
+    "options": [
+      "Commercial Warehouses",
+      "Timberland and Farmland",
+      "Public Oil Exploration Equities",
+      "Gold Futures Contracts"
+    ],
+    "correctIndex": 1,
+    "explanation": "Timberland and farmland generate economic returns through physical biological growth (tree volume expansion over time) and agricultural crop harvests, rather than tenant rental leases."
+  },
+  {
+    "question": "Why do the stock prices of natural resource extraction companies (such as mining or energy corporations) often diverge from spot commodity prices?",
+    "options": [
+      "Resource equities are legally prohibited from holding physical reserves.",
+      "Corporate equity values are also affected by operational efficiency, balance sheet debt, managerial decisions, and stock market sentiment.",
+      "Commodity spot prices are fixed by international law and never fluctuate.",
+      "Resource equities pay guaranteed zero dividends regardless of earnings."
+    ],
+    "correctIndex": 1,
+    "explanation": "Resource equities reflect corporate enterprise risk—including management quality, cost controls, leverage, and broader equity market sentiment—meaning their stock prices do not move in lockstep with raw commodity prices."
+  },
+  {
+    "question": "How do commodity futures contracts allow investors to gain price exposure to raw materials without taking physical delivery?",
+    "options": [
+      "By purchasing controlling stakes in state-owned utility companies.",
+      "By entering into exchange-traded financial contracts settled in cash or rolled forward before contract expiration.",
+      "By taking physical custody of agricultural crops at regional ports.",
+      "By converting commodity futures directly into municipal bonds."
+    ],
+    "correctIndex": 1,
+    "explanation": "Futures contracts are exchange-traded derivatives that allow investors to lock in price exposure and settle positions financially or roll contracts forward before maturity, eliminating physical handling requirements."
+  },
+  {
+    "question": "What primary economic condition makes raw natural resources a recognized hedge against broad consumer inflation?",
+    "options": [
+      "Commodity prices are pegged directly to government treasury bond yields.",
+      "Rising prices for raw energy, metals, and agricultural goods are direct components and drivers of inflation indices like the CPI.",
+      "Physical commodities guarantee a fixed nominal dividend yield.",
+      "Commodities are backed by central bank gold reserves."
+    ],
+    "correctIndex": 1,
+    "explanation": "Raw materials and energy form the foundation of consumer and industrial price indices; when general inflation rises, commodity prices frequently surge alongside or drive that inflation."
+  },
+  {
+    "question": "Why is holding physical inventory of agricultural products (such as grains or livestock) rarely suitable for financial investors?",
+    "options": [
+      "Agricultural products produce steady monthly interest payments.",
+      "Physical agricultural inventory faces high storage costs, insurance expenses, and significant risk of spoilage over time.",
+      "Exchange regulations ban all agricultural commerce.",
+      "Physical crops have no market value once harvested."
+    ],
+    "correctIndex": 1,
+    "explanation": "Physical agricultural commodities incur ongoing warehousing, insurance, and transport costs, while perishable goods suffer from natural decay and spoilage over extended periods."
+  },
+  {
+    "question": "What situation creates a negative 'roll yield' for long-only investors maintaining commodity futures positions over extended horizons?",
+    "options": [
+      "Contango (when future delivery prices are higher than spot prices)",
+      "Backwardation (when future delivery prices are lower than spot prices)",
+      "Zero interest rate environments",
+      "Fixed exchange rate regimes"
+    ],
+    "correctIndex": 0,
+    "explanation": "In a contango market, futures prices exceed spot prices. A long-only investor must repeatedly sell cheaper expiring contracts and buy more expensive longer-dated futures, incurring a negative roll yield."
+  },
+  {
+    "question": "What key supply-side factor contributes significantly to high price volatility in industrial metals like copper?",
+    "options": [
+      "Short-term supply is highly inelastic due to long lead times required to construct new mines.",
+      "Mines can instantly double production capacity in response to daily price spikes.",
+      "Industrial metals can be synthetically produced in unlimited quantities at zero cost.",
+      "Copper demand is entirely constant and unaffected by global manufacturing cycles."
+    ],
+    "correctIndex": 0,
+    "explanation": "Developing new mining assets requires multi-year planning and substantial capital expenditure, making short-term physical supply inelastic when global industrial demand suddenly increases."
+  }
+]
