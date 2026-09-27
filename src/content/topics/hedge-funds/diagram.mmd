@@ -1,0 +1,31 @@
+graph TD
+    HF["Hedge Fund Strategies"] --> STRAT["Primary Strategy Categories"]
+    HF --> EXP["Market Exposure Classification"]
+
+    subgraph Strategy_Categories ["Five Broad Strategy Categories"]
+        ELS["Equity Long/Short<br/>(Long Undervalued / Short Overvalued)"]
+        GM["Global Macro<br/>(Top-down Rates, FX, Commodities & Indices)"]
+        ED["Event-Driven<br/>(Mergers, Restructurings & Catalysts)"]
+        RVA["Relative Value / Arbitrage<br/>(Pricing Convergence & Spreads)"]
+        MF["Managed Futures / CTAs<br/>(Systematic Quantitative Trend-Following)"]
+    end
+
+    STRAT --> ELS
+    STRAT --> GM
+    STRAT --> ED
+    STRAT --> RVA
+    STRAT --> MF
+
+    subgraph Exposure_Classification ["Market Exposure Spectrum"]
+        MN["Market Neutral<br/>(Systemic Beta ≈ 0 / Uncorrelated Alpha)"]
+        DIR["Directional Exposure<br/>(Unhedged Long/Short Market Orientation)"]
+    end
+
+    EXP --> MN
+    EXP --> DIR
+
+    subgraph Key_Tools ["Core Execution Tools"]
+        TOOLS["Financial Leverage • Short Selling • Derivatives & Options"]
+    end
+
+    HF -.-> Key_Tools

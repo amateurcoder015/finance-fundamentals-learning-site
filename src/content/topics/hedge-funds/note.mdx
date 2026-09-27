@@ -1,0 +1,175 @@
+---
+title: "Hedge Funds"
+description: "Explore hedge fund mechanics, major strategy categories (Long/Short, Global Macro, Event-Driven, Relative Value, Managed Futures), market neutrality, leverage, and access structures."
+category: "Alternative Investments"
+difficulty: "advanced"
+dateAdded: "2026-09-27"
+tags: ["hedge-funds", "long-short", "global-macro", "arbitrage", "leverage"]
+---
+
+# Hedge Funds
+
+## 1. Introduction to Hedge Funds as Investment Vehicles
+
+A **hedge fund** is a pooled investment vehicle structured as a private partnership—typically comprising a General Partner (the fund manager) and Limited Partners (the investors)—designed to execute flexible, active investment strategies.
+
+Unlike traditional long-only mutual funds, which are generally restricted to buying publicly traded securities and maintaining full market exposure, hedge funds possess broad operational mandates. Managers can employ **short selling**, **financial leverage**, and **derivative instruments** to seek positive returns across varying market environments (an **absolute return** objective).
+
+```
+       ┌────────────────────────────────────────────────────────┐
+       │                 Hedge Fund Vehicle Structure           │
+       └───────────────────────────┬────────────────────────────┘
+                                   │
+                 ┌─────────────────┴─────────────────┐
+                 ▼                                   ▼
+   ┌──────────────────────────┐        ┌──────────────────────────┐
+   │     General Partner      │        │     Limited Partners     │
+   │  (Investment Manager &   │        │  (Institutional & High   │
+   │   Strategy Execution)    │        │   Net Worth Investors)   │
+   └─────────────┬────────────┘        └─────────────┬────────────┘
+                 │                                   │
+                 └─────────────────┬─────────────────┘
+                                   ▼
+   ┌────────────────────────────────────────────────────────────┐
+   │                   Flexible Capital Mandate                 │
+   │  • Long & Short Positions   • Derivatives & Options        │
+   │  • Financial Leverage       • Multi-Asset Allocation       │
+   └────────────────────────────────────────────────────────────┘
+```
+
+### Fee Conventions and Capital Terms
+
+Hedge funds are historically associated with a performance-linked fee structure commonly referenced as the **"2 and 20"** convention:
+* **Management Fee**: An annual fee (illustratively around 1% to 2% of total Assets Under Management) to cover fund operational expenses.
+* **Performance (Incentive) Fee**: A share of net investment profits (illustratively 15% to 20%) retained by the manager, typically subject to a **hurdle rate** (minimum required return threshold) and a **high-water mark** (ensuring performance fees are only earned on net new profits above prior valuation peaks).
+
+*Note: While "2 and 20" remains a classic benchmark, modern fee structures vary widely depending on strategy, market conditions, and institutional negotiation.*
+
+---
+
+## 2. Broad Hedge Fund Strategy Categories
+
+Hedge fund strategies are classified by their primary return drivers, asset classes, and analytical techniques.
+
+```
+┌──────────────────────────┬───────────────────────────────────┬──────────────────────────────────┐
+│ Strategy Category        │ Core Operational Mechanism        │ Primary Return Driver            │
+├──────────────────────────┼───────────────────────────────────┼──────────────────────────────────┤
+│ Equity Long/Short        │ Long undervalued stocks, short    │ Security selection alpha &       │
+│                          │ overvalued stocks                 │ long/short spread performance    │
+├──────────────────────────┼───────────────────────────────────┼──────────────────────────────────┤
+│ Global Macro             │ Multi-asset positions driven by   │ Top-down macroeconomic shifts,   │
+│                          │ macroeconomic forecasts           │ rate moves, & currency trends    │
+├──────────────────────────┼───────────────────────────────────┼──────────────────────────────────┤
+│ Event-Driven             │ Positions built around corporate  │ Realization of merger, buyout,   │
+│                          │ catalysts & restructurings        │ or restructuring outcomes        │
+├──────────────────────────┼───────────────────────────────────┼──────────────────────────────────┤
+│ Relative Value /         │ Exploiting mispricings between    │ Pricing convergence of related   │
+│ Arbitrage                │ related financial instruments     │ securities (often levered)       │
+├──────────────────────────┼───────────────────────────────────┼──────────────────────────────────┤
+│ Managed Futures /        │ Quantitative rules tracking trend │ Systematic price momentum across │
+│ Systematic Trend         │ signals across futures markets    │ commodities, FX, & indices       │
+└──────────────────────────┴───────────────────────────────────┴──────────────────────────────────┘
+```
+
+### 1. Equity Long/Short
+Managers build simultaneous portfolios of long equity positions (companies expected to outperform) and short equity positions (companies expected to underperform or face insolvency). The goal is to capture the relative performance differential between the long and short baskets while mitigating overall market risk.
+
+### 2. Global Macro
+Managers take directional or relative value bets across currencies, interest rates, commodities, and stock market indices based on top-down economic analyses—such as central bank policy shifts, international trade imbalances, and geopolitical developments.
+
+### 3. Event-Driven
+Managers trade around specific corporate catalysts—including mergers and acquisitions (**risk arbitrage**), corporate spin-offs, recapitalizations, and bankruptcy reorganizations. Returns depend primarily on the successful execution or resolution of the underlying corporate transaction.
+
+### 4. Relative Value / Arbitrage
+Managers seek to profit from small, temporary pricing discrepancies between mathematically or contractually related securities—such as convertible bond arbitrage or fixed-income basis trading. Because individual pricing spreads are often narrow, managers frequently utilize financial leverage to magnify returns (building on the arbitrage concepts introduced in the Derivatives module).
+
+### 5. Managed Futures / Systematic Trend-Following
+Commodity Trading Advisors (CTAs) and quantitative managers utilize systematic, computer-driven algorithms (recalling the principles of *Algorithmic Trading*) to identify and follow price trends across global currency, interest rate, equity index, and commodity futures contracts.
+
+---
+
+## 3. Market Neutral vs. Directional Exposure
+
+A fundamental distinction in hedge fund portfolio construction is the degree to which a strategy relies on overall market direction.
+
+```
+       ┌────────────────────────────────────────────────────────┐
+       │             Hedge Fund Market Exposure Spectrum        │
+       └───────────────────────────┬────────────────────────────┘
+                                   │
+                 ┌─────────────────┴─────────────────┐
+                 ▼                                   ▼
+   ┌──────────────────────────┐        ┌──────────────────────────┐
+   │     Market Neutral       │        │   Directional Exposure   │
+   ├──────────────────────────┤        ├──────────────────────────┤
+   │ • Systemic beta ≈ 0      │        │ • Intentionally unhedged │
+   │ • Long/Short exposure    │        │ • Outright long or short │
+   │   balanced (dollar/beta) │        │   market orientation     │
+   │ • Downside protection    │        │ • Returns tied to broad  │
+   │   during stock crashes   │        │   asset class trends     │
+   └──────────────────────────┘        └──────────────────────────┘
+```
+
+* **Market Neutral Strategies**: Aim to eliminate market risk (**beta**) by balancing long and short positions so that net dollar exposure or net beta exposure is close to zero. The fund's return depends almost entirely on the manager's security selection (**alpha**), remaining largely insulated during sharp stock or bond market downturns.
+* **Directional Strategies**: Intentionally maintain net long or net short market exposures (e.g., long-biased equity or directional macro bets). Returns are influenced by both security selection and broad asset class directional movements.
+
+---
+
+## 4. Leverage and Risk Management
+
+Hedge funds frequently utilize **leverage**—achieved through margin borrowing, bank financing lines, or embedded derivative positions (such as futures and options).
+
+### The Mechanics and Consequences of Leverage
+
+Recalling the core principles from the Derivatives and LBO modules:
+1. **Return Amplification**: Leverage reduces the net equity capital required to establish a given position size, magnifying percentage gains when the trade moves favorably.
+2. **Downside Risk & Margin Calls**: If a levered position moves against the fund, percentage losses are similarly magnified. Adverse price swings can trigger margin calls, forcing the manager to liquidate assets prematurely under stressed market conditions.
+
+```
+                  Impact of Leverage on Strategy Returns
+                  
+                  ┌──────────────────────────────────────────┐
+                  │ Unlevered Trade:  +2% Price Move  ──►  +2% Gain │
+                  │ 5x Levered Trade: +2% Price Move  ──► +10% Gain │
+                  ├──────────────────────────────────────────┤
+                  │ Unlevered Trade:  -2% Price Move  ──►  -2% Loss │
+                  │ 5x Levered Trade: -2% Price Move  ──► -10% Loss │
+                  └──────────────────────────────────────────┘
+```
+
+Because high leverage combined with unexpected market illiquidity can lead to fund distress, institutional investors place heavy emphasis on a manager's risk budgeting, stress-testing capabilities, and counterparty credit controls.
+
+---
+
+## 5. Structural Features and Investor Access
+
+Hedge funds operate under regulatory frameworks designed for sophisticated investors, resulting in distinct structural provisions:
+
+```
+┌─────────────────────────┬──────────────────────────────────────────────────────────────────────┐
+│ Structural Feature      │ Purpose and Operational Rationale                                    │
+├─────────────────────────┼──────────────────────────────────────────────────────────────────────┤
+│ Accredited /            │ Regulatory restriction limiting access to institutions and high-net- │
+│ Qualified Investors     │ worth individuals capable of evaluating complex risk profiles.       │
+├─────────────────────────┼──────────────────────────────────────────────────────────────────────┤
+│ Lock-up Periods         │ Initial window (e.g., 1 to 3 years) during which investors cannot    │
+│                         │ withdraw capital, allowing strategies time to mature.                │
+├─────────────────────────┼──────────────────────────────────────────────────────────────────────┤
+│ Redemption Notices      │ Advance notification requirements (e.g., 30 to 90 days) and periodic  │
+│ & Gate Provisions       │ withdrawal windows to prevent forced liquidation of illiquid trades. │
+└─────────────────────────┴──────────────────────────────────────────────────────────────────────┘
+```
+
+### Why Liquidity Restrictions Exist
+If a hedge fund manager executes a complex event-driven or relative-value trade, the mispricing may require months or years to resolve. If investors were permitted to withdraw capital daily (like a mutual fund), sudden market panics could force the manager to sell illiquid positions at fire-sale prices, destroying value for remaining investors. Lock-up periods and redemption gates align investor capital horizons with strategy liquidity.
+
+---
+
+## 6. Strategic Portfolio Role and Key Trade-offs
+
+Institutional investors allocate capital to hedge funds to enhance overall multi-asset portfolio performance:
+
+* **Uncorrelated Absolute Returns**: Potential to generate positive returns during broad equity and bond market declines.
+* **Access to Specialized Alpha**: Exploiting market inefficiencies, arbitrage, and macroeconomic trends unavailable through passive traditional benchmarks.
+* **Trade-offs & Constraints**: High fee structures, liquidity lock-ups, reduced transparency, and **manager-selection risk**—as performance dispersion between top-performing and underperforming hedge fund managers is historically far wider than in traditional asset classes.

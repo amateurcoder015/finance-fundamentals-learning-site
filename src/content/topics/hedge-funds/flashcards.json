@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What are the five broad categories of hedge fund strategies?",
+    "back": "1. Equity Long/Short\n2. Global Macro\n3. Event-Driven\n4. Relative Value / Arbitrage\n5. Managed Futures / Systematic Trend-Following"
+  },
+  {
+    "front": "What is the difference between market neutral and directional hedge fund strategies?",
+    "back": "Market neutral strategies balance long and short positions to eliminate systemic market risk (beta ≈ 0), whereas directional strategies maintain unhedged market exposure tied to broad market movements."
+  },
+  {
+    "front": "Why does leverage increase risk in hedge fund portfolios?",
+    "back": "Leverage magnifies both percentage gains and losses relative to fund equity. Adverse market moves can trigger margin calls, forcing premature asset sales."
+  },
+  {
+    "front": "What is a hedge fund 'lock-up period' and why does it exist?",
+    "back": "An initial window (e.g., 1 to 3 years) restricting investor capital withdrawals. It prevents managers from being forced into fire-sale asset liquidations to meet sudden redemptions."
+  },
+  {
+    "front": "What is an 'absolute return' objective?",
+    "back": "An investment mandate seeking positive net returns in all market conditions, regardless of whether underlying stock or bond benchmarks are rising or falling."
+  },
+  {
+    "front": "What is a high-water mark in hedge fund performance fees?",
+    "back": "A provision ensuring performance fees are only paid on net new profits above the fund's highest historical portfolio valuation peak, protecting investors from paying fees on recovered losses."
+  },
+  {
+    "front": "What is Event-Driven Risk Arbitrage?",
+    "back": "A strategy trading securities involved in corporate mergers, acquisitions, or restructurings to profit from the spread between current market prices and expected deal completion values."
+  }
+]

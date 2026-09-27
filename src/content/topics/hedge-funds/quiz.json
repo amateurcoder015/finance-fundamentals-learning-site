@@ -1,0 +1,79 @@
+[
+  {
+    "question": "What primary operational flexibility distinguishes a hedge fund from a traditional long-only mutual fund?",
+    "options": [
+      "Hedge funds are legally restricted to buying high-grade government bonds.",
+      "Hedge funds can utilize short selling, financial leverage, and derivatives to pursue absolute returns in all market conditions.",
+      "Hedge funds are required to distribute 100% of profits daily to retail investors.",
+      "Hedge funds are exempt from counterparty risk management."
+    ],
+    "correctIndex": 1,
+    "explanation": "Unlike traditional long-only funds, hedge funds enjoy flexible mandates allowing short selling, leverage, and derivative strategies to generate returns regardless of broad market direction."
+  },
+  {
+    "question": "How does an Equity Long/Short hedge fund strategy attempt to generate positive returns during a broad stock market decline?",
+    "options": [
+      "By holding 100% cash and purchasing government physical gold.",
+      "By profiting from short positions in overvalued stocks that fall more than long positions, or by maintaining a net market-neutral stance.",
+      "By converting equity holdings into long-term commercial real estate title.",
+      "By guaranteeing fixed interest coupon payments from fund managers."
+    ],
+    "correctIndex": 1,
+    "explanation": "Equity Long/Short funds hold short positions in stocks expected to underperform. If short gains offset long losses or if security selection outpaces the market, the strategy generates positive net spreads."
+  },
+  {
+    "question": "What does it mean for a hedge fund strategy to be 'market neutral'?",
+    "options": [
+      "The fund only invests in neutral-rated municipal bonds.",
+      "The fund balances long and short positions so its systemic market risk (beta) is near zero, insulating returns from broad index moves.",
+      "The fund is prohibited from charging performance fees.",
+      "The fund automatically liquidates all assets every Friday afternoon."
+    ],
+    "correctIndex": 1,
+    "explanation": "Market-neutral strategies construct long and short portfolios to offset systemic market movements (beta ≈ 0), deriving performance from security-specific pricing spreads (alpha)."
+  },
+  {
+    "question": "How does financial leverage affect a hedge fund's risk and return profile?",
+    "options": [
+      "Leverage eliminates downside risk while keeping returns constant.",
+      "Leverage magnifies both potential percentage gains and percentage losses, increasing exposure to margin calls.",
+      "Leverage converts equity positions into risk-free treasury bills.",
+      "Leverage guarantees immunity from counterparty default."
+    ],
+    "correctIndex": 1,
+    "explanation": "Financial leverage amplifies position scale relative to fund equity, magnifying upside returns on winning trades while equally magnifying downside losses and margin call risks."
+  },
+  {
+    "question": "Why do hedge fund managers establish lock-up periods and redemption notice restrictions for investor capital?",
+    "options": [
+      "To prevent investors from reviewing monthly performance reports.",
+      "To protect complex or illiquid strategies from forced fire-sale asset liquidations during sudden investor withdrawal runs.",
+      "To comply with public stock exchange listing requirements.",
+      "To eliminate the need for prime broker clearing houses."
+    ],
+    "correctIndex": 1,
+    "explanation": "Lock-up periods and redemption notice windows align investor liquidity with strategy horizons, ensuring managers are not forced to liquidate illiquid positions at distressed prices during market panics."
+  },
+  {
+    "question": "What is the function of a 'high-water mark' in a hedge fund's performance fee structure?",
+    "options": [
+      "It sets a maximum limit on total assets under management.",
+      "It ensures the manager only earns performance fees on net profits that exceed prior portfolio valuation peaks.",
+      "It guarantees a minimum annual return to Limited Partners.",
+      "It caps management fees at 0.10% per year."
+    ],
+    "correctIndex": 1,
+    "explanation": "A high-water mark prevents managers from collecting performance fees on recovered losses, requiring the fund's NAV to exceed its previous historical peak before performance fees accrue."
+  },
+  {
+    "question": "Which hedge fund strategy relies heavily on quantitative algorithms to identify and capture price momentum across global futures markets?",
+    "options": [
+      "Event-Driven Merger Arbitrage",
+      "Managed Futures / Systematic Trend-Following",
+      "Distressed Debt Restructuring",
+      "Core Real Estate Syndication"
+    ],
+    "correctIndex": 1,
+    "explanation": "Managed Futures (CTAs) utilize systematic mathematical rules and algorithms to trade price trends across global currency, commodity, bond, and index futures contracts."
+  }
+]
