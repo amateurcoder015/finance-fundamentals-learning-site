@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is a Distributed Ledger?",
+    "back": "A shared, synchronized database maintained across a peer-to-peer network of independent nodes without relying on a central authority or clearing house."
+  },
+  {
+    "front": "How do Proof-of-Work (PoW) and Proof-of-Stake (PoS) differ at a high level?",
+    "back": "PoW relies on computational processing power (miners solving hardware puzzles), whereas PoS selects validators based on economic token capital locked up as collateral (staking)."
+  },
+  {
+    "front": "What are the five main categories of digital assets?",
+    "back": "1. Cryptocurrencies / Native coins\n2. Stablecoins\n3. Tokenized Real-World Assets (RWA)\n4. Utility & Governance tokens\n5. Non-Fungible Tokens (NFTs)"
+  },
+  {
+    "front": "What is the difference between fungible and non-fungible tokens?",
+    "back": "Fungible tokens are identical and mutually interchangeable (like currency notes), whereas Non-Fungible Tokens (NFTs) are unique, non-interchangeable digital identifiers."
+  },
+  {
+    "front": "What are the trade-offs between self-custody and third-party custody of digital assets?",
+    "back": "Self-custody grants full personal sovereignty but risks total asset loss if private keys are misplaced; third-party custody provides operational convenience but introduces counterparty and platform risks."
+  },
+  {
+    "front": "Why is traditional Discounted Cash Flow (DCF) modeling hard to apply to cryptocurrencies?",
+    "back": "DCF models discount expected cash flows, whereas raw native cryptocurrencies produce zero contractual cash yields, dividends, or interest payments."
+  },
+  {
+    "front": "What are the primary risk factors associated with digital assets?",
+    "back": "Extreme price volatility, regulatory uncertainty, custody and private key security risks, smart contract vulnerabilities, and exchange counterparty failures."
+  }
+]

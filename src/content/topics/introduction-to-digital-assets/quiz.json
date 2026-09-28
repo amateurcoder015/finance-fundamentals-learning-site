@@ -1,0 +1,79 @@
+[
+  {
+    "question": "What primary structural feature distinguishes a blockchain from a general distributed ledger?",
+    "options": [
+      "A blockchain is controlled exclusively by central bank authorities.",
+      "A blockchain batches transactions into sequential blocks cryptographically linked to form an immutable chain.",
+      "A blockchain does not use peer-to-peer network nodes.",
+      "A blockchain only records physical cash transactions."
+    ],
+    "correctIndex": 1,
+    "explanation": "While all blockchains are distributed ledgers, a blockchain specifically groups transaction data into sequential blocks linked by cryptographic hashes, creating a tamper-resistant record."
+  },
+  {
+    "question": "What is the primary function of a consensus mechanism in a decentralized blockchain network?",
+    "options": [
+      "To set central bank interest rates for digital tokens.",
+      "To allow independent network nodes to agree on valid transactions without relying on a central referee.",
+      "To print paper certificates for digital asset holdings.",
+      "To guarantee zero price volatility for all crypto assets."
+    ],
+    "correctIndex": 1,
+    "explanation": "Consensus mechanisms (such as Proof-of-Work or Proof-of-Stake) enable decentralized nodes to validate transactions and agree on state updates without a central authority."
+  },
+  {
+    "question": "How do Non-Fungible Tokens (NFTs) differ from fungible digital tokens?",
+    "options": [
+      "NFTs are completely divisible into millions of identical units.",
+      "NFTs represent unique, non-interchangeable digital identifiers rather than identical, mutually exchangeable units.",
+      "NFTs can only be issued by government tax agencies.",
+      "NFTs pay contractual monthly dividend coupons."
+    ],
+    "correctIndex": 1,
+    "explanation": "Fungible tokens are identical and interchangeable (like currency notes), whereas NFTs are unique digital markers verifying ownership of a specific, non-interchangeable asset."
+  },
+  {
+    "question": "Where does the primary risk originate for a collateral-backed stablecoin engineered to track the US Dollar?",
+    "options": [
+      "From the mathematical impossibility of digital transfers.",
+      "From the quality, transparency, and liquidity of the underlying reserve assets and custodian solvency.",
+      "From the requirement to pay high corporate dividend taxes.",
+      "From mandatory government stock exchange listings."
+    ],
+    "correctIndex": 1,
+    "explanation": "A collateralized stablecoin's peg stability depends directly on the credit quality, auditing transparency, and liquid availability of the reserve assets backing the token."
+  },
+  {
+    "question": "Why is standard Discounted Cash Flow (DCF) modeling difficult to apply to many native cryptocurrencies?",
+    "options": [
+      "Cryptocurrencies operate on standard corporate balance sheets.",
+      "Most native cryptocurrencies generate zero contractual cash flows, interest payments, or dividend yields to discount.",
+      "DCF models are legally banned in digital asset markets.",
+      "Cryptocurrency prices are fixed by international accounting standards."
+    ],
+    "correctIndex": 1,
+    "explanation": "DCF models discount expected future cash flows to present value. Because raw native tokens do not generate contractual cash flows, dividends, or rental yields, traditional DCF modeling fails."
+  },
+  {
+    "question": "What key operational risk does an investor assume when opting for self-custody of digital assets?",
+    "options": [
+      "The risk of exchange platform bankruptcy.",
+      "The risk of permanent, unrecoverable asset loss if their private cryptographic key is lost or stolen.",
+      "The requirement to pay monthly bank maintenance fees.",
+      "The risk of central bank asset seizure without key access."
+    ],
+    "correctIndex": 1,
+    "explanation": "Self-custody grants full personal sovereignty over private keys, but if the private key is misplaced, corrupted, or stolen, the owner faces irreversible loss of access to their assets."
+  },
+  {
+    "question": "How does Proof-of-Stake (PoS) achieve network consensus differently from Proof-of-Work (PoW)?",
+    "options": [
+      "PoS requires validators to solve heavy computational puzzles using hardware energy.",
+      "PoS selects block validators based on economic capital staked as collateral rather than computational energy expenditure.",
+      "PoS relies on a single corporate chairman to approve blocks.",
+      "PoS eliminates the use of cryptographic hashing."
+    ],
+    "correctIndex": 1,
+    "explanation": "Proof-of-Work relies on computational effort and energy consumption (mining), while Proof-of-Stake selects validators based on token capital locked up as collateral (staking)."
+  }
+]

@@ -1,0 +1,32 @@
+graph TD
+    DA["Digital Assets Ecosystem"] --> CAT["Asset Categories"]
+    DA --> FLOW["Conceptual Transaction Flow"]
+
+    subgraph Categories ["Five Main Asset Categories"]
+        NC["Native Coins<br/>(Payment, Store of Value & Gas Fees)"]
+        SC["Stablecoins<br/>(Fiat or Asset Pegged Tokens)"]
+        RWA["Tokenized Real-World Assets<br/>(Digital Claims on Physical/Financial Assets)"]
+        UGT["Utility & Governance Tokens<br/>(App Access & Protocol Voting Rights)"]
+        NFT["Non-Fungible Tokens<br/>(Unique Non-Interchangeable Markers)"]
+    end
+
+    CAT --> NC
+    CAT --> SC
+    CAT --> RWA
+    CAT --> UGT
+    CAT --> NFT
+
+    subgraph Transaction_Flow ["Blockchain Transaction Lifecycle"]
+        TX["1. Transaction Initiated"] --> BLK["2. Grouped into Block"]
+        BLK --> CNS["3. Validated via Consensus (PoW / PoS)"]
+        CNS --> CHN["4. Appended to Cryptographic Chain"]
+        CHN --> DL["5. Synchronized on Distributed Ledger"]
+    end
+
+    FLOW --> TX
+
+    subgraph Core_Risks ["Key Risk Drivers"]
+        RISK["Price Volatility • Regulatory Uncertainty • Custody / Security Vulnerabilities"]
+    end
+
+    DA -.-> RISK
