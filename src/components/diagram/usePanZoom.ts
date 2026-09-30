@@ -1,15 +1,16 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { clampTransform, zoomAt, type Transform } from '../../lib/pan-zoom';
 
 const IDENTITY: Transform = { x: 0, y: 0, k: 1 };
 
 export function usePanZoom(minK = 1, maxK = 4) {
-  const viewportRef = useRef<HTMLDivElement>(null);
+  const elRef = useRef<HTMLDivElement | null>(null);
+  const detachWheel = useRef<(() => void) | null>(null);
   const [t, setT] = useState<Transform>(IDENTITY);
   const pointers = useRef(new Map<number, { x: number; y: number }>());
 
   const size = () => {
-    const r = viewportRef.current?.getBoundingClientRect();
+    const r = elRef.current?.getBoundingClientRect();
     return { w: r?.width ?? 0, h: r?.height ?? 0, left: r?.left ?? 0, top: r?.top ?? 0 };
   };
 
@@ -22,18 +23,24 @@ export function usePanZoom(minK = 1, maxK = 4) {
   );
 
   // Pinch-zoom on trackpads arrives as ctrl+wheel; plain wheel keeps scrolling the page.
-  useEffect(() => {
-    const el = viewportRef.current;
+  // A callback ref (not an effect) so the non-passive listener follows the element: the viewport
+  // unmounts while the diagram shows its error fallback and remounts on recovery.
+  const applyZoomRef = useRef(applyZoom);
+  applyZoomRef.current = applyZoom;
+  const viewportRef = useCallback((el: HTMLDivElement | null) => {
+    detachWheel.current?.();
+    detachWheel.current = null;
+    elRef.current = el;
     if (!el) return;
     const onWheel = (e: WheelEvent) => {
       if (!e.ctrlKey && !e.metaKey) return;
       e.preventDefault();
-      const { left, top } = size();
-      applyZoom(Math.exp(-e.deltaY * 0.01), e.clientX - left, e.clientY - top);
+      const r = el.getBoundingClientRect();
+      applyZoomRef.current(Math.exp(-e.deltaY * 0.01), e.clientX - r.left, e.clientY - r.top);
     };
     el.addEventListener('wheel', onWheel, { passive: false });
-    return () => el.removeEventListener('wheel', onWheel);
-  }, [applyZoom]);
+    detachWheel.current = () => el.removeEventListener('wheel', onWheel);
+  }, []);
 
   const onPointerDown = (e: React.PointerEvent) => {
     pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
