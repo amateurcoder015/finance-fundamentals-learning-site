@@ -1,0 +1,12 @@
+{
+  "delta": { "term": "Delta", "definition": "How much an option's price changes for a one-unit move in the underlying. Roughly 0 to 1 for calls, -1 to 0 for puts." },
+  "gamma": { "term": "Gamma", "definition": "How fast delta itself changes as the underlying moves. Highest for at-the-money options near expiry." },
+  "theta": { "term": "Theta", "definition": "The daily loss in an option's value from the passage of time, all else equal." },
+  "vega": { "term": "Vega", "definition": "How much an option's price changes for a one-point change in implied volatility." },
+  "moneyness": { "term": "Moneyness", "definition": "Whether an option is in, at, or out of the money: the relationship between spot price and strike price." },
+  "mark-to-market": { "term": "Mark-to-market", "definition": "Daily revaluation of a futures position to the settlement price, with gains and losses settled in cash." },
+  "open-interest": { "term": "Open interest", "definition": "The total number of outstanding derivative contracts that have not yet been closed or settled." },
+  "basis": { "term": "Basis", "definition": "The difference between the spot price of an asset and the price of its futures contract." },
+  "margin": { "term": "Margin", "definition": "Collateral a trader posts to cover potential losses on a derivatives position." },
+  "hedging": { "term": "Hedging", "definition": "Taking an offsetting position to reduce exposure to adverse price moves." }
+}

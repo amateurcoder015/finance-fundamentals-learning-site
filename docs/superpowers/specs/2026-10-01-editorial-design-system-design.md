@@ -51,7 +51,7 @@ Astro components where static; React islands only where motion or state is neede
   - Drop cap via CSS on the first paragraph of prose (automatic for all notes).
   - `InkProgress` replaces `ReadingProgress`.
   - `<Hl>` opt-in MDX highlighter sweep, triggered on scroll into view.
-  - `<Term>` hover/tap definition; definitions live in one shared `src/content/glossary.json` and are looked up by key.
+  - `<Term>` hover/tap definition; definitions live in one shared `src/data/glossary.json` and are looked up by key. Stored under `src/data/` because Astro reserves `src/content/` for collections.
 - **Marginalia:** `<Note>` renders in a side gutter at wide widths and as an inline callout on small screens.
 - **Paper cards and stamps:** flashcards restyled as stacking/fanning/flipping paper cards. `<Stamp variant="correct|complete">` is a standalone animated component with no data dependency; sub-project 3 will drive it.
 - **Ticker:** CSS-only marquee on the home page, fed from topic titles and glossary terms. Pauses on hover; static under reduced-motion.

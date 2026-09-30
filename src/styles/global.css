@@ -137,3 +137,67 @@
 .prose td {
   @apply border-b border-rule px-3 py-2;
 }
+
+/* ---- MDX components ---- */
+.hl {
+  color: inherit;
+  padding: 0 0.1em;
+  background: linear-gradient(rgb(var(--gold)), rgb(var(--gold))) no-repeat 0 88% / 100% 40%;
+  transition: background-size var(--dur-slow) var(--ease-out);
+}
+.hl-armed .hl:not(.is-on) {
+  background-size: 0% 40%;
+}
+
+.term {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dotted rgb(var(--rust));
+}
+.term-tip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  z-index: 20;
+  width: max-content;
+  max-width: min(16rem, 80vw);
+  transform: translateX(-50%) translateY(4px);
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.5rem;
+  background: rgb(var(--ink));
+  color: rgb(var(--paper));
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast), transform var(--dur-fast);
+}
+.term:hover .term-tip,
+.term:focus .term-tip,
+.term:focus-within .term-tip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.note {
+  margin: 1.5rem 0;
+  border-left: 2px solid rgb(var(--rust));
+  background: rgb(var(--paper-raised));
+  padding: 0.75rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgb(var(--ink-muted));
+}
+@media (min-width: 1280px) {
+  .note {
+    float: right;
+    clear: right;
+    width: 13rem;
+    margin: 0 -15rem 1rem 1.5rem;
+    background: transparent;
+    padding: 0 0 0 0.75rem;
+    font-size: 0.8125rem;
+  }
+}

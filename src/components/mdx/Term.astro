@@ -1,0 +1,10 @@
+---
+import glossary from '../../data/glossary.json';
+import { lookupTerm, type Glossary } from '../../lib/glossary';
+
+interface Props { term: string }
+const { term } = Astro.props;
+const entry = lookupTerm(glossary as Glossary, term);
+const tipId = `tip-${term}-${Math.random().toString(36).slice(2, 8)}`;
+---
+<span class="term" tabindex="0" aria-describedby={tipId}><slot /><span id={tipId} role="tooltip" class="term-tip"><strong>{entry.term}.</strong> {entry.definition}</span></span>
