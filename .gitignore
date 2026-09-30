@@ -10,3 +10,7 @@ dist/
 *.log
 .env
 .env.*
+
+# Brainstorm / tooling scratch
+.superpowers/
+.impeccable/
