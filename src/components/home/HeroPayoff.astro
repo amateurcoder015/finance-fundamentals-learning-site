@@ -11,33 +11,30 @@
       <circle cx="118" cy="66" r="5" class="fill-rust" />
     </g>
   </svg>
-  <p class="mt-2 font-sans text-sm text-ink-muted">Break-even at ₹525 · profit at ₹600 (lot 50): <span class="hp-count font-semibold text-ink"></span></p>
+  <p class="mt-2 font-sans text-sm text-ink-muted">Break-even at ₹525 · profit at ₹600 (lot 50): <span class="hp-count font-semibold text-ink"><span class="sr-only">₹3,750</span><span class="hp-count-visual" aria-hidden="true"></span></span></p>
 </figure>
 
 <style>
   .hp-line {
     stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    animation: hp-draw 1.8s var(--ease-out) 0.3s forwards;
+    stroke-dashoffset: 0;
+    animation: hp-draw 1.8s var(--ease-out) 0.3s backwards;
   }
   .hp-marker {
-    opacity: 0;
-    animation: hp-drop 0.6s var(--ease-out) 1.4s forwards;
+    animation: hp-drop 0.6s var(--ease-out) 1.4s backwards;
   }
-  .hp-count::after {
-    content: '₹0';
-    animation: hp-count 2.2s steps(1) 0.3s forwards;
+  .hp-count-visual::after {
+    content: '₹3,750';
+    animation: hp-count 2.2s steps(1) 0.3s backwards;
   }
-  @keyframes hp-draw { to { stroke-dashoffset: 0; } }
+  @keyframes hp-draw { from { stroke-dashoffset: 1; } }
   @keyframes hp-drop {
     from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: none; }
   }
   @keyframes hp-count {
     0% { content: '₹0'; }
     25% { content: '₹900'; }
     50% { content: '₹1,900'; }
     75% { content: '₹2,900'; }
-    100% { content: '₹3,750'; }
   }
 </style>

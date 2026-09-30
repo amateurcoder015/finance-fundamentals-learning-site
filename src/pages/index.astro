@@ -22,7 +22,7 @@ const groups = CATEGORIES.map((category, index) => {
     .filter((t) => t.data.category === category)
     .sort((a, b) => new Date(a.data.dateAdded).getTime() - new Date(b.data.dateAdded).getTime());
   return { category, index, total: topics.length, topics: topics.slice(0, 3) };
-}).filter((g) => g.total > 0);
+}).filter((g) => g.total > 0).map((g, i) => ({ ...g, index: i }));
 
 const tickerItems = buildTickerItems(
   allTopics.map((t) => ({ title: t.data.title })),
