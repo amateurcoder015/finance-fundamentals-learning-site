@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 const { topic, slug, nextTopic } = Astro.props;
 const { Content, headings } = await topic.render();
 const auxiliary = loadTopicAuxiliaryData(slug);
-const contents = buildContents(headings);
+const contents = buildContents(headings, topic.body);
 
 const formattedDate = new Date(topic.data.dateAdded).toLocaleDateString('en-GB', {
   year: 'numeric',
