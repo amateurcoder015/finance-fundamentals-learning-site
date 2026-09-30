@@ -201,3 +201,28 @@
     font-size: 0.8125rem;
   }
 }
+
+/* ---- Diagram engine ---- */
+.dg-root svg {
+  width: 100%;
+  height: auto;
+  font-family: var(--font-serif);
+}
+
+/* Reveal: nodes fade in along the flow; edges draw themselves in ink. Opacity only on
+   nodes, because Mermaid positions them with a transform attribute. */
+.dg-reveal .dg-node {
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out) calc(var(--i, 0) * 70ms);
+}
+.dg-reveal .dg-edge {
+  stroke-dasharray: var(--len);
+  stroke-dashoffset: var(--len);
+  transition: stroke-dashoffset var(--dur-ink) var(--ease-out) 200ms;
+}
+.dg-reveal.dg-in .dg-node {
+  opacity: 1;
+}
+.dg-reveal.dg-in .dg-edge {
+  stroke-dashoffset: 0;
+}

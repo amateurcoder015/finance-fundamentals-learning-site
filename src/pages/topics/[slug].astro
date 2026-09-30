@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { loadTopicAuxiliaryData, getTopicSlug } from '../../utils/topic-loader';
-import MermaidDiagram from '../../components/MermaidDiagram';
+import Diagram from '../../components/diagram/Diagram';
 import PayoffChart from '../../components/PayoffChart';
 import Quiz from '../../components/Quiz';
 import Flashcards from '../../components/Flashcards';
@@ -237,7 +237,7 @@ const jsonLd = {
                 SVG Flowchart
               </span>
             </div>
-            <MermaidDiagram client:load code={auxiliary.diagram} />
+            <Diagram client:visible code={auxiliary.diagram} title={`${topic.data.title}: concept diagram`} />
           </section>
         </ScrollReveal>
       )}

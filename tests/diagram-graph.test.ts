@@ -1,10 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { parseNodeId, parseEdgeClasses, computeWalkOrder } from '../src/lib/diagram-graph';
+import { parseNodeId, parseEdgeClasses, parseEdgeId, computeWalkOrder } from '../src/lib/diagram-graph';
 
 describe('parseNodeId', () => {
   it('extracts the Mermaid node id', () => {
     expect(parseNodeId('flowchart-T0-0')).toBe('T0');
     expect(parseNodeId('flowchart-My-Node-3')).toBe('My-Node');
+    expect(parseNodeId('dg-1-flowchart-T0-0')).toBe('T0');
   });
   it('returns null for non-node ids', () => {
     expect(parseNodeId('cluster-x')).toBeNull();
@@ -19,6 +20,20 @@ describe('parseEdgeClasses', () => {
   it('returns null when either end is missing', () => {
     expect(parseEdgeClasses(['flowchart-link', 'LS-A'])).toBeNull();
     expect(parseEdgeClasses([])).toBeNull();
+  });
+});
+
+describe('parseEdgeId', () => {
+  it('reads from/to out of a Mermaid 11 edge id', () => {
+    expect(parseEdgeId('L_T0_T1_0', ['T0', 'T1'])).toEqual({ from: 'T0', to: 'T1' });
+    expect(parseEdgeId('dg-2-L_T0_T1_0', ['T0', 'T1'])).toEqual({ from: 'T0', to: 'T1' });
+  });
+  it('resolves underscores in node ids against known nodes', () => {
+    expect(parseEdgeId('L_open_pos_mark_to_market_2', ['open_pos', 'mark_to_market'])).toEqual({ from: 'open_pos', to: 'mark_to_market' });
+  });
+  it('returns null when the ids are unknown or malformed', () => {
+    expect(parseEdgeId('L_A_B_0', ['A'])).toBeNull();
+    expect(parseEdgeId('nope', ['A', 'B'])).toBeNull();
   });
 });
 

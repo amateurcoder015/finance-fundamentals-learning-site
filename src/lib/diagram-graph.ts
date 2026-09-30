@@ -3,10 +3,27 @@ export interface GraphEdge {
   to: string;
 }
 
-/** Mermaid flowchart node DOM ids look like `flowchart-<id>-<n>`. */
+/** Mermaid flowchart node DOM ids look like `[<svgId>-]flowchart-<id>-<n>` (Mermaid 11 prefixes the svg id). */
 export function parseNodeId(domId: string): string | null {
-  const m = domId.match(/^flowchart-(.+)-\d+$/);
+  const m = domId.match(/(?:^|-)flowchart-(.+)-\d+$/);
   return m ? m[1] : null;
+}
+
+/**
+ * Mermaid 11 edge paths have no LS-/LE- classes; their data-id / id is `[<svgId>-]L_<from>_<to>_<n>`.
+ * Ids may contain underscores, so the split is resolved against the known node ids.
+ */
+export function parseEdgeId(edgeId: string, nodeIds: string[]): GraphEdge | null {
+  const m = edgeId.match(/(?:^|-)L_(.+)_\d+$/);
+  if (!m) return null;
+  const known = new Set(nodeIds);
+  const body = m[1];
+  for (let i = body.indexOf('_'); i !== -1; i = body.indexOf('_', i + 1)) {
+    const from = body.slice(0, i);
+    const to = body.slice(i + 1);
+    if (known.has(from) && known.has(to)) return { from, to };
+  }
+  return null;
 }
 
 /** Mermaid edge paths carry `LS-<from>` and `LE-<to>` classes. */
