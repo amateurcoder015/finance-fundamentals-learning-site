@@ -1,0 +1,79 @@
+[
+  {
+    "question": "What primary feature distinguishes a primary financial market from a secondary financial market?",
+    "options": [
+      "Secondary market transactions generate direct capital proceeds for the issuing corporation.",
+      "Primary markets involve the first-time issuance and sale of new securities by a corporation, with proceeds flowing to the issuer.",
+      "Primary markets are exclusively decentralized quote-driven dealer networks.",
+      "Secondary markets are legally restricted to retail investors only."
+    ],
+    "correctIndex": 1,
+    "explanation": "In primary markets, new securities are issued and sold for the first time, with capital proceeds flowing directly to the issuing company. In secondary markets, investors trade previously issued securities among themselves."
+  },
+  {
+    "question": "Why is secondary market liquidity important to corporations seeking to raise new capital in the primary market?",
+    "options": [
+      "Secondary market trades provide direct tax revenue to issuing companies.",
+      "Investors are more willing to purchase primary shares when they know a liquid secondary market exists for easy future exit.",
+      "Secondary market liquidity eliminates corporate debt obligations.",
+      "Secondary market transactions replace the need for regulatory oversight."
+    ],
+    "correctIndex": 1,
+    "explanation": "Secondary market liquidity reassures investors that they can easily sell their shares later at transparent prices, making primary market offerings more attractive and reducing the issuer's cost of capital."
+  },
+  {
+    "question": "How does a quote-driven (dealer) market match buy and sell transactions differently from an order-driven market?",
+    "options": [
+      "Quote-driven markets match public limit orders strictly based on price-time priority without dealers.",
+      "In a quote-driven market, investors execute trades directly against continuous bid and ask quotes posted by market makers.",
+      "Quote-driven markets are central government clearing agencies.",
+      "Order-driven markets prohibit the submission of limit orders."
+    ],
+    "correctIndex": 1,
+    "explanation": "In quote-driven (dealer) markets, market makers hold inventory and continuously post bid and ask quotes. In order-driven markets, public buy and sell orders are matched algorithmically via an order book."
+  },
+  {
+    "question": "What does a narrow (tight) bid-ask spread generally indicate about a security's trading market?",
+    "options": [
+      "The security has high trading liquidity and low transaction cost drag.",
+      "The security has severe illiquidity and high dealer inventory risk.",
+      "The security is undergoing immediate corporate bankruptcy.",
+      "The security is restricted from secondary market trading."
+    ],
+    "correctIndex": 0,
+    "explanation": "The bid-ask spread represents the cost of immediate execution. A tight (narrow) spread indicates an active, highly liquid market with low transaction friction."
+  },
+  {
+    "question": "Why is the loss potential on a short selling position described as theoretically unlimited?",
+    "options": [
+      "Because borrowing costs are fixed by central bank regulations.",
+      "Because a stock's price can rise indefinitely with no theoretical price ceiling, compounding losses for the short seller.",
+      "Because short sellers are legally required to buy back shares every 24 hours.",
+      "Because short selling can only be executed in primary markets."
+    ],
+    "correctIndex": 1,
+    "explanation": "A long investor can lose at most 100% of their investment if the stock falls to $0. A short seller loses money as the stock price rises—and since there is no upper limit on how high a stock price can rise, loss potential is theoretically unlimited."
+  },
+  {
+    "question": "What primary role do dealers and market makers fulfill in financial market structure?",
+    "options": [
+      "They regulate public company financial reporting standards.",
+      "They provide liquidity by standing ready to continuously buy and sell securities, earning income from the bid-ask spread.",
+      "They underwrite primary IPO shares without holding inventory.",
+      "They manage individual pension fund allocations for retail clients."
+    ],
+    "correctIndex": 1,
+    "explanation": "Market makers provide liquidity by posting two-sided quotes (bid and ask) to buy from and sell to market participants, earning the bid-ask spread while bearing inventory risk."
+  },
+  {
+    "question": "Which order type guarantees immediate trade execution but does not guarantee the specific execution price?",
+    "options": [
+      "Limit Order",
+      "Market Order",
+      "Stop-Limit Order",
+      "Good-Til-Canceled Limit Order"
+    ],
+    "correctIndex": 1,
+    "explanation": "A market order instructs the broker to execute immediately at the best available price in the market. It guarantees speed of execution, but the final price depends on available order book liquidity."
+  }
+]

@@ -1,0 +1,38 @@
+graph TD
+    FM["Financial Markets Organization"] --> TIERS["Market Issuance Tiers"]
+    FM --> VENUES["Execution & Venue Structures"]
+    FM --> PARTS["Market Participants"]
+
+    subgraph Issuance_Tiers ["Primary vs. Secondary Markets"]
+        PRI["Primary Markets<br/>(New Security Issuance / IPOs<br/>Capital Proceeds → Issuer)"]
+        SEC["Secondary Markets<br/>(Investor-to-Investor Trading<br/>Asset Liquidity & Price Discovery)"]
+    end
+
+    TIERS --> PRI
+    TIERS --> SEC
+
+    subgraph Venue_Structures ["Venue & Execution Systems"]
+        EXC["Exchange Markets<br/>(Centralized & Order-Driven<br/>Price-Time Priority Matching)"]
+        OTC["Over-the-Counter (OTC)<br/>(Decentralized & Quote-Driven<br/>Dealer Inventory Quotes)"]
+    end
+
+    VENUES --> EXC
+    VENUES --> OTC
+
+    subgraph Participants ["Participant Categories"]
+        RET["Retail Investors"]
+        INS["Institutional Investors"]
+        DLR["Dealers & Market Makers<br/>(Liquidity Providers / Spread)"]
+        REG["Regulators<br/>(Fairness & Oversight)"]
+    end
+
+    PARTS --> RET
+    PARTS --> INS
+    PARTS --> DLR
+    PARTS --> REG
+
+    subgraph Key_Mechanics ["Core Execution Concepts"]
+        MEC["Bid-Ask Spread • Short Selling (Unlimited Downside Risk) • Limit Orders"]
+    end
+
+    FM -.-> Key_Mechanics

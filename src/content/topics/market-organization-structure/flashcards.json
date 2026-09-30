@@ -1,0 +1,30 @@
+[
+  {
+    "front": "What is the key difference between primary and secondary financial markets?",
+    "back": "Primary markets involve the initial creation and sale of new securities by issuers (IPOs), generating direct cash proceeds for the company. Secondary markets involve trading existing securities between investors, with zero direct capital flowing to the issuer."
+  },
+  {
+    "front": "How do quote-driven and order-driven markets match trades?",
+    "back": "Quote-driven (dealer) markets match investor orders directly against price quotes posted by market makers holding inventory. Order-driven markets match buy and sell orders from public traders via an algorithmic order book (e.g., price-time priority)."
+  },
+  {
+    "front": "What is the Bid-Ask Spread and what does it measure?",
+    "back": "The Bid-Ask Spread is the difference between the lowest price a seller accepts (Ask) and the highest price a buyer offers (Bid). It represents the immediate cost of trading and acts as a direct proxy for market liquidity."
+  },
+  {
+    "front": "What is short selling and why is its risk profile unique?",
+    "back": "Short selling involves borrowing and selling shares to buy them back later at a lower price. Unlike long positions (maximum loss capped at 100%), short selling carries theoretically unlimited loss potential because stock prices can rise indefinitely."
+  },
+  {
+    "front": "Why is secondary market liquidity important to issuing companies?",
+    "back": "High secondary market liquidity reassures investors that they can easily exit positions later, making primary market offerings more attractive and lowering the issuer's overall cost of raising capital."
+  },
+  {
+    "front": "What are the roles of Market Makers / Dealers?",
+    "back": "Intermediaries who provide market liquidity by continuously standing ready to buy and sell securities from their own inventory, earning income from the bid-ask spread."
+  },
+  {
+    "front": "What is the difference between a Market Order and a Limit Order?",
+    "back": "A Market Order guarantees immediate execution at the best current price but does not guarantee the price. A Limit Order guarantees execution at a specified price or better, but execution is not guaranteed if the market fails to reach that price."
+  }
+]
