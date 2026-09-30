@@ -6,7 +6,7 @@ import MermaidDiagram from '../../components/MermaidDiagram';
 import PayoffChart from '../../components/PayoffChart';
 import Quiz from '../../components/Quiz';
 import Flashcards from '../../components/Flashcards';
-import ReadingProgress from '../../components/ReadingProgress';
+import { InkProgress } from '../../components/ui/InkProgress';
 import { HeroMotion, HeroItem } from '../../components/HeroMotion';
 import { ScrollReveal } from '../../components/ScrollReveal';
 
@@ -54,7 +54,7 @@ const jsonLd = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
   <!-- Reading Progress Bar -->
-  <ReadingProgress client:load />
+  <InkProgress client:load />
 
   {/* =========================================================================
       ULTRA-CLEAN AMBIENT BACKDROP (SUBTLE ORBS & DELICATE DOT GRID)
@@ -201,7 +201,7 @@ const jsonLd = {
           {/* Top Gradient Line Accent */}
           <div class="absolute top-0 left-8 right-8 h-1.5 rounded-b-full bg-gradient-to-r from-blue-600 via-indigo-500 to-sky-400"></div>
 
-          <div class="prose dark:prose-invert max-w-none">
+          <div class="prose max-w-none">
             <Content />
           </div>
         </section>

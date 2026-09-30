@@ -43,84 +43,97 @@
 }
 
 /* ==========================================================================
-   MAGAZINE-GRADE PROSE & MDX TYPOGRAPHY STYLING
+   EDITORIAL PROSE — all colours come from tokens, so dark mode is automatic
    ========================================================================== */
 
-/* Lead paragraph styling */
-.prose > p:first-of-type {
-  @apply text-base sm:text-lg md:text-xl font-medium text-slate-700 dark:text-slate-200 leading-relaxed p-6 sm:p-7 rounded-2xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/70 dark:border-blue-800/70 shadow-sm mb-8;
+.prose {
+  font-family: var(--font-serif);
+  color: rgb(var(--ink));
 }
 
-/* Headings H1, H2, H3 */
+.prose p {
+  @apply my-5 text-lg leading-[1.75];
+}
+
+/* Drop cap. Skipped when the paragraph opens with maths. */
+.prose > p:first-of-type:not(:has(.katex))::first-letter {
+  float: left;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 4.2em;
+  line-height: 0.82;
+  padding: 0.06em 0.12em 0 0;
+  color: rgb(var(--rust));
+}
+
 .prose h2 {
-  @apply text-2xl sm:text-3xl font-black text-[#0F172A] dark:text-white tracking-tight mt-12 mb-6 border-l-4 border-blue-600 dark:border-blue-500 pl-4 py-1 bg-slate-50/80 dark:bg-slate-900/40 rounded-r-xl;
+  @apply mt-14 mb-5 border-b border-rule pb-2 text-3xl font-semibold tracking-tight;
+  font-family: var(--font-serif);
 }
 
 .prose h3 {
-  @apply text-xl sm:text-2xl font-black text-[#0F172A] dark:text-white tracking-tight mt-8 mb-4 flex items-center gap-2;
+  @apply mt-9 mb-3 text-2xl font-semibold tracking-tight;
+  font-family: var(--font-serif);
 }
 
-/* Paragraphs & General Text */
-.prose p {
-  @apply text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-300 my-5 font-normal;
-}
-
-/* Strong / Bold Text Highlights */
 .prose strong,
 .prose b {
-  @apply font-extrabold text-slate-900 dark:text-white bg-blue-50/80 dark:bg-blue-950/60 px-1.5 py-0.5 rounded border border-blue-200/50 dark:border-blue-800/50;
+  @apply font-semibold text-ink;
 }
 
-/* Code & Terminal Model Blocks */
-.prose pre {
-  @apply bg-[#0B132B] dark:bg-[#070D1B] border border-blue-900/60 dark:border-blue-800/60 rounded-2xl p-6 shadow-2xl my-8 overflow-x-auto relative text-sm text-sky-200 font-mono leading-relaxed;
+.prose a {
+  @apply text-rust underline underline-offset-4 decoration-rust/40 hover:decoration-rust;
 }
 
-.prose pre code {
-  @apply bg-transparent text-sky-200 p-0 border-none font-mono text-sm leading-relaxed;
-}
-
-/* Inline Code Pills */
-.prose :not(pre) > code {
-  @apply font-mono text-xs font-bold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/80 px-2 py-1 rounded-md border border-blue-200/80 dark:border-blue-800/80;
-}
-
-/* Lists Styling */
-.prose ul {
-  @apply space-y-3 my-6 list-disc list-inside text-slate-700 dark:text-slate-300 text-base sm:text-lg leading-relaxed;
-}
-
+.prose ul,
 .prose ol {
-  @apply space-y-3 my-6 list-decimal list-inside text-slate-700 dark:text-slate-300 text-base sm:text-lg leading-relaxed font-medium;
+  @apply my-6 space-y-2 text-lg leading-[1.7];
 }
 
-.prose li {
-  @apply pl-1;
+.prose li::marker {
+  color: rgb(var(--rust));
 }
 
-.prose li strong {
-  @apply font-bold text-slate-900 dark:text-white bg-transparent p-0 border-none;
-}
-
-/* Blockquotes / Insight Cards */
 .prose blockquote {
-  @apply p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-blue-50 via-indigo-50/60 to-transparent dark:from-blue-950/50 dark:via-indigo-950/30 dark:to-transparent border-l-4 border-blue-600 dark:border-blue-500 text-slate-800 dark:text-slate-200 italic font-medium my-8 shadow-sm not-italic;
+  @apply my-8 border-l-[3px] border-rust bg-paper-raised py-4 pl-6 pr-5 not-italic;
+  font-style: italic;
 }
 
 .prose blockquote p {
-  @apply my-0 text-base sm:text-lg text-slate-800 dark:text-slate-200 font-medium;
+  @apply my-0;
 }
 
-/* Dark Mode Prose Color Variables */
-.dark .prose {
-  color: #E2E8F0 !important;
-  --tw-prose-body: #E2E8F0;
-  --tw-prose-headings: #FFFFFF;
-  --tw-prose-lead: #CBD5E1;
-  --tw-prose-links: #60A5FA;
-  --tw-prose-bold: #FFFFFF;
-  --tw-prose-counters: #94A3B8;
-  --tw-prose-bullet: #60A5FA;
-  --tw-prose-quotes: #F1F5F9;
-  --tw-prose-code: #38BDF8;
+.prose pre {
+  @apply my-8 overflow-x-auto rounded-xl p-6 font-mono text-sm leading-relaxed;
+  background: rgb(var(--code-bg));
+  color: rgb(var(--code-fg));
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 font-mono text-sm;
+  color: inherit;
+  border: 0;
+}
+
+.prose :not(pre) > code {
+  @apply rounded border border-rule bg-paper-raised px-1.5 py-0.5 font-mono text-[0.85em] font-medium;
+}
+
+/* Hide the typography plugin's decorative backticks on inline code */
+.prose code::before,
+.prose code::after {
+  content: none;
+}
+
+.prose table {
+  @apply my-8 w-full border-collapse text-base;
+  font-family: var(--font-sans);
+}
+
+.prose th {
+  @apply border-b-2 border-ink bg-paper-raised px-3 py-2 text-left font-bold;
+}
+
+.prose td {
+  @apply border-b border-rule px-3 py-2;
 }
