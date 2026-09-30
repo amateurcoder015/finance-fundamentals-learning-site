@@ -20,7 +20,7 @@ export default function PayoffChart({
 
   if (!positions || positions.length === 0) {
     return (
-      <div className="p-6 rounded-2xl bg-slate-100 dark:bg-slate-800 text-center text-slate-500 text-sm">
+      <div className="p-6 rounded-2xl bg-paper text-center text-ink-muted text-sm">
         No positions defined for this payoff chart.
       </div>
     );
@@ -236,16 +236,16 @@ export default function PayoffChart({
   return (
     <div className="w-full space-y-4">
       {/* Top Controller Bar */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-2 border-b border-slate-200 dark:border-slate-800">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-2 border-b border-rule">
         <div>
-          <span className="text-[11px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-400">
+          <span className="text-[11px] font-black uppercase tracking-widest text-ink-muted">
             PAYOFF CHART
           </span>
-          <h3 className="text-xl font-extrabold text-[#0F172A] dark:text-white tracking-tight">
+          <h3 className="text-xl font-extrabold text-ink tracking-tight">
             {title || 'Profit & Loss Profile at Expiration'}
           </h3>
           {description && (
-            <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+            <p className="text-xs text-ink-muted font-medium">
               {description}
             </p>
           )}
@@ -253,13 +253,13 @@ export default function PayoffChart({
 
         {/* Tab Controls for Positions */}
         {positions.length > 1 && (
-          <div className="flex items-center p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700/60">
+          <div className="flex items-center p-1 bg-paper rounded-xl border border-rule">
             <button
               onClick={() => setActiveTab('combined')}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 activeTab === 'combined'
-                  ? 'bg-white dark:bg-[#0F1E36] text-[#0F172A] dark:text-white shadow-sm'
-                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  ? 'bg-paper-raised text-ink shadow-sm'
+                  : 'text-ink-muted hover:text-ink'
               }`}
             >
               Combined Net
@@ -273,8 +273,8 @@ export default function PayoffChart({
                   onClick={() => setActiveTab(key)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                     activeTab === key
-                      ? 'bg-white dark:bg-[#0F1E36] text-[#0F172A] dark:text-white shadow-sm'
-                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      ? 'bg-paper-raised text-ink shadow-sm'
+                      : 'text-ink-muted hover:text-ink'
                   }`}
                 >
                   {label}
@@ -286,7 +286,7 @@ export default function PayoffChart({
       </div>
 
       {/* SVG Canvas Container */}
-      <div className="relative w-full overflow-hidden rounded-2xl bg-slate-50/50 dark:bg-[#0B1528] border border-slate-200 dark:border-slate-800 p-2 sm:p-4 transition-colors">
+      <div className="relative w-full overflow-hidden rounded-2xl bg-paper border border-rule p-2 sm:p-4 transition-colors">
         <svg
           viewBox={`0 0 ${svgWidth} ${svgHeight}`}
           className="w-full h-auto cursor-crosshair select-none"
@@ -309,14 +309,14 @@ export default function PayoffChart({
           <defs>
             {/* Soft Emerald Gradient for Profit Region */}
             <linearGradient id={`profitGrad-${uniqueId}`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#10B981" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#10B981" stopOpacity="0.05" />
+              <stop offset="0%" style={{ stopColor: 'rgb(var(--success))', stopOpacity: 0.35 }} />
+              <stop offset="100%" style={{ stopColor: 'rgb(var(--success))', stopOpacity: 0.05 }} />
             </linearGradient>
 
             {/* Soft Rose Gradient for Loss Region */}
             <linearGradient id={`lossGrad-${uniqueId}`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#EF4444" stopOpacity="0.05" />
-              <stop offset="100%" stopColor="#EF4444" stopOpacity="0.35" />
+              <stop offset="0%" style={{ stopColor: 'rgb(var(--danger))', stopOpacity: 0.05 }} />
+              <stop offset="100%" style={{ stopColor: 'rgb(var(--danger))', stopOpacity: 0.35 }} />
             </linearGradient>
 
             {/* Clip path above Y=0 (Profit) */}
@@ -340,14 +340,14 @@ export default function PayoffChart({
                   y1={y}
                   x2={svgWidth - padRight}
                   y2={y}
-                  className="stroke-slate-200 dark:stroke-slate-800/60"
+                  className="stroke-rule"
                   strokeWidth="1"
                 />
                 <text
                   x={padLeft - 12}
                   y={y + 4}
                   textAnchor="end"
-                  className="fill-slate-400 dark:fill-slate-400 font-mono text-[11px] font-semibold"
+                  className="fill-ink-muted font-mono text-[11px] font-semibold"
                 >
                   {tick > 0 ? `+$${tick.toLocaleString()}` : tick < 0 ? `-$${Math.abs(tick).toLocaleString()}` : '$0'}
                 </text>
@@ -364,14 +364,14 @@ export default function PayoffChart({
                   y1={padTop}
                   x2={x}
                   y2={svgHeight - padBottom}
-                  className="stroke-slate-200 dark:stroke-slate-800/60"
+                  className="stroke-rule"
                   strokeWidth="1"
                 />
                 <text
                   x={x}
                   y={svgHeight - padBottom + 24}
                   textAnchor="middle"
-                  className="fill-slate-400 dark:fill-slate-400 font-mono text-[11px] font-semibold"
+                  className="fill-ink-muted font-mono text-[11px] font-semibold"
                 >
                   ${tick}
                 </text>
@@ -384,7 +384,7 @@ export default function PayoffChart({
             x={padLeft + graphWidth / 2}
             y={svgHeight - 12}
             textAnchor="middle"
-            className="fill-slate-600 dark:fill-slate-300 font-bold text-[12px]"
+            className="fill-ink font-bold text-[12px]"
           >
             Underlying Spot Price at Expiration (Sₜ)
           </text>
@@ -394,7 +394,7 @@ export default function PayoffChart({
             y={padTop + graphHeight / 2}
             textAnchor="middle"
             transform={`rotate(-90 18 ${padTop + graphHeight / 2})`}
-            className="fill-slate-600 dark:fill-slate-300 font-bold text-[12px]"
+            className="fill-ink font-bold text-[12px]"
           >
             Profit / Loss ($)
           </text>
@@ -417,7 +417,7 @@ export default function PayoffChart({
             y1={yZero}
             x2={svgWidth - padRight}
             y2={yZero}
-            className="stroke-slate-400 dark:stroke-slate-400"
+            className="stroke-ink-muted"
             strokeWidth="1.5"
             strokeDasharray="5 5"
           />
@@ -425,7 +425,7 @@ export default function PayoffChart({
             x={svgWidth - padRight - 6}
             y={yZero - 6}
             textAnchor="end"
-            className="fill-slate-400 dark:fill-slate-400 font-semibold text-[10px] tracking-wide uppercase"
+            className="fill-ink-muted font-semibold text-[10px] tracking-wide uppercase"
           >
             Zero P&L Break-even
           </text>
@@ -446,8 +446,8 @@ export default function PayoffChart({
                   y2={svgHeight - padBottom}
                   className={
                     isBE
-                      ? 'stroke-emerald-500/80 dark:stroke-emerald-400/80'
-                      : 'stroke-amber-500/80 dark:stroke-amber-400/80'
+                      ? 'stroke-success/80'
+                      : 'stroke-rust/80'
                   }
                   strokeWidth="1.5"
                   strokeDasharray="4 4"
@@ -460,8 +460,8 @@ export default function PayoffChart({
                   rx="6"
                   className={
                     isBE
-                      ? 'fill-emerald-500/10 dark:fill-emerald-400/20 stroke-emerald-500/30 dark:stroke-emerald-400/40'
-                      : 'fill-amber-500/10 dark:fill-amber-400/20 stroke-amber-500/30 dark:stroke-amber-400/40'
+                      ? 'fill-success/10 stroke-success/40'
+                      : 'fill-rust/10 stroke-rust/40'
                   }
                 />
                 <text
@@ -470,8 +470,8 @@ export default function PayoffChart({
                   textAnchor="middle"
                   className={
                     isBE
-                      ? 'fill-emerald-700 dark:fill-emerald-300 font-extrabold text-[10px]'
-                      : 'fill-amber-700 dark:fill-amber-300 font-extrabold text-[10px]'
+                      ? 'fill-success font-extrabold text-[10px]'
+                      : 'fill-rust font-extrabold text-[10px]'
                   }
                 >
                   {marker.label}
@@ -492,14 +492,14 @@ export default function PayoffChart({
               const legD = legPoints
                 .map((pt, i) => `${i === 0 ? 'M' : 'L'} ${pt.x.toFixed(2)} ${pt.y.toFixed(2)}`)
                 .join(' ');
-              const strokeColor = getLegColor(pos.type, idx);
+              const strokeClass = getLegColor(pos.type);
 
               return (
                 <path
                   key={`leg-${idx}`}
                   d={legD}
                   fill="none"
-                  stroke={strokeColor}
+                  className={strokeClass}
                   strokeWidth="2"
                   strokeDasharray="4 4"
                   opacity="0.6"
@@ -511,7 +511,7 @@ export default function PayoffChart({
           <path
             d={netPathD}
             fill="none"
-            className="stroke-blue-600 dark:stroke-blue-400"
+            className="stroke-ink"
             strokeWidth="3.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -526,7 +526,7 @@ export default function PayoffChart({
                 y1={padTop}
                 x2={hoverData.x}
                 y2={svgHeight - padBottom}
-                className="stroke-slate-500 dark:stroke-slate-300"
+                className="stroke-ink-muted"
                 strokeWidth="1.5"
                 strokeDasharray="3 3"
               />
@@ -536,7 +536,7 @@ export default function PayoffChart({
                 cx={hoverData.x}
                 cy={scaleY(hoverData.netPnL)}
                 r="6"
-                className="fill-blue-600 dark:fill-blue-400 stroke-white dark:stroke-[#0F1E36]"
+                className="fill-ink stroke-paper"
                 strokeWidth="2.5"
               />
 
@@ -609,20 +609,20 @@ export default function PayoffChart({
       <div className="flex flex-wrap items-center justify-between gap-3 px-2 py-1 text-xs">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-emerald-500 opacity-80"></span>
-            <span className="font-semibold text-slate-600 dark:text-slate-300">Profit Zone</span>
+            <span className="w-3 h-3 rounded-full bg-success opacity-80"></span>
+            <span className="font-semibold text-ink">Profit Zone</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-rose-500 opacity-80"></span>
-            <span className="font-semibold text-slate-600 dark:text-slate-300">Loss Zone</span>
+            <span className="w-3 h-3 rounded-full bg-danger opacity-80"></span>
+            <span className="font-semibold text-ink">Loss Zone</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="w-6 h-0.5 bg-blue-600 dark:bg-blue-400 rounded"></span>
-            <span className="font-semibold text-slate-600 dark:text-slate-300">Net Payoff</span>
+            <span className="w-6 h-0.5 bg-ink rounded"></span>
+            <span className="font-semibold text-ink">Net Payoff</span>
           </div>
         </div>
 
-        <div className="text-slate-400 text-[11px] font-mono">
+        <div className="text-ink-muted text-[11px] font-mono">
           Hover/Tap chart for exact settlement values
         </div>
       </div>
@@ -651,9 +651,8 @@ function getPosDefaultLabel(pos: Position): string {
   }
 }
 
-function getLegColor(type: Position['type'], idx: number): string {
-  if (type.startsWith('long')) return '#10B981';
-  if (type.startsWith('short')) return '#F43F5E';
-  const colors = ['#3B82F6', '#8B5CF6', '#F59E0B', '#06B6D4'];
-  return colors[idx % colors.length];
+function getLegColor(type: Position['type']): string {
+  if (type.startsWith('long')) return 'stroke-success';
+  if (type.startsWith('short')) return 'stroke-danger';
+  return 'stroke-rust';
 }

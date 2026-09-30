@@ -61,24 +61,24 @@ The **Binomial Model** uses a discrete-time framework, modeling price movement a
 
 ## 3. The Option Greeks: Risk Sensitivities
 
-The **Greeks** are partial derivatives of the option pricing formula. They measure how much an option's theoretical price changes when one underlying variable changes while all others remain constant.
+The **Greeks** are <Hl>partial derivatives of the option pricing formula</Hl>. They measure how much an option's theoretical price changes when one underlying variable changes while all others remain constant.
 
 | Greek | Mathematical Derivative | What It Measures | Typical Range / Behavior |
 | :--- | :--- | :--- | :--- |
 | **Delta ($\Delta$)** | $\frac{\partial V}{\partial S}$ | Price sensitivity per \$1 change in spot price | Call: $0 \text{ to } +1.0$<br/>Put: $-1.0 \text{ to } 0$ |
 | **Gamma ($\Gamma$)** | $\frac{\partial \Delta}{\partial S} = \frac{\partial^2 V}{\partial S^2}$ | Rate of change of Delta per \$1 change in spot | Always positive for long options; highest for $ATM$ |
-| **Theta ($\Theta$)** | $\frac{\partial V}{\partial T}$ | Option price decay per day passage of time | Negative for buyers (loss per day); accelerates near expiry |
+| **<Term term="theta">Theta</Term> ($\Theta$)** | $\frac{\partial V}{\partial T}$ | Option price decay per day passage of time | Negative for buyers (loss per day); accelerates near expiry |
 | **Vega ($\nu$)** | $\frac{\partial V}{\partial \sigma}$ | Price sensitivity per $1\%$ change in volatility | Always positive for long options; highest for $ATM$ |
 | **Rho ($\rho$)** | $\frac{\partial V}{\partial r}$ | Price sensitivity per $1\%$ change in interest rate | Positive for Calls, negative for Puts; minor impact |
 
 ### Detailed Breakdown of Each Greek
 
 #### 1. Delta ($\Delta$)
-- **Concept**: If a call option has a Delta of $+0.60$, a \$1 increase in the stock price increases the option's price by approximately **\$0.60**.
+- **Concept**: If a call option has a <Term term="delta">Delta</Term> of $+0.60$, a \$1 increase in the stock price increases the option's price by approximately **\$0.60**.
 - **Probability Proxy**: Delta also serves as a rough approximation of the market-implied probability that the option will expire In-the-Money ($ITM$). An $ATM$ call has a Delta of $\approx +0.50$ ($50\%$ probability).
 
 #### 2. Gamma ($\Gamma$)
-- **Concept**: Gamma measures the curvature or acceleration of Delta. If Delta is $+0.50$ and Gamma is $+0.05$, a \$1 stock increase boosts Delta to $+0.55$.
+- **Concept**: <Term term="gamma">Gamma</Term> measures the curvature or acceleration of Delta. If Delta is $+0.50$ and Gamma is $+0.05$, a \$1 stock increase boosts Delta to $+0.55$.
 - **Behavior**: Gamma is highest for **At-the-Money ($ATM$)** options nearing expiration, reflecting sharp sensitivity to whether the option finishes ITM or OTM.
 
 #### 3. Theta ($\Theta$)
@@ -86,7 +86,7 @@ The **Greeks** are partial derivatives of the option pricing formula. They measu
 - **Behavior**: Time decay is non-linear; it accelerates rapidly during the final 30 to 45 days before expiration.
 
 #### 4. Vega ($\nu$)
-- **Concept**: Measures the change in option price for a $1\%$ change in implied volatility ($\sigma$). If Vega is $+0.15$, a $1\%$ rise in volatility increases option premium by **\$0.15**.
+- **Concept**: Measures the change in option price for a $1\%$ change in implied volatility ($\sigma$). If <Term term="vega">Vega</Term> is $+0.15$, a $1\%$ rise in volatility increases option premium by **\$0.15**.
 - **Behavior**: Vega is highest for long-dated, At-the-Money ($ATM$) options.
 
 #### 5. Rho ($\rho$)
@@ -95,6 +95,8 @@ The **Greeks** are partial derivatives of the option pricing formula. They measu
 ## 4. Why the Greeks Matter Practically
 
 Traders and institutional market makers use the Greeks to manage complex options portfolios without recalculating full pricing equations:
+
+<Note>Delta is also read as the hedge ratio: how many units of the underlying offset one option.</Note>
 
 1. **Delta-Neutral Hedging**: A market maker who sells 10 call options ($\Delta = +0.50$ per contract, total $\Delta = +5.0$) can hedge directional risk by shorting 500 shares of underlying stock ($\Delta = -5.0$), creating a zero net Delta position.
 2. **Volatility Trading**: A trader expecting a volatility spike can build a **Vega-positive, Delta-neutral** position (e.g., buying an $ATM$ straddle) to profit purely from rising volatility without taking a directional market stance.

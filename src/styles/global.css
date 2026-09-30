@@ -130,6 +130,15 @@
   font-family: var(--font-sans);
 }
 
+/* Wide tables scroll inside themselves on phones instead of widening the page. */
+@media (max-width: 767px) {
+  .prose table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
 .prose th {
   @apply border-b-2 border-ink bg-paper-raised px-3 py-2 text-left font-bold;
 }
@@ -178,6 +187,36 @@
 .term:focus-within .term-tip {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+/* .prose strong is ink-on-paper; inside the inverted tooltip it must follow the tooltip colour. */
+.prose .term-tip strong {
+  color: inherit;
+}
+
+/* Phones: a centred tooltip near the right edge would widen the page. Anchor it to the prose
+   column instead, just below the line it belongs to. */
+@media (max-width: 639px) {
+  .prose {
+    position: relative;
+  }
+  .term {
+    position: static;
+  }
+  .term-tip {
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: auto;
+    max-width: none;
+    margin-top: 1.75em;
+    transform: translateY(4px);
+  }
+  .term:hover .term-tip,
+  .term:focus .term-tip,
+  .term:focus-within .term-tip {
+    transform: translateY(0);
+  }
 }
 
 .note {

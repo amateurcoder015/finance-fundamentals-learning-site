@@ -1,0 +1,57 @@
+---
+import type { Heading } from '../../lib/contents';
+
+interface Props {
+  items: Heading[];
+  show: boolean;
+  extras: { href: string; label: string }[];
+}
+const { items, show, extras } = Astro.props;
+const linkClass = 'flex min-h-[32px] items-center border-l-2 border-transparent py-1 pl-3 font-sans text-sm text-ink-muted transition-colors hover:text-ink aria-[current=true]:border-rust aria-[current=true]:font-semibold aria-[current=true]:text-ink';
+---
+<nav aria-label="Contents" class="space-y-6">
+  {show && (
+    <div>
+      <p class="mb-2 font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust">In this note</p>
+      <ul class="border-l border-rule">
+        {items.map((item) => (
+          <li>
+            <a data-toc-link href={`#${item.slug}`} class:list={[linkClass, item.depth === 3 && 'pl-6']}>{item.text}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+  <div>
+    <p class="mb-2 font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust">Practise</p>
+    <ul class="border-l border-rule">
+      {extras.map((item) => (
+        <li><a data-toc-link href={item.href} class={linkClass}>{item.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<script>
+  function initContents() {
+    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]'));
+    const targets = links
+      .map((link) => document.getElementById(decodeURIComponent(link.hash.slice(1))))
+      .filter((el): el is HTMLElement => el !== null);
+    if (targets.length === 0 || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          links.forEach((link) =>
+            link.setAttribute('aria-current', String(link.hash === `#${entry.target.id}`)),
+          );
+        }
+      },
+      { rootMargin: '-15% 0px -70% 0px' },
+    );
+    targets.forEach((el) => observer.observe(el));
+  }
+  document.addEventListener('astro:page-load', initContents);
+</script>
