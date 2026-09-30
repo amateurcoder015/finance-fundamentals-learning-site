@@ -1,0 +1,30 @@
+---
+interface Props { items: string[] }
+const { items } = Astro.props;
+---
+{items.length > 0 && (
+  <div class="ticker overflow-hidden border-y border-ink py-2" aria-hidden="true">
+    <div class="ticker-track font-mono text-sm text-ink">
+      {[...items, ...items].map((item) => (
+        <span class="whitespace-nowrap">{item}<span class="mx-6 text-rust">◆</span></span>
+      ))}
+    </div>
+  </div>
+)}
+
+<style>
+  .ticker-track {
+    display: inline-flex;
+    animation: ticker 70s linear infinite;
+  }
+  .ticker:hover .ticker-track {
+    animation-play-state: paused;
+  }
+  @keyframes ticker {
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ticker { overflow-x: auto; }
+    .ticker-track { animation: none !important; }
+  }
+</style>

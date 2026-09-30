@@ -1,0 +1,43 @@
+---
+---
+<figure class="hero-payoff" aria-label="Animated payoff diagram of a long call option">
+  <figcaption class="font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust">Live payoff</figcaption>
+  <p class="mt-1 font-serif text-2xl text-ink">Long call · strike 500 · premium 25</p>
+  <svg viewBox="0 0 220 100" class="mt-4 w-full" role="img" aria-label="Payoff line: flat loss up to the strike, then rising with the underlying price">
+    <line x1="0" y1="66" x2="220" y2="66" class="stroke-rule" stroke-dasharray="3" />
+    <polyline class="hp-line stroke-ink" points="0,82 90,82 220,8" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="1" />
+    <g class="hp-marker">
+      <line x1="118" y1="10" x2="118" y2="92" class="stroke-rust" stroke-dasharray="3" />
+      <circle cx="118" cy="66" r="5" class="fill-rust" />
+    </g>
+  </svg>
+  <p class="mt-2 font-sans text-sm text-ink-muted">Break-even at ₹525 · profit at ₹600 (lot 50): <span class="hp-count font-semibold text-ink"></span></p>
+</figure>
+
+<style>
+  .hp-line {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: hp-draw 1.8s var(--ease-out) 0.3s forwards;
+  }
+  .hp-marker {
+    opacity: 0;
+    animation: hp-drop 0.6s var(--ease-out) 1.4s forwards;
+  }
+  .hp-count::after {
+    content: '₹0';
+    animation: hp-count 2.2s steps(1) 0.3s forwards;
+  }
+  @keyframes hp-draw { to { stroke-dashoffset: 0; } }
+  @keyframes hp-drop {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes hp-count {
+    0% { content: '₹0'; }
+    25% { content: '₹900'; }
+    50% { content: '₹1,900'; }
+    75% { content: '₹2,900'; }
+    100% { content: '₹3,750'; }
+  }
+</style>

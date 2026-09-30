@@ -3,151 +3,91 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { CATEGORIES } from '../content/config';
 import { getTopicSlug } from '../utils/topic-loader';
-import HeroLayeredComposition from '../components/HeroLayeredComposition';
-import { ScrollReveal, ScrollItem } from '../components/ScrollReveal';
-import InteractiveFlashcardsPreview from '../components/InteractiveFlashcardsPreview';
+import glossary from '../data/glossary.json';
+import type { Glossary } from '../lib/glossary';
+import { buildTickerItems } from '../lib/ticker';
+import Section from '../components/ui/Section.astro';
+import Button from '../components/ui/Button.astro';
+import TopicCard from '../components/topic/TopicCard.astro';
+import Ticker from '../components/home/Ticker.astro';
+import HeroPayoff from '../components/home/HeroPayoff.astro';
+import ContinueCard from '../components/home/ContinueCard.astro';
 
 const allTopics = await getCollection('topics');
+const byNewest = [...allTopics].sort((a, b) => new Date(b.data.dateAdded).getTime() - new Date(a.data.dateAdded).getTime());
+const featured = byNewest[0];
 
-const topicsByCategory = CATEGORIES.map((category) => {
-  const sortedTopics = allTopics
+const groups = CATEGORIES.map((category, index) => {
+  const topics = allTopics
     .filter((t) => t.data.category === category)
     .sort((a, b) => new Date(a.data.dateAdded).getTime() - new Date(b.data.dateAdded).getTime());
+  return { category, index, total: topics.length, topics: topics.slice(0, 3) };
+}).filter((g) => g.total > 0);
 
-  return {
-    category,
-    totalCount: sortedTopics.length,
-    topics: sortedTopics.slice(0, 3),
-  };
-}).filter((group) => group.totalCount > 0);
-
-const categoryIcons: Record<string, string> = {
-  "Corporate Finance": "🏢",
-  "Financial Statements": "📊",
-  "Equities": "📈",
-  "Fixed Income": "📜",
-  "Derivatives": "🔀",
-  "Portfolio Management": "💼",
-  "Economics": "🌐",
-  "Alternative Investments": "💎",
-};
+const tickerItems = buildTickerItems(
+  allTopics.map((t) => ({ title: t.data.title })),
+  glossary as Glossary,
+);
 ---
 
 <BaseLayout title="Make Finance Feel Simple — Finance Fundamentals">
-
-  <!-- Dimensional Layered Hero Composition -->
-  <HeroLayeredComposition client:load categories={CATEGORIES} />
-
-  <!-- Interactive 3D Showcase Sandbox Island -->
-  <InteractiveFlashcardsPreview client:load />
-
-  <!-- Scroll-Triggered Topics Grid Section -->
-  <div class="my-20 space-y-20">
-
-    {/* Section Header */}
-    <ScrollReveal client:load className="text-center max-w-3xl mx-auto space-y-4">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/80 border border-blue-200/80 dark:border-blue-800/80 shadow-sm text-blue-700 dark:text-blue-300 text-xs font-extrabold tracking-widest uppercase">
-        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-        <span>Curated Knowledge Catalog · 8 Disciplines</span>
+  <section class="border-t-4 border-ink pt-1">
+    <div class="grid items-center gap-12 border-t border-ink pb-12 pt-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+      <div>
+        <p class="mb-4 font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust">Finance, explained properly</p>
+        <h1 class="font-serif text-5xl font-semibold leading-[1.02] tracking-tight text-ink sm:text-6xl md:text-7xl">
+          Make finance feel simple.
+        </h1>
+        <p class="mt-6 max-w-xl font-serif text-xl leading-relaxed text-ink-muted">
+          Clear notes, live diagrams and honest practice for the parts of finance that are actually tested. No textbook fog.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <Button href={`/topics/${getTopicSlug(featured)}`} variant="accent">Start with {featured.data.title}</Button>
+          <Button href="/topics" variant="ghost">Browse all notes</Button>
+        </div>
       </div>
+      <div class="rounded-2xl border border-rule bg-paper-raised p-6 sm:p-8">
+        <HeroPayoff />
+      </div>
+    </div>
+  </section>
 
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F172A] dark:text-white tracking-tight leading-tight">
-        Structured Learning Notes
-      </h2>
-      
-      <p class="text-slate-600 dark:text-slate-300 font-medium text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-        Deep dives into foundational topics across core financial disciplines, crafted with clear explanations and zero textbook fluff.
-      </p>
-    </ScrollReveal>
+  <Ticker items={tickerItems} />
 
-    {/* Category Groups */}
-    {topicsByCategory.map((group) => (
-      <section class="space-y-8 bg-slate-50/60 dark:bg-[#070D19]/60 p-6 sm:p-8 md:p-10 rounded-[36px] border border-slate-200/70 dark:border-slate-800/80 backdrop-blur-sm">
-        
-        {/* Elevated Category Banner Header */}
-        <ScrollReveal client:load className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-slate-200/80 dark:border-slate-800/80">
-          <div class="flex items-center gap-4">
-            <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-white dark:bg-[#0F1E36] border border-slate-200 dark:border-slate-800 shadow-md flex items-center justify-center text-3xl shrink-0">
-              {categoryIcons[group.category] || "📁"}
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <h3 class="text-2xl sm:text-3xl font-black text-[#0F172A] dark:text-white tracking-tight">{group.category}</h3>
-                <span className="text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
-                  {group.totalCount} {group.totalCount === 1 ? 'Topic' : 'Topics'}
-                </span>
-              </div>
-              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium mt-0.5">Core Financial Fundamentals & Study Guides</p>
-            </div>
-          </div>
+  <div class="mt-16">
+    <ContinueCard
+      slug={getTopicSlug(featured)}
+      title={featured.data.title}
+      description={featured.data.description}
+      category={featured.data.category}
+    />
+  </div>
 
+  <div class="mt-24 space-y-24">
+    {groups.map((group) => (
+      <Section
+        eyebrow={`${String(group.index + 1).padStart(2, '0')} · ${group.total} ${group.total === 1 ? 'note' : 'notes'}`}
+        title={group.category}
+      >
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {group.topics.map((topic) => (
+            <TopicCard
+              slug={getTopicSlug(topic)}
+              title={topic.data.title}
+              description={topic.data.description}
+              category={topic.data.category}
+              difficulty={topic.data.difficulty}
+              dateAdded={topic.data.dateAdded}
+            />
+          ))}
+        </div>
+        <p class="mt-6">
           <a
             href={`/categories/${group.category.toLowerCase().replace(/\s+/g, '-')}`}
-            class="px-5 py-2.5 rounded-full bg-white dark:bg-[#0F1E36] hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 text-slate-800 dark:text-slate-200 text-xs font-black transition-all shadow-sm border border-slate-200 dark:border-slate-800 flex items-center gap-2 group shrink-0"
-          >
-            <span>Browse Category ({group.totalCount})</span>
-            <span class="group-hover:translate-x-1 transition-transform">→</span>
-          </a>
-        </ScrollReveal>
-
-        {/* Topic Cards Grid */}
-        <ScrollReveal client:load stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {group.topics.map((topic) => {
-            const slug = getTopicSlug(topic);
-            return (
-              <ScrollItem client:load>
-                <a
-                  href={`/topics/${slug}`}
-                  class="group relative block bg-white dark:bg-[#0E1A2F] border border-slate-200/90 dark:border-slate-800/90 rounded-[28px] p-7 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(29,78,216,0.18)] dark:hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.7)] hover:border-blue-500/50 dark:hover:border-blue-500/60 transition-all duration-300 flex flex-col justify-between h-full overflow-hidden"
-                >
-                  {/* Glowing Accent Top Bar on Hover */}
-                  <div class="absolute top-0 left-6 right-6 h-1 rounded-b-full bg-gradient-to-r from-blue-600 via-indigo-500 to-sky-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  <div>
-                    {/* Topic Header Chips */}
-                    <div class="flex items-center justify-between gap-2 mb-5">
-                      <span class="text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full bg-slate-900 text-white dark:bg-blue-950 dark:text-blue-300 border border-transparent dark:border-blue-800/60 shadow-sm">
-                        {topic.data.category}
-                      </span>
-                      
-                      <span class:list={[
-                        'text-xs font-bold px-3 py-0.5 rounded-full capitalize shadow-sm',
-                        topic.data.difficulty === 'beginner' && 'bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800/80',
-                        topic.data.difficulty === 'intermediate' && 'bg-amber-50 dark:bg-amber-950/80 text-amber-700 dark:text-amber-300 border border-amber-200/80 dark:border-amber-800/80',
-                        topic.data.difficulty === 'advanced' && 'bg-rose-50 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-200/80 dark:border-rose-800/80',
-                        !['beginner', 'intermediate', 'advanced'].includes(topic.data.difficulty) && 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300',
-                      ]}>
-                        {topic.data.difficulty}
-                      </span>
-                    </div>
-
-                    {/* Title */}
-                    <h4 class="text-xl sm:text-2xl font-black text-[#0F172A] dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors tracking-tight leading-snug">
-                      {topic.data.title}
-                    </h4>
-
-                    {/* Description */}
-                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3 mb-6 font-medium">
-                      {topic.data.description}
-                    </p>
-                  </div>
-
-                  {/* Footer Bar */}
-                  <div class="text-xs text-slate-400 dark:text-slate-500 border-t border-slate-100 dark:border-slate-800/80 pt-4 flex justify-between items-center font-bold">
-                    <span class="text-[11px]">Added {new Date(topic.data.dateAdded).toLocaleDateString()}</span>
-                    
-                    <span class="text-xs font-extrabold text-blue-600 dark:text-blue-400 flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/60 dark:border-blue-800/60 group-hover:bg-blue-600 group-hover:text-white dark:group-hover:bg-blue-600 dark:group-hover:text-white transition-all duration-200 shadow-sm">
-                      <span>Study Note</span>
-                      <span class="group-hover:translate-x-0.5 transition-transform">→</span>
-                    </span>
-                  </div>
-                </a>
-              </ScrollItem>
-            );
-          })}
-        </ScrollReveal>
-      </section>
+            class="inline-flex min-h-[44px] items-center font-sans text-sm font-bold text-ink underline decoration-rust decoration-2 underline-offset-4"
+          >All {group.category} notes →</a>
+        </p>
+      </Section>
     ))}
-
   </div>
 </BaseLayout>

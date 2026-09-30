@@ -1,0 +1,35 @@
+---
+import Card from '../ui/Card.astro';
+import DifficultyBadge from '../ui/DifficultyBadge.astro';
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  difficulty: string;
+  dateAdded: string | Date;
+}
+const { slug, title, description, category, difficulty, dateAdded } = Astro.props;
+const added = new Date(dateAdded).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+---
+<Card
+  href={`/topics/${slug}`}
+  class="group flex h-full flex-col justify-between"
+  data-topic-card
+  data-category={category}
+  data-difficulty={difficulty}
+>
+  <div>
+    <div class="mb-4 flex items-center justify-between gap-2">
+      <span class="font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust">{category}</span>
+      <DifficultyBadge difficulty={difficulty} />
+    </div>
+    <h3 class="mb-3 font-serif text-2xl font-semibold leading-snug tracking-tight text-ink">{title}</h3>
+    <p class="mb-6 line-clamp-3 font-serif text-base leading-relaxed text-ink-muted">{description}</p>
+  </div>
+  <div class="flex items-center justify-between border-t border-rule pt-4 font-sans text-xs text-ink-muted">
+    <span>Added {added}</span>
+    <span class="font-bold text-ink transition-transform group-hover:translate-x-0.5">Read →</span>
+  </div>
+</Card>
