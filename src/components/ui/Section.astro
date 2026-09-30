@@ -1,0 +1,18 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title?: string;
+  class?: string;
+}
+const { id, eyebrow, title, class: className = '' } = Astro.props;
+---
+<section id={id} class:list={['relative scroll-mt-28', className]}>
+  {(eyebrow || title) && (
+    <header class="mb-6">
+      {eyebrow && <p class="font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust">{eyebrow}</p>}
+      {title && <h2 class="mt-1 font-serif text-3xl font-semibold tracking-tight text-ink sm:text-4xl">{title}</h2>}
+    </header>
+  )}
+  <slot />
+</section>

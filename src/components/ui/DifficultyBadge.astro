@@ -1,0 +1,7 @@
+---
+import Badge from './Badge.astro';
+interface Props { difficulty: string }
+const { difficulty } = Astro.props;
+const tone = difficulty === 'beginner' ? 'success' : difficulty === 'intermediate' ? 'gold' : difficulty === 'advanced' ? 'danger' : 'neutral';
+---
+<Badge tone={tone}>{difficulty}</Badge>
