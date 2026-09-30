@@ -226,3 +226,19 @@
 .dg-reveal.dg-in .dg-edge {
   stroke-dashoffset: 0;
 }
+
+/* Walk the flow: dim everything but the current step */
+.dg-root.dg-walking g.node {
+  opacity: 0.22;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.dg-root.dg-walking path.flowchart-link {
+  opacity: 0.2;
+}
+.dg-root.dg-walking g.node.dg-current {
+  opacity: 1;
+}
+.dg-root.dg-walking g.node.dg-current :is(rect, polygon, circle, ellipse, path) {
+  stroke: rgb(var(--rust));
+  stroke-width: 2.5px;
+}

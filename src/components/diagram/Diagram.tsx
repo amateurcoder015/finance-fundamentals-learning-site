@@ -2,6 +2,8 @@ import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 're
 import { buildThemeVariables } from '../../lib/diagram-theme';
 import { getReducedMotion } from '../../lib/motion';
 import { extractGraph, armReveal, readThemeTokens, type DiagramGraph } from './dom';
+import { usePanZoom } from './usePanZoom';
+import { DiagramToolbar } from './DiagramToolbar';
 
 export interface DiagramProps {
   code: string;
@@ -32,6 +34,9 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
   const [svg, setSvg] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [graph, setGraph] = useState<DiagramGraph | null>(null);
+  const [walkIndex, setWalkIndex] = useState<number | null>(null);
+  const [fullscreen, setFullscreen] = useState(false);
+  const { t, viewportRef, zoomIn, zoomOut, fit, bind } = usePanZoom();
 
   // Render (and re-render when the theme flips).
   useEffect(() => {
@@ -52,6 +57,7 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
           setError(null);
         }
       } catch (err) {
+        console.error('Mermaid render error:', err);
         if (!cancelled) setError(err instanceof Error ? err.message : 'Failed to render diagram');
       }
     })();
@@ -80,9 +86,49 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
     requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('dg-in')));
   }, [svg]);
 
+  // Walk-the-flow highlighting.
+  useEffect(() => {
+    if (!graph) return;
+    rootRef.current?.classList.toggle('dg-walking', walkIndex !== null);
+    const currentId = walkIndex !== null ? graph.order[walkIndex] : null;
+    graph.nodeEls.forEach((el, id) => el.classList.toggle('dg-current', id === currentId));
+  }, [walkIndex, graph]);
+
+  // Fullscreen: lock page scroll, close on Escape, re-fit the view.
+  useEffect(() => {
+    fit();
+    if (!fullscreen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setFullscreen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [fullscreen, fit]);
+
   // React 19 re-applies innerHTML whenever the prop object's identity changes, which would wipe
-  // the reveal classes added by armReveal. Keep the object stable per rendered svg.
+  // the reveal and walk classes (dg-walking / dg-current / dg-reveal), and pan/zoom state changes
+  // re-render constantly. Keep the object stable per rendered svg.
   const innerHtml = useMemo(() => ({ __html: svg ?? '' }), [svg]);
+
+  const total = graph?.order.length ?? 0;
+  const canWalk = total >= 2;
+  const walking = walkIndex !== null;
+
+  const step = (delta: number) => {
+    if (walkIndex === null || total === 0) return;
+    setWalkIndex((walkIndex + delta + total) % total);
+  };
+
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (!walking) return;
+    if (e.key === 'ArrowRight') step(1);
+    else if (e.key === 'ArrowLeft') step(-1);
+  };
 
   if (error) {
     return (
@@ -94,15 +140,52 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
   }
 
   return (
-    <figure className="relative">
-      <div
-        ref={rootRef}
-        className="dg-root overflow-x-auto"
-        role="img"
-        aria-label={title}
-        dangerouslySetInnerHTML={innerHtml}
+    <figure
+      onKeyDown={onKeyDown}
+      className={fullscreen ? 'fixed inset-0 z-[70] flex flex-col bg-paper p-4' : 'relative'}
+    >
+      <DiagramToolbar
+        canWalk={canWalk}
+        walking={walking}
+        onToggleWalk={() => setWalkIndex(walking ? null : 0)}
+        onZoomIn={zoomIn}
+        onZoomOut={zoomOut}
+        onFit={fit}
+        fullscreen={fullscreen}
+        onToggleFullscreen={() => setFullscreen((f) => !f)}
       />
-      {svg === null && <p className="font-sans text-sm text-ink-muted">Drawing diagram…</p>}
+
+      <div
+        ref={viewportRef}
+        {...bind}
+        className={`relative overflow-hidden rounded-xl border border-rule bg-paper ${fullscreen ? 'flex-1' : ''} ${t.k > 1 ? 'select-none cursor-grab' : ''}`}
+        style={{ touchAction: t.k > 1 ? 'none' : 'pan-y' }}
+      >
+        <div
+          ref={rootRef}
+          className="dg-root"
+          role="img"
+          aria-label={title}
+          style={{ transform: `translate(${t.x}px, ${t.y}px) scale(${t.k})`, transformOrigin: '0 0' }}
+          dangerouslySetInnerHTML={innerHtml}
+        />
+        {svg === null && <p className="p-4 font-sans text-sm text-ink-muted">Drawing diagram…</p>}
+      </div>
+
+      {walking && graph && (
+        <div className="mt-3 flex flex-wrap items-center gap-3 rounded-xl border border-rule bg-paper-raised p-3">
+          <button type="button" onClick={() => step(-1)} className="min-h-[44px] min-w-[44px] rounded-full border border-rule px-4 font-sans text-sm font-bold text-ink" aria-label="Previous step">←</button>
+          <p aria-live="polite" className="flex-1 font-serif text-base text-ink">
+            <span className="font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust">
+              Step {walkIndex! + 1} of {total}
+            </span>
+            <br />
+            {graph.labels[graph.order[walkIndex!]]}
+          </p>
+          <button type="button" onClick={() => step(1)} className="min-h-[44px] min-w-[44px] rounded-full bg-rust px-4 font-sans text-sm font-bold text-on-accent" aria-label="Next step">→</button>
+        </div>
+      )}
+
       {graph && graph.order.length > 0 && (
         <ol className="sr-only" aria-label={`${title}: outline of steps`}>
           {graph.order.map((id) => (
