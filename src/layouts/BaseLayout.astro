@@ -1,4 +1,7 @@
 ---
+import '@fontsource-variable/fraunces';
+import '@fontsource-variable/plus-jakarta-sans';
+import '../styles/tokens.css';
 import '../styles/global.css';
 import ThemeToggle from '../components/ThemeToggle';
 import { ClientRouter } from 'astro:transitions';
@@ -21,10 +24,16 @@ const pathname = Astro.url.pathname;
 const siteUrl = "https://finance-fundamentals-learning-site.vercel.app";
 const canonicalUrl = new URL(pathname, siteUrl).href;
 const fullImageUrl = new URL(image, siteUrl).href;
+
+const navLinks = [
+  { href: '/', label: 'Home', active: pathname === '/' },
+  { href: '/topics', label: 'Notes', active: pathname.startsWith('/topics') },
+  { href: '/categories', label: 'Categories', active: pathname.startsWith('/categories') },
+];
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -32,7 +41,6 @@ const fullImageUrl = new URL(image, siteUrl).href;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content={article ? "article" : "website"} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={`${title} | Finance Fundamentals`} />
@@ -40,141 +48,107 @@ const fullImageUrl = new URL(image, siteUrl).href;
     <meta property="og:image" content={fullImageUrl} />
     <meta property="og:site_name" content="Finance Fundamentals" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={`${title} | Finance Fundamentals`} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={fullImageUrl} />
 
-    <!-- Google Fonts Preload -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
     <ClientRouter />
 
-    <!-- Anti-FOUC inline script -->
     <script is:inline>
-      const theme = localStorage.getItem('theme');
-      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+      (function () {
+        function apply() {
+          var theme = null;
+          try { theme = localStorage.getItem('theme'); } catch (e) {}
+          var dark = theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          document.documentElement.classList.toggle('dark', dark);
+        }
+        apply();
+        document.addEventListener('astro:after-swap', apply);
+      })();
     </script>
   </head>
-  <body class="bg-white dark:bg-[#060B14] text-[#0F172A] dark:text-[#F8FAFC] min-h-screen flex flex-col font-sans transition-colors duration-250">
+  <body class="min-h-screen flex flex-col">
 
-    <!-- Navbar Header -->
-    <header id="site-header" class="bg-white/95 dark:bg-[#060B14]/95 backdrop-blur-md border-b border-slate-100 dark:border-slate-800/80 sticky top-0 z-50 transition-all duration-250">
-      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
+    <header id="site-header" class="sticky top-0 z-50 border-b border-rule bg-paper/95 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between gap-4">
 
-        <!-- Logo Brand -->
-        <a href="/" class="group flex items-center gap-2.5 min-h-[44px] text-2xl font-extrabold tracking-tight text-[#0F172A] dark:text-white" aria-label="Finance Fundamentals Home">
-          <div class="w-8 h-8 rounded-lg bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] flex items-center justify-center font-black text-sm shadow-sm group-hover:scale-105 transition-transform" aria-hidden="true">
-            F
-          </div>
-          <span>Finance<span class="font-normal text-slate-500 dark:text-slate-400">Fundamentals</span></span>
+        <a href="/" class="group flex items-center gap-3 min-h-[44px]" aria-label="Finance Fundamentals Home">
+          <span class="flex h-9 w-9 items-center justify-center rounded-md bg-rust font-serif text-xl font-semibold text-on-accent" aria-hidden="true">F</span>
+          <span class="font-serif text-xl font-semibold tracking-tight text-ink">Finance <span class="font-normal text-ink-muted">Fundamentals</span></span>
         </a>
 
-        <!-- Desktop Nav Links -->
-        <nav class="hidden md:flex items-center space-x-6 text-sm font-bold text-slate-700 dark:text-slate-200" aria-label="Main Navigation">
-          <a
-            href="/"
-            class={pathname === '/' ? "min-h-[44px] inline-flex items-center text-[#0F172A] dark:text-white border-b-2 border-[#0F172A] dark:border-white" : "min-h-[44px] inline-flex items-center hover:text-[#0F172A] dark:hover:text-white transition-colors"}
-          >
-            Dashboard
-          </a>
-          <a
-            href="/topics"
-            class={pathname.startsWith('/topics') ? "min-h-[44px] inline-flex items-center text-[#0F172A] dark:text-white border-b-2 border-[#0F172A] dark:border-white" : "min-h-[44px] inline-flex items-center hover:text-[#0F172A] dark:hover:text-white transition-colors"}
-          >
-            Notes
-          </a>
-          <a
-            href="/categories"
-            class={pathname.startsWith('/categories') ? "min-h-[44px] inline-flex items-center text-[#0F172A] dark:text-white border-b-2 border-[#0F172A] dark:border-white" : "min-h-[44px] inline-flex items-center hover:text-[#0F172A] dark:hover:text-white transition-colors"}
-          >
-            Categories
-          </a>
-          <a
-            href="/topics/time-value-of-money"
-            class="min-h-[44px] inline-flex items-center gap-1.5 text-xs uppercase font-extrabold px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-900"
-          >
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true"></span>
-            Seed Topic
-          </a>
+        <nav class="hidden md:flex items-center gap-7 font-sans text-sm font-semibold" aria-label="Main Navigation">
+          {navLinks.map((link) => (
+            <a
+              href={link.href}
+              aria-current={link.active ? 'page' : undefined}
+              class:list={[
+                'inline-flex min-h-[44px] items-center border-b-2 transition-colors',
+                link.active ? 'border-rust text-ink' : 'border-transparent text-ink-muted hover:text-ink',
+              ]}
+            >{link.label}</a>
+          ))}
         </nav>
 
-        <!-- Right Side Actions & Mobile Menu Button -->
         <div class="flex items-center gap-3">
           <ThemeToggle client:load />
-
           <a
             href="/topics"
-            class="hidden sm:inline-flex min-h-[44px] items-center px-5 py-2 rounded-full bg-[#0F172A] hover:bg-[#1E293B] dark:bg-white dark:hover:bg-slate-200 dark:text-[#0F172A] text-white text-xs font-bold transition-all shadow-sm hover:scale-[1.02] active:scale-[0.98]"
-          >
-            Start Learning
-          </a>
-
-          <!-- Mobile Nav Button -->
+            class="hidden sm:inline-flex min-h-[44px] items-center rounded-full bg-ink px-5 font-sans text-xs font-bold text-on-accent transition-transform hover:scale-[1.02] active:scale-[0.98]"
+          >Start learning</a>
           <button
             id="mobile-menu-toggle"
             aria-label="Toggle navigation menu"
             aria-expanded="false"
             aria-controls="mobile-nav-menu"
-            class="md:hidden min-h-[44px] min-w-[44px] p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center justify-center"
+            class="md:hidden flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-rule bg-paper-raised text-ink"
           >
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
-
       </div>
 
-      <!-- Mobile Navigation Drawer -->
-      <div id="mobile-nav-menu" class="hidden md:hidden border-t border-slate-100 dark:border-slate-800 px-4 py-4 bg-white dark:bg-[#060B14]">
-        <nav class="flex flex-col space-y-3 font-bold text-base" aria-label="Mobile Navigation">
-          <a href="/" class="min-h-[44px] flex items-center px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Dashboard</a>
-          <a href="/topics" class="min-h-[44px] flex items-center px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Notes & Topics</a>
-          <a href="/categories" class="min-h-[44px] flex items-center px-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Categories</a>
-          <a href="/topics/time-value-of-money" class="min-h-[44px] flex items-center px-3 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300">Seed Topic: TVM</a>
+      <div id="mobile-nav-menu" class="hidden md:hidden border-t border-rule bg-paper px-4 py-4">
+        <nav class="flex flex-col gap-1 font-sans text-base font-semibold" aria-label="Mobile Navigation">
+          {navLinks.map((link) => (
+            <a href={link.href} class="flex min-h-[44px] items-center rounded-lg px-3 text-ink hover:bg-paper-raised">{link.label}</a>
+          ))}
         </nav>
       </div>
     </header>
 
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 md:py-12">
+    <main id="main" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-8 py-8 md:py-12">
       <slot />
     </main>
 
-    <footer class="bg-[#0B172A] text-slate-300 border-t border-slate-800 py-12 text-sm mt-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex items-center gap-3">
-          <div class="w-7 h-7 rounded-md bg-white text-[#0B172A] flex items-center justify-center font-black text-xs" aria-hidden="true">
-            F
-          </div>
-          <span class="font-extrabold text-white text-base">Finance Fundamentals</span>
-          <span class="text-xs text-slate-400 hidden sm:inline">Simple explanations. Structured practice. Only what matters.</span>
+    <footer class="mt-16 border-t border-rule bg-paper-raised py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="font-serif text-lg font-semibold text-ink">Finance Fundamentals</p>
+          <p class="font-sans text-sm text-ink-muted">Simple explanations. Structured practice. Only what matters.</p>
         </div>
-        <div class="flex space-x-6 text-xs font-semibold text-slate-400">
-          <a href="/" class="min-h-[44px] flex items-center hover:text-white transition-colors">Dashboard</a>
-          <a href="/topics" class="min-h-[44px] flex items-center hover:text-white transition-colors">Notes</a>
-          <a href="/categories" class="min-h-[44px] flex items-center hover:text-white transition-colors">Categories</a>
-        </div>
+        <nav class="flex gap-6 font-sans text-sm font-semibold text-ink-muted" aria-label="Footer">
+          {navLinks.map((link) => (
+            <a href={link.href} class="flex min-h-[44px] items-center hover:text-ink">{link.label}</a>
+          ))}
+        </nav>
       </div>
     </footer>
 
-    <!-- Mobile Nav Toggle Script -->
     <script is:inline>
-      const btn = document.getElementById('mobile-menu-toggle');
-      const menu = document.getElementById('mobile-nav-menu');
-      btn?.addEventListener('click', () => {
-        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', !isExpanded);
-        menu?.classList.toggle('hidden');
-      });
+      var btn = document.getElementById('mobile-menu-toggle');
+      var menu = document.getElementById('mobile-nav-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', function () {
+          var expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          menu.classList.toggle('hidden');
+        });
+      }
     </script>
   </body>
 </html>
