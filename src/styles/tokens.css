@@ -1,0 +1,57 @@
+/* Design tokens. Colours are space-separated RGB triplets so Tailwind can apply
+   alpha (e.g. bg-rust/10). Keep the top-level :root and .dark rules at column 0:
+   tests/contrast.test.ts parses them. */
+
+:root {
+  --paper: 250 246 239;
+  --paper-raised: 255 253 248;
+  --ink: 26 23 20;
+  --ink-muted: 94 85 75;
+  --rule: 227 217 201;
+  --rust: 180 71 47;
+  --gold: 242 198 107;
+  --success: 47 125 79;
+  --danger: 180 35 24;
+  --on-accent: 255 253 248;
+  --code-bg: 31 27 23;
+  --code-fg: 241 235 224;
+
+  --font-serif: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-base: 250ms;
+  --dur-slow: 450ms;
+  --dur-ink: 1400ms;
+  --dur-stamp: 380ms;
+}
+
+.dark {
+  --paper: 18 16 13;
+  --paper-raised: 28 24 20;
+  --ink: 241 235 224;
+  --ink-muted: 181 169 152;
+  --rule: 52 46 39;
+  --rust: 229 137 111;
+  --gold: 110 86 24;
+  --success: 95 191 138;
+  --danger: 240 121 107;
+  --on-accent: 24 20 15;
+  --code-bg: 31 27 23;
+  --code-fg: 241 235 224;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -68,3 +68,10 @@ export function getReducedMotion(): boolean {
   if (typeof window === 'undefined') return false;
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
+
+// Named moves. CSS mirrors live in styles/tokens.css (--dur-*, --ease-out);
+// tests/motion-tokens.test.ts keeps them in sync.
+export const DURATION_INK = 1.4;
+export const INK_DRAW = { duration: DURATION_INK, ease: EASE_OUT };
+export const STAGGER_IN = { staggerChildren: STAGGER_BASE, delayChildren: 0.05 };
+export const STAMP = { type: 'spring' as const, duration: 0.38, bounce: 0.35 };
