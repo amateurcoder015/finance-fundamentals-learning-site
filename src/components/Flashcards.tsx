@@ -35,6 +35,7 @@ export const Flashcards: React.FC<FlashcardsProps> = ({ cards }) => {
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
+    if (e.target !== e.currentTarget) return;
     if (e.code === 'Space') {
       e.preventDefault();
       handleFlip();
@@ -48,6 +49,7 @@ export const Flashcards: React.FC<FlashcardsProps> = ({ cards }) => {
   return (
     <div
       ref={deckRef}
+      role="group"
       tabIndex={0}
       onKeyDown={onKeyDown}
       aria-label="Flashcard deck. Press space to flip, left and right arrows to move."
@@ -85,6 +87,7 @@ export const Flashcards: React.FC<FlashcardsProps> = ({ cards }) => {
             transition={isReduced ? { duration: 0.05, ease: EASE_OUT } : SPRING_FLIP}
           >
             <div
+              aria-hidden={isFlipped}
               className="absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-rule bg-paper-raised p-8 text-center shadow-sm md:p-12"
               style={{ backfaceVisibility: 'hidden' }}
             >
@@ -105,6 +108,7 @@ export const Flashcards: React.FC<FlashcardsProps> = ({ cards }) => {
             </div>
 
             <div
+              aria-hidden={!isFlipped}
               className="absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-rust/50 bg-paper p-8 text-center shadow-sm md:p-12"
               style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
             >

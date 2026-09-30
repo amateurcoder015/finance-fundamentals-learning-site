@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { STAMP, getReducedMotion } from '../../lib/motion';
 
@@ -18,15 +18,14 @@ interface StampProps {
 }
 
 export const Stamp: React.FC<StampProps> = ({ variant, label, className = '' }) => {
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => setReduced(getReducedMotion()), []);
+  const [reduced] = useState(() => typeof window !== 'undefined' && getReducedMotion());
 
   return (
     <motion.span
       role="status"
       initial={reduced ? false : { opacity: 0, scale: 2.2, rotate: -14 }}
       animate={{ opacity: 1, scale: 1, rotate: -6 }}
-      transition={STAMP}
+      transition={reduced ? { duration: 0 } : STAMP}
       className={`inline-block select-none rounded border-[3px] px-2.5 py-0.5 font-sans text-sm font-extrabold uppercase tracking-[0.14em] ${TONE[variant]} ${className}`}
     >
       {label ?? LABEL[variant]}
