@@ -11,6 +11,9 @@ describe('formatNumber', () => {
     expect(formatNumber(Infinity)).toBe('—');
     expect(formatNumber(-Infinity)).toBe('—');
   });
+  it('normalizes negative zero', () => {
+    expect(formatNumber(-0.001)).toBe('0.00');
+  });
 });
 
 describe('formatMoney', () => {
@@ -29,6 +32,10 @@ describe('formatMoney', () => {
     expect(formatMoney(NaN)).toBe('—');
     expect(formatMoney(Infinity)).toBe('—');
   });
+  it('rounds small values correctly', () => {
+    expect(formatMoney(-0.004)).toBe('$0.00');
+    expect(formatMoney(0.005)).toBe('$0.01');
+  });
 });
 
 describe('formatPercent', () => {
@@ -36,6 +43,9 @@ describe('formatPercent', () => {
     expect(formatPercent(0.08)).toBe('8.00%');
     expect(formatPercent(0.0525, 1)).toBe('5.3%');
     expect(formatPercent(NaN)).toBe('—');
+  });
+  it('normalizes negative zero', () => {
+    expect(formatPercent(-0.00001)).toBe('0.00%');
   });
 });
 
@@ -49,5 +59,8 @@ describe('TeX helpers', () => {
     expect(texPlain(0.08)).toBe('0.08');
     expect(texPlain(5, 4)).toBe('5');
     expect(texPlain(0.123456, 4)).toBe('0.1235');
+  });
+  it('normalizes negative zero in texMoney', () => {
+    expect(texMoney(-0.001)).toBe('\\$0.00');
   });
 });

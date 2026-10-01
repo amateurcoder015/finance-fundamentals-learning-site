@@ -3,7 +3,10 @@ const nf = (digits: number) =>
 
 export function formatNumber(value: number, digits = 2): string {
   if (!Number.isFinite(value)) return '—';
-  return nf(digits).format(value);
+  const formatted = nf(digits).format(value);
+  const rounded = Number(formatted.replace(/,/g, ''));
+  if (rounded === 0) return nf(digits).format(0);
+  return formatted;
 }
 
 export function formatMoney(value: number, currency = '$', digits = 2): string {

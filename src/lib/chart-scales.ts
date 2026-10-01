@@ -18,17 +18,32 @@ export function linearScale(domain: [number, number], range: [number, number]): 
 }
 
 export function niceTicks(min: number, max: number, count = 5): number[] {
-  if (!(max > min)) return [min];
+  if (!(max > min) || count <= 0) return [min];
   const raw = (max - min) / Math.max(1, count);
   const magnitude = Math.pow(10, Math.floor(Math.log10(raw)));
   const normalised = raw / magnitude;
   const step = (normalised <= 1 ? 1 : normalised <= 2 ? 2 : normalised <= 5 ? 5 : 10) * magnitude;
+  if (!Number.isFinite(step) || step === 0) return [min];
   const start = Math.ceil(min / step - 1e-9) * step;
   const ticks: number[] = [];
-  for (let v = start; v <= max + step * 1e-9; v += step) ticks.push(Number(v.toPrecision(12)));
+  const n = Math.min(Math.floor((max - start) / step + 1e-9), 1000);
+  for (let i = 0; i <= n; i++) {
+    const v = start + i * step;
+    ticks.push(Number(v.toPrecision(12)) + 0);
+  }
   return ticks;
 }
 
 export function linePath(points: Array<[number, number]>): string {
-  return points.map(([x, y], i) => `${i === 0 ? 'M' : 'L'} ${x.toFixed(2)} ${y.toFixed(2)}`).join(' ');
+  const segments: string[] = [];
+  let isFirstInSubpath = true;
+  for (const [x, y] of points) {
+    if (!Number.isFinite(x) || !Number.isFinite(y)) {
+      isFirstInSubpath = true;
+      continue;
+    }
+    segments.push(`${isFirstInSubpath ? 'M' : 'L'} ${x.toFixed(2)} ${y.toFixed(2)}`);
+    isFirstInSubpath = false;
+  }
+  return segments.join(' ');
 }
