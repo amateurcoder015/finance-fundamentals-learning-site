@@ -179,13 +179,32 @@ const extras = [
   import { initHighlights } from '../../scripts/reveal';
   document.addEventListener('astro:page-load', () => initHighlights());
 
-  // Overflowing display equations and tables scroll inside themselves; make them keyboard-reachable.
-  function focusableScrollers() {
-    document.querySelectorAll<HTMLElement>('.prose .katex-display, .prose table').forEach((el) => {
-      if (el.scrollWidth > el.clientWidth) el.tabIndex = 0;
-      else el.removeAttribute('tabindex');
-    });
+  // Overflowing display equations and tables scroll inside themselves; make them keyboard-reachable
+  // and named. Re-measured by ResizeObserver (covers late font/KaTeX layout); torn down before each swap.
+  let scrollObserver: ResizeObserver | undefined;
+  function markScroller(el: HTMLElement) {
+    if (el.scrollWidth > el.clientWidth) {
+      el.tabIndex = 0;
+      el.setAttribute('role', 'region');
+      const kind = el.matches('table') ? 'table' : 'equation';
+      const n = [...document.querySelectorAll(kind === 'table' ? '.prose table' : '.prose .katex-display')].indexOf(el) + 1;
+      el.setAttribute('aria-label', `Scrollable ${kind} ${n}`); // unique, so landmarks stay distinguishable
+    } else {
+      el.removeAttribute('tabindex');
+      el.removeAttribute('role');
+      el.removeAttribute('aria-label');
+    }
   }
-  document.addEventListener('astro:page-load', focusableScrollers);
-  window.addEventListener('resize', focusableScrollers);
+  document.addEventListener('astro:page-load', () => {
+    scrollObserver?.disconnect();
+    scrollObserver = new ResizeObserver((entries) => entries.forEach((e) => markScroller(e.target as HTMLElement)));
+    document.querySelectorAll<HTMLElement>('.prose .katex-display, .prose table').forEach((el) => {
+      markScroller(el);
+      scrollObserver!.observe(el);
+    });
+    document.fonts?.ready.then(() =>
+      document.querySelectorAll<HTMLElement>('.prose .katex-display, .prose table').forEach(markScroller),
+    );
+  });
+  document.addEventListener('astro:before-swap', () => scrollObserver?.disconnect());
 </script>
