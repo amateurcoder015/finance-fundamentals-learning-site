@@ -2,61 +2,35 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { CATEGORIES } from '../../content/config';
+import Card from '../../components/ui/Card.astro';
 
 const allTopics = await getCollection('topics');
-
-const categoryCounts = CATEGORIES.map((category) => {
-  const count = allTopics.filter((t) => t.data.category === category).length;
-  const slug = category.toLowerCase().replace(/\s+/g, '-');
-  return {
-    category,
-    slug,
-    count,
-  };
-});
-
-const categoryIcons: Record<string, string> = {
-  "Corporate Finance": "🏢",
-  "Financial Statements": "📊",
-  "Equities": "📈",
-  "Fixed Income": "📜",
-  "Derivatives": "🔀",
-  "Portfolio Management": "💼",
-  "Economics": "🌐",
-  "Alternative Investments": "💎",
-};
+const categories = CATEGORIES.map((category, index) => ({
+  category,
+  numeral: String(index + 1).padStart(2, '0'),
+  slug: category.toLowerCase().replace(/\s+/g, '-'),
+  count: allTopics.filter((t) => t.data.category === category).length,
+}));
 ---
 
-<BaseLayout title="Categories — Personal Finance Fundamentals">
-  <div class="mb-10 border-b border-stone-200 dark:border-slate-800 pb-6">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
-      Finance Categories
-    </h1>
-    <p class="text-lg text-slate-600 dark:text-slate-300">
-      Explore topics grouped by core financial domain.
-    </p>
-  </div>
+<BaseLayout title="Categories — Finance Fundamentals">
+  <header class="mb-10 border-t-4 border-ink pt-1">
+    <div class="border-t border-ink pt-8">
+      <p class="mb-3 font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust">Sections</p>
+      <h1 class="font-serif text-5xl font-semibold tracking-tight text-ink md:text-6xl">Finance categories</h1>
+      <p class="mt-4 max-w-2xl font-serif text-xl text-ink-muted">Explore notes grouped by core financial domain.</p>
+    </div>
+  </header>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {categoryCounts.map((cat) => (
-      <a
-        href={`/categories/${cat.slug}`}
-        class="group block bg-white dark:bg-[#131B2E] border border-stone-200 dark:border-slate-800 rounded-xl p-6 hover:-translate-y-0.5 hover:shadow-lg hover:border-blue-500/50 dark:hover:border-blue-500/50 transition-all duration-200 flex flex-col justify-between"
-      >
-        <div>
-          <div class="text-3xl mb-4">{categoryIcons[cat.category] || "📁"}</div>
-          <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-[#1D4ED8] dark:group-hover:text-blue-400 transition-colors">
-            {cat.category}
-          </h2>
-          <p class="text-sm text-slate-500 dark:text-slate-400 mb-6 font-medium">
-            {cat.count === 1 ? '1 Topic Available' : `${cat.count} Topics Available`}
-          </p>
-        </div>
-        <span class="text-xs uppercase font-extrabold tracking-wider text-[#1D4ED8] dark:text-blue-400 flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
-          <span>Browse Category</span>
-          <span>→</span>
-        </span>
-      </a>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {categories.map((c) => (
+      <Card href={`/categories/${c.slug}`} class="group">
+        <p class="font-serif text-5xl font-light text-rust">{c.numeral}</p>
+        <h2 class="mt-3 font-serif text-2xl font-semibold text-ink">{c.category}</h2>
+        <p class="mt-1 font-sans text-sm text-ink-muted">
+          {c.count === 0 ? 'Coming soon' : `${c.count} ${c.count === 1 ? 'note' : 'notes'}`}
+        </p>
+      </Card>
     ))}
   </div>
 </BaseLayout>

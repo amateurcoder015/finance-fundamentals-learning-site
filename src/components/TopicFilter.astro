@@ -1,0 +1,64 @@
+---
+interface Props {
+  categories: readonly string[];
+  total: number;
+}
+const { categories, total } = Astro.props;
+const difficulties = ['beginner', 'intermediate', 'advanced'];
+const chip = 'min-h-[44px] rounded-full border border-rule px-4 font-sans text-sm font-semibold text-ink-muted transition-colors hover:border-ink/40 aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-on-accent';
+---
+<div id="topic-filter" class="mb-8 space-y-4" data-total={total}>
+  <div role="group" aria-label="Filter by category" class="flex flex-wrap gap-2" data-group="category">
+    <button type="button" class={chip} data-value="all" aria-pressed="true">All categories</button>
+    {categories.map((c) => <button type="button" class={chip} data-value={c} aria-pressed="false">{c}</button>)}
+  </div>
+  <div role="group" aria-label="Filter by difficulty" class="flex flex-wrap gap-2" data-group="difficulty">
+    <button type="button" class={chip} data-value="all" aria-pressed="true">Any level</button>
+    {difficulties.map((d) => <button type="button" class={`${chip} capitalize`} data-value={d} aria-pressed="false">{d}</button>)}
+  </div>
+  <p id="topic-filter-count" class="font-sans text-sm text-ink-muted" aria-live="polite"></p>
+  <p id="topic-filter-empty" class="hidden rounded-xl border border-rule bg-paper-raised p-6 text-center font-serif text-ink-muted">
+    No notes match those filters yet.
+  </p>
+</div>
+
+<script>
+  import { matchesFilter, type FilterState } from '../lib/filter';
+
+  function init() {
+    const root = document.getElementById('topic-filter');
+    if (!root) return;
+    const state: FilterState = { category: 'all', difficulty: 'all' };
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-topic-card]'));
+    const count = document.getElementById('topic-filter-count')!;
+    const empty = document.getElementById('topic-filter-empty')!;
+    const total = Number(root.dataset.total ?? cards.length);
+
+    const apply = () => {
+      let shown = 0;
+      for (const card of cards) {
+        const ok = matchesFilter(
+          { category: card.dataset.category ?? '', difficulty: card.dataset.difficulty ?? '' },
+          state,
+        );
+        card.classList.toggle('hidden', !ok);
+        if (ok) shown++;
+      }
+      count.textContent = `Showing ${shown} of ${total} notes`;
+      empty.classList.toggle('hidden', shown !== 0);
+    };
+
+    root.querySelectorAll<HTMLElement>('[data-group]').forEach((group) => {
+      const key = group.dataset.group as keyof FilterState;
+      group.addEventListener('click', (e) => {
+        const button = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-value]');
+        if (!button) return;
+        state[key] = button.dataset.value ?? 'all';
+        group.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(b === button)));
+        apply();
+      });
+    });
+    apply();
+  }
+  document.addEventListener('astro:page-load', init);
+</script>
