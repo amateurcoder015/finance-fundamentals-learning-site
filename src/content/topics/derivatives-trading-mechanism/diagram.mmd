@@ -14,8 +14,8 @@ sequenceDiagram
         OB->>OB: Stay passive until the trigger price is reached
     end
     OB->>ME: Orders at the best bid and ask
-    ME->>ME: 1. Price priority (best price first)
-    ME->>ME: 2. Time priority (first in, first out)
+    ME->>ME: Price priority (best price first)
+    ME->>ME: Time priority (first in, first out)
     ME-->>Br: Matched trade generated
     ME->>CH: Send the matched trade
     CH-->>I: Confirmed long or short position

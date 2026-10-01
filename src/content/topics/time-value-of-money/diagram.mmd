@@ -1,6 +1,7 @@
 timeline
     title Cash flow timeline (t = 0 to t = 3)
     t = 0 (today) : Present value PV
-    t = 1 year : Cash flow PMT 1 : Compounded by (1 + r)
-    t = 2 years : Cash flow PMT 2 : Compounded by (1 + r)^2
-    t = 3 years : Future value FV : Compounded by (1 + r)^3 : Discount back by dividing by (1 + r)^3
+    t = 1 year : PV grows to PV(1 + r) : Cash flow PMT 1
+    t = 2 years : PV grows to PV(1 + r)^2 : Cash flow PMT 2
+    t = 3 years : FV = PV(1 + r)^3
+                : Discounted back to t = 0, PV = FV / (1 + r)^3

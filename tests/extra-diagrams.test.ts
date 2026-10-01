@@ -40,9 +40,16 @@ describe('readExtraDiagrams', () => {
     expect(out[0].title).toBe('Second');
     expect(out[1]).toEqual({ title: null, code: 'graph LR\n  C-->D' });
   });
-  it('stops at the first missing number', () => {
+  it('fails loudly when numbering has a gap', () => {
     fs.writeFileSync(path.join(dir, 'diagram-3.mmd'), 'graph TD');
-    expect(readExtraDiagrams(dir)).toEqual([]);
+    expect(() => readExtraDiagrams(dir)).toThrow(/diagram-3\.mmd found but diagram-2\.mmd is missing/);
+    fs.writeFileSync(path.join(dir, 'diagram-2.mmd'), 'graph TD');
+    fs.writeFileSync(path.join(dir, 'diagram-5.mmd'), 'graph TD');
+    expect(() => readExtraDiagrams(dir)).toThrow(/diagram-5\.mmd found but diagram-4\.mmd is missing/);
+  });
+  it('fails loudly for a title-only file', () => {
+    fs.writeFileSync(path.join(dir, 'diagram-2.mmd'), '%% title: Lonely\n');
+    expect(() => readExtraDiagrams(dir)).toThrow(/diagram-2\.mmd has a title but no diagram code/);
   });
   it('fails loudly for an empty extra file', () => {
     fs.writeFileSync(path.join(dir, 'diagram-2.mmd'), '   \n');

@@ -23,7 +23,18 @@ export function readExtraDiagrams(topicDir: string): ExtraDiagram[] {
     if (raw.trim() === '') {
       throw new Error(`[Content Validation Error] diagram-${n}.mmd is empty in ${topicDir}`);
     }
-    out.push(parseDiagramTitle(raw));
+    const parsed = parseDiagramTitle(raw);
+    if (parsed.code === '') {
+      throw new Error(`[Content Validation Error] diagram-${n}.mmd has a title but no diagram code in ${topicDir}`);
+    }
+    out.push(parsed);
+  }
+  const first = out.length + 2;
+  for (const name of fs.readdirSync(topicDir)) {
+    const m = name.match(/^diagram-(\d+)\.mmd$/);
+    if (m && Number(m[1]) > first) {
+      throw new Error(`[Content Validation Error] ${name} found but diagram-${first}.mmd is missing in ${topicDir} (extra diagrams must be numbered without gaps)`);
+    }
   }
   return out;
 }
