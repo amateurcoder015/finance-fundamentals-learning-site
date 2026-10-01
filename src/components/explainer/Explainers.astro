@@ -1,6 +1,7 @@
 ---
 import type { ResolvedExplainerRef } from '../../lib/explainer-refs';
 import Section from '../ui/Section.astro';
+import TimeValueOfMoney from '../../explainers/time-value-of-money/index';
 
 interface Props {
   refs: ResolvedExplainerRef[];
@@ -10,7 +11,9 @@ const { refs, currency = '$' } = Astro.props;
 
 // Explainer components are added here as they are built (name -> component).
 // Components must be React islands: `client:visible` only hydrates framework components.
-const components: Record<string, any> = {};
+// Astro can only hydrate a component it can see imported and used as a literal tag, so each
+// explainer is also rendered through an explicit branch below (a dynamic `<Component client:visible>` fails).
+const components: Record<string, any> = { 'time-value-of-money': TimeValueOfMoney };
 ---
 {refs.length > 0 && (
   <Section id="explainers" eyebrow="Try it yourself" title="Explore the numbers">
@@ -20,7 +23,7 @@ const components: Record<string, any> = {};
         if (!Component) {
           throw new Error(`[Content Validation Error] Explainer "${ref.name}" is registered but has no component in Explainers.astro`);
         }
-        return <Component client:visible view={ref.view} currency={currency} />;
+        if (ref.name === 'time-value-of-money') return <TimeValueOfMoney client:visible view={ref.view} currency={currency} />;
       })}
     </div>
   </Section>
