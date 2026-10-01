@@ -178,4 +178,14 @@ const extras = [
 <script>
   import { initHighlights } from '../../scripts/reveal';
   document.addEventListener('astro:page-load', () => initHighlights());
+
+  // Overflowing display equations and tables scroll inside themselves; make them keyboard-reachable.
+  function focusableScrollers() {
+    document.querySelectorAll<HTMLElement>('.prose .katex-display, .prose table').forEach((el) => {
+      if (el.scrollWidth > el.clientWidth) el.tabIndex = 0;
+      else el.removeAttribute('tabindex');
+    });
+  }
+  document.addEventListener('astro:page-load', focusableScrollers);
+  window.addEventListener('resize', focusableScrollers);
 </script>

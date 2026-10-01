@@ -77,7 +77,7 @@ All functions live in `model.ts` files and are covered by Vitest. Chapter number
   - *Options suite (tabs `payoff`, `greeks`, `parity`):* payoff builder with presets and add/remove legs, net and per-leg payoff using `PayoffChart`; Black-Scholes price and the five Greeks with price-vs-spot and delta-vs-spot curves; parity check with deviation and the arbitrage action.
   - *Margin ledger:* entry price, lot size, side, initial and maintenance margin, editable daily price path (defaults to the chapter's); ledger table and balance chart with margin calls marked.
 - **Accessibility:** native range inputs with the current value announced; every chart has a text summary and a data-table toggle; focus styles from the global theme; reduced motion disables animated transitions.
-- **No JavaScript:** a static summary of the chapter example (inputs and results) from the same model is rendered on the server, so the section is never empty.
+- **No JavaScript:** each explainer's default state is the chapter's worked example and the island is server-rendered, so the section is never empty and readers without JavaScript see the real numbers; there is no separate static summary. A runtime error boundary shows a short message instead of the explainer if it fails.
 - **Currency:** a `currency` option on each explainer, default `$`.
 
 ## 4. Better diagram forms

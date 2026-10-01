@@ -142,6 +142,42 @@ An editorial look (warm paper, ink text, rust accent, serif headings) with a mat
 
 ---
 
+## 🧮 Interactive explainers
+
+Some chapters carry a "Try it yourself" section: a small React island with sliders, a live chart and a readout that substitutes the learner's own numbers into the chapter's formula. Each explainer starts on the chapter's worked example (so it is server-rendered with real numbers even without JavaScript), has a "Chapter example" button plus Reset, and is wrapped in an error boundary.
+
+**Explainers and the eight chapters that show them**
+
+| Explainer | Chapters |
+| --- | --- |
+| `time-value-of-money` | time-value-of-money |
+| `futures-pricing` | futures-pricing-cash-futures-convergence |
+| `options-suite` (views `payoff`, `greeks`, `parity`; one island, three tabs) | options-basics-moneyness, options-trading-hedging-strategies, intrinsic-value-time-value-options-payoff-charts (payoff); option-greeks-pricing-models-implied-volatility (greeks); put-call-parity-delta-hedging (parity) |
+| `margin-ledger` | margining-mark-to-market-span |
+
+**Show an explainer in a chapter**: add an `explainers:` line to the note's frontmatter. Either a bare name, or an object with a `view` to choose the initially active tab (the other tabs stay available):
+
+```yaml
+explainers: ["time-value-of-money"]
+explainers: [{ name: "options-suite", view: "greeks" }]
+```
+
+**Build a new explainer**
+1. Create `src/explainers/<name>/` with `model.ts` (pure functions, no React or DOM) plus a test in `tests/`, and `index.tsx` (the island).
+2. Add a registry entry in `src/explainers/registry.ts` (title, and `views` if it has tabs).
+3. In `src/components/explainer/Explainers.astro`, import the component and add an explicit branch before the final `throw`:
+   `if (ref.name === '<name>') return <X client:visible view={ref.view} currency={currency} />;`
+   There is no component map: Astro cannot hydrate a dynamically chosen component, so each explainer needs its own `client:visible` branch. A registered name with no branch fails the build.
+4. Reference it from a note's frontmatter as above.
+
+**Kit** (`src/components/explainer/kit/`): `ExplainerFrame` (layout and error boundary), `Slider` (labelled range plus number input, 44px targets), `Readout`, `FormulaBlock` (KaTeX), `ChartFrame` (chart with a text summary and data-table toggle), `ExampleBar` (chapter-example and Reset buttons), `Tabs`. The options payoff chart reuses `PayoffChart`.
+
+**Rule: models are pure and pinned to the chapter's worked numbers.** Every number quoted in a chapter's worked example must be reproduced by the model's default or chapter-example state, and the model tests assert those exact values (for example TVM $14,693.28, futures $102.53 and $101.51, parity $3.12, the margin ledger's four-day table). If you change a chapter's numbers, change the test and the example together.
+
+**Extra diagrams.** A chapter may add `diagram-2.mmd` beside `diagram.mmd`; start it with `%% title: Heading text` to name its section. Walk-the-flow stepping is offered for flowcharts only; sequence, state and timeline diagrams get zoom, pan and full screen but no walk.
+
+---
+
 ## 🗺️ Status
 
 The editorial design system, motion layer, diagram viewer (walk the flow, zoom, full screen), topic reading layout and browse pages are implemented. Possible future work: progress tracking, review queues and search for CFA study.
