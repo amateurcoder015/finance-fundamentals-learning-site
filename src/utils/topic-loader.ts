@@ -8,9 +8,11 @@ import {
   type FlashcardItem,
   type PayoffChartData,
 } from '../content/config';
+import { readExtraDiagrams, type ExtraDiagram } from './extra-diagrams';
 
 export interface TopicAuxiliaryData {
   diagram: string;
+  extraDiagrams: ExtraDiagram[];
   quiz: QuizItem[];
   flashcards: FlashcardItem[];
   payoffChart?: PayoffChartData;
@@ -93,6 +95,7 @@ export function loadTopicAuxiliaryData(slug: string): TopicAuxiliaryData {
 
   return {
     diagram,
+    extraDiagrams: readExtraDiagrams(topicDir),
     quiz: quizParsed.data,
     flashcards: flashcardsParsed.data,
     payoffChart,

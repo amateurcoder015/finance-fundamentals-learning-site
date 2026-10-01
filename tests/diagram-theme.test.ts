@@ -29,3 +29,23 @@ describe('buildThemeVariables', () => {
     expect(v.fontFamily).toContain('Fraunces');
   });
 });
+
+describe('buildThemeVariables covers non-flowchart diagram types', () => {
+  const v = buildThemeVariables(tokens);
+  it('sets sequence-diagram variables from the tokens', () => {
+    expect(v.actorBkg).toBe('#fffdf8');
+    expect(v.actorTextColor).toBe('#1a1714');
+    expect(v.signalColor).toBe('#1a1714');
+    expect(v.noteBkgColor).toBe('#f2c66b');
+    expect(v.sequenceNumberColor).toBeDefined();
+  });
+  it('sets state-diagram variables', () => {
+    expect(v.transitionColor).toBe('#5e554b');
+    expect(v.stateLabelColor).toBe('#1a1714');
+    expect(v.compositeBackground).toBeDefined();
+  });
+  it('sets timeline colour scale variables', () => {
+    expect(v.cScale0).toBeDefined();
+    expect(v.cScaleLabel0).toBe('#1a1714');
+  });
+});

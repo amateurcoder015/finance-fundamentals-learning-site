@@ -1,0 +1,6 @@
+%% title: Portfolio-based margining (scenario analysis)
+graph TD
+    Combined["Combined Portfolio<br/>(Futures + Options Legs)"] --> Scenarios["Scenario Matrix Analysis<br/>(Price Shifts ± Volatility Shifts)"]
+    Scenarios --> WorstLoss["Identify Worst Plausible Loss Across Scenarios"]
+    WorstLoss --> CreditOffset["Apply Spread & Hedging Risk Credits"]
+    CreditOffset --> NetMargin["Total Portfolio Initial Margin Required"]

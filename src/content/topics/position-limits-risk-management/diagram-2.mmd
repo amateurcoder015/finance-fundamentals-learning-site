@@ -1,0 +1,9 @@
+%% title: Position-limit levels and the layers of defence
+graph TD
+    ClientLimit["Client-Level Limit<br/>(Individual Participant Cap)"] --> TotalExposure["Total Risk Exposure Control"]
+    MemberLimit["Trading Member-Level Limit<br/>(Broker Aggregate Cap)"] --> TotalExposure
+    MarketLimit["Market-Wide Position Limit<br/>(Overall Contract Cap)"] --> TotalExposure
+    MarginDef["Margining & Daily MTM<br/>(Protective Collateral)"] --> SystemicSafety["Overall Market Integrity & Stability"]
+    LimitDef["Position Limits<br/>(Preventive Caps)"] --> SystemicSafety
+    EnforceDef["Monitoring & Enforcement<br/>(Regulatory Oversight)"] --> SystemicSafety
+    TotalExposure --> SystemicSafety

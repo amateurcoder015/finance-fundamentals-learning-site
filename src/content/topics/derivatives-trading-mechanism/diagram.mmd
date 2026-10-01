@@ -1,27 +1,21 @@
-graph TD
-    subgraph OrderTypes["Order Types Submitted by Investor"]
-        direction TB
-        Investor["Investor / Trader"] --> Choice{"Select Order Type"}
-        Choice --> MarketOrd["Market Order<br/>(Immediate Execution at Best Price)"]
-        Choice --> LimitOrd["Limit Order<br/>(Execution at Specified Price or Better)"]
-        Choice --> StopLossOrd["Stop-Loss Order<br/>(Passive Until Trigger Price Reached)"]
+sequenceDiagram
+    autonumber
+    actor I as Investor
+    participant Br as Broker (trading member)
+    participant Ex as Exchange gateway
+    participant OB as Central limit order book
+    participant ME as Matching engine
+    participant CH as Clearing and settlement
+    I->>Br: Submit an order (market, limit or stop-loss)
+    Br->>Br: Risk and margin verification
+    Br->>Ex: Route the order
+    Ex->>OB: Place the order in the book
+    alt Stop-loss order
+        OB->>OB: Stay passive until the trigger price is reached
     end
-
-    subgraph OrderLifecycle["Exchange Execution & Matching Lifecycle"]
-        direction TB
-        MarketOrd --> Broker["Broker / Trading Member<br/>(Risk & Margin Verification)"]
-        LimitOrd --> Broker
-        StopLossOrd --> Broker
-        
-        Broker --> Network["Exchange Telecommunication Routing"]
-        Network --> OrderBook["Central Limit Order Book"]
-        
-        OrderBook --> MatchingEngine{"Price-Time Priority<br/>Matching Engine"}
-        
-        MatchingEngine -->|"1. Price Priority"| CheckPrice["Evaluate Best Bid / Ask Price Level"]
-        CheckPrice -->|"2. Time Priority"| CheckTime["Order Timestamp Priority (FIFO)"]
-        
-        CheckTime --> MatchSuccess["Matched Trade Generated"]
-        MatchSuccess --> Clearinghouse["Clearing & Settlement"]
-        Clearinghouse --> ConfirmedPos["Confirmed Long / Short Position"]
-    end
+    OB->>ME: Orders at the best bid and ask
+    ME->>ME: 1. Price priority (best price first)
+    ME->>ME: 2. Time priority (first in, first out)
+    ME-->>Br: Matched trade generated
+    ME->>CH: Send the matched trade
+    CH-->>I: Confirmed long or short position

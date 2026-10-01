@@ -223,7 +223,8 @@
   }
 }
 
-.note {
+/* Prose margin note; `:not(rect)` keeps it off Mermaid's sequence-diagram `rect.note`. */
+.note:not(rect) {
   margin: 1.5rem 0;
   border-left: 2px solid rgb(var(--rust));
   background: rgb(var(--paper-raised));
@@ -234,7 +235,7 @@
   color: rgb(var(--ink-muted));
 }
 @media (min-width: 1280px) {
-  .note {
+  .note:not(rect) {
     float: right;
     clear: right;
     width: 13rem;
