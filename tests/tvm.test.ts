@@ -132,3 +132,91 @@ describe('tvmFormulaTex', () => {
     expect(tvmFormulaTex({ mode: 'perpetuity', amount: 1000, rate: 0, years: 0, compounding: 1 })).toContain('\\infty');
   });
 });
+
+describe('review fixes', () => {
+  const modes = ['lump-fv', 'lump-pv', 'ordinary-annuity', 'annuity-due', 'perpetuity'] as const;
+  const rates = [0, 0.001, 0.3];
+  const yearsList = [0, 1, 40];
+  const comps = [1, 365];
+  const amounts = [0, 10000, 100000];
+
+  it('perpetuity marker stays inside the plotted range', () => {
+    for (const rate of [0, 0.05, 0.3]) {
+      const c = tvmChart({ mode: 'perpetuity', amount: 1000, rate, years: 0, compounding: 1 });
+      const xs = c.series[0].points.map((p) => p[0]);
+      expect(c.marker!.x).toBeGreaterThanOrEqual(Math.min(...xs));
+      expect(c.marker!.x).toBeLessThanOrEqual(Math.max(...xs));
+      expect(c.marker!.label).toBe('Your rate');
+    }
+    const c30 = tvmChart({ mode: 'perpetuity', amount: 1000, rate: 0.3, years: 0, compounding: 1 });
+    expect(Math.max(...c30.series[0].points.map((p) => p[0]))).toBeCloseTo(30, 6);
+    const c0 = tvmChart({ mode: 'perpetuity', amount: 1000, rate: 0, years: 0, compounding: 1 });
+    expect(c0.marker!.x).toBeCloseTo(0.5, 6);
+  });
+
+  it('a zero payment perpetuity is worth 0 at any rate', () => {
+    expect(perpetuityPV(0, 0)).toBe(0);
+    expect(perpetuityPV(0, 0.05)).toBe(0);
+    expect(perpetuityPV(1000, 0)).toBe(Infinity);
+    expect(evaluateTvm({ mode: 'perpetuity', amount: 0, rate: 0, years: 0, compounding: 1 }).primary.value).toBe(0);
+  });
+
+  it('evaluateTvm sweep: no NaN, finite except positive perpetuity at zero rate', () => {
+    for (const mode of modes) for (const rate of rates) for (const years of yearsList)
+      for (const compounding of comps) for (const amount of amounts) {
+        const r = evaluateTvm({ mode, amount, rate, years, compounding });
+        for (const row of [r.primary, ...r.rows]) {
+          expect(Number.isNaN(row.value)).toBe(false);
+          const documented = row === r.primary && mode === 'perpetuity' && amount > 0 && rate === 0;
+          if (documented) expect(row.value).toBe(Infinity);
+          else expect(Number.isFinite(row.value)).toBe(true);
+        }
+      }
+  });
+
+  it('tvmChart sweep: every point finite, every series non-empty', () => {
+    for (const mode of modes) for (const rate of rates) for (const years of yearsList)
+      for (const compounding of comps) for (const amount of amounts) {
+        const c = tvmChart({ mode, amount, rate, years, compounding });
+        for (const s of c.series) {
+          expect(s.points.length).toBeGreaterThan(0);
+          for (const [x, y] of s.points) {
+            expect(Number.isFinite(x)).toBe(true);
+            expect(Number.isFinite(y)).toBe(true);
+          }
+        }
+      }
+  });
+
+  it('tvmFormulaTex for lump-pv and annuity-due', () => {
+    const pv = tvmFormulaTex({ mode: 'lump-pv', amount: 14693.28, rate: 0.08, years: 5, compounding: 1 });
+    expect(pv).toContain('14{,}693.28');
+    expect(pv).toContain('10{,}000.00');
+    expect(pv).not.toContain('NaN');
+    const due = tvmFormulaTex({ mode: 'annuity-due', amount: 1000, rate: 0.05, years: 3, compounding: 1 });
+    expect(due).toContain('due');
+    expect(due).not.toContain('NaN');
+  });
+
+  it('tvmChart for lump-pv and annuity-due', () => {
+    const i: TvmInputs = { mode: 'lump-pv', amount: 14693.28, rate: 0.08, years: 5, compounding: 1 };
+    const pts = tvmChart(i).series[0].points;
+    expect(pts[0][0]).toBe(0);
+    expect(pts[0][1]).toBeCloseTo(presentValue(14693.28, 0.08, 5), 6);
+    expect(pts[pts.length - 1][1]).toBeCloseTo(14693.28, 6);
+    const due = tvmChart({ mode: 'annuity-due', amount: 1000, rate: 0.05, years: 3, compounding: 1 });
+    expect(due.series[0].points).toHaveLength(4);
+  });
+
+  it('evaluateTvm extra rows', () => {
+    const pv = evaluateTvm({ mode: 'lump-pv', amount: 14693.28, rate: 0.08, years: 5, compounding: 1 });
+    expect(pv.rows.find((x) => x.label === 'Discount applied')?.value).toBeCloseTo(4693.28, 1);
+    const fv = evaluateTvm({ ...TVM_DEFAULTS, compounding: 12 });
+    expect(fv.rows.find((x) => x.label === 'Effective annual rate')!.value).toBeGreaterThan(0.08);
+  });
+
+  it('non-positive compounding is clamped to 1', () => {
+    expect(Number.isFinite(futureValue(100, 0.1, 1, 0))).toBe(true);
+    expect(futureValue(100, 0.1, 1, 0)).toBe(futureValue(100, 0.1, 1, 1));
+  });
+});

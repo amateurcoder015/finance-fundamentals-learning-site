@@ -18,11 +18,13 @@ export interface TvmInputs {
 export const TVM_DEFAULTS: TvmInputs = { mode: 'lump-fv', amount: 10000, rate: 0.08, years: 5, compounding: 1 };
 
 export function futureValue(pv: number, rate: number, years: number, m = 1): number {
-  return pv * Math.pow(1 + rate / m, years * m);
+  const k = Math.max(1, m);
+  return pv * Math.pow(1 + rate / k, years * k);
 }
 
 export function presentValue(fv: number, rate: number, years: number, m = 1): number {
-  return fv / Math.pow(1 + rate / m, years * m);
+  const k = Math.max(1, m);
+  return fv / Math.pow(1 + rate / k, years * k);
 }
 
 export function annuityPV(pmt: number, rate: number, n: number, timing: AnnuityTiming = 'ordinary'): number {
@@ -36,6 +38,7 @@ export function annuityFV(pmt: number, rate: number, n: number, timing: AnnuityT
 }
 
 export function perpetuityPV(pmt: number, rate: number): number {
+  if (pmt === 0) return 0;
   return rate > 0 ? pmt / rate : Infinity;
 }
 
@@ -57,7 +60,7 @@ export function evaluateTvm(i: TvmInputs): { primary: TvmRow; rows: TvmRow[] } {
         primary: { label: 'Future value', value: fv, kind: 'money' },
         rows: [
           { label: 'Interest earned', value: fv - i.amount, kind: 'money' },
-          { label: 'Effective annual rate', value: Math.pow(1 + i.rate / i.compounding, i.compounding) - 1, kind: 'percent' },
+          { label: 'Effective annual rate', value: Math.pow(1 + i.rate / Math.max(1, i.compounding), Math.max(1, i.compounding)) - 1, kind: 'percent' },
         ],
       };
     }
@@ -147,14 +150,14 @@ export function tvmChart(i: TvmInputs): TvmChart {
       };
     }
     case 'perpetuity': {
-      const rates = Array.from({ length: 40 }, (_, k) => 0.005 * (k + 1));
+      const rates = Array.from({ length: 60 }, (_, k) => 0.005 * (k + 1));
       return {
         title: 'Present value of a perpetuity at different discount rates',
         xLabel: 'Discount rate (%)',
         yLabel: 'Present value',
         xKind: 'percent',
-        series: [{ id: 'pv', label: 'Present value', tone: 'rust', points: rates.map((r) => [r * 100, perpetuityPV(i.amount, r)] as [number, number]) }],
-        marker: { x: i.rate * 100, label: 'Your rate' },
+        series: [{ id: 'pv', label: 'Present value', tone: 'rust', points: rates.map((r) => [r * 100, finite(perpetuityPV(i.amount, r))] as [number, number]) }],
+        marker: { x: Math.min(30, Math.max(0.5, i.rate * 100)), label: 'Your rate' },
       };
     }
   }
