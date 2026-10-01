@@ -1,0 +1,26 @@
+---
+import type { ResolvedExplainerRef } from '../../lib/explainer-refs';
+import Section from '../ui/Section.astro';
+
+interface Props {
+  refs: ResolvedExplainerRef[];
+  currency?: string;
+}
+const { refs, currency = '$' } = Astro.props;
+
+// Explainer components are added here as they are built (name -> component).
+const components: Record<string, any> = {};
+---
+{refs.length > 0 && (
+  <Section id="explainers" eyebrow="Try it yourself" title="Explore the numbers">
+    <div class="space-y-10">
+      {refs.map((ref) => {
+        const Component = components[ref.name];
+        if (!Component) {
+          throw new Error(`[Content Validation Error] Explainer "${ref.name}" is registered but has no component in Explainers.astro`);
+        }
+        return <Component client:visible view={ref.view} currency={currency} />;
+      })}
+    </div>
+  </Section>
+)}

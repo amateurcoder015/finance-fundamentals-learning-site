@@ -26,6 +26,14 @@ export const topicFrontmatterSchema = z.object({
   difficulty: z.enum(DIFFICULTIES),
   dateAdded: z.string().or(z.date()),
   tags: z.array(z.string()).default([]),
+  explainers: z
+    .array(
+      z.union([
+        z.string().min(1),
+        z.object({ name: z.string().min(1), view: z.string().min(1).optional() }),
+      ]),
+    )
+    .default([]),
 });
 
 // Quiz Zod Schema

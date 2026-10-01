@@ -10,6 +10,9 @@ import { InkProgress } from '../../components/ui/InkProgress';
 import { HeroMotion, HeroItem } from '../../components/HeroMotion';
 import { ScrollReveal } from '../../components/ScrollReveal';
 import Section from '../../components/ui/Section.astro';
+import Explainers from '../../components/explainer/Explainers.astro';
+import { registry } from '../../explainers/registry';
+import { resolveExplainerRefs } from '../../lib/explainer-refs';
 import Button from '../../components/ui/Button.astro';
 import DifficultyBadge from '../../components/ui/DifficultyBadge.astro';
 import ContentsRail from '../../components/topic/ContentsRail.astro';
@@ -32,6 +35,7 @@ const { topic, slug, nextTopic } = Astro.props;
 const { Content, headings } = await topic.render();
 const auxiliary = loadTopicAuxiliaryData(slug);
 const contents = buildContents(headings, topic.body);
+const explainerRefs = resolveExplainerRefs(topic.data.explainers, registry, slug);
 
 const formattedDate = new Date(topic.data.dateAdded).toLocaleDateString('en-GB', {
   year: 'numeric',
@@ -53,6 +57,7 @@ const jsonLd = {
 };
 
 const extras = [
+  ...(explainerRefs.length > 0 ? [{ href: '#explainers', label: 'Try it yourself' }] : []),
   { href: '#visual-model', label: 'The picture' },
   { href: '#flashcards-deck', label: `Flashcards (${auxiliary.flashcards.length})` },
   { href: '#quiz-section', label: `Quiz (${auxiliary.quiz.length})` },
@@ -110,6 +115,8 @@ const extras = [
           <Content components={mdxComponents} />
         </div>
       </article>
+
+      <Explainers refs={explainerRefs} />
 
       <Section id="visual-model" eyebrow="The picture" title={auxiliary.payoffChart ? 'Payoff profile' : 'Concept diagram'}>
         <div class="rounded-2xl border border-rule bg-paper-raised p-4 sm:p-8">

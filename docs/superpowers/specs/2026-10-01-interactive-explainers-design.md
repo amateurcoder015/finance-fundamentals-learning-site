@@ -107,3 +107,10 @@ Engine changes: `buildThemeVariables` is extended with the variables Mermaid use
 - **Mermaid theming for new diagram types** may not fully honour the token palette: verified visually in both themes; fall back to a per-type override block if needed.
 - **A second diagram in one chapter** (margining) may need a small loader extension; decided in planning, not assumed here.
 - **Editing frontmatter of eight chapters** is a content change; only the one `explainers:` line is added to each.
+
+## Decisions made while planning
+
+- **Resolver is a pure module.** Reference validation lives in `src/lib/explainer-refs.ts`, independent of `astro:content`, so it is unit tested with Vitest; the topic page calls it at build time.
+- **Validation at render, shape at schema.** The `explainers` frontmatter field is validated for shape by the content schema (default `[]`), while name and view validity is checked against the registry by the resolver, so a typo fails the build with valid options listed.
+- **Registry plus component map.** `src/explainers/registry.ts` holds metadata (title, views); `Explainers.astro` holds the name-to-component map. Both are extended by each explainer task, and a registered name with no component fails the build.
+- **Placement.** The "Try it yourself" section sits between the note body and "The picture", with its own contents-rail entry shown only when a chapter has explainers.
