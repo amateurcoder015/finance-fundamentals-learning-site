@@ -1,5 +1,6 @@
 import React, { useState, useId } from 'react';
 import type { Position, PayoffChartData } from '../content/config';
+import { positionPnL as getPnL } from '../lib/payoff';
 
 export interface PayoffChartProps {
   positions: Position[];
@@ -47,30 +48,6 @@ export default function PayoffChart({
   // Round price bounds for nice axis steps
   minPrice = Math.floor(minPrice / 10) * 10;
   maxPrice = Math.ceil(maxPrice / 10) * 10;
-
-  // Function to calculate single position P&L
-  const getPnL = (pos: Position, st: number): number => {
-    const lotSize = pos.lotSize ?? 1;
-    const basePrice = pos.contractPrice ?? pos.strike ?? 0;
-    const premium = pos.premium ?? 0;
-
-    switch (pos.type) {
-      case 'long-futures':
-        return (st - basePrice) * lotSize;
-      case 'short-futures':
-        return (basePrice - st) * lotSize;
-      case 'long-call':
-        return (Math.max(0, st - basePrice) - premium) * lotSize;
-      case 'short-call':
-        return (premium - Math.max(0, st - basePrice)) * lotSize;
-      case 'long-put':
-        return (Math.max(0, basePrice - st) - premium) * lotSize;
-      case 'short-put':
-        return (premium - Math.max(0, basePrice - st)) * lotSize;
-      default:
-        return 0;
-    }
-  };
 
   // Determine active display positions
   const displayedPositions =
