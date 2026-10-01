@@ -1,5 +1,5 @@
 import React from 'react';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Slider } from '../src/components/explainer/kit/Slider';
 import { Readout } from '../src/components/explainer/kit/Readout';
@@ -65,6 +65,28 @@ describe('ChartFrame', () => {
   it('renders markers', () => {
     const html = renderToStaticMarkup(<ChartFrame series={series} xLabel="x" yLabel="y" summary="s" markers={[{ x: 1, label: 'Today' }]} />);
     expect(html).toContain('Today');
+  });
+});
+
+describe('ChartFrame robustness', () => {
+  it('keeps out-of-range markers inside the plot area', () => {
+    const html = renderToStaticMarkup(
+      <ChartFrame series={[{ id: 'a', label: 'A', points: [[0, 1], [2, 3]] }]} xLabel="x" yLabel="y" summary="s" markers={[{ x: 50, label: 'Far' }]} />,
+    );
+    expect(html).toContain('Far');
+    const m = html.match(/<line x1="([\d.]+)"[^>]*stroke-dasharray="4 4"/);
+    expect(m).not.toBeNull();
+    const x1 = Number(m![1]);
+    expect(x1).toBeGreaterThanOrEqual(68);
+    expect(x1).toBeLessThanOrEqual(640 - 20);
+  });
+  it('does not emit duplicate key warnings for duplicate x values', () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    renderToStaticMarkup(
+      <ChartFrame series={[{ id: 'a', label: 'A', points: [[1, 1], [1, 2], [1, 3]] }]} xLabel="x" yLabel="y" summary="s" markers={[{ x: 1, label: 'M' }, { x: 1, label: 'M' }]} tableRows={1} />,
+    );
+    expect(spy).not.toHaveBeenCalled();
+    spy.mockRestore();
   });
 });
 

@@ -1,4 +1,4 @@
-import React, { useId, useState } from 'react';
+import React, { useEffect, useId, useRef, useState } from 'react';
 import { extent, linePath, linearScale, niceTicks } from '../../../lib/chart-scales';
 
 export type ChartTone = 'ink' | 'rust' | 'success' | 'danger' | 'muted';
@@ -52,8 +52,8 @@ const SWATCH: Record<ChartTone, string> = {
   muted: 'bg-ink-muted',
 };
 
-const W = 640;
-const M = { l: 68, r: 20, t: 16, b: 52 };
+const DEFAULT_W = 640;
+const MIN_W = 280;
 const defaultFormat = (v: number) => String(Number(v.toFixed(2)));
 
 function nearest(points: Array<[number, number]>, x: number): [number, number] | null {
@@ -77,9 +77,27 @@ export const ChartFrame: React.FC<ChartFrameProps> = ({
 }) => {
   const uid = useId();
   const [hoverX, setHoverX] = useState<number | null>(null);
+  const figureRef = useRef<HTMLElement>(null);
+  const [W, setW] = useState(DEFAULT_W);
+
+  useEffect(() => {
+    const el = figureRef.current;
+    if (!el) return;
+    const measure = () => {
+      const w = Math.round(el.getBoundingClientRect().width);
+      if (w > 0) setW(Math.max(MIN_W, w));
+    };
+    measure();
+    if (typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const M = { l: W < 420 ? 52 : 68, r: 20, t: 16, b: 52 };
 
   const all = series.flatMap((s) => s.points);
-  const [x0, x1] = extent(all.map((p) => p[0]));
+  const [x0, x1] = extent([...all.map((p) => p[0]), ...markers.map((m) => m.x)]);
   let [y0, y1] = extent(all.map((p) => p[1]));
   if (includeZeroY) {
     y0 = Math.min(y0, 0);
@@ -90,12 +108,16 @@ export const ChartFrame: React.FC<ChartFrameProps> = ({
   const xTicks = niceTicks(x0, x1, 6);
   const yTicks = niceTicks(y0, y1, 5);
 
-  const onMove = (e: React.PointerEvent<SVGSVGElement>) => {
+  const setFromEvent = (e: React.PointerEvent<SVGSVGElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     if (rect.width === 0) return;
     const px = ((e.clientX - rect.left) / rect.width) * W;
     const x = x0 + ((px - M.l) / (W - M.l - M.r)) * (x1 - x0);
     setHoverX(Math.min(x1, Math.max(x0, x)));
+  };
+  const onLeave = (e: React.PointerEvent<SVGSVGElement>) => {
+    if (e.pointerType === 'touch') return;
+    setHoverX(null);
   };
 
   const primary = series[0]?.points ?? [];
@@ -114,14 +136,15 @@ export const ChartFrame: React.FC<ChartFrameProps> = ({
           .join(' · ');
 
   return (
-    <figure className="space-y-3">
+    <figure ref={figureRef} className="space-y-3">
       <svg
         viewBox={`0 0 ${W} ${height}`}
         role="img"
         aria-label={summary}
         className="w-full touch-pan-y select-none text-[11px]"
-        onPointerMove={onMove}
-        onPointerLeave={() => setHoverX(null)}
+        onPointerDown={setFromEvent}
+        onPointerMove={setFromEvent}
+        onPointerLeave={onLeave}
       >
         {yTicks.map((t) => (
           <g key={`y-${uid}-${t}`}>
@@ -138,8 +161,8 @@ export const ChartFrame: React.FC<ChartFrameProps> = ({
         <text x={(M.l + W - M.r) / 2} y={height - 8} textAnchor="middle" className="fill-ink font-sans text-xs font-semibold">{xLabel}</text>
         <text transform={`translate(14 ${(M.t + height - M.b) / 2}) rotate(-90)`} textAnchor="middle" className="fill-ink font-sans text-xs font-semibold">{yLabel}</text>
 
-        {markers.map((m) => (
-          <g key={`m-${uid}-${m.label}-${m.x}`}>
+        {markers.map((m, i) => (
+          <g key={`m-${uid}-${i}`}>
             <line x1={sx(m.x)} x2={sx(m.x)} y1={M.t} y2={height - M.b} className={STROKE[m.tone ?? 'ink']} strokeWidth={1.5} strokeDasharray="4 4" />
             <text x={sx(m.x)} y={M.t + 10} textAnchor="middle" className={`${FILL[m.tone ?? 'ink']} font-sans text-[10px] font-bold`}>{m.label}</text>
           </g>
@@ -195,8 +218,8 @@ export const ChartFrame: React.FC<ChartFrameProps> = ({
               </tr>
             </thead>
             <tbody>
-              {tableXs.map((x) => (
-                <tr key={x}>
+              {tableXs.map((x, ri) => (
+                <tr key={ri}>
                   <td className="border-b border-rule px-2 py-1">{formatX(x)}</td>
                   {series.map((s) => {
                     const p = nearest(s.points, x);
