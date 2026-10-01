@@ -7,7 +7,7 @@ interface Props {
   extras: { href: string; label: string }[];
 }
 const { items, show, extras } = Astro.props;
-const linkClass = 'flex min-h-[32px] items-center border-l-2 border-transparent py-1 pl-3 font-sans text-sm text-ink-muted transition-colors hover:text-ink aria-[current=true]:border-rust aria-[current=true]:font-semibold aria-[current=true]:text-ink';
+const linkClass = 'flex min-h-[44px] items-center border-l-2 border-transparent py-1 pl-3 font-sans text-sm text-ink-muted transition-colors hover:text-ink aria-[current=true]:border-rust aria-[current=true]:font-semibold aria-[current=true]:text-ink';
 ---
 <nav aria-label="Contents" class="space-y-6">
   {show && (

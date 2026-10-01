@@ -17,7 +17,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
     new Array(questions ? questions.length : 0).fill(null),
   );
   const [isComplete, setIsComplete] = useState(false);
-  const isReduced = getReducedMotion();
+  const [isReduced] = useState(() => typeof window !== 'undefined' && getReducedMotion());
 
   if (!questions || questions.length === 0) {
     return <div className="p-4 text-ink-muted">No quiz questions available for this topic.</div>;
@@ -162,6 +162,7 @@ export const Quiz: React.FC<QuizProps> = ({ questions }) => {
                   key={idx}
                   onClick={() => handleSelectOption(idx)}
                   disabled={isAnswered}
+                  aria-pressed={isAnswered ? undefined : selectedOption === idx}
                   whileTap={!isAnswered && !isReduced ? { scale: 0.99 } : undefined}
                   transition={{ duration: DURATION_FAST }}
                   className={`flex min-h-[44px] w-full items-baseline rounded-xl border p-4 text-left font-sans text-base text-ink transition-colors ${state}`}

@@ -19,7 +19,7 @@ const { categoryName, topics } = Astro.props;
 <BaseLayout title={`${categoryName} — Finance Fundamentals`}>
   <header class="mb-10 border-t-4 border-ink pt-1">
     <div class="border-t border-ink pt-8">
-      <a href="/categories" class="font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust hover:underline">← All categories</a>
+      <a href="/categories" class="inline-flex min-h-[44px] items-center font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust hover:underline">← All categories</a>
       <h1 class="mt-3 font-serif text-5xl font-semibold tracking-tight text-ink md:text-6xl">{categoryName}</h1>
       <p class="mt-4 max-w-2xl font-serif text-xl text-ink-muted">
         {topics.length} {topics.length === 1 ? 'note' : 'notes'} in {categoryName}.

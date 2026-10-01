@@ -129,21 +129,19 @@ The CLI automatically:
 
 An editorial look (warm paper, ink text, rust accent, serif headings) with a matching dark theme.
 
-- **Tokens**: `src/styles/tokens.css`. Colours are space-separated RGB triplets (`--paper`, `--paper-raised`, `--ink`, `--ink-muted`, `--rule`, `--rust`, `--gold`, `--success`, `--danger`, `--on-accent`) in `:root` (light) and `.dark`. Tailwind maps them to classes such as `bg-paper`, `text-ink`, `border-rule`, `text-rust` (see `tailwind.config.mjs`). Fonts and motion durations live there too.
-- **Retheme**: edit the values in `tokens.css` only; do not hard-code colours in components. Keep the top-level `:root` and `.dark` rules at column 0 and re-run `npm test`, because `tests/contrast.test.ts` enforces WCAG contrast on the token pairs.
+- **Tokens**: `src/styles/tokens.css`. Colours are space-separated RGB triplets (`--paper`, `--paper-raised`, `--ink`, `--ink-muted`, `--rule`, `--rust`, `--gold`, `--success`, `--danger`, `--on-accent`, plus `--code-bg`/`--code-fg` for code blocks) in `:root` (light) and `.dark`. Tailwind maps them to classes such as `bg-paper`, `text-ink`, `border-rule`, `text-rust` (see `tailwind.config.mjs`). Fonts and motion durations live there too.
+- **Retheme**: edit the values in `tokens.css`; components use the tokens, with one exception: the PayoffChart tooltip card keeps hard-coded slate colours, so update it by hand when retheming. Keep the top-level `:root` and `.dark` rules at column 0 and re-run `npm test`, because `tests/contrast.test.ts` enforces WCAG contrast on the token pairs.
 - **UI kit**: `src/components/ui/` (Card, Section, Badge, Button, DifficultyBadge, Stamp, InkProgress). Site shell in `src/layouts/BaseLayout.astro`; topic and home pieces in `src/components/topic/` and `src/components/home/`; the diagram viewer in `src/components/diagram/`.
 - **Opt-in MDX components** (available in every `note.mdx`, no imports needed; registered in `src/components/mdx/index.ts`):
   - `<Hl>key phrase</Hl>` highlights text with a marker-style underline.
   - `<Note>...</Note>` renders a margin-style callout.
   - `<Term term="delta">delta</Term>` shows a hover/focus definition taken from `src/data/glossary.json` (add entries there; an unknown term fails the build).
-- **Motion and accessibility**: animations respect `prefers-reduced-motion`, and reading content stays visible with JavaScript disabled.
+- **Motion and accessibility**: animations respect `prefers-reduced-motion`, and reading content stays visible with JavaScript disabled. Two rules keep it that way: the `<noscript>` style in `src/layouts/BaseLayout.astro` and the `prefers-reduced-motion` rule at the bottom of `src/styles/global.css` both override the server-rendered `opacity:0` states. Topic pages also carry a `<noscript>` fallback that shows the diagram source.
+- **Mermaid is pinned** to `11.17.2` in `package.json`. `src/lib/diagram-graph.ts` and `src/components/diagram/dom.ts` parse that version's SVG DOM (node and edge ids and classes); when upgrading, re-check `parseNodeId`/`parseEdgeId` and the diagram tests.
 - **Tests**: `npm test` runs the Vitest suite (contrast, motion tokens, glossary, and other helpers).
 
 ---
 
-## 🗺️ Build Stages
+## 🗺️ Status
 
-- **Stage 1 (Current)**: Scaffold + Content Model + Zod Schema + CLI + React Islands + Seed Topic ("Time Value of Money") + Plain functional pages.
-- **Stage 2**: Design System & Layout Enhancements (Colors, Typography, Card Aesthetics).
-- **Stage 3**: Animations, Motion & Micro-interactions.
-- **Stage 4**: Advanced Features & CFA Study Tools (Progress tracking, review queues, search).
+The editorial design system, motion layer, diagram viewer (walk the flow, zoom, full screen), topic reading layout and browse pages are implemented. Possible future work: progress tracking, review queues and search for CFA study.

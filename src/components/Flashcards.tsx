@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { FlashcardItem } from '../content/config';
 import { EASE_OUT, DURATION_BASE, DURATION_FAST, SPRING_FLIP, getReducedMotion } from '../lib/motion';
@@ -12,8 +12,7 @@ export const Flashcards: React.FC<FlashcardsProps> = ({ cards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [hasCompletedDeck, setHasCompletedDeck] = useState(false);
-  const deckRef = useRef<HTMLDivElement>(null);
-  const isReduced = getReducedMotion();
+  const [isReduced] = useState(() => typeof window !== 'undefined' && getReducedMotion());
 
   if (!cards || cards.length === 0) {
     return <div className="p-4 text-ink-muted">No flashcards available for this topic.</div>;
@@ -48,7 +47,6 @@ export const Flashcards: React.FC<FlashcardsProps> = ({ cards }) => {
 
   return (
     <div
-      ref={deckRef}
       role="group"
       tabIndex={0}
       onKeyDown={onKeyDown}

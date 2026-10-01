@@ -3,12 +3,19 @@ interface Props { items: string[] }
 const { items } = Astro.props;
 ---
 {items.length > 0 && (
-  <div class="ticker overflow-hidden border-y border-ink py-2" aria-hidden="true">
-    <div class="ticker-track font-mono text-sm text-ink">
-      {[...items, ...items].map((item) => (
-        <span class="whitespace-nowrap">{item}<span class="mx-6 text-rust">◆</span></span>
-      ))}
+  <div class="ticker flex items-stretch border-y border-ink">
+    <div class="ticker-viewport min-w-0 flex-1 overflow-hidden py-2" aria-hidden="true">
+      <div class="ticker-track font-mono text-sm text-ink">
+        {[...items, ...items].map((item, i) => (
+          <span class:list={['whitespace-nowrap', i >= items.length && 'ticker-dup']}>{item}<span class="mx-6 text-rust">◆</span></span>
+        ))}
+      </div>
     </div>
+    <button
+      type="button"
+      data-ticker-toggle
+      class="ticker-toggle inline-flex min-h-[44px] min-w-[44px] items-center justify-center border-l border-ink px-3 font-sans text-xs font-bold uppercase tracking-[0.14em] text-ink hover:text-rust"
+    >Pause ticker</button>
   </div>
 )}
 
@@ -17,14 +24,26 @@ const { items } = Astro.props;
     display: inline-flex;
     animation: ticker 70s linear infinite;
   }
-  .ticker:hover .ticker-track {
+  .ticker-track.is-paused,
+  .ticker-viewport:hover .ticker-track {
     animation-play-state: paused;
   }
   @keyframes ticker {
     to { transform: translateX(-50%); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .ticker { overflow-x: auto; }
+    .ticker-viewport { overflow-x: auto; }
     .ticker-track { animation: none !important; }
+    .ticker-dup, .ticker-toggle { display: none; }
   }
 </style>
+
+<script>
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as Element).closest<HTMLButtonElement>('[data-ticker-toggle]');
+    const track = btn?.parentElement?.querySelector('.ticker-track');
+    if (!btn || !track) return;
+    const paused = track.classList.toggle('is-paused');
+    btn.textContent = paused ? 'Play ticker' : 'Pause ticker';
+  });
+</script>
