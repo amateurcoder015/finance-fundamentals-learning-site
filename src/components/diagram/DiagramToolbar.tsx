@@ -1,6 +1,8 @@
 import React from 'react';
 
 interface DiagramToolbarProps {
+  ready: boolean;
+  toggleRef: React.Ref<HTMLButtonElement>;
   canWalk: boolean;
   walking: boolean;
   onToggleWalk: () => void;
@@ -14,7 +16,8 @@ interface DiagramToolbarProps {
 const btn =
   'inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-rule bg-paper-raised px-4 font-sans text-sm font-bold text-ink hover:border-ink/40';
 
-export const DiagramToolbar: React.FC<DiagramToolbarProps> = (p) => (
+export const DiagramToolbar: React.FC<DiagramToolbarProps> = (p) =>
+  !p.ready ? null : (
   <div className="mb-3 flex flex-wrap items-center gap-2" role="toolbar" aria-label="Diagram controls">
     {p.canWalk && (
       <button type="button" className={`${btn} ${p.walking ? 'bg-ink text-on-accent' : ''}`} onClick={p.onToggleWalk} aria-pressed={p.walking}>
@@ -25,8 +28,8 @@ export const DiagramToolbar: React.FC<DiagramToolbarProps> = (p) => (
       <button type="button" className={btn} onClick={p.onZoomOut} aria-label="Zoom out">−</button>
       <button type="button" className={btn} onClick={p.onZoomIn} aria-label="Zoom in">+</button>
       <button type="button" className={btn} onClick={p.onFit} aria-label="Fit to view">Fit</button>
-      <button type="button" className={btn} onClick={p.onToggleFullscreen} aria-label={p.fullscreen ? 'Exit full screen' : 'Full screen'}>
-        {p.fullscreen ? 'Close' : '⤢'}
+      <button type="button" className={btn} ref={p.toggleRef} onClick={p.onToggleFullscreen} aria-label={p.fullscreen ? undefined : 'Full screen'}>
+        {p.fullscreen ? 'Close full screen' : '⤢'}
       </button>
     </span>
   </div>

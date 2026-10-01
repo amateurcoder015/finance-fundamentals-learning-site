@@ -66,6 +66,10 @@
   color: rgb(var(--rust));
 }
 
+.prose :is(h2, h3) {
+  scroll-margin-top: 7rem;
+}
+
 .prose h2 {
   @apply mt-14 mb-5 border-b border-rule pb-2 text-3xl font-semibold tracking-tight;
   font-family: var(--font-serif);
@@ -243,9 +247,20 @@
 
 /* ---- Diagram engine ---- */
 .dg-root svg {
-  width: 100%;
+  /* Mermaid sets width:100% plus its own natural max-width; keep that cap and centre the drawing. */
+  display: block;
+  margin-inline: auto;
   height: auto;
   font-family: var(--font-serif);
+}
+/* Fullscreen: fit the whole drawing in the window (the viewBox letterboxes it). */
+.dg-root.dg-fs {
+  height: 100%;
+}
+.dg-root.dg-fs svg {
+  width: 100%;
+  height: 100%;
+  max-width: none !important;
 }
 
 /* Reveal: nodes fade in along the flow; edges draw themselves in ink. Opacity only on
@@ -255,15 +270,11 @@
   transition: opacity var(--dur-slow) var(--ease-out) calc(var(--i, 0) * 70ms);
 }
 .dg-reveal .dg-edge {
-  stroke-dasharray: var(--len);
-  stroke-dashoffset: var(--len);
+  /* dasharray/offset are set inline by armReveal/playReveal (see dom.ts) */
   transition: stroke-dashoffset var(--dur-ink) var(--ease-out) 200ms;
 }
 .dg-reveal.dg-in .dg-node {
   opacity: 1;
-}
-.dg-reveal.dg-in .dg-edge {
-  stroke-dashoffset: 0;
 }
 
 /* Walk the flow: dim everything but the current step */
@@ -278,8 +289,9 @@
   opacity: 1;
 }
 .dg-root.dg-walking g.node.dg-current :is(rect, polygon, circle, ellipse, path) {
-  stroke: rgb(var(--rust));
-  stroke-width: 2.5px;
+  /* !important: Mermaid's `#dg-N .node rect { stroke }` is id-scoped and would otherwise win. */
+  stroke: rgb(var(--rust)) !important;
+  stroke-width: 2.5px !important;
 }
 
 /* KaTeX hard-codes a red error colour that fails contrast on the dark paper. */

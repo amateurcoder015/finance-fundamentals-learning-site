@@ -21,11 +21,22 @@ describe('zoomAt', () => {
 
 describe('clampTransform', () => {
   it('forces zero offset at scale 1', () => {
-    expect(clampTransform({ x: 50, y: -30, k: 1 }, 400, 300)).toEqual({ x: 0, y: 0, k: 1 });
+    expect(clampTransform({ x: 50, y: -30, k: 1 }, 400, 300, 400, 300)).toEqual({ x: 0, y: 0, k: 1 });
   });
   it('keeps the content covering the viewport when zoomed', () => {
-    const out = clampTransform({ x: 100, y: -9999, k: 2 }, 400, 300);
+    const out = clampTransform({ x: 100, y: -9999, k: 2 }, 400, 300, 400, 300);
     expect(out.x).toBe(0);
     expect(out.y).toBe(300 - 300 * 2);
+  });
+  it('lets content taller than the viewport pan to its bottom, even at scale 1', () => {
+    // 400x1000 content in a 400x300 viewport
+    expect(clampTransform({ x: 0, y: -9999, k: 1 }, 400, 300, 400, 1000).y).toBe(300 - 1000);
+    expect(clampTransform({ x: 0, y: 50, k: 1 }, 400, 300, 400, 1000).y).toBe(0);
+  });
+  it('bounds y by the scaled content height when zoomed', () => {
+    expect(clampTransform({ x: 0, y: -9999, k: 2 }, 400, 300, 400, 1000).y).toBe(300 - 2000);
+  });
+  it('pins an axis to 0 when the scaled content is smaller than the viewport', () => {
+    expect(clampTransform({ x: -80, y: 40, k: 1.5 }, 400, 300, 200, 100)).toEqual({ x: 0, y: 0, k: 1.5 });
   });
 });

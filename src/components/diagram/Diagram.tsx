@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { buildThemeVariables } from '../../lib/diagram-theme';
 import { getReducedMotion } from '../../lib/motion';
-import { extractGraph, armReveal, readThemeTokens, type DiagramGraph } from './dom';
+import { extractGraph, armReveal, playReveal, readThemeTokens, type DiagramGraph } from './dom';
 import { usePanZoom } from './usePanZoom';
 import { DiagramToolbar } from './DiagramToolbar';
 
@@ -36,6 +36,9 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
   const [graph, setGraph] = useState<DiagramGraph | null>(null);
   const [walkIndex, setWalkIndex] = useState<number | null>(null);
   const [fullscreen, setFullscreen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const figureRef = useRef<HTMLElement>(null);
+  const wasFullscreen = useRef(false);
   const { t, viewportRef, zoomIn, zoomOut, fit, bind } = usePanZoom();
 
   // Render (and re-render when the theme flips).
@@ -72,7 +75,6 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
     const svgEl = root?.querySelector('svg');
     if (!root || !svgEl) return;
     svgEl.removeAttribute('height');
-    svgEl.style.maxWidth = 'none';
 
     const g = extractGraph(svgEl as SVGSVGElement);
     setGraph(g);
@@ -82,8 +84,7 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
     if (alreadyRevealed || g.nodeIds.length === 0 || getReducedMotion()) return;
 
     armReveal(g);
-    root.classList.add('dg-reveal');
-    requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('dg-in')));
+    playReveal(root, g);
   }, [svg]);
 
   // Walk-the-flow highlighting.
@@ -97,7 +98,14 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
   // Fullscreen: lock page scroll, close on Escape, re-fit the view.
   useEffect(() => {
     fit();
-    if (!fullscreen) return;
+    if (!fullscreen) {
+      // Return focus to the toggle on exit (not on first mount).
+      if (wasFullscreen.current) toggleRef.current?.focus();
+      wasFullscreen.current = false;
+      return;
+    }
+    wasFullscreen.current = true;
+    toggleRef.current?.focus(); // the toggle is the Close button while fullscreen
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     const onKey = (e: KeyboardEvent) => {
@@ -125,9 +133,31 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
+    if (fullscreen && e.key === 'Tab') {
+      // Keep focus inside the modal dialog.
+      const items = Array.from(
+        figureRef.current?.querySelectorAll<HTMLElement>('button:not([disabled]), [href], [tabindex="0"]') ?? [],
+      );
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+      return;
+    }
     if (!walking) return;
-    if (e.key === 'ArrowRight') step(1);
-    else if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') {
+      e.preventDefault(); // do not also scroll the page
+      step(1);
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      step(-1);
+    }
   };
 
   if (error) {
@@ -141,10 +171,14 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
 
   return (
     <figure
+      ref={figureRef}
       onKeyDown={onKeyDown}
+      {...(fullscreen ? { role: 'dialog', 'aria-modal': true, 'aria-label': title } : {})}
       className={fullscreen ? 'fixed inset-0 z-[70] flex flex-col bg-paper p-4' : 'relative'}
     >
       <DiagramToolbar
+        ready={svg !== null}
+        toggleRef={toggleRef}
         canWalk={canWalk}
         walking={walking}
         onToggleWalk={() => setWalkIndex(walking ? null : 0)}
@@ -158,18 +192,18 @@ export const Diagram: React.FC<DiagramProps> = ({ code, title }) => {
       <div
         ref={viewportRef}
         {...bind}
-        className={`relative overflow-hidden rounded-xl border border-rule bg-paper ${fullscreen ? 'flex-1' : ''} ${t.k > 1 ? 'select-none cursor-grab' : ''}`}
+        className={`relative overflow-hidden rounded-xl border border-rule bg-paper ${fullscreen ? 'min-h-0 flex-1' : ''} ${t.k > 1 ? 'select-none cursor-grab' : ''}`}
         style={{ touchAction: t.k > 1 ? 'none' : 'pan-y' }}
       >
         <div
           ref={rootRef}
-          className="dg-root"
+          className={`dg-root${fullscreen ? ' dg-fs' : ''}`}
           role="img"
           aria-label={title}
           style={{ transform: `translate(${t.x}px, ${t.y}px) scale(${t.k})`, transformOrigin: '0 0' }}
           dangerouslySetInnerHTML={innerHtml}
         />
-        {svg === null && <p className="p-4 font-sans text-sm text-ink-muted">Drawing diagram…</p>}
+        {svg === null && <p className="dg-loading p-4 font-sans text-sm text-ink-muted">Drawing diagram…</p>}
       </div>
 
       {walking && graph && (

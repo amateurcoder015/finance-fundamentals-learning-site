@@ -11,13 +11,24 @@ export function usePanZoom(minK = 1, maxK = 4) {
 
   const size = () => {
     const r = elRef.current?.getBoundingClientRect();
-    return { w: r?.width ?? 0, h: r?.height ?? 0, left: r?.left ?? 0, top: r?.top ?? 0 };
+    const w = r?.width ?? 0;
+    const h = r?.height ?? 0;
+    // The panned content is the viewport's first child; its layout size ignores the transform.
+    const content = elRef.current?.firstElementChild as HTMLElement | null;
+    return {
+      w,
+      h,
+      cw: content?.offsetWidth || w,
+      ch: content?.offsetHeight || h,
+      left: r?.left ?? 0,
+      top: r?.top ?? 0,
+    };
   };
 
   const applyZoom = useCallback(
     (factor: number, cx?: number, cy?: number) => {
-      const { w, h } = size();
-      setT((prev) => clampTransform(zoomAt(prev, cx ?? w / 2, cy ?? h / 2, factor, minK, maxK), w, h));
+      const { w, h, cw, ch } = size();
+      setT((prev) => clampTransform(zoomAt(prev, cx ?? w / 2, cy ?? h / 2, factor, minK, maxK), w, h, cw, ch));
     },
     [minK, maxK],
   );
@@ -51,7 +62,7 @@ export function usePanZoom(minK = 1, maxK = 4) {
     const prev = pointers.current.get(e.pointerId);
     if (!prev) return;
     const next = { x: e.clientX, y: e.clientY };
-    const { w, h, left, top } = size();
+    const { w, h, cw, ch, left, top } = size();
     if (pointers.current.size === 2) {
       const other = [...pointers.current.entries()].find(([id]) => id !== e.pointerId)![1];
       const before = Math.hypot(prev.x - other.x, prev.y - other.y);
@@ -59,7 +70,9 @@ export function usePanZoom(minK = 1, maxK = 4) {
       if (before > 0) applyZoom(after / before, (next.x + other.x) / 2 - left, (next.y + other.y) / 2 - top);
     } else {
       setT((cur) =>
-        cur.k > 1 ? clampTransform({ ...cur, x: cur.x + next.x - prev.x, y: cur.y + next.y - prev.y }, w, h) : cur,
+        cur.k > 1
+          ? clampTransform({ ...cur, x: cur.x + next.x - prev.x, y: cur.y + next.y - prev.y }, w, h, cw, ch)
+          : cur,
       );
     }
     pointers.current.set(e.pointerId, next);

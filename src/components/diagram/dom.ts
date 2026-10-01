@@ -48,8 +48,39 @@ export function armReveal(graph: DiagramGraph): void {
     el.classList.add('dg-node');
     el.style.setProperty('--i', String(i));
   });
+  // Mermaid scopes its own CSS to the SVG id (`#dg-1 .edge-pattern-solid { stroke-dasharray: 0 }`),
+  // which outranks any class rule of ours, so the draw-in state must be set inline.
   graph.edgeEls.forEach((el) => {
+    const len = String(Math.ceil(el.getTotalLength()));
     el.classList.add('dg-edge');
-    el.style.setProperty('--len', String(Math.ceil(el.getTotalLength())));
+    el.style.strokeDasharray = len;
+    el.style.strokeDashoffset = len;
   });
+}
+
+/** Plays the reveal armed by armReveal, then hands edge dashing back to Mermaid's own styles. */
+export function playReveal(root: HTMLElement, graph: DiagramGraph): void {
+  const clear = (el: SVGPathElement) => {
+    el.style.removeProperty('stroke-dasharray');
+    el.style.removeProperty('stroke-dashoffset');
+  };
+  graph.edgeEls.forEach((el) => {
+    el.addEventListener('transitionend', (e) => {
+      if (e.propertyName === 'stroke-dashoffset') clear(el);
+    }, { once: true });
+  });
+  // Flush styles so the armed (hidden) state is committed before the transition rule applies;
+  // otherwise the last-armed edge starts its transition from the undrawn default instead.
+  void root.offsetWidth;
+  root.classList.add('dg-reveal');
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => {
+      root.classList.add('dg-in');
+      graph.edgeEls.forEach((el) => {
+        el.style.strokeDashoffset = '0';
+      });
+    }),
+  );
+  // Safety net if transitionend never fires (hidden tab, interrupted transition).
+  window.setTimeout(() => graph.edgeEls.forEach(clear), 2200);
 }
