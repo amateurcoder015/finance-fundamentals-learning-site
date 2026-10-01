@@ -9,6 +9,7 @@ interface Props {
 const { refs, currency = '$' } = Astro.props;
 
 // Explainer components are added here as they are built (name -> component).
+// Components must be React islands: `client:visible` only hydrates framework components.
 const components: Record<string, any> = {};
 ---
 {refs.length > 0 && (

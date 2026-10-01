@@ -98,19 +98,20 @@ Engine changes: `buildThemeVariables` is extended with the variables Mermaid use
 - **Tests:** Vitest for every model against chapter vectors and the edge cases above; a registry test that every frontmatter-referenced name and view exists; a schema test for the `explainers` field.
 - **Browser verification (headless Chrome, as in sub-project 1):** sliders update readouts; "Chapter example" reproduces the note's numbers; reset works; keyboard operation; light and dark; reduced motion; no-JS summary; the five converted diagrams render themed in both modes with working zoom and fullscreen. axe on every page with an explainer and the five converted diagrams; Lighthouse on one explainer page.
 - **Performance:** explainers are lazy islands (`client:visible` plus dynamic import); a chapter without an explainer loads nothing extra. KaTeX is already a dependency and loads only inside explainer islands. No chart library. Budget: each explainer chunk under 40 KB gzipped excluding KaTeX.
-- **Failure handling:** unknown explainer name or view fails the build with valid options listed; a runtime error inside an explainer is caught by an error boundary showing a short message and the static summary.
+- **Failure handling:** unknown explainer name or view fails the build with valid options listed; a runtime error inside an explainer is caught by an error boundary showing a short message.
 - **Delivery:** spec, then plan, then subagent-driven execution with per-task review, pushed to `explainers`; pull request when complete.
 
 ## Risks
 
 - **Numerical correctness** of Black-Scholes and Greeks: mitigated by reference vectors, property tests, and an independently computed check of the vector values during implementation.
 - **Mermaid theming for new diagram types** may not fully honour the token palette: verified visually in both themes; fall back to a per-type override block if needed.
-- **A second diagram in one chapter** (margining) may need a small loader extension; decided in planning, not assumed here.
+- **A second diagram in one chapter** (margining, position limits) is handled by optional `diagram-N.mmd` files read by the topic loader.
 - **Editing frontmatter of eight chapters** is a content change; only the one `explainers:` line is added to each.
 
 ## Decisions made while planning
 
-- **Resolver is a pure module.** Reference validation lives in `src/lib/explainer-refs.ts`, independent of `astro:content`, so it is unit tested with Vitest; the topic page calls it at build time.
-- **Validation at render, shape at schema.** The `explainers` frontmatter field is validated for shape by the content schema (default `[]`), while name and view validity is checked against the registry by the resolver, so a typo fails the build with valid options listed.
-- **Registry plus component map.** `src/explainers/registry.ts` holds metadata (title, views); `Explainers.astro` holds the name-to-component map. Both are extended by each explainer task, and a registered name with no component fails the build.
+- **Schema lives in `config.ts`.** The `explainers` frontmatter field is defined inside `src/content/config.ts` with Astro's `z` (to avoid mixing zod instances); only the resolver (`resolveExplainerRefs`) and types live in `src/lib/explainer-refs.ts`, so the resolver is unit-testable without `astro:content`.
+- **No separate static summary.** Each explainer's default state is the chapter's worked example and the island is server-rendered, so readers without JavaScript see the real numbers; there is no separate summary module. A runtime error boundary shows a short message instead of the explainer.
+- **`view` selects the initial tab only.** For the options suite, the `view` value chooses which tab is active on load; all three tabs stay available.
+- **Extra diagrams.** Chapters whose diagram is converted but whose second half must be kept (margining, position limits) get an optional `diagram-2.mmd` (first line `%% title: ...` for its heading); the topic loader gains `extraDiagrams`.
 - **Placement.** The "Try it yourself" section sits between the note body and "The picture", with its own contents-rail entry shown only when a chapter has explainers.
