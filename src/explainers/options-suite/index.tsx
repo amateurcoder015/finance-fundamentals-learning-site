@@ -15,11 +15,16 @@ const TABS = [
 function Inner({ view, currency }: { view?: string; currency: string }) {
   const [active, setActive] = useState(TABS.some((t) => t.id === view) ? (view as string) : 'payoff');
   return (
-    <Tabs tabs={TABS} active={active} onChange={setActive}>
-      {active === 'payoff' && <PayoffView currency={currency} />}
-      {active === 'greeks' && <GreeksView currency={currency} />}
-      {active === 'parity' && <ParityView currency={currency} />}
-    </Tabs>
+    <Tabs
+      tabs={TABS}
+      active={active}
+      onChange={setActive}
+      panels={{
+        payoff: <PayoffView currency={currency} />,
+        greeks: <GreeksView currency={currency} />,
+        parity: <ParityView currency={currency} />,
+      }}
+    />
   );
 }
 

@@ -36,7 +36,7 @@ export function GreeksView({ currency }: { currency: string }) {
 
   return (
     <div className="space-y-6">
-      <ExampleBar examples={[{ label: `Textbook example: ${formatMoney(100, currency, 0)} spot and strike, 20% volatility, 1 year`, apply: () => setI(REFERENCE) }]} />
+      <ExampleBar examples={[{ label: `Textbook example: ${formatMoney(100, currency, 0)} spot and strike, 20% volatility, 1 year`, apply: () => { setI(REFERENCE); setType('call'); setChart('price'); } }]} />
 
       <div className="grid gap-8 xl:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]">
         <div className="space-y-5">

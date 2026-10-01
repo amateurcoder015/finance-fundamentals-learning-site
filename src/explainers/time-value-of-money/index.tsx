@@ -84,7 +84,7 @@ function Inner({ currency }: { currency: string }) {
           <Slider label={AMOUNT_LABEL[inputs.mode]} value={inputs.amount} min={0} max={100000} step={100} onChange={(amount) => set({ amount })} format={(v) => formatMoney(v, currency, 0)} />
           <Slider label="Annual interest rate" value={Number((inputs.rate * 100).toFixed(4))} min={0} max={30} step={0.1} onChange={(v) => set({ rate: v / 100 })} format={(v) => v.toFixed(1)} suffix="%" />
           {!isPerpetuity && (
-            <Slider label={isLump ? 'Years' : 'Number of yearly payments'} value={inputs.years} min={0} max={40} step={1} onChange={(years) => set({ years })} />
+            <Slider label={isLump ? 'Years' : 'Number of yearly payments'} value={inputs.years} min={0} max={40} step={1} onChange={(years) => set({ years: isLump ? years : Math.round(years) })} />
           )}
           {isLump && (
             <div className="space-y-1.5">

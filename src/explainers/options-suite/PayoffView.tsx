@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PayoffChart from '../../components/PayoffChart';
+import { NumberField } from '../../components/explainer/kit/NumberField';
 import { Readout } from '../../components/explainer/kit/Readout';
 import { ExampleBar } from '../../components/explainer/kit/ExampleBar';
 import { formatMoney, formatNumber } from '../../lib/explainer-format';
@@ -76,19 +77,19 @@ export function PayoffView({ currency }: { currency: string }) {
             </label>
             <label className="space-y-1 font-sans text-xs font-bold uppercase tracking-[0.1em] text-ink-muted">
               {isFuture(l.type) ? 'Entry price' : 'Strike'}
-              <input type="number" min={1} step={1} value={l.strike} onChange={(e) => update(l.id, { strike: Math.max(1, Number(e.target.value) || 1) })} className={num} />
+              <NumberField min={1} step={1} value={l.strike} onCommit={(strike) => update(l.id, { strike })} className={num} />
             </label>
             {!isFuture(l.type) ? (
               <label className="space-y-1 font-sans text-xs font-bold uppercase tracking-[0.1em] text-ink-muted">
                 Premium
-                <input type="number" min={0} step={0.5} value={l.premium} onChange={(e) => update(l.id, { premium: Math.max(0, Number(e.target.value) || 0) })} className={num} />
+                <NumberField min={0} step={0.5} value={l.premium} onCommit={(premium) => update(l.id, { premium })} className={num} />
               </label>
             ) : (
               <div aria-hidden="true" />
             )}
             <label className="space-y-1 font-sans text-xs font-bold uppercase tracking-[0.1em] text-ink-muted">
               Lot size
-              <input type="number" min={1} step={1} value={l.lot} onChange={(e) => update(l.id, { lot: Math.max(1, Math.round(Number(e.target.value) || 1)) })} className={num} />
+              <NumberField min={1} step={1} integer value={l.lot} onCommit={(lot) => update(l.id, { lot })} className={num} />
             </label>
             <button
               type="button"

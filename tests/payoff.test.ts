@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { netPnL, positionPnL, summarisePayoff } from '../src/lib/payoff';
+import { netPnL, positionPnL, summarisePayoff, resolveLegTab } from '../src/lib/payoff';
 import type { Position } from '../src/content/config';
 
 const longCall = (strike: number, premium: number, lotSize = 1): Position => ({ type: 'long-call', strike, premium, lotSize });
@@ -93,5 +93,17 @@ describe('summarisePayoff', () => {
     const s = summarisePayoff([], range);
     expect(s.breakEvens).toEqual([]);
     expect(s.maxProfit === null || Number.isFinite(s.maxProfit)).toBe(true);
+  });
+});
+
+describe('resolveLegTab', () => {
+  it('keeps combined and valid leg tabs', () => {
+    expect(resolveLegTab('combined', 2)).toBe('combined');
+    expect(resolveLegTab('pos-1', 2)).toBe('pos-1');
+  });
+  it('falls back to combined when the leg no longer exists', () => {
+    expect(resolveLegTab('pos-1', 1)).toBe('combined');
+    expect(resolveLegTab('pos-3', 2)).toBe('combined');
+    expect(resolveLegTab('nonsense', 2)).toBe('combined');
   });
 });

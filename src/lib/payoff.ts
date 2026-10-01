@@ -83,3 +83,10 @@ export function summarisePayoff(positions: Position[], range: [number, number]):
     unboundedLoss,
   };
 }
+
+/** A leg tab like `pos-2` that no longer exists (legs removed or replaced) falls back to the combined view. */
+export function resolveLegTab(activeTab: string, legCount: number): string {
+  const m = /^pos-(\d+)$/.exec(activeTab);
+  if (!m) return 'combined';
+  return Number(m[1]) < legCount ? activeTab : 'combined';
+}

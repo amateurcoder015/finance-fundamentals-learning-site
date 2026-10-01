@@ -1,3 +1,4 @@
+import { NumberField } from '../../components/explainer/kit/NumberField';
 import React, { useId, useState } from 'react';
 import { ExplainerFrame } from '../../components/explainer/kit/ExplainerFrame';
 import { Slider } from '../../components/explainer/kit/Slider';
@@ -77,17 +78,7 @@ function Inner({ currency }: { currency: string }) {
             {i.prices.map((p, idx) => (
               <div key={idx} className="flex items-center gap-2">
                 <label htmlFor={`${uid}-day-${idx}`} className="w-14 shrink-0 font-sans text-xs font-bold uppercase tracking-[0.1em] text-ink-muted">Day {idx + 1}</label>
-                <input
-                  id={`${uid}-day-${idx}`}
-                  type="number"
-                  inputMode="decimal"
-                  step={0.5}
-                  min={0}
-                  value={p}
-                  onChange={(e) => setPrice(idx, Number(e.target.value) || 0)}
-                  onBlur={() => setPrice(idx, Math.max(0, half(p)))}
-                  className={num}
-                />
+                <NumberField id={`${uid}-day-${idx}`} step={0.5} min={0} value={p} onCommit={(v) => setPrice(idx, half(v))} className={num} />
                 <button
                   type="button"
                   aria-label={`Remove day ${idx + 1}`}

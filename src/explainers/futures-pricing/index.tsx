@@ -96,7 +96,7 @@ function Inner({ currency }: { currency: string }) {
       <Readout
         items={[
           { label: 'Futures price (F)', value: formatMoney(f, currency), tone: 'accent' },
-          { label: 'Basis (S − F)', value: formatMoney(basis, currency), tone: basis < 0 ? 'negative' : 'positive' },
+          { label: 'Basis (S − F)', value: formatMoney(basis, currency), tone: structure === 'flat' ? 'default' : basis < 0 ? 'negative' : 'positive' },
           { label: 'Market structure', value: STRUCTURE_TEXT[structure] },
         ]}
       />

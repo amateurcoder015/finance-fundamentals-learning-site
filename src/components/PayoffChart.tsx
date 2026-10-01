@@ -1,6 +1,6 @@
 import React, { useState, useId } from 'react';
 import type { Position, PayoffChartData } from '../content/config';
-import { positionPnL as getPnL } from '../lib/payoff';
+import { positionPnL as getPnL, resolveLegTab, summarisePayoff } from '../lib/payoff';
 
 export interface PayoffChartProps {
   positions: Position[];
@@ -16,7 +16,7 @@ export default function PayoffChart({
   description,
 }: PayoffChartProps) {
   const uniqueId = useId().replace(/:/g, '');
-  const [activeTab, setActiveTab] = useState<string>('combined');
+  const [selectedTab, setActiveTab] = useState<string>('combined');
   const [hoverX, setHoverX] = useState<number | null>(null);
 
   if (!positions || positions.length === 0) {
@@ -48,6 +48,9 @@ export default function PayoffChart({
   // Round price bounds for nice axis steps
   minPrice = Math.floor(minPrice / 10) * 10;
   maxPrice = Math.ceil(maxPrice / 10) * 10;
+
+  // A selected leg tab may no longer exist after legs change; derive the effective tab instead of trusting state.
+  const activeTab = resolveLegTab(selectedTab, positions.length);
 
   // Determine active display positions
   const displayedPositions =
@@ -199,6 +202,19 @@ export default function PayoffChart({
     setHoverX(null);
   };
 
+  // Text alternative
+  const money = (v: number) => (v < 0 ? `-$${Math.abs(v).toLocaleString()}` : `$${v.toLocaleString()}`);
+  const sum = summarisePayoff(displayedPositions, [minPrice, maxPrice]);
+  const flatLine = netPoints.every((pt) => Math.abs(pt.pnl) < 1e-9) && sum.breakEvens.length === 0;
+  const textSummary = flatLine
+    ? 'The payoff is zero at every price.'
+    : `Maximum profit ${sum.maxProfit === null ? 'is unlimited' : money(sum.maxProfit)}, maximum loss ${sum.maxLoss === null ? 'is unlimited' : money(sum.maxLoss)}, ${
+        sum.breakEvens.length ? `break-even at ${sum.breakEvens.map((b) => `$${Number(b.toFixed(2))}`).join(' and ')}` : 'no break-even price'
+      }.`;
+  const tableStep = Math.max(1, Math.floor(steps / 10));
+  const tablePoints = netPoints.filter((_, i) => i % tableStep === 0 || i === netPoints.length - 1);
+  const chartLabel = `${title || 'Profit and loss profile at expiration'}. ${textSummary}`;
+
   // Hover info computation
   const hoverData = hoverX !== null ? {
     st: hoverX,
@@ -232,6 +248,7 @@ export default function PayoffChart({
         {positions.length > 1 && (
           <div className="flex items-center p-1 bg-paper rounded-xl border border-rule">
             <button
+              aria-pressed={activeTab === 'combined'}
               onClick={() => setActiveTab('combined')}
               className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                 activeTab === 'combined'
@@ -247,6 +264,7 @@ export default function PayoffChart({
               return (
                 <button
                   key={key}
+                  aria-pressed={activeTab === key}
                   onClick={() => setActiveTab(key)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
                     activeTab === key
@@ -265,6 +283,8 @@ export default function PayoffChart({
       {/* SVG Canvas Container */}
       <div className="relative w-full overflow-hidden rounded-2xl bg-paper border border-rule p-2 sm:p-4 transition-colors">
         <svg
+          role="img"
+          aria-label={chartLabel}
           viewBox={`0 0 ${svgWidth} ${svgHeight}`}
           className="w-full h-auto cursor-crosshair select-none"
           onMouseMove={handleMouseMove}
@@ -581,6 +601,30 @@ export default function PayoffChart({
           )}
         </svg>
       </div>
+
+      <p className="px-2 font-serif text-sm italic text-ink-muted">{textSummary}</p>
+
+      <details className="px-2 font-sans text-sm text-ink">
+        <summary className="inline-flex min-h-[44px] cursor-pointer items-center font-semibold text-rust">Show data table</summary>
+        <div className="overflow-x-auto">
+          <table className="mt-2 w-full border-collapse text-left font-mono text-xs">
+            <thead>
+              <tr>
+                <th className="border-b-2 border-ink px-2 py-1">Spot price at expiration</th>
+                <th className="border-b-2 border-ink px-2 py-1">Net P&amp;L</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tablePoints.map((pt) => (
+                <tr key={pt.st}>
+                  <td className="border-b border-rule px-2 py-1">${Number(pt.st.toFixed(2))}</td>
+                  <td className="border-b border-rule px-2 py-1">{pt.pnl > 0 ? `+${money(pt.pnl)}` : money(pt.pnl)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </details>
 
       {/* Legend & Summary Footer */}
       <div className="flex flex-wrap items-center justify-between gap-3 px-2 py-1 text-xs">

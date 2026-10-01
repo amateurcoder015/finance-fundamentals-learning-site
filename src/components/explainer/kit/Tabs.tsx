@@ -9,8 +9,10 @@ export const Tabs: React.FC<{
   tabs: TabItem[];
   active: string;
   onChange: (id: string) => void;
-  children: React.ReactNode;
-}> = ({ tabs, active, onChange, children }) => {
+  children?: React.ReactNode;
+  /** When provided, every tab gets its own panel that stays mounted and is hidden while inactive. */
+  panels?: Record<string, React.ReactNode>;
+}> = ({ tabs, active, onChange, children, panels }) => {
   const base = useId();
   const onKeyDown = (e: React.KeyboardEvent) => {
     const i = tabs.findIndex((t) => t.id === active);
@@ -37,7 +39,7 @@ export const Tabs: React.FC<{
               role="tab"
               type="button"
               aria-selected={selected}
-              aria-controls={`${base}-panel`}
+              aria-controls={panels ? `${base}-panel-${tab.id}` : `${base}-panel`}
               tabIndex={selected ? 0 : -1}
               onClick={() => onChange(tab.id)}
               className={`inline-flex min-h-[44px] items-center rounded-full border px-5 font-sans text-sm font-bold ${
@@ -49,9 +51,17 @@ export const Tabs: React.FC<{
           );
         })}
       </div>
-      <div id={`${base}-panel`} role="tabpanel" aria-labelledby={`${base}-tab-${active}`}>
-        {children}
-      </div>
+      {panels ? (
+        tabs.map((tab) => (
+          <div key={tab.id} id={`${base}-panel-${tab.id}`} role="tabpanel" aria-labelledby={`${base}-tab-${tab.id}`} hidden={tab.id !== active}>
+            {panels[tab.id]}
+          </div>
+        ))
+      ) : (
+        <div id={`${base}-panel`} role="tabpanel" aria-labelledby={`${base}-tab-${active}`}>
+          {children}
+        </div>
+      )}
     </div>
   );
 };
