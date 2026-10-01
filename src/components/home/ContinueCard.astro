@@ -16,7 +16,7 @@ const percent = hasProgress ? Math.round(Math.min(1, Math.max(0, progress!)) * 1
   <p class="font-sans text-xs font-bold uppercase tracking-[0.14em] text-rust">
     {hasProgress ? 'Continue reading' : 'Start here'}
   </p>
-  <h3 class="mt-2 font-serif text-3xl font-semibold leading-tight text-ink">{title}</h3>
+  <h2 class="mt-2 font-serif text-3xl font-semibold leading-tight text-ink">{title}</h2>
   <p class="mt-2 line-clamp-2 font-serif text-base text-ink-muted">{description}</p>
   <div class="mt-5 flex items-center gap-4">
     {hasProgress && (

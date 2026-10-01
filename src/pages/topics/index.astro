@@ -26,6 +26,7 @@ allTopics.sort((a, b) => new Date(b.data.dateAdded).getTime() - new Date(a.data.
   <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
     {allTopics.map((topic) => (
       <TopicCard
+        headingLevel="h2"
         slug={getTopicSlug(topic)}
         title={topic.data.title}
         description={topic.data.description}

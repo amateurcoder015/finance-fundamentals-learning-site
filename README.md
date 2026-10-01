@@ -125,6 +125,22 @@ The CLI automatically:
 
 ---
 
+## 🎨 Design system
+
+An editorial look (warm paper, ink text, rust accent, serif headings) with a matching dark theme.
+
+- **Tokens**: `src/styles/tokens.css`. Colours are space-separated RGB triplets (`--paper`, `--paper-raised`, `--ink`, `--ink-muted`, `--rule`, `--rust`, `--gold`, `--success`, `--danger`, `--on-accent`) in `:root` (light) and `.dark`. Tailwind maps them to classes such as `bg-paper`, `text-ink`, `border-rule`, `text-rust` (see `tailwind.config.mjs`). Fonts and motion durations live there too.
+- **Retheme**: edit the values in `tokens.css` only; do not hard-code colours in components. Keep the top-level `:root` and `.dark` rules at column 0 and re-run `npm test`, because `tests/contrast.test.ts` enforces WCAG contrast on the token pairs.
+- **UI kit**: `src/components/ui/` (Card, Section, Badge, Button, DifficultyBadge, Stamp, InkProgress). Site shell in `src/layouts/BaseLayout.astro`; topic and home pieces in `src/components/topic/` and `src/components/home/`; the diagram viewer in `src/components/diagram/`.
+- **Opt-in MDX components** (available in every `note.mdx`, no imports needed; registered in `src/components/mdx/index.ts`):
+  - `<Hl>key phrase</Hl>` highlights text with a marker-style underline.
+  - `<Note>...</Note>` renders a margin-style callout.
+  - `<Term term="delta">delta</Term>` shows a hover/focus definition taken from `src/data/glossary.json` (add entries there; an unknown term fails the build).
+- **Motion and accessibility**: animations respect `prefers-reduced-motion`, and reading content stays visible with JavaScript disabled.
+- **Tests**: `npm test` runs the Vitest suite (contrast, motion tokens, glossary, and other helpers).
+
+---
+
 ## 🗺️ Build Stages
 
 - **Stage 1 (Current)**: Scaffold + Content Model + Zod Schema + CLI + React Islands + Seed Topic ("Time Value of Money") + Plain functional pages.

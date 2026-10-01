@@ -56,6 +56,10 @@ const navLinks = [
 
     <ClientRouter />
 
+    <noscript>
+      <style>[style*="opacity:0"],[style*="opacity: 0"]{opacity:1 !important;transform:none !important;}</style>
+    </noscript>
+
     <script is:inline>
       (function () {
         function apply() {
@@ -74,7 +78,7 @@ const navLinks = [
     <header id="site-header" class="sticky top-0 z-50 border-b border-rule bg-paper/95 backdrop-blur-md">
       <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between gap-4">
 
-        <a href="/" class="group flex items-center gap-3 min-h-[44px]" aria-label="Finance Fundamentals Home">
+        <a href="/" class="group flex items-center gap-3 min-h-[44px]">
           <span class="flex h-9 w-9 items-center justify-center rounded-md bg-rust font-serif text-xl font-semibold text-on-accent" aria-hidden="true">F</span>
           <span class="font-serif text-xl font-semibold tracking-tight text-ink">Finance <span class="font-normal text-ink-muted">Fundamentals</span></span>
         </a>

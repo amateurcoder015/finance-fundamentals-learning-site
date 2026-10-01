@@ -281,3 +281,21 @@
   stroke: rgb(var(--rust));
   stroke-width: 2.5px;
 }
+
+/* KaTeX hard-codes a red error colour that fails contrast on the dark paper. */
+.katex-error {
+  color: rgb(var(--danger)) !important;
+}
+
+/*
+ * Reduced motion: HeroMotion/ScrollReveal server-render their hidden state
+ * (inline opacity:0) and, for reduced-motion users, hydrate into a plain div
+ * that keeps that stale inline style. Force the content visible.
+ */
+@media (prefers-reduced-motion: reduce) {
+  [style*="opacity:0"],
+  [style*="opacity: 0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
