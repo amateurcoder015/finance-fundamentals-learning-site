@@ -9,21 +9,16 @@ interface Props {
 }
 const { refs, currency = '$' } = Astro.props;
 
-// Explainer components are added here as they are built (name -> component).
-// Components must be React islands: `client:visible` only hydrates framework components.
-// Astro can only hydrate a component it can see imported and used as a literal tag, so each
-// explainer is also rendered through an explicit branch below (a dynamic `<Component client:visible>` fails).
-const components: Record<string, any> = { 'time-value-of-money': TimeValueOfMoney };
+// To add an explainer: (1) add a registry entry in src/explainers/registry.ts, and
+// (2) add its import above and an explicit branch in the chain below.
+// Astro cannot hydrate a component chosen dynamically, and `client:visible` only hydrates React islands.
 ---
 {refs.length > 0 && (
   <Section id="explainers" eyebrow="Try it yourself" title="Explore the numbers">
     <div class="space-y-10">
       {refs.map((ref) => {
-        const Component = components[ref.name];
-        if (!Component) {
-          throw new Error(`[Content Validation Error] Explainer "${ref.name}" is registered but has no component in Explainers.astro`);
-        }
         if (ref.name === 'time-value-of-money') return <TimeValueOfMoney client:visible view={ref.view} currency={currency} />;
+        throw new Error(`[Content Validation Error] Explainer "${ref.name}" is registered but has no render branch in Explainers.astro`);
       })}
     </div>
   </Section>

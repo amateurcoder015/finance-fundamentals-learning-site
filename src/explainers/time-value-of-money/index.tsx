@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import { ExplainerFrame } from '../../components/explainer/kit/ExplainerFrame';
 import { Slider } from '../../components/explainer/kit/Slider';
 import { Readout, type ReadoutItem } from '../../components/explainer/kit/Readout';
@@ -34,6 +34,7 @@ const AMOUNT_LABEL: Record<TvmMode, string> = {
 };
 
 function Inner({ currency }: { currency: string }) {
+  const compId = useId();
   const [inputs, setInputs] = useState<TvmInputs>(TVM_DEFAULTS);
   const set = (patch: Partial<TvmInputs>) => setInputs((p) => ({ ...p, ...patch }));
   const result = evaluateTvm(inputs);
@@ -50,12 +51,16 @@ function Inner({ currency }: { currency: string }) {
   const first = chart.series[0].points[0];
   const lastPoints = chart.series[0].points;
   const last = lastPoints[lastPoints.length - 1];
-  const summary = `${chart.title}. Starts at ${formatMoney(first[1], currency)} and ends at ${formatMoney(last[1], currency)}.`;
   const xFormat = chart.xKind === 'percent' ? (v: number) => `${formatNumber(v, 1)}%` : (v: number) => formatNumber(v, v % 1 === 0 ? 0 : 1);
+
+  const summary =
+    chart.xKind === 'percent'
+      ? `${chart.title}. Present value of the perpetuity falls from ${formatMoney(first[1], currency)} at ${xFormat(first[0])} to ${formatMoney(last[1], currency)} at ${xFormat(last[0])}.`
+      : `${chart.title}. Starts at ${formatMoney(first[1], currency)} and ends at ${formatMoney(last[1], currency)}.`;
 
   return (
     <div className="space-y-6">
-      <ExampleBar examples={[{ label: 'Chapter example: $10,000 at 8% for 5 years', apply: () => setInputs(TVM_DEFAULTS) }]} />
+      <ExampleBar examples={[{ label: `Chapter example: ${formatMoney(10000, currency, 0)} at 8% for 5 years`, apply: () => setInputs(TVM_DEFAULTS) }]} />
 
       <div role="radiogroup" aria-label="What do you want to find?" className="flex flex-wrap gap-2">
         {MODES.map((m) => (
@@ -74,7 +79,7 @@ function Inner({ currency }: { currency: string }) {
         ))}
       </div>
 
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]">
+      <div className="grid gap-8 xl:grid-cols-[minmax(0,18rem)_minmax(0,1fr)]">
         <div className="space-y-5">
           <Slider label={AMOUNT_LABEL[inputs.mode]} value={inputs.amount} min={0} max={100000} step={100} onChange={(amount) => set({ amount })} format={(v) => formatMoney(v, currency, 0)} />
           <Slider label="Annual interest rate" value={Number((inputs.rate * 100).toFixed(4))} min={0} max={30} step={0.1} onChange={(v) => set({ rate: v / 100 })} format={(v) => v.toFixed(1)} suffix="%" />
@@ -83,9 +88,9 @@ function Inner({ currency }: { currency: string }) {
           )}
           {isLump && (
             <div className="space-y-1.5">
-              <label htmlFor="tvm-compounding" className="font-sans text-sm font-semibold text-ink">Compounding</label>
+              <label htmlFor={compId} className="font-sans text-sm font-semibold text-ink">Compounding</label>
               <select
-                id="tvm-compounding"
+                id={compId}
                 value={inputs.compounding}
                 onChange={(e) => set({ compounding: Number(e.target.value) })}
                 className="min-h-[44px] w-full rounded-lg border border-rule bg-paper px-3 font-sans text-sm text-ink"
