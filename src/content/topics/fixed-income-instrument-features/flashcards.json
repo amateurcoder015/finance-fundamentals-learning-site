@@ -1,0 +1,13 @@
+[
+  { "front": "List the basic features that describe a bond.", "back": "Issuer, maturity, par value, coupon rate and frequency, and currency denomination." },
+  { "front": "Coupon payment per period formula", "back": "Coupon = (coupon rate x par value) / number of payments per year. Example: 6% on $1,000 paid semiannually = $30." },
+  { "front": "Floating-rate note coupon", "back": "Coupon rate = market reference rate (MRR) + quoted spread. It resets periodically, so the price stays close to par and interest rate risk is low." },
+  { "front": "Zero-coupon bond", "back": "Pays no periodic interest. It is issued at a discount and repays par at maturity; the discount is the investor's return. Price = par / (1 + r)^n." },
+  { "front": "Bullet vs. amortizing bond", "back": "Bullet: all principal repaid at maturity. Fully amortizing: principal repaid with each payment, zero balance at maturity. Partially amortizing: some principal repaid, plus a balloon payment at maturity." },
+  { "front": "Affirmative vs. negative covenants", "back": "Affirmative: what the issuer must do (pay on time, maintain insurance, comply with laws). Negative: what the issuer must not do (excess debt, large dividends, asset sales, liens)." },
+  { "front": "Callable bond: who benefits and what happens to yield?", "back": "The issuer holds the call option, so the bond offers a higher yield than a non-callable bond. Investors face reinvestment risk and capped price gains when rates fall." },
+  { "front": "Putable bond: who benefits and what happens to yield?", "back": "The bondholder can sell the bond back at the put price, so the bond offers a lower yield than a non-putable bond." },
+  { "front": "Convertible bond formulas", "back": "Conversion ratio = par / conversion price. Conversion value = conversion ratio x share price. Market conversion premium = bond price - conversion value." },
+  { "front": "What is a sinking fund?", "back": "A provision requiring the issuer to retire part of the issue on a schedule (by market purchases or redemption at a set price). It lowers credit risk but creates reinvestment risk for holders." },
+  { "front": "Make-whole call provision", "back": "The call price equals the present value of the remaining payments discounted at a small spread over a government yield, so calling is expensive for the issuer and the investor is compensated." }
+]

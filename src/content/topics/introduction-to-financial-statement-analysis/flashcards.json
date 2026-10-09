@@ -1,0 +1,13 @@
+[
+  { "front": "What is the accounting equation?", "back": "Assets = Liabilities + Owners' equity." },
+  { "front": "Name the four primary financial statements.", "back": "Balance sheet, income statement, statement of cash flows, and statement of changes in equity." },
+  { "front": "Balance sheet vs. income statement timing", "back": "The balance sheet is a snapshot at a point in time; the income statement covers a period of time." },
+  { "front": "Retained earnings roll-forward", "back": "Ending retained earnings = beginning retained earnings + net income - dividends." },
+  { "front": "Three categories of the cash flow statement", "back": "Operating (day-to-day business), investing (long-term assets and investments), and financing (debt, equity and dividends)." },
+  { "front": "Types of audit opinion", "back": "Unqualified (clean), qualified (fair except for a specific matter), adverse (materially misstated), and disclaimer (insufficient evidence to form an opinion)." },
+  { "front": "What assurance does an audit provide?", "back": "Reasonable assurance, not absolute assurance, that the financial statements are free of material misstatement." },
+  { "front": "What is the MD&A?", "back": "Management's discussion and analysis: management's narrative on results, liquidity, capital resources, trends and risks. It reflects management's viewpoint and is not an independent opinion." },
+  { "front": "Six phases of the financial statement analysis framework", "back": "1) Articulate purpose and context, 2) collect data, 3) process data, 4) analyze and interpret, 5) develop and communicate conclusions, 6) follow up." },
+  { "front": "DuPont identity (three-part)", "back": "ROE = net profit margin x asset turnover x equity multiplier (average assets / average equity)." },
+  { "front": "IFRS vs. US GAAP", "back": "Two sets of accounting standards: IFRS (issued by the IASB, used in 140+ jurisdictions) and US GAAP (issued by the FASB). Know which one a company uses before comparing it with peers." }
+]

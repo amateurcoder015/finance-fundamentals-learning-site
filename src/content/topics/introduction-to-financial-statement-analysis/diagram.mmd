@@ -1,0 +1,25 @@
+graph TD
+    FSA["Financial Statement Analysis"] --> STM["Primary Financial Statements"]
+    FSA --> INFO["Other Information Sources"]
+    FSA --> FRAME["Analysis Framework"]
+
+    STM --> BS["Balance Sheet<br/>(Assets = Liabilities + Equity)"]
+    STM --> IS["Income Statement<br/>(Revenue - Expenses = Net Income)"]
+    STM --> CF["Statement of Cash Flows<br/>(Operating, Investing, Financing)"]
+    STM --> EQ["Statement of Changes in Equity"]
+
+    IS -->|"Net income less dividends"| EQ
+    EQ -->|"Ending equity"| BS
+    CF -->|"Ending cash"| BS
+
+    INFO --> NOTES["Notes to the Statements"]
+    INFO --> MDA["MD&A / Management Commentary"]
+    INFO --> AUD["Auditor's Report<br/>(Unqualified, Qualified, Adverse, Disclaimer)"]
+    INFO --> PROXY["Proxy Statements and Other Sources"]
+
+    FRAME --> P1["1. Purpose and Context"]
+    P1 --> P2["2. Collect Data"]
+    P2 --> P3["3. Process Data"]
+    P3 --> P4["4. Analyze and Interpret"]
+    P4 --> P5["5. Develop and Communicate Conclusions"]
+    P5 --> P6["6. Follow Up"]

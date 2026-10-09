@@ -1,0 +1,65 @@
+[
+  {
+    "question": "A bond has par value $1,000, a 5% annual coupon rate and pays coupons quarterly. What is each coupon payment?",
+    "options": ["$12.50", "$25.00", "$50.00", "$5.00"],
+    "correctIndex": 0,
+    "explanation": "Coupon = (0.05 x 1,000) / 4 = $12.50 per quarter. $25 would be the semiannual payment and $50 the annual total."
+  },
+  {
+    "question": "A floating-rate note pays a quoted margin of 80 basis points over a market reference rate. The reference rate for the period is 3.10%. What is the coupon rate for the period?",
+    "options": ["2.30%", "3.18%", "3.90%", "11.10%"],
+    "correctIndex": 2,
+    "explanation": "Coupon rate = MRR + spread = 3.10% + 0.80% = 3.90%. 80 basis points is 0.80%, not 0.08%."
+  },
+  {
+    "question": "Which covenant is a negative covenant?",
+    "options": [
+      "The issuer must maintain insurance on pledged assets.",
+      "The issuer must pay interest and principal on time.",
+      "The issuer must not pay dividends above a stated limit.",
+      "The issuer must comply with all applicable laws."
+    ],
+    "correctIndex": 2,
+    "explanation": "Negative covenants restrict the issuer's actions, such as limits on dividends, additional debt or asset sales. The other options describe what the issuer must do, so they are affirmative covenants."
+  },
+  {
+    "question": "Compared with an otherwise identical non-callable bond, a callable bond will most likely offer:",
+    "options": [
+      "a lower yield, because the issuer has the right to redeem early.",
+      "a higher yield, because the issuer holds the option and investors must be compensated.",
+      "the same yield, because embedded options have no value.",
+      "a lower yield, because the bondholder holds the option."
+    ],
+    "correctIndex": 1,
+    "explanation": "The call option benefits the issuer and hurts the investor (reinvestment risk and capped price appreciation), so investors require a higher yield or lower price."
+  },
+  {
+    "question": "A 4-year zero-coupon bond has par $1,000 and a yield of 5% per year compounded annually. Its price is closest to:",
+    "options": ["$800.00", "$822.70", "$1,000.00", "$1,215.51"],
+    "correctIndex": 1,
+    "explanation": "PV = 1,000 / (1.05)^4 = 1,000 / 1.215506 = $822.70. $1,215.51 is the future value of $1,000, not the price of a zero-coupon bond."
+  },
+  {
+    "question": "A convertible bond has par $1,000 and a conversion price of $25. The share price is $31 and the bond trades at $1,300. What is the conversion value?",
+    "options": ["$1,000", "$1,240", "$1,300", "$775"],
+    "correctIndex": 1,
+    "explanation": "Conversion ratio = 1,000 / 25 = 40 shares. Conversion value = 40 x $31 = $1,240. (The market conversion premium would be 1,300 - 1,240 = $60.)"
+  },
+  {
+    "question": "Which bond repayment structure leaves a balloon payment at maturity after making some principal payments during the bond's life?",
+    "options": [
+      "Bullet bond",
+      "Fully amortizing bond",
+      "Partially amortizing bond",
+      "Zero-coupon bond"
+    ],
+    "correctIndex": 2,
+    "explanation": "A partially amortizing bond repays part of the principal over time and the remaining balance (the balloon) at maturity. A bullet repays everything at maturity; a fully amortizing bond leaves no balance."
+  },
+  {
+    "question": "A bond with a 6% annual coupon and par $1,000 trades at $950. Its current yield is closest to:",
+    "options": ["5.70%", "6.00%", "6.32%", "6.67%"],
+    "correctIndex": 2,
+    "explanation": "Current yield = annual coupon / price = 60 / 950 = 6.32%. It ignores the gain on the price converging to par, so it is not the yield to maturity."
+  }
+]

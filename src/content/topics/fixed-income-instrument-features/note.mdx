@@ -1,0 +1,205 @@
+---
+title: "Fixed-Income Instrument Features"
+description: "The building blocks of a bond: issuer, maturity, par value, coupon structure, currency, the legal contract and covenants, contingency provisions (call, put, convertible), and how each feature shapes cash flows and risk."
+category: "Fixed Income"
+difficulty: "beginner"
+dateAdded: "2026-10-09"
+tags: ["bonds", "coupon", "covenants", "embedded-options", "convertible-bonds", "indenture"]
+---
+
+# Fixed-Income Instrument Features
+
+A **fixed-income security** is a loan from an investor (the lender) to an issuer (the borrower). The issuer promises to repay the amount borrowed and, usually, to pay interest along the way. To value any bond, or to compare two of them, you first need to read its features: **who** owes the money, **how much** is repaid, **when**, **in what currency**, **how interest is calculated**, and **what rights** each side holds under the contract.
+
+---
+
+## 1. Basic Features of a Bond
+
+Every bond can be described by a handful of terms.
+
+| Feature | What it tells you |
+| --- | --- |
+| **Issuer** | The borrower: a corporation, a government, a quasi-government agency, or a supranational body such as the World Bank |
+| **Maturity** | The date on which the issuer must repay the principal |
+| **Par value** | The principal amount repaid at maturity (also called face value, maturity value, redemption value or principal) |
+| **Coupon rate and frequency** | The interest rate applied to par and how often it is paid |
+| **Currency denomination** | The currency of the cash flows |
+
+### Issuer types
+
+- **Corporate issuers**: financial companies (banks, insurers) and non-financial companies.
+- **Sovereign (government) issuers**: national governments, such as treasury bonds.
+- **Quasi-government and sub-sovereign issuers**: government agencies and regional or local governments (for example, municipal bonds).
+- **Supranational issuers**: multilateral organizations such as the World Bank or IMF.
+
+### Maturity
+
+- **Tenor** (or **term to maturity**) is the time remaining until the bond's final payment. A 10-year bond issued today has a tenor of 10 years; the same bond has a tenor of 6 years four years later.
+- Debt maturing in **one year or less** is generally a **money market** security; debt with a longer life is a **capital market** security.
+- A **perpetual bond** has no maturity date. The issuer pays coupons indefinitely and never repays par.
+
+### Par value and price
+
+The par value is the amount used to compute coupons and the amount returned at maturity. A bond's market price is quoted as a percentage of par:
+
+- **Price = 100% of par**: the bond trades at **par**.
+- **Price &gt; 100%**: it trades at a **premium**.
+- **Price &lt; 100%**: it trades at a **discount**.
+
+### Currency
+
+Cash flows may be denominated in the issuer's home currency or in a foreign one. A **dual-currency bond** pays coupons in one currency and par in another. A **currency option bond** lets the holder choose between two currencies for payment. Foreign currency denomination introduces exchange-rate risk for an investor whose liabilities are in a different currency.
+
+---
+
+## 2. Coupon Structures
+
+The **coupon rate** is the annual interest rate applied to par. The **coupon payment per period** is:
+
+$$\text{Coupon} = \frac{\text{Coupon rate} \times \text{Par value}}{\text{Number of payments per year}}$$
+
+Common frequencies are annual, **semiannual** (typical in the US and for many Asian markets), quarterly and monthly.
+
+### Fixed-rate bonds
+
+The coupon rate is set at issuance and never changes. Cash flows are known in advance, but the bond's market price moves inversely with market interest rates.
+
+**Example.** A bond with par \$1,000, a 6% coupon rate and semiannual payments pays
+
+$$\frac{0.06 \times 1{,}000}{2} = 30 \text{ dollars every six months.}$$
+
+### Floating-rate notes (FRNs)
+
+An FRN's coupon resets periodically against a **market reference rate (MRR)**, plus a fixed **spread** (the quoted margin) that reflects the issuer's credit quality:
+
+$$\text{FRN coupon rate} = \text{MRR} + \text{Spread}$$
+
+The coupon rate is usually **set at the beginning of each period** and paid at the end of it. Because coupons follow market rates, an FRN's price stays relatively close to par, so it has much lower interest rate risk than a long-term fixed-rate bond. Some FRNs include a **cap** (maximum rate) or a **floor** (minimum rate).
+
+An **inverse floater** pays a coupon that moves **opposite** to the reference rate, so its price is highly sensitive to rate changes.
+
+### Zero-coupon bonds
+
+A **zero-coupon bond** pays no periodic interest. It is issued at a **discount** to par, and the whole return comes from the difference between the purchase price and the par value paid at maturity (**pure discount** instruments).
+
+### Other coupon structures
+
+- **Step-up coupon**: the coupon rate increases on predetermined dates.
+- **Credit-linked coupon**: the coupon rises if the issuer's credit rating falls.
+- **Payment-in-kind (PIK)**: interest is paid with additional bonds rather than cash.
+- **Deferred coupon**: coupons start only after an initial period.
+- **Index-linked bonds**: coupons or principal are tied to an index such as consumer price inflation.
+
+---
+
+## 3. Principal Repayment Structures
+
+- **Bullet bond**: the full par value is repaid in one payment at maturity.
+- **Fully amortizing bond**: each payment includes interest and part of the principal, so the balance falls to zero by maturity and no balloon payment remains.
+- **Partially amortizing bond**: payments repay some principal, with a **balloon payment** of the remaining balance at maturity.
+- **Sinking fund arrangement**: the issuer retires part of the issue on a schedule, either by buying bonds in the market or by redeeming them at a stated price (often par). This lowers credit risk for investors but creates **reinvestment risk**, because holders may be repaid early.
+
+---
+
+## 4. Legal, Regulatory and Tax Considerations
+
+### The bond indenture
+
+A bond's terms are set out in a legal contract called the **trust deed** or **indenture** (or **bond covenant document**). It lists the issuer's obligations, the rights of bondholders and the issuer's rights. A **trustee**, often a financial institution, acts on behalf of bondholders, monitors compliance and enforces the terms if the issuer defaults.
+
+### Covenants
+
+**Covenants** are the clauses that protect lenders.
+
+| Type | Meaning | Examples |
+| --- | --- | --- |
+| **Affirmative** | Things the issuer **must** do | Pay interest and principal on time; maintain insurance on assets; comply with laws; pay taxes |
+| **Negative** | Things the issuer **must not** do | Limit additional debt; restrict dividends and share buybacks; restrict asset sales; prevent liens on pledged collateral |
+
+<Note>Covenants favor bondholders but limit management's flexibility. A bond with tighter covenants is generally less risky for the investor, so it can carry a lower yield than an otherwise identical bond with loose covenants.</Note>
+
+### Other legal and market features
+
+- **Registered vs. bearer form**: ownership of a registered bond is recorded with the issuer or its agent; a bearer bond belongs to whoever holds the certificate.
+- **Secured vs. unsecured**: secured debt is backed by specific collateral; unsecured debt (a **debenture**) is a claim on the issuer's general assets and cash flows.
+- **Domestic vs. Eurobond**: a Eurobond is issued outside the jurisdiction of any single country's regulator and is often subject to lighter regulation.
+- **Tax treatment**: in many countries, interest on certain government or municipal bonds is tax-exempt. For bonds issued below par, the discount at issuance (**original issue discount**, OID) is generally treated as interest income that accrues over the bond's life, often taxed before it is received in cash.
+
+---
+
+## 5. Contingency Provisions (Embedded Options)
+
+A **contingency provision** gives one party a right that applies only if a stated event or condition occurs. Rights that take the form of options are called **embedded options** because they are built into the bond.
+
+### Callable bonds
+
+A **callable bond** gives the **issuer** the right to redeem the bond before maturity at a **call price**. The issuer will usually exercise when market rates have fallen, so it can refinance more cheaply. Investors face **reinvestment risk**, and the bond's price rise is capped as rates fall (called **negative convexity**). Because the option benefits the issuer, a callable bond offers a **higher yield** than an otherwise identical non-callable bond.
+
+- **American style**: callable at any time after the first call date.
+- **European style**: callable only on one specified date.
+- **Bermudan style**: callable on specified dates, such as coupon dates.
+- **Make-whole call**: the call price is the present value of the remaining payments discounted at a small spread above a government yield, so it is typically well above market value. This compensates the investor and makes calling expensive for the issuer.
+
+### Putable bonds
+
+A **putable bond** gives the **bondholder** the right to sell the bond back to the issuer at a stated **put price** (often par) on specified dates. Investors exercise when rates have risen or credit quality has deteriorated. Because the option benefits the investor, a putable bond offers a **lower yield** than an otherwise identical non-putable bond.
+
+### Convertible bonds
+
+A **convertible bond** gives the **bondholder** the right to exchange the bond for a specified number of the issuer's common shares. Key terms:
+
+$$\text{Conversion ratio} = \frac{\text{Par value}}{\text{Conversion price}}$$
+
+$$\text{Conversion value} = \text{Conversion ratio} \times \text{Share price}$$
+
+$$\text{Market conversion premium} = \text{Bond price} - \text{Conversion value}$$
+
+Investors accept a **lower yield** in exchange for equity upside. Companies sometimes issue convertibles to reduce interest cost. A **contingent convertible bond (CoCo)**, issued by banks, converts into equity (or is written down) automatically when the bank's capital ratio falls below a trigger level.
+
+### Summary of option effects
+
+| Provision | Who holds the option | Effect on yield vs. straight bond | Price effect |
+| --- | --- | --- | --- |
+| Call | Issuer | Higher | Price lower than a straight bond |
+| Put | Investor | Lower | Price higher than a straight bond |
+| Conversion | Investor | Lower | Price higher than a straight bond |
+
+---
+
+## 6. Worked Example
+
+**Part A: Zero-coupon bond price.** A 10-year zero-coupon bond has par \$1,000. The market requires a yield of 4% per year, compounded semiannually. Valuing it uses $n = 20$ semiannual periods and a periodic rate of $4\%/2 = 2\%$:
+
+$$PV = \frac{1{,}000}{(1.02)^{20}} = \frac{1{,}000}{1.485947} = 672.97$$
+
+The investor earns the full \$1,000 - \$672.97 = \$327.03 as accreted discount.
+
+**Part B: Floating-rate coupon.** A quarterly-pay FRN has par 1,000,000, a reference rate of 4.20% and a quoted spread of 150 basis points (1.50%):
+
+1. Coupon rate $= 4.20\% + 1.50\% = 5.70\%$
+2. Quarterly coupon $= \dfrac{0.057 \times 1{,}000{,}000}{4} = 14{,}250$
+
+**Part C: Current yield.** A fixed-rate bond has a 6% annual coupon on par \$1,000 and trades at 950. Annual coupon income is \$60:
+
+$$\text{Current yield} = \frac{60}{950} = 6.32\%$$
+
+The current yield ignores the gain from the price rising to par at maturity, so it is not a total-return measure (that is the yield to maturity).
+
+**Part D: Convertible bond.** A convertible has par \$1,000 and a conversion price of \$40 per share. The shares trade at \$48 and the bond trades at \$1,300:
+
+1. Conversion ratio $= \dfrac{1{,}000}{40} = 25$ shares
+2. Conversion value = 25 × \$48 = \$1,200
+3. Market conversion premium = \$1,300 - \$1,200 = \$100, or \$100 / \$1,200 = 8.33% of conversion value
+
+The investor pays \$100 more than the immediate conversion value to hold the downside protection of the bond's fixed claims.
+
+---
+
+## Key takeaways
+
+- A bond is described by its **issuer, maturity, par value, coupon rate and frequency, and currency**.
+- **Coupon = coupon rate x par / payments per year.** FRN coupon = MRR + spread; a zero-coupon bond is sold at a discount and pays only par.
+- **Bullet** bonds repay principal at maturity; **amortizing** bonds repay it over time; **sinking funds** retire debt on a schedule.
+- The **indenture** sets out the contract; **affirmative covenants** say what the issuer must do and **negative covenants** what it must not.
+- **Callable** bonds favor the issuer (higher yield); **putable** and **convertible** bonds favor the investor (lower yield).
+- Conversion ratio = par / conversion price; conversion value = ratio x share price; the premium is bond price minus conversion value.

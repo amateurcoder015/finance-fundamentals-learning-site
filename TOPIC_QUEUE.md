@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Fixed-Income Instrument Features | Fixed Income | beginner
-- [ ] Introduction to Financial Statement Analysis | Financial Statements | beginner
 - [ ] Fixed-Income Cash Flows and Types | Fixed Income | beginner
 - [ ] Analyzing Income Statements | Financial Statements | intermediate
 - [ ] Portfolio Management: An Overview | Portfolio Management | beginner
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [ ] Option Replication Using Put-Call Parity | Derivatives | advanced
 
 ## Done
+- [x] Fixed-Income Instrument Features | Fixed Income | beginner | 2026-10-09
+- [x] Introduction to Financial Statement Analysis | Financial Statements | beginner | 2026-10-09

@@ -1,0 +1,26 @@
+graph TD
+    BOND["Bond Features"] --> BASIC["Basic Terms"]
+    BOND --> COUPON["Coupon Structures"]
+    BOND --> REPAY["Principal Repayment"]
+    BOND --> LEGAL["Legal Contract"]
+    BOND --> OPT["Contingency Provisions"]
+
+    BASIC --> ISS["Issuer<br/>(Corporate, Sovereign, Agency, Supranational)"]
+    BASIC --> MAT["Maturity and Par Value"]
+    BASIC --> CUR["Currency Denomination"]
+
+    COUPON --> FIX["Fixed-Rate<br/>(Same coupon to maturity)"]
+    COUPON --> FRN["Floating-Rate Note<br/>(MRR + Spread)"]
+    COUPON --> ZERO["Zero-Coupon<br/>(Issued at a discount)"]
+
+    REPAY --> BULLET["Bullet<br/>(Par repaid at maturity)"]
+    REPAY --> AMORT["Amortizing<br/>(Principal repaid over time)"]
+    REPAY --> SINK["Sinking Fund<br/>(Scheduled retirement)"]
+
+    LEGAL --> IND["Indenture and Trustee"]
+    IND --> AFF["Affirmative Covenants<br/>(What issuer must do)"]
+    IND --> NEG["Negative Covenants<br/>(What issuer must not do)"]
+
+    OPT --> CALL["Callable<br/>(Issuer option, higher yield)"]
+    OPT --> PUT["Putable<br/>(Investor option, lower yield)"]
+    OPT --> CONV["Convertible<br/>(Investor option into shares, lower yield)"]

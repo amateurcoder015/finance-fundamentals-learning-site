@@ -1,0 +1,65 @@
+[
+  {
+    "question": "A company has total assets of $900 million and total liabilities of $540 million. What are its owners' equity?",
+    "options": ["$1,440 million", "$540 million", "$360 million", "$450 million"],
+    "correctIndex": 2,
+    "explanation": "Assets = Liabilities + Equity, so Equity = 900 - 540 = $360 million."
+  },
+  {
+    "question": "Which financial statement reports an entity's financial position at a single point in time?",
+    "options": ["Income statement", "Balance sheet", "Statement of cash flows", "Statement of changes in equity"],
+    "correctIndex": 1,
+    "explanation": "The balance sheet is a snapshot of assets, liabilities and equity at a date. The other statements cover a period of time."
+  },
+  {
+    "question": "An auditor concludes that the financial statements are fairly presented except for the accounting treatment of one specific item. Which opinion is this?",
+    "options": ["Unqualified", "Qualified", "Adverse", "Disclaimer of opinion"],
+    "correctIndex": 1,
+    "explanation": "A qualified opinion says the statements are fairly presented except for a specific matter. An adverse opinion says they are materially misstated overall; a disclaimer means the auditor could not form an opinion."
+  },
+  {
+    "question": "Beginning retained earnings are $500, net income is $120, and dividends are $45. Assuming no other changes, ending retained earnings are:",
+    "options": ["$575", "$665", "$455", "$620"],
+    "correctIndex": 0,
+    "explanation": "Ending retained earnings = beginning + net income - dividends = 500 + 120 - 45 = $575."
+  },
+  {
+    "question": "Which phase of the financial statement analysis framework comes immediately after 'collect input data'?",
+    "options": [
+      "Develop and communicate conclusions",
+      "Analyze and interpret the processed data",
+      "Process the data",
+      "Follow up"
+    ],
+    "correctIndex": 2,
+    "explanation": "The order is: (1) articulate the purpose and context, (2) collect input data, (3) process the data, (4) analyze and interpret, (5) develop and communicate conclusions, (6) follow up."
+  },
+  {
+    "question": "Which statement about the management discussion and analysis (MD&A) is most accurate?",
+    "options": [
+      "It is an independent opinion on the fairness of the statements.",
+      "It contains management's own explanation of results, liquidity and risks.",
+      "It reports only cash flows from operating activities.",
+      "It replaces the notes to the financial statements."
+    ],
+    "correctIndex": 1,
+    "explanation": "The MD&A is management's narrative on performance, liquidity, capital resources and trends. It reflects management's perspective; the independent opinion comes from the auditor's report."
+  },
+  {
+    "question": "A firm has net income of $60, average equity of $240 and revenue of $800. Its net profit margin and return on average equity are closest to:",
+    "options": ["7.5% and 25.0%", "7.5% and 4.0%", "13.3% and 25.0%", "13.3% and 4.0%"],
+    "correctIndex": 0,
+    "explanation": "Net profit margin = 60 / 800 = 7.5%. ROE = 60 / 240 = 25.0%."
+  },
+  {
+    "question": "Which of the following is classified as a financing activity in the statement of cash flows?",
+    "options": [
+      "Cash received from customers",
+      "Purchase of equipment",
+      "Dividends paid to shareholders",
+      "Cash paid to suppliers"
+    ],
+    "correctIndex": 2,
+    "explanation": "Issuing or repaying debt, issuing or repurchasing equity and paying dividends are financing activities. Customer receipts and supplier payments are operating; equipment purchases are investing."
+  }
+]
