@@ -1,0 +1,46 @@
+[
+  {
+    "front": "Core equation of the income statement?",
+    "back": "Revenue - Expenses = Net income. A multi-step statement shows gross profit, operating profit and pre-tax income on the way to net income."
+  },
+  {
+    "front": "What are the five steps of the revenue recognition model?",
+    "back": "1) Identify the contract; 2) identify performance obligations; 3) determine the transaction price; 4) allocate the price to the obligations; 5) recognize revenue when (or as) each obligation is satisfied."
+  },
+  {
+    "front": "How is percentage of completion measured under the cost-to-cost method?",
+    "back": "Percent complete = costs incurred to date / total estimated costs. Cumulative revenue = percent complete x contract price; the year's revenue is the change in cumulative revenue."
+  },
+  {
+    "front": "Margin formulas?",
+    "back": "Gross margin = gross profit / revenue. Operating margin = operating profit / revenue. Net margin = net income / revenue."
+  },
+  {
+    "front": "How are discontinued operations reported?",
+    "back": "Separately, net of tax, below income from continuing operations. They are excluded when forecasting sustainable earnings."
+  },
+  {
+    "front": "Change in accounting policy vs. change in estimate?",
+    "back": "A policy change is applied retrospectively (prior periods restated). An estimate change is applied prospectively (current and future periods only). Errors are corrected by restating prior periods."
+  },
+  {
+    "front": "Basic EPS formula?",
+    "back": "(Net income - preferred dividends) / weighted average common shares outstanding. Share issues and buybacks are time-weighted; splits and stock dividends are applied retroactively."
+  },
+  {
+    "front": "Treasury stock method?",
+    "back": "Used for options and warrants. Incremental shares = N - (N x K / average market price). Dilutive only when the average price exceeds the exercise price."
+  },
+  {
+    "front": "If-converted method?",
+    "back": "Assumes convertibles are converted. Convertible preferred: add back preferred dividends. Convertible bonds: add back after-tax interest = interest x (1 - t). Add the conversion shares to the denominator."
+  },
+  {
+    "front": "When is a security anti-dilutive?",
+    "back": "When including it would raise EPS (its incremental EPS exceeds basic EPS). Anti-dilutive securities are excluded, so diluted EPS never exceeds basic EPS."
+  },
+  {
+    "front": "What is comprehensive income?",
+    "back": "Net income + other comprehensive income (OCI). OCI includes FX translation adjustments, unrealized gains/losses on FVOCI securities, cash flow hedge effects and pension remeasurements."
+  }
+]

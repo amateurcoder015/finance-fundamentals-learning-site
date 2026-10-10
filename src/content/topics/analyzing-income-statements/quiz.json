@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A company reports revenue of 8,000 and cost of goods sold of 5,200. Its gross profit margin is:",
+    "options": [
+      "65.0%",
+      "35.0%",
+      "54.0%",
+      "28.0%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gross profit = 8,000 - 5,200 = 2,800. Gross margin = 2,800 / 8,000 = 35.0%. The 65.0% figure is COGS as a percentage of revenue."
+  },
+  {
+    "question": "Under the five-step revenue recognition model, revenue is recognized:",
+    "options": [
+      "When cash is received from the customer",
+      "When the contract is signed",
+      "When (or as) each performance obligation is satisfied",
+      "When the invoice is sent"
+    ],
+    "correctIndex": 2,
+    "explanation": "Revenue is recognized when or as the entity satisfies each performance obligation by transferring control of the good or service, whether at a point in time or over time. Cash receipt, signing or invoicing alone does not determine recognition."
+  },
+  {
+    "question": "A company has 200 million shares outstanding at the start of the year and issues 40 million shares on 1 July. Net income is 480 million and there are no preferred shares. Basic EPS is closest to:",
+    "options": [
+      "2.18",
+      "2.40",
+      "2.00",
+      "2.62"
+    ],
+    "correctIndex": 0,
+    "explanation": "Weighted average shares = 200 + 40 x 6/12 = 220 million. Basic EPS = 480 / 220 = 2.18. Using 200 million gives 2.40, and using the full 240 million gives 2.00."
+  },
+  {
+    "question": "A company has 1,000,000 options with an exercise price of 30. The average market price during the year is 40. Using the treasury stock method, the incremental shares added to the diluted share count are:",
+    "options": [
+      "1,000,000",
+      "750,000",
+      "333,333",
+      "250,000"
+    ],
+    "correctIndex": 3,
+    "explanation": "Proceeds = 1,000,000 x 30 = 30,000,000, which buys back 30,000,000 / 40 = 750,000 shares. Incremental shares = 1,000,000 - 750,000 = 250,000."
+  },
+  {
+    "question": "A company has convertible bonds with annual interest of 300,000 and a tax rate of 30%. The bonds convert into 100,000 shares. When applying the if-converted method, the adjustments to the diluted EPS numerator and denominator are:",
+    "options": [
+      "Add 210,000 to the numerator and 100,000 shares to the denominator",
+      "Add 300,000 to the numerator and 100,000 shares to the denominator",
+      "Subtract 210,000 from the numerator and add 100,000 shares",
+      "Add 210,000 to the numerator and no shares"
+    ],
+    "correctIndex": 0,
+    "explanation": "If the bonds are converted, the interest is no longer paid, so after-tax interest is added back: 300,000 x (1 - 0.30) = 210,000. The 100,000 conversion shares are added to the denominator."
+  },
+  {
+    "question": "A company changes its estimate of an asset's useful life from 10 years to 8 years. The change is accounted for:",
+    "options": [
+      "Retrospectively, restating prior periods",
+      "Prospectively, in current and future periods",
+      "As a correction of an error",
+      "As an extraordinary item"
+    ],
+    "correctIndex": 1,
+    "explanation": "Changes in accounting estimates are applied prospectively, affecting the current and future periods only. Changes in accounting policy are applied retrospectively, and errors are corrected by restating prior periods."
+  },
+  {
+    "question": "Net income is 500. During the period the company has a foreign currency translation gain of 40 and an unrealized loss of 15 on securities classified as fair value through OCI. Comprehensive income is:",
+    "options": [
+      "500",
+      "455",
+      "525",
+      "540"
+    ],
+    "correctIndex": 2,
+    "explanation": "Both items are other comprehensive income and bypass net income. OCI = 40 - 15 = 25, so comprehensive income = 500 + 25 = 525."
+  },
+  {
+    "question": "A contract has a price of 10,000 and total estimated costs of 8,000. Costs incurred in year 1 are 2,400. Using the percentage-of-costs method, year 1 revenue and profit are:",
+    "options": [
+      "Revenue 3,000; profit 600",
+      "Revenue 2,400; profit 0",
+      "Revenue 3,000; profit 3,000",
+      "Revenue 10,000; profit 2,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Percent complete = 2,400 / 8,000 = 30%. Revenue = 30% x 10,000 = 3,000. Profit = 3,000 - 2,400 = 600."
+  }
+]

@@ -1,0 +1,187 @@
+---
+title: "Fixed-Income Cash Flows and Types"
+description: "How bond cash flows are structured: bullet, fully and partially amortizing, and sinking-fund repayment; fixed, floating, step-up, zero-coupon, PIK, deferred and index-linked coupons; and how call, put and conversion provisions change the cash flows an investor receives."
+category: "Fixed Income"
+difficulty: "beginner"
+dateAdded: "2026-10-10"
+tags: ["bonds", "amortization", "floating-rate-notes", "zero-coupon", "inflation-linked", "cash-flows"]
+---
+
+# Fixed-Income Cash Flows and Types
+
+Every bond is a promise of a **stream of cash flows**: interest along the way and a return of principal. Two bonds from the same issuer can carry very different risk simply because those flows are arranged differently. This chapter classifies bonds by **how principal is repaid** and **how interest is calculated**, and shows how embedded options can alter the flows.
+
+---
+
+## 1. Principal Repayment Structures
+
+The **principal** (par, face value) can come back in one lump sum, gradually, or on a schedule.
+
+| Structure | How principal is repaid | Investor consequence |
+| --- | --- | --- |
+| **Bullet** | The whole par amount in one payment at maturity | Interest-only payments until the end; all credit exposure sits at maturity |
+| **Fully amortizing** | Every payment contains interest plus some principal; the balance reaches zero at maturity | No balloon; principal is returned steadily, so exposure falls over time |
+| **Partially amortizing** | Payments repay some principal, and a **balloon payment** of the remaining balance is due at maturity | The balloon creates refinancing risk for the borrower |
+| **Sinking fund** | The issuer retires part of the issue on a schedule, by buying bonds in the market or redeeming them at a stated price (often par) | Lower credit risk, but more reinvestment risk if your bond is retired early |
+
+### Fully amortizing bonds
+
+A fully amortizing loan has a **level payment**. With balance $B_0$, periodic rate $r$ and $n$ periods:
+
+$$PMT = \frac{B_0 \times r}{1 - (1 + r)^{-n}}$$
+
+Each period:
+
+- **Interest** = beginning balance $\times\ r$
+- **Principal repaid** = $PMT$ − interest
+- **Ending balance** = beginning balance − principal repaid
+
+Because the balance falls, interest shrinks and the principal portion grows each period.
+
+### Sinking funds
+
+A sinking fund provision requires the issuer to retire a fixed part of the debt on a schedule, often with a final **bullet** remainder. The bonds to be retired are chosen by lottery, or the issuer buys them in the open market if they trade below the redemption price. Sinking funds reduce the risk of default at maturity (the issuer must keep reducing the debt), but a holder whose bond is drawn at par when market yields are low loses a high-coupon bond.
+
+---
+
+## 2. Coupon Structures
+
+The coupon rate applied to par determines interest. The payment per period is
+
+$$\text{Coupon} = \frac{\text{Coupon rate} \times \text{Par value}}{\text{Payments per year}}$$
+
+### Fixed-rate bonds
+
+The coupon rate is set at issuance and constant until maturity. Cash flows are fully known, but the bond's price moves **inversely** with market interest rates.
+
+### Floating-rate notes (FRNs)
+
+An FRN's coupon is tied to a **market reference rate (MRR)** and a fixed spread, the **quoted margin**:
+
+$$\text{FRN coupon rate} = \text{MRR} + \text{Quoted margin}$$
+
+- The rate is normally **set in advance** (at the start of the period) and **paid in arrears** (at the end).
+- Because coupons reset to market rates, the price stays close to par, so an FRN has **low interest rate risk**. The margin compensates for credit risk, and the price changes if the issuer's credit quality changes.
+- A **cap** sets a maximum coupon rate (good for the issuer); a **floor** sets a minimum (good for the investor).
+- An **inverse floater** has a coupon that **falls when the reference rate rises**, such as $\text{coupon} = 10\% - \text{MRR}$. It is very sensitive to rate changes.
+
+### Zero-coupon bonds
+
+A **zero-coupon (pure discount) bond** pays no interest. It is sold below par and repays par at maturity; the return is the accretion from price to par. Its price is simply
+
+$$PV = \frac{\text{Par}}{(1 + r)^n}$$
+
+A zero has the **highest price sensitivity** to yield changes of any bond with the same maturity, because all of its cash flow arrives at the end.
+
+### Other coupon structures
+
+- **Step-up coupon**: the coupon rises on pre-set dates, for instance 3%, then 4%, then 5%.
+- **Credit-linked coupon**: the coupon rises if the issuer's credit rating falls (protects the investor).
+- **Payment-in-kind (PIK)**: the issuer pays interest with **additional bonds** instead of cash, which conserves the issuer's cash but increases the debt.
+- **Deferred coupon (split coupon)**: no coupons for an initial period, then regular coupons.
+- **Index-linked**: the coupon or principal changes with an index, typically inflation.
+
+---
+
+## 3. Index-Linked Bonds
+
+An **inflation-linked bond (ILB)** protects the investor's purchasing power. Common designs:
+
+| Type | What is adjusted |
+| --- | --- |
+| **Capital-indexed** (e.g., TIPS) | The **principal** is adjusted for inflation; the coupon rate is fixed and applied to the **adjusted principal** |
+| **Interest-indexed** | The principal stays fixed; the **coupon** rises with inflation |
+| **Indexed-annuity** | A fully amortizing structure whose level payment is adjusted for inflation |
+| **Indexed zero-coupon** | The single payment at maturity is adjusted for inflation |
+
+For a capital-indexed bond:
+
+$$\text{Adjusted principal}_t = \text{Adjusted principal}_{t-1} \times (1 + \text{inflation}_t)$$
+$$\text{Coupon}_t = \text{coupon rate} \times \text{Adjusted principal}_t$$
+
+---
+
+## 4. Contingency Provisions and Their Cash-Flow Effect
+
+A **contingency provision** applies only when a stated event occurs. Options built into the bond are **embedded options**.
+
+- **Callable bond**: the issuer may redeem early at a call price. Cash flows stop sooner when rates fall, so investors face reinvestment risk and demand a **higher yield**.
+- **Putable bond**: the investor may sell the bond back at a put price, often par. It protects against rising rates or credit deterioration, so it carries a **lower yield**.
+- **Convertible bond**: the investor may exchange the bond for a fixed number of the issuer's shares, so it also carries a **lower yield**.
+
+| Provision | Option holder | Yield vs. straight bond | Price vs. straight bond |
+| --- | --- | --- | --- |
+| Callable | Issuer | Higher | Lower |
+| Putable | Investor | Lower | Higher |
+| Convertible | Investor | Lower | Higher |
+
+---
+
+## 5. Worked Examples
+
+### Example A: Fully amortizing loan
+
+A borrower takes 100,000 for 5 years at 6% a year, repaid in 5 equal annual payments.
+
+1. $PMT = \dfrac{100{,}000 \times 0.06}{1 - 1.06^{-5}} = \dfrac{6{,}000}{0.252742} = 23{,}739.64$
+2. Schedule:
+
+| Year | Beginning balance | Interest (6%) | Principal repaid | Ending balance |
+| --- | --- | --- | --- | --- |
+| 1 | 100,000.00 | 6,000.00 | 17,739.64 | 82,260.36 |
+| 2 | 82,260.36 | 4,935.62 | 18,804.02 | 63,456.34 |
+| 3 | 63,456.34 | 3,807.38 | 19,932.26 | 43,524.08 |
+| 4 | 43,524.08 | 2,611.44 | 21,128.20 | 22,395.89 |
+| 5 | 22,395.89 | 1,343.75 | 22,395.89 | 0.00 |
+
+The principal portion rises each year while interest falls, and the balance ends at zero (small differences come from rounding).
+
+### Example B: Partially amortizing loan with a balloon
+
+The same 100,000 loan at 6% for 5 years is amortized as though it ran for **20 years**, with a balloon at the end of year 5.
+
+1. $PMT = \dfrac{100{,}000 \times 0.06}{1 - 1.06^{-20}} = 8{,}718.46$
+2. After five payments the balance has fallen only to 84,675.81.
+3. At the end of year 5 the borrower pays 8,718.46 **plus** the balloon of 84,675.81, a total of 93,394.27.
+
+Lower periodic payments come at the cost of a large final payment.
+
+### Example C: Floating-rate note with a cap
+
+An FRN pays semiannually on par of 5,000,000. The reference rate for the period is 3.10% and the quoted margin is 80 bps.
+
+1. Coupon rate $= 3.10\% + 0.80\% = 3.90\%$
+2. Coupon $= \dfrac{0.039 \times 5{,}000{,}000}{2} = 97{,}500$
+
+If the reference rate rose to 3.90% the uncapped rate would be 4.70%; with a **4.50% cap** the coupon would be $\dfrac{0.045 \times 5{,}000{,}000}{2} = 112{,}500$ rather than 117,500.
+
+### Example D: Zero-coupon bond
+
+A 5-year zero-coupon bond has par 1,000 and a yield of 4% a year (annual compounding).
+
+$$PV = \frac{1{,}000}{1.04^5} = \frac{1{,}000}{1.216653} = 821.93$$
+
+The 178.07 difference from par is the investor's return, accreting over five years.
+
+### Example E: Capital-indexed bond
+
+A two-year bond has par 1,000 and a 2% coupon, with capital indexing. Inflation is 3% in year 1 and 2% in year 2.
+
+1. Year 1 adjusted principal $= 1{,}000 \times 1.03 = 1{,}030.00$; coupon $= 0.02 \times 1{,}030 = 20.60$
+2. Year 2 adjusted principal $= 1{,}030 \times 1.02 = 1{,}050.60$; coupon $= 0.02 \times 1{,}050.60 = 21.01$
+3. At maturity the investor receives 1,050.60 of principal plus the 21.01 coupon.
+
+### Example F: Payment-in-kind
+
+An issuer sells 1,000,000 of PIK bonds with an 8% coupon paid annually in additional bonds. After two years the holder owns $1{,}000{,}000 \times 1.08^2 = 1{,}166{,}400$ of bonds, and no cash has been received.
+
+---
+
+## Key takeaways
+
+- **Bullet** bonds repay principal at maturity; **fully amortizing** bonds repay it through level payments; **partially amortizing** bonds leave a **balloon**; **sinking funds** retire debt on a schedule.
+- Level payment $= B_0 r / [1 - (1+r)^{-n}]$; interest falls and principal rises each period.
+- **FRN coupon = MRR + quoted margin**, set in advance and paid in arrears; FRNs have low interest rate risk. **Caps** help issuers, **floors** help investors, and **inverse floaters** move opposite to the reference rate.
+- **Zero-coupon** bonds are sold at a discount and pay only par; **step-up**, **PIK**, **deferred** and **credit-linked** coupons change when and how interest is paid.
+- **Capital-indexed** bonds adjust the principal and apply the coupon to the adjusted amount; **interest-indexed** bonds adjust the coupon.
+- Call options raise yield; put and conversion options lower it.

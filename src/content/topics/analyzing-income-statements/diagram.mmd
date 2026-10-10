@@ -1,0 +1,19 @@
+graph TD
+    REV["Revenue"] --> GP["Gross Profit<br/>(Revenue - COGS)"]
+    COGS["Cost of Goods Sold"] --> GP
+    GP --> OP["Operating Profit (EBIT)<br/>(Gross Profit - SG&A, R&D, other)"]
+    OPEX["Operating Expenses<br/>(SG&A, R&D, Depreciation)"] --> OP
+    OP --> EBT["Pre-Tax Income<br/>(± Interest and other non-operating)"]
+    EBT --> TAX["Income Tax Expense"]
+    TAX --> CONT["Net Income from<br/>Continuing Operations"]
+    CONT --> NI["Net Income<br/>(+ Discontinued Operations, net of tax)"]
+    NI --> COMP["Comprehensive Income<br/>(Net Income + OCI)"]
+    NI --> EPS["Earnings per Share"]
+
+    EPS --> BASIC["Basic EPS<br/>(NI - Pref. Dividends) / Weighted Shares"]
+    EPS --> DIL["Diluted EPS"]
+    DIL --> TSM["Treasury Stock Method<br/>(Options and Warrants)"]
+    DIL --> IFC["If-Converted Method<br/>(Convertible Preferred and Bonds)"]
+
+    REV -.-> RR["Revenue Recognition<br/>(Five-Step Model)"]
+    NI -.-> MARG["Margins and Common-Size Analysis<br/>(Gross, Operating, Net)"]

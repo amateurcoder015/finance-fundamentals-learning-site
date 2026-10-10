@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What is a bullet bond?",
+    "back": "A bond that pays periodic interest only and repays the entire principal in one payment at maturity."
+  },
+  {
+    "front": "Fully amortizing vs. partially amortizing bond?",
+    "back": "Fully amortizing: level payments repay all principal by maturity (zero balance). Partially amortizing: payments repay only some principal, leaving a balloon payment at maturity."
+  },
+  {
+    "front": "Formula for the level payment of a fully amortizing loan?",
+    "back": "PMT = B0 x r / [1 - (1 + r)^-n], where B0 is the loan amount, r the periodic rate and n the number of periods."
+  },
+  {
+    "front": "How are interest and principal split in each amortizing payment?",
+    "back": "Interest = beginning balance x periodic rate. Principal = payment - interest. Interest falls and the principal portion rises each period."
+  },
+  {
+    "front": "What is a sinking fund provision?",
+    "back": "A requirement that the issuer retire part of the issue on a schedule, by buying bonds in the market or redeeming at a stated price. It lowers credit risk but adds reinvestment risk."
+  },
+  {
+    "front": "How is a floating-rate note's coupon determined?",
+    "back": "Coupon rate = market reference rate + quoted margin, usually set in advance at the start of the period and paid in arrears. Caps limit the maximum rate; floors limit the minimum."
+  },
+  {
+    "front": "What is an inverse floater?",
+    "back": "A bond whose coupon moves opposite to the reference rate (for example, 10% - MRR). Its price is very sensitive to interest rate changes."
+  },
+  {
+    "front": "How does a zero-coupon bond work?",
+    "back": "It pays no coupons, is issued at a discount and repays par at maturity. Price = Par / (1 + r)^n. It has the highest rate sensitivity for its maturity."
+  },
+  {
+    "front": "Capital-indexed vs. interest-indexed inflation-linked bonds?",
+    "back": "Capital-indexed: principal is adjusted for inflation and the coupon is applied to the adjusted principal. Interest-indexed: principal is fixed and the coupon is adjusted."
+  },
+  {
+    "front": "What is a payment-in-kind (PIK) bond?",
+    "back": "A bond whose interest is paid in additional bonds instead of cash, conserving issuer cash while increasing the debt."
+  },
+  {
+    "front": "Effect of call, put and conversion options on yield?",
+    "back": "Call (issuer option): higher yield, lower price. Put and conversion (investor options): lower yield, higher price compared with a straight bond."
+  }
+]

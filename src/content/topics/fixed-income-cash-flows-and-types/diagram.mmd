@@ -1,0 +1,25 @@
+graph TD
+    CF["Fixed-Income Cash Flows"] --> PRIN["Principal Repayment"]
+    CF --> INT["Coupon Structure"]
+    CF --> OPT["Contingency Provisions"]
+
+    PRIN --> BUL["Bullet<br/>(Par repaid at maturity)"]
+    PRIN --> FULL["Fully Amortizing<br/>(Level payments, balance reaches zero)"]
+    PRIN --> PART["Partially Amortizing<br/>(Balloon payment at maturity)"]
+    PRIN --> SINK["Sinking Fund<br/>(Scheduled retirement of debt)"]
+
+    INT --> FIX["Fixed-Rate<br/>(Constant coupon)"]
+    INT --> FLT["Floating-Rate Note<br/>(MRR + Quoted margin)"]
+    INT --> ZERO["Zero-Coupon<br/>(Discount to par, no interest)"]
+    INT --> SPEC["Special Coupons<br/>(Step-up, PIK, Deferred, Credit-linked)"]
+    INT --> IDX["Index-Linked<br/>(Inflation-adjusted)"]
+
+    FLT --> CAPFLR["Cap and Floor<br/>(Limit coupon rate)"]
+    FLT --> INV["Inverse Floater<br/>(Coupon falls as MRR rises)"]
+
+    IDX --> CAPIDX["Capital-Indexed<br/>(Principal adjusted)"]
+    IDX --> INTIDX["Interest-Indexed<br/>(Coupon adjusted)"]
+
+    OPT --> CALL["Callable<br/>(Issuer option, higher yield)"]
+    OPT --> PUT["Putable<br/>(Investor option, lower yield)"]
+    OPT --> CONV["Convertible<br/>(Into shares, lower yield)"]

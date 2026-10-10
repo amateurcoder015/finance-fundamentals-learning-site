@@ -1,0 +1,212 @@
+---
+title: "Analyzing Income Statements"
+description: "How to read and analyze an income statement: its format, revenue and expense recognition, non-recurring and non-operating items, basic and diluted earnings per share, common-size analysis, margins and comprehensive income."
+category: "Financial Statements"
+difficulty: "intermediate"
+dateAdded: "2026-10-10"
+tags: ["income-statement", "revenue-recognition", "eps", "margins", "common-size", "comprehensive-income"]
+---
+
+# Analyzing Income Statements
+
+The **income statement** (statement of profit or loss) reports a company's financial performance over a period: the revenues it earned, the expenses it incurred to earn them, and the resulting profit. An analyst uses it to judge **profitability**, to see how much profit is likely to **recur**, and to compare companies on a like-for-like basis.
+
+The core relationship is
+
+$$\text{Revenue} - \text{Expenses} = \text{Net income}$$
+
+---
+
+## 1. Format of the Income Statement
+
+A typical multi-step income statement runs from the top line down to the bottom line:
+
+| Line | Meaning |
+| --- | --- |
+| **Revenue (sales)** | Inflows from the company's main activities, net of returns and discounts |
+| **Cost of goods sold (COGS)** | Direct cost of the goods or services sold |
+| **Gross profit** | Revenue − COGS |
+| **Operating expenses** | Selling, general and administrative (SG&A), research and development, depreciation and amortization not already in COGS |
+| **Operating profit (EBIT)** | Gross profit − operating expenses |
+| **Non-operating items** | Interest expense and income, investment gains and losses |
+| **Pre-tax income (EBT)** | Operating profit ± non-operating items |
+| **Income tax expense** | Tax on pre-tax income |
+| **Net income from continuing operations** | EBT − tax |
+| **Discontinued operations (net of tax)** | Results of a business that has been disposed of or held for sale |
+| **Net income** | Total profit, including the discontinued part |
+| **Net income attributable to controlling interest** | Net income less the share belonging to non-controlling interests |
+
+<Note>Expenses may be presented **by function** (COGS, SG&A, R&D) or **by nature** (raw materials, employee benefits, depreciation). Both give the same net income; only the grouping differs. A **single-step** statement lumps all revenues and all expenses together, while a **multi-step** one shows subtotals such as gross profit and operating profit.</Note>
+
+---
+
+## 2. Revenue Recognition
+
+Revenue is recognized when it is **earned**, not necessarily when cash is received (the accrual principle). Under IFRS 15 and US GAAP (ASC 606), a **five-step model** applies:
+
+1. **Identify the contract** with the customer.
+2. **Identify the performance obligations** (the distinct goods or services promised).
+3. **Determine the transaction price.**
+4. **Allocate the price** to the performance obligations (by relative stand-alone selling prices).
+5. **Recognize revenue** when (or as) each obligation is satisfied, either **at a point in time** or **over time**.
+
+### Over-time recognition
+
+For long-term contracts where the customer receives value as the work proceeds, revenue is recognized over time, commonly by an **input method** such as the percentage of costs incurred:
+
+$$\text{Percent complete} = \frac{\text{Costs incurred to date}}{\text{Total estimated costs}}$$
+
+Cumulative revenue = percent complete × contract price. Revenue for a year is the change in cumulative revenue.
+
+### Analyst concerns
+
+- **Aggressive recognition** (recognizing revenue early, **channel stuffing**, **bill-and-hold** arrangements) inflates current revenue and borrows from the future.
+- **Gross vs. net reporting**: an agent that earns only a commission should report the commission, not the gross value of the sale. This changes revenue and margins but not profit.
+- Compare revenue growth with growth in receivables; receivables growing much faster than revenue is a warning sign.
+
+---
+
+## 3. Expense Recognition
+
+Expenses are recognized when the related revenue is recognized (the **matching principle**), or in the period consumed when no direct link to revenue exists.
+
+- **Inventory cost flow** (FIFO, weighted average; LIFO is allowed under US GAAP only) determines COGS. In rising prices, FIFO gives lower COGS and higher profit than LIFO.
+- **Depreciation** allocates the cost of long-lived assets over their useful lives. Straight-line charges the same amount each year; accelerated methods charge more early on.
+- **Bad debt expense** estimates uncollectible receivables.
+- **Warranty and other provisions** are recorded when the sale is made, based on expected costs.
+
+**Straight-line vs. double-declining balance.** An asset costs 10,000, has a 5-year life and 1,000 salvage value.
+
+- Straight-line: $(10{,}000 - 1{,}000)/5 = 1{,}800$ a year.
+- Double-declining balance: rate $= 2/5 = 40\%$ and, in year 1, $10{,}000 \times 40\% = 4{,}000$ (salvage value is ignored until the book value approaches it).
+
+Accelerated depreciation lowers profit early on, then later years' expense is lower. Total depreciation over the asset's life is the same.
+
+### Estimates and judgment
+
+Useful lives, salvage values, bad debt rates and warranty costs are **estimates**. Management can use them to manage earnings, so analysts check for changes and compare with peers.
+
+---
+
+## 4. Non-Recurring and Non-Operating Items
+
+Analysts try to forecast **sustainable** earnings, so they separate items that are unlikely to recur.
+
+- **Discontinued operations**: reported separately, **net of tax**, below income from continuing operations. They are excluded from the forecast of continuing earnings.
+- **Unusual or infrequent items** (such as restructuring charges or asset impairments, gains or losses on the sale of assets): reported within continuing operations, usually disclosed separately. Neither IFRS nor US GAAP allows "extraordinary" items.
+- **Non-operating items**: interest and investment income or expense, which depend on financing and investing, not the core business.
+
+### Changes in accounting
+
+| Change | Treatment |
+| --- | --- |
+| **Change in accounting policy** (e.g., inventory method) | Applied **retrospectively**: prior periods are restated for comparability |
+| **Change in accounting estimate** (e.g., useful life) | Applied **prospectively**: current and future periods only |
+| **Correction of an error** | Prior periods are restated |
+
+---
+
+## 5. Earnings per Share (EPS)
+
+**Basic EPS** is the profit available to each common share:
+
+$$\text{Basic EPS} = \frac{\text{Net income} - \text{Preferred dividends}}{\text{Weighted average common shares outstanding}}$$
+
+- Preferred dividends are subtracted when they are declared (non-cumulative) or earned (cumulative).
+- Shares issued or repurchased are time-weighted from the date of the transaction.
+- **Stock splits and stock dividends** are applied retroactively, as if they had always existed.
+
+**Diluted EPS** includes the effect of securities that could convert into common stock. A **simple capital structure** has none; a **complex** one has options, warrants, convertible bonds or convertible preferred.
+
+### Treasury stock method (options and warrants)
+
+Assume the options are exercised and the proceeds are used to buy back shares at the **average market price**:
+
+$$\text{Incremental shares} = N - \frac{N \times K}{P_{avg}}$$
+
+where $N$ is the number of options, $K$ the exercise price and $P_{avg}$ the average market price. Options are dilutive only when $P_{avg} > K$ (in the money).
+
+### If-converted method (convertibles)
+
+- **Convertible preferred**: add back the preferred dividends to the numerator and add the conversion shares to the denominator.
+- **Convertible bonds**: add back **after-tax interest** $= \text{interest} \times (1 - t)$ to the numerator, and add the conversion shares.
+
+A security is included only if it is **dilutive**, meaning it lowers EPS. Its incremental EPS (the numerator effect divided by new shares) must be below basic EPS. Diluted EPS is never reported higher than basic EPS because anti-dilutive securities are excluded.
+
+---
+
+## 6. Profitability Analysis
+
+### Common-size income statement
+
+Divide each line by revenue. This makes companies of different sizes, and periods, comparable and reveals cost structure changes.
+
+### Margins
+
+$$\text{Gross margin} = \frac{\text{Gross profit}}{\text{Revenue}} \qquad \text{Operating margin} = \frac{\text{Operating profit}}{\text{Revenue}} \qquad \text{Net margin} = \frac{\text{Net income}}{\text{Revenue}}$$
+
+Falling gross margin often signals pricing pressure or rising input costs; a falling operating margin with a stable gross margin points at operating expenses.
+
+---
+
+## 7. Comprehensive Income
+
+**Comprehensive income** is the change in equity from all non-owner sources:
+
+$$\text{Comprehensive income} = \text{Net income} + \text{Other comprehensive income (OCI)}$$
+
+OCI contains gains and losses that bypass net income, such as foreign currency translation adjustments, unrealized gains and losses on certain financial assets (fair value through OCI), effective portions of cash flow hedges, and pension remeasurements. They accumulate in equity as **accumulated other comprehensive income**.
+
+---
+
+## 8. Worked Example
+
+A company reports (in millions):
+
+| Item | Amount |
+| --- | --- |
+| Revenue | 5,000 |
+| COGS | 3,000 |
+| SG&A | 800 |
+| R&D | 200 |
+| Interest expense | 150 |
+| Interest income | 50 |
+| Tax rate | 25% |
+| Preferred dividends | 45 |
+
+**Profit.**
+
+1. Gross profit $= 5{,}000 - 3{,}000 = 2{,}000$, a gross margin of 40%.
+2. Operating profit $= 2{,}000 - 800 - 200 = 1{,}000$, an operating margin of 20%.
+3. Pre-tax income $= 1{,}000 - 150 + 50 = 900$.
+4. Tax $= 0.25 \times 900 = 225$, so net income $= 675$, a net margin of 13.5%.
+
+**Basic EPS.** There are 100 million shares at the start of the year, 12 million issued on 1 April (outstanding 9 of 12 months) and 6 million repurchased on 1 October (3 months before year end).
+
+$$\text{Weighted shares} = 100 + 12 \times \tfrac{9}{12} - 6 \times \tfrac{3}{12} = 100 + 9 - 1.5 = 107.5 \text{ million}$$
+
+$$\text{Basic EPS} = \frac{675 - 45}{107.5} = 5.86$$
+
+**Diluted EPS.** The company also has 8 million options with an exercise price of 40 (average market price 50), and the preferred stock converts into 9 million common shares.
+
+1. Options (treasury stock method): proceeds $= 8 \times 40 = 320$; shares bought back $= 320/50 = 6.4$; incremental shares $= 8 - 6.4 = 1.6$ million. EPS after options: $\dfrac{630}{107.5 + 1.6} = \dfrac{630}{109.1} = 5.77$.
+2. Convertible preferred (if-converted): incremental EPS $= 45/9 = 5.00$, below 5.77, so it is dilutive. Add back the 45 dividend and 9 million shares.
+
+$$\text{Diluted EPS} = \frac{630 + 45}{109.1 + 9} = \frac{675}{118.1} = 5.72$$
+
+**Over-time revenue.** A contract has a price of 10,000 and total estimated costs of 8,000. Costs incurred are 2,400 in year 1 and 3,600 in year 2.
+
+- Year 1: percent complete $= 2{,}400/8{,}000 = 30\%$; revenue $= 3{,}000$; profit $= 3{,}000 - 2{,}400 = 600$.
+- Year 2: cumulative costs $= 6{,}000$, so $75\%$ complete; cumulative revenue $= 7{,}500$; year 2 revenue $= 7{,}500 - 3{,}000 = 4{,}500$; profit $= 4{,}500 - 3{,}600 = 900$.
+
+---
+
+## Key takeaways
+
+- The income statement runs revenue → gross profit → operating profit → pre-tax income → net income; presentation may be by function or by nature.
+- Revenue is recognized under the **five-step model** when performance obligations are satisfied; watch for aggressive recognition and growth in receivables outpacing revenue.
+- Expense recognition depends on estimates (depreciation, bad debts, warranties) and methods (FIFO/LIFO), so quality of earnings requires comparing policies.
+- Separate **discontinued operations** and unusual items from sustainable earnings; policy changes are retrospective, estimate changes prospective.
+- **Basic EPS** = (net income − preferred dividends) / weighted average shares; **diluted EPS** applies the treasury stock and if-converted methods and excludes anti-dilutive securities.
+- Common-size statements and margins (gross, operating, net) compare profitability across time and companies.
+- **Comprehensive income** = net income + OCI.

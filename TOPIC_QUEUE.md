@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Fixed-Income Cash Flows and Types | Fixed Income | beginner
-- [ ] Analyzing Income Statements | Financial Statements | intermediate
 - [ ] Portfolio Management: An Overview | Portfolio Management | beginner
 - [ ] Organizational Forms, Corporate Issuer Features, and Ownership | Corporate Finance | beginner
 - [ ] Fixed-Income Issuance and Trading | Fixed Income | beginner
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 ## Done
 - [x] Fixed-Income Instrument Features | Fixed Income | beginner | 2026-10-09
 - [x] Introduction to Financial Statement Analysis | Financial Statements | beginner | 2026-10-09
+- [x] Fixed-Income Cash Flows and Types | Fixed Income | beginner | 2026-10-10
+- [x] Analyzing Income Statements | Financial Statements | intermediate | 2026-10-10

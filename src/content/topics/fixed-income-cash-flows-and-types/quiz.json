@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A bond pays interest only until maturity, when the full par value is repaid in one payment. This repayment structure is best described as:",
+    "options": [
+      "Fully amortizing",
+      "Bullet",
+      "Partially amortizing",
+      "Sinking fund"
+    ],
+    "correctIndex": 1,
+    "explanation": "A bullet bond repays its entire principal in a single payment at maturity. Fully and partially amortizing bonds repay principal during the life of the bond, and a sinking fund retires debt on a schedule."
+  },
+  {
+    "question": "A fully amortizing loan of 50,000 has three annual payments and an 8% interest rate. The level annual payment is closest to 19,401.68. What is the principal repaid in the first payment?",
+    "options": [
+      "4,000.00",
+      "19,401.68",
+      "16,666.67",
+      "15,401.68"
+    ],
+    "correctIndex": 3,
+    "explanation": "First-year interest is 50,000 x 8% = 4,000. Principal repaid is the payment minus interest: 19,401.68 - 4,000.00 = 15,401.68, leaving a balance of 34,598.32."
+  },
+  {
+    "question": "Compared with a fully amortizing loan, a partially amortizing loan with the same rate and term is most likely to have:",
+    "options": [
+      "A balloon payment at maturity and lower periodic payments",
+      "A balloon payment at maturity and higher periodic payments",
+      "No balloon payment and lower periodic payments",
+      "A zero balance after the first payment"
+    ],
+    "correctIndex": 0,
+    "explanation": "A partially amortizing loan repays only part of the principal through periodic payments, so those payments are smaller than for a fully amortizing loan. The remaining balance is paid as a balloon payment at maturity."
+  },
+  {
+    "question": "An FRN pays quarterly on par of 8,000,000. The market reference rate for the period is 3.50% and the quoted margin is 125 bps. The coupon payment is:",
+    "options": [
+      "95,000",
+      "380,000",
+      "70,000",
+      "100,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "The coupon rate is 3.50% + 1.25% = 4.75% a year. The quarterly coupon is 8,000,000 x 0.0475 / 4 = 95,000."
+  },
+  {
+    "question": "Which bond is most likely to experience the largest price increase when market interest rates fall?",
+    "options": [
+      "A floating-rate note",
+      "A bond with a short maturity and a high coupon",
+      "A long-term zero-coupon bond",
+      "A fully amortizing bond"
+    ],
+    "correctIndex": 2,
+    "explanation": "A long-term zero-coupon bond has all of its cash flow at the end, so it has the highest sensitivity of price to yield changes. An FRN resets its coupon and stays near par, and short maturities or early principal repayment reduce sensitivity."
+  },
+  {
+    "question": "A capital-indexed bond has par of 1,000 and a 2% coupon. Inflation during the first year is 3%. The first-year coupon payment is:",
+    "options": [
+      "20.00",
+      "20.60",
+      "30.00",
+      "51.00"
+    ],
+    "correctIndex": 1,
+    "explanation": "The principal is adjusted to 1,000 x 1.03 = 1,030 and the coupon rate is applied to the adjusted principal: 0.02 x 1,030 = 20.60."
+  },
+  {
+    "question": "An issuer sells 500,000 of payment-in-kind (PIK) bonds with a 10% annual coupon. If interest is paid entirely in additional bonds, the holder's bond position after two years is:",
+    "options": [
+      "600,000",
+      "550,000",
+      "605,000",
+      "500,000"
+    ],
+    "correctIndex": 2,
+    "explanation": "Interest compounds because each year's interest is paid in additional bonds that then earn interest: 500,000 x 1.10^2 = 605,000. No cash is received."
+  },
+  {
+    "question": "Relative to an otherwise identical straight bond, a putable bond will most likely have a:",
+    "options": [
+      "Lower yield and higher price",
+      "Higher yield and lower price",
+      "Higher yield and higher price",
+      "Lower yield and lower price"
+    ],
+    "correctIndex": 0,
+    "explanation": "The put option benefits the investor, who is willing to accept a lower yield for it. A lower yield means a higher price than the straight bond. A callable bond has the opposite effect because the option benefits the issuer."
+  }
+]
