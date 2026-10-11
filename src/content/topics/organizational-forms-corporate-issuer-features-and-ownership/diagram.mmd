@@ -1,0 +1,26 @@
+graph TD
+    ORG["Business Organizational Forms"] --> SP["Sole Proprietorship<br/>(One owner, unlimited liability, pass-through tax)"]
+    ORG --> GP["General Partnership<br/>(Shared ownership, unlimited joint liability)"]
+    ORG --> LP["Limited Partnership<br/>(General partners manage, limited partners liability capped)"]
+    ORG --> LLC["LLC or Hybrid<br/>(Limited liability, often pass-through)"]
+    ORG --> CORP["Corporation<br/>(Separate legal person, limited liability)"]
+
+    CORP --> FEAT["Corporate Issuer Features"]
+    FEAT --> LL["Limited liability<br/>(Loss capped at investment)"]
+    FEAT --> SEP["Separation of ownership and control<br/>(Principal-agent problem)"]
+    FEAT --> TAX["Double taxation<br/>(Corporate tax then dividend tax)"]
+    FEAT --> CAP["Access to capital<br/>(Shares and bonds, perpetual life)"]
+
+    CORP --> OWN["Ownership"]
+    OWN --> PUB["Public Company<br/>(Listed shares, full disclosure, liquid)"]
+    OWN --> PRIV["Private Company<br/>(Restricted transfer, limited disclosure, illiquid)"]
+    PRIV -->|"IPO"| PUB
+    PUB -->|"Buyout / take-private"| PRIV
+
+    OWN --> STRUCT["Ownership Structure"]
+    STRUCT --> DISP["Dispersed<br/>(Many small holders)"]
+    STRUCT --> CONC["Concentrated<br/>(Controlling shareholder, dual-class shares)"]
+
+    CAPITAL["Capital Providers"] --> LEND["Lenders<br/>(Fixed claim, senior, want safety)"]
+    CAPITAL --> SH["Shareholders<br/>(Residual claim, vote, want growth)"]
+    CORP --> CAPITAL

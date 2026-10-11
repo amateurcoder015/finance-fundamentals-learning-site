@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What distinguishes a sole proprietorship from a corporation in terms of liability?",
+    "back": "A sole proprietor has unlimited personal liability because owner and business are legally the same. Corporate shareholders' liability is limited to their investment."
+  },
+  {
+    "front": "General partner versus limited partner?",
+    "back": "General partners manage the business and bear unlimited liability. Limited partners contribute capital, generally do not manage, and their liability is limited to the capital invested."
+  },
+  {
+    "front": "What is double taxation?",
+    "back": "Corporate profits are taxed at the corporate level, and the after-tax profits distributed as dividends are taxed again in the hands of shareholders. Pass-through forms avoid the second layer."
+  },
+  {
+    "front": "What is the principal-agent problem in a corporation?",
+    "back": "Separation of ownership (shareholders, principals) and control (managers, agents) means managers may act in their own interest rather than shareholders'. Governance mechanisms aim to align the two."
+  },
+  {
+    "front": "List the key features of a corporate issuer.",
+    "back": "Separate legal personality; limited liability; separation of ownership and control; perpetual life; transferable shares; access to equity and debt capital; often double taxation."
+  },
+  {
+    "front": "Public versus private company: disclosure and liquidity?",
+    "back": "Public: listed shares, extensive regular disclosure, liquid, observable market price. Private: restricted share transfers, limited disclosure, illiquid, valued by estimation or negotiation."
+  },
+  {
+    "front": "Why do companies go public?",
+    "back": "To raise large amounts of capital, give liquidity and exit routes to founders and early investors, obtain a share price usable for acquisitions and compensation, and raise visibility."
+  },
+  {
+    "front": "Why might a public company go private?",
+    "back": "To cut listing and compliance costs, reduce short-term market pressure, restructure with less scrutiny, or concentrate ownership, often through a private equity buyout."
+  },
+  {
+    "front": "What is a dual-class share structure?",
+    "back": "Multiple share classes with different voting rights (for example, 1 vote versus 10 votes) but typically the same economic rights, letting holders keep voting control with a smaller economic stake."
+  },
+  {
+    "front": "Dispersed versus concentrated ownership?",
+    "back": "Dispersed: many small shareholders and no controlling holder, so management may dominate. Concentrated: a controlling shareholder (family, founder, parent, state) directs the company, raising potential conflicts with minority holders."
+  },
+  {
+    "front": "Compare the claims of lenders and shareholders.",
+    "back": "Lenders: fixed contractual claim, senior in liquidation, limited return, want safety, no vote unless covenants are breached. Shareholders: residual claim, paid last, unlimited upside and downside to zero, vote on directors."
+  },
+  {
+    "front": "Why do loan agreements include covenants?",
+    "back": "Lenders prefer lower risk, while shareholders may favor riskier projects, so covenants limit additional debt, dividends and asset sales to protect creditors."
+  }
+]

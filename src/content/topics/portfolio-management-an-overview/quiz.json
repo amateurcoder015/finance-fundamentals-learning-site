@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which of the following best describes the portfolio perspective on investing?",
+    "options": [
+      "Each security is selected only if it has the highest expected return of its asset class.",
+      "A security is evaluated by how it affects the risk and return of the whole portfolio, not only by its own characteristics.",
+      "Risk is minimized by holding the single least volatile security.",
+      "Portfolio risk equals the weighted average of the standard deviations of its holdings."
+    ],
+    "correctIndex": 1,
+    "explanation": "The portfolio perspective considers each holding's contribution to the total portfolio, including its correlation with other holdings. Portfolio risk is generally lower than the weighted average of the individual risks when correlations are below +1."
+  },
+  {
+    "question": "A portfolio is 70% in Fund X (expected return 9%) and 30% in Fund Y (expected return 4%). The portfolio's expected return is closest to:",
+    "options": [
+      "6.5%",
+      "7.5%",
+      "7.9%",
+      "13.0%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Expected return is the weighted average: 0.70 x 9% + 0.30 x 4% = 6.3% + 1.2% = 7.5%. The 6.5% option is the simple average of the two returns, and 13.0% adds them."
+  },
+  {
+    "question": "In which step of the portfolio management process is the investment policy statement (IPS) prepared?",
+    "options": [
+      "Execution",
+      "Feedback",
+      "Planning",
+      "Performance evaluation"
+    ],
+    "correctIndex": 2,
+    "explanation": "The IPS, which records objectives and constraints, is produced in the planning step, together with capital market expectations and the strategic asset allocation. Execution implements the plan, and feedback monitors and evaluates it."
+  },
+  {
+    "question": "An open-end mutual fund has total assets of 240 million, liabilities of 15 million and 5 million shares outstanding. The net asset value per share is:",
+    "options": [
+      "48.00",
+      "51.00",
+      "3.00",
+      "45.00"
+    ],
+    "correctIndex": 3,
+    "explanation": "NAV = (assets - liabilities) / shares outstanding = (240 - 15) / 5 = 225 / 5 = 45.00 per share. Using total assets alone would give 48.00, which ignores liabilities."
+  },
+  {
+    "question": "Which feature distinguishes an exchange-traded fund (ETF) from an open-end mutual fund?",
+    "options": [
+      "ETF shares trade throughout the day at market prices, and authorized participants create and redeem shares in large blocks.",
+      "ETF shares are always issued and redeemed by individual investors at the end-of-day NAV.",
+      "ETFs can never track an index.",
+      "ETFs have a fixed number of shares that never changes."
+    ],
+    "correctIndex": 0,
+    "explanation": "ETFs trade on exchanges intraday, and authorized participants use creation and redemption (often in kind) to keep the market price close to NAV. Open-end mutual funds transact with investors at NAV, usually once a day."
+  },
+  {
+    "question": "A portfolio targets 60% equities and 40% bonds on a value of 500,000. Equities rise so that the portfolio is worth 560,000, of which equities are 350,000. To rebalance to the target, the manager should:",
+    "options": [
+      "Sell 50,000 of equities and buy 50,000 of bonds",
+      "Buy 14,000 of equities and sell 14,000 of bonds",
+      "Sell 14,000 of equities and buy 14,000 of bonds",
+      "Take no action because the portfolio value rose"
+    ],
+    "correctIndex": 2,
+    "explanation": "The target equity value is 0.60 x 560,000 = 336,000. Equities are 350,000, so the manager sells 350,000 - 336,000 = 14,000 of equities and buys 14,000 of bonds (bonds go from 210,000 to 224,000, which is 40% of 560,000)."
+  },
+  {
+    "question": "Which institutional investor typically bears no investment risk itself because the individual participants choose from the investment options offered?",
+    "options": [
+      "Defined-benefit pension plan",
+      "Defined-contribution pension plan",
+      "Life insurance company",
+      "Sovereign wealth fund"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a defined-contribution plan the participant bears the investment risk and chooses among the options. In a defined-benefit plan the sponsor bears the risk because the promised benefits are fixed."
+  },
+  {
+    "question": "Two assets have a correlation of 0.3. Compared with the weighted average of their standard deviations, the standard deviation of a portfolio of the two assets will be:",
+    "options": [
+      "Higher",
+      "Equal",
+      "Lower",
+      "Impossible to determine without knowing the weights"
+    ],
+    "correctIndex": 2,
+    "explanation": "Portfolio standard deviation equals the weighted average only when the correlation is +1. Whenever correlation is below +1, the portfolio standard deviation is lower than the weighted average, which is the benefit of diversification."
+  }
+]

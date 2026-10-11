@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What is the portfolio perspective?",
+    "back": "Evaluating each investment by its effect on the risk and return of the whole portfolio, including its correlation with other holdings, rather than in isolation."
+  },
+  {
+    "front": "What is the formula for expected portfolio return?",
+    "back": "E(Rp) = sum of w_i x E(R_i): the weighted average of the holdings' expected returns (weights sum to 1)."
+  },
+  {
+    "front": "Two-asset portfolio standard deviation formula?",
+    "back": "σp = sqrt( w1²σ1² + w2²σ2² + 2·w1·w2·ρ12·σ1·σ2 ). It is below the weighted average of the standard deviations whenever ρ12 < 1."
+  },
+  {
+    "front": "What does diversification reduce, and what can it not remove?",
+    "back": "It reduces security- or issuer-specific (non-systematic) risk. It cannot remove systematic market risk, and correlations can rise in crises."
+  },
+  {
+    "front": "What are the three steps of the portfolio management process?",
+    "back": "1. Planning (IPS, capital market expectations, strategic asset allocation)\n2. Execution (asset allocation, security selection, portfolio construction)\n3. Feedback (monitoring, rebalancing, performance evaluation)"
+  },
+  {
+    "front": "What does an investment policy statement (IPS) contain?",
+    "back": "Objectives (return and risk tolerance) and constraints (liquidity, time horizon, taxes, legal and regulatory, unique circumstances)."
+  },
+  {
+    "front": "What is strategic asset allocation (SAA)?",
+    "back": "The long-term target weights to each asset class, set from the IPS and capital market expectations; it is usually the main driver of long-run portfolio risk and return."
+  },
+  {
+    "front": "What is rebalancing?",
+    "back": "Trading to restore a portfolio's target asset-class weights after market moves cause drift, which keeps risk consistent with the IPS."
+  },
+  {
+    "front": "DB versus DC pension plan: who bears investment risk?",
+    "back": "Defined-benefit: the plan sponsor bears it, because the benefits are promised. Defined-contribution: the participant bears it and chooses from the available options."
+  },
+  {
+    "front": "How does NAV work, and how do open-end and closed-end funds differ?",
+    "back": "NAV = (total assets - liabilities) / shares outstanding. Open-end funds issue and redeem shares at NAV; closed-end fund shares trade on an exchange at a price that may be at a premium or discount to NAV."
+  },
+  {
+    "front": "How do ETF creation and redemption keep the price near NAV?",
+    "back": "Authorized participants exchange the underlying securities for ETF shares (creation) or ETF shares for securities (redemption), often in kind. Arbitrage by them removes sizeable premiums or discounts."
+  },
+  {
+    "front": "What is a separately managed account (SMA)?",
+    "back": "A portfolio of securities owned directly by one client and managed for that client; it can be customized, but typically needs a higher minimum than pooled funds."
+  }
+]

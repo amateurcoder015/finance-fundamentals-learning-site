@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which organizational form is characterized by owners whose personal liability is limited to the capital they invested and by profits that are generally taxed at both the company and shareholder levels?",
+    "options": [
+      "Sole proprietorship",
+      "General partnership",
+      "Corporation",
+      "Limited partnership (general partner)"
+    ],
+    "correctIndex": 2,
+    "explanation": "A corporation is a separate legal person with limited liability for shareholders, and in many jurisdictions its profits are taxed at the corporate level and again when distributed as dividends. Sole proprietors and general partners have unlimited liability and are taxed on a pass-through basis."
+  },
+  {
+    "question": "In a limited partnership, which statement about the partners is most accurate?",
+    "options": [
+      "All partners manage the business and have unlimited liability.",
+      "General partners manage and have unlimited liability; limited partners' liability is limited to their investment.",
+      "Limited partners manage the business and have unlimited liability.",
+      "Neither type of partner is liable for the partnership's debts."
+    ],
+    "correctIndex": 1,
+    "explanation": "General partners run the business and are personally liable without limit. Limited partners contribute capital, generally do not manage, and can lose no more than their investment."
+  },
+  {
+    "question": "A company earns 2,000,000 before tax. The corporate tax rate is 30% and the dividend tax rate is 15%. If all after-tax profit is paid as dividends, the shareholders' after-tax amount is closest to:",
+    "options": [
+      "1,190,000",
+      "1,400,000",
+      "1,700,000",
+      "840,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Corporate tax = 0.30 x 2,000,000 = 600,000, leaving 1,400,000. Dividend tax = 0.15 x 1,400,000 = 210,000, leaving 1,190,000. The total effective rate is 810,000 / 2,000,000 = 40.5%."
+  },
+  {
+    "question": "Which of the following is most likely a feature of a private company compared with a public company?",
+    "options": [
+      "Extensive mandatory periodic disclosure",
+      "Shares that can be sold readily on an exchange",
+      "Restricted transferability of shares and more limited disclosure",
+      "A readily observable market price"
+    ],
+    "correctIndex": 2,
+    "explanation": "Private companies have limited disclosure and restrictions on share transfers, so their shares are illiquid and have no observable market price. The other options describe public companies."
+  },
+  {
+    "question": "The principal-agent problem in a corporation arises primarily because:",
+    "options": [
+      "Lenders have a senior claim over shareholders.",
+      "Managers who run the company may pursue interests that differ from those of the shareholders who own it.",
+      "Shareholders have unlimited liability.",
+      "Corporations are taxed at two levels."
+    ],
+    "correctIndex": 1,
+    "explanation": "Separation of ownership (shareholders, the principals) and control (managers, the agents) means managers may not always act in shareholders' interest. Governance mechanisms such as independent boards and aligned compensation are used to reduce this conflict."
+  },
+  {
+    "question": "A firm has 80 million Class A shares (one vote each) and 5 million Class B shares (ten votes each), with identical economic rights. A founder owns all the Class B shares and no Class A shares. The founder's share of total votes is closest to:",
+    "options": [
+      "5.9%",
+      "38.5%",
+      "50.0%",
+      "62.5%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Total votes = 80 x 1 + 5 x 10 = 130 million. Founder's votes = 5 x 10 = 50 million, so voting power = 50 / 130 = 38.5%. The founder's economic ownership is only 5 / 85 = 5.9%, which shows how dual-class shares separate control from economic interest."
+  },
+  {
+    "question": "Compared with shareholders, lenders to a corporation are most likely to:",
+    "options": [
+      "Have a residual claim on the company's cash flows",
+      "Prefer that the company take on more risky projects",
+      "Hold a fixed contractual claim that ranks ahead of shareholders in liquidation",
+      "Elect the board of directors"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lenders have fixed, contractual claims on interest and principal that rank ahead of shareholders in liquidation. Shareholders hold the residual claim and elect the board, and lenders prefer lower risk to protect their ability to be repaid."
+  },
+  {
+    "question": "A company is liquidated for 1,000,000. It owes 700,000 to lenders, and shareholders had invested 400,000. The amount received by shareholders and their resulting gain or loss on their investment is:",
+    "options": [
+      "300,000 received; 100,000 loss",
+      "400,000 received; no loss",
+      "1,000,000 received; 600,000 gain",
+      "100,000 received; 300,000 loss"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lenders are paid first (700,000), leaving 1,000,000 - 700,000 = 300,000 for shareholders. Compared with their 400,000 investment, this is a loss of 100,000."
+  }
+]

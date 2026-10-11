@@ -1,0 +1,29 @@
+graph TD
+    PM["Portfolio Management Process"] --> PLAN["1. Planning"]
+    PM --> EXEC["2. Execution"]
+    PM --> FEED["3. Feedback"]
+
+    PLAN --> IPS["Investment Policy Statement<br/>(Objectives: return and risk<br/>Constraints: liquidity, horizon, tax, legal, unique)"]
+    PLAN --> CME["Capital Market Expectations"]
+    IPS --> SAA["Strategic Asset Allocation<br/>(Long-term target weights)"]
+    CME --> SAA
+
+    EXEC --> TAA["Tactical Adjustments"]
+    EXEC --> SEC["Security Selection"]
+    EXEC --> CON["Portfolio Construction<br/>(Trading and costs)"]
+    SAA --> EXEC
+
+    FEED --> MON["Monitoring<br/>(Client and market changes)"]
+    FEED --> REB["Rebalancing<br/>(Restore target weights)"]
+    FEED --> PERF["Performance Evaluation<br/>(Versus benchmark and objectives)"]
+    CON --> FEED
+    PERF -.-> PLAN
+
+    subgraph Vehicles ["Pooled Investment Vehicles"]
+        MF["Mutual Funds<br/>(Open-end at NAV, Closed-end on exchange)"]
+        ETF["ETFs<br/>(Intraday trading, creation/redemption)"]
+        SMA["Separately Managed Accounts<br/>(Customized, direct ownership)"]
+        ALT["Hedge Funds and Private Capital<br/>(Flexible, illiquid)"]
+    end
+
+    EXEC -.-> Vehicles
