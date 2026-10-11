@@ -66,10 +66,14 @@ Both must pass. If the build fails, read the error, fix the new files, and run a
 ## 7. Commit and push
 
 ```bash
+git config user.name "Bhavya Kothari"
+git config user.email "bhavyaskothari@gmail.com"
 git add src/content/topics TOPIC_QUEUE.md src/data/glossary.json
 git commit -m "content: add <Title 1> and <Title 2>"
 git push origin HEAD:main
 ```
+
+Always set the git identity above before committing. The commit author must be Bhavya Kothari, so that the commit counts on the owner's GitHub contribution graph. Never commit as `Claude <noreply@anthropic.com>`.
 
 If the push is rejected because `main` moved, run `git pull --rebase origin main`, re-run `npm run build`, and push again.
 
