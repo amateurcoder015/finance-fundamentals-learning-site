@@ -73,7 +73,7 @@ git commit -m "content: add <Title 1> and <Title 2>"
 git push origin HEAD:main
 ```
 
-Always set the git identity above before committing. The commit author must be Bhavya Kothari, so that the commit counts on the owner's GitHub contribution graph. Never commit as `Claude <noreply@anthropic.com>`.
+Always set the git identity above before committing. The commit author must be Bhavya Kothari, so that the commit counts on the owner's GitHub contribution graph. Never commit as `Claude <noreply@anthropic.com>`. The commit message is the single subject line only: add no `Co-Authored-By` or `Claude-Session` trailers.
 
 If the push is rejected because `main` moved, run `git pull --rebase origin main`, re-run `npm run build`, and push again.
 
