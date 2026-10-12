@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What is the difference between the money market and the capital market?",
+    "back": "The money market covers instruments with an original maturity of one year or less (e.g., commercial paper, repos); the capital market covers instruments with maturities longer than one year."
+  },
+  {
+    "front": "Investment grade versus high yield?",
+    "back": "Investment grade bonds are rated BBB-/Baa3 or higher. High-yield (speculative-grade) bonds are rated below BBB-/Baa3 and pay higher yields for greater credit risk."
+  },
+  {
+    "front": "Domestic bond, foreign bond and Eurobond?",
+    "back": "Domestic: issuer resident in its home market. Foreign: non-resident issuer in another country's domestic market, under that country's rules. Eurobond: issued outside the jurisdiction of any single country."
+  },
+  {
+    "front": "Underwritten versus best-efforts offering?",
+    "back": "Underwritten: the investment bank buys the whole issue and bears placement risk. Best efforts: the bank only tries to sell the bonds as the issuer's agent; the issuer bears the risk."
+  },
+  {
+    "front": "What is shelf registration?",
+    "back": "The issuer registers a large amount of securities once and sells them in portions over time as funding needs and market conditions allow."
+  },
+  {
+    "front": "Single-price versus multiple-price auction?",
+    "back": "Single-price (Dutch): all accepted bidders pay the same price based on the stop-out yield. Multiple-price: each accepted bidder pays its own bid price."
+  },
+  {
+    "front": "What is a private placement?",
+    "back": "A direct sale of securities to a small group of qualified investors without a public registration. Faster and customizable, but less liquid."
+  },
+  {
+    "front": "What determines the width of a dealer's bid-ask spread?",
+    "back": "Liquidity and risk: spreads are wider for less liquid, smaller, off-the-run, longer-maturity or lower-rated bonds, and narrower for benchmark government bonds."
+  },
+  {
+    "front": "What is commercial paper?",
+    "back": "A short-term, unsecured promissory note issued at a discount by large corporations and financial institutions; usually backed by a backup line of credit."
+  },
+  {
+    "front": "Repo interest and repurchase price formulas?",
+    "back": "Repo interest = Cash lent x Repo rate x Days/360. Repurchase price = Cash lent + Repo interest. The repo is economically a collateralized loan."
+  },
+  {
+    "front": "What is a repo haircut (margin)?",
+    "back": "The amount by which the collateral's market value exceeds the cash lent. Cash lent = collateral value x (1 - haircut). It protects the lender against a fall in collateral value."
+  }
+]

@@ -1,0 +1,198 @@
+---
+title: "Fixed-Income Issuance and Trading"
+description: "How the fixed-income market is classified, how bonds are issued in the primary market (underwritten, best-efforts, shelf, auction, private placement), how they trade in the secondary market, and how short-term funding works through commercial paper and repurchase agreements."
+category: "Fixed Income"
+difficulty: "beginner"
+dateAdded: "2026-10-12"
+tags: ["bond-markets", "primary-market", "secondary-market", "repo", "commercial-paper", "issuance"]
+---
+
+# Fixed-Income Issuance and Trading
+
+A bond is only useful if it can be **created** (issued) and later **traded**. This chapter maps the fixed-income market, then follows a bond through its life: how it is sold to investors for the first time in the **primary market**, how it changes hands afterwards in the **secondary market**, and how short-term debt instruments such as **commercial paper** and **repurchase agreements (repos)** let institutions fund themselves day to day.
+
+---
+
+## 1. Classifying the Fixed-Income Market
+
+Fixed-income securities can be grouped in several ways. No single classification is "the" correct one; analysts use whichever helps the task.
+
+| Basis | Typical categories |
+| --- | --- |
+| **Type of issuer** | Households, non-financial corporations, financial institutions (banks, insurers), governments (sovereign), quasi-government agencies, supranationals |
+| **Credit quality** | **Investment grade** (BBB-/Baa3 or higher) versus **high yield** or "speculative grade" (below BBB-/Baa3) |
+| **Maturity** | **Money market** (original maturity of one year or less) versus **capital market** (longer than one year) |
+| **Coupon type** | Fixed-rate, floating-rate, zero-coupon, inflation-linked |
+| **Currency** | Domestic currency, foreign currency, or a basket |
+| **Geography** | **Domestic bonds** (issuer in its home market), **foreign bonds** (issued by a non-resident in another country's domestic market, under that country's rules), **Eurobonds** (issued outside the jurisdiction of any single country) |
+| **Legal structure** | Bonds and notes versus structured or securitized instruments (ABS and MBS) |
+
+### Issuer groups
+
+- **Sovereign governments** issue the largest volume and set the benchmark rates for the market.
+- **Quasi-government entities** (agencies, state-owned enterprises) are owned or supported by a government, but may carry a different credit risk from the sovereign.
+- **Supranational organizations** (such as the World Bank) are owned by several countries.
+- **Non-sovereign government** issuers include regional authorities and municipalities.
+- **Corporations** issue to fund operations and growth; **financial institutions** issue both to fund lending and to meet regulatory capital needs.
+
+### Who invests
+
+Fixed-income investors include **central banks**, **institutional investors** (pension funds, insurers, mutual funds, endowments, sovereign wealth funds), **banks** and **retail investors**. Institutions dominate, since most bond trades are large and traded over the counter.
+
+---
+
+## 2. Short-Term Funding: Money-Market Instruments
+
+Money-market instruments have an original maturity of **one year or less**. Two matter most in this chapter.
+
+### Commercial paper (CP)
+
+**Commercial paper** is a short-term, **unsecured** promissory note issued by large corporations and financial institutions to fund working capital.
+
+- Sold at a **discount** to face value and repaid at face value, so the return is the discount accreting to par.
+- In the U.S., CP with maturity of **270 days or less** is exempt from SEC registration, which is why most CP matures in under 270 days.
+- Because it is unsecured, issuers are typically high-quality, and CP is usually backed by a **backup line of credit** from a bank that can be drawn if the issuer cannot roll over its CP.
+
+### Repurchase agreements (repos)
+
+A **repo** is a sale of securities combined with a commitment to **buy them back** at a later date for a higher price. Economically, it is a **collateralized loan**.
+
+- The **seller** of the securities (the borrower of cash) is doing a **repo**.
+- The **buyer** (the lender of cash) is doing a **reverse repo**.
+- The **repurchase price** is the sale price plus interest at the **repo rate**.
+- A **repo margin** (or **haircut**) means the cash lent is **less than the market value of the collateral**, which protects the lender from a fall in collateral value or counterparty default.
+- A repo can be **overnight** (one day) or **term** (longer than a day).
+
+$$\text{Repo interest} = \text{Cash lent} \times \text{Repo rate} \times \frac{\text{Days}}{360}$$
+
+$$\text{Repurchase price} = \text{Cash lent} + \text{Repo interest}$$
+
+(Day-count of actual/360 is used here, as is common in U.S. dollar money markets; other markets may use actual/365.)
+
+A **higher haircut** means a safer repo for the lender, and a **lower repo rate** is generally charged when the collateral is high quality (such as government bonds) than when it is riskier.
+
+---
+
+## 3. The Primary Market: Issuing Bonds
+
+The **primary market** is where bonds are sold for the first time, with proceeds going to the issuer. Methods differ by issuer type and size of the deal.
+
+### Public offerings
+
+A public offering sells securities to the general investing public. The issuer normally files a **registration statement** with the securities regulator.
+
+| Method | How it works | Who bears the placement risk |
+| --- | --- | --- |
+| **Underwritten offering** | An investment bank (the **underwriter**, or a syndicate of banks) buys the entire issue from the issuer at an agreed price and resells it to investors | The **underwriter**, who must sell at a price at or above what it paid |
+| **Best-efforts offering** | The investment bank acts as an agent and tries to sell the bonds without guaranteeing the amount raised | The **issuer** |
+| **Shelf registration** | The issuer registers a large amount once and sells portions over time as market conditions and funding needs allow | Depends on how each tranche is sold |
+
+The underwriter's income is the **gross spread**, the difference between the price at which it sells the bonds to investors and the price it pays the issuer. The underwriting process includes **bookbuilding**, in which the bank collects investor orders to gauge demand and set the final price and yield.
+
+### Auctions
+
+Governments commonly issue by **auction**. Bidders (usually primary dealers and large investors) submit bids; the issuer accepts the best (lowest-yield) bids until the amount offered is filled.
+
+- **Single-price auction (Dutch)**: every accepted bidder pays or receives the **same price**, the one that clears the whole issue.
+- **Multiple-price auction**: each successful bidder pays **its own bid** price.
+
+The highest accepted yield in a yield-based auction is the **stop-out yield**.
+
+### Private placements
+
+A **private placement** is an offering of securities **directly to a small group of qualified investors**, without a public registration process. It is faster and cheaper, and the terms can be tailored, but the securities are **less liquid** because they cannot generally be resold freely and the investor base is narrow.
+
+### The grey market
+
+Before a bond is formally issued, it can trade on a **when-issued** (**grey**) **market**, with delivery and payment after the issue date. Pricing in this market gives the issuer an early read on demand.
+
+---
+
+## 4. The Secondary Market: Trading Bonds
+
+The **secondary market** is where existing bonds are bought and sold between investors. The issuer does not receive any proceeds, but the secondary market gives investors **liquidity** and produces the prices and yields that the issuer's next offering will be judged against.
+
+### Over-the-counter (OTC) trading
+
+Most bonds trade **over the counter**, with **dealers** quoting two-way prices, instead of through a central exchange. This is because there are many more bond issues than stock issues (each issuer may have dozens of bonds outstanding) and many bonds trade rarely.
+
+- A dealer quotes a **bid** (price at which it will buy) and an **ask** or offer (price at which it will sell).
+- The **bid-ask spread** is the dealer's compensation and widens with **less liquidity**, smaller issue size, longer maturity or lower credit quality.
+- Dealers hold **inventory** and are market makers. Increasingly, **electronic trading platforms** and **all-to-all** systems let investors trade with each other.
+
+Bonds also trade on exchanges, mainly for smaller or retail-oriented issues, and government benchmark bonds are generally the **most liquid**.
+
+### Liquidity
+
+Bond liquidity varies widely. Larger, more recently issued benchmark ("on-the-run") bonds trade tightly; older, smaller ("off-the-run") or lower-rated bonds trade at wider spreads.
+
+### Settlement
+
+**Settlement** is the transfer of cash and securities after a trade.
+
+- **Cash settlement** means the trade settles the same day (T+0).
+- **Regular-way settlement** is the market's usual convention, commonly a **short delay after the trade date, such as T+1 or T+2** depending on the market and security. Government bonds often settle faster than corporate bonds.
+- **Clearing** matches and confirms the trade details before settlement, often through a **central counterparty** or clearing house, which reduces counterparty risk.
+
+---
+
+## 5. Worked Examples
+
+### Example A: Underwriter's gross spread
+
+An underwriter buys a 200,000,000 par bond issue from a corporation at **99.00** per 100 of par (a price of 99% of par) and resells it to investors at **99.75**.
+
+1. Proceeds to issuer $= 200{,}000{,}000 \times 0.9900 = 198{,}000{,}000$
+2. Amount raised from investors $= 200{,}000{,}000 \times 0.9975 = 199{,}500{,}000$
+3. Underwriter's gross spread $= 199{,}500{,}000 - 198{,}000{,}000 = 1{,}500{,}000$
+
+The spread is $0.75$ per 100 of par, or 0.75% of par. If the underwriter sold at less than 99.00, it would lose money, which is the placement risk of an **underwritten** deal.
+
+### Example B: Single-price versus multiple-price auction
+
+A government offers 100 million of bonds in a yield-based auction. Bids received:
+
+| Bidder | Yield bid | Amount |
+| --- | --- | --- |
+| A | 3.95% | 30 million |
+| B | 3.98% | 40 million |
+| C | 4.00% | 50 million |
+| D | 4.02% | 60 million |
+
+Lowest yields (best for the issuer) are accepted first: A (30) + B (40) = 70, leaving 30 million, which is allocated to C (a partial fill of its 50 million bid). The **stop-out yield** is **4.00%**.
+
+- In a **single-price** auction, A, B and C all receive the 4.00% yield (their bonds are priced at the 4.00% yield).
+- In a **multiple-price** auction, A is priced at 3.95%, B at 3.98% and C at 4.00%.
+
+D's bid of 4.02% is above the stop-out yield, so D gets nothing.
+
+### Example C: Dealer bid-ask spread
+
+A dealer quotes a bond at **98.40 bid / 98.60 ask** per 100 par. An investor buys 5,000,000 par and later sells it back at the same quote.
+
+1. Purchase cost $= 5{,}000{,}000 \times 0.9860 = 4{,}930{,}000$
+2. Sale proceeds $= 5{,}000{,}000 \times 0.9840 = 4{,}920{,}000$
+3. Round-trip transaction cost $= 4{,}930{,}000 - 4{,}920{,}000 = 10{,}000$
+
+The spread is 0.20 per 100 (0.20% of par), the investor's cost of trading in and out.
+
+### Example D: Repo with a haircut
+
+A dealer needs cash and enters a **7-day repo**. It pledges government bonds with a **market value of 10,000,000**. The lender requires a **2% haircut**, and the repo rate is **4%** (actual/360).
+
+1. Cash lent $= 10{,}000{,}000 \times (1 - 0.02) = 9{,}800{,}000$
+2. Interest $= 9{,}800{,}000 \times 0.04 \times \dfrac{7}{360} = 7{,}622.22$
+3. Repurchase price $= 9{,}800{,}000 + 7{,}622.22 = 9{,}807{,}622.22$
+
+After 7 days the dealer pays 9,807,622.22 and gets its bonds back. The lender is protected by the 200,000 gap between the collateral value and the loan: the collateral could fall by 2% before the loan is under-secured.
+
+---
+
+## Key takeaways
+
+- Bond markets are classified by **issuer**, **credit quality** (investment grade versus high yield), **maturity** (money market ≤ 1 year versus capital market), **currency** and **geography** (domestic, foreign, Eurobond).
+- **Commercial paper** is short-term, unsecured and discount-priced; a **repo** is a collateralized loan with a repurchase price equal to cash lent plus interest.
+- Repo interest $= \text{Cash lent} \times \text{Repo rate} \times \text{Days}/360$. A higher **haircut** protects the lender.
+- **Underwritten** deals put placement risk on the underwriter; **best-efforts** deals leave it with the issuer; **shelf registration** lets the issuer sell in portions over time.
+- **Auctions** are single-price (all pay the stop-out yield) or multiple-price (each pays own bid); **private placements** are faster but less liquid.
+- Most bonds trade **OTC** through dealers; **bid-ask spreads** widen for less liquid, lower-rated or smaller issues, and **settlement** is commonly T+1 or T+2.

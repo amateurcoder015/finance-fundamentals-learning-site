@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What is the accounting equation?",
+    "back": "Assets = Liabilities + Equity. The balance sheet is a snapshot of these at one date."
+  },
+  {
+    "front": "Classified balance sheet versus liquidity-based presentation?",
+    "back": "Classified: separates current (within one year or the operating cycle) from non-current items. Liquidity-based: items ordered by liquidity with no split, common for banks."
+  },
+  {
+    "front": "How are inventories measured, and how do IFRS and U.S. GAAP differ on reversals?",
+    "back": "At the lower of cost and net realizable value. IFRS allows reversing a writedown up to original cost; U.S. GAAP does not allow reversal."
+  },
+  {
+    "front": "How is goodwill calculated and treated?",
+    "back": "Goodwill = Purchase price - Fair value of identifiable net assets. It is not amortized but tested for impairment at least annually."
+  },
+  {
+    "front": "Fair value hierarchy: Levels 1, 2 and 3?",
+    "back": "Level 1: quoted prices for identical assets in active markets. Level 2: other observable inputs. Level 3: unobservable inputs from management's models (least reliable)."
+  },
+  {
+    "front": "Three measurement categories for financial assets (IFRS)?",
+    "back": "Amortized cost; fair value through OCI; fair value through profit or loss. They differ in measurement and in where value changes are recognized."
+  },
+  {
+    "front": "Components of shareholders' equity?",
+    "back": "Contributed capital (stock plus APIC), retained earnings, AOCI, non-controlling interest, less treasury stock."
+  },
+  {
+    "front": "Retained earnings roll-forward formula?",
+    "back": "Ending RE = Beginning RE + Net income - Dividends. Share buybacks go to treasury stock, not retained earnings."
+  },
+  {
+    "front": "Current, quick and cash ratio formulas?",
+    "back": "Current = Current assets / Current liabilities. Quick = (Cash + Marketable securities + Receivables) / Current liabilities. Cash = (Cash + Marketable securities) / Current liabilities."
+  },
+  {
+    "front": "Solvency ratio formulas?",
+    "back": "Debt-to-assets = Total debt / Total assets. Debt-to-capital = Total debt / (Total debt + Equity). Debt-to-equity = Total debt / Equity. Financial leverage = Total assets / Total equity."
+  },
+  {
+    "front": "What is a vertical common-size balance sheet?",
+    "back": "Each line item expressed as a percentage of total assets, allowing comparison across companies and over time."
+  }
+]

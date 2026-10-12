@@ -1,0 +1,25 @@
+graph TD
+    BS["Balance Sheet<br/>(Assets = Liabilities + Equity)"] --> A["Assets"]
+    BS --> L["Liabilities"]
+    BS --> E["Shareholders' Equity"]
+
+    A --> CA["Current Assets<br/>(Cash, securities, receivables, inventory)"]
+    A --> NCA["Non-Current Assets<br/>(PP&E, intangibles, goodwill, investments)"]
+    NCA --> GW["Goodwill<br/>(Price - FV of net identifiable assets)"]
+
+    L --> CL["Current Liabilities<br/>(Payables, short-term debt, unearned revenue)"]
+    L --> NCL["Non-Current Liabilities<br/>(Long-term debt, deferred tax, provisions)"]
+
+    E --> CC["Contributed Capital"]
+    E --> RE["Retained Earnings<br/>(Begin + NI - Dividends)"]
+    E --> AOCI["AOCI and<br/>Non-Controlling Interest"]
+    E --> TS["Treasury Stock<br/>(Deduction)"]
+
+    CA --> LIQ["Liquidity Ratios<br/>(Current, Quick, Cash)"]
+    CL --> LIQ
+    A --> SOLV["Solvency Ratios<br/>(Debt-to-assets, Debt-to-capital,<br/>Debt-to-equity, Financial leverage)"]
+    L --> SOLV
+    E --> SOLV
+
+    BS -.-> CS["Common-Size Analysis<br/>(Each item as % of total assets)"]
+    BS -.-> FV["Measurement<br/>(Cost, amortized cost, fair value levels 1-3)"]

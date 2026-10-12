@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Fixed-Income Issuance and Trading | Fixed Income | beginner
-- [ ] Analyzing Balance Sheets | Financial Statements | intermediate
 - [ ] Firms and Market Structures | Economics | intermediate
 - [ ] Market Efficiency | Equities | intermediate
 - [ ] Fixed-Income Markets for Corporate Issuers | Fixed Income | intermediate
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Analyzing Income Statements | Financial Statements | intermediate | 2026-10-10
 - [x] Portfolio Management: An Overview | Portfolio Management | beginner | 2026-10-11
 - [x] Organizational Forms, Corporate Issuer Features, and Ownership | Corporate Finance | beginner | 2026-10-11
+- [x] Fixed-Income Issuance and Trading | Fixed Income | beginner | 2026-10-12
+- [x] Analyzing Balance Sheets | Financial Statements | intermediate | 2026-10-12

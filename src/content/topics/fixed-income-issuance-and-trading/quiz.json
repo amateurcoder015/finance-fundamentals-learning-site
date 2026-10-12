@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which of the following best describes a bond that is issued by a non-resident issuer in another country's domestic market and subject to that country's regulations?",
+    "options": [
+      "Eurobond",
+      "Domestic bond",
+      "Foreign bond",
+      "Global bond issued in the home market"
+    ],
+    "correctIndex": 2,
+    "explanation": "A foreign bond is issued by a non-resident entity in a country's domestic market, under that country's rules. A Eurobond is issued outside the jurisdiction of any single country, and a domestic bond is issued by a resident issuer in its home market."
+  },
+  {
+    "question": "In an underwritten public offering, which party bears the risk that the bonds cannot be sold at the agreed price?",
+    "options": [
+      "The investors who place orders",
+      "The investment bank (underwriter)",
+      "The issuer",
+      "The securities regulator"
+    ],
+    "correctIndex": 1,
+    "explanation": "In an underwritten offering the underwriter buys the whole issue from the issuer at an agreed price and resells it, so the underwriter carries the placement risk. In a best-efforts offering the issuer bears it."
+  },
+  {
+    "question": "An underwriter buys a 50,000,000 par bond issue at 98.50 per 100 of par and sells it to investors at 99.30. The underwriter's gross spread is closest to:",
+    "options": [
+      "400,000",
+      "800,000",
+      "40,000",
+      "49,650,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "The spread is 99.30 - 98.50 = 0.80 per 100 of par, so 50,000,000 x 0.0080 = 400,000. Proceeds to the issuer are 49,250,000 and investors pay 49,650,000, a difference of 400,000."
+  },
+  {
+    "question": "In a single-price (Dutch) government bond auction, successful bidders:",
+    "options": [
+      "Each pay the price corresponding to their own bid yield",
+      "Pay the price of the highest yield bid received, including rejected bids",
+      "All pay the same price, based on the stop-out yield",
+      "Receive bonds only if they bid at par"
+    ],
+    "correctIndex": 2,
+    "explanation": "In a single-price auction every accepted bidder is allocated bonds at the same price, which corresponds to the stop-out yield that clears the issue. Paying their own bid is the multiple-price format."
+  },
+  {
+    "question": "A bank enters a 10-day repo, borrowing 5,000,000 at a repo rate of 3.6% using an actual/360 day count. The repurchase price is closest to:",
+    "options": [
+      "5,018,000",
+      "5,005,000",
+      "5,000,500",
+      "4,995,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "Interest is 5,000,000 x 0.036 x 10/360 = 5,000. The repurchase price is the cash borrowed plus interest: 5,000,000 + 5,000 = 5,005,000."
+  },
+  {
+    "question": "A repo lender lends 19,000,000 against collateral with a market value of 20,000,000. The haircut is closest to:",
+    "options": [
+      "5.0%",
+      "4.8%",
+      "1.0%",
+      "10.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "The haircut is the collateral value in excess of the loan, as a share of collateral value: (20,000,000 - 19,000,000) / 20,000,000 = 5.0%. A larger haircut gives the lender more protection."
+  },
+  {
+    "question": "Which statement about commercial paper is most accurate?",
+    "options": [
+      "It is secured by specific collateral and has a maturity of several years",
+      "It can only be issued by governments",
+      "It pays a fixed coupon every six months",
+      "It is an unsecured, short-term discount instrument issued by high-quality borrowers"
+    ],
+    "correctIndex": 3,
+    "explanation": "Commercial paper is an unsecured, short-term promissory note sold at a discount to face value, typically by large, high-quality corporations and financial institutions, often supported by a backup credit line."
+  },
+  {
+    "question": "A dealer quotes a bond at 99.10 bid and 99.40 ask. An investor buys 2,000,000 par and immediately sells it back to the same dealer. The investor's round-trip cost is closest to:",
+    "options": [
+      "6,000",
+      "3,000",
+      "8,000",
+      "60,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "The spread is 99.40 - 99.10 = 0.30 per 100 of par. On 2,000,000 par that is 2,000,000 x 0.0030 = 6,000: the investor pays 1,988,000 and receives 1,982,000."
+  }
+]

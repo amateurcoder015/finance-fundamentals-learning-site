@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A company acquires 100% of a target for 800. The fair value of the target's identifiable assets is 950 and of its liabilities is 400. Goodwill recognized is closest to:",
+    "options": [
+      "250",
+      "150",
+      "0",
+      "350"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fair value of net identifiable assets is 950 - 400 = 550. Goodwill is the purchase price less that amount: 800 - 550 = 250. Goodwill is not amortized but is tested for impairment."
+  },
+  {
+    "question": "A firm has cash of 80, marketable securities of 40, receivables of 120, inventory of 260 and current liabilities of 250. Its quick ratio is closest to:",
+    "options": [
+      "1.92",
+      "0.48",
+      "0.96",
+      "1.20"
+    ],
+    "correctIndex": 2,
+    "explanation": "Quick ratio = (cash + marketable securities + receivables) / current liabilities = (80 + 40 + 120) / 250 = 0.96. The current ratio, which adds inventory, would be 500 / 250 = 2.00."
+  },
+  {
+    "question": "Inventory has a historical cost of 500 and a net realizable value of 450. After a recovery, NRV rises to 540. Under IFRS, the carrying amount after the recovery is:",
+    "options": [
+      "450",
+      "540",
+      "500",
+      "490"
+    ],
+    "correctIndex": 2,
+    "explanation": "Inventory is first written down to NRV of 450. IFRS allows the writedown to be reversed, but only up to the original cost of 500, so the carrying amount becomes 500, not 540. U.S. GAAP would not permit any reversal (450)."
+  },
+  {
+    "question": "A company has total debt of 600, total assets of 2,000 and total shareholders' equity of 900. Its debt-to-capital ratio is closest to:",
+    "options": [
+      "0.67",
+      "0.30",
+      "0.40",
+      "0.60"
+    ],
+    "correctIndex": 2,
+    "explanation": "Debt-to-capital = total debt / (total debt + equity) = 600 / (600 + 900) = 0.40. Debt-to-assets would be 600 / 2,000 = 0.30, and debt-to-equity 0.67."
+  },
+  {
+    "question": "Which of the following is most likely true of treasury stock?",
+    "options": [
+      "It is reported as an asset because the company owns the shares",
+      "Repurchases create a gain on the income statement if the price has risen",
+      "It is a deduction from shareholders' equity",
+      "It increases retained earnings"
+    ],
+    "correctIndex": 2,
+    "explanation": "Shares repurchased by the company are reported as treasury stock, a contra-equity account that reduces total equity. Repurchases and reissues of own shares do not generate income-statement gains or losses."
+  },
+  {
+    "question": "A company with a current ratio above 1.0 uses cash to repurchase its own shares and borrows nothing. Compared with before the buyback, its current ratio and financial leverage ratio (total assets / total equity) most likely:",
+    "options": [
+      "Both rise",
+      "Current ratio falls and leverage rises",
+      "Current ratio rises and leverage falls",
+      "Both fall"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cash (a current asset) falls, so a current ratio above 1.0 declines. Total assets and equity fall by the same amount; because equity is the smaller number, assets/equity rises."
+  },
+  {
+    "question": "Which fair value measurement input is considered the least reliable?",
+    "options": [
+      "Level 3: unobservable inputs based on management's own models",
+      "Level 2: observable inputs such as yield curves",
+      "Level 1: quoted prices in active markets for identical assets",
+      "Amortized cost"
+    ],
+    "correctIndex": 0,
+    "explanation": "Level 1 uses quoted prices for identical assets in active markets (most reliable), Level 2 uses other observable inputs, and Level 3 relies on unobservable inputs and management's assumptions, so it deserves the most scrutiny."
+  },
+  {
+    "question": "Beginning retained earnings are 1,200, net income is 340, dividends declared are 130 and the company repurchases shares for 90. Ending retained earnings are closest to:",
+    "options": [
+      "1,410",
+      "1,320",
+      "1,540",
+      "1,500"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ending RE = 1,200 + 340 - 130 = 1,410. The 90 share repurchase is recorded in treasury stock, not retained earnings."
+  }
+]

@@ -1,0 +1,23 @@
+graph TD
+    MKT["Fixed-Income Market"] --> CLS["Classification<br/>(Issuer, credit quality, maturity, currency)"]
+    MKT --> PRIM["Primary Market<br/>(Issuer sells new bonds)"]
+    MKT --> SEC["Secondary Market<br/>(Investors trade existing bonds)"]
+    MKT --> MM["Short-Term Funding<br/>(Money market, 1 year or less)"]
+
+    PRIM --> PUB["Public Offering"]
+    PRIM --> AUC["Auction<br/>(Single-price or multiple-price)"]
+    PRIM --> PRIV["Private Placement<br/>(Small group of investors, less liquid)"]
+
+    PUB --> UW["Underwritten<br/>(Underwriter bears placement risk)"]
+    PUB --> BE["Best Efforts<br/>(Issuer bears placement risk)"]
+    PUB --> SHELF["Shelf Registration<br/>(Register once, sell over time)"]
+
+    SEC --> OTC["Over-the-Counter<br/>(Dealers quote bid and ask)"]
+    SEC --> EXCH["Exchanges and<br/>Electronic Platforms"]
+    OTC --> SPR["Bid-Ask Spread<br/>(Wider when less liquid)"]
+    SEC --> SETT["Clearing and Settlement<br/>(Commonly T+1 or T+2)"]
+
+    MM --> CP["Commercial Paper<br/>(Unsecured, sold at discount)"]
+    MM --> REPO["Repurchase Agreement<br/>(Collateralized loan)"]
+    REPO --> HC["Haircut<br/>(Cash lent below collateral value)"]
+    REPO --> RP["Repurchase Price<br/>(Cash lent + interest)"]
