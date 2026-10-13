@@ -1,0 +1,26 @@
+graph TD
+    ME["Market Efficiency<br/>(Prices reflect available information)"] --> FORMS["Forms of Efficiency<br/>(Nested information sets)"]
+    ME --> TESTS["Testing Efficiency<br/>(Joint hypothesis problem)"]
+    ME --> ANOM["Market Anomalies"]
+    ME --> BEH["Behavioral Finance<br/>(Biases, limits to arbitrage)"]
+    ME --> IMP["Investor Implications"]
+
+    FORMS --> WEAK["Weak Form<br/>(Past prices and volume)"]
+    FORMS --> SEMI["Semi-Strong Form<br/>(All public information)"]
+    FORMS --> STRONG["Strong Form<br/>(Public and private information)"]
+    WEAK --> SEMI
+    SEMI --> STRONG
+
+    WEAK --> TA["Technical analysis<br/>cannot earn abnormal returns"]
+    SEMI --> FA["Fundamental analysis of public data<br/>cannot earn abnormal returns"]
+    STRONG --> INS["Even insiders<br/>cannot earn abnormal returns"]
+
+    TESTS --> AR["Abnormal Return<br/>(Actual - Expected, e.g. CAPM)"]
+    TESTS --> EVT["Event Studies<br/>(CAR around announcements)"]
+
+    ANOM --> TS["Time-Series<br/>(January effect, momentum, overreaction)"]
+    ANOM --> CS["Cross-Sectional<br/>(Size, value)"]
+    ANOM --> CAUT["Caveats<br/>(Data mining, costs, risk, publication)"]
+
+    IMP --> PASS["More efficient market:<br/>passive indexing"]
+    IMP --> ACT["Less efficient segments:<br/>active management may add value"]

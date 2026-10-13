@@ -1,0 +1,181 @@
+---
+title: "Market Efficiency"
+description: "What it means for a market to be informationally efficient: the weak, semi-strong and strong forms of the efficient market hypothesis, how to test them, market anomalies, behavioral explanations, and what efficiency implies for active and passive investors."
+category: "Equities"
+difficulty: "intermediate"
+dateAdded: "2026-10-13"
+tags: ["market-efficiency", "emh", "anomalies", "abnormal-returns", "active-vs-passive", "behavioral-finance"]
+---
+
+# Market Efficiency
+
+A market is **informationally efficient** when security prices fully and quickly reflect all available relevant information. If that holds, no investor can consistently earn **abnormal (risk-adjusted excess) returns** just by trading on that information, and market prices are the best estimate of **intrinsic value** (the value of an asset given a hypothetically complete understanding of its investment characteristics).
+
+The idea matters for every equity decision: it tells you whether stock picking, chart reading or insider knowledge can pay, and how much to spend on active management.
+
+---
+
+## 1. The Concept of Market Efficiency
+
+### Market value versus intrinsic value
+
+- **Market value**: the price at which an asset trades today.
+- **Intrinsic value**: the price a fully informed investor would pay.
+
+In an efficient market the two are equal (or any gap is random and cannot be exploited). In an inefficient market, price may deviate from intrinsic value, and **fundamental analysis** might find mispriced securities.
+
+### Abnormal return
+
+Efficiency is tested against a model of **expected (required) return**, for example the capital asset pricing model:
+
+$$E(R_i) = R_f + \beta_i\,[E(R_m) - R_f]$$
+
+$$\text{Abnormal return} = \text{Actual return} - \text{Expected return}$$
+
+An abnormal return is also called **alpha** or **excess return** (risk-adjusted). A market is efficient with respect to a strategy if, **after adjusting for risk and net of transaction costs**, the strategy cannot earn a positive abnormal return consistently.
+
+### Factors that affect efficiency
+
+| Factor | Effect on efficiency |
+| --- | --- |
+| **Number of market participants and depth of analyst coverage** | More participants and analysts raise efficiency |
+| **Information availability and financial disclosure** | Better, timelier disclosure raises efficiency |
+| **Limits to trading** (short-sale restrictions, price limits, trading halts) | Reduce efficiency, since negative views cannot be expressed |
+| **Transaction costs and information-acquisition costs** | Efficiency requires prices to move until further trading is unprofitable; costs let some mispricing persist |
+| **Liquidity and market structure** | Illiquid, thinly traded, small-cap and frontier markets tend to be less efficient |
+
+The **arbitrage** process is the engine of efficiency: informed traders who spot mispricing buy undervalued and sell overvalued securities, pushing prices back toward intrinsic value. Costs and trading limits restrict arbitrage.
+
+---
+
+## 2. Forms of Market Efficiency (Fama)
+
+The forms are defined by the **information set** that is already in prices.
+
+| Form | Information reflected in prices | Implication |
+| --- | --- | --- |
+| **Weak form** | All **past market data**: historical prices, volume | Technical analysis (chart patterns, trend rules) cannot earn abnormal returns |
+| **Semi-strong form** | All **publicly available information**: past prices plus financial statements, news, announcements, analyst reports | Neither technical nor **fundamental analysis** of public information earns abnormal returns |
+| **Strong form** | **All information**, public **and private** (including insider information) | Even insiders cannot earn abnormal returns |
+
+The forms are **nested**: strong includes semi-strong, which includes weak. If the weak form fails, so do the semi-strong and strong forms. Evidence suggests that major developed equity markets are broadly **semi-strong form efficient** with some exceptions, while the **strong form** generally does not hold, which is why **insider trading is illegal** and does earn abnormal returns.
+
+---
+
+## 3. Testing Market Efficiency
+
+### Weak form tests
+- **Autocorrelation / time-series tests**: do past returns predict future returns?
+- **Technical trading rule tests**: simulate rules (moving averages, breakouts), adjusting for risk and transaction costs.
+
+### Semi-strong form tests: event studies
+An **event study** measures the **abnormal return** around the release of public information (earnings, dividend change, merger, stock split, index inclusion). In a semi-strong efficient market, prices adjust **immediately** on the announcement and show **no further drift** afterwards. The **cumulative abnormal return (CAR)** is the sum of the abnormal returns across the event window.
+
+### Strong form tests
+Analyse the returns to **insiders** (using insider trading reports) and to **professional fund managers**. If insiders consistently earn abnormal returns, the strong form fails.
+
+### The joint hypothesis problem
+Any test of efficiency is a **joint test**: of market efficiency **and** of the asset pricing model used for expected returns. A finding of abnormal returns may mean the market is inefficient, **or** that the model mismeasures risk. This is why efficiency can never be proven conclusively.
+
+### Worked example 1: abnormal return
+
+Stock A has beta $\beta = 1.2$. The risk-free rate is 3% and the expected market return is 9%. Over the year the stock returned 13%.
+
+1. Expected return $= 3\% + 1.2 \times (9\% - 3\%) = 3\% + 7.2\% = 10.2\%$.
+2. Abnormal return $= 13\% - 10.2\% = +2.8\%$.
+
+The stock outperformed its risk-adjusted expectation by 2.8%. In an efficient market, one such result is expected by chance; efficiency is questioned only if such returns persist across many securities and periods **after costs**.
+
+### Worked example 2: event study
+
+A company announces a surprise dividend increase. A CAPM-based market model gives these daily abnormal returns around the announcement (Day 0):
+
+| Day | Abnormal return |
+| --- | --- |
+| -2 | +0.1% |
+| -1 | +0.2% |
+| 0 | +2.9% |
+| +1 | +0.1% |
+| +2 | -0.1% |
+| +3 | +0.2% |
+
+- CAR over days $-2$ to $+3$ $= 0.1 + 0.2 + 2.9 + 0.1 - 0.1 + 0.2 = +3.4\%$.
+- CAR from $0$ to $+3$ $= 2.9 + 0.1 - 0.1 + 0.2 = +3.1\%$.
+
+Almost all the reaction (+2.9%) occurs on the announcement day, and the post-announcement abnormal returns are small and mixed in sign, consistent with **semi-strong efficiency**. A **sustained positive drift** after the announcement would signal slow price adjustment, which contradicts semi-strong efficiency.
+
+---
+
+## 4. Market Anomalies
+
+An **anomaly** is a pattern in returns that contradicts the efficient market hypothesis, i.e., apparently predictable abnormal returns.
+
+| Type | Examples |
+| --- | --- |
+| **Time-series (calendar) anomalies** | **January effect** (small-cap stocks earn unusually high returns in January), turn-of-the-month effect, day-of-the-week and weekend effects, momentum and overreaction |
+| **Cross-sectional anomalies** | **Size effect** (small-cap stocks outperform after risk adjustment), **value effect** (low price-to-book or low P/E stocks outperform) |
+| **Other** | Closed-end fund discounts, earnings surprises followed by drift (post-earnings-announcement drift), IPO underpricing |
+
+**Momentum** (stocks that did well recently keep doing well over the following months) and **overreaction** (long-term losers later rebound) both seem to contradict weak-form efficiency.
+
+### Why anomalies need caution
+
+- Many disappear after they are **published** and traded on, or after **transaction costs** and **risk adjustment**.
+- **Data mining**: testing many patterns on the same data will find some "significant" result by chance.
+- Results depend on the **sample period**, the **model of expected returns** (joint hypothesis) and may reflect **unmeasured risk** rather than mispricing.
+- Many anomalies concentrate in small, illiquid stocks where trading is costly.
+
+A pattern is an **exploitable** inefficiency only if it persists, is large enough to cover trading costs and risk, and can be traded in size.
+
+### Worked example 3: is the anomaly exploitable?
+
+A strategy buys small-cap value stocks and earns a gross return 2.5% per year above the risk-adjusted benchmark. Annual trading volume equals 120% of the portfolio's value, and all-in trading cost (commissions, spread, market impact) is 1.0% of the value traded.
+
+1. Annual trading cost $= 120\% \times 1.0\% = 1.2\%$ of portfolio value.
+2. Management and research cost $= 0.6\%$.
+3. Net abnormal return $= 2.5\% - 1.2\% - 0.6\% = +0.7\%$.
+
+The pattern survives costs but only by 0.7%, a small margin that could vanish with estimation error in the benchmark. If trading cost were 2.0% of the value traded, trading cost would be $120\% \times 2.0\% = 2.4\%$ and the net abnormal return would be $2.5 - 2.4 - 0.6 = -0.5\%$: not exploitable.
+
+---
+
+## 5. Behavioral Finance and Efficiency
+
+Traditional finance assumes investors are rational, risk averse and maximize expected utility. **Behavioral finance** documents systematic departures from rationality:
+
+- **Loss aversion**: losses hurt more than equivalent gains please, so investors hold losers too long and sell winners too soon (the **disposition effect**).
+- **Overconfidence**: too much trading, underestimated risk.
+- **Herding**: investors follow the crowd, which can produce momentum and bubbles.
+- **Mental accounting**, **anchoring** and **representativeness**: investors misjudge probabilities and base values on arbitrary reference points.
+- **Overreaction and underreaction** to news.
+- **Information cascades**: investors copy earlier decisions rather than act on their own information.
+
+Behavioral biases may explain anomalies, but **limits to arbitrage** (cost, risk and short-sale restrictions) can stop rational traders from correcting the mispricing. Other researchers argue that the anomalies are compensation for **risk** or artifacts of **data mining**, so the evidence is contested. **Bubbles** (prices rising far above intrinsic value) and **crashes** are often cited as challenges to market efficiency, but it is hard to know a price is a bubble in real time, so they are not clear proof of inefficiency.
+
+---
+
+## 6. Implications for Investors
+
+| If the market is... | Implication |
+| --- | --- |
+| **Weak-form efficient** | Technical analysis has no value |
+| **Semi-strong efficient** | Fundamental analysis of public information cannot earn abnormal returns; use a **passive (indexing)** approach, or manage for tax, costs and the investor's own risk profile |
+| **Strong-form efficient** | Even private information is worthless |
+| **Inefficient** (in places) | **Active management** can add value, especially in less efficient segments such as small-cap and emerging markets; skilled managers can beat net of fees only if mispricing exceeds their costs |
+
+**Active versus passive**: active managers incur research and trading costs and higher fees, so they must generate enough alpha to cover them. The more efficient the market, the stronger the case for **low-cost passive investing**. Even with efficient markets, portfolio managers still add value by matching a portfolio to the client's risk, return, tax and liquidity needs.
+
+**Practical analyst advice**: do not assume a finding of "mispricing" is correct. Ask what the market might know that you do not, and whether the apparent gain survives costs and risk.
+
+---
+
+## Key takeaways
+
+- An informationally efficient market's prices fully reflect available information, so investors cannot earn consistent **risk-adjusted** abnormal returns net of costs.
+- Abnormal return = actual return − expected return from a pricing model (e.g., CAPM: $R_f + \beta(R_m - R_f)$).
+- **Weak form**: past prices and volume reflected (technical analysis fails). **Semi-strong**: all public information reflected (fundamental analysis of public data fails). **Strong form**: all information, including private (insiders cannot profit). Forms are nested.
+- Event studies test semi-strong efficiency: price adjusts immediately at the announcement, with no drift.
+- Tests are **joint hypothesis** tests of efficiency and the asset pricing model, so efficiency is never proven.
+- Anomalies (January, size, value, momentum, overreaction) must be judged against data mining, risk, transaction costs and publication effects.
+- Behavioral biases can explain apparent inefficiencies, but limits to arbitrage keep them from being easy to exploit.
+- The greater the efficiency of a market, the stronger the case for low-cost passive investing; active management is more promising in less efficient, less liquid segments.

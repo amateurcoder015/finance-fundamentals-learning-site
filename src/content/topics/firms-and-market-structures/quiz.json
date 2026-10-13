@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which market structure is characterized by many sellers, differentiated products and low barriers to entry?",
+    "options": [
+      "Perfect competition",
+      "Oligopoly",
+      "Monopolistic competition",
+      "Monopoly"
+    ],
+    "correctIndex": 2,
+    "explanation": "Monopolistic competition has many sellers offering differentiated products with easy entry. Perfect competition has identical products, oligopoly has few sellers and high barriers, and monopoly has a single seller."
+  },
+  {
+    "question": "A monopolist faces the demand curve P = 100 - 2Q. What is its marginal revenue at Q = 15?",
+    "options": [
+      "$70",
+      "$55",
+      "$30",
+      "$40"
+    ],
+    "correctIndex": 3,
+    "explanation": "TR = 100Q - 2Q^2, so MR = 100 - 4Q. At Q = 15, MR = 100 - 60 = $40. ($70 is the price at Q = 15, not MR.)"
+  },
+  {
+    "question": "In the short run, a price-taking firm faces a market price of $8. At its output level, average variable cost is $9 and average total cost is $12. What should the firm do?",
+    "options": [
+      "Continue producing because price is above marginal cost",
+      "Shut down because price is below average variable cost",
+      "Continue producing because it will earn an economic profit",
+      "Raise price to cover average total cost"
+    ],
+    "correctIndex": 1,
+    "explanation": "P = $8 is below AVC = $9, so revenue does not cover variable cost. Shutting down limits the loss to fixed cost. A price taker cannot raise its price."
+  },
+  {
+    "question": "Four firms in a market have shares of 35%, 30%, 20% and 15%. What is the Herfindahl-Hirschman Index?",
+    "options": [
+      "100",
+      "2,750",
+      "3,500",
+      "2,150"
+    ],
+    "correctIndex": 1,
+    "explanation": "HHI = 35^2 + 30^2 + 20^2 + 15^2 = 1,225 + 900 + 400 + 225 = 2,750. (100 is the sum of the shares, i.e. the four-firm concentration ratio.)"
+  },
+  {
+    "question": "In the long run, which statement about a firm in monopolistic competition is most accurate?",
+    "options": [
+      "It earns positive economic profit because of product differentiation",
+      "It earns zero economic profit and produces at minimum average total cost",
+      "It earns zero economic profit, charges a price above marginal cost and has excess capacity",
+      "It earns zero economic profit and sets price equal to marginal cost"
+    ],
+    "correctIndex": 2,
+    "explanation": "Entry drives economic profit to zero. Because each firm faces a downward-sloping demand curve, price exceeds MC and output is below the minimum-ATC level (excess capacity)."
+  },
+  {
+    "question": "Two identical firms in a Cournot duopoly face the market demand P = 100 - Q and each has constant marginal cost of $10. What is the equilibrium market price?",
+    "options": [
+      "$40",
+      "$55",
+      "$10",
+      "$30"
+    ],
+    "correctIndex": 0,
+    "explanation": "Each firm's reaction function is q = (90 - q_other)/2, giving q = 30 per firm. Total Q = 60 and P = 100 - 60 = $40. The monopoly price is $55 and the competitive price is $10."
+  },
+  {
+    "question": "A profit-maximizing firm with pricing power and positive marginal cost will operate on which part of its demand curve?",
+    "options": [
+      "The elastic portion, where marginal revenue is positive",
+      "The inelastic portion, where marginal revenue is negative",
+      "The point of unit elasticity",
+      "Any portion, because elasticity does not affect marginal revenue"
+    ],
+    "correctIndex": 0,
+    "explanation": "MR = P(1 - 1/|E|) must equal positive MC, so MR > 0, which requires |E| > 1 (elastic demand)."
+  },
+  {
+    "question": "Which statement about a Nash equilibrium in an oligopoly game is correct?",
+    "options": [
+      "It maximizes the combined profit of all firms",
+      "It requires the firms to collude",
+      "It occurs only when there are two firms",
+      "No firm can improve its payoff by unilaterally changing its strategy"
+    ],
+    "correctIndex": 3,
+    "explanation": "A Nash equilibrium is a strategy set in which each firm's choice is a best response to the others', so no firm gains by deviating alone. It need not maximize joint profit (as in the prisoner's dilemma)."
+  }
+]

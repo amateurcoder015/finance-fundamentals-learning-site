@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Prices in a market fully reflect all past trading data, but not necessarily public or private information. Which form of efficiency does this describe?",
+    "options": [
+      "Strong form",
+      "Semi-strong form",
+      "Weak form",
+      "No form of efficiency"
+    ],
+    "correctIndex": 2,
+    "explanation": "Weak-form efficiency means prices reflect all past market data (prices and volume), so technical analysis cannot earn abnormal returns. Semi-strong adds all public information; strong adds private information."
+  },
+  {
+    "question": "A stock has a beta of 1.2. The risk-free rate is 3% and the expected market return is 9%. The stock returned 13% over the year. What was its abnormal return?",
+    "options": [
+      "+2.8%",
+      "+4.0%",
+      "+6.8%",
+      "+1.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Expected return = 3% + 1.2 x (9% - 3%) = 10.2%. Abnormal return = 13% - 10.2% = +2.8%. Comparing with the market return (4.0%) ignores beta."
+  },
+  {
+    "question": "If a market is semi-strong form efficient, which of the following can earn abnormal returns?",
+    "options": [
+      "Technical analysts using chart patterns",
+      "Fundamental analysts using published financial statements",
+      "Investors trading on material non-public information",
+      "Investors who buy after earnings announcements"
+    ],
+    "correctIndex": 2,
+    "explanation": "Semi-strong efficiency means prices already reflect all public information, so technical and fundamental analysis of public data cannot earn abnormal returns. Private (inside) information is not assumed to be in prices, so only the strong form rules out profits from it."
+  },
+  {
+    "question": "A researcher finds that a trading rule earns positive abnormal returns when tested with the CAPM. What is the most appropriate conclusion?",
+    "options": [
+      "The market is definitely inefficient",
+      "Either the market is inefficient or the CAPM mismeasures risk (joint hypothesis problem)",
+      "The market is definitely strong-form efficient",
+      "The rule must be profitable after transaction costs"
+    ],
+    "correctIndex": 1,
+    "explanation": "Efficiency tests are joint tests of market efficiency and of the expected-return model. A positive abnormal return may reflect mispricing, or an omitted risk factor in the model, and it must still be assessed net of costs."
+  },
+  {
+    "question": "A company announces a surprise earnings increase. The abnormal returns for days 0 to +3 are +2.9%, +0.1%, -0.1% and +0.2%. What is the cumulative abnormal return over days 0 to +3, and what does the pattern suggest?",
+    "options": [
+      "+3.1%; an immediate price adjustment consistent with semi-strong efficiency",
+      "+3.1%; slow adjustment inconsistent with semi-strong efficiency",
+      "+2.9%; an immediate price adjustment consistent with strong-form efficiency",
+      "+3.3%; an immediate adjustment consistent with weak-form efficiency only"
+    ],
+    "correctIndex": 0,
+    "explanation": "CAR = 2.9 + 0.1 - 0.1 + 0.2 = +3.1%. Nearly all of it arrives on the announcement day, with no sustained drift afterwards, as a semi-strong efficient market would show. Event studies of public announcements do not test the strong form."
+  },
+  {
+    "question": "An anomaly earns a gross 2.5% per year above the risk-adjusted benchmark. Trading volume is 120% of portfolio value a year at a cost of 2.0% of value traded, and other costs are 0.6% a year. What is the net abnormal return?",
+    "options": [
+      "+1.9%",
+      "-0.5%",
+      "+0.7%",
+      "-2.9%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trading cost = 120% x 2.0% = 2.4%. Net = 2.5% - 2.4% - 0.6% = -0.5%. The anomaly is not exploitable after costs."
+  },
+  {
+    "question": "Which factor would most likely make a market LESS informationally efficient?",
+    "options": [
+      "A large number of analysts covering each stock",
+      "Timely and detailed financial disclosure",
+      "Restrictions on short selling and high trading costs",
+      "A large number of active, well-capitalized participants"
+    ],
+    "correctIndex": 2,
+    "explanation": "Short-sale restrictions and high costs limit arbitrage, so mispricing can persist. More participants, analysts and disclosure increase efficiency."
+  },
+  {
+    "question": "Which statement about market anomalies is most accurate?",
+    "options": [
+      "Any anomaly proves that markets are strong-form inefficient",
+      "Anomalies may disappear after adjusting for risk, transaction costs and data mining",
+      "The January effect shows that large-cap stocks always outperform in January",
+      "An anomaly is exploitable whenever its gross return is positive"
+    ],
+    "correctIndex": 1,
+    "explanation": "Apparent anomalies often vanish after costs and risk adjustment, may result from data mining or the choice of model, and often fade once published. The January effect refers to small-cap stocks, and exploitability requires a positive net, risk-adjusted return."
+  }
+]

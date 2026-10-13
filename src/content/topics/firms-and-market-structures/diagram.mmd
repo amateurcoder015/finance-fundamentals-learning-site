@@ -1,0 +1,21 @@
+graph TD
+    MS["Market Structure<br/>(sellers, product, entry barriers)"] --> PC["Perfect Competition<br/>(Price taker, identical product)"]
+    MS --> MC["Monopolistic Competition<br/>(Many sellers, differentiated product)"]
+    MS --> OL["Oligopoly<br/>(Few sellers, interdependence)"]
+    MS --> MO["Monopoly<br/>(One seller, high barriers)"]
+
+    PC --> RULE["Profit Maximization<br/>(MR = MC)"]
+    MC --> RULE
+    OL --> RULE
+    MO --> RULE
+
+    RULE --> SR["Short-Run Decision<br/>(P below AVC: shut down)"]
+    RULE --> LR["Long-Run Outcome"]
+
+    LR --> PCLR["Perfect Competition<br/>(P = MC = min ATC, zero economic profit)"]
+    LR --> MCLR["Monopolistic Competition<br/>(Zero economic profit, excess capacity)"]
+    LR --> MOLR["Monopoly<br/>(Economic profit, deadweight loss)"]
+
+    OL --> MODELS["Oligopoly Models<br/>(Kinked demand, Cournot, Dominant firm,<br/>Stackelberg, Bertrand, Nash equilibrium)"]
+
+    MS -.-> CONC["Measuring Concentration<br/>(N-firm ratio, HHI = sum of squared shares)"]

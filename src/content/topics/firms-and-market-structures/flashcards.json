@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What are the four market structures, and which has the most pricing power?",
+    "back": "Perfect competition, monopolistic competition, oligopoly and monopoly. Monopoly has the most pricing power; perfect competition has none (price takers)."
+  },
+  {
+    "front": "What is the profit-maximizing rule for any firm?",
+    "back": "Produce the quantity where marginal revenue equals marginal cost (MR = MC, with MC rising). For a price taker MR = P, so P = MC."
+  },
+  {
+    "front": "Marginal revenue for the demand curve P = a - bQ?",
+    "back": "MR = a - 2bQ. Same intercept as demand, twice the slope. Equivalently MR = P(1 - 1/|E|)."
+  },
+  {
+    "front": "Short-run shutdown and long-run exit rules?",
+    "back": "Short run: shut down if P is below AVC (keep operating if AVC < P < ATC, since revenue covers variable cost and part of fixed cost). Long run: exit if P is below ATC."
+  },
+  {
+    "front": "Long-run equilibrium in perfect competition?",
+    "back": "P = MC = minimum ATC = minimum LRAC. Zero economic profit (normal profit); allocatively and productively efficient."
+  },
+  {
+    "front": "Long-run outcome in monopolistic competition?",
+    "back": "Zero economic profit, but price is above marginal cost and output is below minimum-ATC scale (excess capacity). Firms compete through differentiation and advertising."
+  },
+  {
+    "front": "Why does a monopoly create deadweight loss?",
+    "back": "It sets MR = MC and charges P > MC, producing less than the competitive output. Units valued by consumers above their cost are not produced."
+  },
+  {
+    "front": "What is a Nash equilibrium?",
+    "back": "A set of strategies in which no player can improve its payoff by changing its own strategy alone, given the others' strategies. It need not maximize joint profit (prisoner's dilemma)."
+  },
+  {
+    "front": "What is the kinked demand curve model of oligopoly?",
+    "back": "Rivals match price cuts but not price increases, so demand is elastic above the current price and inelastic below it. MR has a gap, so prices are sticky."
+  },
+  {
+    "front": "Formula for HHI, and its range?",
+    "back": "HHI = sum of squared market shares (in percent), from near 0 to 10,000 for a monopoly. Example: shares 40/30/20/10 give 1,600 + 900 + 400 + 100 = 3,000."
+  },
+  {
+    "front": "Cournot duopoly with P = 100 - Q and MC = $10: outcome?",
+    "back": "Each firm produces 30; total Q = 60, P = $40. Competitive: Q = 90, P = $10. Monopoly: Q = 45, P = $55."
+  }
+]

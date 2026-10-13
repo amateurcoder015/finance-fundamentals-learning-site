@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What is an informationally efficient market?",
+    "back": "A market in which prices fully and quickly reflect all available relevant information, so investors cannot consistently earn risk-adjusted abnormal returns net of costs by trading on that information."
+  },
+  {
+    "front": "Abnormal return formula?",
+    "back": "Abnormal return = Actual return - Expected return. With CAPM, expected return = Rf + beta x (E(Rm) - Rf). Example: Rf 3%, beta 1.2, Rm 9% gives 10.2% expected."
+  },
+  {
+    "front": "Weak-form efficiency?",
+    "back": "Prices reflect all past market data (prices, volume). Technical analysis cannot earn abnormal returns."
+  },
+  {
+    "front": "Semi-strong form efficiency?",
+    "back": "Prices reflect all publicly available information. Neither technical nor fundamental analysis of public data earns abnormal returns."
+  },
+  {
+    "front": "Strong-form efficiency?",
+    "back": "Prices reflect all information, public and private. Even insiders cannot earn abnormal returns. Generally does not hold, which is why insider trading is prohibited."
+  },
+  {
+    "front": "What is the joint hypothesis problem?",
+    "back": "Every efficiency test jointly tests market efficiency and the expected-return (asset pricing) model, so abnormal returns may signal inefficiency or a flawed model. Efficiency cannot be conclusively proven."
+  },
+  {
+    "front": "What is an event study?",
+    "back": "A test of semi-strong efficiency that measures abnormal returns around a public announcement. The cumulative abnormal return (CAR) is the sum of abnormal returns over the event window. Efficient prices jump at the announcement and do not drift afterwards."
+  },
+  {
+    "front": "Name common time-series and cross-sectional anomalies.",
+    "back": "Time-series: January effect, momentum, overreaction. Cross-sectional: size effect (small caps) and value effect (low P/B, low P/E)."
+  },
+  {
+    "front": "Why be cautious about anomalies?",
+    "back": "Data mining, sample-period dependence, omitted risk factors (joint hypothesis), transaction costs, illiquid small-cap concentration, and fading after publication."
+  },
+  {
+    "front": "Which factors reduce market efficiency?",
+    "back": "Few participants and little analyst coverage, poor disclosure, short-sale and trading restrictions, high transaction and information costs, illiquidity."
+  },
+  {
+    "front": "What does market efficiency imply for active versus passive management?",
+    "back": "The more efficient the market, the stronger the case for low-cost passive indexing. Active management is more promising in less efficient segments and must cover its costs and fees."
+  }
+]
