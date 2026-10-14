@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Under U.S. GAAP, which of the following is classified as a financing activity?",
+    "options": [
+      "Interest paid on bonds",
+      "Dividends received from an equity investment",
+      "Dividends paid to shareholders",
+      "Income taxes paid"
+    ],
+    "correctIndex": 2,
+    "explanation": "Under U.S. GAAP, dividends paid are financing. Interest paid, dividends received and taxes paid are all operating. IFRS allows interest and dividends to be classified more flexibly, but not U.S. GAAP."
+  },
+  {
+    "question": "A company under IFRS reports interest paid as a financing outflow. Relative to a similar company reporting it as operating, its CFO will be:",
+    "options": [
+      "Lower, and its CFF will be higher",
+      "The same, because classification does not change cash",
+      "Higher, and its CFF will be lower",
+      "Higher, and its CFI will be lower"
+    ],
+    "correctIndex": 2,
+    "explanation": "Moving interest paid out of operating raises CFO by that amount and lowers CFF by the same amount (more negative). Total cash change is unchanged, but CFO is not comparable across the two companies without adjustment."
+  },
+  {
+    "question": "Revenue is 800. Accounts receivable rose from 100 to 130. Cash collected from customers is closest to:",
+    "options": [
+      "830",
+      "670",
+      "770",
+      "800"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cash from customers = revenue - increase in accounts receivable = 800 - 30 = 770. Part of the revenue was recognised but not yet collected."
+  },
+  {
+    "question": "COGS is 600. Inventory fell from 150 to 130, and accounts payable rose from 90 to 110. Cash paid to suppliers is closest to:",
+    "options": [
+      "560",
+      "640",
+      "600",
+      "580"
+    ],
+    "correctIndex": 0,
+    "explanation": "Purchases = COGS + change in inventory = 600 + (130 - 150) = 580. Cash paid to suppliers = purchases - increase in payables = 580 - 20 = 560."
+  },
+  {
+    "question": "Net income is 120, depreciation is 40, a gain on the sale of land is 15, accounts receivable rose by 25 and accounts payable rose by 10. Under the indirect method, CFO is closest to:",
+    "options": [
+      "130",
+      "160",
+      "100",
+      "170"
+    ],
+    "correctIndex": 0,
+    "explanation": "CFO = 120 + 40 - 15 - 25 + 10 = 130. Depreciation is added back, the gain is subtracted (the proceeds are in investing), the receivable increase is subtracted and the payable increase is added."
+  },
+  {
+    "question": "Net PP&E rose from 500 to 540 during the year. Depreciation was 60, and equipment with a book value of 20 was sold at a gain of 5. Capital expenditure is closest to:",
+    "options": [
+      "100",
+      "120",
+      "80",
+      "125"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ending PP&E = beginning + capex - depreciation - book value sold, so capex = 540 - 500 + 60 + 20 = 120. Sale proceeds are 20 + 5 = 25, an investing inflow, and are separate from capex."
+  },
+  {
+    "question": "A company acquires a building by issuing a 2 million note directly to the seller. In the statement of cash flows, this transaction is:",
+    "options": [
+      "An investing outflow and financing inflow of 2 million",
+      "An operating outflow of 2 million",
+      "Excluded from the statement and disclosed as a non-cash transaction",
+      "A financing inflow only"
+    ],
+    "correctIndex": 2,
+    "explanation": "No cash changes hands, so the transaction is not reported in the statement of cash flows. It is disclosed in the notes or in a supplemental schedule because it affects future cash flows (note repayments)."
+  },
+  {
+    "question": "Which statement about the direct and indirect methods is most accurate?",
+    "options": [
+      "The direct method produces a different CFO because it ignores accruals",
+      "Both methods report the same CFO; the indirect method begins with net income",
+      "The indirect method reports gross cash receipts from customers",
+      "The methods differ in their treatment of investing and financing cash flows"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both methods give the same CFO and the same investing and financing sections. The indirect method starts with net income and adjusts for non-cash items and working capital changes; the direct method shows gross receipts and payments."
+  }
+]

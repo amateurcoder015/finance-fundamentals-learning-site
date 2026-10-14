@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What identity does the statement of cash flows satisfy?",
+    "back": "Ending cash and equivalents = Beginning cash + CFO + CFI + CFF."
+  },
+  {
+    "front": "What are the three categories of cash flow activities?",
+    "back": "Operating (main revenue-producing activities), investing (long-term assets and non-trading investments), financing (debt, equity and dividends)."
+  },
+  {
+    "front": "How are non-cash investing and financing transactions reported?",
+    "back": "They are excluded from the statement but disclosed in the notes or a supplemental schedule (e.g., buying an asset with a note issued to the seller, debt-for-equity swaps)."
+  },
+  {
+    "front": "U.S. GAAP classification of interest and dividends?",
+    "back": "Interest paid, interest received and dividends received: operating. Dividends paid: financing."
+  },
+  {
+    "front": "IFRS classification of interest and dividends?",
+    "back": "Interest paid: operating or financing. Interest received and dividends received: operating or investing. Dividends paid: financing or operating. Apply consistently and disclose."
+  },
+  {
+    "front": "Direct versus indirect method?",
+    "back": "Same CFO. Direct: shows gross cash receipts and payments. Indirect: starts with net income and adjusts for non-cash items, gains/losses and working capital changes."
+  },
+  {
+    "front": "Cash collected from customers (direct method)?",
+    "back": "Revenue - increase in accounts receivable (or + decrease)."
+  },
+  {
+    "front": "Cash paid to suppliers (direct method)?",
+    "back": "COGS + increase in inventory = purchases; then purchases - increase in accounts payable."
+  },
+  {
+    "front": "How do working capital changes affect CFO (indirect)?",
+    "back": "Increase in operating assets: subtract. Decrease in operating assets: add. Increase in operating liabilities: add. Decrease in operating liabilities: subtract."
+  },
+  {
+    "front": "Why is a gain on sale of equipment subtracted from CFO?",
+    "back": "The gain is in net income but the cash is the full sale proceeds, which are reported as an investing inflow. Subtracting the gain avoids double counting; losses are added back."
+  },
+  {
+    "front": "How can capital expenditure be derived from the balance sheet?",
+    "back": "Capex = Ending net PP&E - Beginning net PP&E + Depreciation + Book value of assets sold."
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "front": "How is the global fixed-income market classified?",
+    "back": "By type of issuer (household, corporate, government, supranational), credit quality (investment grade vs high yield), maturity (money market ≤ 1 year vs capital market), currency, coupon type and where issued."
+  },
+  {
+    "front": "What is the investment-grade boundary?",
+    "back": "Investment grade: Baa3 or higher (Moody's) / BBB- or higher (S&P, Fitch). High yield starts at Ba1 / BB+."
+  },
+  {
+    "front": "How is a corporate bond yield built up?",
+    "back": "Corporate yield = benchmark government yield + spread. The spread compensates for credit risk, liquidity risk and other features."
+  },
+  {
+    "front": "Uncommitted vs committed line of credit vs revolver?",
+    "back": "Uncommitted: bank can refuse or withdraw, no fee. Committed: legally binding up to a limit, commitment fee on the undrawn amount. Revolver: committed, multi-year, can be repaid and re-borrowed; fee on undrawn plus floating interest on drawn."
+  },
+  {
+    "front": "What is commercial paper?",
+    "back": "Short-term, unsecured debt issued at a discount by high-quality companies. In the U.S., paper of 270 days or less is exempt from SEC registration. Usually backed by a bank backstop line because of rollover risk."
+  },
+  {
+    "front": "Commercial paper price and money market yield?",
+    "back": "P = F x (1 - d x t/360). MMY = (F - P)/P x 360/t. MMY exceeds the discount rate because it is computed on the smaller amount invested."
+  },
+  {
+    "front": "What is rollover (refinancing) risk?",
+    "back": "The risk that maturing short-term debt cannot be renewed, or only at higher cost. It arises when short-term funding finances long-lived needs."
+  },
+  {
+    "front": "What is a syndicated loan?",
+    "back": "A loan arranged by lead banks and funded by a group of lenders. Usually floating-rate (reference rate + spread), often secured, with covenants, and tradable in a secondary loan market."
+  },
+  {
+    "front": "What is a leveraged loan?",
+    "back": "A loan to a below-investment-grade or highly leveraged borrower. Typically senior secured, floating-rate, with a wide spread."
+  },
+  {
+    "front": "Fallen angel vs rising star?",
+    "back": "Fallen angel: bond downgraded from investment grade to high yield (may cause forced selling). Rising star: bond upgraded into investment grade."
+  },
+  {
+    "front": "How do corporate bonds trade, and what is matrix pricing?",
+    "back": "Mostly over the counter via dealers, with lower liquidity and wider bid-ask spreads than government bonds. Matrix pricing estimates a price for an infrequently traded bond from similar, actively traded bonds."
+  }
+]

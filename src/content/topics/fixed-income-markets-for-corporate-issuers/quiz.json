@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which of the following best describes an uncommitted line of credit?",
+    "options": [
+      "The bank is legally bound to lend up to the limit and charges a commitment fee",
+      "The bank may decline or withdraw the line, and it usually carries no commitment fee",
+      "A multi-year facility that can be repaid and re-borrowed with a fee on the unused portion",
+      "A loan arranged by a lead bank and sold to a group of lenders"
+    ],
+    "correctIndex": 1,
+    "explanation": "An uncommitted line gives the borrower no legal assurance of funding: the bank can refuse or withdraw, so it is cheapest and normally has no commitment fee. Option A is a committed line, option C a revolving credit facility, and option D a syndicated loan."
+  },
+  {
+    "question": "A company has a 50 million committed revolver with 20 million drawn. The bank charges a commitment fee of 0.30% on the undrawn amount. The annual commitment fee is closest to:",
+    "options": [
+      "150,000",
+      "60,000",
+      "90,000",
+      "30,000"
+    ],
+    "correctIndex": 2,
+    "explanation": "The fee applies only to the undrawn amount: 50 - 20 = 30 million. Fee = 30,000,000 x 0.30% = 90,000. Applying it to the full 50 million would give 150,000 (wrong base), and to the drawn amount 60,000."
+  },
+  {
+    "question": "A firm issues 20 million face value of 60-day commercial paper at a discount rate of 6.00% (360-day year). The price received is closest to:",
+    "options": [
+      "19.80 million",
+      "18.80 million",
+      "19.94 million",
+      "20.20 million"
+    ],
+    "correctIndex": 0,
+    "explanation": "Price = F x (1 - d x t/360) = 20 x (1 - 0.06 x 60/360) = 20 x (1 - 0.01) = 19.80 million. The investor receives 20 million at maturity, so the interest is 0.20 million."
+  },
+  {
+    "question": "Using the commercial paper in the previous question (price 19.80 million, face 20 million, 60 days), the money market yield (360-day basis) is closest to:",
+    "options": [
+      "6.00%",
+      "6.06%",
+      "1.01%",
+      "6.25%"
+    ],
+    "correctIndex": 1,
+    "explanation": "MMY = (F - P)/P x 360/t = (0.20 / 19.80) x (360 / 60) = 0.010101 x 6 = 6.06%. It exceeds the 6.00% discount rate because the discount rate is computed on face value, which is larger than the amount invested."
+  },
+  {
+    "question": "Why do issuers of commercial paper typically maintain a backstop line of credit with banks?",
+    "options": [
+      "Because commercial paper is secured by the issuer's receivables",
+      "To lower the discount rate by guaranteeing the principal",
+      "To meet SEC registration rules for paper longer than 270 days",
+      "To repay maturing paper if investors will not roll it over"
+    ],
+    "correctIndex": 3,
+    "explanation": "Commercial paper is unsecured and short-term, so the issuer faces rollover risk. A committed backstop line gives the issuer a source of cash if investors stop buying new paper. The backstop does not secure the paper or relate to SEC registration."
+  },
+  {
+    "question": "A 10-year benchmark government bond yields 3.90%. A corporate bond of the same maturity trades at a spread of 160 basis points. If the issuer is downgraded and the spread widens to 235 basis points with no change in the benchmark, the new yield is closest to:",
+    "options": [
+      "6.25%",
+      "5.50%",
+      "7.50%",
+      "4.65%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Yield = benchmark + spread = 3.90% + 2.35% = 6.25%. The old yield was 5.50%; the 75 bp spread widening raises the yield and lowers the bond's price. Option B is the old yield."
+  },
+  {
+    "question": "Compared with a public bond issue, a syndicated bank loan is most likely to have:",
+    "options": [
+      "A floating rate, a small number of lenders and tighter covenants",
+      "A fixed rate, many dispersed holders and loose covenants",
+      "Greater secondary-market liquidity and standardization",
+      "No security or covenants because banks rely on credit ratings"
+    ],
+    "correctIndex": 0,
+    "explanation": "Syndicated loans typically pay a floating reference rate plus a spread, are held by a limited group of lenders (making renegotiation easier) and carry tighter maintenance covenants. Public bonds tend to be fixed-rate, widely held and more liquid."
+  },
+  {
+    "question": "A bond rated BBB- is downgraded to BB+. This bond is best described as a:",
+    "options": [
+      "Rising star that now qualifies for investment-grade mandates",
+      "Fallen angel that moves from investment grade to high yield",
+      "Leveraged loan because of its lower rating",
+      "Asset-backed security with a lower credit rating"
+    ],
+    "correctIndex": 1,
+    "explanation": "BBB- is the lowest investment-grade rating (S&P/Fitch), and BB+ is the highest high-yield rating. A bond that crosses from investment grade to high yield is a fallen angel; investors restricted to investment grade may be forced to sell."
+  }
+]

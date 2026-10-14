@@ -1,0 +1,19 @@
+graph TD
+    CFS["Statement of Cash Flows<br/>(Beginning cash + CFO + CFI + CFF = Ending cash)"] --> CFO["Operating Activities (CFO)"]
+    CFS --> CFI["Investing Activities (CFI)"]
+    CFS --> CFF["Financing Activities (CFF)"]
+    CFS --> NC["Non-Cash Transactions<br/>(Disclosed in notes, not in the statement)"]
+
+    CFO --> IND["Indirect Method<br/>(Start with net income)"]
+    CFO --> DIR["Direct Method<br/>(Gross receipts and payments)"]
+    IND --> ADD["Add back non-cash charges<br/>(Depreciation, impairment)"]
+    IND --> GL["Remove gains / add back losses<br/>(Proceeds go to investing)"]
+    IND --> WC["Working capital changes<br/>(Increase in assets: subtract<br/>Increase in liabilities: add)"]
+    DIR --> CUST["Cash from customers<br/>(Revenue - change in receivables)"]
+    DIR --> SUPP["Cash to suppliers<br/>(COGS + change in inventory<br/>- change in payables)"]
+
+    CFI --> CAPEX["Capex and asset sales<br/>(PP&E, intangibles, securities)"]
+    CFF --> DEBTEQ["Debt and equity flows<br/>(Issue, repay, repurchase, dividends)"]
+
+    CFO --> IFRS["IFRS vs U.S. GAAP Choices"]
+    IFRS --> INTDIV["Interest and dividends<br/>(IFRS: operating, investing or financing<br/>U.S. GAAP: fixed classification)"]

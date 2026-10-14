@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Fixed-Income Markets for Corporate Issuers | Fixed Income | intermediate
-- [ ] Analyzing Statements of Cash Flows I | Financial Statements | intermediate
 - [ ] Portfolio Risk and Return: Part I | Portfolio Management | intermediate
 - [ ] Investors and Other Stakeholders | Corporate Finance | beginner
 - [ ] Fixed-Income Markets for Government Issuers | Fixed Income | intermediate
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Analyzing Balance Sheets | Financial Statements | intermediate | 2026-10-12
 - [x] Firms and Market Structures | Economics | intermediate | 2026-10-13
 - [x] Market Efficiency | Equities | intermediate | 2026-10-13
+- [x] Fixed-Income Markets for Corporate Issuers | Fixed Income | intermediate | 2026-10-14
+- [x] Analyzing Statements of Cash Flows I | Financial Statements | intermediate | 2026-10-14

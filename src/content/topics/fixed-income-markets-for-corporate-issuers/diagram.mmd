@@ -1,0 +1,24 @@
+graph TD
+    NEED["Corporate Funding Need"] --> ST["Short-Term Funding<br/>(Working capital, liquidity)"]
+    NEED --> LT["Long-Term Funding<br/>(Investment, refinancing)"]
+
+    ST --> LOC["Bank Lines of Credit"]
+    ST --> CP["Commercial Paper<br/>(Unsecured, sold at a discount)"]
+    ST --> REPO["Repurchase Agreements<br/>(Collateralized)"]
+
+    LOC --> UNC["Uncommitted<br/>(Bank may refuse, no fee)"]
+    LOC --> COM["Committed / Revolver<br/>(Fee on undrawn amount)"]
+    COM -.-> CP
+
+    LT --> LOAN["Bank Loans"]
+    LT --> BOND["Corporate Bonds"]
+    LOAN --> SYN["Syndicated Loan<br/>(Floating rate, lender group)"]
+    LOAN --> LEV["Leveraged Loan / Private Credit<br/>(Below investment grade)"]
+
+    BOND --> IG["Investment Grade<br/>(Baa3 / BBB- or higher)"]
+    BOND --> HY["High Yield<br/>(Below Baa3 / BBB-)"]
+    IG -.->|"Downgrade: fallen angel"| HY
+    HY -.->|"Upgrade: rising star"| IG
+
+    BOND --> SPR["Yield = Benchmark + Spread<br/>(Credit and liquidity premium)"]
+    BOND --> SEC["Secondary Market<br/>(OTC dealers, wider bid-ask,<br/>matrix pricing)"]
