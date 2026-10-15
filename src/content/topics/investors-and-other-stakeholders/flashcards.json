@@ -1,0 +1,46 @@
+[
+  {
+    "front": "Who is a stakeholder?",
+    "back": "Any person or group with an interest in, or a claim on, the company's performance and decisions: shareholders, creditors, managers, directors, employees, customers, suppliers, governments and the wider community."
+  },
+  {
+    "front": "How do the claims of shareholders and creditors differ?",
+    "back": "Shareholders hold the residual claim: unlimited upside, loss limited to their investment, and voting rights. Creditors hold fixed, senior claims (interest and principal) with priority in bankruptcy, and usually no vote."
+  },
+  {
+    "front": "What is the principal-agent (agency) problem?",
+    "back": "Managers (agents) may act in their own interests rather than the owners' (principals'), for example through empire building, perquisites or short-termism, because owners cannot fully observe or control their actions."
+  },
+  {
+    "front": "What are the three components of agency costs?",
+    "back": "Monitoring costs (audits, oversight), bonding costs (costs the agent incurs to assure the principal) and residual loss (value still lost despite monitoring and bonding)."
+  },
+  {
+    "front": "What is risk shifting (asset substitution)?",
+    "back": "After debt is issued, shareholders prefer riskier projects: equity gains the upside while limited liability caps its downside, so value transfers from creditors to shareholders. Example: debt expected value falls from 80 to 65 and equity rises from 20 to 35."
+  },
+  {
+    "front": "How do creditors protect themselves from shareholder-creditor conflicts?",
+    "back": "Debt covenants (affirmative and negative), collateral and seniority, credit monitoring and ratings, and a higher required yield for riskier firms."
+  },
+  {
+    "front": "What is the conflict between controlling and minority shareholders?",
+    "back": "A controlling holder can direct the board and approve related-party transactions or tunneling that benefit itself at the minority's expense. Dual-class shares widen the gap between voting power and economic ownership."
+  },
+  {
+    "front": "Shareholder theory versus stakeholder theory?",
+    "back": "Shareholder theory: maximize shareholder value within law and ethics. Stakeholder theory: balance the interests of all stakeholder groups because long-run value depends on all of them."
+  },
+  {
+    "front": "Name the four groups of mechanisms for managing stakeholder conflicts.",
+    "back": "Legal (company law, disclosure, bankruptcy), contractual (covenants, compensation contracts, clawbacks), organizational (independent board, committees, audit) and governmental/market (regulators, ratings, activists, takeover threat)."
+  },
+  {
+    "front": "Why can stock options as pay create problems?",
+    "back": "They pay off only if the share price rises, with no downside for the holder, so they can encourage excessive risk. Better designs use restricted stock, multi-year targets, ownership requirements and clawbacks."
+  },
+  {
+    "front": "Why is debt cheaper than equity for a firm?",
+    "back": "Creditors have a senior, fixed claim paid before equity, so they bear less risk and require a lower return than shareholders, who absorb losses first."
+  }
+]

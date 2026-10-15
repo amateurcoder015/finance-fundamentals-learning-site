@@ -1,0 +1,90 @@
+[
+  {
+    "question": "In a liquidation, which of the following claims is paid last?",
+    "options": [
+      "Senior secured debt",
+      "Unsecured creditors",
+      "Common shareholders",
+      "Senior unsecured bondholders"
+    ],
+    "correctIndex": 2,
+    "explanation": "Common shareholders hold the residual claim: they are paid only after all creditors have been repaid in full. That is why equity bears the first losses and requires a higher return than debt."
+  },
+  {
+    "question": "A firm in liquidation realizes 80. It owes 60 of senior secured debt and 40 of unsecured debt. The recovery rate for unsecured creditors is:",
+    "options": [
+      "25%",
+      "100%",
+      "80%",
+      "50%"
+    ],
+    "correctIndex": 3,
+    "explanation": "Secured creditors take 60 first, leaving 20 for the 40 of unsecured claims: 20/40 = 50%. Equity receives nothing."
+  },
+  {
+    "question": "A firm has debt of 80 due in a year and assets of 100. Management replaces a safe project with a risky one that is worth 150 or 50 with equal probability. The expected value of the debt becomes:",
+    "options": [
+      "80",
+      "65",
+      "75",
+      "50"
+    ],
+    "correctIndex": 1,
+    "explanation": "If assets are worth 150, debt receives 80. If assets are worth 50, debt receives only 50. Expected debt value = 0.5(80) + 0.5(50) = 65, a loss of 15 for creditors, which is the gain shareholders capture (expected equity rises from 20 to 35)."
+  },
+  {
+    "question": "Which of the following is NOT a component of agency costs?",
+    "options": [
+      "Monitoring costs",
+      "Bonding costs",
+      "Residual loss",
+      "Dividend yield"
+    ],
+    "correctIndex": 3,
+    "explanation": "Agency costs consist of monitoring costs, bonding costs and residual loss. The dividend yield is a return measure, not an agency cost."
+  },
+  {
+    "question": "A founder holds 1 million Class B shares with 10 votes each. The public holds 9 million Class A shares with 1 vote each. The founder's share of total votes is closest to:",
+    "options": [
+      "10.0%",
+      "52.6%",
+      "47.4%",
+      "90.0%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Founder votes = 10 million; public votes = 9 million; total = 19 million. Voting share = 10/19 = 52.6%, even though economic ownership is only 1/10 = 10%."
+  },
+  {
+    "question": "Which statement best describes the difference between shareholder theory and stakeholder theory?",
+    "options": [
+      "Shareholder theory says managers should maximize shareholder value; stakeholder theory says they should balance the interests of all stakeholders",
+      "Shareholder theory ignores the law; stakeholder theory requires it",
+      "Stakeholder theory applies only to creditors; shareholder theory applies only to equity investors",
+      "The two theories are identical in objective and differ only in accounting rules"
+    ],
+    "correctIndex": 0,
+    "explanation": "Shareholder theory focuses on maximizing shareholder value (within legal and ethical limits). Stakeholder theory holds that managers should consider all groups whose cooperation determines long-run success."
+  },
+  {
+    "question": "Which mechanism is most directly aimed at reducing the shareholder-creditor conflict?",
+    "options": [
+      "Say-on-pay votes",
+      "Debt covenants",
+      "Independent audit committees",
+      "Dual-class share structures"
+    ],
+    "correctIndex": 1,
+    "explanation": "Covenants in the debt contract (for example, limits on additional debt, dividends and asset sales) restrict actions that would transfer value from creditors to shareholders. Say-on-pay and audit committees address shareholder-manager issues, and dual-class shares create a controlling versus minority conflict."
+  },
+  {
+    "question": "A manager is paid mainly with stock options that have no downside for the holder. The most likely conflict this creates is:",
+    "options": [
+      "Excessive risk taking relative to the interests of creditors and long-term shareholders",
+      "Excessive caution, since options lose value if the share price falls",
+      "A reduction in agency costs to zero",
+      "Lower disclosure by the firm because options are not reported"
+    ],
+    "correctIndex": 0,
+    "explanation": "Options pay off only if the share price rises and cost the holder nothing if it falls, so they reward risk taking. This can shift value from creditors and long-term shareholders to the option holder, a risk-shifting problem."
+  }
+]

@@ -1,0 +1,24 @@
+graph TD
+    PRR["Portfolio Risk and Return: Part I"] --> RET["Measuring Return"]
+    PRR --> RISK["Measuring Risk"]
+    PRR --> PREF["Investor Preferences"]
+    PRR --> PORT["Two-Asset Portfolio"]
+
+    RET --> HPR["Holding Period Return<br/>(P1 - P0 + D1) / P0"]
+    RET --> MEANS["Arithmetic vs Geometric Mean<br/>(Geometric is never larger)"]
+    RET --> WEIGHT["Money-Weighted (IRR) vs Time-Weighted<br/>(TWR ignores cash-flow timing)"]
+    RET --> ADJ["Adjusted Returns<br/>(Net, post-tax, real, leveraged)"]
+
+    RISK --> VAR["Variance and Standard Deviation<br/>(Sample uses n - 1)"]
+    RISK --> CV["Coefficient of Variation<br/>(Risk per unit of return)"]
+    RISK --> SHAPE["Skewness and Kurtosis<br/>(Fat tails understate risk)"]
+
+    PREF --> UTIL["Utility: U = E(R) - 0.5 A variance"]
+    UTIL --> INDIFF["Indifference Curves<br/>(Upward sloping and convex for risk-averse)"]
+
+    PORT --> ER["Expected Return<br/>(Weighted average)"]
+    PORT --> PV["Portfolio Variance<br/>(Needs covariance or correlation)"]
+    PV --> DIV["Diversification Benefit<br/>(Exists when correlation is below +1)"]
+    PORT --> EF["Efficient Frontier<br/>(From global minimum-variance portfolio upward)"]
+    INDIFF --> OPT["Optimal Portfolio<br/>(Indifference curve tangent to frontier)"]
+    EF --> OPT

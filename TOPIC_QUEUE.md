@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Portfolio Risk and Return: Part I | Portfolio Management | intermediate
-- [ ] Investors and Other Stakeholders | Corporate Finance | beginner
 - [ ] Fixed-Income Markets for Government Issuers | Fixed Income | intermediate
 - [ ] Analyzing Statements of Cash Flows II | Financial Statements | intermediate
 - [ ] Understanding Business Cycles | Economics | intermediate
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Market Efficiency | Equities | intermediate | 2026-10-13
 - [x] Fixed-Income Markets for Corporate Issuers | Fixed Income | intermediate | 2026-10-14
 - [x] Analyzing Statements of Cash Flows I | Financial Statements | intermediate | 2026-10-14
+- [x] Portfolio Risk and Return: Part I | Portfolio Management | intermediate | 2026-10-15
+- [x] Investors and Other Stakeholders | Corporate Finance | beginner | 2026-10-15

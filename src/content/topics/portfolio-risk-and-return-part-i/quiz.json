@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A share is bought for 50, pays a dividend of 1.50 and is sold for 53 one year later. What is the holding period return?",
+    "options": [
+      "6.0%",
+      "9.0%",
+      "3.0%",
+      "10.6%"
+    ],
+    "correctIndex": 1,
+    "explanation": "HPR = (P1 - P0 + D1)/P0 = (53 - 50 + 1.5)/50 = 4.5/50 = 9.0%."
+  },
+  {
+    "question": "A fund returned +20%, -10% and +15% in three consecutive years. Its geometric mean annual return is closest to:",
+    "options": [
+      "8.33%",
+      "7.50%",
+      "7.49%",
+      "7.00%"
+    ],
+    "correctIndex": 2,
+    "explanation": "Growth factor = 1.20 x 0.90 x 1.15 = 1.242. Geometric mean = 1.242^(1/3) - 1 = 7.49%. The 8.33% figure is the arithmetic mean, which always exceeds the geometric mean when returns vary."
+  },
+  {
+    "question": "A portfolio earned a nominal return of 8% while inflation was 3%. The real return is closest to:",
+    "options": [
+      "5.00%",
+      "4.50%",
+      "11.24%",
+      "4.85%"
+    ],
+    "correctIndex": 3,
+    "explanation": "Real return = (1.08 / 1.03) - 1 = 4.85%. Subtracting inflation (5.00%) is only an approximation."
+  },
+  {
+    "question": "An investor with 400 of equity borrows 200 at 5% and invests the full 600 in a portfolio that returns 12%. The return on the investor's equity is closest to:",
+    "options": [
+      "12.0%",
+      "17.0%",
+      "15.5%",
+      "13.5%"
+    ],
+    "correctIndex": 2,
+    "explanation": "R_L = R_P + (V_B/V_E)(R_P - r_B) = 12% + (200/400)(12% - 5%) = 15.5%. Check: profit = 72 - 10 interest = 62; 62/400 = 15.5%."
+  },
+  {
+    "question": "A risk-averse investor has a risk-aversion coefficient A = 3. For a portfolio with expected return 10% and standard deviation 20%, utility U = E(R) - 0.5 A variance equals:",
+    "options": [
+      "4.0%",
+      "7.0%",
+      "6.0%",
+      "-2.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Variance = 0.20^2 = 0.04. U = 0.10 - 0.5 x 3 x 0.04 = 0.10 - 0.06 = 0.04, or 4.0%."
+  },
+  {
+    "question": "Asset X has sigma = 20% and asset Y has sigma = 10%. A 60% X / 40% Y portfolio has a correlation of 0.3 between them. The portfolio standard deviation is closest to:",
+    "options": [
+      "16.00%",
+      "13.74%",
+      "15.00%",
+      "12.65%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Variance = 0.36(0.04) + 0.16(0.01) + 2(0.6)(0.4)(0.3)(0.20)(0.10) = 0.0144 + 0.0016 + 0.00288 = 0.01888. The square root is 13.74%. The 16.00% figure is the weighted average of the standard deviations, which would apply only if correlation were +1."
+  },
+  {
+    "question": "A portfolio contains 10 assets. How many distinct pairwise covariances determine its variance?",
+    "options": [
+      "10",
+      "90",
+      "100",
+      "45"
+    ],
+    "correctIndex": 3,
+    "explanation": "The number of distinct covariances is n(n-1)/2 = 10 x 9 / 2 = 45. The 90 figure double-counts each pair (covariance of i with j equals j with i)."
+  },
+  {
+    "question": "An investor makes a large deposit just before a market fall. Compared with the manager's time-weighted return, the investor's money-weighted return will most likely be:",
+    "options": [
+      "Lower, because the money-weighted return reflects the timing and size of cash flows",
+      "Higher, because the money-weighted return ignores the deposit",
+      "The same, because both are geometric averages",
+      "Higher, because larger balances are weighted less"
+    ],
+    "correctIndex": 0,
+    "explanation": "The money-weighted return is the IRR of all cash flows, so a large investment just before poor performance drags it down. The time-weighted return gives each sub-period equal weight and is unaffected by deposit timing, which is why it is used to judge managers."
+  }
+]

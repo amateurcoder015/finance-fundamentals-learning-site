@@ -1,0 +1,26 @@
+graph TD
+    CO["Company"] --> SH["Shareholders<br/>(Residual claim, vote, limited liability)"]
+    CO --> CR["Creditors<br/>(Fixed senior claim, covenants)"]
+    CO --> MG["Managers and Board<br/>(Agents running and overseeing the firm)"]
+    CO --> OT["Other Stakeholders<br/>(Employees, customers, suppliers,<br/>governments, community)"]
+
+    SH --> C1["Shareholder vs Manager<br/>(Agency problem, empire building, perks)"]
+    MG --> C1
+    SH --> C2["Shareholder vs Creditor<br/>(Risk shifting, excess leverage, payouts)"]
+    CR --> C2
+    SH --> C3["Controlling vs Minority<br/>(Related-party deals, dual-class voting)"]
+    OT --> C4["Profit vs Other Stakeholders<br/>(Layoffs, safety, environment, taxes)"]
+
+    C1 --> AC["Agency Costs<br/>(Monitoring + Bonding + Residual loss)"]
+
+    TH["Two Views of the Firm"] --> ST1["Shareholder Theory<br/>(Maximize shareholder value)"]
+    TH --> ST2["Stakeholder Theory<br/>(Balance all stakeholders)"]
+
+    C1 --> MECH["Managing Conflicts"]
+    C2 --> MECH
+    C3 --> MECH
+    C4 --> MECH
+    MECH --> LG["Legal<br/>(Company law, disclosure, bankruptcy)"]
+    MECH --> CT["Contractual<br/>(Covenants, aligned pay, clawbacks)"]
+    MECH --> OR["Organizational<br/>(Independent board, audit committee)"]
+    MECH --> GV["Governmental and Market<br/>(Regulators, ratings, activists, takeovers)"]

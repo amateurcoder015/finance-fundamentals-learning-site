@@ -1,0 +1,50 @@
+[
+  {
+    "front": "How is holding period return calculated?",
+    "back": "R = (P1 - P0 + D1) / P0. It combines the price change and income received over the period, relative to the starting price."
+  },
+  {
+    "front": "Arithmetic mean versus geometric mean return: which is used for what?",
+    "back": "The arithmetic mean estimates the expected return for a single future period. The geometric mean is the compound annual growth rate over the sample. Geometric <= arithmetic, with the gap widening as volatility increases."
+  },
+  {
+    "front": "Money-weighted versus time-weighted return?",
+    "back": "Money-weighted return is the IRR of all portfolio cash flows and is affected by the timing and size of deposits and withdrawals. Time-weighted return compounds sub-period returns and is unaffected by cash flows, so it is the standard for evaluating managers."
+  },
+  {
+    "front": "How do you convert a nominal return to a real return?",
+    "back": "1 + R_real = (1 + R_nominal) / (1 + inflation). Example: (1.08 / 1.03) - 1 = 4.85%. The approximation R_nominal - inflation is slightly higher."
+  },
+  {
+    "front": "What is the formula for leveraged return?",
+    "back": "R_L = R_P + (V_B / V_E)(R_P - r_B), where V_B is borrowed funds, V_E is the investor's equity, R_P is the return on the whole position and r_B is the borrowing rate. Leverage magnifies gains and losses."
+  },
+  {
+    "front": "Sample variance formula and coefficient of variation?",
+    "back": "s^2 = sum of (R_t - mean)^2 / (n - 1). Coefficient of variation = standard deviation / mean return, i.e. risk per unit of return; lower is better."
+  },
+  {
+    "front": "What do skewness and kurtosis tell you beyond standard deviation?",
+    "back": "Skewness shows asymmetry (negative skew: long left tail of large losses). Excess kurtosis shows fat tails (extreme outcomes more likely than under a normal distribution). Both mean standard deviation can understate downside risk."
+  },
+  {
+    "front": "State the mean-variance utility function and the meaning of A.",
+    "back": "U = E(R) - 0.5 A variance. A is the risk-aversion coefficient: A > 0 risk averse, A = 0 risk neutral, A < 0 risk seeking. U is the certainty-equivalent return."
+  },
+  {
+    "front": "What is the two-asset portfolio variance formula?",
+    "back": "Var = w1^2 s1^2 + w2^2 s2^2 + 2 w1 w2 rho12 s1 s2, where Cov12 = rho12 s1 s2. Weights sum to 1."
+  },
+  {
+    "front": "When does diversification reduce portfolio risk, and how much?",
+    "back": "Whenever correlation is below +1, portfolio standard deviation is less than the weighted average of the assets' standard deviations, and the benefit grows as correlation falls. At correlation +1 there is no benefit; at -1 risk can be eliminated entirely."
+  },
+  {
+    "front": "What is the global minimum-variance portfolio and the efficient frontier?",
+    "back": "The global minimum-variance portfolio is the lowest-risk portfolio on the frontier. The efficient frontier is the part of the minimum-variance frontier from that portfolio upward, giving the highest expected return for each level of risk."
+  },
+  {
+    "front": "How many covariances are there in an n-asset portfolio?",
+    "back": "n(n - 1) / 2 distinct covariances, versus n variances, so covariances dominate portfolio risk as n grows."
+  }
+]

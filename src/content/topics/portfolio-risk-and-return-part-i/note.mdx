@@ -1,0 +1,222 @@
+---
+title: "Portfolio Risk and Return: Part I"
+description: "Measures of return (holding period, arithmetic, geometric, money-weighted, time-weighted, real, leveraged), risk measures, risk aversion and utility, and the risk and return of a two-asset portfolio, including diversification and the efficient frontier."
+category: "Portfolio Management"
+difficulty: "intermediate"
+dateAdded: "2026-10-15"
+tags: ["portfolio-risk-return", "holding-period-return", "geometric-mean", "diversification", "correlation", "efficient-frontier"]
+---
+
+# Portfolio Risk and Return: Part I
+
+An investor chooses a portfolio by trading off **expected return** against **risk**. This chapter builds the tools for that trade-off: how returns are measured, how risk is measured, how investors' attitude to risk is modelled, and how combining assets changes portfolio risk and return. The capital allocation line, CAPM and the Sharpe ratio belong to Part II.
+
+---
+
+## 1. Measures of Return
+
+### Holding period return
+
+The **holding period return (HPR)** is the total return over one holding period, made up of price change plus income:
+
+$$R = \frac{P_1 - P_0 + D_1}{P_0}$$
+
+A security bought at 100, paying a dividend of 2 and sold at 108, has $R = (108 - 100 + 2)/100 = 10\%$.
+
+### Arithmetic and geometric mean returns
+
+For returns $R_1, \dots, R_T$ over $T$ periods:
+
+$$\bar{R}_{\text{arith}} = \frac{1}{T}\sum_{t=1}^{T} R_t \qquad\qquad \bar{R}_{G} = \left[\prod_{t=1}^{T}(1+R_t)\right]^{1/T} - 1$$
+
+- The **arithmetic mean** is the best simple estimate of the **expected return in a single future period**.
+- The **geometric mean** is the **compound growth rate** actually earned over the whole sample. It is never larger than the arithmetic mean, and the gap widens as returns become more volatile. They are equal only when all returns are identical.
+
+**Worked example.** Annual returns of $+20\%$, $-10\%$ and $+15\%$:
+
+1. Arithmetic mean $= (20 - 10 + 15)/3 = 8.33\%$
+2. Growth factor $= 1.20 \times 0.90 \times 1.15 = 1.242$
+3. Geometric mean $= 1.242^{1/3} - 1 = 7.49\%$
+
+Check: $1.0749^3 \approx 1.242$. A starting 100 grows to 124.2, which is a compound 7.49% a year, not 8.33%.
+
+### Money-weighted versus time-weighted return
+
+| | Money-weighted return (MWR) | Time-weighted return (TWR) |
+| --- | --- | --- |
+| **Definition** | The internal rate of return (IRR) of all cash flows into and out of the portfolio | The compound (geometric) growth rate of sub-period returns, with each sub-period weighted equally |
+| **Affected by timing and size of deposits and withdrawals?** | **Yes** | **No** |
+| **Best used to** | Evaluate the investor's own experience, including their timing | Evaluate a **manager**, who does not control client cash flows |
+
+**Worked example.** Buy 1 share at 100 at $t=0$. At $t=1$ the price is 120, and the investor buys one more share. At $t=2$ the price is 110 and both shares are sold. No dividends.
+
+- Cash flows: $-100$ at $t=0$, $-120$ at $t=1$, $+220$ at $t=2$.
+- **MWR:** $-100 - \dfrac{120}{1+r} + \dfrac{220}{(1+r)^2} = 0$. At $r=0$: $-100 - 120 + 220 = 0$, so **MWR $= 0\%$**. The investor put in more money just before the price fell.
+- **TWR:** sub-period returns are $120/100 - 1 = +20\%$ and $110/120 - 1 = -8.33\%$. So TWR $= \sqrt{1.20 \times 0.9167} - 1 = \sqrt{1.10} - 1 = 4.88\%$.
+
+The manager's price path earned about 4.9% a year; the investor's own timing earned 0%.
+
+### Annualizing
+
+$$R_{\text{annual}} = (1 + R_{\text{period}})^{\text{periods per year}} - 1$$
+
+For example, a 1% monthly return annualizes to $1.01^{12} - 1 = 12.68\%$, not 12%. Compounding applies to returns; for **variance** over a longer horizon (independent periods) the variance scales with time and the standard deviation with its square root.
+
+### Other return measures
+
+- **Gross return** is before management fees and other costs; **net return** is after them (fees, trading costs, administrative costs).
+- **Pre-tax** versus **post-tax** return: post-tax return deducts taxes on income and realized gains.
+- **Nominal return** includes inflation; **real return** removes it:
+
+$$1 + R_{\text{real}} = \frac{1 + R_{\text{nominal}}}{1 + \pi} \;\approx\; R_{\text{nominal}} - \pi$$
+
+With a nominal return of 8% and inflation of 3%, $R_{\text{real}} = 1.08/1.03 - 1 = 4.85\%$ (the approximation gives 5%).
+
+- **Leveraged return** is the return on the investor's **own equity** when part of the position is borrowed:
+
+$$R_L = R_P + \frac{V_B}{V_E}\,(R_P - r_B)$$
+
+where $V_B$ is the amount borrowed, $V_E$ the investor's equity, $R_P$ the return on the whole position and $r_B$ the borrowing rate.
+
+**Worked example.** Equity 1,000, borrowed 500, so 1,500 is invested at $R_P = 10\%$; borrowing cost 4%.
+
+$$R_L = 10\% + \frac{500}{1000}(10\% - 4\%) = 13\%$$
+
+Check in money terms: profit $= 150 - 20 = 130$ on equity of 1,000, which is 13%. If $R_P$ were below $r_B$, leverage would **lower** the return and magnify losses.
+
+---
+
+## 2. Measuring Risk
+
+For a set of $n$ historical returns, the **sample variance** and **standard deviation** are:
+
+$$s^2 = \frac{\sum_{t=1}^{n}(R_t - \bar{R})^2}{n-1} \qquad\qquad s = \sqrt{s^2}$$
+
+(For a known probability distribution, variance is the probability-weighted squared deviation from the expected return, with no $n-1$ adjustment.)
+
+**Worked example.** Returns of $12\%, -4\%, 8\%, 20\%, -6\%$:
+
+1. Mean $= 30/5 = 6\%$
+2. Deviations: $6, -10, 2, 14, -12$. Squares: $36, 100, 4, 196, 144$, sum $= 480$.
+3. $s^2 = 480/4 = 120$ (in $\%^2$), so $s = \sqrt{120} = 10.95\%$.
+4. **Coefficient of variation** $= s/\bar{R} = 10.95/6 = 1.83$, which is risk per unit of return. Lower is better when comparing assets.
+
+### Shape of the return distribution
+
+Standard deviation is a full description of risk only when returns are **normally distributed**. Real return distributions often depart from this:
+
+- **Skewness:** positive skew means a long right tail (large occasional gains); negative skew means a long left tail (large occasional losses).
+- **Kurtosis:** a distribution with **excess kurtosis** (greater than 3 in total kurtosis) has fatter tails, so extreme outcomes are more likely than a normal distribution implies.
+
+Equities and many alternative strategies show negative skew and fat tails, so standard deviation can understate their downside risk.
+
+### Historical risk and return by asset class
+
+Across long histories, return and risk are positively related: **cash and T-bills** have the lowest return and volatility, **government and corporate bonds** are in between, and **equities** (with small-cap above large-cap) have the highest return and volatility. Historical averages are estimates and do not guarantee future results.
+
+---
+
+## 3. Risk Aversion and Utility
+
+Investors are generally **risk averse**: given the same expected return, they prefer the lower risk, and will accept more risk only for more expected return.
+
+| Attitude | Behaviour |
+| --- | --- |
+| **Risk averse** | Prefers less risk at the same expected return; needs a **risk premium** to hold risky assets |
+| **Risk neutral** | Cares only about expected return; indifferent to risk |
+| **Risk seeking** | Prefers more risk at the same expected return |
+
+A common mean-variance **utility function** is:
+
+$$U = E(R) - \tfrac{1}{2}\,A\,\sigma^2$$
+
+where $A$ is the **risk-aversion coefficient** ($A > 0$ risk averse, $A = 0$ risk neutral, $A < 0$ risk seeking). A larger $A$ means each unit of variance costs more utility.
+
+**Worked example.** $A = 4$, a portfolio with $E(R) = 8.4\%$ and $\sigma = 13.74\%$ ($\sigma^2 = 0.01888$):
+
+$$U = 0.084 - \tfrac{1}{2}(4)(0.01888) = 0.084 - 0.03776 = 4.62\%$$
+
+This is the **certainty-equivalent return**: the risk-free return that would leave this investor equally happy.
+
+An **indifference curve** plots combinations of risk (horizontal axis) and expected return (vertical axis) giving the same utility. For a risk-averse investor it slopes upward and is convex; curves further up and to the left represent higher utility. A more risk-averse investor has steeper curves.
+
+---
+
+## 4. Portfolio Return and Risk: Two Assets
+
+### Expected return
+
+A portfolio's expected return is the weighted average of its assets' expected returns, with weights $w_i$ summing to 1:
+
+$$E(R_P) = w_1 E(R_1) + w_2 E(R_2)$$
+
+### Covariance and correlation
+
+**Covariance** measures how two returns move together; **correlation** scales it to the range $-1$ to $+1$:
+
+$$\rho_{12} = \frac{\operatorname{Cov}(R_1,R_2)}{\sigma_1\sigma_2} \quad\Longleftrightarrow\quad \operatorname{Cov}(R_1,R_2) = \rho_{12}\,\sigma_1\,\sigma_2$$
+
+### Portfolio variance
+
+$$\sigma_P^2 = w_1^2\sigma_1^2 + w_2^2\sigma_2^2 + 2\,w_1 w_2\,\rho_{12}\,\sigma_1\sigma_2$$
+
+Portfolio variance depends on each asset's variance **and** on how the assets co-move. For $n$ assets there are $n$ variances and $n(n-1)/2$ distinct covariances, so covariances dominate as $n$ grows (10 assets: 10 variances, 45 covariances).
+
+**Worked example.** Asset A: $E(R)=10\%$, $\sigma=20\%$. Asset B: $E(R)=6\%$, $\sigma=10\%$. Correlation $\rho=0.3$. Weights 60% A, 40% B.
+
+1. $E(R_P) = 0.6(10\%) + 0.4(6\%) = 8.4\%$
+2. $\operatorname{Cov} = 0.3 \times 0.20 \times 0.10 = 0.006$
+3. $\sigma_P^2 = (0.6)^2(0.20)^2 + (0.4)^2(0.10)^2 + 2(0.6)(0.4)(0.006)$
+ $= 0.0144 + 0.0016 + 0.00288 = 0.01888$
+4. $\sigma_P = \sqrt{0.01888} = 13.74\%$
+
+The weighted average of the two standard deviations is $0.6(20\%) + 0.4(10\%) = 16\%$. The portfolio's 13.74% is lower: that gap is the **diversification benefit**.
+
+### How correlation drives diversification
+
+Same assets and weights as above, changing only $\rho$:
+
+| Correlation $\rho$ | Portfolio $\sigma_P$ |
+| --- | --- |
+| $+1.0$ | 16.00% |
+| $+0.3$ | 13.74% |
+| $0$ | 12.65% |
+| $-1.0$ | 8.00% |
+
+- At $\rho = +1$, $\sigma_P$ is exactly the weighted average of the standard deviations: **no diversification benefit**.
+- For any $\rho < +1$, portfolio risk is **less than** the weighted average, while expected return is unchanged.
+- At $\rho = -1$ the risk can be eliminated completely by choosing the weight $w_1 = \sigma_2/(\sigma_1+\sigma_2)$. Here that is $w_A = 10/30 = 33.3\%$, and $\sigma_P = |0.333(20\%) - 0.667(10\%)| = 0$.
+
+### Minimum-variance portfolio
+
+The weight in asset 1 that minimizes two-asset portfolio variance is:
+
+$$w_1^{*} = \frac{\sigma_2^2 - \operatorname{Cov}_{12}}{\sigma_1^2 + \sigma_2^2 - 2\operatorname{Cov}_{12}}$$
+
+With the example above: $w_A^{*} = \dfrac{0.01 - 0.006}{0.04 + 0.01 - 0.012} = \dfrac{0.004}{0.038} = 10.53\%$. That portfolio has $E(R) = 0.1053(10\%) + 0.8947(6\%) = 6.42\%$ and $\sigma = 9.79\%$, **lower than the 10% risk of the safer asset B on its own**. Adding some of the riskier asset reduces risk.
+
+---
+
+## 5. The Efficient Frontier
+
+Varying the weights traces a curve in risk-return space (risk on the horizontal axis, expected return on the vertical axis) called the **minimum-variance frontier**: the lowest risk achievable for each level of expected return.
+
+- The leftmost point is the **global minimum-variance portfolio**.
+- Portfolios on the frontier **below** the global minimum-variance portfolio are dominated: another portfolio gives more return at the same risk.
+- The part from the global minimum-variance portfolio upward is the **efficient frontier**: for each risk level, the maximum expected return (equivalently, for each return, the minimum risk).
+- Lower correlation between assets pulls the frontier further to the left, giving more diversification benefit.
+- With many assets, the feasible set is a region; its upper-left boundary is the efficient frontier. Combined with an investor's indifference curves, the **optimal portfolio** is where the highest attainable indifference curve is tangent to the efficient frontier.
+
+<Note>Diversification reduces risk that is specific to individual assets. It cannot remove risk common to all assets (market risk). That distinction is developed in Part II.</Note>
+
+---
+
+## Key takeaways
+
+- HPR $= (P_1 - P_0 + D_1)/P_0$. Use the **arithmetic** mean to estimate a one-period expected return and the **geometric** mean for compound growth; geometric $\le$ arithmetic.
+- **TWR** removes the effect of cash-flow timing and is used to judge managers; **MWR** (IRR) reflects the investor's timing.
+- Real return: $(1+R_{\text{nominal}})/(1+\pi) - 1$. Leveraged return: $R_P + (V_B/V_E)(R_P - r_B)$.
+- Sample variance divides by $n-1$. Coefficient of variation $= \sigma/\text{mean}$. Negative skew and fat tails mean standard deviation can understate risk.
+- Risk-averse utility: $U = E(R) - \tfrac12 A\sigma^2$.
+- Two-asset variance: $w_1^2\sigma_1^2 + w_2^2\sigma_2^2 + 2w_1w_2\rho\sigma_1\sigma_2$. Diversification benefit exists whenever $\rho < 1$ and grows as $\rho$ falls.
+- The efficient frontier runs from the global minimum-variance portfolio upward; the optimal portfolio is where an indifference curve touches it.
