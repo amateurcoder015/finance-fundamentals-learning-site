@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A company reports CFO of 500, interest paid of 60 (included in CFO under U.S. GAAP), a tax rate of 25% and capital expenditure of 320 with no asset sales. FCFF is closest to:",
+    "options": [
+      "180",
+      "240",
+      "225",
+      "140"
+    ],
+    "correctIndex": 2,
+    "explanation": "FCFF = CFO + Int(1 − t) − FCInv = 500 + 60(0.75) − 320 = 500 + 45 − 320 = 225. Adding back the full 60 gives 240; adding nothing gives 180."
+  },
+  {
+    "question": "Using the same company (CFO 500, interest 60, tax 25%, capex 320) and net borrowing of 40, FCFE is closest to:",
+    "options": [
+      "220",
+      "180",
+      "225",
+      "260"
+    ],
+    "correctIndex": 0,
+    "explanation": "FCFE = CFO − FCInv + Net borrowing = 500 − 320 + 40 = 220. Check: FCFF − Int(1−t) + net borrowing = 225 − 45 + 40 = 220."
+  },
+  {
+    "question": "Which ratio is calculated as (CFO + interest paid + taxes paid) ÷ interest paid?",
+    "options": [
+      "Debt coverage",
+      "Interest coverage",
+      "Reinvestment",
+      "Cash to income"
+    ],
+    "correctIndex": 1,
+    "explanation": "The cash flow interest coverage ratio adds interest and taxes back to CFO (it is measured after them under U.S. GAAP) and divides by interest paid."
+  },
+  {
+    "question": "A firm has CFO of 360, operating income of 450, revenue of 1,800 and average total assets of 3,000. Which statement is correct?",
+    "options": [
+      "Cash flow to revenue is 20.0% and cash to income is 0.80",
+      "Cash flow to revenue is 20.0% and cash to income is 1.25",
+      "Cash return on assets is 12.0% and cash to income is 1.25",
+      "Cash flow to revenue is 25.0% and cash return on assets is 12.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "CFO/revenue = 360/1,800 = 20.0%; CFO/operating income = 360/450 = 0.80; cash return on assets = 360/3,000 = 12.0%. Only the first option has both figures correct for the pair it states."
+  },
+  {
+    "question": "Under IFRS a company classifies interest paid in financing activities. Compared with an otherwise identical U.S. GAAP company, its:",
+    "options": [
+      "CFO is lower and CFF is higher by the interest paid",
+      "CFO is higher and CFF is lower by the interest paid",
+      "CFO is higher and CFI is lower",
+      "Total change in cash is higher"
+    ],
+    "correctIndex": 1,
+    "explanation": "Moving interest paid out of operating raises CFO and lowers CFF by the same amount. The total change in cash is unchanged, so CFO-based ratios must be adjusted before comparing the companies."
+  },
+  {
+    "question": "In a common-size cash flow statement using the total inflows/outflows method, each line item is expressed as a percentage of:",
+    "options": [
+      "Net revenue",
+      "Net income",
+      "Total assets",
+      "Total cash inflows (for inflows) or total cash outflows (for outflows)"
+    ],
+    "correctIndex": 3,
+    "explanation": "The inflows/outflows method states inflows as a percentage of total inflows and outflows as a percentage of total outflows. The revenue method uses net revenue as the base."
+  },
+  {
+    "question": "A company has CFO of 400, cash paid for long-term assets of 320, debt repayments of 80 and dividends of 100. The investing and financing ratio is closest to:",
+    "options": [
+      "1.00",
+      "0.80",
+      "1.25",
+      "5.00"
+    ],
+    "correctIndex": 1,
+    "explanation": "Outflows for investing and financing = 320 + 80 + 100 = 500. Ratio = 400/500 = 0.80, below 1.0, so CFO alone cannot cover all of these outflows. Using only capex gives the reinvestment ratio of 1.25."
+  },
+  {
+    "question": "FCFF can be computed from EBIT using which formula (t is the tax rate)?",
+    "options": [
+      "EBIT + Depreciation − FCInv − WCInv",
+      "EBIT(1 − t) − Depreciation − FCInv + WCInv",
+      "EBIT(1 − t) + Depreciation − FCInv − WCInv",
+      "EBIT × t + Depreciation − FCInv"
+    ],
+    "correctIndex": 2,
+    "explanation": "Start with after-tax operating profit, add back non-cash depreciation, then subtract investment in fixed capital and working capital. Check with a firm having EBIT 380, depreciation 100, FCInv 260, WCInv 18 and t = 30%: 266 + 100 − 278 = 88."
+  }
+]

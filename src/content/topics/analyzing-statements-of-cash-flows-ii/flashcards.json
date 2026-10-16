@@ -1,0 +1,46 @@
+[
+  {
+    "front": "FCFF from CFO (interest paid in CFO)",
+    "back": "FCFF = CFO + Int(1 − t) − FCInv. Cash available to all capital providers after investment."
+  },
+  {
+    "front": "FCFE from CFO",
+    "back": "FCFE = CFO − FCInv + Net borrowing, where net borrowing = debt issued − debt repaid. Also FCFE = FCFF − Int(1 − t) + net borrowing."
+  },
+  {
+    "front": "FCFF from net income",
+    "back": "FCFF = NI + NCC + Int(1 − t) − FCInv − WCInv."
+  },
+  {
+    "front": "FCFF from EBIT and from EBITDA",
+    "back": "From EBIT: EBIT(1 − t) + Dep − FCInv − WCInv. From EBITDA: EBITDA(1 − t) + Dep × t − FCInv − WCInv."
+  },
+  {
+    "front": "Two methods of common-size cash flow statements",
+    "back": "Inflows/outflows method: each item as a % of total inflows or total outflows. Revenue method: each item as a % of net revenue."
+  },
+  {
+    "front": "Cash flow performance ratios",
+    "back": "CFO/revenue; CFO/average total assets (cash return on assets); CFO/average equity (cash return on equity); CFO/operating income (cash to income); (CFO − preferred dividends)/weighted average shares."
+  },
+  {
+    "front": "Debt coverage and interest coverage ratios",
+    "back": "Debt coverage = CFO ÷ total debt. Interest coverage = (CFO + interest paid + taxes paid) ÷ interest paid."
+  },
+  {
+    "front": "Reinvestment, debt payment and dividend payment ratios",
+    "back": "Reinvestment = CFO ÷ cash paid for long-term assets. Debt payment = CFO ÷ cash paid for LT debt repayment. Dividend payment = CFO ÷ dividends paid."
+  },
+  {
+    "front": "Investing and financing ratio",
+    "back": "CFO ÷ cash outflows for investing and financing activities. Below 1.0 means CFO alone cannot cover those outflows."
+  },
+  {
+    "front": "What does a cash to income ratio persistently below 1.0 suggest?",
+    "back": "Operating income is not converting to cash, which may indicate low earnings quality (for example rising receivables or inventory) or heavy working capital investment."
+  },
+  {
+    "front": "Effect of classifying interest paid in financing (IFRS)",
+    "back": "CFO is higher and CFF lower by the interest paid; total cash change is unchanged. Adjust before comparing CFO-based ratios across companies."
+  }
+]

@@ -1,0 +1,20 @@
+graph TD
+    CFS["Cash Flow Statement Analysis"] --> READ["Reading the Statement<br/>(Sources, uses, earnings quality)"]
+    CFS --> CS["Common-Size Statements"]
+    CFS --> FCF["Free Cash Flow"]
+    CFS --> RAT["Cash Flow Ratios"]
+
+    CS --> CS1["Inflows / outflows method<br/>(% of total inflows or outflows)"]
+    CS --> CS2["Revenue method<br/>(% of net revenue)"]
+
+    FCF --> FCFF["FCFF<br/>CFO + Int(1-t) - FCInv"]
+    FCF --> FCFE["FCFE<br/>CFO - FCInv + Net borrowing"]
+    FCFF --> ALT["Same answer from NI, EBIT or EBITDA<br/>(adjust for NCC, WCInv, tax)"]
+    FCFF -.->|"minus Int(1-t), plus net borrowing"| FCFE
+
+    RAT --> PERF["Performance Ratios"]
+    RAT --> COV["Coverage Ratios"]
+    PERF --> P1["CFO / Revenue<br/>CFO / Avg assets, Avg equity"]
+    PERF --> P2["CFO / Operating income<br/>(CFO - Pref. div) / Shares"]
+    COV --> C1["Debt: CFO / Total debt<br/>Interest: (CFO + Int + Tax) / Int"]
+    COV --> C2["Reinvestment, Debt payment,<br/>Dividend payment, Investing and financing"]

@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A 91-day Treasury bill with face value 100 is quoted at a discount rate of 4.80% (360-day basis). Its price is closest to:",
+    "options": [
+      "95.20",
+      "98.79",
+      "99.52",
+      "97.57"
+    ],
+    "correctIndex": 1,
+    "explanation": "P = 100 × (1 − 0.048 × 91/360) = 100 × (1 − 0.012133) = 98.7867, about 98.79. A price of 95.20 would apply the full 4.80% discount as if the bill had a one-year life."
+  },
+  {
+    "question": "In a single-price (Dutch) auction of government bonds, successful bidders:",
+    "options": [
+      "Each pay the price they bid",
+      "Pay the average of all bids received",
+      "All pay the stop-out price",
+      "Pay the price of the highest rejected bid plus a fee"
+    ],
+    "correctIndex": 2,
+    "explanation": "In a single-price auction every winning bidder receives the allocation at the stop-out price (the least attractive accepted level). In a multiple-price auction each bidder pays their own bid."
+  },
+  {
+    "question": "A bond has par 1,000 and a real coupon of 3.00% paid semiannually. The index ratio at the first coupon date is 1.020. The first coupon is closest to:",
+    "options": [
+      "15.30",
+      "15.00",
+      "30.60",
+      "20.40"
+    ],
+    "correctIndex": 0,
+    "explanation": "Adjusted principal = 1,000 × 1.020 = 1,020. Coupon = 1,020 × 0.03 / 2 = 15.30. A 15.00 coupon ignores the inflation adjustment; 30.60 forgets to halve for semiannual payments."
+  },
+  {
+    "question": "An investor in a 25% marginal tax bracket is considering a tax-exempt municipal bond yielding 3.30%. The taxable-equivalent yield is:",
+    "options": [
+      "2.48%",
+      "3.30%",
+      "4.13%",
+      "4.40%"
+    ],
+    "correctIndex": 3,
+    "explanation": "Taxable-equivalent yield = 3.30% / (1 − 0.25) = 3.30% / 0.75 = 4.40%. Multiplying by (1 − t) gives 2.48%, which moves in the wrong direction."
+  },
+  {
+    "question": "Which statement about supranational issuers is most accurate?",
+    "options": [
+      "They are owned by a single sovereign and have no capital backing",
+      "They are owned by several member countries and usually enjoy preferred creditor status",
+      "They can only issue debt in a single currency",
+      "They are always rated lower than the sovereigns that own them"
+    ],
+    "correctIndex": 1,
+    "explanation": "Supranationals are owned by multiple member states, are backed by paid-in and callable capital, benefit from preferred creditor status and are usually rated AAA. They commonly borrow in many currencies."
+  },
+  {
+    "question": "A government has debt of 600 and nominal GDP of 500. Next year it runs a deficit of 30, financed entirely by new debt, and nominal GDP grows 5%. Debt-to-GDP next year is closest to:",
+    "options": [
+      "114.3%",
+      "126.0%",
+      "120.0%",
+      "105.0%"
+    ],
+    "correctIndex": 2,
+    "explanation": "New debt = 600 + 30 = 630. New GDP = 500 × 1.05 = 525. Ratio = 630/525 = 120.0%, unchanged from 600/500 = 120%. The 126.0% option divides the new debt by the old GDP (630/500)."
+  },
+  {
+    "question": "Which type of municipal bond is repaid from the cash flows of a specific facility such as a toll road?",
+    "options": [
+      "Revenue bond",
+      "General obligation bond",
+      "Sovereign bond",
+      "Treasury strip"
+    ],
+    "correctIndex": 0,
+    "explanation": "Revenue bonds are repaid from the revenue of the project they finance, so credit analysis focuses on project cash flows and debt service coverage. General obligation bonds rely on the issuer's general taxing power."
+  },
+  {
+    "question": "Why do foreign-currency sovereign bonds generally carry higher default risk than the same government's local-currency bonds?",
+    "options": [
+      "Foreign-currency bonds always have higher coupons",
+      "Local-currency bonds are guaranteed by the IMF",
+      "Foreign-currency bonds are not traded in the secondary market",
+      "The government cannot create foreign currency and must obtain it to repay"
+    ],
+    "correctIndex": 3,
+    "explanation": "A government can raise taxes or, in the extreme, create its own currency to service local-currency debt. It cannot create foreign currency, and depreciation raises the burden of foreign-currency debt, so ratings are often lower for foreign-currency debt."
+  }
+]

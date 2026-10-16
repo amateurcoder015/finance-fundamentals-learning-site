@@ -1,0 +1,229 @@
+---
+title: "Analyzing Statements of Cash Flows II"
+description: "Turning the cash flow statement into analysis: common-size statements, free cash flow to the firm and to equity from different starting points, and the cash flow performance and coverage ratios."
+category: "Financial Statements"
+difficulty: "intermediate"
+dateAdded: "2026-10-16"
+tags: ["free-cash-flow", "fcff", "fcfe", "common-size", "cash-flow-ratios", "coverage-ratios"]
+---
+
+# Analyzing Statements of Cash Flows II
+
+The first chapter on this statement covered how it is built. This chapter covers how to **analyze** it: reading the pattern of operating, investing and financing cash flows, common-size statements, **free cash flow** measures and **cash flow ratios**. The same data are used throughout the worked example in Section 6.
+
+---
+
+## 1. Reading the Statement: Patterns and Quality
+
+Look at the sign and size of CFO, CFI and CFF together, over several years.
+
+| Pattern | Typical interpretation |
+| --- | --- |
+| **CFO positive, large relative to net income** | Earnings convert to cash; check that growth in payables is not what is propping CFO up |
+| **CFO persistently below net income** | Possible low earnings quality: rising receivables or inventory, aggressive revenue recognition |
+| **CFO positive and covers capex and dividends** | Self-funding: growth and payouts do not need external capital |
+| **CFO negative, funded by debt or equity issuance (CFF positive)** | Common for start-ups or distressed firms; sustainability depends on reaching positive CFO |
+| **CFI positive from asset sales, CFO weak** | May be selling assets to survive; not a repeatable source of cash |
+| **CFF strongly negative with positive CFO** | Mature firm returning cash through debt repayment, dividends or buybacks |
+
+Questions to ask:
+
+1. What are the **main sources** of cash: operations, borrowing, or asset sales? Operations should be the dominant, recurring source.
+2. Is **CFO** trending with net income? A widening gap is a warning sign.
+3. How much **capital expenditure** is needed to maintain, versus expand, the business?
+4. Are dividends and buybacks **covered** by operating cash flow?
+
+A **non-recurring** item (a legal settlement, a large working capital release) can distort a single year's CFO, so analysts look at several periods.
+
+---
+
+## 2. Common-Size Cash Flow Statements
+
+A **common-size** cash flow statement expresses each line as a percentage of a base, which makes companies and years comparable. There are two methods.
+
+| Method | Base | Use |
+| --- | --- | --- |
+| **Total inflows / total outflows** | Each inflow as a percentage of **total cash inflows**; each outflow as a percentage of **total cash outflows** | Shows the *mix* of funding sources and uses of cash |
+| **Revenue** | Each item as a percentage of **net revenue** | Shows how much of each unit of sales becomes (or consumes) cash; comparable to common-size income statements |
+
+Common-size analysis shows trends: for instance, a falling CFO as a percentage of revenue, or a rising share of cash inflows coming from borrowing.
+
+---
+
+## 3. Free Cash Flow
+
+**Free cash flow** is cash available to capital providers after the firm has paid for the investment it needs. Two versions matter:
+
+- **FCFF** (free cash flow to the firm): cash available to **all** capital providers (debt and equity) after operating costs, taxes, and investment.
+- **FCFE** (free cash flow to equity): cash available to **common shareholders** after also paying debt service and after net borrowing.
+
+Let FCInv be fixed capital investment (capital expenditure net of proceeds from asset sales), WCInv the investment in net working capital, NCC non-cash charges (mainly depreciation), $t$ the tax rate, and $Int$ the interest expense.
+
+### FCFF
+
+From **CFO** (U.S. GAAP, with interest paid in CFO):
+
+$$FCFF = CFO + Int(1-t) - FCInv$$
+
+Interest is added back **net of tax** because FCFF is the cash flow before payments to lenders, and CFO has been reduced by interest paid. Only the after-tax amount is added back, because the tax saving on interest stays in the firm's taxes.
+
+Under **IFRS**, interest paid may instead be classified in **financing**, so CFO is already stated before interest. In that case CFO is higher by the full interest paid, and only the tax shield needs adjusting:
+
+$$FCFF = CFO_{\text{IFRS}} - Int \cdot t - FCInv \quad (\text{interest paid in CFF})$$
+
+Textbook shortcuts often write this simply as $CFO - FCInv$, which ignores the interest tax shield; the equations above stay consistent with the other forms below.
+
+Equivalent forms starting from other lines:
+
+$$FCFF = NI + NCC + Int(1-t) - FCInv - WCInv$$
+
+$$FCFF = EBIT(1-t) + Dep - FCInv - WCInv$$
+
+$$FCFF = EBITDA(1-t) + Dep \cdot t - FCInv - WCInv$$
+
+### FCFE
+
+$$FCFE = CFO - FCInv + \text{Net borrowing} \quad (\text{interest paid in CFO})$$
+
+$$FCFE = FCFF - Int(1-t) + \text{Net borrowing}$$
+
+where net borrowing $=$ debt issued $-$ debt repaid. FCFE is what remains for shareholders after the firm has met its debt obligations and funded its investment; it may be paid out as dividends and buybacks or retained.
+
+### Why they matter
+
+Free cash flow measures are the cash inputs to discounted cash flow valuation (see the equity valuation chapters). Negative FCFF is not necessarily bad for a growing firm that invests heavily, but it must be financed externally.
+
+---
+
+## 4. Cash Flow Performance Ratios
+
+These ratios measure how well the firm generates cash from its operations.
+
+| Ratio | Formula | What it shows |
+| --- | --- | --- |
+| **Cash flow to revenue** | $CFO / \text{Net revenue}$ | Cash generated per unit of sales |
+| **Cash return on assets** | $CFO / \text{Average total assets}$ | Cash earned on the asset base |
+| **Cash return on equity** | $CFO / \text{Average shareholders' equity}$ | Cash earned for owners |
+| **Cash to income** | $CFO / \text{Operating income}$ | How well operating income converts into cash |
+| **Cash flow per share** | $\dfrac{CFO - \text{Preferred dividends}}{\text{Weighted average shares}}$ | Operating cash per common share |
+
+A **cash to income** ratio well below 1.0 over several years suggests low earnings quality, or a growing business that ties up cash in working capital. Note that CFO can be raised temporarily by delaying payments to suppliers, so check the underlying working capital changes.
+
+---
+
+## 5. Cash Flow Coverage Ratios
+
+These ratios measure whether cash flow is sufficient to meet obligations and investment needs. Higher is better.
+
+| Ratio | Formula | Measures |
+| --- | --- | --- |
+| **Debt coverage** | $CFO / \text{Total debt}$ | Fraction of debt that one year of CFO could repay |
+| **Interest coverage** | $\dfrac{CFO + \text{Interest paid} + \text{Taxes paid}}{\text{Interest paid}}$ | Ability to pay interest from pre-interest, pre-tax cash flow |
+| **Reinvestment** | $CFO / \text{Cash paid for long-term assets}$ | Ability to fund capital expenditure internally |
+| **Debt payment** | $CFO / \text{Cash paid for long-term debt repayment}$ | Ability to meet scheduled principal repayments |
+| **Dividend payment** | $CFO / \text{Dividends paid}$ | Cushion for dividends |
+| **Investing and financing** | $CFO / \text{Cash outflows for investing and financing}$ | Ability to cover all investing and financing outflows without external capital |
+
+The interest coverage ratio adds interest and taxes back to CFO because CFO is measured **after** them under U.S. GAAP; the numerator is cash flow available before interest and tax.
+
+Limits of these ratios:
+
+- A ratio is a single year; use trends and peers.
+- Reliance on CFO ignores that capex and dividends can be cut in a downturn, whereas debt payments cannot.
+- Classification differences (IFRS versus U.S. GAAP) change CFO, so adjust before comparing.
+
+---
+
+## 6. Worked Example
+
+All figures are in millions, year-end. A company reports (U.S. GAAP):
+
+| Item | Amount |
+| --- | --- |
+| Net revenue | 2,000 |
+| EBITDA | 480 |
+| Depreciation | 100 |
+| EBIT (operating income) | 380 |
+| Interest expense (= interest paid) | 40 |
+| Income tax (= taxes paid), 30% of 340 | 102 |
+| Net income | 238 |
+| Investment in net working capital (WCInv) | 18 |
+| Capital expenditure (FCInv; no asset sales) | 260 |
+| Long-term debt issued / repaid | 110 / 60 |
+| Dividends paid (common 60, preferred 20) | 80 |
+
+Weighted average shares: 100 million. Average total assets: 3,200. Average equity: 1,600. Total debt: 800.
+
+### Step 1: CFO and the cash flow statement
+
+$$CFO = NI + Dep - WCInv = 238 + 100 - 18 = 320$$
+
+$$CFI = -260, \qquad CFF = +110 - 60 - 80 = -30$$
+
+$$\Delta\text{Cash} = 320 - 260 - 30 = +30$$
+
+### Step 2: FCFF four ways
+
+1. From CFO: $320 + 40(1-0.30) - 260 = 320 + 28 - 260 = 88$
+2. From net income: $238 + 100 + 28 - 260 - 18 = 88$
+3. From EBIT: $380(0.70) + 100 - 260 - 18 = 266 + 100 - 278 = 88$
+4. From EBITDA: $480(0.70) + 100(0.30) - 260 - 18 = 336 + 30 - 278 = 88$
+
+All four give **FCFF $= 88$**.
+
+### Step 3: FCFE
+
+$$FCFE = CFO - FCInv + \text{Net borrowing} = 320 - 260 + (110 - 60) = 110$$
+
+Check: $FCFF - Int(1-t) + \text{Net borrowing} = 88 - 28 + 50 = 110$. ✓
+
+### Step 4: Performance ratios
+
+| Ratio | Calculation | Result |
+| --- | --- | --- |
+| Cash flow to revenue | $320 / 2{,}000$ | 16.0% |
+| Cash return on assets | $320 / 3{,}200$ | 10.0% |
+| Cash return on equity | $320 / 1{,}600$ | 20.0% |
+| Cash to income | $320 / 380$ | 0.84 |
+| Cash flow per share | $(320 - 20) / 100$ | 3.00 |
+
+### Step 5: Coverage ratios
+
+| Ratio | Calculation | Result |
+| --- | --- | --- |
+| Debt coverage | $320 / 800$ | 0.40 |
+| Interest coverage | $(320 + 40 + 102) / 40 = 462 / 40$ | 11.55 |
+| Reinvestment | $320 / 260$ | 1.23 |
+| Debt payment | $320 / 60$ | 5.33 |
+| Dividend payment | $320 / 80$ | 4.00 |
+| Investing and financing | $320 / (260 + 60 + 80) = 320 / 400$ | 0.80 |
+
+The investing and financing ratio is below 1.0, which means CFO alone did not cover every investing and financing outflow; the company needed the 110 of new debt (net change in cash was still +30). Reinvestment above 1.0 shows capex is covered by CFO.
+
+### Step 6: Common-size (inflows/outflows method)
+
+Inflows: CFO 320 and debt issued 110, total 430. Outflows: capex 260, debt repaid 60 and dividends 80, total 400.
+
+| Inflow | % of inflows | Outflow | % of outflows |
+| --- | --- | --- | --- |
+| CFO | $320/430 = 74.4\%$ | Capex | $260/400 = 65.0\%$ |
+| Debt issued | $110/430 = 25.6\%$ | Debt repaid | $60/400 = 15.0\%$ |
+| | | Dividends | $80/400 = 20.0\%$ |
+
+Operations supply about three-quarters of the cash, and capital expenditure is the largest use.
+
+### Effect of an IFRS choice
+
+If the same company classified the 40 of interest paid in **financing** under IFRS, CFO would be $320 + 40 = 360$ and CFF would be $-30 - 40 = -70$. The cash change is still $360 - 260 - 70 = +30$. FCFF is unchanged at $360 - 40(0.30) - 260 = 360 - 12 - 260 = 88$. Only the classification moves, which is why CFO-based ratios (for example, cash flow to revenue of $360/2{,}000 = 18.0\%$ instead of 16.0%) must be put on a consistent basis before comparing companies.
+
+---
+
+## Key takeaways
+
+- Analyze CFO, CFI and CFF **together over time**; CFO should come mainly from operations and track net income.
+- **Common-size** statements use total inflows/outflows or revenue as the base.
+- $FCFF = CFO + Int(1-t) - FCInv$; $FCFE = CFO - FCInv + \text{Net borrowing}$. If interest paid is already in financing (IFRS), CFO excludes interest, so only the interest tax shield needs adjusting.
+- FCFF can also be built from net income, EBIT or EBITDA and gives the same answer when inputs are consistent.
+- **Performance ratios** (cash flow to revenue, cash return on assets and equity, cash to income, cash flow per share) show cash generation; **coverage ratios** (debt, interest, reinvestment, debt payment, dividend, investing and financing) show cash sufficiency.
+- Interest coverage uses $(CFO + \text{interest} + \text{taxes}) / \text{interest}$.
+- Adjust for IFRS versus U.S. GAAP classification before comparing companies.

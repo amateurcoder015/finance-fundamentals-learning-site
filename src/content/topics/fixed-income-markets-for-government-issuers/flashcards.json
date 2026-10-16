@@ -1,0 +1,50 @@
+[
+  {
+    "front": "Name the main funding sources for a government budget deficit.",
+    "back": "Taxes, borrowing (bond issuance) and monetary financing (central bank money creation). Most deficits are financed by borrowing; heavy monetary financing risks inflation."
+  },
+  {
+    "front": "Debt-to-GDP ratio",
+    "back": "Total government debt ÷ nominal GDP. It rises when deficits are financed by borrowing faster than nominal GDP grows."
+  },
+  {
+    "front": "T-bill pricing formula",
+    "back": "P = F × (1 − d × t/360), where d is the discount rate. Money market yield = (F − P)/P × 360/t, which is higher than the discount rate."
+  },
+  {
+    "front": "Compare bills, notes/bonds, FRNs and inflation-linked bonds.",
+    "back": "Bills: one year or less, discount, no coupon. Notes/bonds: fixed coupons. FRNs: reference rate + spread. Inflation-linked: principal indexed to inflation, pays a real yield."
+  },
+  {
+    "front": "Coupon on an inflation-linked bond",
+    "back": "Adjusted principal = par × index ratio; coupon = adjusted principal × real coupon rate ÷ periods per year."
+  },
+  {
+    "front": "Single-price versus multiple-price auction",
+    "back": "Single-price (Dutch): all winners pay the stop-out price/yield. Multiple-price: each winner pays their own bid."
+  },
+  {
+    "front": "What is a primary dealer?",
+    "back": "A bank or securities firm obliged to bid at government auctions and make secondary markets, in exchange for privileged access to the issuer."
+  },
+  {
+    "front": "On-the-run versus off-the-run",
+    "back": "On-the-run: the most recently auctioned issue of a maturity; most liquid. Off-the-run: older issues; less liquid. On-the-run yields form the benchmark curve."
+  },
+  {
+    "front": "How is a non-sovereign bond yield built from the benchmark?",
+    "back": "Yield = benchmark government yield of the same maturity + spread (credit, liquidity and other risk premium)."
+  },
+  {
+    "front": "What backs a supranational's debt?",
+    "back": "Paid-in and callable capital from member countries, plus preferred creditor status. Usually AAA-rated."
+  },
+  {
+    "front": "General obligation versus revenue municipal bonds",
+    "back": "GO: repaid from general taxing power. Revenue: repaid from a specific project's cash flows."
+  },
+  {
+    "front": "Taxable-equivalent yield",
+    "back": "Tax-exempt yield ÷ (1 − marginal tax rate). Example: 3.60% ÷ 0.68 = 5.29% at a 32% tax rate."
+  }
+]

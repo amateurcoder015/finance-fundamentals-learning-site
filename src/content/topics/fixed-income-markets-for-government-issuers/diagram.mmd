@@ -1,0 +1,26 @@
+graph TD
+    GOV["Government Issuers"] --> SOV["Sovereign (National) Government"]
+    GOV --> QUASI["Quasi-Government Agencies<br/>(Explicit or implicit support)"]
+    GOV --> SUPRA["Supranationals<br/>(Member-owned, preferred creditor)"]
+    GOV --> LOCAL["Local / Regional Governments<br/>(States, provinces, cities)"]
+
+    SOV --> DEF["Budget Deficit<br/>(Spending - Tax revenue)"]
+    DEF --> FUND["Funding: Taxes, Borrowing,<br/>Monetary Financing"]
+    FUND --> INSTR["Debt Instruments"]
+    INSTR --> BILL["T-Bills<br/>(1 year or less, discount)"]
+    INSTR --> NB["Notes and Bonds<br/>(Fixed coupons)"]
+    INSTR --> FRN["Floating-Rate Notes<br/>(Reference rate + spread)"]
+    INSTR --> ILB["Inflation-Linked Bonds<br/>(Indexed principal, real yield)"]
+
+    SOV --> PRIM["Primary Market"]
+    PRIM --> AUC["Auctions via Primary Dealers"]
+    AUC --> SP["Single-Price (Dutch)<br/>All pay stop-out yield"]
+    AUC --> MP["Multiple-Price<br/>Each pays own bid"]
+    SOV --> SEC["Secondary Market<br/>(On-the-run most liquid)"]
+    SEC --> BENCH["Benchmark Yield Curve"]
+    BENCH --> SPREAD["Other bond yield =<br/>Benchmark + Spread"]
+
+    LOCAL --> MUNI["Municipal Bonds"]
+    MUNI --> GO["General Obligation<br/>(Taxing power)"]
+    MUNI --> REV["Revenue Bonds<br/>(Project cash flows)"]
+    MUNI --> TEY["Taxable-equivalent yield<br/>= Yield / (1 - tax rate)"]
