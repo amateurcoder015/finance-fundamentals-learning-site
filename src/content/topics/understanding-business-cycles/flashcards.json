@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What are the four phases of the business cycle?",
+    "back": "Expansion (rising GDP and employment), peak (high point, strained capacity, rising inflation), contraction/recession (falling GDP, rising unemployment) and trough (low point before recovery). Cycles recur but are not periodic."
+  },
+  {
+    "front": "How is a recession commonly defined?",
+    "back": "As a rule of thumb, two consecutive quarters of falling real GDP. Official dating bodies use a broader judgement of a significant, widespread decline in activity lasting more than a few months."
+  },
+  {
+    "front": "What is the inventory cycle?",
+    "back": "Firms cut production when the inventory-to-sales ratio is too high, deepening a slowdown, then raise production faster than sales to restock when the ratio is too low, helping launch a recovery."
+  },
+  {
+    "front": "Unemployment rate and labour force participation rate formulas",
+    "back": "Unemployment rate = unemployed / labour force.\nParticipation rate = labour force / working-age population.\nLabour force = employed + unemployed."
+  },
+  {
+    "front": "Why can the unemployment rate fall without any job creation?",
+    "back": "Discouraged workers who stop searching leave the labour force, so they are no longer counted as unemployed. The participation rate falls at the same time."
+  },
+  {
+    "front": "Types of unemployment",
+    "back": "Frictional (normal job search), structural (skills or location mismatch), cyclical (weak aggregate demand) and seasonal. The natural rate has frictional and structural unemployment but no cyclical unemployment."
+  },
+  {
+    "front": "Disinflation vs deflation vs hyperinflation",
+    "back": "Disinflation: inflation positive but falling. Deflation: price level falling (negative inflation). Hyperinflation: extremely rapid, accelerating inflation that destroys the value of money."
+  },
+  {
+    "front": "CPI formula and its three measurement biases",
+    "back": "CPI = (cost of fixed basket at current prices / cost at base prices) x 100. Biases that overstate inflation: substitution bias, new-product bias and quality bias."
+  },
+  {
+    "front": "Headline vs core inflation",
+    "back": "Headline inflation includes all items in the index. Core inflation excludes volatile food and energy prices to show the underlying trend."
+  },
+  {
+    "front": "Demand-pull vs cost-push inflation",
+    "back": "Demand-pull: aggregate demand exceeds capacity, so too much spending chases too few goods. Cost-push: higher input costs (wages, energy) are passed on to prices; supply shocks can cause stagflation."
+  },
+  {
+    "front": "Leading, coincident and lagging indicators: examples",
+    "back": "Leading: stock prices, new orders, building permits, yield-curve slope. Coincident: employment, industrial production, personal income. Lagging: duration of unemployment, inventory-to-sales ratio, unit labour costs, prime rate."
+  }
+]

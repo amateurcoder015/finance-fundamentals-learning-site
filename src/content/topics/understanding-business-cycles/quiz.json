@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which phase of the business cycle is characterised by real GDP at its highest level, strained capacity and rising inflation, just before growth begins to slow?",
+    "options": [
+      "Trough",
+      "Early expansion",
+      "Peak",
+      "Contraction"
+    ],
+    "correctIndex": 2,
+    "explanation": "The peak is the high point of activity, where capacity is strained and inflation and interest rates tend to be elevated. The trough is the low point, and the contraction is the phase after the peak in which GDP falls."
+  },
+  {
+    "question": "A country has a working-age population of 250 million, 152 million employed and 8 million unemployed. What are the unemployment rate and the labour force participation rate?",
+    "options": [
+      "3.2% and 64.0%",
+      "5.0% and 64.0%",
+      "5.0% and 60.8%",
+      "5.3% and 60.8%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Labour force = 152 + 8 = 160 million. Unemployment rate = 8 / 160 = 5.0%. Participation rate = 160 / 250 = 64.0%. Using the working-age population as the denominator for unemployment (3.2%) or employment as the numerator of participation (60.8%) are common errors."
+  },
+  {
+    "question": "In the same economy, 2 million unemployed people become discouraged and stop looking for work. All else equal, the unemployment rate will:",
+    "options": [
+      "Rise to about 5.1%",
+      "Remain at 5.0%",
+      "Fall to about 3.8%, even though no new jobs were created",
+      "Fall to 3.2%"
+    ],
+    "correctIndex": 2,
+    "explanation": "Unemployed falls to 6 million and the labour force to 158 million, so the unemployment rate is 6 / 158 = 3.80%. Discouraged workers leave the labour force, which lowers the measured unemployment rate without any job creation, and the participation rate falls to 63.2%."
+  },
+  {
+    "question": "A CPI basket costs $600 at base-period prices and $660 at current prices. Excluding food and fuel, the remaining items cost $200 at base prices and $210 at current prices. Which statement is correct?",
+    "options": [
+      "Headline inflation is 10.0% and core inflation is 5.0%",
+      "Headline inflation is 11.0% and core inflation is 5.0%",
+      "Headline inflation is 10.0% and core inflation is 10.5%",
+      "Headline inflation is 5.0% and core inflation is 10.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Headline CPI = 660 / 600 x 100 = 110.0, so inflation is 10.0%. Core inflation = 210 / 200 - 1 = 5.0%. Headline is higher because the excluded food and fuel prices rose faster than the remaining items."
+  },
+  {
+    "question": "Last year inflation was 6% and this year it is 3%. This situation is best described as:",
+    "options": [
+      "Deflation",
+      "Disinflation",
+      "Hyperinflation",
+      "Stagflation"
+    ],
+    "correctIndex": 1,
+    "explanation": "Disinflation is a decline in the rate of inflation while the price level is still rising. Deflation requires a falling price level (negative inflation). Hyperinflation and stagflation describe different situations."
+  },
+  {
+    "question": "Which of the following is most likely a leading economic indicator?",
+    "options": [
+      "Average duration of unemployment",
+      "Industrial production",
+      "Building permits for new housing",
+      "Inventory-to-sales ratio"
+    ],
+    "correctIndex": 2,
+    "explanation": "Building permits (along with stock prices, new orders and the yield-curve slope) typically turn before the economy does. Industrial production is a coincident indicator, while the average duration of unemployment and the inventory-to-sales ratio are lagging indicators."
+  },
+  {
+    "question": "A worker loses a job because the factory where they worked closed after the industry shifted to new technology that requires different skills. This is an example of which type of unemployment?",
+    "options": [
+      "Frictional",
+      "Cyclical",
+      "Seasonal",
+      "Structural"
+    ],
+    "correctIndex": 3,
+    "explanation": "Structural unemployment results from a mismatch between workers' skills or location and available jobs, often caused by technological change. Frictional unemployment is the normal search between jobs, and cyclical unemployment is caused by weak aggregate demand."
+  },
+  {
+    "question": "Which statement about the CPI as a measure of inflation is most accurate?",
+    "options": [
+      "A fixed basket tends to overstate inflation because of substitution, new-product and quality biases",
+      "Core CPI includes food and energy prices but excludes services",
+      "The CPI uses a changing basket of goods that covers all domestic output",
+      "The CPI measures the prices that producers receive for their output"
+    ],
+    "correctIndex": 0,
+    "explanation": "The CPI uses a fixed basket, so it does not capture consumers' substitution toward cheaper goods, the slow entry of new products, or quality improvements, and therefore tends to overstate inflation. Core CPI excludes food and energy. The GDP deflator covers all domestic output, and the PPI measures producer prices."
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A company has 100,000 cumulative preferred shares with a $100 par value and a 5% dividend. No preferred dividends were paid for the past two years. How much must be paid to preferred shareholders this year before any common dividend can be paid?",
+    "options": [
+      "$500,000",
+      "$1,000,000",
+      "$1,500,000",
+      "$2,000,000"
+    ],
+    "correctIndex": 2,
+    "explanation": "The annual dividend is 5% x $100 = $5 per share. Arrears for two years are $10, plus the current year's $5, giving $15 per share x 100,000 = $1,500,000. For non-cumulative preferred only the current $500,000 would be owed."
+  },
+  {
+    "question": "Compared with otherwise identical non-callable common shares, callable common shares are most likely to be:",
+    "options": [
+      "More valuable, because the issuer pays a premium for the right",
+      "Equal in value, because the call is exercised at fair value",
+      "Less valuable, because the call price limits potential gains for the holder",
+      "More valuable, because holders receive downside protection"
+    ],
+    "correctIndex": 2,
+    "explanation": "The call option belongs to the issuer, who will exercise it when the share price is high. That caps the holder's upside, so callable shares are worth less. Putable shares, which give the holder the option, are worth more."
+  },
+  {
+    "question": "A preferred share with a $100 par value is convertible into 2.5 common shares. The common shares trade at $48. What is the conversion value of one preferred share, and what is the conversion price?",
+    "options": [
+      "$120 and $40",
+      "$120 and $48",
+      "$100 and $40",
+      "$250 and $2.50"
+    ],
+    "correctIndex": 0,
+    "explanation": "Conversion value = 2.5 x $48 = $120. Conversion price = par / conversion ratio = $100 / 2.5 = $40. The conversion value is above par, so converting would be attractive."
+  },
+  {
+    "question": "An ADR represents 4 ordinary shares of a European company. Each share trades at €30 and the exchange rate is $1.10 per euro. Ignoring costs, the ADR should trade at approximately:",
+    "options": [
+      "$33",
+      "$109.09",
+      "$120",
+      "$132"
+    ],
+    "correctIndex": 3,
+    "explanation": "4 x €30 = €120, and €120 x $1.10 = $132. Dividing by the exchange rate ($109.09) or ignoring it ($120) is incorrect; the ADR price is the value of the underlying shares converted at the dollar-per-euro rate."
+  },
+  {
+    "question": "An investor buys a share for $50, receives $2 of dividends during the year, and sells it for $54. The total return is:",
+    "options": [
+      "8.0%",
+      "12.0%",
+      "4.0%",
+      "11.1%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Total return = (54 - 50 + 2) / 50 = 12.0%, made up of an 8.0% price return and a 4.0% dividend yield. Using only the price change gives 8.0%, and dividing by the ending price (6/54) gives 11.1%, which is wrong."
+  },
+  {
+    "question": "A firm has total assets of $800 million, liabilities of $500 million and preferred equity of $50 million. It has 20 million common shares outstanding. What is its book value per common share?",
+    "options": [
+      "$12.50",
+      "$15.00",
+      "$40.00",
+      "$25.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "Common equity = 800 - 500 - 50 = $250 million. BVPS = 250 / 20 = $12.50. Using total equity of $300 million without removing the preferred equity would give $15.00."
+  },
+  {
+    "question": "A company reports net income of $45 million and preferred dividends of $5 million. Common equity was $230 million at the start of the year and $250 million at the end. What is its ROE?",
+    "options": [
+      "18.75%",
+      "16.67%",
+      "18.00%",
+      "17.39%"
+    ],
+    "correctIndex": 1,
+    "explanation": "ROE = (45 - 5) / average common equity. Average = (230 + 250) / 2 = 240, so ROE = 40 / 240 = 16.67%. Using net income without deducting preferred dividends gives 18.75%, and using ending equity gives 16.0%."
+  },
+  {
+    "question": "Which statement about private equity is most accurate?",
+    "options": [
+      "It is traded on exchanges with transparent, continuously updated prices",
+      "It is subject to the same disclosure requirements as listed shares",
+      "It is generally illiquid, valued by appraisal, and includes venture capital and leveraged buyouts",
+      "It carries lower risk than public equity because of regulation"
+    ],
+    "correctIndex": 2,
+    "explanation": "Private equity (venture capital, leveraged buyouts, PIPEs) is not publicly traded, is generally illiquid, has limited disclosure and is valued by appraisal. Investors therefore usually demand a liquidity premium."
+  }
+]

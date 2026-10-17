@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Understanding Business Cycles | Economics | intermediate
-- [ ] Overview of Equity Securities | Equities | beginner
 - [ ] Fixed-Income Bond Valuation: Prices and Yields | Fixed Income | intermediate
 - [ ] Analysis of Inventories | Financial Statements | intermediate
 - [ ] Portfolio Risk and Return: Part II | Portfolio Management | advanced
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Investors and Other Stakeholders | Corporate Finance | beginner | 2026-10-15
 - [x] Fixed-Income Markets for Government Issuers | Fixed Income | intermediate | 2026-10-16
 - [x] Analyzing Statements of Cash Flows II | Financial Statements | intermediate | 2026-10-16
+- [x] Understanding Business Cycles | Economics | intermediate | 2026-10-17
+- [x] Overview of Equity Securities | Equities | beginner | 2026-10-17

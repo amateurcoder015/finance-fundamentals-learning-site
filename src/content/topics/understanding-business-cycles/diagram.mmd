@@ -1,0 +1,39 @@
+graph TD
+    BC["Business Cycle<br/>(Fluctuation around long-term trend)"] --> PH["Four Phases"]
+    BC --> DRV["Drivers"]
+    BC --> MEAS["Measures and Indicators"]
+
+    subgraph Phases ["Cycle Phases"]
+        EXP["Expansion<br/>(GDP, jobs, spending rise)"]
+        PK["Peak<br/>(Capacity strained, inflation high)"]
+        CON["Contraction / Recession<br/>(GDP falls, unemployment rises)"]
+        TR["Trough<br/>(Activity at its low)"]
+    end
+
+    PH --> EXP
+    EXP --> PK
+    PK --> CON
+    CON --> TR
+    TR -.-> EXP
+
+    subgraph Drivers ["What Drives the Cycle"]
+        D1["Consumer Spending<br/>and Business Investment"]
+        D2["Housing and Credit Cycle"]
+        D3["Inventory Cycle<br/>(Inventory-to-sales ratio)"]
+        D4["Government Policy<br/>and External Trade"]
+    end
+
+    DRV --> D1
+    DRV --> D2
+    DRV --> D3
+    DRV --> D4
+
+    subgraph Measures ["Measuring the Cycle"]
+        UN["Unemployment<br/>(Frictional, Structural, Cyclical)"]
+        INF["Inflation<br/>(Headline vs Core, Disinflation, Deflation)"]
+        IND["Indicators<br/>(Leading, Coincident, Lagging)"]
+    end
+
+    MEAS --> UN
+    MEAS --> INF
+    MEAS --> IND

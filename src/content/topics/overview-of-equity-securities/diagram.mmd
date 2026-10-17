@@ -1,0 +1,40 @@
+graph TD
+    EQ["Equity Securities<br/>(Ownership claims, residual)"] --> TYPES["Types"]
+    EQ --> RR["Risk and Return"]
+    EQ --> CORP["Equity in the Company"]
+
+    subgraph Type_Group ["Forms of Equity"]
+        CS["Common Shares<br/>(Votes, discretionary dividends)"]
+        PS["Preferred Shares<br/>(Fixed senior dividend, usually no votes)"]
+        PUB["Public Equity<br/>(Listed, liquid, regulated)"]
+        PRI["Private Equity<br/>(Venture capital, LBO, PIPE)"]
+        DR["Depository Receipts<br/>(ADR, GDR, sponsored or unsponsored)"]
+    end
+
+    TYPES --> CS
+    TYPES --> PS
+    TYPES --> PUB
+    TYPES --> PRI
+    TYPES --> DR
+
+    PS --> PF["Preferred Features<br/>(Cumulative, Participating, Convertible,<br/>Callable, Putable)"]
+    CS --> CF["Common Features<br/>(Callable, Putable, Dual-class, Preemptive rights)"]
+
+    subgraph Risk_Group ["Return and Risk"]
+        TR["Total Return<br/>(Price return + Dividend yield)"]
+        RANK["Risk Ranking<br/>(Debt, Preferred, Common)"]
+    end
+
+    RR --> TR
+    RR --> RANK
+
+    subgraph Corp_Group ["Balance Sheet and Cost"]
+        BV["Book Value vs Market Value<br/>(BVPS, Price-to-Book)"]
+        ROE["ROE<br/>(NI less preferred dividends / Avg common equity)"]
+        COE["Cost of Equity<br/>(Required return, CAPM)"]
+    end
+
+    CORP --> BV
+    CORP --> ROE
+    CORP --> COE
+    ROE -.-> COE

@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What claim do common shareholders have?",
+    "back": "A residual claim on assets and earnings after creditors and preferred holders. They have voting rights, receive discretionary dividends and have limited liability."
+  },
+  {
+    "front": "Cumulative vs non-cumulative preferred shares",
+    "back": "Cumulative: unpaid dividends build up as arrears and must be paid before any common dividend. Non-cumulative: missed dividends are lost."
+  },
+  {
+    "front": "Participating vs non-participating preferred",
+    "back": "Participating preferred shareholders share in extra earnings (and sometimes liquidation proceeds) beyond the stated dividend. Non-participating holders receive only the stated dividend and liquidation preference."
+  },
+  {
+    "front": "Convertible preferred: conversion price and conversion value",
+    "back": "Conversion price = par value / conversion ratio.\nConversion value = conversion ratio x current common share price."
+  },
+  {
+    "front": "Callable vs putable shares",
+    "back": "Callable: the issuer can repurchase at a set price, which caps the holder's upside and lowers value. Putable: the holder can sell back at a set price, which gives downside protection and raises value."
+  },
+  {
+    "front": "Statutory vs cumulative voting",
+    "back": "Statutory: each share has one vote per board seat. Cumulative: a shareholder can concentrate all votes (shares x seats) on one candidate, which helps minority holders gain board representation."
+  },
+  {
+    "front": "Public equity vs private equity",
+    "back": "Public equity is listed, liquid, regulated and transparent. Private equity (venture capital, LBOs, PIPEs) is not publicly traded, is illiquid, has limited disclosure and is valued by appraisal."
+  },
+  {
+    "front": "Sponsored vs unsponsored depository receipts",
+    "back": "Sponsored: the issuer takes part, provides disclosure and the DR carries shareholder rights. Unsponsored: created by a bank without the issuer's involvement, with fewer disclosures and often no voting rights."
+  },
+  {
+    "front": "Total return on an equity share",
+    "back": "(P1 - P0 + D1) / P0 = price return + dividend yield. Foreign shares also have a currency return."
+  },
+  {
+    "front": "Book value vs market value of equity",
+    "back": "Book value = total assets - total liabilities (accounting, historical cost). Market value = share price x shares outstanding (reflects expected future cash flows and risk)."
+  },
+  {
+    "front": "Return on equity (ROE) and the cost of equity",
+    "back": "ROE = (net income - preferred dividends) / average common equity. Cost of equity is shareholders' required return (e.g., CAPM). ROE above the cost of equity creates value."
+  }
+]
