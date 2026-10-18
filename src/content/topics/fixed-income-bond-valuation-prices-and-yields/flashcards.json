@@ -1,0 +1,50 @@
+[
+  {
+    "front": "How is a bond's price determined?",
+    "back": "Price = PV of all remaining coupons and the principal, discounted at the market discount rate (YTM) per period:\nPV = PMT/(1+r) + PMT/(1+r)^2 + ... + (PMT + FV)/(1+r)^N"
+  },
+  {
+    "front": "How do you adjust the inputs for a semiannual bond?",
+    "back": "Coupon per period = annual coupon / 2; periodic yield r = annual YTM / 2; number of periods N = years x 2."
+  },
+  {
+    "front": "What is the relationship between coupon rate, YTM and price?",
+    "back": "Coupon > YTM: price above par (premium).\nCoupon = YTM: price at par.\nCoupon < YTM: price below par (discount)."
+  },
+  {
+    "front": "Describe the price-yield relationship.",
+    "back": "Inverse and convex. Price falls when yield rises. For an equal change in yield, the price increase from a fall in yield is larger than the price decrease from a rise in yield."
+  },
+  {
+    "front": "What is pull to par (constant-yield price trajectory)?",
+    "back": "If YTM is unchanged, a premium or discount bond's price moves steadily toward par as maturity nears, and equals par at maturity."
+  },
+  {
+    "front": "Flat price vs full price?",
+    "back": "Flat (clean) price is the quoted price, excluding accrued interest. Full (dirty) price = flat price + accrued interest, and is what the buyer pays."
+  },
+  {
+    "front": "How is accrued interest calculated?",
+    "back": "AI = (t/T) x PMT, where t = days from last coupon to settlement, T = days in the coupon period, PMT = coupon per period. Day counts: 30/360 or actual/actual."
+  },
+  {
+    "front": "What is matrix pricing?",
+    "back": "Estimating the required yield (and hence price) of an infrequently traded bond from the yields of comparable bonds with similar credit quality, coupon and maturity, often by interpolating between maturities."
+  },
+  {
+    "front": "What does YTM assume?",
+    "back": "That the bond is held to maturity, all promised payments are made on time and in full, and coupons are reinvested at the YTM. It is the IRR of the bond's cash flows at the full price."
+  },
+  {
+    "front": "What is yield to worst?",
+    "back": "The lowest of the YTM and the yields to every possible call date. For a premium callable bond it is usually the yield to call; for a discount bond it is usually the YTM."
+  },
+  {
+    "front": "How do you convert a yield between compounding frequencies?",
+    "back": "Go through the effective annual rate: EAR = (1 + APR/m)^m - 1. Equate EARs to restate, e.g. 6% semiannual = 6.09% EAR = 5.9557% quarterly."
+  },
+  {
+    "front": "Discount rate vs add-on rate for money market instruments?",
+    "back": "Discount rate: PV = FV x (1 - Days/360 x DR), interest as % of par. Add-on rate: AOR = (FV - PV)/PV x 360/Days, interest as % of the amount invested. The discount rate understates the return."
+  }
+]

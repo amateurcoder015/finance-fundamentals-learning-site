@@ -1,0 +1,90 @@
+[
+  {
+    "question": "When unit costs are rising and inventory levels are stable, which cost-flow method produces the highest net income?",
+    "options": [
+      "FIFO",
+      "LIFO",
+      "Weighted average cost",
+      "All methods give the same net income"
+    ],
+    "correctIndex": 0,
+    "explanation": "FIFO charges the oldest, lowest costs to COGS when prices rise, so COGS is lowest and income is highest. LIFO produces the highest COGS and lowest income; weighted average lies between."
+  },
+  {
+    "question": "A company has beginning inventory of 100 units at 10, then buys 150 units at 12 and 100 units at 14. It sells 250 units. Using FIFO (periodic), what is COGS?",
+    "options": [
+      "2,500",
+      "3,000",
+      "2,800",
+      "3,200"
+    ],
+    "correctIndex": 2,
+    "explanation": "FIFO sells the oldest units first: 100 x 10 + 150 x 12 = 1,000 + 1,800 = 2,800. The remaining 100 units at 14 (1,400) stay in ending inventory."
+  },
+  {
+    "question": "Using the same data (goods available: 350 units costing 4,200 in total; 250 units sold), what is ending inventory under the weighted average cost method?",
+    "options": [
+      "1,000",
+      "1,200",
+      "1,400",
+      "3,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "Average cost = 4,200 / 350 = 12.00 per unit. Ending inventory = 100 units x 12 = 1,200 (and COGS = 250 x 12 = 3,000)."
+  },
+  {
+    "question": "A U.S. GAAP company reports LIFO inventory of 5,000 and a LIFO reserve of 800. What is inventory on a FIFO basis?",
+    "options": [
+      "4,200",
+      "5,000",
+      "5,200",
+      "5,800"
+    ],
+    "correctIndex": 3,
+    "explanation": "LIFO reserve = FIFO inventory - LIFO inventory, so FIFO inventory = LIFO inventory + LIFO reserve = 5,000 + 800 = 5,800."
+  },
+  {
+    "question": "A company using LIFO reports COGS of 20,000. Its LIFO reserve rose from 600 to 800 during the year. What would COGS be under FIFO?",
+    "options": [
+      "19,800",
+      "20,200",
+      "20,800",
+      "19,200"
+    ],
+    "correctIndex": 0,
+    "explanation": "FIFO COGS = LIFO COGS - change in LIFO reserve = 20,000 - (800 - 600) = 19,800. FIFO COGS is lower, so FIFO pretax income is 200 higher."
+  },
+  {
+    "question": "Inventory with a cost of 50,000 was written down to its NRV of 44,000. NRV later recovers to 48,000. Which statement is correct?",
+    "options": [
+      "Under both IFRS and U.S. GAAP, inventory is written up to 50,000.",
+      "Under both IFRS and U.S. GAAP, no reversal is allowed.",
+      "Under IFRS, a 4,000 reversal is recognized; under U.S. GAAP, no reversal is allowed.",
+      "Under U.S. GAAP, a 4,000 reversal is recognized; under IFRS, no reversal is allowed."
+    ],
+    "correctIndex": 2,
+    "explanation": "IFRS permits reversal of a write-down, limited to the original write-down so that the carrying amount never exceeds original cost (44,000 + 4,000 = 48,000, which is below 50,000). U.S. GAAP prohibits reversals."
+  },
+  {
+    "question": "Under U.S. GAAP, a LIFO inventory item has cost 100, replacement cost 80, NRV 95 and a normal profit margin of 10. At what amount is it carried under the lower of cost or market rule?",
+    "options": [
+      "80",
+      "85",
+      "95",
+      "100"
+    ],
+    "correctIndex": 1,
+    "explanation": "Market is the middle of replacement cost (80), the ceiling NRV (95) and the floor NRV less normal margin (95 - 10 = 85). Since replacement cost is below the floor, market = 85. Carrying value = min(100, 85) = 85."
+  },
+  {
+    "question": "A LIFO company sells more units than it purchases during a period of rising prices. The most likely effect is:",
+    "options": [
+      "Higher COGS and lower profit, because current costs are charged to COGS.",
+      "No change in profit, because LIFO always matches current costs.",
+      "A higher LIFO reserve and lower taxes.",
+      "Lower COGS and temporarily higher profit, because old low-cost layers are charged to COGS."
+    ],
+    "correctIndex": 3,
+    "explanation": "This is a LIFO liquidation. Old, low-cost layers flow into COGS, so COGS is below current replacement cost and profit is inflated (and taxes are higher). The LIFO reserve falls, and the gain is not sustainable, so analysts adjust for it."
+  }
+]

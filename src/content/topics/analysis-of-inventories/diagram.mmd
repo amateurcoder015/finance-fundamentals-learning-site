@@ -1,0 +1,25 @@
+graph TD
+    INV["Inventory Analysis"] --> COST["Cost of Inventory"]
+    INV --> FLOW["Cost-Flow Methods"]
+    INV --> VAL["Valuation"]
+    INV --> RAT["Analysis"]
+
+    COST --> INC["Included<br/>(Purchase + Conversion Costs)"]
+    COST --> EXC["Expensed<br/>(Abnormal Waste, Selling, Admin)"]
+
+    FLOW --> SI["Specific Identification"]
+    FLOW --> FIFO["FIFO<br/>(Oldest Costs to COGS)"]
+    FLOW --> WAC["Weighted Average Cost"]
+    FLOW --> LIFO["LIFO<br/>(Newest Costs to COGS)<br/>U.S. GAAP only"]
+
+    LIFO --> RES["LIFO Reserve<br/>(FIFO Inventory - LIFO Inventory)"]
+    RES --> CONV["Convert to FIFO<br/>(Inventory + Reserve, COGS - Change in Reserve)"]
+    LIFO --> LIQ["LIFO Liquidation<br/>(Old Layers Inflate Profit)"]
+
+    VAL --> LCNRV["Lower of Cost and NRV"]
+    LCNRV --> IFRS["IFRS<br/>(Reversal Allowed up to Original Cost)"]
+    LCNRV --> GAAP["U.S. GAAP<br/>(No Reversal)"]
+
+    RAT --> TURN["Inventory Turnover<br/>(COGS / Average Inventory)"]
+    RAT --> DOH["Days on Hand<br/>(365 / Turnover)"]
+    RAT --> FLAGS["Red Flags<br/>(Inventory Growing Faster than Sales,<br/>Write-downs)"]

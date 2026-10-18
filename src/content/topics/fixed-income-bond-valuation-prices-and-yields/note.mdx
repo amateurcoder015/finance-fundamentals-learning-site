@@ -1,0 +1,282 @@
+---
+title: "Fixed-Income Bond Valuation: Prices and Yields"
+description: "How a bond's price is the present value of its cash flows at the market discount rate: the price-yield relationship, pull to par, accrued interest and flat versus full prices, matrix pricing, yield conventions and periodicity, yield to call and worst, spot-rate pricing, and money market quoting."
+category: "Fixed Income"
+difficulty: "intermediate"
+dateAdded: "2026-10-18"
+tags: ["bond-valuation", "yield-to-maturity", "accrued-interest", "spot-rates", "matrix-pricing", "money-market"]
+---
+
+# Fixed-Income Bond Valuation: Prices and Yields
+
+A bond is a promise of known cash flows: periodic **coupons** and a final **principal** (par) payment. Valuing it means answering one question: *what are those future cash flows worth today?* The answer is the **price**, and the single discount rate that reconciles the price with the cash flows is the **yield**.
+
+---
+
+## 1. Bond Price as Present Value
+
+The price of a bond is the sum of the present values of its remaining cash flows, each discounted at the market discount rate (the **yield to maturity**, YTM) per period:
+
+$$PV = \frac{PMT}{(1+r)^1} + \frac{PMT}{(1+r)^2} + \dots + \frac{PMT + FV}{(1+r)^N}$$
+
+where:
+
+- $PMT$ = coupon payment per period $= \dfrac{\text{coupon rate} \times \text{par}}{m}$
+- $FV$ = principal repaid at maturity (par)
+- $r$ = YTM per period $= \text{annual YTM}/m$
+- $N$ = number of periods remaining $= \text{years} \times m$
+- $m$ = periods per year (1 annual, 2 semiannual, 4 quarterly)
+
+The same computation can be done with the annuity formula: $PV = PMT \times \dfrac{1-(1+r)^{-N}}{r} + \dfrac{FV}{(1+r)^N}$.
+
+**Prices are quoted per 100 of par** (e.g., 102.78 means 102.78% of par). Two rules keep the arithmetic honest:
+
+1. Use the **periodic** rate and the **number of periods** that match the coupon frequency.
+2. A zero-coupon bond has $PMT = 0$, so $PV = FV/(1+r)^N$.
+
+### Example A: annual-pay bond
+
+A 3-year bond with a 5% annual coupon and par of 100 has a YTM of 4%.
+
+1. Coupon $= 0.05 \times 100 = 5$
+2. $5/1.04 = 4.8077$
+3. $5/1.04^2 = 4.6228$
+4. $105/1.04^3 = 93.3446$ (final coupon plus par)
+5. Price $= 4.8077 + 4.6228 + 93.3446 = \mathbf{102.7751}$
+
+### Example B: semiannual-pay bond
+
+A 2-year bond has a 6% annual coupon paid semiannually, par 100, and a YTM of 8% (annual, semiannual compounding).
+
+1. Coupon per period $= 0.06 \times 100 / 2 = 3$; $r = 8\%/2 = 4\%$; $N = 2 \times 2 = 4$
+2. $3/1.04 = 2.8846$
+3. $3/1.04^2 = 2.7737$
+4. $3/1.04^3 = 2.6670$
+5. $103/1.04^4 = 88.0448$
+6. Price $= 2.8846 + 2.7737 + 2.6670 + 88.0448 = \mathbf{96.3701}$
+
+---
+
+## 2. The Price–Yield Relationship
+
+Price and yield move in **opposite directions**. When the market yield rises, the cash flows are discounted more heavily and price falls; when it falls, price rises. Graphed, the relationship is **convex**: it curves rather than forming a straight line.
+
+Price of the 3-year, 5% annual-coupon bond at different YTMs:
+
+| YTM | Price | Change from par |
+| --- | --- | --- |
+| 3% | 105.6572 | +5.6572 |
+| 4% | 102.7751 | +2.7751 |
+| 5% | 100.0000 | 0 |
+| 6% | 97.3270 | −2.6730 |
+| 7% | 94.7514 | −5.2486 |
+
+Notice the asymmetry: a 100 bp **fall** in yield (5% to 4%) raises price by 2.7751, while a 100 bp **rise** (5% to 6%) lowers it by only 2.6730. For the same size yield move, the price gain from a yield decline is larger than the price loss from a yield rise. This is the effect of **convexity**, which investors value.
+
+### Coupon rate versus yield
+
+| Relationship | Price vs par | Bond is trading at |
+| --- | --- | --- |
+| Coupon rate above YTM | Price above par | **Premium** |
+| Coupon rate equal to YTM | Price equal to par | **Par** |
+| Coupon rate below YTM | Price below par | **Discount** |
+
+Intuition: a bond paying more than the market requires is worth more than par; a bond paying less is worth less.
+
+Other price-yield facts:
+
+- For a given yield change, **longer-maturity** bonds change more in price than shorter ones, all else equal.
+- For a given yield change, **lower-coupon** bonds change more in price than higher-coupon ones, all else equal.
+- A **zero-coupon** bond is the most price-sensitive for its maturity.
+
+---
+
+## 3. Pull to Par and the Constant-Yield Price Trajectory
+
+If YTM stays constant, a discount or premium bond's price moves steadily toward par as maturity approaches. This is the **constant-yield price trajectory**: the discount shrinks (or premium shrinks) and the price **converges to par** at maturity.
+
+Using Example A (5% coupon, YTM held at 4%):
+
+| Time | Remaining life | Price |
+| --- | --- | --- |
+| Today | 3 years | 102.7751 |
+| After 1 year | 2 years | 101.8861 |
+| After 2 years | 1 year | 100.9615 |
+| At maturity | 0 | 100.0000 |
+
+The premium declines each year because the bond's remaining coupons above the market rate are shrinking in number. If a premium bond's price is held to maturity, the investor's total return over time is the coupons received less the premium amortized.
+
+<Note>Pull to par assumes no default and an unchanged yield. If the yield changes, the price moves along a different trajectory, but it still ends at par at maturity.</Note>
+
+---
+
+## 4. Accrued Interest, Flat Price, and Full Price
+
+Bonds trade between coupon dates. The buyer receives the **whole next coupon**, but the seller earned part of it. So the buyer compensates the seller for the interest earned since the last coupon: **accrued interest** (AI).
+
+- **Full (dirty, invoice) price** $= PV^{\text{Full}}$: the present value of all remaining cash flows, which is what the buyer actually pays.
+- **Flat (clean, quoted) price** $= PV^{\text{Flat}}$: the quoted price, excluding accrued interest.
+
+$$PV^{\text{Full}} = PV^{\text{Flat}} + AI$$
+
+$$AI = \frac{t}{T} \times PMT$$
+
+where $t$ = days since the last coupon payment to the settlement date, $T$ = days in the coupon period, and $PMT$ = coupon per period.
+
+**Why quote flat prices?** The full price jumps up between coupon dates (as interest accrues) and drops when the coupon is paid. Quoting the flat price removes this sawtooth so that price changes reflect only yield changes and credit.
+
+**Day-count conventions** determine $t$ and $T$:
+
+- **30/360**: each month is 30 days and a year is 360 days (common for corporate bonds).
+- **Actual/actual**: actual days elapsed and actual days in the period (common for government bonds).
+
+### Example C: accrued interest
+
+A bond has a 6% annual coupon paid semiannually (PMT $= 3$ per 100 par). Last coupon: 15 March. Settlement: 10 June. Use 30/360 with a 180-day coupon period. The flat price is 101.50.
+
+1. Days accrued (30/360) $= (6-3) \times 30 + (10-15) = 90 - 5 = 85$
+2. $AI = (85/180) \times 3 = 1.4167$
+3. Full price $= 101.50 + 1.4167 = \mathbf{102.9167}$
+
+---
+
+## 5. Matrix Pricing
+
+Many bonds, especially smaller or less liquid issues, rarely trade, so no observed YTM exists. **Matrix pricing** estimates the required yield from **comparable** bonds (similar credit quality, coupon, and maturity) that do trade.
+
+Steps:
+
+1. Pick comparable bonds with similar credit risk and features.
+2. Estimate the required yield for the subject bond, often by **interpolating** between the yields of comparables with nearby maturities.
+3. Discount the subject bond's cash flows at that yield.
+
+### Example D: matrix pricing
+
+A 5-year, 6% annual-coupon bond does not trade. Comparable bonds of the same credit quality have a 4-year YTM of 5.0% and a 6-year YTM of 5.6%.
+
+1. Interpolated 5-year yield $= (5.0\% + 5.6\%)/2 = 5.3\%$
+2. Price $= \sum_{t=1}^{5} 6/1.053^t + 100/1.053^5 = \mathbf{103.0057}$
+
+The bond trades at a premium, as expected because its 6% coupon exceeds the 5.3% required yield.
+
+---
+
+## 6. Yield Measures and Periodicity
+
+### Yield to maturity
+
+**YTM** is the discount rate that sets the present value of the bond's promised cash flows equal to its **full price**. It is the internal rate of return on the bond if the investor:
+
+1. holds to maturity,
+2. receives every coupon and principal payment on time and in full, and
+3. reinvests coupons at the YTM.
+
+For a semiannual bond, the YTM is quoted as an annual rate by doubling the semiannual yield: the **bond equivalent yield (BEY)** or **street convention** rate. A semiannual 6% yield means 3% per period.
+
+### Current yield
+
+$$\text{Current yield} = \frac{\text{Annual coupon}}{\text{Flat price}}$$
+
+For Example B's bond, flat price 96.3701 and annual coupon 6: current yield $= 6/96.3701 = 6.226\%$. It ignores the pull-to-par gain and reinvestment, so it differs from YTM (8%).
+
+### Periodicity conversion
+
+Yields quoted with different compounding frequencies are not directly comparable. Convert through the **effective annual rate** (EAR):
+
+$$\text{EAR} = \left(1 + \frac{APR_m}{m}\right)^m - 1$$
+
+To restate a yield with a different frequency, equate the effective annual rates:
+
+$$\left(1 + \frac{APR_{m_1}}{m_1}\right)^{m_1} = \left(1 + \frac{APR_{m_2}}{m_2}\right)^{m_2}$$
+
+### Example E: periodicity
+
+A bond has a YTM of 6% on a semiannual bond basis.
+
+1. $\text{EAR} = (1 + 0.06/2)^2 - 1 = 1.03^2 - 1 = 1.0609 - 1 = \mathbf{6.09\%}$
+2. Quarterly-compounded equivalent: $APR_4 = 4 \times (1.03^{2/4} - 1) = 4 \times 0.014889 = \mathbf{5.9557\%}$
+
+The more frequent the compounding for a given nominal rate, the higher the effective rate; so for the same effective yield, a more frequently compounded annual rate is *lower*.
+
+---
+
+## 7. Callable Bonds: Yield to Call and Yield to Worst
+
+A callable bond lets the issuer redeem early at a **call price** on specified **call dates**. Investors compute a yield for each possible redemption date.
+
+- **Yield to call (YTC)**: the discount rate that equates the full price to the PV of cash flows to the call date, with the call price replacing par.
+- **Yield to worst (YTW)**: the **lowest** of the YTM and all YTCs. It is the conservative yield, because the issuer will call when it benefits the issuer (usually when the bond's coupon exceeds current market rates).
+
+Rule of thumb: bonds trading at a **premium** tend to have a YTC below the YTM, so YTW is a call yield; bonds trading at a **discount** are unlikely to be called, so YTW is usually the YTM.
+
+### Example F: YTC and YTW
+
+A 5-year, 8% annual-coupon bond trades at a flat price of 108 (assume no accrued interest). It is callable at par (100) in 3 years.
+
+1. **YTM** solves $108 = \sum_{t=1}^{5} 8/(1+y)^t + 100/(1+y)^5 \Rightarrow y \approx \mathbf{6.10\%}$
+2. **YTC** solves $108 = \sum_{t=1}^{3} 8/(1+y)^t + 100/(1+y)^3 \Rightarrow y \approx \mathbf{5.06\%}$
+3. **YTW** $= \min(6.10\%, 5.06\%) = \mathbf{5.06\%}$
+
+At a premium price, the call-to-par shortens the time over which the investor earns the high coupon, lowering the yield.
+
+---
+
+## 8. Pricing with Spot Rates
+
+A **spot rate** $z_t$ is the yield on a zero-coupon bond maturing at time $t$. Each cash flow is discounted at the spot rate for its **own** maturity rather than at one YTM:
+
+$$PV = \frac{PMT}{(1+z_1)^1} + \frac{PMT}{(1+z_2)^2} + \dots + \frac{PMT + FV}{(1+z_N)^N}$$
+
+This yields the **no-arbitrage price**: a coupon bond equals a portfolio of zero-coupon bonds, so any other price would let a trader profit by stripping or reconstituting the bond.
+
+### Example G: spot-rate pricing
+
+A 3-year, 6% annual-coupon bond (par 100). Spot rates: $z_1 = 3\%$, $z_2 = 4\%$, $z_3 = 5\%$.
+
+1. $6/1.03 = 5.8252$
+2. $6/1.04^2 = 5.5473$
+3. $106/1.05^3 = 91.5668$
+4. Price $= 5.8252 + 5.5473 + 91.5668 = \mathbf{102.9394}$
+5. The YTM that gives this price is $\approx \mathbf{4.92\%}$, a weighted blend dominated by the final-year spot rate because most of the cash flow arrives at maturity.
+
+When the yield curve is **upward sloping**, YTM of a coupon bond is below the maturity-matched spot rate (5%), because earlier, lower-rate cash flows pull the average down.
+
+---
+
+## 9. Money Market Instruments
+
+Short-term instruments (T-bills, commercial paper) are quoted differently from bonds, using **simple interest** and money market day counts.
+
+**Discount rate (DR)** quotes the discount as a fraction of par on a 360-day basis:
+
+$$PV = FV \times \left(1 - \frac{\text{Days}}{360} \times DR\right)$$
+
+**Add-on rate (AOR)** quotes the interest relative to the amount invested:
+
+$$AOR = \frac{FV - PV}{PV} \times \frac{360}{\text{Days}}$$
+
+(Some markets use 365 days instead of 360.) The bond equivalent yield restates the money market yield on a 365-day basis so it is comparable with bond yields.
+
+### Example H: T-bill
+
+A 90-day T-bill with par 100 is quoted at a discount rate of 4%.
+
+1. $PV = 100 \times (1 - 0.04 \times 90/360) = 100 \times 0.99 = \mathbf{99.00}$
+2. Add-on rate (360 basis) $= (100-99)/99 \times 360/90 = \mathbf{4.0404\%}$
+3. Bond equivalent yield (365 basis) $= (100-99)/99 \times 365/90 = \mathbf{4.0965\%}$
+
+The discount rate **understates** the true return because it divides by par (the future value) instead of the amount invested.
+
+---
+
+## Key takeaways
+
+- Bond price $=$ PV of coupons and par at the YTM per period; use periodic rate and periods consistent with coupon frequency.
+- Price and yield are **inversely related and convex**: a yield fall raises price by more than an equal yield rise lowers it.
+- Coupon $>$ YTM: **premium**; coupon $=$ YTM: **par**; coupon $<$ YTM: **discount**. At constant yield, prices **pull to par**.
+- **Full price $=$ flat price $+$ accrued interest**, with $AI = (t/T) \times PMT$. Quotes are flat.
+- **Matrix pricing** derives a required yield from comparable bonds when a bond does not trade.
+- Convert yields across compounding frequencies through the **effective annual rate**.
+- **YTW** is the lowest of YTM and all YTCs; premium callable bonds usually have a call yield as their YTW.
+- Bonds can be priced with **spot rates**, discounting each cash flow at its own maturity's rate, which ensures no arbitrage.
+- Money market instruments use **simple interest**: the discount rate understates return relative to the add-on rate.

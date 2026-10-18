@@ -1,0 +1,230 @@
+---
+title: "Analysis of Inventories"
+description: "How inventory is measured and reported: costs included, FIFO, weighted average cost and LIFO, perpetual versus periodic systems, the LIFO reserve and converting LIFO to FIFO, lower of cost and net realizable value, and the inventory ratios analysts use to compare companies."
+category: "Financial Statements"
+difficulty: "intermediate"
+dateAdded: "2026-10-18"
+tags: ["inventory", "fifo", "lifo", "lifo-reserve", "nrv", "inventory-turnover"]
+---
+
+# Analysis of Inventories
+
+For a manufacturer or retailer, **inventory** is often the largest current asset and the cost of goods sold (COGS) is the largest expense. How inventory is **measured** (which costs, which cost-flow method, which write-down rule) changes reported profit, assets and ratios, even when the underlying economics are identical. The analyst's job is to see through these choices so that two companies can be compared fairly.
+
+---
+
+## 1. What Inventory Is and What It Costs
+
+Inventories are assets held for sale in the ordinary course of business, or goods in production or materials to be consumed in production. A manufacturer reports three types:
+
+- **Raw materials**: inputs not yet in production.
+- **Work in process (WIP)**: partly finished goods.
+- **Finished goods**: completed goods available for sale.
+
+### Cost of inventory
+
+Inventory is recorded at **cost**, which includes all costs needed to bring it to its present location and condition:
+
+- **Purchase cost**: price paid, plus import duties and non-recoverable taxes, plus freight-in, **less** trade discounts and rebates.
+- **Conversion costs**: direct labor and a systematic allocation of production overhead (based on normal capacity).
+
+These costs are **excluded** and expensed in the period incurred:
+
+- **Abnormal waste** (spoilage, idle capacity)
+- **Storage costs** unless necessary in the production process (e.g., aging of wine)
+- **Administrative overhead** and **selling costs**
+
+The relationship that ties inventory to expense is:
+
+$$\text{Beginning inventory} + \text{Purchases} - \text{Ending inventory} = \text{COGS}$$
+
+### Example A: cost of inventory
+
+A retailer buys goods with a list price of 100,000, import duty of 5,000, freight-in of 3,000, and receives a trade discount of 2,000. It also pays 1,500 to store the goods after purchase (not needed for production) and writes off 2,500 of abnormal spoilage.
+
+1. Inventory cost $= 100{,}000 + 5{,}000 + 3{,}000 - 2{,}000 = \mathbf{106{,}000}$
+2. The 1,500 storage cost and 2,500 abnormal waste are **expensed** immediately and are not part of inventory.
+
+<Note>Capitalizing a cost into inventory delays its recognition as an expense until the goods are sold. Aggressively capitalizing overhead therefore inflates current profit and assets.</Note>
+
+---
+
+## 2. Inventory Systems: Perpetual vs Periodic
+
+- **Perpetual system**: inventory and COGS are updated continuously with every purchase and sale.
+- **Periodic system**: COGS is computed at period end from a physical count: Beginning inventory + Purchases − Ending inventory.
+
+Under **FIFO** and **specific identification**, the two systems give the **same** results. Under **LIFO** and **weighted average cost**, they can differ, because the cost layers consumed depend on when each sale occurs. The numerical examples below use the periodic system (all purchases assumed to precede the sales).
+
+---
+
+## 3. Inventory Cost-Flow Methods
+
+When identical items are bought at different prices, the firm must decide which costs flow to COGS and which remain in inventory.
+
+| Method | Costs assigned to COGS | Ending inventory contains | IFRS | U.S. GAAP |
+| --- | --- | --- | --- | --- |
+| **Specific identification** | Actual cost of the specific units sold | Actual cost of specific units on hand | Allowed (unique items) | Allowed |
+| **FIFO** (first-in, first-out) | Oldest costs | Most recent costs | Allowed | Allowed |
+| **Weighted average cost** | Average cost of all goods available | Average cost | Allowed | Allowed |
+| **LIFO** (last-in, first-out) | Most recent costs | Oldest costs | **Prohibited** | Allowed |
+
+Under **FIFO**, the balance sheet shows inventory at near-current cost. Under **LIFO**, the income statement matches near-current costs against revenue, while the balance sheet carries old, often outdated, cost layers.
+
+### Example B: three methods compared
+
+A company has these goods available, then sells **250 units** at 25 each:
+
+| | Units | Unit cost | Total cost |
+| --- | --- | --- | --- |
+| Beginning inventory | 100 | 10 | 1,000 |
+| Purchase 1 | 150 | 12 | 1,800 |
+| Purchase 2 | 100 | 14 | 1,400 |
+| **Goods available** | **350** | | **4,200** |
+
+Sales $= 250 \times 25 = 6{,}250$. Ending inventory $= 350 - 250 = 100$ units.
+
+**FIFO**: sold units come from the oldest layers.
+
+1. COGS $= 100 \times 10 + 150 \times 12 = 1{,}000 + 1{,}800 = \mathbf{2{,}800}$
+2. Ending inventory $= 100 \times 14 = \mathbf{1{,}400}$ (check: $2{,}800 + 1{,}400 = 4{,}200$)
+
+**LIFO**: sold units come from the newest layers.
+
+1. COGS $= 100 \times 14 + 150 \times 12 = 1{,}400 + 1{,}800 = \mathbf{3{,}200}$
+2. Ending inventory $= 100 \times 10 = \mathbf{1{,}000}$ (check: $3{,}200 + 1{,}000 = 4{,}200$)
+
+**Weighted average cost**:
+
+1. Average unit cost $= 4{,}200 / 350 = 12.00$
+2. COGS $= 250 \times 12 = \mathbf{3{,}000}$; ending inventory $= 100 \times 12 = \mathbf{1{,}200}$
+
+| | FIFO | Weighted average | LIFO |
+| --- | --- | --- | --- |
+| Sales | 6,250 | 6,250 | 6,250 |
+| COGS | 2,800 | 3,000 | 3,200 |
+| Gross profit | 3,450 | 3,250 | 3,050 |
+| Ending inventory | 1,400 | 1,200 | 1,000 |
+
+Because unit costs are **rising**, FIFO gives the lowest COGS, highest gross profit and highest inventory; LIFO gives the opposite; weighted average lies between. The total cost of goods available (4,200) is simply split differently between the income statement and the balance sheet.
+
+### Effects of changing prices
+
+| | Rising prices (inflation) | Falling prices (deflation) |
+| --- | --- | --- |
+| **COGS** | LIFO highest, FIFO lowest | FIFO highest, LIFO lowest |
+| **Gross profit and net income** | LIFO lowest, FIFO highest | LIFO highest, FIFO lowest |
+| **Ending inventory** | FIFO highest | LIFO highest |
+| **Taxes** (where LIFO is tax-allowed) | LIFO pays less now | LIFO pays more now |
+
+This is why many U.S. companies use LIFO when costs rise: it lowers taxable income and defers tax. (Under U.S. tax rules, a company that uses LIFO for tax must also use it for financial reporting.)
+
+---
+
+## 4. The LIFO Reserve and Converting LIFO to FIFO
+
+To compare a LIFO company with a FIFO company, the analyst uses the **LIFO reserve**, which U.S. GAAP companies must disclose:
+
+$$\text{LIFO reserve} = \text{FIFO inventory} - \text{LIFO inventory}$$
+
+Conversions:
+
+$$\text{FIFO inventory} = \text{LIFO inventory} + \text{LIFO reserve}$$
+
+$$\text{FIFO COGS} = \text{LIFO COGS} - \Delta\text{LIFO reserve}$$
+
+where $\Delta\text{LIFO reserve}$ is ending reserve minus beginning reserve. Pretax income is higher under FIFO by the same $\Delta$LIFO reserve (in a period of rising prices), and equity increases cumulatively by the reserve after tax:
+
+$$\text{Equity adjustment} = \text{LIFO reserve} \times (1 - t)$$
+
+### Example C: LIFO to FIFO conversion
+
+A U.S. company reports LIFO inventory of 5,000 (beginning: 4,600), LIFO COGS of 20,000, a LIFO reserve of 800 (beginning: 600), and a 30% tax rate.
+
+1. FIFO inventory $= 5{,}000 + 800 = \mathbf{5{,}800}$ (beginning: $4{,}600 + 600 = 5{,}200$)
+2. $\Delta$ reserve $= 800 - 600 = 200$
+3. FIFO COGS $= 20{,}000 - 200 = \mathbf{19{,}800}$
+4. Pretax income is **200 higher** under FIFO; tax is $0.30 \times 200 = 60$ higher; net income is $\mathbf{140}$ higher.
+5. Cumulative retained earnings adjustment $= 800 \times (1 - 0.30) = \mathbf{560}$ (the other 240 is the cumulative tax already deferred by LIFO).
+
+### Impact on ratios
+
+| Ratio | LIFO | FIFO (converted) |
+| --- | --- | --- |
+| Inventory turnover $= \dfrac{\text{COGS}}{\text{Average inventory}}$ | $\dfrac{20{,}000}{(4{,}600+5{,}000)/2} = 4.17$ | $\dfrac{19{,}800}{(5{,}200+5{,}800)/2} = 3.60$ |
+| Days of inventory on hand $= \dfrac{365}{\text{Turnover}}$ | 87.6 days | 101.4 days |
+
+With rising prices, the converted FIFO company has higher inventory, lower COGS, a higher current ratio, and a lower turnover. After conversion, the analyst compares like with like.
+
+### LIFO liquidation
+
+A **LIFO liquidation** occurs when a firm sells more units than it buys, so old, low-cost layers flow into COGS. COGS then reflects cost far below current prices, and profit is temporarily inflated by a non-recurring gain.
+
+### Example D: LIFO liquidation
+
+A firm's oldest LIFO layer costs 10 per unit; replacement cost is now 16. It sells 1,000 units from the old layer.
+
+1. COGS is lower by $(16 - 10) \times 1{,}000 = \mathbf{6{,}000}$ than if current costs had been charged.
+2. Pretax income is boosted by 6,000. Analysts remove this one-time gain when assessing sustainable earnings.
+
+---
+
+## 5. Valuation: Lower of Cost and Net Realizable Value
+
+Inventory must not be carried above the amount the firm can recover from it. If the value falls, inventory is written down and the loss is recognized in COGS (or as a separate expense), reducing income in the period.
+
+**Net realizable value (NRV)** $=$ estimated selling price $-$ estimated costs of completion and sale.
+
+| | IFRS | U.S. GAAP |
+| --- | --- | --- |
+| Rule | Lower of **cost** and **NRV** (for all methods) | FIFO / weighted average: lower of cost and **NRV**. LIFO and retail method: lower of cost and **market** |
+| Reversal if value recovers | **Allowed**, limited to the original write-down (carrying amount never exceeds original cost) | **Not allowed** |
+
+### Example E: write-down and reversal
+
+Inventory has a cost of 50,000 and NRV of 44,000.
+
+1. Write-down $= 50{,}000 - 44{,}000 = \mathbf{6{,}000}$, recognized in COGS; inventory is carried at 44,000.
+2. Next year NRV recovers to 48,000. Under **IFRS**, the firm reverses 4,000 (carrying amount $44{,}000 + 4{,}000 = 48{,}000$, below the original cost of 50,000), which increases income. Under **U.S. GAAP**, no reversal is allowed and inventory stays at 44,000.
+
+### "Market" for LIFO and retail users (U.S. GAAP)
+
+Market is the **middle** of three values: replacement cost, a ceiling (NRV), and a floor (NRV $-$ normal profit margin). Carrying value is $\min(\text{cost}, \text{market})$.
+
+### Example F: U.S. GAAP lower of cost or market
+
+An item has cost 100, replacement cost 80, NRV 95, and a normal profit margin of 10.
+
+1. Ceiling $= 95$; floor $= 95 - 10 = 85$
+2. Market is the middle value of 80, 95, and 85, which is **85** (replacement cost 80 is below the floor, so the floor applies)
+3. Carrying value $= \min(100, 85) = \mathbf{85}$
+
+---
+
+## 6. Ratios and Red Flags
+
+| Ratio | Formula | Interpretation |
+| --- | --- | --- |
+| **Inventory turnover** | COGS / Average inventory | How many times inventory is sold and replaced; higher is usually better |
+| **Days of inventory on hand (DOH)** | 365 / Inventory turnover | Average days to sell inventory |
+| **Gross profit margin** | (Sales − COGS) / Sales | Affected by cost-flow method and write-downs |
+
+An analyst should also check:
+
+- **Inventory growing faster than sales**: slowing demand, obsolescence, or inflated inventory costs.
+- **A very high turnover**: could signal efficiency, or stock-outs and lost sales.
+- **Write-downs**: signal that earlier gross margins may have been overstated.
+- **Disclosures**: cost-flow method, carrying amounts by category, write-downs and reversals, and the LIFO reserve.
+- **Cross-company comparability**: different methods (FIFO vs LIFO) distort turnover, DOH, margins and the current ratio.
+
+---
+
+## Key takeaways
+
+- Inventory cost includes purchase and conversion costs; abnormal waste, selling and administrative costs are expensed. COGS $=$ Beginning inventory $+$ Purchases $-$ Ending inventory.
+- **FIFO** and **weighted average** are allowed under IFRS and U.S. GAAP; **LIFO** is allowed only under U.S. GAAP. FIFO gives identical results under perpetual and periodic systems.
+- In **rising prices**, LIFO gives the highest COGS and lowest income, inventory, and taxes; FIFO gives the opposite. In falling prices, the effects reverse.
+- **FIFO inventory $=$ LIFO inventory $+$ LIFO reserve**; **FIFO COGS $=$ LIFO COGS $-$ $\Delta$ reserve**; equity adjustment $=$ reserve $\times (1 - t)$.
+- A **LIFO liquidation** boosts profit with old, low-cost layers and is not sustainable.
+- Inventory is carried at the **lower of cost and NRV**. IFRS permits reversal of write-downs (up to original cost); U.S. GAAP does not.
+- **Inventory turnover $=$ COGS / average inventory**; DOH $= 365 /$ turnover. Adjust to a common cost-flow basis before comparing companies.

@@ -1,0 +1,50 @@
+[
+  {
+    "front": "Which costs are included in inventory, and which are expensed?",
+    "back": "Included: purchase price, import duties, non-recoverable taxes, freight-in (less trade discounts), and conversion costs including allocated production overhead.\nExpensed: abnormal waste, storage (unless necessary in production), administrative and selling costs."
+  },
+  {
+    "front": "COGS identity",
+    "back": "Beginning inventory + Purchases - Ending inventory = COGS."
+  },
+  {
+    "front": "What are the inventory cost-flow methods and which are allowed under IFRS?",
+    "back": "Specific identification, FIFO, weighted average cost and LIFO. LIFO is prohibited under IFRS; all four are allowed under U.S. GAAP."
+  },
+  {
+    "front": "FIFO vs LIFO when prices are rising",
+    "back": "FIFO: lowest COGS, highest income, highest inventory (near-current cost on the balance sheet).\nLIFO: highest COGS, lowest income and taxes, lowest inventory (old layers on the balance sheet)."
+  },
+  {
+    "front": "Perpetual vs periodic inventory systems",
+    "back": "Perpetual updates inventory and COGS with every transaction; periodic computes COGS at period end from a count. FIFO (and specific identification) give the same result under both; LIFO and weighted average can differ."
+  },
+  {
+    "front": "What is the LIFO reserve?",
+    "back": "LIFO reserve = FIFO inventory - LIFO inventory. It is disclosed by U.S. GAAP LIFO users so analysts can convert to FIFO."
+  },
+  {
+    "front": "How do you convert LIFO figures to FIFO?",
+    "back": "FIFO inventory = LIFO inventory + LIFO reserve.\nFIFO COGS = LIFO COGS - change in LIFO reserve.\nEquity adjustment = LIFO reserve x (1 - tax rate)."
+  },
+  {
+    "front": "What is a LIFO liquidation?",
+    "back": "Selling more units than purchased so that old, low-cost LIFO layers flow into COGS. COGS falls below current cost and profit is temporarily inflated; analysts adjust for it."
+  },
+  {
+    "front": "Net realizable value (NRV)",
+    "back": "Estimated selling price less estimated costs of completion and sale. Inventory is carried at the lower of cost and NRV."
+  },
+  {
+    "front": "IFRS vs U.S. GAAP on inventory write-down reversals",
+    "back": "IFRS allows reversal if NRV recovers, limited to the original write-down (never above original cost). U.S. GAAP prohibits reversals."
+  },
+  {
+    "front": "Inventory turnover and days of inventory on hand",
+    "back": "Inventory turnover = COGS / average inventory.\nDays of inventory on hand = 365 / inventory turnover. Compare companies only after putting them on the same cost-flow basis."
+  },
+  {
+    "front": "U.S. GAAP 'market' for LIFO and retail method inventory",
+    "back": "Market is the middle value of replacement cost, NRV (ceiling) and NRV less normal profit margin (floor). Carry at the lower of cost and market."
+  }
+]

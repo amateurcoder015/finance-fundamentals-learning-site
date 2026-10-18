@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A 3-year bond pays a 5% annual coupon on par of 100. If the YTM is 6%, what is the price?",
+    "options": [
+      "94.75",
+      "97.33",
+      "100.00",
+      "102.78"
+    ],
+    "correctIndex": 1,
+    "explanation": "Price = 5/1.06 + 5/1.06^2 + 105/1.06^3 = 4.7170 + 4.4500 + 88.1600 = 97.33. The coupon (5%) is below the YTM (6%), so the bond trades at a discount to par."
+  },
+  {
+    "question": "A 2-year bond has a 6% coupon paid semiannually, par 100, and a YTM of 8% (semiannual compounding). Which calculation gives its price?",
+    "options": [
+      "Coupons of 6 for 2 periods discounted at 8%, plus 100 discounted at 8%",
+      "Coupons of 3 for 2 periods discounted at 8%, plus 100 discounted at 4%",
+      "Coupons of 6 for 4 periods discounted at 4%, plus 100 discounted over 2 periods at 8%",
+      "Coupons of 3 for 4 periods discounted at 4%, plus 100 discounted over 4 periods at 4%"
+    ],
+    "correctIndex": 3,
+    "explanation": "For a semiannual bond, divide the annual coupon (3 per period) and the annual yield (4% per period) by 2, and double the years to get N = 4 periods. The price is about 96.37."
+  },
+  {
+    "question": "A bond's YTM stays unchanged at 4% while it is trading at a premium. Which statement about the price over time is correct?",
+    "options": [
+      "The price rises above its premium as maturity nears.",
+      "The price stays constant until maturity.",
+      "The price falls toward par and equals par at maturity.",
+      "The price falls below par before maturity, then returns to par."
+    ],
+    "correctIndex": 2,
+    "explanation": "Under the constant-yield price trajectory, a premium bond's price declines steadily toward par and reaches exactly par at maturity (pull to par), assuming no default and no change in yield."
+  },
+  {
+    "question": "A bond with a 5% semiannual coupon and par of 100 has a flat price of 99.20. It has been 60 days since the last coupon, using 30/360 with a 180-day coupon period. What is the full price?",
+    "options": [
+      "100.03",
+      "99.20",
+      "100.45",
+      "98.37"
+    ],
+    "correctIndex": 0,
+    "explanation": "Coupon per period = 2.50. Accrued interest = (60/180) x 2.50 = 0.8333. Full price = flat price + accrued interest = 99.20 + 0.83 = 100.03."
+  },
+  {
+    "question": "Which statement about the price-yield relationship of an option-free bond is most accurate?",
+    "options": [
+      "It is linear and inverse, so equal yield changes cause equal price changes in both directions.",
+      "It is convex: a yield increase lowers price by more than an equal yield decrease raises it.",
+      "It is direct, since higher yields mean higher prices.",
+      "It is convex: a yield decrease raises price by more than an equal yield increase lowers it."
+    ],
+    "correctIndex": 3,
+    "explanation": "The relationship is inverse and convex. For the same-sized yield move, the gain from a yield fall exceeds the loss from a yield rise (e.g., a 3-year 5% bond gains 2.78 when yield falls from 5% to 4% but loses only 2.67 when it rises to 6%)."
+  },
+  {
+    "question": "A bond with an 8% annual coupon trades at a premium to par and is callable at par in three years. Compared with its YTM, the yield to call is most likely:",
+    "options": [
+      "Higher, because the investor receives par earlier.",
+      "Equal, since the call price is par.",
+      "Lower, so the yield to worst is the yield to call.",
+      "Not computable for a premium bond."
+    ],
+    "correctIndex": 2,
+    "explanation": "For a premium bond, redemption at par shortens the period in which the investor earns an above-market coupon and forces a capital loss sooner, so YTC is below YTM. The yield to worst (the lowest of YTM and all YTCs) is therefore the YTC."
+  },
+  {
+    "question": "A 90-day T-bill (par 100) is quoted at a discount rate of 4% on a 360-day basis. What is its price?",
+    "options": [
+      "99.00",
+      "96.00",
+      "99.60",
+      "100.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "Price = 100 x (1 - 0.04 x 90/360) = 100 x 0.99 = 99.00. The add-on rate is higher than the discount rate (4.04%) because it divides the interest by the 99 invested rather than the 100 par."
+  },
+  {
+    "question": "A 3-year, 6% annual-coupon bond (par 100) is priced using spot rates of 3% (1-year), 4% (2-year) and 5% (3-year). What is its price?",
+    "options": [
+      "100.00",
+      "101.50",
+      "106.00",
+      "102.94"
+    ],
+    "correctIndex": 3,
+    "explanation": "Discount each cash flow at its own spot rate: 6/1.03 + 6/1.04^2 + 106/1.05^3 = 5.8252 + 5.5473 + 91.5668 = 102.94."
+  }
+]

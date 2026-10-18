@@ -1,0 +1,27 @@
+graph TD
+    BV["Bond Valuation"] --> CF["Promised Cash Flows<br/>(Coupons + Par)"]
+    BV --> DR["Discount Rate<br/>(Yield to Maturity or Spot Rates)"]
+    CF --> PV["Price = PV of Cash Flows"]
+    DR --> PV
+
+    PV --> REL["Price-Yield Relationship"]
+    REL --> INV["Inverse and Convex"]
+    REL --> PREM["Coupon > YTM: Premium<br/>Coupon = YTM: Par<br/>Coupon < YTM: Discount"]
+    PREM --> PAR["Pull to Par<br/>(Constant-Yield Trajectory)"]
+
+    PV --> QUOTE["Quoting Conventions"]
+    QUOTE --> FLAT["Flat Price<br/>(Quoted, excludes accrued interest)"]
+    QUOTE --> AI["Accrued Interest<br/>(t / T) x Coupon"]
+    FLAT --> FULL["Full Price = Flat + Accrued Interest"]
+    AI --> FULL
+
+    DR --> YM["Yield Measures"]
+    YM --> YTM["YTM / Bond Equivalent Yield"]
+    YM --> CY["Current Yield<br/>(Annual Coupon / Flat Price)"]
+    YM --> CALL["Callable Bonds<br/>(YTC and Yield to Worst)"]
+    YM --> PER["Periodicity Conversion<br/>(via Effective Annual Rate)"]
+
+    DR --> ALT["Alternative Pricing Approaches"]
+    ALT --> SPOT["Spot-Rate Pricing<br/>(Each Cash Flow at Own Rate)"]
+    ALT --> MAT["Matrix Pricing<br/>(Yield from Comparable Bonds)"]
+    ALT --> MM["Money Market Quotes<br/>(Discount Rate vs Add-on Rate)"]
