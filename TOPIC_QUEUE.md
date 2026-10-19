@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Portfolio Risk and Return: Part II | Portfolio Management | advanced
-- [ ] Corporate Governance: Conflicts, Mechanisms, Risks, and Benefits | Corporate Finance | intermediate
 - [ ] Yield and Yield Spread Measures for Fixed-Rate Bonds | Fixed Income | intermediate
 - [ ] Analysis of Long-Term Assets | Financial Statements | intermediate
 - [ ] Fiscal Policy | Economics | intermediate
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Overview of Equity Securities | Equities | beginner | 2026-10-17
 - [x] Fixed-Income Bond Valuation: Prices and Yields | Fixed Income | intermediate | 2026-10-18
 - [x] Analysis of Inventories | Financial Statements | intermediate | 2026-10-18
+- [x] Portfolio Risk and Return: Part II | Portfolio Management | advanced | 2026-10-19
+- [x] Corporate Governance: Conflicts, Mechanisms, Risks, and Benefits | Corporate Finance | intermediate | 2026-10-19

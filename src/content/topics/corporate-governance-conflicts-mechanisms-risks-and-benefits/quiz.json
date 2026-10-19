@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which set of principles is most commonly cited as the foundation of good corporate governance?",
+    "options": [
+      "Liquidity, solvency, profitability and efficiency",
+      "Fairness, transparency, accountability and responsibility",
+      "Diversification, hedging, leverage and growth",
+      "Seniority, collateral, covenants and priority"
+    ],
+    "correctIndex": 1,
+    "explanation": "Good governance is generally built on fairness (equal treatment of shareholders), transparency (timely, accurate disclosure), accountability (managers answer to the board, the board to shareholders) and responsibility (acting in the company's long-term interest within the law)."
+  },
+  {
+    "question": "A company has 6,000,000 shares outstanding and elects 5 directors using cumulative voting. The minimum number of shares a shareholder needs to guarantee electing one director is closest to:",
+    "options": [
+      "500,001",
+      "1,200,001",
+      "3,000,001",
+      "1,000,001"
+    ],
+    "correctIndex": 3,
+    "explanation": "Minimum shares = shares outstanding / (seats + 1) + 1 = 6,000,000 / 6 + 1 = 1,000,001. That holder has 5,000,005 votes. The other holders have about 25,000,000 votes in total, which is not enough to give five rival candidates more than 5,000,005 votes each, so the holder wins a seat."
+  },
+  {
+    "question": "A 10-member board has 4 executives and 6 non-executives. Of the non-executives, 2 are close relatives of the founder and the other 4 have no ties to the company. What proportion of the board is independent?",
+    "options": [
+      "40%",
+      "60%",
+      "100%",
+      "20%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Only the 4 directors with no ties are independent: 4 / 10 = 40%. Non-executive status alone does not make a director independent, and the board therefore lacks an independent majority."
+  },
+  {
+    "question": "Which feature best describes a two-tier board?",
+    "options": [
+      "One board that includes both executive and non-executive directors",
+      "A supervisory board that oversees a separate management board",
+      "A board in which all directors are elected by cumulative voting",
+      "A board whose members serve staggered terms"
+    ],
+    "correctIndex": 1,
+    "explanation": "A two-tier structure (for example in Germany) separates oversight, done by a supervisory board that may include employee and creditor representatives, from day-to-day management by a management board. A one-tier board has a single body of executive and non-executive directors."
+  },
+  {
+    "question": "A controlling shareholder owns 70% of Company A and 100% of Supplier S. A buys 2,000,000 units from S at 55 each when the market price is 50. Ignoring tax, the net gain to the controlling shareholder and the loss to minority shareholders of A are closest to:",
+    "options": [
+      "Gain 3.0m; loss 3.0m",
+      "Gain 10.0m; loss 3.0m",
+      "Gain 3.0m; loss 10.0m",
+      "Gain 7.0m; loss 3.0m"
+    ],
+    "correctIndex": 0,
+    "explanation": "Excess cost to A = 2m x (55 - 50) = 10m. The controlling holder bears 70% = 7m of it through A but earns 10m at S, for a net gain of 3m. Minority holders (30%) bear 3m. The controller's gain equals the minority's loss."
+  },
+  {
+    "question": "Which of the following is a consequence of weak corporate governance?",
+    "options": [
+      "Lower cost of debt",
+      "Higher operating efficiency",
+      "Greater default risk and reputational risk",
+      "Reduced agency costs"
+    ],
+    "correctIndex": 2,
+    "explanation": "Weak governance leads to weak controls, poor decisions, excess risk-taking, and legal and reputational damage, raising default risk and the cost of capital. The other options are benefits of effective governance."
+  },
+  {
+    "question": "Which of the following committees should be made up mainly of independent directors and is responsible for the integrity of financial reporting and internal controls?",
+    "options": [
+      "Nomination committee",
+      "Investment committee",
+      "Remuneration committee",
+      "Audit committee"
+    ],
+    "correctIndex": 3,
+    "explanation": "The audit committee oversees financial statements, internal controls and the relationship with the external auditor. The remuneration committee handles executive pay and the nomination committee handles director selection."
+  },
+  {
+    "question": "Which statement about voting methods is correct?",
+    "options": [
+      "Under statutory voting, a holder of more than 50% of shares can elect all directors",
+      "Under cumulative voting, each share carries one vote per seat on every candidate separately",
+      "Proxy voting prevents shareholders from exercising their votes",
+      "Say-on-pay votes are always legally binding on the board"
+    ],
+    "correctIndex": 0,
+    "explanation": "With statutory voting each seat is decided separately, so a majority bloc wins all seats. Cumulative voting lets shareholders pool their votes on fewer candidates, which helps minorities. Proxy voting lets absent shareholders vote through a representative, and say-on-pay is usually advisory."
+  }
+]

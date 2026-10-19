@@ -1,0 +1,29 @@
+graph TD
+    P2["Portfolio Risk and Return: Part II"] --> RISK["Types of Risk"]
+    P2 --> MODEL["Return-Generating Models"]
+    P2 --> CAL["Combining Risk-Free and Risky Assets"]
+    P2 --> PRICE["Asset Pricing"]
+    P2 --> PERF["Performance Appraisal"]
+
+    RISK --> SYS["Systematic Risk<br/>(Market risk, cannot be diversified, rewarded)"]
+    RISK --> NONSYS["Nonsystematic Risk<br/>(Firm-specific, diversifiable, not rewarded)"]
+
+    MODEL --> MKT["Market Model<br/>Ri = alpha + beta Rm + residual"]
+    MKT --> BETA["Beta = Cov(Ri, Rm) / Var(Rm)<br/>(Portfolio beta is the weighted average)"]
+    MODEL --> MULTI["Multifactor Models<br/>(Fama-French, Carhart, macro, statistical)"]
+    MULTI --> ACTIVE["Active Return and Tracking Error<br/>(Information ratio = active return / tracking error)"]
+
+    CAL --> CALL["Capital Allocation Line<br/>(Slope = Sharpe ratio)"]
+    CALL --> TANG["Tangency Portfolio<br/>(Highest Sharpe ratio)"]
+    TANG --> CML["Capital Market Line<br/>(Efficient portfolios, total risk)"]
+
+    PRICE --> CAPM["CAPM: E(Ri) = Rf + beta [E(Rm) - Rf]"]
+    CAPM --> SML["Security Market Line<br/>(Any asset, beta on the axis)"]
+    SML --> VAL["Above SML: undervalued<br/>Below SML: overvalued"]
+    BETA --> CAPM
+    SYS --> BETA
+
+    PERF --> TOT["Total Risk Measures<br/>(Sharpe ratio, M-squared)"]
+    PERF --> SYSM["Systematic Risk Measures<br/>(Treynor ratio, Jensen's alpha)"]
+    CML --> TOT
+    SML --> SYSM

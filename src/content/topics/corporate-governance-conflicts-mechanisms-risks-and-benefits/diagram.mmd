@@ -1,0 +1,29 @@
+graph TD
+    CG["Corporate Governance<br/>(Rights, roles and responsibilities of stakeholders)"] --> PRIN["Principles"]
+    CG --> BOARD["Board of Directors"]
+    CG --> SH["Shareholder Rights"]
+    CG --> MECH["Mechanisms for Managing Conflicts"]
+    CG --> OUT["Outcomes"]
+
+    PRIN --> P1["Fairness and Transparency"]
+    PRIN --> P2["Accountability and Responsibility"]
+
+    BOARD --> STRUCT["Structure<br/>(One-tier or two-tier)"]
+    BOARD --> INDEP["Independence<br/>(Independent directors, separate chair and CEO)"]
+    BOARD --> COMM["Committees<br/>(Audit, remuneration, nomination, risk)"]
+
+    SH --> VOTE["Voting<br/>(Statutory, cumulative, proxy, say-on-pay)"]
+    SH --> ACT["Activism<br/>(Proposals, proxy contests, activist investors)"]
+    SH --> CTRL["Market for Corporate Control<br/>(Takeover threat)"]
+
+    MECH --> M1["Aligned Pay<br/>(Long-term targets, clawbacks)"]
+    MECH --> M2["Audit and Disclosure<br/>(External auditor, internal controls)"]
+    MECH --> M3["Related-Party Safeguards<br/>(Independent approval, minority vote)"]
+    MECH --> M4["Covenants<br/>(Protect creditors)"]
+
+    INDEP --> M3
+    COMM --> M1
+    COMM --> M2
+
+    OUT --> WEAK["Weak Governance Risks<br/>(Poor control, bad decisions, legal and reputational losses, default risk)"]
+    OUT --> GOOD["Good Governance Benefits<br/>(Better control and decisions, lower cost of capital, lower default risk)"]

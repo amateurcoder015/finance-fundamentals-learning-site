@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What is the difference between systematic and nonsystematic risk?",
+    "back": "Systematic (market) risk comes from economy-wide factors, affects all assets and cannot be diversified away; it earns a risk premium. Nonsystematic (firm-specific) risk can be diversified away in a large portfolio and earns no premium."
+  },
+  {
+    "front": "What does the market model say?",
+    "back": "R_i = alpha_i + beta_i R_M + epsilon_i. Beta is the sensitivity to the market, alpha is the return not explained by the market, and epsilon is the firm-specific residual."
+  },
+  {
+    "front": "How is beta calculated?",
+    "back": "Beta = Cov(R_i, R_M) / Var(R_M) = rho x sigma_i / sigma_M. It is the slope of the regression of the asset's returns on the market's returns. A portfolio's beta is the weighted average of its assets' betas."
+  },
+  {
+    "front": "What is the capital allocation line (CAL)?",
+    "back": "The line of risk-return combinations from mixing the risk-free asset with a risky portfolio: E(R) = Rf + [(E(R_P) - Rf)/sigma_P] x sigma. Its slope is the risky portfolio's Sharpe ratio."
+  },
+  {
+    "front": "What is the capital market line (CML)?",
+    "back": "The CAL through the market portfolio (the tangency portfolio): E(R_P) = Rf + [(E(R_M) - Rf)/sigma_M] x sigma_P. It applies to efficient portfolios only and uses total risk."
+  },
+  {
+    "front": "State the CAPM and the security market line.",
+    "back": "E(R_i) = Rf + beta_i [E(R_M) - Rf]. The SML plots expected return against beta for any asset; its slope is the market risk premium and its intercept is Rf."
+  },
+  {
+    "front": "How does the SML signal mispricing?",
+    "back": "If the expected return is above the SML (positive alpha), the asset is undervalued. If it is below the SML (negative alpha), the asset is overvalued."
+  },
+  {
+    "front": "List the main CAPM assumptions.",
+    "back": "Risk-averse mean-variance investors, price takers, a single common period, homogeneous expectations, borrowing and lending at the risk-free rate, and frictionless markets (no taxes or transaction costs)."
+  },
+  {
+    "front": "Formulas for the Sharpe ratio, Treynor ratio, Jensen's alpha and M-squared?",
+    "back": "Sharpe = (Rp - Rf)/sigma_p. Treynor = (Rp - Rf)/beta_p. Jensen's alpha = Rp - [Rf + beta_p (Rm - Rf)]. M-squared = (S_p - S_m) x sigma_m, which is the Sharpe ratio gap expressed in return units."
+  },
+  {
+    "front": "When should Sharpe or M-squared be used instead of Treynor or alpha?",
+    "back": "Use Sharpe or M-squared (total risk) when the portfolio is the investor's entire holding. Use Treynor or alpha (beta) when it is one component of a well-diversified portfolio."
+  },
+  {
+    "front": "What are the Fama-French and Carhart models?",
+    "back": "Fama-French adds SMB (small minus big) and HML (high minus low book-to-market) factors to the market factor. Carhart adds a momentum factor to those three."
+  },
+  {
+    "front": "What is the information ratio?",
+    "back": "Information ratio = active return / tracking error, where active return is portfolio return minus benchmark return and tracking error is the standard deviation of active returns."
+  }
+]

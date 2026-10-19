@@ -1,0 +1,224 @@
+---
+title: "Portfolio Risk and Return: Part II"
+description: "Systematic and nonsystematic risk, return-generating models and beta, the capital allocation line and capital market line, CAPM and the security market line, risk-adjusted performance measures (Sharpe, M-squared, Treynor, Jensen's alpha), and multifactor models."
+category: "Portfolio Management"
+difficulty: "advanced"
+dateAdded: "2026-10-19"
+tags: ["capm", "beta", "capital-market-line", "sharpe-ratio", "security-market-line", "multifactor-models"]
+---
+
+# Portfolio Risk and Return: Part II
+
+Part I showed how combining assets lowers portfolio risk. Part II asks **which risk the market pays for**. Diversification removes some risk for free, so only the remainder should earn a risk premium. This leads to the capital allocation line, the capital asset pricing model (CAPM), measures of risk-adjusted performance, and multifactor models that extend CAPM.
+
+---
+
+## 1. Systematic and Nonsystematic Risk
+
+An asset's total risk splits into two parts:
+
+| | **Systematic risk** | **Nonsystematic risk** |
+| --- | --- | --- |
+| **Also called** | Market risk, non-diversifiable risk | Firm-specific, idiosyncratic, diversifiable risk |
+| **Source** | Economy-wide factors: interest rates, inflation, GDP growth, market-wide sentiment | Company or industry events: a product recall, a lawsuit, a strike, a management change |
+| **Affected by diversification?** | **No**: it affects all assets | **Yes**: it largely cancels in a well-diversified portfolio |
+| **Rewarded with a risk premium?** | **Yes** | **No**: investors can eliminate it at almost no cost |
+
+As more assets (with correlation below $+1$) are added, portfolio standard deviation falls quickly at first and then flattens at a floor equal to the **market risk** of the portfolio. In a fully diversified portfolio only systematic risk remains.
+
+<Note>The central CAPM idea: because nonsystematic risk can be diversified away, the market pays a premium only for **systematic** risk. A very volatile stock with little market exposure can earn less than a calm stock that moves strongly with the market.</Note>
+
+---
+
+## 2. Return-Generating Models and Beta
+
+A **return-generating model** explains an asset's return in terms of one or more factors. The simplest is the **market model** (single-index model), a regression of the asset's return on the market's return:
+
+$$R_i = \alpha_i + \beta_i R_M + \varepsilon_i$$
+
+- $\beta_i$ is the **sensitivity** of the asset to market returns (systematic risk).
+- $\alpha_i$ is the part of return not explained by the market.
+- $\varepsilon_i$ is the **residual**, the firm-specific part, with zero expected value and no correlation with $R_M$.
+
+### Beta
+
+$$\beta_i = \frac{\operatorname{Cov}(R_i, R_M)}{\sigma_M^2} = \frac{\rho_{iM}\,\sigma_i}{\sigma_M}$$
+
+Beta is the slope of the regression line of the asset's returns on the market's returns.
+
+| Beta | Meaning |
+| --- | --- |
+| $\beta = 1$ | Moves one-for-one with the market (the market itself has $\beta = 1$) |
+| $\beta > 1$ | Amplifies market moves (aggressive) |
+| $0 < \beta < 1$ | Moves in the same direction but by less (defensive) |
+| $\beta = 0$ | No market sensitivity (the risk-free asset has $\beta = 0$) |
+| $\beta < 0$ | Tends to move opposite to the market |
+
+A **portfolio's beta** is the weighted average of its assets' betas: $\beta_P = \sum w_i \beta_i$.
+
+### Splitting total variance
+
+Taking the variance of the market model:
+
+$$\sigma_i^2 = \underbrace{\beta_i^2\,\sigma_M^2}_{\text{systematic}} + \underbrace{\sigma_\varepsilon^2}_{\text{nonsystematic}}$$
+
+The share of total variance explained by the market is the regression's $R^2 = \beta_i^2\sigma_M^2/\sigma_i^2 = \rho_{iM}^2$.
+
+**Worked example.** Stock $i$ has $\sigma_i = 30\%$, the market has $\sigma_M = 20\%$, and the correlation is $\rho_{iM} = 0.6$.
+
+1. $\operatorname{Cov} = 0.6 \times 0.30 \times 0.20 = 0.036$
+2. $\beta_i = 0.036 / 0.20^2 = 0.036 / 0.04 = 0.90$ (check: $0.6 \times 30/20 = 0.90$)
+3. Total variance $= 0.30^2 = 0.0900$
+4. Systematic variance $= 0.90^2 \times 0.04 = 0.81 \times 0.04 = 0.0324$
+5. Nonsystematic variance $= 0.0900 - 0.0324 = 0.0576$
+6. $R^2 = 0.0324 / 0.0900 = 36\%$ (check: $0.6^2 = 0.36$)
+
+Only 36% of this stock's variance is rewarded market risk; the other 64% can be diversified away.
+
+---
+
+## 3. The Capital Allocation Line and Capital Market Line
+
+Combine a **risk-free asset** (return $R_f$, zero standard deviation, zero correlation with anything) with a **risky portfolio** $P$ with weight $w$ in $P$:
+
+$$E(R) = (1-w)R_f + w\,E(R_P) \qquad\qquad \sigma = w\,\sigma_P$$
+
+Eliminating $w$ gives the **capital allocation line (CAL)**, a straight line:
+
+$$E(R) = R_f + \frac{E(R_P) - R_f}{\sigma_P}\,\sigma$$
+
+Its slope is the risky portfolio's **Sharpe ratio**, the reward per unit of total risk. If $w > 1$ the investor **borrows** at $R_f$ and invests more than 100% in $P$ (a leveraged position).
+
+**Worked example.** $R_f = 3\%$; risky portfolio $E(R_P) = 11\%$, $\sigma_P = 18\%$. Slope $= (11-3)/18 = 0.4444$.
+
+| Weight in $P$ | Expected return | Standard deviation | Sharpe ratio |
+| --- | --- | --- | --- |
+| 60% (lend 40%) | $3 + 0.6(8) = 7.8\%$ | $0.6 \times 18 = 10.8\%$ | $(7.8-3)/10.8 = 0.4444$ |
+| 100% | 11.0% | 18.0% | $0.4444$ |
+| 125% (borrow 25%) | $3 + 1.25(8) = 13.0\%$ | $1.25 \times 18 = 22.5\%$ | $(13-3)/22.5 = 0.4444$ |
+
+Every point on the line has the same Sharpe ratio. The investor chooses a point by risk tolerance, not by changing the risky portfolio.
+
+### The optimal risky portfolio and the capital market line
+
+Of all CALs from $R_f$ to portfolios on the efficient frontier, the one with the **steepest slope** is tangent to the frontier. The tangency portfolio has the highest Sharpe ratio and is the **optimal risky portfolio**.
+
+If all investors share the same expectations (**homogeneous expectations**), they all see the same tangency portfolio, which must then be the **market portfolio** $M$ of all risky assets weighted by market value. The CAL through $M$ is the **capital market line (CML)**:
+
+$$E(R_P) = R_f + \frac{E(R_M) - R_f}{\sigma_M}\,\sigma_P$$
+
+This yields **two-fund separation**: every investor holds the same risky portfolio $M$ and adjusts risk only by mixing it with the risk-free asset (lending) or by borrowing to hold more of it. The decision of *what* risky assets to hold is separate from *how much* risk to take.
+
+**Worked example.** $R_f = 3\%$, $E(R_M) = 9\%$, $\sigma_M = 15\%$. The CML slope (the market Sharpe ratio) is $(9-3)/15 = 0.40$. An efficient portfolio with $\sigma_P = 20\%$ should return $3\% + 0.40 \times 20\% = 11\%$. It sits at $20/15 = 133\%$ of the market, financed by borrowing 33% of equity.
+
+---
+
+## 4. CAPM and the Security Market Line
+
+The **capital asset pricing model** gives the required return on any asset in equilibrium, as a function of its **beta**:
+
+$$E(R_i) = R_f + \beta_i\,\big[E(R_M) - R_f\big]$$
+
+$E(R_M) - R_f$ is the **market risk premium**; $\beta_i\,[E(R_M) - R_f]$ is the asset's risk premium. Plotted against beta, the relationship is the **security market line (SML)**: intercept $R_f$, slope equal to the market risk premium.
+
+### CML versus SML
+
+| | **Capital market line (CML)** | **Security market line (SML)** |
+| --- | --- | --- |
+| **Axes** | Expected return versus **total risk** ($\sigma$) | Expected return versus **systematic risk** ($\beta$) |
+| **Applies to** | **Efficient portfolios** only (combinations of $R_f$ and $M$) | **Any** asset or portfolio, efficient or not |
+| **Slope** | Market Sharpe ratio, $[E(R_M)-R_f]/\sigma_M$ | Market risk premium, $E(R_M)-R_f$ |
+
+### Applications
+
+- **Required return** for use as a discount rate (cost of equity).
+- **Valuation:** compare the return you expect (from your own analysis) with the CAPM required return. If expected return is **above** the SML, the asset is **undervalued** (positive alpha); below the SML, it is **overvalued**.
+
+**Worked example.** $R_f = 3\%$, $E(R_M) = 9\%$, so the market risk premium is 6%.
+
+1. Required return for $\beta = 1.2$: $3\% + 1.2 \times 6\% = 10.2\%$.
+2. An analyst forecasts 11.0% for this stock. $\alpha = 11.0\% - 10.2\% = +0.8\%$, so the stock plots **above** the SML: undervalued, a buy.
+3. If the forecast were 9.5%, $\alpha = -0.7\%$: overvalued.
+4. Portfolio beta: 40% in a stock with $\beta = 0.8$ and 60% in a stock with $\beta = 1.3$ gives $0.4(0.8) + 0.6(1.3) = 0.32 + 0.78 = 1.10$, and required return $3\% + 1.10 \times 6\% = 9.6\%$.
+
+### Assumptions and limitations
+
+CAPM assumes investors are **risk averse, mean-variance optimizers** who are **price takers**, plan for the **same single period**, share **homogeneous expectations**, and can **borrow and lend at the risk-free rate** in **frictionless markets** (no taxes or transaction costs, all assets tradable and divisible).
+
+Limitations: the assumptions are unrealistic; the true market portfolio is unobservable, so a proxy index is used; estimated betas are unstable and depend on the index, period and frequency; and empirically, factors other than beta (size, value, momentum) help explain returns.
+
+---
+
+## 5. Risk-Adjusted Performance Measures
+
+Raw return is not enough to judge a portfolio: it must be compared with the **risk** taken. Four common measures:
+
+| Measure | Formula | Risk measure | Use |
+| --- | --- | --- | --- |
+| **Sharpe ratio** | $\dfrac{R_P - R_f}{\sigma_P}$ | Total risk | Whole portfolio or the investor's **only** risky holding |
+| **$M^2$ (Modigliani)** | $(S_P - S_M)\,\sigma_M$ | Total risk | Same ranking as Sharpe, in **percentage return** units |
+| **Treynor ratio** | $\dfrac{R_P - R_f}{\beta_P}$ | Systematic risk | One part of a well-diversified portfolio |
+| **Jensen's alpha** | $R_P - \big[R_f + \beta_P (R_M - R_f)\big]$ | Systematic risk | Return above or below the SML |
+
+$M^2$ levers the portfolio with the risk-free asset until it has the **market's volatility**, then compares its return with the market's: $M^2 = R_f + S_P\,\sigma_M - R_M$.
+
+**Worked example.** $R_f = 3\%$; market return 9%, $\sigma_M = 15\%$.
+
+| | Return | $\sigma$ | $\beta$ |
+| --- | --- | --- | --- |
+| Portfolio P | 10% | 14% | 0.9 |
+| Portfolio Q | 12% | 20% | 1.3 |
+
+| Measure | Portfolio P | Portfolio Q | Market |
+| --- | --- | --- | --- |
+| Sharpe | $7/14 = 0.500$ | $9/20 = 0.450$ | $6/15 = 0.400$ |
+| $M^2$ | $(0.500-0.400)(15) = 1.50\%$ | $(0.450-0.400)(15) = 0.75\%$ | 0 |
+| Treynor | $7/0.9 = 7.78\%$ | $9/1.3 = 6.92\%$ | $6/1 = 6.00\%$ |
+| Jensen's $\alpha$ | $10 - (3 + 0.9 \times 6) = +1.60\%$ | $12 - (3 + 1.3 \times 6) = +1.20\%$ | 0 |
+
+Check of $M^2$ for P: levering P to 15% volatility means $15/14$ of P, which returns $3\% + 0.5 \times 15\% = 10.5\%$; $10.5\% - 9\% = 1.5\%$. P ranks above Q on all four measures, although Q has the higher raw return.
+
+**Choosing a measure.** Use **Sharpe or $M^2$** when the portfolio is the whole investment (total risk matters). Use **Treynor or alpha** when it is one component of a larger diversified portfolio (only systematic risk matters). Sharpe and $M^2$ always rank portfolios identically; Treynor can rank differently because it ignores nonsystematic risk.
+
+---
+
+## 6. Multifactor Models
+
+CAPM uses one factor (the market). **Multifactor models** explain return with several systematic factors, each with its own sensitivity (factor beta) and risk premium:
+
+$$E(R_i) - R_f = \beta_{i1}\lambda_1 + \beta_{i2}\lambda_2 + \dots + \beta_{ik}\lambda_k$$
+
+| Type | Factors | Example |
+| --- | --- | --- |
+| **Macroeconomic** | Surprises in GDP growth, inflation, interest rates, credit spreads | Chen, Roll and Ross-style models |
+| **Fundamental** | Company attributes: earnings, size, book-to-market, leverage | Fama–French |
+| **Statistical** | Factors extracted from return data (for example, principal components) | Factor analysis |
+
+**Fama–French three-factor model:** market (excess market return), **SMB** (small minus big: small caps outperform large caps) and **HML** (high minus low book-to-market: value outperforms growth). The **Carhart** four-factor model adds **momentum** (winners minus losers). The **Fama–French five-factor** model adds profitability and investment factors.
+
+**Worked example.** $R_f = 3\%$. Factor premiums: market 6%, SMB 2%, HML 3%. A stock's factor betas are $1.1$, $0.4$ and $-0.2$:
+
+$$E(R) = 3\% + 1.1(6\%) + 0.4(2\%) + (-0.2)(3\%) = 3 + 6.6 + 0.8 - 0.6 = 9.8\%$$
+
+The negative HML beta means the stock behaves like a growth stock and lowers the required return.
+
+### Active return and the information ratio
+
+Multifactor models are also used to analyse **active management** against a benchmark $B$:
+
+- **Active return** $= R_P - R_B$.
+- **Tracking error (active risk)** is the standard deviation of active returns.
+- **Information ratio** $= \dfrac{\text{active return}}{\text{tracking error}}$, the active return earned per unit of active risk.
+
+For example, a portfolio earning 8.5% against a 7.0% benchmark, with tracking error 3.0%, has active return 1.5% and information ratio $1.5/3.0 = 0.50$.
+
+---
+
+## Key takeaways
+
+- **Systematic risk** cannot be diversified away and is rewarded; **nonsystematic risk** can be diversified away and earns no premium.
+- Market model: $R_i = \alpha_i + \beta_i R_M + \varepsilon_i$; $\beta_i = \operatorname{Cov}(R_i,R_M)/\sigma_M^2 = \rho\sigma_i/\sigma_M$; $\sigma_i^2 = \beta_i^2\sigma_M^2 + \sigma_\varepsilon^2$. Portfolio beta is the weighted average of betas.
+- The **CAL** has slope equal to the Sharpe ratio; the **CML** is the CAL through the market portfolio and applies to efficient portfolios only (total risk on the axis).
+- **CAPM / SML:** $E(R_i) = R_f + \beta_i[E(R_M)-R_f]$ for any asset. Expected return above the SML means undervalued (positive alpha).
+- **Sharpe** and $M^2$ use total risk; **Treynor** and **Jensen's alpha** use beta. $M^2 = (S_P - S_M)\sigma_M$.
+- **Multifactor models** (Fama–French, Carhart, macro, statistical) add factors beyond the market; the **information ratio** is active return divided by tracking error.

@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A stock has a standard deviation of 25% and the market has a standard deviation of 15%. The correlation between them is 0.72. The stock's beta is closest to:",
+    "options": [
+      "0.72",
+      "0.43",
+      "1.20",
+      "1.67"
+    ],
+    "correctIndex": 2,
+    "explanation": "Beta = rho x sigma_i / sigma_M = 0.72 x 25 / 15 = 1.20. Equivalently, Cov = 0.72 x 0.25 x 0.15 = 0.027, and 0.027 / 0.15^2 = 1.20. The 0.43 figure inverts the ratio of standard deviations."
+  },
+  {
+    "question": "The risk-free rate is 4%, the expected market return is 10% and a stock's beta is 1.25. According to CAPM, the stock's required return is closest to:",
+    "options": [
+      "11.5%",
+      "13.75%",
+      "12.5%",
+      "10.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "E(R) = Rf + beta[E(Rm) - Rf] = 4% + 1.25(6%) = 4% + 7.5% = 11.5%. Multiplying beta by the whole market return instead of the premium gives the wrong answer."
+  },
+  {
+    "question": "A stock has a beta of 1.2 and a standard deviation of 25%. The market's standard deviation is 15%. The proportion of the stock's total variance that is systematic is closest to:",
+    "options": [
+      "72.0%",
+      "48.2%",
+      "28.2%",
+      "51.8%"
+    ],
+    "correctIndex": 3,
+    "explanation": "Systematic variance = beta^2 x sigma_M^2 = 1.44 x 0.0225 = 0.0324. Total variance = 0.25^2 = 0.0625. Ratio = 0.0324 / 0.0625 = 51.84%. The 72.0% figure forgets to square beta."
+  },
+  {
+    "question": "The risk-free rate is 2%. A risky portfolio has an expected return of 10% and a standard deviation of 16%. An investor borrows at the risk-free rate and invests 150% of her equity in the risky portfolio. Her expected return and standard deviation are:",
+    "options": [
+      "15.0% and 24.0%",
+      "14.0% and 24.0%",
+      "14.0% and 16.0%",
+      "12.0% and 24.0%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Expected return = 2% + 1.5(10% - 2%) = 14.0%. Standard deviation = 1.5 x 16% = 24.0%. Borrowing raises both return and risk along the capital allocation line, and the Sharpe ratio stays at (10 - 2)/16 = 0.50."
+  },
+  {
+    "question": "The risk-free rate is 3%. Fund A returned 11% with a standard deviation of 16%. Fund B returned 9% with a standard deviation of 10%. Which fund has the higher Sharpe ratio, and what is it?",
+    "options": [
+      "Fund A, 0.50",
+      "Fund A, 0.69",
+      "Fund B, 0.90",
+      "Fund B, 0.60"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sharpe A = (11 - 3)/16 = 0.50. Sharpe B = (9 - 3)/10 = 0.60. Fund B earns more excess return per unit of total risk. The 0.69 and 0.90 figures forget to subtract the risk-free rate."
+  },
+  {
+    "question": "The risk-free rate is 3% and the expected market return is 9%. An analyst forecasts a return of 12% for a stock with a beta of 1.4. The stock is:",
+    "options": [
+      "Overvalued, with alpha of -0.6%",
+      "Fairly valued, with alpha of 0%",
+      "Undervalued, with alpha of +0.6%",
+      "Undervalued, with alpha of +1.0%"
+    ],
+    "correctIndex": 2,
+    "explanation": "Required return = 3% + 1.4(6%) = 11.4%. Alpha = 12% - 11.4% = +0.6%. The stock plots above the security market line, so it is undervalued."
+  },
+  {
+    "question": "Which statement about the capital market line (CML) and the security market line (SML) is correct?",
+    "options": [
+      "The SML applies only to efficient portfolios",
+      "The CML plots return against total risk and applies to efficient portfolios; the SML plots return against beta and applies to any asset",
+      "The slope of the CML is the market risk premium",
+      "CAPM rewards investors for bearing nonsystematic risk"
+    ],
+    "correctIndex": 1,
+    "explanation": "The CML uses standard deviation (total risk) and holds only for efficient portfolios, with slope equal to the market Sharpe ratio. The SML uses beta, applies to all assets and portfolios, and has slope equal to the market risk premium. Nonsystematic risk is diversifiable and earns no premium."
+  },
+  {
+    "question": "The risk-free rate is 2%. In a three-factor model the factor premiums are 5% (market), 2% (SMB) and 4% (HML). A stock has factor betas of 0.9, 0.5 and 0.3. Its expected return is closest to:",
+    "options": [
+      "8.7%",
+      "7.0%",
+      "9.9%",
+      "6.7%"
+    ],
+    "correctIndex": 0,
+    "explanation": "E(R) = 2% + 0.9(5%) + 0.5(2%) + 0.3(4%) = 2 + 4.5 + 1.0 + 1.2 = 8.7%. Each beta multiplies its own factor premium, and the risk-free rate is added once."
+  }
+]

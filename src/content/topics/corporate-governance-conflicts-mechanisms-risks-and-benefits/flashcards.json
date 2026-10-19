@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What is corporate governance?",
+    "back": "The system of internal controls and procedures by which a company is managed and overseen. It defines the rights, roles and responsibilities of shareholders, the board, managers and other stakeholders."
+  },
+  {
+    "front": "What are the four principles of good corporate governance?",
+    "back": "Fairness (equitable treatment of all shareholders), transparency (timely, accurate disclosure), accountability (managers answer to the board, the board to shareholders) and responsibility (acting in the company's long-term interest within the law)."
+  },
+  {
+    "front": "One-tier versus two-tier board?",
+    "back": "A one-tier board is a single body of executive and non-executive directors (US, UK). A two-tier board has a supervisory board that oversees a separate management board (Germany, the Netherlands)."
+  },
+  {
+    "front": "What makes a director independent?",
+    "back": "No material business, family or employment ties to the company or its management, so the director can challenge management objectively. Non-executive status alone is not enough."
+  },
+  {
+    "front": "What are the main board committees and what do they do?",
+    "back": "Audit (reporting, controls, external auditor), remuneration (executive pay), nomination (director selection and succession), risk (risk appetite and limits). They should be mainly or wholly independent."
+  },
+  {
+    "front": "What are a director's fiduciary duties?",
+    "back": "The duty of care (act with the diligence of a prudent person) and the duty of loyalty (put the company's interests ahead of the director's own)."
+  },
+  {
+    "front": "Statutory versus cumulative voting?",
+    "back": "Statutory: one vote per share per seat, each seat decided separately, so a majority can elect every director. Cumulative: votes (shares x seats) can be pooled on one or a few candidates, helping minorities win seats."
+  },
+  {
+    "front": "How many shares guarantee one seat under cumulative voting?",
+    "back": "More than shares outstanding / (seats + 1), that is, shares outstanding / (seats + 1) + 1 share."
+  },
+  {
+    "front": "What is a proxy contest?",
+    "back": "A campaign by a dissident shareholder to collect proxies (authorizations to vote) in order to win board seats or defeat a management proposal."
+  },
+  {
+    "front": "How can governance protect minority shareholders from related-party transactions?",
+    "back": "Approval by independent directors or a minority vote, an independent fairness opinion, full disclosure of the terms, and cumulative voting for board representation."
+  },
+  {
+    "front": "What are the main risks of weak governance?",
+    "back": "Weak controls and fraud, ineffective decisions, legal, regulatory and reputational damage, excess risk-taking leading to higher default risk, and value transfer from minority holders to insiders."
+  },
+  {
+    "front": "What are the main benefits of effective governance?",
+    "back": "Better internal control and reliable reporting, better decisions and operating efficiency, lower cost of capital and default risk, higher valuation, and stronger stakeholder relations."
+  }
+]
