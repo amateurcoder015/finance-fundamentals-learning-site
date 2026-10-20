@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What happens when a cost is capitalized instead of expensed?",
+    "back": "It is recorded as an asset and expensed later through depreciation or amortization. Early net income, total assets and CFO are higher (the outflow is in investing); later income is lower. Total expense over the asset's life is the same."
+  },
+  {
+    "front": "Which borrowing costs are capitalized, and how much?",
+    "back": "Borrowing costs directly attributable to building a qualifying asset (one that takes a substantial time to prepare). Capitalized interest = average accumulated expenditures x interest rate. Analysts add it back to interest expense when computing coverage."
+  },
+  {
+    "front": "What is included in the initial cost of PP&E?",
+    "back": "Purchase price plus import duties and non-refundable taxes, delivery, installation, testing, site preparation, professional fees and initial dismantling estimates, less trade discounts. Training, overhead and abnormal waste are expensed."
+  },
+  {
+    "front": "Straight-line, DDB and units-of-production formulas",
+    "back": "Straight-line = (cost - salvage)/life. DDB = (2/life) x beginning NBV (never below salvage). Units of production = (cost - salvage)/total units x units produced this period."
+  },
+  {
+    "front": "How is a change in a depreciation estimate treated?",
+    "back": "Prospectively: prior periods are not restated. Depreciation going forward = (current NBV - new salvage) / remaining life."
+  },
+  {
+    "front": "What is the revaluation model and who may use it?",
+    "back": "Assets are carried at fair value less later depreciation and impairment. Allowed under IFRS (whole asset class, regularly updated), not under U.S. GAAP. Increases go to OCI (revaluation surplus) except to reverse an earlier loss in profit or loss."
+  },
+  {
+    "front": "IFRS impairment test for PP&E",
+    "back": "Compare carrying amount with recoverable amount = higher of fair value less costs of disposal and value in use. Loss = carrying amount - recoverable amount. Reversals are allowed (not for goodwill), up to the carrying amount without impairment."
+  },
+  {
+    "front": "U.S. GAAP impairment test for assets held for use",
+    "back": "Step 1: impaired if carrying amount > undiscounted expected cash flows. Step 2: loss = carrying amount - fair value. Reversals are not allowed."
+  },
+  {
+    "front": "How are internally developed intangibles treated under IFRS vs U.S. GAAP?",
+    "back": "IFRS: research expensed; development capitalized once criteria are met (technical feasibility, intent and ability to complete, probable benefits, resources, reliable measurement). U.S. GAAP: both mostly expensed, except certain software development costs after technological feasibility."
+  },
+  {
+    "front": "How is goodwill calculated and treated?",
+    "back": "Goodwill = purchase price - fair value of identifiable net assets. It is not amortized, is tested for impairment at least annually, impairment is never reversed, and internally generated goodwill is never recognized."
+  },
+  {
+    "front": "Formulas: fixed asset turnover, average age, total and remaining life",
+    "back": "Fixed asset turnover = revenue / average net PP&E. Average age = accumulated depreciation / depreciation expense. Total life = gross PP&E / depreciation expense. Remaining life = net PP&E / depreciation expense."
+  }
+]

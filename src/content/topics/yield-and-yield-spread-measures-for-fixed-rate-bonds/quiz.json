@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A bond with a 7% annual coupon (par 100) has a flat price of 95. What is its current yield?",
+    "options": [
+      "7.00%",
+      "7.37%",
+      "7.89%",
+      "5.26%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Current yield = annual coupon / flat price = 7 / 95 = 7.37%. It ignores the 5-point gain at maturity, so for a discount bond it is below the YTM."
+  },
+  {
+    "question": "A 4-year bond has a 5% annual coupon (par 100) and a flat price of 96. What is its simple yield?",
+    "options": [
+      "5.21%",
+      "6.16%",
+      "6.25%",
+      "4.17%"
+    ],
+    "correctIndex": 2,
+    "explanation": "Simple yield = (coupon + (par - price)/years) / price = (5 + 4/4) / 96 = 6/96 = 6.25%. The 5.21% is the current yield and the 6.16% is the YTM (which compounds the gain and coupons)."
+  },
+  {
+    "question": "A 5-year bond is callable at 102 in 2 years and at 101 in 3 years. Its YTM is 5.07%, its yield to the year-2 call is 4.83%, and its yield to the year-3 call is 4.85%. What is the yield to worst?",
+    "options": [
+      "5.07%",
+      "4.85%",
+      "4.96%",
+      "4.83%"
+    ],
+    "correctIndex": 3,
+    "explanation": "Yield to worst is the lowest of the YTM and all yields to call: min(5.07%, 4.83%, 4.85%) = 4.83%. It is not an average; it is the conservative yield assuming the issuer redeems at the date least favorable to the investor."
+  },
+  {
+    "question": "A corporate bond that uses a 30/360 day count has a YTM of 4.80%. What is its government equivalent yield (actual/actual basis)?",
+    "options": [
+      "4.74%",
+      "4.80%",
+      "4.87%",
+      "4.92%"
+    ],
+    "correctIndex": 2,
+    "explanation": "GEY = 4.80% x 365/360 = 4.80% x 1.013889 = 4.8667%, about 4.87%. The 365/360 factor restates a 360-day-year yield on an actual-days basis so it can be compared with a government bond."
+  },
+  {
+    "question": "A semiannual-pay bond has a YTM of 5% on a street-convention basis. What is the equivalent yield for an annual-pay bond?",
+    "options": [
+      "5.00%",
+      "5.06%",
+      "5.13%",
+      "4.94%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Periodic yield = 5%/2 = 2.5%. Annual-pay equivalent = (1.025)^2 - 1 = 1.050625 - 1 = 5.0625%, about 5.06%. Semiannual compounding gives a higher effective rate than the quoted nominal rate."
+  },
+  {
+    "question": "A 5-year corporate bond yields 5.20%. Government yields are 3.50% for 4 years and 4.10% for 7 years. Using linear interpolation by maturity for the benchmark, what is the G-spread?",
+    "options": [
+      "100 bp",
+      "170 bp",
+      "150 bp",
+      "130 bp"
+    ],
+    "correctIndex": 2,
+    "explanation": "The 5-year point is 1/3 of the way from 4 to 7 years: 3.50% + (1/3) x (4.10% - 3.50%) = 3.70%. G-spread = 5.20% - 3.70% = 1.50%, or 150 bp."
+  },
+  {
+    "question": "A callable bond has a Z-spread of 140 bp, and the call option is worth 35 bp of spread. What is the option-adjusted spread?",
+    "options": [
+      "105 bp",
+      "175 bp",
+      "140 bp",
+      "35 bp"
+    ],
+    "correctIndex": 0,
+    "explanation": "The issuer holds the call, so the Z-spread contains compensation for the option as well as credit and liquidity risk. OAS = Z-spread - option value = 140 - 35 = 105 bp. For a putable bond the option value would be added instead."
+  },
+  {
+    "question": "Compared with the street-convention yield, the true yield of a bond is:",
+    "options": [
+      "equal to or slightly lower, because payment dates are moved to actual business days",
+      "equal to or slightly higher, because payments are received sooner",
+      "always equal, because only the day count differs",
+      "higher by a factor of 365/360"
+    ],
+    "correctIndex": 0,
+    "explanation": "Street convention assumes payment on the scheduled date even if it is a weekend or holiday. True yield moves such payments to the next business day, so cash arrives later and the yield is equal to or slightly lower. The 365/360 factor relates to the government equivalent yield, not true yield."
+  }
+]

@@ -1,0 +1,35 @@
+graph TD
+    LTA["Long-Term Assets"] --> CAP["Capitalize or Expense?"]
+    LTA --> PPE["PP&E"]
+    LTA --> INT["Intangibles and Goodwill"]
+    LTA --> IP["Investment Property"]
+    LTA --> RAT["Analysis"]
+
+    CAP --> CAPY["Capitalize<br/>(Higher early income, assets, CFO)"]
+    CAP --> EXP["Expense<br/>(Lower early income)"]
+    CAP --> INTR["Capitalized Interest<br/>(Qualifying assets only)"]
+
+    PPE --> COST["Initial Cost<br/>(Price + Delivery + Installation - Discounts)"]
+    PPE --> DEP["Depreciation"]
+    DEP --> SL["Straight-Line<br/>(Cost - Salvage) / Life"]
+    DEP --> DDB["Double-Declining Balance<br/>(2 / Life x Beginning NBV)"]
+    DEP --> UOP["Units of Production"]
+    PPE --> MOD["Subsequent Measurement"]
+    MOD --> CM["Cost Model<br/>(IFRS and U.S. GAAP)"]
+    MOD --> RM["Revaluation Model<br/>(IFRS only, surplus in OCI)"]
+    PPE --> IMP["Impairment"]
+    IMP --> IFRS["IFRS<br/>(Carrying vs Recoverable Amount,<br/>Reversal Allowed)"]
+    IMP --> GAAP["U.S. GAAP<br/>(Undiscounted Cash Flow Test,<br/>then Fair Value, No Reversal)"]
+    PPE --> DER["Derecognition<br/>(Gain or Loss = Proceeds - Carrying Amount)"]
+
+    IP --> IPM["IFRS: Cost or Fair Value Model<br/>U.S. GAAP: Generally Cost"]
+
+    INT --> IDENT["Identifiable Intangibles"]
+    IDENT --> FIN["Finite Life<br/>(Amortized)"]
+    IDENT --> INDEF["Indefinite Life<br/>(Annual Impairment Test)"]
+    IDENT --> DEV["Internal Development<br/>(IFRS Capitalizes after Criteria Met,<br/>U.S. GAAP Mostly Expenses)"]
+    INT --> GW["Goodwill<br/>(Price - Fair Value of Net Assets,<br/>Never Amortized, No Reversal)"]
+
+    RAT --> FAT["Fixed Asset Turnover<br/>(Revenue / Average Net PP&E)"]
+    RAT --> AGE["Average Age<br/>(Accum. Depreciation / Depreciation Expense)"]
+    RAT --> LIFE["Total and Remaining Life"]

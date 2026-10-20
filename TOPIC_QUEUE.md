@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Yield and Yield Spread Measures for Fixed-Rate Bonds | Fixed Income | intermediate
-- [ ] Analysis of Long-Term Assets | Financial Statements | intermediate
 - [ ] Fiscal Policy | Economics | intermediate
 - [ ] Company Analysis: Past and Present | Equities | intermediate
 - [ ] Yield and Yield Spread Measures for Floating-Rate Instruments | Fixed Income | intermediate
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Analysis of Inventories | Financial Statements | intermediate | 2026-10-18
 - [x] Portfolio Risk and Return: Part II | Portfolio Management | advanced | 2026-10-19
 - [x] Corporate Governance: Conflicts, Mechanisms, Risks, and Benefits | Corporate Finance | intermediate | 2026-10-19
+- [x] Yield and Yield Spread Measures for Fixed-Rate Bonds | Fixed Income | intermediate | 2026-10-20
+- [x] Analysis of Long-Term Assets | Financial Statements | intermediate | 2026-10-20

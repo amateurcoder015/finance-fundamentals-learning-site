@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A firm buys a machine with a list price of 500,000, import duty of 20,000, freight of 10,000, installation of 15,000 and testing of 5,000. It receives a trade discount of 5,000 and spends 8,000 training staff. At what amount is the machine initially recorded?",
+    "options": [
+      "538,000",
+      "553,000",
+      "545,000",
+      "550,000"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cost = 500,000 + 20,000 + 10,000 + 15,000 + 5,000 - 5,000 = 545,000. The 8,000 staff training is expensed, not capitalized."
+  },
+  {
+    "question": "A machine costs 545,000 with salvage value 45,000 and a 5-year life. Under double-declining balance, what is depreciation in year 2?",
+    "options": [
+      "130,800",
+      "100,000",
+      "125,000",
+      "218,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "DDB rate = 2/5 = 40% of beginning net book value. Year 1 = 0.40 x 545,000 = 218,000, so beginning NBV for year 2 is 327,000 and depreciation is 0.40 x 327,000 = 130,800. Salvage value is not subtracted in the base."
+  },
+  {
+    "question": "An asset costing 1,000 with salvage value of 100 and a 10-year life is depreciated straight-line. After 4 years the remaining life is revised to 8 years and salvage to 80. What is annual depreciation going forward?",
+    "options": [
+      "90",
+      "62",
+      "70",
+      "72.5"
+    ],
+    "correctIndex": 2,
+    "explanation": "Original depreciation is 90 per year, so NBV after 4 years is 1,000 - 360 = 640. A change in estimate is prospective: new depreciation = (640 - 80) / 8 = 70. Prior years are not restated."
+  },
+  {
+    "question": "An asset has a carrying amount of 800, undiscounted expected cash flows of 780, fair value of 650, fair value less costs of disposal of 640 and value in use of 690. What impairment loss is recognized under U.S. GAAP (held for use) and under IFRS?",
+    "options": [
+      "U.S. GAAP 150; IFRS 110",
+      "U.S. GAAP 110; IFRS 150",
+      "U.S. GAAP 20; IFRS 110",
+      "U.S. GAAP 0; IFRS 110"
+    ],
+    "correctIndex": 0,
+    "explanation": "U.S. GAAP: 800 > 780, so the recoverability test fails and the loss is carrying amount - fair value = 800 - 650 = 150. IFRS: recoverable amount = higher of 640 and 690 = 690, so the loss is 800 - 690 = 110."
+  },
+  {
+    "question": "Land carried under the IFRS revaluation model was bought for 1,000, revalued to 1,200 in year 1 (surplus recognized in OCI), and revalued to 900 in year 2. What is recognized in profit or loss in year 2?",
+    "options": [
+      "A loss of 300",
+      "A loss of 100",
+      "A loss of 200",
+      "No loss; the whole decrease goes to OCI"
+    ],
+    "correctIndex": 1,
+    "explanation": "The decrease is 1,200 - 900 = 300. The first 200 reverses the existing revaluation surplus in OCI. Only the remaining 100 is recognized as a loss in profit or loss."
+  },
+  {
+    "question": "A firm pays 900 to acquire a company with identifiable assets at fair value of 1,000 and liabilities at fair value of 300. What goodwill is recognized, and how is it treated afterward?",
+    "options": [
+      "100; amortized over 10 years",
+      "200; not amortized, tested for impairment at least annually",
+      "200; amortized and impairment losses are reversible under IFRS",
+      "600; not amortized, tested for impairment every three years"
+    ],
+    "correctIndex": 1,
+    "explanation": "Identifiable net assets = 1,000 - 300 = 700, so goodwill = 900 - 700 = 200. Goodwill is not amortized, it is tested for impairment at least annually, and goodwill impairment losses are never reversed."
+  },
+  {
+    "question": "A firm has gross PP&E of 2,000, accumulated depreciation of 800 and annual depreciation expense of 160. What are the average age and the remaining useful life of its assets?",
+    "options": [
+      "12.5 years; 7.5 years",
+      "7.5 years; 5.0 years",
+      "5.0 years; 12.5 years",
+      "5.0 years; 7.5 years"
+    ],
+    "correctIndex": 3,
+    "explanation": "Average age = accumulated depreciation / depreciation expense = 800 / 160 = 5.0 years. Net PP&E = 2,000 - 800 = 1,200, so remaining life = 1,200 / 160 = 7.5 years. Total life = 2,000 / 160 = 12.5 years."
+  },
+  {
+    "question": "Compared with expensing a cost that benefits four years, capitalizing it will most likely:",
+    "options": [
+      "lower total expense recognized over the four years",
+      "reduce year-1 assets but increase year-1 net income",
+      "increase year-1 net income, total assets and cash flow from operations",
+      "increase year-1 cash flow from investing"
+    ],
+    "correctIndex": 2,
+    "explanation": "Capitalizing spreads the cost over four years, so year-1 expense is lower, raising net income and assets, and the cash outflow is classified as investing instead of operating, which raises CFO. Total expense over the four years is the same. Investing cash flow becomes more negative, not higher."
+  }
+]

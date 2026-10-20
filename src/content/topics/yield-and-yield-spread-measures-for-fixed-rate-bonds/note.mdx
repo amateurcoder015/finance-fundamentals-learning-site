@@ -1,0 +1,245 @@
+---
+title: "Yield and Yield Spread Measures for Fixed-Rate Bonds"
+description: "The yield measures used for fixed-rate bonds (street convention, true yield, government equivalent yield, current yield, simple yield, yield to call and worst) and the spreads that price credit and option risk (G-spread, I-spread, Z-spread and option-adjusted spread)."
+category: "Fixed Income"
+difficulty: "intermediate"
+dateAdded: "2026-10-20"
+tags: ["yield-to-worst", "current-yield", "g-spread", "i-spread", "z-spread", "oas"]
+---
+
+# Yield and Yield Spread Measures for Fixed-Rate Bonds
+
+A bond's **price** tells you what you pay; its **yield** tells you what you earn for paying it. No single yield captures everything, so analysts use a toolkit: some measures adjust for calendar conventions, some ignore the capital gain or loss, some assume the issuer will exercise an option. A second toolkit, **yield spreads**, then strips out the benchmark rate to isolate the extra return earned for credit risk, liquidity and embedded options.
+
+---
+
+## 1. Yield to Maturity and Its Assumptions
+
+The **yield to maturity (YTM)** is the discount rate that equates the present value of a bond's promised cash flows to its **full price**. It is the bond's internal rate of return, and it is the *promised* yield, earned only if the investor:
+
+1. holds the bond to maturity,
+2. receives every coupon and the principal on time and in full (no default), and
+3. **reinvests every coupon at the YTM**.
+
+Assumption 3 is the weak link. If market rates fall, coupons are reinvested at lower rates (**reinvestment risk**), so the realized return can differ from the YTM even without default. A zero-coupon bond held to maturity has no reinvestment risk.
+
+For a semiannual bond the periodic yield is doubled to quote an annual rate. That quoting rule is the **bond equivalent yield** or **street convention**, and it is an annual percentage rate with semiannual compounding, not an effective annual rate.
+
+### Periodicity
+
+To compare yields quoted with different compounding frequencies, convert through the effective annual rate:
+
+$$\left(1+\frac{APR_{m_1}}{m_1}\right)^{m_1} = \left(1+\frac{APR_{m_2}}{m_2}\right)^{m_2}$$
+
+For a semiannual-pay bond to an annual-pay basis:
+
+$$\text{Annual-pay yield} = \left(1+\frac{\text{semiannual-basis yield}}{2}\right)^{2} - 1$$
+
+### Example A: semiannual to annual basis
+
+A semiannual-pay bond has a YTM of 5% (street convention).
+
+1. Periodic yield $= 5\%/2 = 2.5\%$
+2. Annual-pay equivalent $= 1.025^2 - 1 = 1.050625 - 1 = \mathbf{5.0625\%}$
+
+The annual-pay yield (5.06%) is higher than the quoted 5%, because semiannual compounding earns interest on interest within the year. Going the other way, an annual-pay yield of $y_a$ equals a semiannual-basis yield of $2\left[(1+y_a)^{1/2}-1\right]$.
+
+---
+
+## 2. Calendar-Based Adjustments to YTM
+
+Three yield measures differ only in how they treat the calendar and day-count.
+
+| Measure | What it does | Relation to street convention |
+| --- | --- | --- |
+| **Street convention** | Assumes cash flows are paid on the scheduled dates, even if a date falls on a weekend or holiday | Baseline |
+| **True yield** | Adjusts payment dates to the next actual business day | Slightly **lower** (cash arrives later) |
+| **Government equivalent yield** | Restates a **30/360** yield on an **actual/actual** basis | Higher by a factor of $365/360$ |
+
+**Street convention** is the YTM quoted in the market. **True yield** is more accurate in reflecting when cash is really received, so it is equal to or slightly below the street yield.
+
+**Government equivalent yield (GEY)** lets a corporate bond that uses a 30/360 day count (a 360-day year) be compared with a government bond that uses actual/actual (a 365-day year):
+
+$$\text{GEY} = \text{Yield}_{30/360} \times \frac{365}{360}$$
+
+### Example B: government equivalent yield
+
+A corporate bond (30/360 day count) has a YTM of 4.80%.
+
+1. $\text{GEY} = 4.80\% \times 365/360$
+2. $= 4.80\% \times 1.013889 = \mathbf{4.8667\%}$
+
+The corporate bond's yield on a like-for-like basis with a government bond is about 4.87%, so an apparent 4.80% yield understates the comparison.
+
+---
+
+## 3. Current Yield and Simple Yield
+
+These two measures are quick and ignore reinvestment, but they differ in how they treat the pull to par.
+
+**Current yield** is annual coupon income relative to the **flat** price:
+
+$$\text{Current yield} = \frac{\text{Annual coupon payment}}{\text{Flat price}}$$
+
+It ignores any gain or loss when the bond is redeemed at par and ignores time value, so it is only a rough measure of income.
+
+**Simple yield** adds straight-line amortization of the discount or premium to the coupon:
+
+$$\text{Simple yield} = \frac{\text{Annual coupon} + \dfrac{\text{Par} - \text{Price}}{\text{Years to maturity}}}{\text{Price}}$$
+
+The amortization is positive for a discount bond (a gain is spread over the remaining life) and negative for a premium bond (a loss).
+
+### Example C: current yield, simple yield and YTM
+
+A 4-year bond with a 5% annual coupon (par 100) has a flat price of 96.
+
+1. Current yield $= 5/96 = \mathbf{5.2083\%}$
+2. Annual amortization of the discount $= (100-96)/4 = 1.00$
+3. Simple yield $= (5 + 1.00)/96 = 6/96 = \mathbf{6.25\%}$
+4. YTM solves $96 = \dfrac{5}{1+y}+\dfrac{5}{(1+y)^2}+\dfrac{5}{(1+y)^3}+\dfrac{105}{(1+y)^4}$, which gives $y \approx \mathbf{6.16\%}$
+
+| Measure | Yield | Why it differs |
+| --- | --- | --- |
+| Current yield | 5.21% | Ignores the 4-point gain at maturity |
+| Simple yield | 6.25% | Spreads the gain evenly, ignores compounding |
+| YTM | 6.16% | Time-values the gain and the coupons |
+
+For a **discount** bond, current yield $<$ YTM; for a **premium** bond, current yield $>$ YTM; for a bond at par, all three coincide.
+
+---
+
+## 4. Yields for Bonds with Embedded Options
+
+An issuer with a call option can redeem the bond early, and an investor with a put option can sell it back. The yield depends on the date at which the bond ends, so we compute a yield for each possible redemption date.
+
+- **Yield to call (YTC)**: discount rate that equates the full price to the PV of cash flows to the call date, using the **call price** in place of par. Called bonds may have a schedule of call dates and prices; a yield is calculated for each (yield to first call, yield to next call, and so on).
+- **Yield to put (YTP)**: the same for the first put date, using the put price.
+- **Yield to worst (YTW)**: the **lowest** of the YTM and all yields to call (and put). It is the conservative measure of the return the investor should expect: it is the yield if the issuer behaves in the way that is worst for the investor.
+- **Option-adjusted yield**: the YTM after adjusting the cash flows for the value of the embedded option, so that a callable bond can be compared with an option-free bond of similar credit quality.
+
+Premium callable bonds (coupon above the market yield) tend to be called because the issuer can refinance more cheaply. Their YTW is usually a call yield. Discount callable bonds are unlikely to be called, so the YTW is typically the YTM.
+
+### Example D: yield to worst
+
+A 5-year bond has a 6% annual coupon (par 100) and a flat price of 104 (assume no accrued interest). It is callable at 102 at the end of year 2 and at 101 at the end of year 3.
+
+1. **YTM**: $104 = \sum_{t=1}^{5}\dfrac{6}{(1+y)^t} + \dfrac{100}{(1+y)^5}$ gives $y \approx \mathbf{5.07\%}$
+2. **YTC (year 2)**: $104 = \dfrac{6}{1+y}+\dfrac{6+102}{(1+y)^2}$ gives $y \approx \mathbf{4.83\%}$
+3. **YTC (year 3)**: $104 = \dfrac{6}{1+y}+\dfrac{6}{(1+y)^2}+\dfrac{6+101}{(1+y)^3}$ gives $y \approx \mathbf{4.85\%}$
+4. **YTW** $= \min(5.07\%, 4.83\%, 4.85\%) = \mathbf{4.83\%}$, the yield to the year-2 call
+
+Check on the year-2 call: at $y = 4.83\%$, $6/1.0483 + 108/1.0483^2 = 5.7236 + 98.2772 = 104.00$.
+
+<Note>The YTW is a floor on the promised yield, not a forecast. If the issuer does not call, the investor earns more; if rates fall and the bond is called, the investor must reinvest at the lower market rate.</Note>
+
+---
+
+## 5. Yield Spreads: Why Use Them
+
+A bond's yield mixes three things: the risk-free (benchmark) rate, compensation for credit and liquidity risk, and any option value. A **yield spread** subtracts the benchmark so we can compare the extra return on its own.
+
+$$\text{Yield spread} = \text{Bond yield} - \text{Benchmark yield}$$
+
+It is usually quoted in **basis points** (1 bp = 0.01%). Spreads let an analyst compare bonds across different interest rate environments: if government yields rise 50 bp and a corporate bond's yield rises 50 bp, its spread has not changed.
+
+Benchmarks fall into two groups:
+
+- **Government bond yield curves** (a risk-free proxy): used in the G-spread.
+- **Swap rates** (a floating-rate interbank proxy): used in the I-spread.
+
+---
+
+## 6. G-Spread and I-Spread
+
+A **G-spread** (government spread) is the bond's YTM minus the YTM of a **government** bond of the same maturity. A bond rarely matches an existing government maturity, so the benchmark is **linearly interpolated** between the two nearest government bonds.
+
+An **I-spread** (interpolated spread) is the bond's YTM minus the **swap rate** of the same maturity, again interpolated if needed. It uses the swap curve rather than the government curve, which is useful when government yields are distorted by supply and demand (flight to quality, quantitative easing).
+
+### Example E: G-spread and I-spread
+
+A 5-year corporate bond has a YTM of 4.60%. The government 4-year yield is 3.40% and the 6-year yield is 3.80%. The 5-year swap rate is 3.50%.
+
+1. Interpolated 5-year government yield $= 3.40\% + \dfrac{5-4}{6-4}(3.80\%-3.40\%) = 3.40\% + 0.20\% = 3.60\%$
+2. G-spread $= 4.60\% - 3.60\% = 1.00\% = \mathbf{100\text{ bp}}$
+3. I-spread $= 4.60\% - 3.50\% = 1.10\% = \mathbf{110\text{ bp}}$
+
+Here the swap rate is below the government yield, so the I-spread exceeds the G-spread.
+
+**Limitations of single-point spreads.** G- and I-spreads compare one yield with one benchmark yield. They ignore the **shape** of the yield curve: a coupon bond's cash flows arrive at many dates, each of which should be discounted at its own spot rate. That is what the Z-spread fixes.
+
+---
+
+## 7. Z-Spread
+
+The **zero-volatility spread (Z-spread)** is the **constant** spread added to **each** spot rate on the benchmark curve so that the present value of the bond's cash flows equals its **market price**:
+
+$$P = \frac{PMT}{(1+z_1+Z)^1}+\frac{PMT}{(1+z_2+Z)^2}+\dots+\frac{PMT+FV}{(1+z_N+Z)^N}$$
+
+where $z_t$ are the benchmark spot rates and $Z$ is the Z-spread. There is no closed-form solution: $Z$ is found by trial and error or a solver. "Zero volatility" means the cash flows are discounted along the *current* curve with no allowance for rate volatility, so it does not value an embedded option.
+
+### Example F: Z-spread
+
+A 3-year bond has a 5% annual coupon (par 100) and a price of 98.00. The benchmark spot rates are $z_1 = 2\%$, $z_2 = 3\%$, $z_3 = 4\%$.
+
+1. At $Z = 0$: $5/1.02 + 5/1.03^2 + 105/1.04^3 = 4.9020 + 4.7130 + 93.3446 = 102.9596$, which is above 98, so the spread must be positive.
+2. Try $Z = 1.81\%$: $5/1.0381 + 5/1.0481^2 + 105/1.0581^3 = 4.8165 + 4.5516 + 88.6358 = 98.0039$
+3. So the Z-spread is approximately **1.81%, or 181 bp**.
+
+For comparison the bond's YTM at a price of 98.00 is about 5.74%. The Z-spread is not simply YTM minus a single benchmark yield; it accounts for the entire spot curve.
+
+A steep spot curve makes the Z-spread differ from the G-spread. When the yield curve is flat, Z-spread $\approx$ G-spread.
+
+---
+
+## 8. Option-Adjusted Spread (OAS)
+
+For a bond with an embedded option, the Z-spread still includes compensation for the option. The **option-adjusted spread (OAS)** removes it using an interest rate model that allows rates to vary:
+
+$$\text{OAS} = \text{Z-spread} - \text{Option value (in spread terms)}$$
+
+for a **callable** bond. Reasoning:
+
+- **Callable bond**: the issuer holds the option, so the investor gives up value and demands a higher spread. The Z-spread therefore overstates compensation for credit and liquidity risk: $\text{OAS} < \text{Z-spread}$.
+- **Putable bond**: the investor holds the option, which has value and lowers the required spread: $\text{OAS} > \text{Z-spread}$. The option value is *added* to get the OAS.
+- **Option-free bond**: there is no option, so $\text{OAS} = \text{Z-spread}$.
+
+| Bond type | Option holder | Relationship |
+| --- | --- | --- |
+| Callable | Issuer | OAS $=$ Z-spread $-$ option value (OAS lower) |
+| Putable | Investor | OAS $=$ Z-spread $+$ option value (OAS higher) |
+| Option-free | None | OAS $=$ Z-spread |
+
+### Example G: OAS of a callable bond
+
+A callable bond has a Z-spread of 140 bp. An interest rate model values the call option at 35 bp of spread.
+
+1. OAS $= 140 - 35 = \mathbf{105\text{ bp}}$
+2. The 105 bp is the spread attributable to credit and liquidity risk. A comparable option-free bond with a Z-spread near 105 bp offers similar compensation.
+
+---
+
+## 9. Choosing the Right Measure
+
+| Question | Use |
+| --- | --- |
+| What does the bond earn if held to maturity? | YTM (street convention or true yield) |
+| How do I compare a 30/360 corporate to a government bond? | Government equivalent yield |
+| What is the current cash income relative to price? | Current yield |
+| What if the issuer calls at the least favorable date? | Yield to worst |
+| How much extra yield versus a government bond of similar maturity? | G-spread |
+| Same, but against the swap curve? | I-spread |
+| Extra yield across the whole spot curve? | Z-spread |
+| Extra yield excluding embedded option value? | OAS |
+
+---
+
+## Key takeaways
+
+- **YTM** is the IRR of promised cash flows. It assumes hold to maturity, no default and **reinvestment at the YTM**.
+- Semiannual street-convention yields double the periodic rate; convert frequency via the effective annual rate: $(1+y/2)^2-1$.
+- **True yield** adjusts for business days (slightly lower than street); **government equivalent yield** $=$ 30/360 yield $\times 365/360$.
+- **Current yield** $=$ annual coupon / flat price; **simple yield** adds straight-line amortization of discount or premium. Neither is time-valued.
+- **YTW** $=$ minimum of YTM and all YTC (and YTP). Premium callables usually have a call yield as YTW.
+- **G-spread** and **I-spread** are yield minus an interpolated government or swap yield of the same maturity, in basis points.
+- **Z-spread** is the constant spread over the **spot curve** that sets PV equal to price; it ignores option value.
+- **OAS** $=$ Z-spread $-$ call option value (callable) or $+$ put option value (putable); equal to the Z-spread for option-free bonds.

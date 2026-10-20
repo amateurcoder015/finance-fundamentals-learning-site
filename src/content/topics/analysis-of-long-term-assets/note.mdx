@@ -1,0 +1,324 @@
+---
+title: "Analysis of Long-Term Assets"
+description: "How long-term assets are measured and reported: capitalizing versus expensing, property, plant and equipment, depreciation methods, the cost and revaluation models, impairment under IFRS and U.S. GAAP, intangible assets and goodwill, derecognition, and the ratios analysts use to judge asset age and efficiency."
+category: "Financial Statements"
+difficulty: "intermediate"
+dateAdded: "2026-10-20"
+tags: ["ppe", "depreciation", "impairment", "intangibles", "goodwill", "capitalization"]
+---
+
+# Analysis of Long-Term Assets
+
+**Long-term (non-current) assets** provide benefits for more than one period: property, plant and equipment (PP&E), investment property, intangible assets and goodwill. The central accounting question is always the same: is a cost an **asset** (capitalized and spread over future periods) or an **expense** (charged now)? Each choice, and each estimate of useful life, salvage value and impairment, moves earnings, cash flow classification and ratios, so the analyst must understand them.
+
+---
+
+## 1. Capitalize or Expense?
+
+A cost is **capitalized** (recorded as an asset) when it is probable that it will produce future economic benefits and its cost can be measured reliably. Otherwise it is **expensed** immediately. The capitalized amount then flows to the income statement later through **depreciation** (tangible assets) or **amortization** (intangible assets).
+
+### Effects of capitalizing versus expensing
+
+Take a cost of 1,000 that benefits four years (straight-line, no salvage value, taxes ignored).
+
+| | Expensed | Capitalized |
+| --- | --- | --- |
+| Year 1 expense | 1,000 | 250 (depreciation) |
+| Year 1 pretax income | Lower by 750 than if capitalized | Higher by 750 than if expensed |
+| Total assets (end of year 1) | Lower | Higher by 750 (1,000 − 250) |
+| Cash flow from operations (Year 1) | Lower by 1,000 | Higher: outflow shown in **investing** |
+| Years 2 to 4 income | Higher by 250 each year | Lower by 250 each year |
+
+Over the full four years total expense is 1,000 in both cases; only the **timing** differs. Capitalizing raises early income, assets and CFO, and lowers income in later years. Because cash is spent either way, analysts compare **CFO** and **free cash flow** with income and watch for aggressive capitalization.
+
+### Capitalizing interest
+
+Under both IFRS and U.S. GAAP, **borrowing costs** that are directly attributable to acquiring or building a **qualifying asset** (one that takes a substantial time to get ready, such as a plant under construction) are capitalized into its cost.
+
+$$\text{Capitalized interest} = \text{Average accumulated expenditures} \times \text{Interest rate}$$
+
+**Example A.** A company builds a plant. Average accumulated expenditures are 4,000,000 and the borrowing rate on the related debt is 6%.
+
+1. Capitalized interest $= 4{,}000{,}000 \times 6\% = \mathbf{240{,}000}$ (added to plant cost; not expensed this year)
+2. Later, the 240,000 is depreciated with the plant.
+
+Consequences for the analyst:
+
+- Reported **interest expense is lower** and net income higher now; interest coverage ratios (EBIT / interest expense) look better. Add capitalized interest back to interest expense when computing coverage.
+- Capitalized interest is included in **investing** cash outflows (as part of the asset purchase), not operating outflows, so CFO is higher.
+
+---
+
+## 2. Property, Plant and Equipment: Initial Cost
+
+PP&E is recorded at the **cost** of bringing it to location and condition for use:
+
+- Purchase price **plus** import duties and non-refundable taxes, **less** trade discounts and rebates.
+- Costs to deliver and install, site preparation, testing, professional fees.
+- Initial estimate of dismantling and site restoration costs.
+
+Not included: costs of opening a new facility, staff training, administrative overhead, and abnormal waste, which are expensed. Subsequent expenditures that **extend** an asset's life or capacity are capitalized; routine **repairs and maintenance** are expensed.
+
+### Example B: cost of a machine
+
+A firm buys a machine with a list price of 500,000, import duty of 20,000, freight of 10,000, installation of 15,000 and testing of 5,000, and receives a 5,000 discount. It also spends 8,000 training staff.
+
+1. Cost $= 500{,}000 + 20{,}000 + 10{,}000 + 15{,}000 + 5{,}000 - 5{,}000 = \mathbf{545{,}000}$
+2. The 8,000 of training is **expensed**.
+
+This 545,000 machine, with an expected salvage value of 45,000 and a 5-year life, is used in the depreciation examples below.
+
+### Component depreciation
+
+When major parts of an asset have different useful lives, each part is depreciated separately. This is **required under IFRS** and **permitted under U.S. GAAP**.
+
+**Example C.** A building costs 1,200: structure 800 (40-year life), roof 240 (20 years), and HVAC 160 (10 years). Salvage value is zero and straight-line is used.
+
+1. Structure $= 800/40 = 20$; roof $= 240/20 = 12$; HVAC $= 160/10 = 16$
+2. Annual depreciation $= \mathbf{48}$, compared with $1{,}200/40 = 30$ if the whole building were treated as one 40-year asset.
+
+Component depreciation matches expense to how each part is actually consumed, which here raises annual depreciation from 30 to 48.
+
+---
+
+## 3. Depreciation Methods
+
+**Depreciation** allocates an asset's **depreciable cost** (cost minus residual or salvage value) over its useful life. It is not a valuation, and it is non-cash.
+
+| Method | Formula | Pattern |
+| --- | --- | --- |
+| **Straight-line** | $\dfrac{\text{Cost} - \text{Salvage}}{\text{Useful life}}$ | Same each year |
+| **Declining balance** | $\text{Rate} \times \text{Beginning net book value}$ (salvage ignored in the base) | Front-loaded |
+| **Double-declining balance (DDB)** | $\dfrac{2}{\text{Useful life}} \times \text{Beginning net book value}$ | Most front-loaded |
+| **Units of production** | $\dfrac{\text{Cost} - \text{Salvage}}{\text{Total expected units}} \times \text{Units this period}$ | Follows usage |
+
+Declining balance is an **accelerated** method. Depreciation never reduces the carrying amount below salvage value, so in the last year it is limited to the amount that takes the net book value down to salvage.
+
+### Example D: three methods on the 545,000 machine
+
+Cost 545,000, salvage 45,000, life 5 years, depreciable cost 500,000. (All figures in thousands.)
+
+**Straight-line**: $(545-45)/5 = \mathbf{100}$ every year.
+
+**Double-declining balance**: rate $= 2/5 = 40\%$ of beginning net book value (NBV).
+
+| Year | Beginning NBV | Depreciation | Ending NBV |
+| --- | --- | --- | --- |
+| 1 | 545.000 | $0.40 \times 545 = 218.000$ | 327.000 |
+| 2 | 327.000 | $0.40 \times 327 = 130.800$ | 196.200 |
+| 3 | 196.200 | $0.40 \times 196.2 = 78.480$ | 117.720 |
+| 4 | 117.720 | $0.40 \times 117.72 = 47.088$ | 70.632 |
+| 5 | 70.632 | limited to $70.632 - 45 = 25.632$ | 45.000 |
+
+In year 5, $0.40 \times 70.632 = 28.253$ would push NBV to 42.379, below salvage, so depreciation is capped at 25.632. Total $= 218 + 130.8 + 78.48 + 47.088 + 25.632 = 500.000$ (the depreciable cost).
+
+**Units of production**: total expected output 100,000 units; depreciation per unit $= 500{,}000/100{,}000 = 5$. If year 1 output is 30,000 units, year 1 depreciation $= 30{,}000 \times 5 = \mathbf{150{,}000}$ (150 in thousands).
+
+| | Year 1 depreciation (thousands) |
+| --- | --- |
+| Straight-line | 100 |
+| Double-declining balance | 218 |
+| Units of production (30,000 units) | 150 |
+
+Accelerated depreciation gives **lower** early income and lower early net book value (and, where tax rules follow it, lower early taxes). Total depreciation over the asset's life is identical.
+
+### Estimates and changes
+
+Useful life, residual value and the depreciation method are **management estimates**, so they are a source of earnings management. A longer life or a higher salvage value reduces expense. A **change in an estimate** is applied **prospectively**: prior years are not restated.
+
+### Example E: change in estimate
+
+An asset costs 1,000, has salvage 100 and a 10-year life under straight-line. After 4 years the firm revises the remaining life to 8 years and salvage to 80.
+
+1. Original depreciation $= (1{,}000 - 100)/10 = 90$ per year
+2. NBV after 4 years $= 1{,}000 - 4 \times 90 = \mathbf{640}$
+3. New annual depreciation $= (640 - 80)/8 = \mathbf{70}$ (prior years are not restated)
+
+---
+
+## 4. Cost Model versus Revaluation Model
+
+| | Cost model | Revaluation model |
+| --- | --- | --- |
+| Carrying amount | Cost less accumulated depreciation and impairment | **Fair value** at the revaluation date, less later depreciation and impairment |
+| IFRS | Allowed | Allowed (whole class of assets, applied consistently, updated regularly) |
+| U.S. GAAP | Required | **Not allowed** |
+
+Under the revaluation model:
+
+- A **revaluation increase** goes to **other comprehensive income (OCI)** as a *revaluation surplus* in equity. It goes to profit or loss only to the extent it reverses a previous revaluation decrease recognized in profit or loss.
+- A **revaluation decrease** first reduces any existing revaluation surplus for that asset; any excess is a loss in profit or loss.
+
+### Example F: revaluation
+
+Land is bought for 1,000. Its fair value rises to 1,200 at the end of year 1 and falls to 900 at the end of year 2.
+
+1. End of year 1: revaluation surplus in OCI $= 1{,}200 - 1{,}000 = \mathbf{200}$; income is unaffected.
+2. End of year 2: decrease $= 1{,}200 - 900 = 300$. The first **200** reduces the surplus in OCI, and the remaining **100** is a loss in profit or loss. Carrying amount $= 900$.
+
+Revaluation increases book equity and assets with no cash effect and lowers some ratios (such as asset turnover). Because depreciation is based on the higher carrying amount, future income is lower.
+
+---
+
+## 5. Impairment
+
+An asset is **impaired** when its carrying amount is greater than what can be recovered from it. Impairment is a non-cash charge in profit or loss, reported in operating income, and it reduces assets and equity (and future depreciation).
+
+### IFRS (one-step test)
+
+Compare the **carrying amount** with the **recoverable amount**, which is the **higher** of:
+
+- **Fair value less costs of disposal**, and
+- **Value in use** (present value of future cash flows from the asset).
+
+$$\text{Impairment loss (IFRS)} = \text{Carrying amount} - \text{Recoverable amount}$$
+
+### U.S. GAAP (two-step test, assets held for use)
+
+1. **Recoverability test**: if the carrying amount is greater than the **undiscounted** expected cash flows, the asset is impaired. Otherwise there is no impairment.
+2. **Measure the loss**: $\text{Impairment loss} = \text{Carrying amount} - \text{Fair value}$.
+
+Assets **held for sale** are written down to the **lower of carrying amount and fair value less costs to sell**, and are no longer depreciated.
+
+### Reversals
+
+| | IFRS | U.S. GAAP (held for use) |
+| --- | --- | --- |
+| Reversal of impairment loss | **Allowed**, up to the carrying amount that would have existed had no impairment occurred (not for goodwill) | **Not allowed** |
+
+### Example G: impairment under each standard
+
+An asset has a carrying amount of 800. Undiscounted expected cash flows are 780, fair value is 650, fair value less costs of disposal is 640 and value in use is 690.
+
+**U.S. GAAP**
+
+1. Recoverability: $800 > 780$, so the asset **is impaired**.
+2. Loss $= 800 - 650 = \mathbf{150}$ (carrying amount falls to 650).
+
+**IFRS**
+
+1. Recoverable amount $= \max(640, 690) = 690$
+2. Loss $= 800 - 690 = \mathbf{110}$ (carrying amount falls to 690).
+
+<Note>An impairment charge is large, non-recurring and non-cash, so analysts usually exclude it from "core" earnings. But it also signals that earlier assumptions were too optimistic, and that past depreciation and returns on those assets were overstated.</Note>
+
+---
+
+## 6. Derecognition: Sale, Disposal and Retirement
+
+An asset is removed from the balance sheet when it is sold, retired or no longer expected to produce benefits. Gain or loss is recognized in profit or loss:
+
+$$\text{Gain (loss)} = \text{Proceeds} - \text{Carrying amount}$$
+
+### Example H: sale of equipment
+
+An asset originally cost 545, with accumulated depreciation of 300 at the date of sale. It is sold for 260.
+
+1. Carrying amount $= 545 - 300 = 245$
+2. Gain $= 260 - 245 = \mathbf{15}$
+
+Sale proceeds are an **investing** inflow; the gain is subtracted from net income when computing CFO by the indirect method.
+
+---
+
+## 7. Investment Property
+
+**Investment property** is land or buildings held to earn rentals or for capital appreciation, not for use in operations or for sale.
+
+| | IFRS | U.S. GAAP |
+| --- | --- | --- |
+| Measurement | **Cost model or fair value model** (one policy for all investment property) | Generally treated as PP&E at cost less depreciation |
+| Fair value model | Not depreciated; fair value changes go to **profit or loss** | Not available (except for certain industries) |
+
+Under the fair value model, income includes unrealized gains and losses, so earnings are more volatile. Cost-model companies must disclose fair value so analysts can compare.
+
+---
+
+## 8. Intangible Assets
+
+An **intangible asset** is an identifiable non-monetary asset without physical substance, such as patents, trademarks, licenses, customer lists and software. It is identifiable if it can be separated from the entity or arises from contractual or legal rights.
+
+### Acquisition methods
+
+| Source | Treatment |
+| --- | --- |
+| **Purchased separately** | Capitalized at cost |
+| **Acquired in a business combination** | Capitalized at **fair value** |
+| **Developed internally** | Mostly **expensed** (see below) |
+
+### Internally developed intangibles
+
+- **IFRS**: research costs are **expensed**; development costs are **capitalized** once criteria are met (technical feasibility, intention and ability to complete and use or sell, probable future benefits, adequate resources, and reliable measurement).
+- **U.S. GAAP**: both research and development are **expensed**, except certain **software development costs** after technological feasibility is established (for software to be sold).
+
+So, all else equal, an IFRS company that capitalizes development costs reports higher early income and assets than a similar U.S. GAAP company, and lower CFO relative to income.
+
+### Amortization and impairment
+
+- **Finite life**: amortized (usually straight-line) over useful life, and tested for impairment when indicators exist.
+- **Indefinite life** (for example, some trademarks): **not amortized**; tested for impairment **at least annually**.
+- Intangibles carried at cost under U.S. GAAP; IFRS permits revaluation only where an active market exists (rare).
+
+---
+
+## 9. Goodwill
+
+**Goodwill** arises in a business combination when the purchase price exceeds the fair value of the identifiable net assets acquired:
+
+$$\text{Goodwill} = \text{Purchase price} - \text{Fair value of identifiable net assets}$$
+
+**Example I.** A firm pays 900 for a company whose identifiable assets have a fair value of 1,000 and liabilities a fair value of 300.
+
+1. Fair value of identifiable net assets $= 1{,}000 - 300 = 700$
+2. Goodwill $= 900 - 700 = \mathbf{200}$
+
+Key points:
+
+- Goodwill is **not amortized**; it is tested for impairment **at least annually** (IFRS: at the cash-generating unit level; U.S. GAAP: at the reporting-unit level).
+- An impairment loss on goodwill is **never reversed**.
+- Internally generated goodwill is **never** recognized.
+- Analysts often **exclude goodwill** (and other intangibles) from equity when assessing tangible book value and leverage, and view large goodwill balances as a sign of acquisition risk.
+
+---
+
+## 10. Ratios and Analyst Adjustments
+
+| Measure | Formula | Interpretation |
+| --- | --- | --- |
+| **Fixed asset turnover** | Revenue / Average net PP&E | Sales generated per unit of PP&E |
+| **Average age** (years) | Accumulated depreciation / Depreciation expense | How much of the asset base is used up |
+| **Total useful life** (years) | Gross PP&E / Depreciation expense | Estimated life of the average asset |
+| **Remaining useful life** (years) | Net PP&E / Depreciation expense | Years of benefit left |
+
+### Example J: asset analysis
+
+A firm has gross PP&E of 2,000, accumulated depreciation of 800 (net PP&E 1,200 at year-end, 1,150 at the start), depreciation expense of 160 and revenue of 3,000.
+
+1. Average net PP&E $= (1{,}150 + 1{,}200)/2 = 1{,}175$
+2. Fixed asset turnover $= 3{,}000/1{,}175 = \mathbf{2.55}$
+3. Average age $= 800/160 = \mathbf{5.0\text{ years}}$
+4. Total useful life $= 2{,}000/160 = \mathbf{12.5\text{ years}}$
+5. Remaining life $= 1{,}200/160 = \mathbf{7.5\text{ years}}$ (check: $5.0 + 7.5 = 12.5$)
+
+A high average age relative to total life suggests the firm will need heavy replacement capital expenditure soon. Revaluations, impairments, longer lives and capitalizing costs all distort turnover and age, so comparisons across firms must allow for differences in method.
+
+Useful analyst checks:
+
+- Compare **depreciation methods and lives** across peers (a longer life flatters income).
+- Check **capital expenditures** against depreciation: persistently below depreciation can mean under-investment.
+- Compare **capitalized costs** (interest, development) with **CFO**.
+- Watch for **impairments** and their reversals (IFRS), and for **goodwill** growth.
+- Look at gains on asset sales, which are non-operating and non-recurring.
+
+---
+
+## Key takeaways
+
+- **Capitalizing** a cost defers expense and raises early income, assets and CFO; **expensing** does the opposite. Total expense over the asset's life is the same.
+- PP&E cost includes purchase price, delivery, installation and testing, less discounts; training and overhead are expensed. Borrowing costs on **qualifying assets** are capitalized.
+- Depreciation methods: **straight-line** $= (\text{cost} - \text{salvage})/\text{life}$; **DDB** $= (2/\text{life}) \times$ beginning NBV (never below salvage); **units of production** follows usage. Changes in estimates are **prospective**.
+- The **revaluation model** (IFRS only) puts increases in **OCI** (surplus), unless reversing a prior loss through profit or loss.
+- **Impairment**: IFRS uses carrying amount vs recoverable amount (higher of fair value less costs of disposal and value in use) and **allows reversal**; U.S. GAAP uses a two-step test (undiscounted cash flows, then fair value) and **prohibits reversal** for held-for-use assets.
+- Gain or loss on disposal $=$ proceeds $-$ carrying amount.
+- **Intangibles**: purchased ones are capitalized; research is expensed; development is capitalized under IFRS when criteria are met, mostly expensed under U.S. GAAP. Indefinite-life intangibles and **goodwill** are not amortized but tested at least annually. Goodwill impairment is never reversed.
+- **Fixed asset turnover** $=$ revenue / average net PP&E; **average age** $=$ accumulated depreciation / depreciation expense; **total life** $=$ gross PP&E / depreciation; **remaining life** $=$ net PP&E / depreciation.

@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What is yield to maturity and what does it assume?",
+    "back": "The discount rate that equates PV of promised cash flows to the full price (the bond's IRR). Assumes the bond is held to maturity, all payments are made on time in full, and coupons are reinvested at the YTM."
+  },
+  {
+    "front": "What is the street convention yield?",
+    "back": "YTM calculated assuming payments are made on scheduled dates, even if they fall on weekends or holidays. For semiannual bonds the periodic yield is doubled to quote an annual rate (bond equivalent yield)."
+  },
+  {
+    "front": "How does true yield differ from street convention?",
+    "back": "True yield moves payment dates to the next actual business day. Cash arrives slightly later, so true yield is equal to or slightly lower than the street convention yield."
+  },
+  {
+    "front": "What is the government equivalent yield?",
+    "back": "A 30/360 yield restated on an actual/actual basis: GEY = yield(30/360) x 365/360. It makes corporate yields comparable with government bond yields."
+  },
+  {
+    "front": "Formula for current yield, and what it ignores",
+    "back": "Current yield = annual coupon / flat price. It ignores the gain or loss at maturity (pull to par) and reinvestment and time value."
+  },
+  {
+    "front": "Formula for simple yield",
+    "back": "Simple yield = [annual coupon + (par - price)/years to maturity] / price. It adds straight-line amortization of the discount (or subtracts that of the premium) to coupon income."
+  },
+  {
+    "front": "How do you convert a semiannual-basis yield to an annual-pay yield?",
+    "back": "Annual-pay yield = (1 + semiannual-basis yield / 2)^2 - 1. Example: 5% semiannual basis gives 1.025^2 - 1 = 5.0625%."
+  },
+  {
+    "front": "What is yield to worst and when is it a call yield?",
+    "back": "Yield to worst is the lowest of the YTM and all yields to call (and put). For premium callable bonds (coupon above market yield) the issuer is likely to call, so the YTW is usually a call yield; for discount bonds it is usually the YTM."
+  },
+  {
+    "front": "Define G-spread and I-spread",
+    "back": "G-spread = bond YTM - interpolated government YTM of the same maturity. I-spread = bond YTM - interpolated swap rate of the same maturity. Both are quoted in basis points."
+  },
+  {
+    "front": "What is the Z-spread?",
+    "back": "The constant spread added to every benchmark spot rate so that the PV of the bond's cash flows equals its market price. It uses the whole spot curve (zero volatility) and does not remove the value of embedded options."
+  },
+  {
+    "front": "How is OAS related to the Z-spread?",
+    "back": "Callable bond: OAS = Z-spread - option value (OAS lower). Putable bond: OAS = Z-spread + option value (OAS higher). Option-free bond: OAS = Z-spread."
+  }
+]
