@@ -1,0 +1,223 @@
+---
+title: "Fiscal Policy"
+description: "Government spending and taxation as tools to influence demand, growth and income distribution: deficits and debt, the fiscal multiplier, Ricardian equivalence, debt-ratio dynamics, implementation lags and how fiscal and monetary policy combine."
+category: "Economics"
+difficulty: "intermediate"
+dateAdded: "2026-10-21"
+tags: ["fiscal-policy", "fiscal-multiplier", "budget-deficit", "government-debt", "ricardian-equivalence", "crowding-out"]
+---
+
+# Fiscal Policy
+
+**Fiscal policy** is a government's use of **spending** and **taxation** to influence the economy. Alongside monetary policy (set by the central bank), it is the main way policymakers try to steer aggregate demand, growth, employment and the distribution of income. For an analyst, fiscal policy affects sovereign credit quality, interest rates, inflation expectations, sector earnings and currency values. This chapter covers the objectives and tools of fiscal policy, deficits and debt, the multiplier, the arguments about whether deficits matter, the practical limits of fiscal action, and how fiscal and monetary policy interact.
+
+---
+
+## 1. Objectives and Tools
+
+### Objectives
+
+- **Influence the level of aggregate demand** and so the pace of economic growth and employment (stabilisation).
+- **Redistribute income and wealth** through progressive taxes and transfer payments.
+- **Allocate resources** to goods and services the market under-provides, such as defence, infrastructure, education and public health (public goods and positive externalities).
+
+### The budget
+
+The **budget balance** is tax revenue minus total government spending:
+
+$$\text{Budget balance} = T - G$$
+
+where $G$ includes transfer payments and interest on debt. A negative balance is a **deficit**, a positive balance a **surplus**. A **primary balance** excludes interest payments, so it shows the position of the budget before the cost of past borrowing.
+
+### Spending tools
+
+| Type | Description | Examples |
+| --- | --- | --- |
+| **Current spending** | Day-to-day running of government that is consumed within the period | Salaries, healthcare, defence operations, subsidies |
+| **Capital spending** | Investment in long-lived assets that raises future productive capacity | Roads, ports, power grids, schools |
+| **Transfer payments** | Payments with no goods or services received in return; they redistribute income | Pensions, unemployment benefits, welfare |
+| **Interest on debt** | The cost of servicing past borrowing | Coupons on government bonds |
+
+Transfer payments are **not** counted in GDP (they are not production), but they raise disposable income and therefore consumption. Capital spending is generally viewed as the form of spending that most improves long-run growth.
+
+### Revenue tools
+
+| Type | Description | Examples |
+| --- | --- | --- |
+| **Direct taxes** | Levied on income or wealth | Personal and corporate income tax, payroll taxes, wealth, property and capital gains taxes |
+| **Indirect taxes** | Levied on spending or transactions | Sales tax, VAT/GST, excise duties, import tariffs |
+
+Direct taxes can be **progressive** (higher rates on higher incomes), **proportional** or **regressive**. A good tax system is usually judged on **simplicity**, **efficiency** (little distortion of economic decisions), **fairness** and **sufficiency** (it raises the revenue required).
+
+---
+
+## 2. Fiscal Stance: Expansionary vs Contractionary
+
+The **fiscal stance** describes the direction in which policy is pushing demand.
+
+| Stance | Typical actions | Effect on aggregate demand | Budget effect |
+| --- | --- | --- | --- |
+| **Expansionary** | Higher spending, lower taxes | Increases | Deficit rises (or surplus shrinks) |
+| **Contractionary** | Lower spending, higher taxes | Decreases | Deficit falls (or surplus grows) |
+
+Expansionary policy is used to lift an economy out of recession; contractionary policy is used to cool an overheating economy or to rebuild the public finances.
+
+### Measuring the stance
+
+A change in the deficit does not always mean a change in policy, because the budget responds to the economy itself:
+
+- **Automatic stabilisers** are built-in features that move the budget in the direction that smooths the cycle with no new decision. In a recession, tax receipts fall (especially with progressive taxes) and unemployment benefits rise, so the deficit widens and supports demand. In a boom the reverse happens. They act without delay and need no legislation.
+- **Discretionary fiscal policy** is a deliberate change in spending or tax law, such as a stimulus package or a tax increase.
+
+The **cyclically adjusted (structural) balance** estimates what the balance would be if the economy were at potential output. A rising deficit caused only by a recession is **cyclical**; a deficit that persists at full employment is **structural**. Only changes in the structural balance reveal a change in the discretionary stance.
+
+---
+
+## 3. The Fiscal Multiplier
+
+A change in government spending or taxes has a **ripple effect**: extra income is partly spent, which becomes someone else's income, and so on. The total change in output is larger than the initial change in spending, by the **fiscal multiplier**.
+
+Let $c$ be the **marginal propensity to consume** (MPC) out of disposable income and $t$ the **tax rate** on income. Disposable income is $Y(1-t)$, so each extra unit of income leads to $c(1-t)$ of extra spending.
+
+$$\text{Fiscal multiplier} = \frac{1}{1 - c(1-t)}$$
+
+The multiplier is larger when the MPC is higher and the tax rate lower. Leakages such as taxes, saving and imports reduce it.
+
+For a change in **government spending** $\Delta G$:
+
+$$\Delta Y = \frac{1}{1 - c(1-t)} \times \Delta G$$
+
+For a **lump-sum tax change** $\Delta T$, the first-round effect on spending is only $c\,\Delta T$ (part of the tax change is absorbed in saving), so:
+
+$$\Delta Y = -\frac{c}{1 - c(1-t)} \times \Delta T$$
+
+A tax cut is therefore less powerful than an equal spending increase, by the factor $c$.
+
+### Worked example: multipliers
+
+An economy has MPC $c = 0.80$ and an income tax rate $t = 25\%$.
+
+1. After-tax MPC: $c(1-t) = 0.80 \times 0.75 = 0.60$.
+2. Multiplier: $\dfrac{1}{1 - 0.60} = \dfrac{1}{0.40} = 2.5$.
+3. **Spending increase** of 100: $\Delta Y = 2.5 \times 100 = 250$.
+4. **Lump-sum tax cut** of 100: first-round spending $= 0.80 \times 100 = 80$, so $\Delta Y = 2.5 \times 80 = 200$.
+5. **Balanced budget**: raise spending by 100 and lump-sum taxes by 100. $\Delta Y = 250 - 200 = +50$. Output still rises, because the spending increase is fully spent while the tax increase only reduces spending by 80.
+
+<Note>
+The textbook "balanced budget multiplier of 1" holds when there is no income tax rate ($t = 0$). With $c = 0.8$ and $t = 0$ the multiplier is 5, so $\Delta Y = 5 \times 100 - 5 \times 80 = 100$, an equal change in output and in the budget. In the example above $t = 25\%$, so the balanced budget effect (+50) is smaller.
+</Note>
+
+In practice the multiplier is reduced by **crowding out** (section 5), by imports, and by Ricardian offsets, and it is larger when the economy has spare capacity and interest rates are low.
+
+---
+
+## 4. Deficits and Government Debt
+
+Deficits are financed by borrowing, so the **government debt** is the accumulation of past deficits. Debt is normally compared with the size of the economy through two ratios:
+
+$$\text{Deficit ratio} = \frac{\text{Budget deficit}}{\text{GDP}} \qquad \text{Debt ratio} = \frac{\text{Government debt}}{\text{GDP}}$$
+
+### Debt-ratio dynamics
+
+Whether the debt ratio $d = D/Y$ rises or falls depends on three things: the interest rate on debt, the growth rate of the economy, and the primary balance. Working in real terms with real interest rate $r$ and real growth $g$, the change in the debt ratio is approximately:
+
+$$\Delta d \approx (r - g)\times d + \text{primary deficit ratio}$$
+
+and exactly:
+
+$$d_1 = \frac{d_0(1+r) + pd}{1+g}$$
+
+where $pd$ is the primary deficit as a share of the starting GDP.
+
+- If $r > g$, the debt grows faster than the economy, so the ratio rises unless the government runs a **primary surplus**.
+- If $g > r$, growth alone erodes the debt ratio even with a small primary deficit.
+- To hold the ratio constant, the government needs a primary surplus of $(r-g) \times d$ (as a share of GDP).
+
+### Worked example: debt ratio
+
+Debt is 80% of GDP. The real interest rate is 4%, real GDP growth is 2%, and the primary deficit is 1% of GDP.
+
+1. Take starting GDP as 100, so debt is 80 and the primary deficit is 1.
+2. Debt after one year: $80 \times 1.04 + 1 = 84.2$.
+3. GDP after one year: $100 \times 1.02 = 102$.
+4. New debt ratio: $84.2 / 102 = 82.55\%$.
+5. Check with the approximation: $(0.04 - 0.02) \times 0.80 + 0.01 = 0.026$, so about $80\% + 2.6\text{ points} = 82.6\%$. The ratio rises by roughly 2.5 percentage points.
+
+To stabilise the ratio at 80%, set $d_1 = d_0$ in the exact formula: $80 \times 1.04 + pd = 80 \times 1.02$, so $pd = -1.6$. The government would need a primary surplus of $(r-g) \times d = 0.02 \times 0.80 = 1.6\%$ of GDP.
+
+### Is government debt a problem?
+
+| Arguments that debt is a concern | Arguments that debt is manageable |
+| --- | --- |
+| Future generations pay higher taxes or receive fewer services | If the debt is owed to domestic residents, the burden is "owed to ourselves": taxpayers pay, bondholders receive |
+| **Crowding out**: borrowing raises interest rates and displaces private investment | Borrowing can fund productive capital spending whose return exceeds the cost of debt |
+| Large debt can cause loss of investor confidence, higher risk premia, even default | Deficits during recessions support demand and may raise long-run output |
+| Debt service squeezes other spending | **Ricardian equivalence** (below) suggests the effect of deficits is offset by private saving |
+| A high debt burden limits future ability to respond to crises | The debt ratio matters, and it can fall when growth exceeds the interest rate |
+
+Sustainability is judged mainly by the debt ratio, the interest burden, the trend in the primary balance, the **currency of the debt** (a country borrowing in its own currency can in principle monetise it, a country borrowing in foreign currency cannot), and the maturity structure.
+
+### Ricardian equivalence
+
+**Ricardian equivalence** says that if rational households understand that a debt-financed tax cut today must be repaid by higher taxes in the future, they will **save** the tax cut instead of spending it. Private saving rises by the amount public saving falls, so deficit financing has **no effect** on aggregate demand, and the choice between taxes and borrowing is irrelevant.
+
+The result depends on strong assumptions: rational, forward-looking households, perfect capital markets, and no uncertainty. In practice many households are credit-constrained or short-sighted, so deficits do boost demand to some extent, and Ricardian equivalence is typically seen as a partial offset rather than a full one.
+
+---
+
+## 5. Crowding Out and Economic Constraints
+
+**Crowding out** occurs when government borrowing raises interest rates and reduces private investment (and some interest-sensitive consumption). It is stronger when the economy is at full employment and the central bank is not accommodating the extra borrowing, and weak when there is large spare capacity or interest rates are at or near zero.
+
+Other constraints on fiscal expansion:
+
+- **Market confidence**: a government with a large deficit and debt may face rising yields as investors demand a higher risk premium, which increases debt service and may force austerity.
+- **Political and legal limits**: debt ceilings, fiscal rules (for example caps on the deficit or debt ratio) and budget approval processes.
+- **Open-economy leakage**: part of the stimulus is spent on imports, weakening the domestic multiplier.
+
+---
+
+## 6. Implementation Lags
+
+Fiscal policy is slower to implement than monetary policy because it passes through a political process. Three lags matter:
+
+| Lag | Meaning |
+| --- | --- |
+| **Recognition lag** | Time before policymakers realise that the economy has turned (data are published late and revised) |
+| **Action lag** | Time to design, debate and enact the spending or tax change |
+| **Impact lag** | Time for the policy to work through the economy and affect output and employment |
+
+Because of these lags, a stimulus may arrive only when the economy is already recovering, and then add to inflation (**pro-cyclical** rather than **counter-cyclical** effect). This is a reason why automatic stabilisers, which have no lags, are valued, and why some argue against fine-tuning with discretionary policy. Further difficulties include uncertainty about the size of the multiplier, the pull of political motives, and the risk that temporary measures become permanent.
+
+---
+
+## 7. Fiscal and Monetary Policy Together
+
+Fiscal policy is set by the government and monetary policy by the central bank, so the two can reinforce or conflict with each other. Their effects differ most for interest rates and the composition of demand.
+
+| Fiscal | Monetary | Interest rates | Aggregate demand | Private spending | Public spending |
+| --- | --- | --- | --- | --- | --- |
+| Expansionary | Expansionary | Ambiguous (fiscal pushes up, monetary pushes down) | Strong increase | Up | Up |
+| Expansionary | Contractionary | Sharply higher | Ambiguous | Down | Up |
+| Contractionary | Expansionary | Sharply lower | Ambiguous | Up | Down |
+| Contractionary | Contractionary | Ambiguous | Strong decrease | Down | Down |
+
+The mix tells you the *composition* of growth. Tight fiscal and easy monetary policy lowers interest rates and tilts the economy towards private investment and a smaller public sector, whereas easy fiscal and tight monetary policy favours the public sector and crowds out private spending.
+
+### Implications for investors
+
+- Expansionary fiscal policy funded by borrowing increases bond supply and can push yields higher and raise sovereign credit risk.
+- Tax and spending changes redistribute earnings across sectors (for example infrastructure spending benefits construction; corporate tax changes lift after-tax earnings).
+- Large deficits financed by money creation add to inflation and weaken the currency.
+
+---
+
+## Key takeaways
+
+- Fiscal policy uses **spending** and **taxes** for stabilisation, redistribution and resource allocation. An **expansionary** stance raises demand and the deficit; a **contractionary** stance does the reverse.
+- **Automatic stabilisers** work without lags; **discretionary** policy suffers recognition, action and impact lags.
+- The **fiscal multiplier** is $\dfrac{1}{1 - c(1-t)}$ and is larger for spending than for tax changes of equal size. With $c=0.8$ and $t=25\%$ it is 2.5.
+- The debt ratio rises when $r > g$ and the primary balance is in deficit: $\Delta d \approx (r-g)d + \text{primary deficit}$.
+- **Ricardian equivalence** says debt-financed tax cuts are saved; it holds only under strict assumptions.
+- **Crowding out** weakens the effect of deficits at full employment; market confidence and fiscal rules also constrain governments.
+- The fiscal/monetary policy mix drives both overall demand and its split between private and public spending.

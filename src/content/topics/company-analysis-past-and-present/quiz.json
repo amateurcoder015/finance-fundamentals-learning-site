@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A company reports revenue growth of 12%. Of this, 3 percentage points come from an acquisition and -1 percentage point from currency translation. Organic growth is closest to:",
+    "options": [
+      "9%",
+      "10%",
+      "12%",
+      "16%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Reported growth ≈ organic growth + acquisition effect + FX effect, so organic = 12% - 3% - (-1%) = 10%. Organic growth strips out acquisitions, disposals and currency effects."
+  },
+  {
+    "question": "Last year a company sold 100 units at 10 each. This year it sold 110 units at 11 each. Using price effect = (P1 - P0) x Q1 and volume effect = (Q1 - Q0) x P0, the price effect on revenue is:",
+    "options": [
+      "100",
+      "105",
+      "110",
+      "121"
+    ],
+    "correctIndex": 2,
+    "explanation": "Price effect = (11 - 10) x 110 = 110. Volume effect = (110 - 100) x 10 = 100. Together they equal the total revenue change: 1,210 - 1,000 = 210."
+  },
+  {
+    "question": "A firm has revenue of 1,000, variable costs of 600 and fixed costs of 250. If revenue increases by 6% and the cost structure is unchanged, operating income (EBIT) will increase by approximately:",
+    "options": [
+      "16.0%",
+      "6.0%",
+      "10.7%",
+      "24.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Contribution margin = 1,000 - 600 = 400; EBIT = 400 - 250 = 150; DOL = 400 / 150 = 2.67. EBIT growth = 2.67 x 6% = 16%. Check: revenue 1,060, variable costs 636, fixed 250 gives EBIT 174, and 174 / 150 = 1.16."
+  },
+  {
+    "question": "A company has a net profit margin of 5%, an asset turnover of 1.6 and an equity multiplier of 2.5. Its return on equity is:",
+    "options": [
+      "8.0%",
+      "12.5%",
+      "16.0%",
+      "20.0%"
+    ],
+    "correctIndex": 3,
+    "explanation": "DuPont: ROE = net margin x asset turnover x equity multiplier = 0.05 x 1.6 x 2.5 = 0.20, or 20%."
+  },
+  {
+    "question": "A company has EBIT of 300, a tax rate of 20% and invested capital of 2,000. Its ROIC is:",
+    "options": [
+      "10.0%",
+      "12.0%",
+      "15.0%",
+      "9.6%"
+    ],
+    "correctIndex": 1,
+    "explanation": "NOPAT = EBIT x (1 - tax rate) = 300 x 0.80 = 240. ROIC = 240 / 2,000 = 12.0%. Using pre-tax EBIT (15%) would overstate the return."
+  },
+  {
+    "question": "A company's ROE is well above its ROIC. The most likely explanation is that:",
+    "options": [
+      "The company uses financial leverage",
+      "The company has a very high asset turnover",
+      "The company's tax rate is zero",
+      "The company's operating margin is above industry average"
+    ],
+    "correctIndex": 0,
+    "explanation": "ROIC is measured on all invested capital regardless of financing, whereas ROE is measured on equity only. When a company earns more than its cost of debt on borrowed funds, leverage (a higher equity multiplier) lifts ROE above ROIC."
+  },
+  {
+    "question": "A company has operating cash flow of 500, capital expenditure of 350 and net income of 300. Its free cash flow conversion (FCF / net income) is:",
+    "options": [
+      "30.0%",
+      "46.7%",
+      "50.0%",
+      "167%"
+    ],
+    "correctIndex": 2,
+    "explanation": "FCF = CFO - capex = 500 - 350 = 150. FCF conversion = 150 / 300 = 50%."
+  },
+  {
+    "question": "Which of the following is the most important warning sign of weak earnings quality?",
+    "options": [
+      "Gross margin that is stable relative to peers",
+      "Capital expenditure slightly above depreciation",
+      "A rising proportion of recurring revenue",
+      "Receivables growing much faster than revenue while operating cash flow lags net income"
+    ],
+    "correctIndex": 3,
+    "explanation": "Receivables outpacing sales together with weak cash conversion can indicate aggressive revenue recognition or collection problems: profits that are not turning into cash. The other choices are neutral or positive."
+  }
+]

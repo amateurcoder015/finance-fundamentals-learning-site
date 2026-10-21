@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which of the following is an automatic fiscal stabiliser?",
+    "options": [
+      "A new infrastructure programme approved by the legislature",
+      "A one-off reduction in the corporate tax rate",
+      "A progressive income tax system, under which tax receipts fall as incomes fall in a recession",
+      "A central bank cut in the policy rate"
+    ],
+    "correctIndex": 2,
+    "explanation": "Automatic stabilisers move the budget in a counter-cyclical direction with no new decision: progressive taxes and unemployment benefits dampen the cycle. A new programme or tax-rate change is discretionary policy, and a rate cut is monetary, not fiscal, policy."
+  },
+  {
+    "question": "An economy has a marginal propensity to consume of 0.75 and an income tax rate of 20%. If the government raises spending by 40, the estimated increase in output is closest to:",
+    "options": [
+      "100",
+      "60",
+      "80",
+      "160"
+    ],
+    "correctIndex": 0,
+    "explanation": "After-tax MPC = 0.75 x (1 - 0.20) = 0.60. Multiplier = 1 / (1 - 0.60) = 2.5. Change in output = 2.5 x 40 = 100."
+  },
+  {
+    "question": "In an economy with MPC = 0.90 and no income tax, the government cuts lump-sum taxes by 50. The estimated increase in output is closest to:",
+    "options": [
+      "500",
+      "450",
+      "405",
+      "45"
+    ],
+    "correctIndex": 1,
+    "explanation": "With t = 0 the multiplier is 1 / (1 - 0.90) = 10. A lump-sum tax cut first raises spending by only c x 50 = 45, so the output change is 10 x 45 = 450. (A 500 gain would require the full 50 to be spent, which is what an equal spending increase would do.)"
+  },
+  {
+    "question": "Government debt is 60% of GDP. The real interest rate is 3%, real GDP growth is 4%, and the government runs a zero primary balance. The debt-to-GDP ratio will most likely:",
+    "options": [
+      "Rise by about 0.6 percentage points",
+      "Rise by about 1.0 percentage point",
+      "Remain unchanged",
+      "Fall by about 0.6 percentage points"
+    ],
+    "correctIndex": 3,
+    "explanation": "Change in the ratio is approximately (r - g) x d + primary deficit = (0.03 - 0.04) x 0.60 + 0 = -0.6 percentage points. Because growth exceeds the interest rate, the ratio falls even with a balanced primary budget (exactly: 0.60 x 1.03 / 1.04 = 59.4%)."
+  },
+  {
+    "question": "Ricardian equivalence implies that a debt-financed tax cut will:",
+    "options": [
+      "Leave aggregate demand unchanged, because households save the tax cut to pay for expected future taxes",
+      "Raise aggregate demand by the full amount of the tax cut",
+      "Lower interest rates by increasing the supply of loanable funds",
+      "Reduce the government's primary deficit"
+    ],
+    "correctIndex": 0,
+    "explanation": "Under Ricardian equivalence rational households anticipate higher future taxes and raise private saving by the amount of the tax cut, so consumption and aggregate demand do not change. The result relies on strong assumptions (rational households, perfect capital markets) that rarely hold fully."
+  },
+  {
+    "question": "A government identifies a recession, but the legislation for a stimulus package takes nine months to pass. The delay between recognising the problem and enacting the measures is the:",
+    "options": [
+      "Recognition lag",
+      "Impact lag",
+      "Action lag",
+      "Transmission lag in monetary policy"
+    ],
+    "correctIndex": 2,
+    "explanation": "The action lag is the time needed to design, debate and enact the policy. The recognition lag is the time to see that the economy has turned, and the impact lag is the time for the policy to affect output once enacted."
+  },
+  {
+    "question": "Policymakers combine expansionary fiscal policy with contractionary monetary policy. The most likely result is that:",
+    "options": [
+      "Interest rates fall and private spending rises",
+      "Interest rates rise sharply, private spending falls and public spending rises",
+      "Interest rates are ambiguous and aggregate demand rises strongly",
+      "Interest rates are unchanged and the budget deficit falls"
+    ],
+    "correctIndex": 1,
+    "explanation": "Both policies push interest rates up (more government borrowing plus tighter money), so private investment is crowded out while public spending rises. The effect on total aggregate demand is ambiguous."
+  },
+  {
+    "question": "A country's budget deficit widens during a recession solely because tax revenues fall and unemployment benefits rise. This deficit is best described as:",
+    "options": [
+      "A discretionary expansionary policy",
+      "A structural deficit caused by a change in tax law",
+      "A primary surplus",
+      "A cyclical deficit that does not by itself signal a change in the discretionary fiscal stance"
+    ],
+    "correctIndex": 3,
+    "explanation": "A deficit that grows because the economy has weakened is cyclical: it reflects automatic stabilisers. Only changes in the structural (cyclically adjusted) balance reveal whether policymakers have deliberately changed the stance."
+  }
+]

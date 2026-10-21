@@ -1,0 +1,42 @@
+[
+  {
+    "front": "What are the three main objectives of fiscal policy?",
+    "back": "1. Influence aggregate demand and growth (stabilisation)\n2. Redistribute income and wealth\n3. Allocate resources to public goods and services under-provided by markets"
+  },
+  {
+    "front": "Fiscal multiplier formula",
+    "back": "Multiplier = 1 / (1 - c(1 - t)), where c = marginal propensity to consume and t = income tax rate. Example: c = 0.8, t = 25% gives 1 / (1 - 0.6) = 2.5."
+  },
+  {
+    "front": "Why is a lump-sum tax cut less powerful than an equal spending increase?",
+    "back": "Only the fraction c of the tax cut is spent in the first round (the rest is saved), so the output effect is c x multiplier x change in tax, versus multiplier x change in spending for government spending."
+  },
+  {
+    "front": "Automatic stabilisers vs discretionary fiscal policy",
+    "back": "Automatic stabilisers (progressive taxes, unemployment benefits) change the budget counter-cyclically with no new decision and no lag. Discretionary policy needs new legislation and suffers lags."
+  },
+  {
+    "front": "Change in the debt-to-GDP ratio (approximate)",
+    "back": "Δ(D/Y) ≈ (r - g) x (D/Y) + primary deficit/GDP. The ratio rises if r > g with a primary deficit, and can fall if growth exceeds the real interest rate."
+  },
+  {
+    "front": "What is Ricardian equivalence?",
+    "back": "Rational households expect debt-financed tax cuts to be repaid by future taxes, so they save the tax cut. Private saving offsets public dissaving and deficits do not change aggregate demand. Requires strict assumptions."
+  },
+  {
+    "front": "What is crowding out?",
+    "back": "Government borrowing raises interest rates and reduces private investment. It is strongest at full employment and weak when there is spare capacity and low interest rates."
+  },
+  {
+    "front": "Name the three fiscal policy lags.",
+    "back": "Recognition lag (seeing that the economy has turned), action lag (enacting the policy), impact lag (time for the policy to affect the economy)."
+  },
+  {
+    "front": "Cyclical vs structural deficit",
+    "back": "A cyclical deficit arises from a weak economy (automatic stabilisers). A structural (cyclically adjusted) deficit would persist at full employment. Only structural changes show the discretionary stance."
+  },
+  {
+    "front": "Expansionary fiscal + contractionary monetary policy mix",
+    "back": "Interest rates rise sharply, private spending falls, public spending rises. Effect on aggregate demand is ambiguous."
+  }
+]

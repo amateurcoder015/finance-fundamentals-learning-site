@@ -1,0 +1,33 @@
+graph TD
+    CA["Company Analysis<br/>(Past and Present)"] --> BM["Business Model"]
+    CA --> REV["Revenue Analysis"]
+    CA --> PROF["Costs and Profitability"]
+    CA --> RET["Returns on Capital"]
+    CA --> CF["Cash Flow and Balance Sheet"]
+    CA --> QOE["Quality of Earnings"]
+
+    BM --> B1["Value proposition<br/>and customers"]
+    BM --> B2["Revenue model<br/>(recurring vs one-time)"]
+    BM --> B3["Cost structure<br/>and capital intensity"]
+    BM --> B4["Competitive advantage<br/>and segments"]
+
+    REV --> R1["Volume, price, mix"]
+    REV --> R2["Acquisitions and FX"]
+    R1 --> ORG["Organic growth"]
+    R2 --> REP["Reported growth<br/>= organic + M&A + FX"]
+    ORG --> REP
+
+    PROF --> P1["Gross, EBITDA,<br/>EBIT and net margins"]
+    PROF --> P2["Fixed vs variable costs"]
+    P2 --> DOL["Operating leverage<br/>DOL = contribution margin / EBIT"]
+
+    RET --> ROE["ROE (DuPont)<br/>margin x turnover x leverage"]
+    RET --> ROIC["ROIC = NOPAT / invested capital<br/>compare with WACC"]
+
+    CF --> F1["FCF = CFO - capex<br/>FCF conversion"]
+    CF --> F2["Cash conversion cycle<br/>DSO + DIO - DPO"]
+    CF --> F3["Leverage and liquidity<br/>net debt/EBITDA, coverage"]
+
+    QOE --> Q1["Adjusted vs reported figures"]
+    QOE --> Q2["Recurring vs non-recurring items"]
+    QOE --> Q3["Red flags<br/>(receivables outpacing sales)"]

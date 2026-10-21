@@ -1,0 +1,235 @@
+---
+title: "Company Analysis: Past and Present"
+description: "How an analyst studies a company's business model, revenue growth, cost structure, returns, cash flow and balance sheet to understand its past performance and current position before forecasting."
+category: "Equities"
+difficulty: "intermediate"
+dateAdded: "2026-10-21"
+tags: ["company-analysis", "business-model", "revenue-analysis", "operating-leverage", "dupont", "roic"]
+---
+
+# Company Analysis: Past and Present
+
+Valuing a company starts with understanding it. **Company analysis** examines what the business does, how it makes money, how it has performed, and where it stands today. It is the foundation for forecasting (the "future" half of the work) and for the valuation models that follow. This chapter covers the objectives of company analysis, the business model, revenue, cost and profitability analysis, returns on capital, cash flow and balance-sheet strength, and the quality of reported numbers.
+
+---
+
+## 1. Objectives and Process
+
+The purpose of company analysis is to answer four questions:
+
+1. **What does the company do?** Its products, customers, markets and strategy.
+2. **How has it performed?** Growth, margins, returns and cash flow over several years.
+3. **What is its current financial position?** Liquidity, leverage and capacity to fund growth.
+4. **Which drivers matter for the future?** The few variables that explain most of the change in earnings and cash flow.
+
+A typical process moves from the outside in:
+
+| Step | Focus | Typical sources |
+| --- | --- | --- |
+| Business and strategy | Business model, segments, competitive position | Annual report, investor presentations, industry data |
+| Historical financials | Revenue, margins, returns, cash flow over 5 to 10 years | Financial statements and notes |
+| Current position | Latest balance sheet, liquidity, leverage | Latest filings |
+| Quality check | Accounting choices, adjusted figures, one-offs | Notes, management discussion, audit report |
+| Drivers and forecasts | Key assumptions to carry forward | Output of the steps above |
+
+Use consistent periods, compare with **peers and the industry**, and use **common-size** statements (each line as a percentage of revenue or total assets) to spot trends that absolute figures hide.
+
+---
+
+## 2. Understanding the Business Model
+
+A **business model** describes how a company creates, delivers and captures value. It determines which numbers matter. Key elements:
+
+- **Value proposition and customers**: what is sold, to whom, and why customers choose it (price, quality, convenience, brand).
+- **Revenue model**: how money is earned. Examples are one-time product sales, recurring subscriptions, usage-based fees, transaction fees, licensing, advertising, or a mix. Recurring revenue is more predictable and typically valued more highly than one-time revenue.
+- **Cost structure and capital intensity**: the balance of fixed and variable costs, and how much capital is needed to generate revenue (asset-heavy vs asset-light).
+- **Position in the value chain**: whether the company is vertically integrated or specialises in one stage (components, manufacturing, distribution, retail).
+- **Sales channels and geography**: direct vs distributors, online vs stores, domestic vs export.
+- **Competitive advantage (moat)**: cost leadership, differentiation or brand, network effects, switching costs, regulatory licences, scale.
+
+### Segment analysis
+
+Large companies report by business or geographic **segment**. Segment data reveal which parts drive growth and profit, and reconcile to the consolidated statements. Look at each segment's growth, margin, capital employed and risk, because a strong segment can hide a weak one in the consolidated margin.
+
+<Note>
+Always connect the business model to the numbers. A subscription software company should show rising recurring revenue, high gross margin and customer retention; a retailer should show stable gross margin, growing same-store sales and fast inventory turnover. Numbers that do not fit the described model are a signal to dig deeper.
+</Note>
+
+---
+
+## 3. Revenue Analysis
+
+Revenue is the starting line of every forecast, so understand *why* it changed, not just how much.
+
+### Drivers of revenue growth
+
+| Driver | Meaning |
+| --- | --- |
+| **Volume** | More units sold, more customers, more users |
+| **Price** | Higher selling price per unit |
+| **Mix** | Shift towards higher- or lower-priced products or segments |
+| **Acquisitions and disposals** | Revenue added or removed by buying or selling businesses |
+| **Foreign exchange** | Translation of foreign sales into the reporting currency |
+
+**Organic growth** excludes the effect of acquisitions, disposals and currency. It measures the underlying performance of the existing business. **Reported growth** includes everything.
+
+$$\text{Reported growth} \approx \text{Organic growth} + \text{Acquisition effect} + \text{FX effect}$$
+
+The price/volume split can be measured as:
+
+$$\text{Volume effect} = (Q_1 - Q_0)\times P_0 \qquad \text{Price effect} = (P_1 - P_0)\times Q_1$$
+
+The two sum exactly to the change in revenue from price and volume.
+
+### Worked example: revenue decomposition
+
+Year 0: 500 million units sold at a price of 4.00, revenue 2,000 million.
+Year 1: 520 million units sold at a price of 4.20 (at constant exchange rates). The company also bought a business adding 80 million of revenue, and a weaker currency reduced reported revenue by 20 million.
+
+1. Organic revenue in Year 1 (constant currency, no acquisition): $520 \times 4.20 = 2{,}184$.
+2. Volume effect: $(520 - 500)\times 4.00 = 80$.
+3. Price effect: $(4.20 - 4.00)\times 520 = 104$.
+4. Check: $80 + 104 = 184 = 2{,}184 - 2{,}000$. Organic growth $= 184 / 2{,}000 = 9.2\%$.
+5. Acquisition effect: $80 / 2{,}000 = +4.0\%$. FX effect: $-20 / 2{,}000 = -1.0\%$.
+6. Reported revenue: $2{,}184 + 80 - 20 = 2{,}244$. Reported growth $= 244 / 2{,}000 = 12.2\%$, which equals $9.2\% + 4.0\% - 1.0\%$.
+
+Headline growth of 12.2% overstates underlying momentum; organic growth is 9.2%, and about 5.2 points of that came from price, which may not repeat.
+
+### Revenue quality questions
+
+- Is growth broad-based or concentrated in one product, customer or region?
+- Is growth from volume (healthier) or from price increases that may erode demand?
+- Are revenue recognition policies aggressive (early recognition, rising receivables faster than sales)?
+
+---
+
+## 4. Costs and Profitability
+
+### Margins
+
+| Measure | Formula | What it shows |
+| --- | --- | --- |
+| **Gross margin** | (Revenue − COGS) / Revenue | Pricing power and production cost efficiency |
+| **EBITDA margin** | EBITDA / Revenue | Operating profitability before depreciation and amortisation |
+| **Operating (EBIT) margin** | EBIT / Revenue | Profitability after all operating costs, including D&A |
+| **Net margin** | Net income / Revenue | Profit after interest and tax |
+
+Study margins over time and against peers, and explain changes by cost line (for example, input cost inflation, wage growth, changes in selling and administrative expenses as a percentage of sales).
+
+### Fixed and variable costs: operating leverage
+
+**Variable costs** move with volume (materials, sales commissions); **fixed costs** do not (rent, salaries, depreciation). The **contribution margin** is revenue less variable costs. A company with a high share of fixed costs has high **operating leverage**: a small change in sales produces a larger percentage change in operating income.
+
+$$\text{DOL} = \frac{\%\Delta \text{EBIT}}{\%\Delta \text{Sales}} = \frac{\text{Contribution margin}}{\text{EBIT}}$$
+
+### Worked example: operating leverage
+
+Revenue 2,000; variable costs 1,100 (55% of revenue); fixed costs 700.
+
+1. Contribution margin: $2{,}000 - 1{,}100 = 900$ (45% of revenue).
+2. EBIT: $900 - 700 = 200$ (10% margin).
+3. $\text{DOL} = 900 / 200 = 4.5$.
+4. If revenue rises 5% to 2,100: variable costs $= 55\% \times 2{,}100 = 1{,}155$, fixed costs stay 700, so EBIT $= 2{,}100 - 1{,}155 - 700 = 245$.
+5. EBIT growth: $245 / 200 - 1 = 22.5\% = 4.5 \times 5\%$. ✓
+
+Operating leverage works in both directions: a 5% fall in revenue would cut EBIT by 22.5%. This is why high-fixed-cost businesses have volatile earnings.
+
+---
+
+## 5. Returns on Capital
+
+### Return on equity and the DuPont decomposition
+
+$$\text{ROE} = \frac{\text{Net income}}{\text{Average equity}}$$
+
+The three-way **DuPont** breakdown separates profitability, efficiency and leverage:
+
+$$\text{ROE} = \underbrace{\frac{NI}{\text{Sales}}}_{\text{Net margin}} \times \underbrace{\frac{\text{Sales}}{\text{Avg assets}}}_{\text{Asset turnover}} \times \underbrace{\frac{\text{Avg assets}}{\text{Avg equity}}}_{\text{Equity multiplier}}$$
+
+The five-way version splits the net margin into tax burden, interest burden and operating margin:
+
+$$\text{ROE} = \frac{NI}{EBT}\times\frac{EBT}{EBIT}\times\frac{EBIT}{\text{Sales}}\times\frac{\text{Sales}}{\text{Assets}}\times\frac{\text{Assets}}{\text{Equity}}$$
+
+### Return on invested capital
+
+ROE is flattered by leverage. **Return on invested capital (ROIC)** measures operating returns on all capital providers' funds:
+
+$$\text{ROIC} = \frac{\text{NOPAT}}{\text{Invested capital}}, \qquad \text{NOPAT} = \text{EBIT}\times(1 - \text{tax rate})$$
+
+A company creates value when ROIC exceeds its **cost of capital** (WACC).
+
+### Worked example: DuPont and ROIC
+
+Sales 2,000; EBIT 200; interest 40; tax rate 25%; average total assets 1,600; average equity 800; average interest-bearing debt 700.
+
+1. EBT $= 200 - 40 = 160$; tax $= 25\% \times 160 = 40$; net income $= 120$.
+2. Net margin $= 120 / 2{,}000 = 6.0\%$; asset turnover $= 2{,}000 / 1{,}600 = 1.25$; equity multiplier $= 1{,}600 / 800 = 2.0$.
+3. ROE $= 6.0\% \times 1.25 \times 2.0 = 15.0\%$. Check: $120 / 800 = 15.0\%$ ✓.
+4. Five-way: tax burden $= 120/160 = 0.75$; interest burden $= 160/200 = 0.80$; EBIT margin $= 200/2{,}000 = 0.10$; so $0.75 \times 0.80 \times 0.10 \times 1.25 \times 2.0 = 0.15$ ✓.
+5. NOPAT $= 200 \times (1 - 0.25) = 150$. Invested capital (debt + equity) $= 700 + 800 = 1{,}500$. $\text{ROIC} = 150 / 1{,}500 = 10.0\%$.
+
+If WACC is 9%, the company earns a 1-point positive spread over its cost of capital. Note ROE (15%) exceeds ROIC (10%) because of leverage, not because the operations are better.
+
+---
+
+## 6. Cash Flow and Balance-Sheet Strength
+
+### Cash flow
+
+Profit is an opinion; cash is a fact. Compare earnings with cash generation:
+
+$$\text{Free cash flow (FCF)} = \text{CFO} - \text{Capital expenditure}$$
+
+$$\text{FCF conversion} = \frac{\text{FCF}}{\text{Net income}}$$
+
+Persistently low conversion can reflect heavy investment (acceptable if returns are high), working-capital build-up, or earnings that are not turning into cash (a warning sign). Also check **capex relative to depreciation**: capex well below depreciation may mean under-investment that flatters current FCF.
+
+### Working capital
+
+Track receivable days, inventory days and payable days:
+
+$$\text{Cash conversion cycle} = \text{DSO} + \text{DIO} - \text{DPO}$$
+
+A lengthening cycle ties up cash; a shortening one releases it.
+
+### Leverage and liquidity
+
+| Ratio | Formula | Use |
+| --- | --- | --- |
+| Net debt / EBITDA | (Debt − cash) / EBITDA | Years of EBITDA to repay net debt |
+| Interest coverage | EBIT / Interest expense | Ability to service debt from operations |
+| Current ratio | Current assets / Current liabilities | Short-term liquidity |
+| Debt / Equity | Total debt / Equity | Capital structure |
+
+### Worked example: credit position
+
+Using the company above: EBITDA 320 (D&A 120), debt 700, cash 100, interest 40, CFO 260, capex 140.
+
+1. Net debt $= 700 - 100 = 600$; net debt / EBITDA $= 600 / 320 = 1.875\times$ (about 1.9×).
+2. Interest coverage $= 200 / 40 = 5.0\times$.
+3. FCF $= 260 - 140 = 120$; FCF conversion $= 120 / 120 = 100\%$.
+4. Capex / depreciation $= 140 / 120 = 1.17$, so the company is investing slightly more than it depreciates.
+
+These numbers describe a comfortably financed company with cash earnings in line with profit.
+
+---
+
+## 7. Quality of Earnings and Adjusted Figures
+
+Companies often report **adjusted** (non-GAAP / non-IFRS) measures that remove items they regard as unusual. Adjustments can be fair (a one-off restructuring charge) or flattering (excluding recurring costs such as stock compensation or "one-off" charges every year). Analysts should:
+
+- Reconcile adjusted figures to reported ones and judge whether each item is truly non-recurring.
+- Separate **recurring** from **non-recurring** items (disposal gains, impairments, litigation) to find **sustainable** earnings.
+- Watch for red flags: receivables or inventory growing faster than sales, falling cash conversion, frequent changes in accounting policy, and large gaps between net income and operating cash flow.
+- Check the **effective tax rate** against statutory rates, and use a normalised rate for forecasting if low rates are temporary.
+
+---
+
+## Key takeaways
+
+- Company analysis builds understanding of the **business model**, past performance and present financial position as the base for forecasts and valuation.
+- Decompose revenue growth into **volume, price, mix, acquisitions and FX**; use **organic growth** to judge underlying momentum.
+- **Operating leverage**: $\text{DOL} = \text{contribution margin} / \text{EBIT}$. High fixed costs magnify earnings swings in both directions.
+- **DuPont** splits ROE into margin, turnover and leverage; **ROIC** removes the effect of financing and should be compared with WACC.
+- Compare **earnings with cash flow** (FCF conversion) and monitor leverage, coverage and the cash conversion cycle.
+- Adjust for non-recurring items and test earnings quality before using historical numbers as a base for the future.

@@ -1,0 +1,31 @@
+graph TD
+    FP["Fiscal Policy<br/>(Government spending and taxation)"] --> OBJ["Objectives"]
+    FP --> TOOLS["Tools"]
+    FP --> STANCE["Fiscal Stance"]
+    FP --> DEBT["Deficits and Debt"]
+    FP --> LIM["Limits and Lags"]
+    FP --> MIX["Policy Mix with Monetary Policy"]
+
+    OBJ --> O1["Stabilise demand<br/>and growth"]
+    OBJ --> O2["Redistribute<br/>income"]
+    OBJ --> O3["Allocate resources<br/>(public goods)"]
+
+    TOOLS --> SP["Spending<br/>(current, capital, transfers)"]
+    TOOLS --> TX["Taxes<br/>(direct and indirect)"]
+
+    STANCE --> EXP["Expansionary<br/>(spend more / tax less)"]
+    STANCE --> CON["Contractionary<br/>(spend less / tax more)"]
+    STANCE --> AUTO["Automatic stabilisers<br/>vs discretionary changes"]
+    EXP --> MULT["Fiscal multiplier<br/>1 / (1 - c(1 - t))"]
+    CON --> MULT
+
+    DEBT --> DYN["Debt-ratio dynamics<br/>(r - g) x d + primary deficit"]
+    DEBT --> RICARDO["Ricardian equivalence<br/>(households save the tax cut)"]
+    DEBT --> CROWD["Crowding out<br/>(higher rates, less private investment)"]
+
+    LIM --> LAGS["Recognition, action<br/>and impact lags"]
+    LIM --> CONF["Market confidence<br/>and fiscal rules"]
+
+    MIX --> M1["Both expansionary:<br/>strong demand, rates ambiguous"]
+    MIX --> M2["Fiscal expansionary, monetary tight:<br/>rates up, private spending down"]
+    MIX --> M3["Fiscal tight, monetary easy:<br/>rates down, private spending up"]
