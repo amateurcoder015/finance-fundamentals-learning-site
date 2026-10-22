@@ -1,0 +1,16 @@
+graph TD
+    F["Floating-Rate Instruments"] --> FRN["Floating-Rate Notes"]
+    F --> MM["Money Market Instruments<br/>(maturity up to 1 year)"]
+
+    FRN --> CPN["Coupon = Reference Rate + Quoted Margin<br/>(reset each period)"]
+    CPN --> QM["Quoted Margin (QM)<br/>fixed at issue"]
+    CPN --> DM["Discount Margin (DM)<br/>spread the market requires now"]
+    DM --> EQ["DM = QM<br/>Price = Par"]
+    DM --> GT["DM greater than QM<br/>Price below Par"]
+    DM --> LT["DM less than QM<br/>Price above Par"]
+
+    MM --> DR["Discount Rate<br/>(360/days) x (FV - PV) / FV"]
+    MM --> AOR["Add-On Rate<br/>(360/days) x (FV - PV) / PV"]
+    DR --> REL["AOR = DR / (1 - days/360 x DR)<br/>AOR is greater than DR"]
+    AOR --> BEY["Bond Equivalent Yield<br/>AOR x 365/360"]
+    AOR --> EAY["Effective Annual Yield<br/>(1 + HPY)^(365/days) - 1"]

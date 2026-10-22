@@ -1,0 +1,46 @@
+[
+  {
+    "front": "How is a bond payable initially measured, and how is interest expense computed under the effective interest method?",
+    "back": "Initial carrying amount = PV of cash flows at the market rate at issuance. Interest expense = beginning carrying amount x market rate at issuance; amortization = interest expense - coupon paid."
+  },
+  {
+    "front": "Carrying amount and interest expense over time: discount versus premium bond",
+    "back": "Discount bond: interest expense > coupon, carrying amount and interest expense rise toward face value. Premium bond: interest expense < coupon, carrying amount and interest expense fall toward face value."
+  },
+  {
+    "front": "Gain or loss on early debt redemption",
+    "back": "Gain (loss) = carrying amount - amount paid to redeem. Paying less than carrying amount gives a gain; paying more gives a loss. Reported in the income statement."
+  },
+  {
+    "front": "Cash flow statement classification of bond cash flows",
+    "back": "Issue proceeds and principal repayment: financing. Coupon payments: operating under US GAAP; operating or financing under IFRS."
+  },
+  {
+    "front": "IFRS 16 lessee accounting",
+    "back": "Single model: record a lease liability (PV of lease payments) and a right-of-use asset. Expense = depreciation of the ROU asset + interest on the liability, so total expense is front-loaded. Exemptions: short-term (12 months or less) and low-value leases."
+  },
+  {
+    "front": "US GAAP lessee: finance lease versus operating lease",
+    "back": "Both put an ROU asset and lease liability on the balance sheet. Finance lease: depreciation + interest (front-loaded). Operating lease: a single straight-line lease expense, with the whole payment in operating cash flow."
+  },
+  {
+    "front": "How is share-based compensation expensed?",
+    "back": "Grant-date fair value (options valued with an option pricing model, adjusted for expected forfeitures) is expensed, usually straight-line, over the vesting period, with an offsetting increase in contributed capital."
+  },
+  {
+    "front": "Treasury stock: what is it and how does it affect equity?",
+    "back": "Own shares repurchased and held. It is a contra-equity account that reduces total equity and shares outstanding. No gain or loss goes through the income statement on reissue."
+  },
+  {
+    "front": "Effect of cash dividend, stock dividend and stock split on total equity",
+    "back": "Cash dividend: reduces equity. Stock dividend: transfers retained earnings to contributed capital, total equity unchanged. Stock split: no change in equity, more shares and a lower par value per share."
+  },
+  {
+    "front": "What does accumulated other comprehensive income (AOCI) contain?",
+    "back": "Unrealized items that bypass net income: foreign currency translation adjustments, unrealized gains and losses on certain investments (FVOCI), cash flow hedge gains and losses, and pension remeasurements."
+  },
+  {
+    "front": "Interest coverage and fixed charge coverage formulas",
+    "back": "Interest coverage = EBIT / interest payments. Fixed charge coverage = (EBIT + lease payments) / (interest payments + lease payments)."
+  }
+]

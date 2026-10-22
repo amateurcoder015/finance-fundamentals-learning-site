@@ -1,0 +1,42 @@
+[
+  {
+    "front": "What is the coupon rate formula for a floating-rate note?",
+    "back": "Coupon rate = Reference rate + Quoted margin (QM). The coupon is reset each period; the payment per period is (Reference rate + QM)/m x Face value."
+  },
+  {
+    "front": "Quoted margin versus discount margin",
+    "back": "Quoted margin (QM) is the fixed spread over the reference rate promised in the coupon. Discount margin (DM) is the spread the market currently requires for that issuer and maturity (the FRN's yield spread measure)."
+  },
+  {
+    "front": "How does DM versus QM determine an FRN's price relative to par?",
+    "back": "DM = QM: price at par. DM > QM: price below par (credit deterioration). DM < QM: price above par (credit improvement)."
+  },
+  {
+    "front": "FRN pricing formula (constant reference rate)",
+    "back": "PV = sum of [(Index + QM)/m x FV] / (1 + (Index + DM)/m)^t over t = 1..N, plus FV / (1 + (Index + DM)/m)^N."
+  },
+  {
+    "front": "Why does an FRN's price stay close to par on reset dates?",
+    "back": "The coupon resets to the current reference rate, so interest rate risk is small. Only a change in the issuer's credit risk (margin) moves the price away from par."
+  },
+  {
+    "front": "Effect of a cap and a floor on an FRN",
+    "back": "A cap limits the coupon when rates rise: it benefits the issuer and lowers the FRN's value to the investor. A floor sets a minimum coupon: it benefits the investor."
+  },
+  {
+    "front": "Discount rate (DR) formula for a money market instrument",
+    "back": "DR = (360/days) x (FV - PV)/FV, so PV = FV x (1 - days/360 x DR). Based on face value. Used for T-bills and commercial paper."
+  },
+  {
+    "front": "Add-on rate (AOR) formula for a money market instrument",
+    "back": "AOR = (360/days) x (FV - PV)/PV, so PV = FV / (1 + days/360 x AOR). Based on the price paid. Used for CDs, repos and deposits. Use 365 instead of 360 where that is the convention."
+  },
+  {
+    "front": "Relationship between discount rate and add-on rate",
+    "back": "AOR = DR / (1 - days/360 x DR), so AOR is always greater than DR: the discount rate understates the true yield."
+  },
+  {
+    "front": "Bond equivalent yield versus effective annual yield for money market instruments",
+    "back": "BEY = AOR (360 basis) x 365/360, with no compounding. EAY = (1 + holding period yield)^(365/days) - 1 and includes compounding, so it is best for comparing different maturities and day counts."
+  }
+]

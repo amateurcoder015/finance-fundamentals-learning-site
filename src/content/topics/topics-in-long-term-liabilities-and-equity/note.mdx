@@ -1,0 +1,264 @@
+---
+title: "Topics in Long-Term Liabilities and Equity"
+description: "How bonds, leases and share-based compensation are reported (effective interest method, lessee accounting under IFRS and US GAAP), the components of shareholders' equity including treasury stock, dividends and splits, and the solvency ratios used to analyze leverage."
+category: "Financial Statements"
+difficulty: "advanced"
+dateAdded: "2026-10-22"
+tags: ["bonds-payable", "effective-interest", "leases", "treasury-stock", "share-based-compensation", "solvency-ratios"]
+---
+
+# Topics in Long-Term Liabilities and Equity
+
+Long-term liabilities and shareholders' equity are the two ways a company funds its assets beyond the short term. An analyst needs to know how each is measured, how it flows through the income statement and cash flow statement, and which ratios reveal how much leverage the company really carries. This chapter covers **bonds payable**, **leases**, **share-based compensation**, the **components of equity**, and **solvency ratios**.
+
+---
+
+## 1. Bonds Payable: Initial Measurement
+
+When a company issues a bond, the liability is recorded at the **amount of cash received**, which is the **present value of the promised cash flows discounted at the market rate** at issuance.
+
+| Market rate vs coupon rate | Issue price | Carrying amount at issue |
+| --- | --- | --- |
+| Market rate $=$ coupon rate | Par | Par |
+| Market rate $>$ coupon rate | **Discount** | Below par |
+| Market rate $<$ coupon rate | **Premium** | Above par |
+
+The carrying amount (book value) of the liability is its **face value** minus any unamortized discount, or plus any unamortized premium. By maturity the carrying amount converges to face value.
+
+**Issuance costs.** Under **IFRS**, costs of issuing debt are deducted from the proceeds, which lowers the initial carrying amount; they are then amortized through the effective interest rate. Under **US GAAP**, debt issuance costs are presented as a **deduction from the liability** (not an asset) and amortized to interest expense. In both cases the effect is a higher effective interest rate than the market rate paid at issuance.
+
+---
+
+## 2. Effective Interest Method
+
+Interest expense is computed on the **carrying amount** at the start of each period, using the **market rate at issuance** (the effective rate):
+
+$$\text{Interest expense} = \text{Beginning carrying amount} \times \text{Market rate at issuance}$$
+
+$$\text{Amortization of discount} = \text{Interest expense} - \text{Coupon paid}$$
+
+For a **discount** bond, interest expense exceeds the coupon, and the difference increases the carrying amount. For a **premium** bond, the coupon exceeds interest expense, and the difference reduces the carrying amount.
+
+### Example A: discount bond
+
+A company issues a 3-year bond with face value 1,000,000 and a 5% annual coupon (50,000 per year) when the market rate is 6%.
+
+1. Issue price $= 50{,}000\times\dfrac{1-1.06^{-3}}{0.06} + \dfrac{1{,}000{,}000}{1.06^{3}} = 133{,}650.60 + 839{,}619.28 = \mathbf{973{,}269.88}$
+2. The bond is issued at a **discount** of 26,730.12.
+
+| Year | Beginning carrying amount | Interest expense (6%) | Coupon paid | Discount amortized | Ending carrying amount |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 973,269.88 | 58,396.19 | 50,000 | 8,396.19 | 981,666.07 |
+| 2 | 981,666.07 | 58,899.96 | 50,000 | 8,899.96 | 990,566.04 |
+| 3 | 990,566.04 | 59,433.96 | 50,000 | 9,433.96 | 1,000,000.00 |
+
+The three years of amortization sum to 26,730.11, which matches the discount apart from rounding, and the carrying amount reaches face value at maturity. Total interest expense over the life $= 3\times 50{,}000 + 26{,}730.12 = 176{,}730.12$.
+
+### Example B: premium bond
+
+The same bond is issued with a 6% coupon (60,000 per year) when the market rate is 4%.
+
+1. Issue price $= 60{,}000\times\dfrac{1-1.04^{-3}}{0.04}+\dfrac{1{,}000{,}000}{1.04^{3}} = \mathbf{1{,}055{,}501.82}$
+2. Year 1 interest expense $= 1{,}055{,}501.82\times 4\% = 42{,}220.07$; premium amortized $= 60{,}000 - 42{,}220.07 = 17{,}779.93$
+3. Ending carrying amount, year 1 $= 1{,}037{,}721.89$; year 2 interest expense $= 41{,}508.88$, ending carrying amount $1{,}019{,}230.77$; year 3 interest expense $= 40{,}769.23$, ending carrying amount $1{,}000{,}000$.
+
+Interest expense **falls** over time for a premium bond (the carrying amount declines) and **rises** for a discount bond.
+
+### Cash flow statement classification
+
+- **Proceeds from issuing bonds** and **repayment of principal**: financing activities.
+- **Coupon payments**: under **US GAAP** operating activities; under **IFRS** operating or financing (a policy choice).
+- The **amortization of a discount or premium** is a non-cash item. The cash coupon is what leaves the company, so a discount bond's interest expense is *higher* than its cash interest paid.
+
+---
+
+## 3. Derecognition of Debt
+
+A company may retire debt before maturity (redemption or repurchase). A **gain or loss** is recognized:
+
+$$\text{Gain (loss)} = \text{Carrying amount} - \text{Amount paid to redeem}$$
+
+Repurchasing below the carrying amount gives a **gain**; paying more gives a **loss**. The gain or loss is reported in the income statement (and it is a non-recurring item an analyst may exclude when estimating sustainable earnings). Any unamortized issuance cost is written off at the same time.
+
+### Example C: early redemption
+
+At the end of year 1, the bond in Example A has a carrying amount of 981,666.07. The company repurchases it for 990,000.
+
+$$\text{Loss} = 981{,}666.07 - 990{,}000 = -8{,}333.93$$
+
+A loss of 8,333.93 is recognized. The repurchase price is above the carrying amount because market yields have fallen below 6% since issue, so the bond is now worth more than its book value.
+
+**Fair value option.** Both IFRS and US GAAP permit some liabilities to be measured at **fair value** instead of amortized cost. A fall in market value caused by the issuer's own deteriorating credit is a gain on paper, which is why the standards route that own-credit portion through other comprehensive income rather than profit or loss.
+
+**Covenants.** Debt agreements include **affirmative covenants** (what the borrower must do, such as maintain insurance or provide financial statements) and **negative covenants** (what it may not do, such as exceeding a debt-to-equity limit or paying excessive dividends). Breaching them can accelerate repayment.
+
+---
+
+## 4. Leases
+
+A **lease** gives the lessee the right to use an asset in exchange for payments. Under current standards, almost all leases appear on the lessee's balance sheet.
+
+### Lessee accounting under IFRS 16
+
+IFRS 16 uses a **single model** for all leases (with exemptions for short-term leases of 12 months or less and low-value assets). At commencement the lessee records:
+
+- a **lease liability** $=$ present value of the lease payments, discounted at the rate implicit in the lease (or the lessee's incremental borrowing rate), and
+- a **right-of-use (ROU) asset** $=$ lease liability, plus initial direct costs and prepaid payments.
+
+Each period the income statement shows **two** expenses:
+
+1. **Interest expense** $=$ beginning lease liability $\times$ discount rate, and
+2. **Depreciation** of the ROU asset, usually straight-line over the lease term.
+
+Total expense is **front-loaded**: higher in early years (interest is highest when the liability is largest) and lower later.
+
+### Lessee accounting under US GAAP (ASC 842)
+
+US GAAP classifies each lease as a **finance lease** or an **operating lease** (finance if it meets criteria such as transfer of ownership, a purchase option reasonably certain to be exercised, a lease term for most of the asset's economic life, or payments equal to substantially all of its fair value).
+
+| | IFRS 16 (all leases) | US GAAP finance lease | US GAAP operating lease |
+| --- | --- | --- | --- |
+| Balance sheet | ROU asset and lease liability | ROU asset and lease liability | ROU asset and lease liability |
+| Income statement | Depreciation $+$ interest | Depreciation $+$ interest | **Single straight-line lease expense** |
+| Pattern of expense | Front-loaded | Front-loaded | Even |
+| Cash flow: principal | Financing | Financing | Operating |
+| Cash flow: interest | Operating or financing | Operating | Operating (whole payment) |
+
+### Example D: lessee accounting
+
+A lessee signs a 3-year lease with year-end payments of 10,000 and a discount rate of 8%.
+
+1. Lease liability and ROU asset $= 10{,}000\times\dfrac{1-1.08^{-3}}{0.08} = \mathbf{25{,}770.97}$
+2. Annual depreciation (straight-line) $= 25{,}770.97/3 = 8{,}590.32$
+
+| Year | Beginning liability | Interest (8%) | Principal repaid | Ending liability | Depreciation | Total expense |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 25,770.97 | 2,061.68 | 7,938.32 | 17,832.65 | 8,590.32 | 10,652.00 |
+| 2 | 17,832.65 | 1,426.61 | 8,573.39 | 9,259.26 | 8,590.32 | 10,016.94 |
+| 3 | 9,259.26 | 740.74 | 9,259.26 | 0.00 | 8,590.32 | 9,331.06 |
+
+Total expense over three years $= 30{,}000$, equal to the total cash paid. An **operating lease under US GAAP** would report 10,000 each year (30,000 $\div$ 3). Under IFRS (or a finance lease) year 1 expense is higher (10,652.00) and year 3 lower (9,331.06). Only the timing differs.
+
+### Lessor accounting
+
+The **lessor** classifies leases by whether substantially all risks and rewards of ownership transfer:
+
+- **IFRS**: **finance lease** (the asset is derecognized and a lease receivable recorded) or **operating lease** (the asset stays on the lessor's balance sheet and rental income is recognized, usually straight-line).
+- **US GAAP**: **sales-type**, **direct financing** or **operating** lease.
+
+---
+
+## 5. Share-Based Compensation
+
+Companies pay employees with shares, stock grants and stock options. Accounting follows one principle: the **fair value at grant date** is expensed over the **service (vesting) period**, with a matching increase in equity.
+
+- **Restricted stock / stock grants**: expense $=$ fair value of the shares at grant date.
+- **Stock options**: expense $=$ fair value of the option at grant date (typically from an option pricing model such as Black-Scholes-Merton), reduced for options expected to be forfeited.
+- The expense is usually recognized **straight-line over the vesting period** and is a non-cash charge.
+
+For stock options, the credit entry is to **contributed capital (additional paid-in capital)**, so the expense lowers retained earnings (through net income) and raises contributed capital: total equity is unchanged by the expense itself, apart from the tax effect. The dilutive effect appears when options are exercised or in diluted EPS.
+
+### Example E: stock option expense
+
+A company grants 300,000 options with a grant-date fair value of 5.00 each. They cliff-vest after three years of service, and no forfeitures are expected.
+
+1. Total compensation cost $= 300{,}000\times 5.00 = 1{,}500{,}000$
+2. Annual expense $= 1{,}500{,}000/3 = \mathbf{500{,}000}$ per year for three years
+
+If management later expects 10% of options to be forfeited, the total cost is revised to $1{,}500{,}000\times 90\% = 1{,}350{,}000$, and the remaining expense is adjusted.
+
+---
+
+## 6. Components of Shareholders' Equity
+
+| Component | What it is |
+| --- | --- |
+| **Contributed capital** | Common stock (par value) plus additional paid-in capital; preferred shares where classified as equity |
+| **Preferred shares** | Fixed dividends and priority over common; classified as a **liability** if mandatorily redeemable |
+| **Treasury stock** | Own shares repurchased and held; a **contra-equity** account |
+| **Retained earnings** | Cumulative net income less dividends |
+| **Accumulated other comprehensive income (AOCI)** | Unrealized items that bypass net income: foreign currency translation adjustments, unrealized gains and losses on certain investments (FVOCI), cash flow hedge gains and losses, and pension remeasurements |
+| **Noncontrolling interest** | Equity in consolidated subsidiaries owned by other shareholders |
+
+**Comprehensive income** $=$ net income $+$ other comprehensive income (OCI). Net income goes to retained earnings; OCI goes to AOCI.
+
+### Treasury stock
+
+A repurchase under the **cost method** records the shares at the price paid and **reduces total equity** and cash. Treasury shares:
+
+- are **issued but not outstanding**, so they reduce shares outstanding, and do not receive dividends or vote;
+- produce **no gain or loss** in the income statement when reissued; any difference from cost goes to equity (contributed capital, then retained earnings).
+
+A buyback funded with cash reduces both assets and equity, so it increases leverage ratios and typically increases ROE and EPS.
+
+### Example F: effect of a buyback on ROE
+
+A company has equity of 500, net income of 60 and ROE of $60/500 = 12\%$. It repurchases shares for 100 cash. Net income is assumed unchanged.
+
+1. Equity after buyback $= 500 - 100 = 400$
+2. ROE $= 60/400 = \mathbf{15\%}$
+
+ROE rises from 12% to 15% purely because the equity base shrank, which is why analysts look at how the buyback was financed and not at ROE alone.
+
+### Dividends and splits
+
+| Event | Effect on retained earnings | Effect on total equity | Effect on shares outstanding |
+| --- | --- | --- | --- |
+| **Cash dividend** | Decreases (at declaration) | Decreases | None |
+| **Stock dividend** | Decreases (transferred to contributed capital) | **No change** | Increases |
+| **Stock split** | None | **No change** | Increases (par value per share falls) |
+| **Reverse split** | None | **No change** | Decreases (par value per share rises) |
+
+A **stock dividend** and a **stock split** only cut the pie into more slices: the value of the company is unchanged, but the per-share price falls proportionally. For a stock dividend, retained earnings are capitalized at the market value of the shares issued.
+
+### Example G: stock dividend
+
+A company has 1,000,000 shares outstanding with a market price of 20. It declares a 10% stock dividend.
+
+1. New shares $= 1{,}000{,}000\times 10\% = 100{,}000$
+2. Amount transferred from retained earnings to contributed capital $= 100{,}000\times 20 = \mathbf{2{,}000{,}000}$
+3. Total equity is unchanged; shares outstanding rise to 1,100,000.
+
+---
+
+## 7. Solvency Ratios
+
+Solvency ratios measure the ability to meet long-term obligations.
+
+| Ratio | Formula | What it shows |
+| --- | --- | --- |
+| Debt-to-assets | Total debt / Total assets | Share of assets financed by debt |
+| Debt-to-capital | Total debt / (Total debt + Total equity) | Debt share of capital |
+| Debt-to-equity | Total debt / Total equity | Debt per unit of equity |
+| Financial leverage | Average total assets / Average total equity | Equity multiplier |
+| Interest coverage | EBIT / Interest payments | Ability to pay interest from operating profit |
+| Fixed charge coverage | (EBIT + Lease payments) / (Interest payments + Lease payments) | Coverage including lease commitments |
+
+### Example H: solvency ratios
+
+A company has total debt of 400, total equity of 600 (and no other liabilities, so total assets are 1,000), EBIT of 180, interest payments of 40 and lease payments of 20.
+
+1. Debt-to-assets $= 400/1{,}000 = \mathbf{0.40}$
+2. Debt-to-capital $= 400/(400+600) = \mathbf{0.40}$
+3. Debt-to-equity $= 400/600 = \mathbf{0.667}$
+4. Financial leverage $= 1{,}000/600 = \mathbf{1.667}$ (using year-end balances as a simplification of the average)
+5. Interest coverage $= 180/40 = \mathbf{4.5\times}$
+6. Fixed charge coverage $= (180+20)/(40+20) = 200/60 = \mathbf{3.33\times}$
+
+Under IFRS 16 and ASC 842, lease liabilities now appear on the balance sheet, so debt ratios based on balance sheet debt are higher than under the old rules (when operating leases were off-balance-sheet). Analysts should be consistent in whether they include lease liabilities in "debt" when comparing companies.
+
+### Defined contribution and defined benefit plans (brief)
+
+In a **defined contribution** plan the employer's cost equals its contributions and the employee bears the investment risk. In a **defined benefit** plan the employer promises a future benefit and bears the risk; the balance sheet shows a **net pension liability (asset)** equal to the **projected benefit obligation** less the **fair value of plan assets**.
+
+---
+
+## Key takeaways
+
+- A bond is recorded at the PV of its cash flows at the **market rate**; interest expense $=$ beginning carrying amount $\times$ market rate at issue (**effective interest method**).
+- Discount bonds: interest expense $>$ coupon, carrying amount **rises** to par. Premium bonds: interest expense $<$ coupon, carrying amount **falls** to par.
+- Gain or loss on redemption $=$ carrying amount $-$ amount paid. Principal repayment is a financing cash flow; coupon classification is operating (US GAAP) or operating/financing (IFRS).
+- **IFRS 16** puts every lease (with limited exemptions) on the lessee's balance sheet with depreciation $+$ interest (**front-loaded**). **US GAAP** operating leases have a single straight-line expense; finance leases follow the IFRS pattern.
+- **Share-based compensation** is expensed at **grant-date fair value** over the vesting period.
+- **Treasury stock** is contra-equity; no gain or loss on reissue. Stock dividends and splits do not change total equity.
+- **Solvency ratios**: debt-to-assets, debt-to-capital, debt-to-equity, financial leverage, interest coverage and fixed charge coverage. Lease liabilities increase reported debt.

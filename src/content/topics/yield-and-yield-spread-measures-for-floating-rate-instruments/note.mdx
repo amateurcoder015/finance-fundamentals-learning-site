@@ -1,0 +1,210 @@
+---
+title: "Yield and Yield Spread Measures for Floating-Rate Instruments"
+description: "How floating-rate notes are priced and quoted (quoted margin versus discount margin) and how money market instruments are quoted on discount-rate and add-on bases and converted to comparable yields."
+category: "Fixed Income"
+difficulty: "intermediate"
+dateAdded: "2026-10-22"
+tags: ["floating-rate-note", "discount-margin", "quoted-margin", "money-market", "discount-rate", "add-on-rate"]
+---
+
+# Yield and Yield Spread Measures for Floating-Rate Instruments
+
+A fixed-rate bond locks in its coupon, so its price swings whenever market yields move. A **floating-rate note (FRN)** resets its coupon to follow a market reference rate, so the cash flows adapt to the rate environment and the price stays close to par. What can still move an FRN's price is the issuer's **credit quality**, and that is exactly what the FRN's yield spread measure, the **discount margin**, captures.
+
+A second group of floating-rate-style instruments are **money market instruments** (maturity of one year or less). They are quoted on bases such as the *discount rate* and the *add-on rate* that are not directly comparable with bond yields, so we also need to convert them to a common footing.
+
+---
+
+## 1. Floating-Rate Notes: Structure
+
+An FRN pays a coupon equal to a **reference rate** plus a fixed spread:
+
+$$\text{Coupon rate} = \text{Reference rate} + \text{Quoted margin (QM)}$$
+
+- The **reference rate** is a short-term market rate (for example SOFR, SONIA or €STR, the overnight risk-free rates that replaced LIBOR, or a term rate such as a 3-month rate). Many FRNs use an overnight rate compounded in arrears over the coupon period.
+- The **quoted margin (QM)**, also called the *spread*, is fixed at issue. It compensates the investor for the issuer's credit risk and liquidity.
+- The coupon is **reset** at the start of each period and paid at the end. For a bond paying $m$ coupons a year:
+
+$$\text{Coupon payment} = \frac{\text{Reference rate} + QM}{m} \times \text{Face value}$$
+
+**Why the price stays near par.** When the reference rate rises, the next coupon rises with it; when it falls, the coupon falls. The interest rate risk is therefore small and the price on a reset date is close to par, *provided the issuer's credit risk has not changed*. If the issuer's creditworthiness deteriorates, the market demands a larger margin than the QM and the price falls below par.
+
+Some FRNs have embedded features:
+
+| Feature | Effect on the coupon | Who benefits |
+| --- | --- | --- |
+| **Cap** | Coupon cannot exceed a maximum rate | Issuer (protected when rates rise) |
+| **Floor** | Coupon cannot fall below a minimum rate | Investor (protected when rates fall) |
+| **Step-up / step-down margin** | QM changes on a schedule | Depends on direction |
+
+A capped FRN is less valuable to the investor than an otherwise identical uncapped note, so it demands a higher yield margin; a floored FRN is more valuable.
+
+---
+
+## 2. Quoted Margin and Discount Margin
+
+Two margins describe an FRN:
+
+- **Quoted margin (QM)**: the spread over the reference rate promised in the coupon. Fixed.
+- **Discount margin (DM)**: the spread over the reference rate that the market **currently requires** for that issuer and maturity. It is the yield spread measure for an FRN. Changes in credit quality move the DM.
+
+The FRN is valued by discounting each projected coupon and the principal at the **reference rate plus the discount margin**. A standard simplification assumes the **reference rate stays constant** at today's level for all future periods:
+
+$$PV = \sum_{t=1}^{N} \frac{\dfrac{(\text{Index}+QM)}{m}\times FV}{\left(1+\dfrac{\text{Index}+DM}{m}\right)^{t}} + \frac{FV}{\left(1+\dfrac{\text{Index}+DM}{m}\right)^{N}}$$
+
+where Index is the reference rate and $N$ is the number of remaining periods. Compare this with the fixed-rate bond formula: the only differences are the coupon, $(\text{Index}+QM)/m$, and the discount rate, $(\text{Index}+DM)/m$.
+
+The relationship between the two margins fixes the price relative to par:
+
+| Condition | Price relative to par | Reason |
+| --- | --- | --- |
+| $DM = QM$ | **Par** | Coupon equals the required return |
+| $DM > QM$ | **Discount** (below par) | Required spread exceeds the promised spread, usually a credit deterioration |
+| $DM < QM$ | **Premium** (above par) | Promised spread exceeds the required spread, usually a credit improvement |
+
+The **DM is the spread over the reference rate, not a spread over a government curve**. It is the FRN's analogue of the spread measures for fixed-rate bonds.
+
+### Example A: pricing an FRN from the discount margin
+
+A 2-year FRN pays quarterly (so $N = 8$, $m = 4$) at the 3-month reference rate plus a QM of 0.50%. Face value is 100 and the 3-month reference rate is currently 2.00% and assumed constant. The market's discount margin is 0.75%.
+
+1. Quarterly coupon $= 100 \times (2.00\% + 0.50\%)/4 = \mathbf{0.625}$
+2. Quarterly discount rate $= (2.00\% + 0.75\%)/4 = 0.6875\%$
+3. PV of the 8 coupons $= 0.625 \times \dfrac{1-1.006875^{-8}}{0.006875} = 0.625 \times 7.7580 = 4.8488$
+4. PV of principal $= 100/1.006875^{8} = 94.6663$
+5. Price $= 4.8488 + 94.6663 = \mathbf{99.5151}$
+
+Since $DM$ (0.75%) $> QM$ (0.50%), the price is below par, as expected. Repeating the calculation with other discount margins and everything else unchanged:
+
+| Discount margin | Price | Versus par |
+| --- | --- | --- |
+| 0.25% | 100.5645 | Premium |
+| 0.50% (= QM) | 100.0000 | Par |
+| 0.75% | 99.5151 | Discount |
+
+### Example B: finding the discount margin from a price
+
+The same FRN is quoted at a price of 98.50. We need the discount margin $DM$ that solves
+
+$$98.50 = \sum_{t=1}^{8}\frac{0.625}{\left(1+\frac{0.02+DM}{4}\right)^{t}} + \frac{100}{\left(1+\frac{0.02+DM}{4}\right)^{8}}$$
+
+There is no closed form, so use a calculator solver or trial and error.
+
+1. Try $DM = 1.28\%$: discount rate per quarter $= (2.00\% + 1.28\%)/4 = 0.82\%$, which gives a price of $\mathbf{98.496}$, essentially 98.50.
+2. Try $DM = 1.29\%$: the price is $98.477$, which is too low.
+
+So $DM \approx \mathbf{1.28\%}$ (about 128 bp). The note trades at 98.50 because the market requires 128 bp over the reference rate, but the note only promises 50 bp.
+
+<Note>The DM calculation assumes the reference rate stays constant, so it is an estimate of the yield spread, not a forecast. Using a forward curve for the reference rate would change the projected coupons and the DM.</Note>
+
+---
+
+## 3. Money Market Instruments: Why Quoting Differs
+
+**Money market instruments** are debt securities with original maturities of one year or less, such as Treasury bills, commercial paper, certificates of deposit and repurchase agreements. Most are **pure-discount** instruments or pay interest only once, at maturity.
+
+Money market yields differ from bond yields in three ways:
+
+1. **Non-compounded, non-annualized.** Quotes are annualized by simple scaling ($360/\text{days}$ or $365/\text{days}$), not by compounding.
+2. **Day-count conventions vary.** Many currencies use a 360-day year (US dollar, euro); others use 365 (sterling, for example). A quote is meaningless until you know the convention.
+3. **Two quoting bases exist.** Some instruments are quoted on a **discount rate** basis and others on an **add-on rate** basis.
+
+---
+
+## 4. Discount Rate and Add-On Rate
+
+### Discount rate basis
+
+The **discount rate (DR)** expresses the discount from face value as a percentage of the **face value** (the amount received at maturity), annualized:
+
+$$DR = \frac{360}{\text{days}}\times\frac{FV - PV}{FV} \qquad\Longleftrightarrow\qquad PV = FV\left(1 - \frac{\text{days}}{360}\times DR\right)$$
+
+Treasury bills and commercial paper are commonly quoted this way.
+
+### Add-on rate basis
+
+The **add-on rate (AOR)** expresses the interest earned as a percentage of the **amount invested** (the price paid), annualized:
+
+$$AOR = \frac{360}{\text{days}}\times\frac{FV - PV}{PV} \qquad\Longleftrightarrow\qquad PV = \frac{FV}{1 + \dfrac{\text{days}}{360}\times AOR}$$
+
+Certificates of deposit, repos and interbank deposits are commonly quoted this way. For an instrument on a 365-day convention, replace 360 by 365.
+
+### Relationship between the two
+
+The discount rate divides by the (larger) face value while the add-on rate divides by the (smaller) price, so for the same instrument:
+
+$$AOR = \frac{DR}{1-\dfrac{\text{days}}{360}\times DR} \quad\Rightarrow\quad AOR > DR$$
+
+The discount rate therefore **understates** the true yield, and the gap widens as maturity lengthens or as the rate rises.
+
+### Example C: discount rate to add-on rate
+
+A 90-day Treasury bill with face value 100 is quoted at a discount rate of 2.40% (360-day basis).
+
+1. Price $= 100\times(1 - 90/360\times 0.024) = 100\times(1-0.006) = \mathbf{99.40}$
+2. Add-on rate $= \dfrac{360}{90}\times\dfrac{100-99.40}{99.40} = 4\times 0.0060362 = \mathbf{2.4145\%}$
+3. Check with the relationship: $0.024/(1-0.006) = 2.4145\%$ ✓
+
+The same bill yields 2.4145% on an add-on basis, 14.5 bp above the discount-rate quote.
+
+---
+
+## 5. Bond Equivalent Yield and Effective Annual Yield
+
+To compare a money market quote with a bond yield, restate it on the bond market's footing.
+
+**Bond equivalent yield (BEY)** puts a 360-day add-on rate on a **365-day** year, without compounding:
+
+$$BEY = AOR_{360}\times\frac{365}{360}$$
+
+**Effective annual yield (EAY)** compounds the holding period return over a 365-day year:
+
+$$EAY = \left(1 + AOR\times\frac{\text{days}}{\text{basis}}\right)^{365/\text{days}} - 1$$
+
+where *basis* is 360 or 365 according to the instrument's convention, and $AOR\times \text{days}/\text{basis}$ is the holding period yield. EAY is the only one of these measures that fully accounts for compounding, so it is the right basis for comparing instruments with different maturities and day counts.
+
+### Example D: BEY of the T-bill
+
+From Example C the add-on rate is 2.4145% (360-day basis).
+
+$$BEY = 2.4145\% \times \frac{365}{360} = \mathbf{2.4480\%}$$
+
+### Example E: comparing two deposits with different conventions
+
+A 120-day deposit pays an add-on rate of 3.00% on a 360-day basis. A 180-day sterling deposit pays an add-on rate of 3.10% on a 365-day basis. Which has the higher effective annual yield?
+
+**120-day deposit** (360 basis):
+
+1. Holding period yield $= 0.0300\times 120/360 = 0.0100$ (1.00%)
+2. $EAY = 1.0100^{365/120}-1 = 1.0100^{3.0417}-1 = \mathbf{3.07\%}$
+
+**180-day sterling deposit** (365 basis):
+
+1. Holding period yield $= 0.0310\times 180/365 = 0.015288$ (1.5288%)
+2. $EAY = 1.015288^{365/180}-1 = 1.015288^{2.0278}-1 = \mathbf{3.12\%}$
+
+The sterling deposit has the higher EAY (3.12% versus 3.07%). The two headline quotes use different day counts and maturities, so they can only be compared reliably after converting both to EAY.
+
+---
+
+## 6. Comparing Floating-Rate and Fixed-Rate Measures
+
+| | Fixed-rate bond | Floating-rate note | Money market instrument |
+| --- | --- | --- | --- |
+| Yield measure | YTM | Required return = reference rate $+$ DM | DR, AOR, BEY, EAY |
+| Spread measure | G-, I-, Z-spread, OAS | **Discount margin** | No standard spread measure; compare EAY or BEY |
+| Coupon | Fixed | Reference rate $+$ QM, reset each period | Usually none (discount) or single interest payment |
+| Price near par? | Only if coupon $=$ yield | Yes on reset dates, if credit unchanged | Converges to face value at maturity |
+| Main risk after issue | Interest rate risk | Credit (margin) risk | Short-term rate and credit risk |
+| Quoted annualization | APR with $m$ periods | APR with $m$ periods | Simple, $360/\text{days}$ or $365/\text{days}$ |
+
+---
+
+## Key takeaways
+
+- An FRN's coupon is **Reference rate $+$ QM**, reset each period; its price on a reset date is close to par if credit risk is unchanged.
+- **QM** is fixed at issue; **DM** is the margin the market currently requires. $DM = QM \Rightarrow$ par; $DM > QM \Rightarrow$ discount; $DM < QM \Rightarrow$ premium.
+- FRN pricing: discount coupons $(\text{Index}+QM)/m$ at $(\text{Index}+DM)/m$, assuming a constant reference rate. The DM is found by trial and error or a solver.
+- A **cap** helps the issuer and lowers the FRN's value to the investor; a **floor** helps the investor.
+- **Discount rate** $=\frac{360}{\text{days}}\frac{FV-PV}{FV}$ uses face value; **add-on rate** $=\frac{360}{\text{days}}\frac{FV-PV}{PV}$ uses price. For the same instrument, $AOR>DR$.
+- **BEY** $= AOR_{360}\times 365/360$; **EAY** $=(1+\text{HPY})^{365/\text{days}}-1$. Use EAY to compare instruments with different maturities and day counts.

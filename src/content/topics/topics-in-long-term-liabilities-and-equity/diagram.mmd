@@ -1,0 +1,27 @@
+graph TD
+    L["Long-Term Liabilities and Equity"] --> B["Bonds Payable"]
+    L --> LS["Leases"]
+    L --> E["Shareholders' Equity"]
+    L --> S["Solvency Ratios"]
+
+    B --> BI["Issue Price = PV of cash flows<br/>at market rate"]
+    BI --> BD["Market rate above coupon<br/>Discount"]
+    BI --> BP["Market rate below coupon<br/>Premium"]
+    B --> EI["Effective Interest Method<br/>Expense = Carrying Amount x Market Rate"]
+    B --> DR["Redemption<br/>Gain or Loss = Carrying Amount - Price Paid"]
+
+    LS --> IF["IFRS 16 Lessee<br/>ROU Asset + Lease Liability<br/>Depreciation + Interest (front-loaded)"]
+    LS --> UG["US GAAP Lessee"]
+    UG --> FL["Finance Lease<br/>Depreciation + Interest"]
+    UG --> OL["Operating Lease<br/>Single straight-line expense"]
+
+    E --> CC["Contributed Capital"]
+    E --> TS["Treasury Stock<br/>(contra-equity)"]
+    E --> RE["Retained Earnings"]
+    E --> AO["AOCI"]
+    E --> NCI["Noncontrolling Interest"]
+    E --> SB["Share-Based Compensation<br/>Grant-date fair value expensed over vesting"]
+
+    S --> DE["Debt-to-Assets / Debt-to-Capital / Debt-to-Equity"]
+    S --> IC["Interest Coverage<br/>EBIT / Interest"]
+    S --> FC["Fixed Charge Coverage<br/>(EBIT + Lease) / (Interest + Lease)"]

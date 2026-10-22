@@ -1,0 +1,79 @@
+[
+  {
+    "question": "A floating-rate note pays the reference rate plus a quoted margin of 0.60%. The market now requires a discount margin of 0.90% on the note. On a coupon reset date, the note's price is most likely:",
+    "options": [
+      "At par, because the coupon resets to the reference rate",
+      "Below par, because the discount margin exceeds the quoted margin",
+      "Above par, because the discount margin exceeds the quoted margin",
+      "Above par, because the quoted margin is below the discount margin"
+    ],
+    "correctIndex": 1,
+    "explanation": "The note promises 0.60% over the reference rate but investors require 0.90%. Because the required spread is larger than the promised spread, the cash flows are discounted at a higher rate than the coupon and the price falls below par. Resetting the coupon to the reference rate removes interest rate risk but does not remove credit-spread risk."
+  },
+  {
+    "question": "A 180-day money market instrument with face value of 1,000 is quoted at a discount rate of 3.60% on a 360-day basis. What is its price?",
+    "options": [
+      "964.00",
+      "982.32",
+      "982.00",
+      "996.40"
+    ],
+    "correctIndex": 2,
+    "explanation": "Price = FV x (1 - days/360 x DR) = 1,000 x (1 - 0.5 x 0.036) = 1,000 x 0.982 = 982.00. The 982.32 comes from wrongly treating 3.60% as an add-on rate (1,000 / 1.018)."
+  },
+  {
+    "question": "A 60-day money market instrument is priced at 99.50 per 100 of face value. Its add-on rate (360-day basis) is closest to:",
+    "options": [
+      "3.02%",
+      "3.00%",
+      "3.06%",
+      "0.50%"
+    ],
+    "correctIndex": 0,
+    "explanation": "AOR = (360/60) x (100 - 99.50)/99.50 = 6 x 0.0050251 = 3.015%, about 3.02%. The 3.00% is the discount rate (which divides by face value, 100), and 3.06% is the bond equivalent yield (3.015% x 365/360)."
+  },
+  {
+    "question": "For the same money market instrument, which statement about the discount rate (DR) and the add-on rate (AOR) is correct?",
+    "options": [
+      "DR is greater than AOR because it is based on face value",
+      "DR and AOR are always equal on a 360-day basis",
+      "DR is less than AOR because it is measured against face value rather than price",
+      "DR is less than AOR only for maturities longer than 180 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "Both measure the same dollar discount, but DR divides by the larger face value and AOR divides by the smaller price paid. So AOR = DR / (1 - days/360 x DR) is always greater than DR, for every maturity."
+  },
+  {
+    "question": "A 3-year floating-rate note pays semiannually at the 6-month reference rate plus 0.75%. The reference rate is 3.00% and is assumed constant. The required discount margin is 1.00%. Per 100 of face value, the note's price is closest to:",
+    "options": [
+      "98.50",
+      "100.00",
+      "100.71",
+      "99.30"
+    ],
+    "correctIndex": 3,
+    "explanation": "Coupon = 100 x (3.00% + 0.75%)/2 = 1.875 per period; discount rate = (3.00% + 1.00%)/2 = 2.00% per period for 6 periods. PV of coupons = 1.875 x 5.6014 = 10.503; PV of principal = 100/1.02^6 = 88.797; price = 99.30. It is below par because DM (1.00%) exceeds QM (0.75%). The 100.71 would result if the DM were 0.50%."
+  },
+  {
+    "question": "A 120-day deposit pays an add-on rate of 3.00% on a 360-day basis. Its effective annual yield (365-day year) is closest to:",
+    "options": [
+      "3.00%",
+      "3.04%",
+      "3.12%",
+      "3.07%"
+    ],
+    "correctIndex": 3,
+    "explanation": "Holding period yield = 3.00% x 120/360 = 1.00%. EAY = 1.01^(365/120) - 1 = 1.01^3.0417 - 1 = 3.07%. Simply converting the day count (BEY = 3.00% x 365/360 = 3.04%) does not include compounding."
+  },
+  {
+    "question": "Compared with an otherwise identical uncapped floating-rate note, a capped floating-rate note will most likely:",
+    "options": [
+      "Offer investors a lower quoted margin because the cap protects them",
+      "Be worth less to the investor, because the coupon cannot rise above the cap",
+      "Be worth more to the investor, because the coupon is more stable",
+      "Have the same value, because the reference rate is unchanged"
+    ],
+    "correctIndex": 1,
+    "explanation": "A cap limits the coupon when the reference rate rises, which benefits the issuer and costs the investor. The investor therefore demands a higher yield margin (or pays a lower price) than for an uncapped note. A floor works the opposite way and benefits the investor."
+  }
+]

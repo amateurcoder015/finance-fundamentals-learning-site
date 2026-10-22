@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A company issues a 3-year bond with face value 1,000,000 and a 5% annual coupon when the market rate is 6%. Under the effective interest method, interest expense in year 1 is closest to:",
+    "options": [
+      "50,000",
+      "60,000",
+      "58,396",
+      "52,500"
+    ],
+    "correctIndex": 2,
+    "explanation": "The issue price is 973,269.88 (PV of the cash flows at 6%). Year 1 interest expense = beginning carrying amount x market rate = 973,269.88 x 6% = 58,396. The 50,000 is the cash coupon and the 60,000 would be 6% of face value, which is not how the effective interest method works."
+  },
+  {
+    "question": "For a bond issued at a premium, as the bond approaches maturity under the effective interest method, the carrying amount and annual interest expense will most likely:",
+    "options": [
+      "Both increase",
+      "Both decrease",
+      "Carrying amount decreases and interest expense increases",
+      "Carrying amount increases and interest expense decreases"
+    ],
+    "correctIndex": 1,
+    "explanation": "Each year the coupon exceeds interest expense, and the excess reduces the carrying amount toward face value. Interest expense equals the carrying amount times a constant market rate, so it falls as the carrying amount falls."
+  },
+  {
+    "question": "At the end of year 1, a company's bond has a carrying amount of 981,666. The company repurchases it for 990,000. The company will report:",
+    "options": [
+      "A gain of 8,334",
+      "A loss of 8,334",
+      "No gain or loss, because the bond was repurchased at market value",
+      "A loss of 18,334"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gain (loss) = carrying amount - amount paid = 981,666 - 990,000 = -8,334, a loss. Paying more than the carrying amount to retire debt creates a loss, regardless of whether the price is the market value."
+  },
+  {
+    "question": "A lessee signs a 3-year lease with year-end payments of 10,000, discounted at 8%. Under IFRS 16, the initial lease liability is closest to:",
+    "options": [
+      "30,000",
+      "27,000",
+      "25,771",
+      "24,000"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lease liability = PV of lease payments = 10,000 x (1 - 1.08^-3)/0.08 = 10,000 x 2.5771 = 25,771. The 30,000 is the undiscounted total of the payments."
+  },
+  {
+    "question": "Compared with a US GAAP operating lease, an otherwise identical lease reported under IFRS 16 will most likely result in the lessee reporting:",
+    "options": [
+      "Lower total expense in the early years of the lease",
+      "Higher total expense in the early years of the lease",
+      "Lower total expense over the full lease term",
+      "No right-of-use asset on the balance sheet"
+    ],
+    "correctIndex": 1,
+    "explanation": "IFRS 16 reports depreciation plus interest, and interest is largest when the liability is largest, so expense is front-loaded (for example 10,652 in year 1 versus a straight-line 10,000). Total expense over the whole term is the same (30,000), and both models recognize an ROU asset and a lease liability."
+  },
+  {
+    "question": "A company has equity of 500 and net income of 60. It repurchases shares for 100 in cash, and net income is unchanged. Its return on equity changes from:",
+    "options": [
+      "12% to 15%",
+      "12% to 10%",
+      "12% to 12%",
+      "12% to 20%"
+    ],
+    "correctIndex": 0,
+    "explanation": "ROE before = 60/500 = 12%. The buyback reduces equity to 500 - 100 = 400, so ROE after = 60/400 = 15%. Treasury stock is a contra-equity account, so a buyback lowers equity and raises ROE mechanically."
+  },
+  {
+    "question": "A company declares a 10% stock dividend on 1,000,000 shares with a market price of 20 per share. Which statement is correct?",
+    "options": [
+      "Total equity decreases by 2,000,000",
+      "Retained earnings decrease by 2,000,000 and total equity is unchanged",
+      "Retained earnings and total equity both decrease by 200,000",
+      "Total equity increases by 2,000,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "A stock dividend transfers the market value of the new shares (100,000 x 20 = 2,000,000) from retained earnings to contributed capital. Total equity is unchanged; only its composition changes, and shares outstanding rise to 1,100,000."
+  },
+  {
+    "question": "A company has EBIT of 180, interest payments of 40 and lease payments of 20. Its fixed charge coverage ratio is closest to:",
+    "options": [
+      "4.50",
+      "3.00",
+      "3.33",
+      "9.00"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fixed charge coverage = (EBIT + lease payments)/(interest + lease payments) = (180 + 20)/(40 + 20) = 200/60 = 3.33. The 4.50 is interest coverage (180/40), which ignores lease commitments."
+  }
+]
