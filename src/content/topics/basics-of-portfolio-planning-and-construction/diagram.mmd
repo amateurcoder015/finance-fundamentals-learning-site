@@ -1,0 +1,48 @@
+graph TD
+    CLIENT["Client Needs and Circumstances"] --> IPS["Investment Policy Statement"]
+
+    subgraph Objectives ["Objectives"]
+        RET["Return Objective<br/>(Required return = spending + inflation + costs)"]
+        RISK["Risk Objective<br/>(Ability vs Willingness: the lower governs)"]
+    end
+
+    subgraph Constraints ["Constraints"]
+        LIQ["Liquidity"]
+        HOR["Time Horizon"]
+        TAX["Tax"]
+        LEG["Legal and Regulatory"]
+        UNI["Unique Circumstances<br/>(including ESG preferences)"]
+    end
+
+    IPS --> RET
+    IPS --> RISK
+    IPS --> LIQ
+    IPS --> HOR
+    IPS --> TAX
+    IPS --> LEG
+    IPS --> UNI
+
+    RET --> SAA["Strategic Asset Allocation<br/>(Asset-only, Liability-relative or Goals-based)"]
+    RISK --> SAA
+    LIQ --> SAA
+    HOR --> SAA
+    TAX --> SAA
+    LEG --> SAA
+    UNI --> SAA
+
+    SAA --> TAA["Tactical Asset Allocation<br/>(Limited active deviations)"]
+    TAA --> CON["Portfolio Construction"]
+
+    subgraph Approaches ["Construction Approaches"]
+        TD["Top-down vs Bottom-up"]
+        AP["Active, Passive and Core-Satellite"]
+        FB["Factor-based and Risk Parity"]
+        ESG["ESG: Screening, Thematic,<br/>Integration, Engagement, Impact"]
+    end
+
+    CON --> TD
+    CON --> AP
+    CON --> FB
+    CON --> ESG
+    CON --> REV["Monitor, Rebalance and Review IPS"]
+    REV -.-> IPS

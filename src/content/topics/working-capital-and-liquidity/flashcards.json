@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What is net working capital?",
+    "back": "Current assets minus current liabilities. It is the investment in short-term operating assets net of short-term funding from current liabilities."
+  },
+  {
+    "front": "Primary vs secondary sources of liquidity?",
+    "back": "Primary: ready cash and securities, short-term funds (credit lines, commercial paper), and cash flow management. Secondary: liquidating assets, renegotiating debt, and bankruptcy protection or reorganization (costly, signal weakness)."
+  },
+  {
+    "front": "What are drags and pulls on liquidity?",
+    "back": "Drags slow cash inflows (uncollected receivables, obsolete inventory, tight credit). Pulls speed cash outflows (early supplier payment, reduced credit limits, borrowing limits)."
+  },
+  {
+    "front": "Current ratio, quick ratio and cash ratio?",
+    "back": "Current: current assets / current liabilities. Quick: (cash + marketable securities + receivables) / current liabilities. Cash: (cash + marketable securities) / current liabilities."
+  },
+  {
+    "front": "What is the defensive interval?",
+    "back": "(Cash + marketable securities + receivables) / daily cash expenditures, where daily cash expenditures = annual cash expenses / 365. It shows how many days expenses can be paid without new revenue."
+  },
+  {
+    "front": "Formulas for DIO, DSO and DPO?",
+    "back": "DIO = average inventory / COGS × 365. DSO = average receivables / revenue × 365. DPO = average payables / COGS × 365."
+  },
+  {
+    "front": "Operating cycle and cash conversion cycle?",
+    "back": "Operating cycle = DIO + DSO. Cash conversion cycle = DIO + DSO − DPO (time cash is tied up between paying suppliers and collecting from customers)."
+  },
+  {
+    "front": "What does a shorter cash conversion cycle indicate?",
+    "back": "Less cash is tied up in operations, which generally means more efficient working capital management, though it should be compared with peers and history."
+  },
+  {
+    "front": "Formula for the cost of trade credit?",
+    "back": "(1 + d/(1 − d))^(365/(N − T)) − 1, where d is the discount, T the discount period in days and N the net due day. For 2/10 net 30 it is about 44.6%."
+  },
+  {
+    "front": "What are the investment priorities for surplus cash?",
+    "back": "Safety, then liquidity, then yield, set out in a written investment policy."
+  },
+  {
+    "front": "How do committed and uncommitted credit lines differ?",
+    "back": "A committed line obligates the bank to lend up to the limit for a fee; an uncommitted line has no obligation and the bank may refuse. A revolving facility is committed, multi-year and charges a commitment fee on the unused part."
+  }
+]

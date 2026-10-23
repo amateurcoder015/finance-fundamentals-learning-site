@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What is an investment policy statement (IPS)?",
+    "back": "A written planning document agreed between client and manager that records objectives (return and risk) and constraints (liquidity, time horizon, tax, legal and regulatory, unique circumstances), and guides all portfolio decisions."
+  },
+  {
+    "front": "How is overall risk tolerance determined?",
+    "back": "It is the lower of the client's ability to take risk (objective capacity to absorb losses) and willingness to take risk (subjective psychological comfort)."
+  },
+  {
+    "front": "List the five categories of IPS constraints.",
+    "back": "Liquidity, time horizon, tax, legal and regulatory, and unique circumstances."
+  },
+  {
+    "front": "How is a required return roughly built up?",
+    "back": "Required return ≈ spending rate + inflation + costs. Exactly: (1 + spending)(1 + inflation)(1 + costs) − 1."
+  },
+  {
+    "front": "What is the funded ratio and the surplus?",
+    "back": "Funded ratio = market value of assets / present value of liabilities. Surplus = assets − PV of liabilities. Below 100% (negative surplus) means a shortfall."
+  },
+  {
+    "front": "Compare asset-only, liability-relative and goals-based allocation.",
+    "back": "Asset-only: based on asset risk, return and correlation. Liability-relative: built around meeting liabilities (funded ratio). Goals-based: separate buckets for each goal with its own horizon and required probability of success."
+  },
+  {
+    "front": "Strategic vs tactical asset allocation?",
+    "back": "Strategic: long-term target weights set from the IPS. Tactical: short-term, active deviations from those weights, within IPS limits, which add active risk."
+  },
+  {
+    "front": "Top-down vs bottom-up portfolio construction?",
+    "back": "Top-down starts with macro and capital market views and allocates to asset classes, countries or sectors before choosing securities. Bottom-up starts by selecting individual securities on their merits."
+  },
+  {
+    "front": "What is a core-satellite approach?",
+    "back": "A low-cost passive (or enhanced-index) core combined with a smaller allocation to active satellite positions, which limits total fees while allowing active managers to add alpha."
+  },
+  {
+    "front": "What is risk parity?",
+    "back": "Weights are set so each asset class or factor contributes an equal share of portfolio risk, not equal capital. It usually means larger allocations to low-volatility assets such as bonds, often with leverage."
+  },
+  {
+    "front": "Name the main ESG approaches.",
+    "back": "Negative screening, positive screening (best-in-class), thematic investing, ESG integration, engagement/active ownership, and impact investing."
+  }
+]

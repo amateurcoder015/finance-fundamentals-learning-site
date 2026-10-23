@@ -1,0 +1,28 @@
+graph TD
+    WC["Working Capital Management"] --> LIQ["Liquidity"]
+    WC --> CYC["Operating Cycle and CCC"]
+    WC --> COMP["Managing the Components"]
+    WC --> FIN["Short-Term Financing"]
+
+    LIQ --> PRI["Primary Sources<br/>(Cash, short-term funds, cash flow management)"]
+    LIQ --> SEC["Secondary Sources<br/>(Asset sales, debt renegotiation, bankruptcy protection)"]
+    LIQ --> DP["Drags slow inflows<br/>Pulls speed outflows"]
+    LIQ --> RAT["Ratios: Current, Quick, Cash,<br/>Defensive Interval"]
+
+    CYC --> DIO["DIO<br/>(Days of inventory)"]
+    CYC --> DSO["DSO<br/>(Days sales outstanding)"]
+    CYC --> DPO["DPO<br/>(Days payables outstanding)"]
+    DIO --> OC["Operating Cycle = DIO + DSO"]
+    DSO --> OC
+    OC --> CCC["Cash Conversion Cycle<br/>= DIO + DSO - DPO"]
+    DPO --> CCC
+
+    COMP --> CASH["Cash<br/>(Forecast, invest: safety, liquidity, yield)"]
+    COMP --> AR["Receivables<br/>(Credit policy, aging schedule)"]
+    COMP --> INV["Inventory<br/>(JIT vs safety stock)"]
+    COMP --> AP["Payables<br/>(Trade credit and discounts)"]
+
+    FIN --> BANK["Credit Lines<br/>(Uncommitted, committed, revolving)"]
+    FIN --> CP["Commercial Paper"]
+    FIN --> SEC2["Secured Loans and Factoring"]
+    FIN --> TC["Trade Credit<br/>(Cost = (1 + d/(1-d))^(365/(N-T)) - 1)"]

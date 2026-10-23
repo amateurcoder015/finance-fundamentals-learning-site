@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A company has cash of 30, marketable securities of 10, receivables of 60, inventory of 100 and current liabilities of 120. Its quick ratio is:",
+    "options": [
+      "0.83",
+      "1.67",
+      "0.33",
+      "1.00"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quick ratio = (cash + marketable securities + receivables) / current liabilities = (30 + 10 + 60) / 120 = 100 / 120 = 0.83. Inventory is excluded. The current ratio would be 200 / 120 = 1.67 and the cash ratio 40 / 120 = 0.33."
+  },
+  {
+    "question": "Which of the following is a secondary source of liquidity?",
+    "options": [
+      "Cash and marketable securities",
+      "A committed bank line of credit",
+      "Renegotiating debt contracts",
+      "Faster collection of receivables"
+    ],
+    "correctIndex": 2,
+    "explanation": "Secondary sources are liquidating assets, renegotiating debt and seeking bankruptcy protection or reorganization. They are costly and may signal financial distress. Cash, credit lines and cash flow management are primary sources."
+  },
+  {
+    "question": "A company has DIO of 50 days, DSO of 35 days and DPO of 40 days. Its cash conversion cycle is:",
+    "options": [
+      "25 days",
+      "45 days",
+      "85 days",
+      "125 days"
+    ],
+    "correctIndex": 1,
+    "explanation": "CCC = DIO + DSO − DPO = 50 + 35 − 40 = 45 days. The operating cycle (DIO + DSO) is 85 days."
+  },
+  {
+    "question": "Using 365 days, average inventory of 240 and COGS of 1,460, days of inventory on hand (DIO) is closest to:",
+    "options": [
+      "60.0 days",
+      "6.1 days",
+      "73.0 days",
+      "24.0 days"
+    ],
+    "correctIndex": 0,
+    "explanation": "DIO = average inventory / COGS × 365 = 240 / 1,460 × 365 = 60.0 days. Equivalently, inventory turnover is 1,460 / 240 = 6.08 times a year and 365 / 6.08 = 60 days."
+  },
+  {
+    "question": "Which event is best classified as a pull on liquidity?",
+    "options": [
+      "Receivables that customers fail to pay on time",
+      "Inventory becoming obsolete",
+      "A supplier shortens payment terms, requiring faster payment",
+      "A bank refuses to renew a customer's loan"
+    ],
+    "correctIndex": 2,
+    "explanation": "Pulls on liquidity speed cash outflows, such as suppliers demanding faster payment, reduced credit limits or limits on short-term borrowing. Late receivables and obsolete inventory are drags that slow inflows."
+  },
+  {
+    "question": "A supplier offers terms of 3/15 net 45. The approximate periodic cost of forgoing the discount, and the number of periods used to annualize it, are:",
+    "options": [
+      "3.00% and 12.17 periods",
+      "3.09% and 12.17 periods",
+      "3.09% and 24.33 periods",
+      "3.00% and 24.33 periods"
+    ],
+    "correctIndex": 1,
+    "explanation": "Periodic cost = d / (1 − d) = 0.03 / 0.97 = 3.09%. The credit period gained is 45 − 15 = 30 days, so the number of periods is 365 / 30 = 12.17. The effective annual cost is (1.0309)^12.17 − 1, about 44.9%."
+  },
+  {
+    "question": "Other things equal, which change would shorten a company's cash conversion cycle?",
+    "options": [
+      "Reducing days payable outstanding",
+      "Raising inventory to avoid stock-outs",
+      "Extending longer credit terms to customers",
+      "Negotiating longer payment terms with suppliers"
+    ],
+    "correctIndex": 3,
+    "explanation": "CCC = DIO + DSO − DPO. Longer payment terms increase DPO and so shorten the CCC. Lower DPO, more inventory (higher DIO) and longer customer credit (higher DSO) all lengthen it."
+  },
+  {
+    "question": "Compared with an uncommitted line of credit, a committed line of credit typically:",
+    "options": [
+      "Obligates the bank to lend up to the limit, in return for a fee",
+      "Is cheaper because there is no fee",
+      "Has no limit on the amount borrowed",
+      "Can be withdrawn by the bank at any time"
+    ],
+    "correctIndex": 0,
+    "explanation": "A committed line obliges the bank to lend up to the limit, so the company pays a fee for that certainty. An uncommitted line carries no obligation and the bank may decline to lend."
+  }
+]

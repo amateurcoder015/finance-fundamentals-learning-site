@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which statement best describes how an investor's overall risk tolerance should be determined?",
+    "options": [
+      "It is the higher of the investor's ability and willingness to take risk.",
+      "It is the lower of the investor's ability and willingness to take risk.",
+      "It depends only on the investor's willingness to take risk.",
+      "It is the average of the investor's ability and willingness to take risk."
+    ],
+    "correctIndex": 1,
+    "explanation": "Overall risk tolerance is set by the lower of ability (objective capacity to absorb loss) and willingness (psychological comfort). A client who can afford risk but is uncomfortable, or is comfortable but cannot afford losses, should be treated as having the lower tolerance."
+  },
+  {
+    "question": "A retiree has a portfolio of 1,500,000, spends 60,000 a year, expects inflation of 2.5%, and incurs investment costs of 0.4%. Using simple addition, the required return is closest to:",
+    "options": [
+      "6.9%",
+      "6.4%",
+      "4.0%",
+      "2.9%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Spending rate = 60,000 / 1,500,000 = 4.0%. Adding inflation and costs: 4.0% + 2.5% + 0.4% = 6.9%. Compounding exactly would give about 7.0%."
+  },
+  {
+    "question": "Which of the following is a constraint, rather than an objective, in an investment policy statement?",
+    "options": [
+      "Return requirement",
+      "Risk tolerance",
+      "Liquidity needs",
+      "Desired total return"
+    ],
+    "correctIndex": 2,
+    "explanation": "Objectives are the return and risk targets. Constraints are liquidity, time horizon, tax, legal and regulatory, and unique circumstances. Liquidity needs therefore belong with the constraints."
+  },
+  {
+    "question": "A pension plan has assets with a market value of 840 million and liabilities with a present value of 800 million. Its funded ratio and surplus are:",
+    "options": [
+      "95.2% and a deficit of 40 million",
+      "105.0% and a surplus of 40 million",
+      "105.0% and a surplus of 42 million",
+      "95.2% and a surplus of 40 million"
+    ],
+    "correctIndex": 1,
+    "explanation": "Funded ratio = 840 / 800 = 1.05 = 105%. Surplus = 840 − 800 = +40 million. Because assets exceed the present value of liabilities, the plan is overfunded."
+  },
+  {
+    "question": "A manager decides first to overweight emerging market equities and underweight developed bonds based on a macroeconomic view, and then selects securities to implement that view. This is best described as:",
+    "options": [
+      "A bottom-up approach",
+      "A top-down approach",
+      "A passive approach",
+      "A liability-relative approach"
+    ],
+    "correctIndex": 1,
+    "explanation": "Top-down construction starts with macroeconomic and capital market views, sets asset class, country or sector weights, and then selects securities. Bottom-up starts with individual securities."
+  },
+  {
+    "question": "An investor holds 60% in a passive core earning an expected 7.0% net and 40% in active satellites earning an expected 10.0% net. The expected net portfolio return is:",
+    "options": [
+      "8.2%",
+      "8.5%",
+      "7.8%",
+      "8.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Portfolio return = 0.60 × 7.0% + 0.40 × 10.0% = 4.2% + 4.0% = 8.2%."
+  },
+  {
+    "question": "A fund excludes all companies that derive more than 10% of revenue from tobacco. This ESG approach is best described as:",
+    "options": [
+      "Impact investing",
+      "Thematic investing",
+      "Negative screening",
+      "Active ownership"
+    ],
+    "correctIndex": 2,
+    "explanation": "Excluding sectors or companies based on values or norms is negative (exclusionary) screening. It narrows the opportunity set and can create tracking risk against an unscreened benchmark."
+  },
+  {
+    "question": "Strategic versus tactical asset allocation: which statement is correct?",
+    "options": [
+      "Tactical allocation sets the long-term policy weights.",
+      "Strategic allocation changes frequently with short-term market views.",
+      "Tactical allocation is a short-term, active deviation from the strategic weights.",
+      "Strategic allocation is chosen after security selection."
+    ],
+    "correctIndex": 2,
+    "explanation": "Strategic asset allocation sets the long-term target weights from the IPS and long-run expectations. Tactical allocation deviates from them, within limits, to exploit shorter-term views and adds active risk."
+  }
+]

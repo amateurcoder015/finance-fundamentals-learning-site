@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Basics of Portfolio Planning and Construction | Portfolio Management | intermediate
-- [ ] Working Capital and Liquidity | Corporate Finance | intermediate
 - [ ] The Term Structure of Interest Rates: Spot, Par, and Forward Curves | Fixed Income | advanced
 - [ ] Analysis of Income Taxes | Financial Statements | advanced
 - [ ] Monetary Policy | Economics | intermediate
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Company Analysis: Past and Present | Equities | intermediate | 2026-10-21
 - [x] Yield and Yield Spread Measures for Floating-Rate Instruments | Fixed Income | intermediate | 2026-10-22
 - [x] Topics in Long-Term Liabilities and Equity | Financial Statements | advanced | 2026-10-22
+- [x] Basics of Portfolio Planning and Construction | Portfolio Management | intermediate | 2026-10-23
+- [x] Working Capital and Liquidity | Corporate Finance | intermediate | 2026-10-23
