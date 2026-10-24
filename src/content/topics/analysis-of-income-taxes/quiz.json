@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A company has pretax income of 500,000. Warranty expense of 80,000 was accrued for book purposes but is deductible for tax only when paid. The tax rate is 30%. Income tax payable for the year is:",
+    "options": [
+      "150,000",
+      "126,000",
+      "24,000",
+      "174,000"
+    ],
+    "correctIndex": 3,
+    "explanation": "Taxable income = 500,000 + 80,000 = 580,000. Income tax payable = 30% x 580,000 = 174,000. The expense on the income statement is 150,000 after a 24,000 DTA is recognized."
+  },
+  {
+    "question": "An asset has a carrying amount of 600,000 and a tax base of 450,000. The tax rate is 30%. Which deferred tax item arises?",
+    "options": [
+      "DTL of 45,000",
+      "DTL of 180,000",
+      "No deferred tax",
+      "DTA of 45,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "For an asset, a carrying amount above the tax base means more future taxable income than deductions, so a DTL arises: (600,000 - 450,000) x 30% = 45,000."
+  },
+  {
+    "question": "A warranty liability has a carrying amount of 80,000 and a tax base of zero. The tax rate is 30%. The result is:",
+    "options": [
+      "A DTL of 24,000",
+      "No deferred tax because warranties are a liability",
+      "A DTL of 80,000",
+      "A DTA of 24,000"
+    ],
+    "correctIndex": 3,
+    "explanation": "The liability's carrying amount exceeds its tax base, so future deductions will reduce taxable income. A DTA arises: 80,000 x 30% = 24,000."
+  },
+  {
+    "question": "Income tax payable is 255,000 and the deferred tax liability increases by 45,000, with no change in deferred tax assets. Income tax expense is:",
+    "options": [
+      "210,000",
+      "255,000",
+      "300,000",
+      "345,000"
+    ],
+    "correctIndex": 2,
+    "explanation": "Income tax expense = payable + increase in DTL - increase in DTA = 255,000 + 45,000 - 0 = 300,000."
+  },
+  {
+    "question": "A company has a DTL based on a temporary difference of 150,000 measured at 30%. The enacted tax rate falls to 25%. The effect on income tax expense is:",
+    "options": [
+      "Increase of 7,500",
+      "Decrease of 7,500",
+      "No effect because the difference is temporary",
+      "Decrease of 45,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "The DTL is remeasured to 150,000 x 25% = 37,500, down from 45,000. The 7,500 reduction in the liability reduces income tax expense."
+  },
+  {
+    "question": "Which of the following creates a permanent difference?",
+    "options": [
+      "Revenue received in advance",
+      "Accelerated tax depreciation",
+      "Interest on tax-exempt municipal bonds",
+      "Installment sales"
+    ],
+    "correctIndex": 2,
+    "explanation": "Tax-exempt interest is included in accounting profit but never in taxable income, so it never reverses and creates no deferred tax. The other items are timing differences that reverse."
+  },
+  {
+    "question": "Pretax income is 2,000, income tax expense is 450 and cash taxes paid are 380. The effective tax rate and the cash tax rate are closest to:",
+    "options": [
+      "22.5% and 19.0%",
+      "19.0% and 22.5%",
+      "22.5% and 22.5%",
+      "25.0% and 19.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "ETR = 450/2,000 = 22.5%; cash tax rate = 380/2,000 = 19.0%. The gap reflects 70 of deferred tax expense."
+  },
+  {
+    "question": "Reported liabilities are 5,000 including a DTL of 400, and equity is 2,000. If an analyst treats the DTL as equity, the debt-to-equity ratio (liabilities/equity) is closest to:",
+    "options": [
+      "2.50",
+      "2.30",
+      "1.92",
+      "1.67"
+    ],
+    "correctIndex": 2,
+    "explanation": "Liabilities become 5,000 - 400 = 4,600 and equity becomes 2,000 + 400 = 2,400. 4,600/2,400 = 1.92, versus 2.50 as reported."
+  }
+]

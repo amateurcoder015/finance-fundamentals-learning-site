@@ -1,0 +1,25 @@
+graph TD
+    TS["Term Structure of Interest Rates"] --> SP["Spot Curve<br/>Zero-coupon yields S(t)"]
+    TS --> PR["Par Curve<br/>Coupon rate that prices at par"]
+    TS --> FW["Forward Curve<br/>f(j,k): k-year rate starting in j years"]
+
+    SP --> DF["Discount factor<br/>Z(t) = 1 / (1 + S(t))^t"]
+    DF --> PV["Bond price = sum of<br/>cash flow x Z(t)"]
+    PR --> PF["Par rate<br/>c = (1 - Z(N)) / sum of Z(t)"]
+    PR --> BS["Bootstrapping<br/>Par rates to spot rates<br/>one maturity at a time"]
+    BS --> SP
+    SP --> FR["Forward rate<br/>(1 + S(j+k))^(j+k) = (1 + S(j))^j x (1 + f(j,k))^k"]
+    FR --> FW
+    FW --> FP["Forward price of a bond<br/>and break-even rate"]
+    FW --> RD["Rolldown return<br/>if the curve stays unchanged"]
+
+    TS --> SH["Curve shapes"]
+    SH --> N["Normal"]
+    SH --> I["Inverted"]
+    SH --> FL["Flat or humped"]
+
+    TS --> TH["Theories"]
+    TH --> PE["Pure expectations"]
+    TH --> LP["Liquidity preference<br/>(liquidity premium)"]
+    TH --> SM["Segmented markets"]
+    TH --> PH["Preferred habitat"]

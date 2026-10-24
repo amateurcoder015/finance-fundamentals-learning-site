@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What is a spot rate?",
+    "back": "The yield to maturity on a zero-coupon bond for a given maturity t; the annualized rate for a single payment received at t."
+  },
+  {
+    "front": "What is the discount factor for maturity t?",
+    "back": "Z_t = 1 / (1 + S_t)^t, the present value of 1 received at t. Spot rate: S_t = Z_t^(-1/t) - 1."
+  },
+  {
+    "front": "How do you price a bond with the spot curve?",
+    "back": "Discount each cash flow at the spot rate for its own maturity and sum: PV = sum of CF_t / (1 + S_t)^t. This is the arbitrage-free price."
+  },
+  {
+    "front": "What is a par rate and how is it computed from discount factors?",
+    "back": "The coupon rate that makes a bond of that maturity price at par: c_N = (1 - Z_N) / (Z_1 + ... + Z_N)."
+  },
+  {
+    "front": "What is bootstrapping?",
+    "back": "Deriving spot rates from par rates one maturity at a time: Z_N = (1 - c_N x sum of earlier Z) / (1 + c_N), then S_N = Z_N^(-1/N) - 1."
+  },
+  {
+    "front": "Define the forward rate f(j,k).",
+    "back": "The interest rate agreed today for a k-year loan starting j years from now: f(j,k) = [(1 + S_(j+k))^(j+k) / (1 + S_j)^j]^(1/k) - 1."
+  },
+  {
+    "front": "How is a spot rate related to forward rates?",
+    "back": "The spot rate is the geometric average of the one-year forward rates: (1 + S_N)^N = (1 + S_1)(1 + f(1,1))(1 + f(2,1))...(1 + f(N-1,1))."
+  },
+  {
+    "front": "Ordering of par, spot and forward curves on an upward-sloping curve?",
+    "back": "Forward > spot > par at the same horizon. On a downward-sloping (inverted) curve the order reverses."
+  },
+  {
+    "front": "What does the forward rate represent for a bond investor?",
+    "back": "The break-even rate: if realized future spot rates equal today's forward rates, a bond earns the risk-free 1-period spot rate over the holding period."
+  },
+  {
+    "front": "What is rolldown return?",
+    "back": "The price gain from a bond moving to a shorter maturity on an upward-sloping curve that stays unchanged; its yield falls as it rolls down the curve."
+  },
+  {
+    "front": "Contrast pure expectations with liquidity preference theory.",
+    "back": "Pure expectations: forward rates are unbiased predictions of future spot rates. Liquidity preference: forward = expected spot + liquidity (term) premium, so the curve is biased upward."
+  },
+  {
+    "front": "What distinguishes preferred habitat from segmented markets?",
+    "back": "Both see maturity-specific demand, but under preferred habitat investors will move out of their habitat if offered sufficient extra yield; under segmented markets they will not."
+  }
+]

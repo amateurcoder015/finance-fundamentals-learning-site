@@ -1,0 +1,236 @@
+---
+title: "Analysis of Income Taxes"
+description: "How accounting profit differs from taxable income, how deferred tax assets and liabilities arise from temporary differences, how tax rate changes, valuation allowances and loss carryforwards affect the statements, and how to read the effective tax rate reconciliation."
+category: "Financial Statements"
+difficulty: "advanced"
+dateAdded: "2026-10-24"
+tags: ["income-taxes", "deferred-tax-liability", "deferred-tax-asset", "effective-tax-rate", "temporary-differences", "valuation-allowance"]
+---
+
+# Analysis of Income Taxes
+
+Companies keep two sets of books: one under financial reporting standards (IFRS or US GAAP) to show shareholders, and one under the tax code to compute what they owe the government. The rules differ in when revenue and expense are recognized, so **accounting profit and taxable income are rarely equal**. This chapter explains how those differences are reported as **deferred tax assets and liabilities**, how to interpret the **effective tax rate**, and how an analyst should treat deferred taxes in a financial analysis.
+
+---
+
+## 1. Key Terms
+
+| Term | Meaning |
+| --- | --- |
+| **Accounting profit (pretax income)** | Income before income tax expense, from the income statement under IFRS or US GAAP |
+| **Taxable income** | Income (loss) for the period measured under the tax return rules |
+| **Income tax payable (current tax)** | Taxable income $\times$ tax rate: the tax owed for the period |
+| **Income tax expense** | Total tax charge on the income statement: current tax plus deferred tax |
+| **Deferred tax liability (DTL)** | Tax that will be **payable** in future because income was taxed less now than it was reported |
+| **Deferred tax asset (DTA)** | Tax that will be **recoverable** in future because more tax was paid now than was expensed |
+| **Valuation allowance** | A reduction of a DTA when it is not expected to be realized (US GAAP) |
+| **Carrying amount** | The book value of an asset or liability on the balance sheet |
+| **Tax base** | The value of an asset or liability for tax purposes |
+| **Taxes paid (cash taxes)** | Cash actually paid to the tax authorities in the period |
+
+The core relationship:
+
+$$\text{Income tax expense} = \text{Income tax payable} + \Delta\text{DTL} - \Delta\text{DTA}$$
+
+Equivalently, income tax expense $=$ current tax expense $+$ deferred tax expense. When accounting profit and taxable income differ **only because of temporary differences** and the rate is constant, income tax expense $=$ pretax income $\times$ tax rate.
+
+---
+
+## 2. Temporary versus Permanent Differences
+
+**Temporary differences** are differences between the carrying amount and the tax base of an asset or liability. They arise because an item is recognized in different periods for accounting and for tax, and they **reverse** over time. Temporary differences create deferred tax assets and liabilities.
+
+**Permanent differences** are items that affect either accounting profit or taxable income but **never** the other, so they never reverse. They create **no** deferred tax; they only move the effective tax rate away from the statutory rate. Examples:
+
+- Tax-exempt interest income (for example certain municipal bond interest)
+- Fines and penalties that are not tax deductible
+- Goodwill impairment that is not deductible
+- Tax credits (for example for research and development) that reduce tax directly
+- Dividends received exclusions
+
+| Common temporary differences | Typical effect |
+| --- | --- |
+| Accelerated tax depreciation vs straight-line book depreciation | DTL, later reversing |
+| Warranty expense accrued for book, deductible for tax only when paid | DTA |
+| Revenue received in advance (taxed on receipt, booked as a liability) | DTA |
+| Installment sales (revenue recognized at sale for book, on collection for tax) | DTL |
+| Unused tax losses carried forward | DTA |
+| Fair value gains on assets (not taxed until sold) | DTL |
+| Impairment write-downs (deductible only on sale) | DTA |
+
+---
+
+## 3. Carrying Amount versus Tax Base
+
+The **tax base of an asset** is the amount that will be deductible against taxable income when the asset's economic benefits are realized. The **tax base of a liability** is its carrying amount less any amount that will be deductible in future periods.
+
+| Situation | Result |
+| --- | --- |
+| **Asset**: carrying amount $>$ tax base | **DTL** (more future taxable income than deductions) |
+| **Asset**: carrying amount $<$ tax base | **DTA** |
+| **Liability**: carrying amount $>$ tax base | **DTA** (future deductions) |
+| **Liability**: carrying amount $<$ tax base | **DTL** |
+
+The balance is measured as
+
+$$\text{Deferred tax} = (\text{Carrying amount} - \text{Tax base}) \times \text{Tax rate}$$
+
+(sign read from the table above). The rate used is the **enacted or substantively enacted** rate expected to apply when the difference reverses (IFRS); US GAAP uses the enacted rate.
+
+### Exceptions
+
+- **Goodwill**: under IFRS and US GAAP no DTL is recognized on the initial recognition of goodwill.
+- **Investments in subsidiaries and associates**: a DTL is recognized on undistributed earnings **unless** the parent controls the timing of the reversal and it is probable the difference will not reverse in the foreseeable future.
+- **Business combinations**: fair-value step-ups of acquired assets that do not raise the tax base create a DTL, which increases goodwill.
+- **Asset revaluation (IFRS)**: a revaluation surplus not taxed until sale creates a DTL that is charged against the surplus in equity (OCI), not through income.
+
+---
+
+## 4. Worked Example: Accelerated Depreciation (a DTL)
+
+A company buys an asset for 900,000. For **book** purposes it uses straight-line depreciation over 3 years (300,000 per year). For **tax** it takes 450,000 in year 1, then 225,000 in each of years 2 and 3. Pretax income is 1,000,000 each year (after book depreciation), and the tax rate is 30%.
+
+| | Year 1 | Year 2 | Year 3 |
+| --- | --- | --- | --- |
+| Pretax income | 1,000,000 | 1,000,000 | 1,000,000 |
+| Add: book depreciation | 300,000 | 300,000 | 300,000 |
+| Less: tax depreciation | (450,000) | (225,000) | (225,000) |
+| **Taxable income** | **850,000** | **1,075,000** | **1,075,000** |
+| Income tax payable (30%) | 255,000 | 322,500 | 322,500 |
+| Carrying amount at year end | 600,000 | 300,000 | 0 |
+| Tax base at year end | 450,000 | 225,000 | 0 |
+| Temporary difference | 150,000 | 75,000 | 0 |
+| **DTL at year end** (30%) | **45,000** | **22,500** | **0** |
+| Change in DTL | +45,000 | (22,500) | (22,500) |
+| **Income tax expense** (payable + $\Delta$DTL) | **300,000** | **300,000** | **300,000** |
+| Net income | 700,000 | 700,000 | 700,000 |
+
+Check: income tax expense equals $30\% \times 1{,}000{,}000 = 300{,}000$ each year because the only difference is temporary. Total tax payable over 3 years is $255{,}000 + 322{,}500 + 322{,}500 = 900{,}000 = 30\% \times 3{,}000{,}000$, so the DTL simply **defers** 45,000 of cash tax from year 1 and returns it in years 2 and 3.
+
+Cash flow effect: in year 1 the company pays 45,000 less cash tax than it expenses, a benefit that appears in operating cash flow through the increase in DTL.
+
+---
+
+## 5. Worked Example: Warranty Accrual (a DTA)
+
+A company accrues a warranty expense of 80,000 for book purposes, but the tax authority allows the deduction only when claims are paid (in a later year). Pretax income is 500,000 and the tax rate is 30%.
+
+1. Taxable income $= 500{,}000 + 80{,}000 = 580{,}000$ (the expense is added back).
+2. Income tax payable $= 30\% \times 580{,}000 = 174{,}000$.
+3. The warranty liability has carrying amount 80,000 and tax base 0, so the liability's carrying amount exceeds its tax base by 80,000: **DTA** $= 80{,}000 \times 30\% = 24{,}000$.
+4. Income tax expense $= 174{,}000 - 24{,}000 = 150{,}000 = 30\% \times 500{,}000$. ✓
+
+The company pays 24,000 more cash tax now than it expenses, and recovers that when the warranties are paid out.
+
+---
+
+## 6. Changes in Tax Rates
+
+Deferred tax balances are measured at the rate expected to apply when they reverse. If an enacted rate changes, **remeasure** the balances; the adjustment goes through **income tax expense** (unless the original item was recognized in OCI or equity).
+
+Using the DTL from section 4 (temporary difference of 150,000 at the end of year 1), suppose the rate falls from 30% to 25% at the end of year 1:
+
+$$\text{New DTL} = 150{,}000 \times 25\% = 37{,}500 \quad \text{(was 45,000)}$$
+
+The 7,500 reduction in the DTL **reduces income tax expense** (a deferred tax benefit), so net income rises by 7,500. A rate **increase** has the opposite effect: DTLs grow and tax expense rises, while DTAs are worth more and tax expense falls. Analysts treat such one-time remeasurements as **non-recurring** when forecasting.
+
+---
+
+## 7. Valuation Allowances and Tax Losses
+
+### Valuation allowance
+
+- **US GAAP**: recognize the DTA in full, then deduct a **valuation allowance** if it is **more likely than not** (probability above 50%) that some or all of the DTA will not be realized.
+- **IFRS**: recognize a DTA only to the extent it is **probable** that future taxable profit will be available to use it; the DTA is re-assessed each period.
+
+An increase in the allowance is a **non-cash charge** to income tax expense. For example, a DTA of 100,000 with 30% considered unrealizable carries an allowance of 30,000, for a net DTA of 70,000, and a 30,000 charge to expense. A later reversal of the allowance increases income and is a signal for the analyst to question earnings quality because it reflects management's changed outlook rather than operations.
+
+### Unused tax losses (carryforwards)
+
+A tax loss can often be carried forward against future taxable income. If the company can expect to use it, a DTA is recorded:
+
+$$\text{DTA} = \text{Loss carryforward} \times \text{Tax rate}$$
+
+For example, a taxable loss of 600,000 at 30% gives a DTA of 180,000 and a deferred tax **benefit** that reduces the loss reported. If realization is doubtful, a valuation allowance (US GAAP) or non-recognition (IFRS) applies, and the full pretax loss flows to net income without a tax benefit.
+
+### Uncertain tax positions
+
+- **US GAAP**: a tax benefit is recognized only if it is **more likely than not** to be sustained on examination, measured as the largest amount that is more than 50% likely to be realized.
+- **IFRS**: the uncertainty is reflected using the **most likely amount** or the **expected value**, whichever better predicts the resolution.
+
+---
+
+## 8. Presentation and Disclosure
+
+- Under both IFRS and US GAAP, deferred tax assets and liabilities are classified as **noncurrent**.
+- Deferred tax assets and liabilities may be offset only when they relate to the same taxing authority and the company has a legal right to offset.
+- Companies disclose the components of income tax expense (current and deferred), the **deferred tax balances by type** of temporary difference, expiry dates of loss carryforwards, valuation allowance changes, and the **effective tax rate reconciliation**.
+- Items recognized directly in OCI or equity (for example revaluation surplus under IFRS, or unrealized gains on available-for-sale debt securities) carry their tax effect in the same place.
+
+---
+
+## 9. Effective Tax Rate and the Reconciliation
+
+$$\text{Effective tax rate (ETR)} = \frac{\text{Income tax expense}}{\text{Pretax income}}$$
+
+$$\text{Cash tax rate} = \frac{\text{Cash taxes paid}}{\text{Pretax income}}$$
+
+The **statutory rate** is the rate set by law in the home jurisdiction. The ETR differs because of foreign income taxed at other rates, tax credits, permanent differences, changes in valuation allowances and tax rate changes. Companies must reconcile the statutory rate to the ETR.
+
+### Worked example: reconciliation
+
+Pretax income is 2,000. The statutory rate is 25%.
+
+| Item | Amount | Rate effect |
+| --- | --- | --- |
+| Tax at statutory rate ($25\% \times 2{,}000$) | 500 | 25.0% |
+| Foreign operations taxed at lower rates | (40) | (2.0%) |
+| Research and development credits | (30) | (1.5%) |
+| Non-deductible expenses (permanent) | 20 | 1.0% |
+| **Income tax expense** | **450** | **22.5%** |
+
+$$\text{ETR} = \frac{450}{2{,}000} = 22.5\%$$
+
+Suppose current tax (cash paid) is 380 and deferred tax expense is 70. The cash tax rate is $380/2{,}000 = 19.0\%$, below the ETR because 70 of tax has been deferred. A persistent gap between a low cash tax rate and a higher ETR usually reflects growing DTLs (for example from accelerated depreciation).
+
+Analyst checks:
+
+- Is the ETR sustainable? Rate cuts from lower-tax jurisdictions, credits and allowance releases may not recur, so **forecast with a normalized rate**.
+- Compare the ETR with the statutory rate and with competitors.
+- Look at the geographic mix of income and the jurisdiction of cash held abroad.
+
+---
+
+## 10. Analyst Treatment of Deferred Taxes
+
+A DTL is a liability on the balance sheet, but whether it is a **real claim** depends on whether it will reverse and be paid.
+
+| Treatment | When appropriate |
+| --- | --- |
+| **Treat as a liability** | The DTL is expected to reverse and cash will be paid (for example the underlying asset is being sold or growth has slowed) |
+| **Treat as equity** | The DTL is not expected to reverse (for example continued asset purchases keep it growing) |
+| **Exclude from both** | The timing or amount is highly uncertain; remove it from liabilities and from equity |
+
+### Worked example: effect on leverage
+
+Reported total liabilities are 5,000, including a DTL of 400, and shareholders' equity is 2,000.
+
+| Treatment | Liabilities | Equity | Debt-to-equity (liabilities / equity) |
+| --- | --- | --- | --- |
+| As reported (liability) | 5,000 | 2,000 | 2.50 |
+| DTL as equity | 4,600 | 2,400 | 1.92 |
+| DTL excluded from both | 4,600 | 2,000 | 2.30 |
+
+Treating the DTL as equity lowers the leverage ratio from 2.50 to 1.92. A DTA is similarly assessed for realizability; if collection is doubtful, an analyst may write it off against equity.
+
+---
+
+## Key takeaways
+
+- Income tax expense $=$ income tax payable $+ \Delta$DTL $- \Delta$DTA. With only temporary differences and a constant rate, expense $=$ pretax income $\times$ rate.
+- **Temporary differences** reverse and create deferred taxes; **permanent differences** never reverse and only change the effective tax rate.
+- Asset carrying amount above tax base gives a DTL; liability carrying amount above tax base gives a DTA.
+- A change in the enacted tax rate remeasures deferred balances through income tax expense: a cut reduces DTLs and DTAs.
+- A valuation allowance (US GAAP, more likely than not) or non-recognition (IFRS, probable) limits DTAs; allowance changes are non-cash and affect earnings quality.
+- The effective tax rate reconciliation explains differences from the statutory rate; use a normalized rate for forecasts and compare the ETR with the cash tax rate.
+- Analysts treat a DTL as a liability, as equity, or exclude it depending on whether it is expected to reverse.

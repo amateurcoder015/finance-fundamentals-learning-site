@@ -1,0 +1,221 @@
+---
+title: "The Term Structure of Interest Rates: Spot, Par, and Forward Curves"
+description: "How spot, par and forward curves describe the term structure of interest rates, how to price a bond with spot rates, bootstrap spot rates from par rates, calculate forward rates, and why the curves differ in shape."
+category: "Fixed Income"
+difficulty: "advanced"
+dateAdded: "2026-10-24"
+tags: ["term-structure", "spot-rates", "forward-rates", "par-curve", "bootstrapping", "yield-curve"]
+---
+
+# The Term Structure of Interest Rates: Spot, Par, and Forward Curves
+
+A single yield to maturity treats every cash flow of a bond as if it were discounted at the same rate. In reality, a payment due in one year and a payment due in ten years are discounted at different rates. The **term structure of interest rates** is the relationship between yield and time to maturity for bonds of the same credit quality. Three curves describe it: the **spot curve**, the **par curve**, and the **forward curve**. They carry the same information in different forms, and an analyst must be able to move between them.
+
+---
+
+## 1. Spot Rates and the Spot Curve
+
+A **spot rate** $S_t$ is the yield to maturity on a **zero-coupon bond** maturing at time $t$. It is the annualized rate for money lent today and repaid in a single payment at $t$.
+
+The **spot curve** (also called the zero curve or strip curve) plots spot rates against maturity. Because a zero-coupon bond has only one cash flow, its spot rate is unaffected by reinvestment assumptions.
+
+The **discount factor** for maturity $t$ is the present value of 1 received at $t$:
+
+$$Z_t = \frac{1}{(1+S_t)^t}$$
+
+Equivalently, $S_t = Z_t^{-1/t} - 1$. The pairs $(t, Z_t)$ are called the **discount function**, and any one of spot rates, discount factors, par rates or forward rates can be derived from the others.
+
+---
+
+## 2. Pricing a Bond with Spot Rates
+
+Each cash flow is discounted at the spot rate for its own maturity. This is the **no-arbitrage** value: the bond is a portfolio of zero-coupon bonds, so it must be worth the sum of those strips.
+
+$$PV = \frac{PMT}{(1+S_1)^1} + \frac{PMT}{(1+S_2)^2} + \cdots + \frac{PMT + FV}{(1+S_N)^N}$$
+
+### Worked example: spot curve and bond price
+
+Use this annual-pay spot curve for the rest of the chapter:
+
+| Maturity $t$ | Spot rate $S_t$ | Discount factor $Z_t = (1+S_t)^{-t}$ |
+| --- | --- | --- |
+| 1 | 2.00% | 0.980392 |
+| 2 | 3.00% | 0.942596 |
+| 3 | 3.50% | 0.901943 |
+| 4 | 4.00% | 0.854804 |
+
+Price a 3-year, 5% annual-coupon bond with par 100:
+
+$$PV = \frac{5}{1.02} + \frac{5}{1.03^2} + \frac{105}{1.035^3} \approx \mathbf{104.3189}$$
+
+The **yield to maturity** is the single rate that gives the same price:
+
+$$104.3189 = \frac{5}{1+y} + \frac{5}{(1+y)^2} + \frac{105}{(1+y)^3} \Rightarrow y = 3.4596\%$$
+
+The YTM (3.46%) is below the 3-year spot rate (3.50%). This is a general result for an upward-sloping curve: the YTM of a coupon bond is a blend of spot rates, pulled toward the lower short-maturity spots by the early coupons. This is why YTM is a poor basis for comparing bonds with different coupon patterns.
+
+<Note>
+If a bond trades at a price different from the value implied by the spot curve, an arbitrageur can strip it into zero-coupon bonds or reconstitute it, locking in a risk-free profit. Price convergence to the spot-curve value is what makes the curve a consistent pricing tool.
+</Note>
+
+---
+
+## 3. Par Rates and the Par Curve
+
+The **par rate** for maturity $N$ is the coupon rate at which a bond with $N$ years to maturity prices exactly at par. The **par curve** plots par rates against maturity. Setting the price to 1 per unit of par and solving for the coupon $c_N$:
+
+$$1 = c_N \sum_{t=1}^{N} Z_t + Z_N \quad \Rightarrow \quad c_N = \frac{1 - Z_N}{\sum_{t=1}^{N} Z_t}$$
+
+Using the discount factors above:
+
+| Maturity | $\sum Z_t$ | Par rate $c_N = (1-Z_N)/\sum Z_t$ |
+| --- | --- | --- |
+| 1 | 0.980392 | 2.0000% |
+| 2 | 1.922988 | 2.9852% |
+| 3 | 2.824931 | 3.4711% |
+| 4 | 3.679735 | 3.9458% |
+
+For the 3-year case: $(1 - 0.901943)/2.824931 = 0.098057/2.824931 = 3.4711\%$.
+
+In an upward-sloping environment the par rate lies below the spot rate of the same maturity (3.47% against 3.50% at 3 years), because the par rate is a weighted average of spot rates that gives heavy weight to the earlier, lower ones. In a downward-sloping environment the par rate lies above the spot rate. Par rates are also what an issuer sets as coupons on new bonds, and the **swap rate** curve is a par curve built from the fixed rate that makes a swap's value zero.
+
+---
+
+## 4. Bootstrapping Spot Rates from Par Rates
+
+Observable market data is often a set of par yields (for example on-the-run government bonds or swap rates). **Bootstrapping** converts them into spot rates one maturity at a time. Each step uses the discount factors already found.
+
+For maturity $N$ with par rate $c_N$:
+
+$$Z_N = \frac{1 - c_N \sum_{t=1}^{N-1} Z_t}{1 + c_N}$$
+
+### Worked example: bootstrapping
+
+Par rates: 1-year 2.00%, 2-year 3.00%, 3-year 4.00%, all annual-pay.
+
+1. **1-year.** A 1-year par bond pays one cash flow, so $S_1 = 2.00\%$ and $Z_1 = 1/1.02 = 0.980392$.
+2. **2-year.** $Z_2 = \dfrac{1 - 0.03 \times 0.980392}{1.03} = \dfrac{0.970588}{1.03} = 0.942318$. Then $S_2 = (1/0.942318)^{1/2} - 1 = \mathbf{3.0152\%}$.
+3. **3-year.** $Z_3 = \dfrac{1 - 0.04 \times (0.980392 + 0.942318)}{1.04} = \dfrac{1 - 0.076908}{1.04} = 0.887588$. Then $S_3 = (1/0.887588)^{1/3} - 1 = \mathbf{4.0550\%}$.
+
+The spot rates (2.00%, 3.02%, 4.06%) lie above the par rates (2.00%, 3.00%, 4.00%) for an upward-sloping curve, consistent with section 3. Check: a 3-year 4% bond priced at these discount factors gives $4 \times (0.980392 + 0.942318) + 104 \times 0.887588 = 7.6908 + 92.3092 = 100.00$.
+
+---
+
+## 5. Forward Rates and the Forward Curve
+
+A **forward rate** is an interest rate agreed today for a loan that starts at a future date. The notation $f(j,k)$ (or $_jf_k$) is the rate for a loan of $k$ years beginning $j$ years from now. For example $f(2,1)$ is the 1-year rate two years forward.
+
+### No-arbitrage relationship
+
+Investing for $j+k$ years at the spot rate must give the same terminal wealth as investing for $j$ years at the spot rate and then rolling into the forward contract for $k$ years:
+
+$$(1+S_{j+k})^{j+k} = (1+S_j)^{j}\,\big(1+f(j,k)\big)^{k}$$
+
+So the forward rate is:
+
+$$f(j,k) = \left[\frac{(1+S_{j+k})^{j+k}}{(1+S_j)^{j}}\right]^{1/k} - 1$$
+
+A spot rate is therefore the **geometric average** of the one-period forward rates over its life:
+
+$$(1+S_N)^N = (1+S_1)\big(1+f(1,1)\big)\big(1+f(2,1)\big)\cdots\big(1+f(N-1,1)\big)$$
+
+### Worked example: forward rates from the spot curve
+
+| Forward rate | Calculation | Result |
+| --- | --- | --- |
+| $f(1,1)$ | $1.03^2 / 1.02 - 1 = 1.0609/1.02 - 1$ | 4.0098% |
+| $f(2,1)$ | $1.035^3 / 1.03^2 - 1 = 1.108718/1.0609 - 1$ | 4.5073% |
+| $f(3,1)$ | $1.04^4 / 1.035^3 - 1 = 1.169859/1.108718 - 1$ | 5.5145% |
+| $f(1,2)$ | $\left(1.035^3/1.02\right)^{1/2} - 1 = (1.086978)^{1/2} - 1$ | 4.2583% |
+| $f(2,2)$ | $\left(1.04^4/1.03^2\right)^{1/2} - 1 = (1.102704)^{1/2} - 1$ | 5.0097% |
+| $f(1,3)$ | $\left(1.04^4/1.02\right)^{1/3} - 1 = (1.146920)^{1/3} - 1$ | 4.6753% |
+
+Notice that every forward rate exceeds the spot rate of the matching horizon. When the spot curve slopes upward, the **forward curve lies above the spot curve**; when the spot curve is inverted, the forward curve lies below it. At the very short end the two coincide: $f(0,1) = S_1$.
+
+Check the geometric-average identity: $(1.02)(1.040098)(1.045073) = 1.108718 = 1.035^3$. ✓
+
+### Pricing a bond with forward rates
+
+Because spot rates are built from forwards, discounting at forward rates gives the same price. For the 3-year 5% bond:
+
+$$PV = \frac{5}{1.02} + \frac{5}{(1.02)(1.040098)} + \frac{105}{(1.02)(1.040098)(1.045073)} \approx 104.3189$$
+
+This matches section 2, confirming that the spot, forward and discount-factor descriptions are equivalent.
+
+### The forward price of a bond
+
+The value of a bond at a future date, implied by today's curve, is the **forward price**. The price in one year of a 2-year, 5% bond (today a 3-year bond with the same coupon) is the remaining cash flows discounted by the 1-year-forward curve:
+
+$$P_{1} = \frac{5\,Z_2 + 105\,Z_3}{Z_1} = \frac{5(0.942596) + 105(0.901943)}{0.980392} = \frac{99.4170}{0.980392} = \mathbf{101.4053}$$
+
+Equivalently, $\dfrac{5}{1.040098} + \dfrac{105}{(1.040098)(1.045073)} = 4.8072 + 96.5981 = 101.4053$.
+
+---
+
+## 6. Forward Rates, Expectations and Active Management
+
+If the spot curve a year from now turns out exactly equal to what today's forward curve implies, then the 3-year bond earns exactly the 1-year spot rate over the year:
+
+$$\frac{101.4053 + 5}{104.3189} - 1 = 2.00\%$$
+
+So a forward rate is the **break-even reinvestment rate**: an investor who expects future spot rates to be below the forward rate profits from buying longer bonds, and one who expects rates to be above it should shorten. The forward curve is not a forecast; it is the set of rates at which a market participant can lock in forward borrowing or lending today.
+
+### Rolldown return
+
+If the curve stays unchanged and the bond "rolls down" the curve toward maturity, its yield falls and its price rises when the curve is upward sloping. After one year, the 3-year 5% bond becomes a 2-year bond valued at today's 1- and 2-year spot rates:
+
+$$P_{\text{rolled}} = \frac{5}{1.02} + \frac{105}{1.03^2} = 4.9020 + 98.9725 = 103.8745$$
+
+$$\text{Holding-period return} = \frac{103.8745 + 5}{104.3189} - 1 = 4.37\%$$
+
+This exceeds the 2.00% 1-year spot rate by roughly 2.37 percentage points. The excess is the return from **rolling down the curve**. It is earned only if the curve stays unchanged; the spot curve a year ahead would have to equal today's spot curve, not today's forward curve.
+
+---
+
+## 7. Shapes of the Yield Curve
+
+| Shape | Description | Typical association |
+| --- | --- | --- |
+| **Normal (upward-sloping)** | Longer maturities yield more | Expansion, moderate inflation expectations |
+| **Inverted (downward-sloping)** | Short maturities yield more than long | Tight monetary policy; expected rate cuts or recession |
+| **Flat** | Similar yield at all maturities | Transition between regimes |
+| **Humped** | Yield rises then falls with maturity | Short rates expected to rise, then fall |
+
+Common analyst measures of shape are the **slope** (for example 10-year minus 2-year yield), and **curvature** (butterfly: the 5-year yield compared with the average of the 2- and 10-year yields).
+
+---
+
+## 8. Theories of the Term Structure
+
+| Theory | Claim about the curve |
+| --- | --- |
+| **Pure expectations** | Forward rates are unbiased predictors of future spot rates. An upward slope means higher rates are expected. |
+| **Liquidity preference** | Investors demand a **liquidity premium** for holding longer maturities: forward rate = expected spot rate + premium. The curve has an upward bias even if rates are expected to be flat. |
+| **Segmented markets** | Maturity segments are separate markets set by supply and demand within the segment (for example, pension funds buy long bonds, banks buy short ones). |
+| **Preferred habitat** | Like segmented markets, but investors will leave their habitat if compensated with enough additional yield. Allows for term premiums that vary by maturity. |
+
+Under pure expectations, the slope of the curve contains only the expected path of short rates. The other theories add a **term premium** (also called risk premium) that compensates for interest rate risk or supply and demand imbalances. In practice, the forward rate is the sum of expected future spot rate and a term premium.
+
+---
+
+## 9. Putting the Curves Together
+
+| Curve | What it plots | Built from | Best for |
+| --- | --- | --- | --- |
+| **Spot (zero)** | $S_t$ against $t$ | Zero-coupon yields, or bootstrapped | Pricing any cash flow; no coupon-reinvestment problem |
+| **Par** | Coupon rate pricing at par | Observed on-the-run yields, swap rates | Setting coupons; quoting benchmarks |
+| **Forward** | $f(j,k)$ | Derived from spot rates | Break-even rates; valuing forward contracts; expected-return analysis |
+
+Relative positions on an upward-sloping curve: **forward $>$ spot $>$ par** at the same horizon. On a downward-sloping curve the order reverses.
+
+---
+
+## Key takeaways
+
+- A **spot rate** is the yield on a zero-coupon bond. Discount each cash flow at the spot rate for its own maturity to get the arbitrage-free price.
+- A **par rate** is the coupon that prices a bond at par; $c_N = (1-Z_N)/\sum Z_t$. **Bootstrapping** turns par rates into spot rates step by step.
+- Forward rates satisfy $(1+S_{j+k})^{j+k} = (1+S_j)^j(1+f(j,k))^k$. A spot rate is the geometric average of the one-year forward rates.
+- Pricing with spot rates, forward rates or discount factors gives the same value.
+- On an upward-sloping curve, forward $>$ spot $>$ par; on an inverted curve the order reverses.
+- The forward rate is the break-even rate: realized future spot rates equal to forwards means a bond earns the risk-free rate; rolldown return arises when an upward-sloping curve stays unchanged.
+- Pure expectations, liquidity preference, segmented markets and preferred habitat are the theories of curve shape; all but pure expectations allow for term premiums.

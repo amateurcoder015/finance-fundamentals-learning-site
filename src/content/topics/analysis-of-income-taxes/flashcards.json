@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What is the relationship between income tax expense, payable and deferred taxes?",
+    "back": "Income tax expense = income tax payable + change in DTL - change in DTA (current tax plus deferred tax)."
+  },
+  {
+    "front": "Define a temporary difference.",
+    "back": "A difference between an item's carrying amount and its tax base that arises from different timing of recognition and reverses over time; it creates deferred tax assets or liabilities."
+  },
+  {
+    "front": "What is a permanent difference?",
+    "back": "An item that affects accounting profit or taxable income but never the other (for example tax-exempt interest, non-deductible fines, tax credits). It creates no deferred tax but changes the effective tax rate."
+  },
+  {
+    "front": "When does a deferred tax liability arise on an asset?",
+    "back": "When the asset's carrying amount exceeds its tax base. DTL = (carrying amount - tax base) x tax rate."
+  },
+  {
+    "front": "When does a deferred tax asset arise on a liability?",
+    "back": "When the liability's carrying amount exceeds its tax base (for example a warranty accrual not yet deductible). DTA = difference x tax rate."
+  },
+  {
+    "front": "How does a change in the enacted tax rate affect deferred taxes?",
+    "back": "Deferred tax balances are remeasured at the new rate through income tax expense. A rate cut reduces DTLs (lowering expense) and DTAs (raising expense)."
+  },
+  {
+    "front": "Valuation allowance under US GAAP versus IFRS?",
+    "back": "US GAAP: recognize the DTA, then reduce it by an allowance if more likely than not (above 50%) some portion will not be realized. IFRS: recognize a DTA only to the extent it is probable that taxable profit will be available."
+  },
+  {
+    "front": "How is an unused tax loss carryforward reported?",
+    "back": "As a DTA = loss carryforward x tax rate, if future use is expected (probable under IFRS, subject to valuation allowance under US GAAP)."
+  },
+  {
+    "front": "Define effective tax rate and cash tax rate.",
+    "back": "ETR = income tax expense / pretax income. Cash tax rate = cash taxes paid / pretax income. A cash rate below the ETR typically signals growing deferred tax liabilities."
+  },
+  {
+    "front": "Name three analyst treatments of a deferred tax liability.",
+    "back": "Treat as a liability (it will reverse and be paid), treat as equity (it will not reverse, for example continued capital spending), or exclude it from both liabilities and equity (highly uncertain)."
+  },
+  {
+    "front": "How are deferred taxes classified on the balance sheet?",
+    "back": "As noncurrent items under both IFRS and US GAAP; offsetting is allowed only for the same taxing authority with a legal right to offset."
+  },
+  {
+    "front": "How does uncertain tax position recognition differ between US GAAP and IFRS?",
+    "back": "US GAAP: recognize the benefit only if more likely than not to be sustained, at the largest amount above 50% likely. IFRS: reflect the uncertainty using the most likely amount or the expected value."
+  }
+]

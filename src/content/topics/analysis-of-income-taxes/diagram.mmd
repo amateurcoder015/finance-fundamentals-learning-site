@@ -1,0 +1,20 @@
+graph TD
+    A["Accounting profit<br/>(pretax income)"] --> D{"Differences vs<br/>tax rules"}
+    D --> T["Temporary differences<br/>(reverse over time)"]
+    D --> P["Permanent differences<br/>(never reverse)"]
+
+    P --> ETR["Effective tax rate differs<br/>from statutory rate<br/>No deferred tax"]
+
+    T --> CB["Carrying amount vs tax base"]
+    CB --> DTL["Deferred tax liability<br/>Asset carrying amount above tax base<br/>or liability below tax base"]
+    CB --> DTA["Deferred tax asset<br/>Asset carrying amount below tax base<br/>or liability above tax base"]
+
+    DTA --> VA["Valuation allowance (US GAAP)<br/>or probable test (IFRS)"]
+    DTA --> NOL["Tax loss carryforwards"]
+
+    A --> TI["Taxable income x tax rate<br/>= Income tax payable"]
+    TI --> EXP["Income tax expense =<br/>Payable + change in DTL - change in DTA"]
+    DTL --> EXP
+    DTA --> EXP
+    EXP --> REC["Effective tax rate reconciliation<br/>and cash tax rate"]
+    REC --> AN["Analyst: normalize ETR<br/>Treat DTL as liability, equity<br/>or exclude"]
