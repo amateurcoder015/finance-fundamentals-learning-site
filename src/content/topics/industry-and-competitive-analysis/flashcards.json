@@ -1,0 +1,46 @@
+[
+  {
+    "front": "On what basis do commercial classification systems (GICS, ICB, TRBC) assign companies?",
+    "back": "Principal business activity, usually the largest source of revenues (and earnings). GICS has four levels: sector, industry group, industry, sub-industry."
+  },
+  {
+    "front": "What makes a good peer group?",
+    "back": "Companies with similar business activities, demand drivers, cost structure and economic exposure, and whose returns are highly correlated. Start from a commercial classification and then check filings, competitors, size, geography and growth profile."
+  },
+  {
+    "front": "Cyclical vs defensive industries",
+    "back": "Cyclical: demand and earnings swing strongly with the business cycle (autos, airlines, capital goods, luxury). Defensive: stable demand and earnings through the cycle (food, utilities, healthcare, household staples)."
+  },
+  {
+    "front": "List the five stages of the industry life cycle",
+    "back": "Embryonic, growth, shakeout, mature, decline."
+  },
+  {
+    "front": "Characteristics of the shakeout stage",
+    "back": "Slowing growth, intense price competition, excess capacity, falling profits, weak firms fail or merge, cost cutting."
+  },
+  {
+    "front": "Porter's five forces",
+    "back": "1. Threat of new entrants\n2. Bargaining power of suppliers\n3. Bargaining power of buyers\n4. Threat of substitutes\n5. Intensity of rivalry among existing competitors\nStrong forces lower industry profitability."
+  },
+  {
+    "front": "Main barriers to entry",
+    "back": "Economies of scale, brand loyalty, capital requirements, access to distribution, patents and proprietary technology, government licences, switching costs and network effects."
+  },
+  {
+    "front": "Porter's generic competitive strategies",
+    "back": "Cost leadership (lowest-cost producer); differentiation (unique features for a price premium); focus (either of the two applied to a narrow niche). A firm that does neither is 'stuck in the middle'."
+  },
+  {
+    "front": "N-firm concentration ratio",
+    "back": "CR(N) = sum of the market shares of the N largest firms. Simple, but ignores the distribution of share among the top firms and the rest of the industry."
+  },
+  {
+    "front": "Herfindahl-Hirschman Index (HHI)",
+    "back": "HHI = sum of squared market shares (in percent) across all firms. Range near 0 to 10,000. Example: shares of 40, 30, 20, 10 give 1,600 + 900 + 400 + 100 = 3,000. A merger of firms with shares a and b raises HHI by 2ab."
+  },
+  {
+    "front": "What external factors (PESTLE) affect an industry?",
+    "back": "Macroeconomic, technological, demographic, governmental/legal, social and environmental factors. Analysts assess their direction, size and timing."
+  }
+]

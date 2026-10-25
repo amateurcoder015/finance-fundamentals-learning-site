@@ -1,0 +1,29 @@
+graph TD
+    CB["Central Bank<br/>(Price stability and growth)"] --> ROLES["Roles"]
+    CB --> TOOLS["Policy Tools"]
+    CB --> NEUT["Policy Stance"]
+    CB --> TRANS["Transmission Mechanism"]
+    CB --> LIM["Limitations"]
+
+    ROLES --> R1["Currency issuer<br/>and banker to banks"]
+    ROLES --> R2["Lender of last resort<br/>and supervisor"]
+
+    TOOLS --> T1["Policy rate"]
+    TOOLS --> T2["Reserve requirements"]
+    TOOLS --> T3["Open market operations"]
+    TOOLS --> T4["QE, forward guidance,<br/>negative rates"]
+
+    NEUT --> N1["Neutral rate =<br/>trend growth + inflation target"]
+    N1 --> N2["Policy rate above neutral:<br/>contractionary"]
+    N1 --> N3["Policy rate below neutral:<br/>expansionary"]
+
+    TRANS --> X1["Short-term market rates"]
+    X1 --> X2["Asset prices and expectations"]
+    X2 --> X3["Credit, consumption<br/>and investment"]
+    X1 --> X4["Exchange rate and net exports"]
+    X3 --> OUT["Aggregate demand,<br/>output and inflation"]
+    X4 --> OUT
+
+    LIM --> L1["Long and variable lags"]
+    LIM --> L2["Liquidity trap<br/>and zero lower bound"]
+    LIM --> L3["Unanchored expectations"]

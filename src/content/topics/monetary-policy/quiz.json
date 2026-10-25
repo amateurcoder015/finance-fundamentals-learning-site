@@ -1,0 +1,90 @@
+[
+  {
+    "question": "The reserve requirement is 8%. A new deposit of 400 is made in the banking system. Assuming no excess reserves and full redeposit of loans, the maximum total deposits supported by the initial 400 are closest to:",
+    "options": [
+      "3,200",
+      "5,000",
+      "4,600",
+      "32,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "Money multiplier = 1 / 0.08 = 12.5. Maximum deposits = 400 x 12.5 = 5,000. (Of this, 4,600 is new deposits created through lending; the other 400 is the original deposit.)"
+  },
+  {
+    "question": "Money supply grows 6% a year, velocity is rising by 1% and real output grows by 3%. According to the equation of exchange, inflation is closest to:",
+    "options": [
+      "2%",
+      "3%",
+      "10%",
+      "4%"
+    ],
+    "correctIndex": 3,
+    "explanation": "%ΔM + %ΔV = %ΔP + %ΔY, so %ΔP = 6 + 1 - 3 = 4%."
+  },
+  {
+    "question": "Which of the following is a central bank action that is expansionary?",
+    "options": [
+      "Buying government securities in the open market",
+      "Raising the reserve requirement",
+      "Selling securities to banks",
+      "Raising the rate on its lending facility"
+    ],
+    "correctIndex": 0,
+    "explanation": "Buying securities adds reserves to the banking system and pushes short-term rates down. Raising reserve requirements, selling securities and raising the lending rate all tighten policy."
+  },
+  {
+    "question": "Trend real growth is 2.5% and the central bank's inflation target is 2.0%. The policy rate is 3.5%. Policy is best described as:",
+    "options": [
+      "Contractionary, because the policy rate is above the inflation target",
+      "Neutral, because the policy rate is between growth and inflation",
+      "Expansionary, because the policy rate is below the 4.5% neutral rate",
+      "Contractionary, because the real policy rate is positive"
+    ],
+    "correctIndex": 2,
+    "explanation": "Neutral rate = trend growth + inflation target = 2.5% + 2.0% = 4.5%. A policy rate of 3.5% is below neutral, so policy is expansionary. Being above the inflation target alone does not make policy contractionary."
+  },
+  {
+    "question": "Under the Fisher effect, if the real interest rate is 1.5% and expected inflation rises from 2.0% to 3.0%, the approximate change in the nominal interest rate (real rate unchanged) is:",
+    "options": [
+      "A rise of 1.0 percentage point",
+      "A fall of 1.0 percentage point",
+      "A rise of 3.0 percentage points",
+      "No change"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nominal ≈ real + expected inflation. The nominal rate moves from about 3.5% to about 4.5%, a rise of 1.0 percentage point, one-for-one with expected inflation."
+  },
+  {
+    "question": "A central bank has operational independence but not target independence. This means that it:",
+    "options": [
+      "Sets its own inflation target and the tools to reach it",
+      "Is given the inflation target by the government but is free to choose how to reach it",
+      "Must obtain government approval for each change to the policy rate",
+      "Targets the exchange rate instead of inflation"
+    ],
+    "correctIndex": 1,
+    "explanation": "Operational independence is freedom to choose tools and settings. Target independence is the freedom to choose the target itself. A bank with only operational independence has its target set externally."
+  },
+  {
+    "question": "The policy rate is close to zero, the central bank has cut rates repeatedly, and banks hold large excess reserves while households and firms hoard cash and do not borrow. This situation is best described as:",
+    "options": [
+      "A liquidity trap, in which monetary policy loses effectiveness",
+      "The money multiplier effect",
+      "Ricardian equivalence",
+      "Crowding out"
+    ],
+    "correctIndex": 0,
+    "explanation": "In a liquidity trap, additional reserves and lower rates do not stimulate lending or spending because demand for money is very high and rates are at the zero lower bound. This is why central banks turn to QE, forward guidance and negative rates."
+  },
+  {
+    "question": "Using the Taylor rule i = r_n + π + 0.5(π - π*) + 0.5(output gap), with r_n = 2%, inflation 3%, target 2% and an output gap of -2%, the implied policy rate is:",
+    "options": [
+      "5.5%",
+      "4.5%",
+      "6.0%",
+      "4.0%"
+    ],
+    "correctIndex": 1,
+    "explanation": "i = 2 + 3 + 0.5(3 - 2) + 0.5(-2) = 2 + 3 + 0.5 - 1.0 = 4.5%."
+  }
+]

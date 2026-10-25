@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What are the three functions of money?",
+    "back": "1. Medium of exchange\n2. Unit of account\n3. Store of value"
+  },
+  {
+    "front": "Money multiplier formula",
+    "back": "Money multiplier = 1 / reserve requirement. Maximum deposits = new reserves x multiplier. With a 10% requirement the multiplier is 10, so 1,000 of new reserves supports up to 10,000 of deposits (9,000 of new lending). It is a ceiling: excess reserves and cash holdings reduce it."
+  },
+  {
+    "front": "Equation of exchange and quantity theory",
+    "back": "M x V = P x Y. In growth rates: %ΔM + %ΔV = %ΔP + %ΔY. If V and Y are stable in the long run, inflation ≈ money growth: inflation is a monetary phenomenon."
+  },
+  {
+    "front": "Fisher effect",
+    "back": "Nominal rate ≈ real rate + expected inflation. Exact: (1 + nominal) = (1 + real)(1 + expected inflation). Higher expected inflation raises nominal yields one-for-one."
+  },
+  {
+    "front": "Main roles of a central bank",
+    "back": "Sole issuer of currency; banker to government and banks; lender of last resort; regulator/supervisor of banks; holder of gold and FX reserves; conducts monetary policy."
+  },
+  {
+    "front": "Why do central banks target low positive inflation (about 2%) rather than zero?",
+    "back": "Measured inflation overstates true inflation; it guards against deflation (which raises real debt burdens and delays spending); and it leaves room to cut the real rate below zero when the nominal rate is near its floor."
+  },
+  {
+    "front": "Operational independence vs target independence",
+    "back": "Operational independence: the central bank chooses tools and settings to hit a target. Target independence: it also chooses the target itself. Many banks have only operational independence."
+  },
+  {
+    "front": "How do open market operations work?",
+    "back": "Buying securities adds bank reserves and lowers short-term rates (expansionary). Selling securities removes reserves and raises rates (contractionary)."
+  },
+  {
+    "front": "Neutral interest rate and stance",
+    "back": "Neutral rate = trend real growth + inflation target. Policy rate above neutral = contractionary; below neutral = expansionary. Example: 2.5% + 2.0% = 4.5%."
+  },
+  {
+    "front": "Quantitative easing, forward guidance and negative rates",
+    "back": "QE: large-scale asset purchases creating reserves and lowering long-term yields. Forward guidance: communicating the expected path of policy. Negative rates: policy rate set below zero to discourage hoarding reserves. Used when the policy rate is near the zero lower bound."
+  },
+  {
+    "front": "Channels of monetary transmission",
+    "back": "Short-term market rates; asset prices and wealth; expectations; credit, consumption and investment; and the exchange rate (lower rates tend to depreciate the currency and boost net exports)."
+  },
+  {
+    "front": "Main limitations of monetary policy",
+    "back": "Long and variable lags; liquidity trap and zero lower bound; weak credit demand or supply; unanchored inflation expectations (bond vigilantes); unobservable neutral rate and output gap; asset-price and risk-taking side effects."
+  }
+]

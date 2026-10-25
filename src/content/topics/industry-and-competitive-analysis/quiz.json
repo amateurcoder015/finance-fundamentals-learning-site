@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Commercial industry classification systems such as GICS typically assign a company to a sub-industry based on its:",
+    "options": [
+      "Country of incorporation and stock exchange listing",
+      "Market capitalisation and share price volatility",
+      "Principal business activity, usually its largest source of revenue and earnings",
+      "Number of employees and legal form"
+    ],
+    "correctIndex": 2,
+    "explanation": "Commercial systems (GICS, ICB, TRBC) classify companies by principal business activity, typically the largest source of revenues and earnings. Size, listing venue and legal form are not the basis."
+  },
+  {
+    "question": "A firm's industry has seen slowing growth, intense price competition, excess capacity and a number of weaker competitors failing or merging. The industry is most likely in the:",
+    "options": [
+      "Embryonic stage",
+      "Growth stage",
+      "Mature stage",
+      "Shakeout stage"
+    ],
+    "correctIndex": 3,
+    "explanation": "Slowing growth, intense competition, falling profits and consolidation of weak firms describe shakeout. The growth stage has rapid expansion with limited price competition, and mature industries have few stable survivors and less price competition."
+  },
+  {
+    "question": "Which of the following would most likely increase the threat of new entrants in an industry?",
+    "options": [
+      "Large economies of scale",
+      "Strong brand loyalty among customers",
+      "High capital requirements",
+      "Low switching costs and easy access to distribution channels"
+    ],
+    "correctIndex": 3,
+    "explanation": "Low switching costs and open distribution lower barriers to entry, so entry is easier. Scale economies, brand loyalty and capital requirements are barriers that reduce the threat."
+  },
+  {
+    "question": "An industry has four firms with market shares of 40%, 30%, 20% and 10%. The Herfindahl-Hirschman Index is closest to:",
+    "options": [
+      "3,000",
+      "100",
+      "1,000",
+      "10,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "HHI = 40^2 + 30^2 + 20^2 + 10^2 = 1,600 + 900 + 400 + 100 = 3,000. (The four-firm concentration ratio is 100%.)"
+  },
+  {
+    "question": "Two firms with market shares of 15% and 10% in an industry merge. The HHI increases by:",
+    "options": [
+      "150",
+      "250",
+      "300",
+      "325"
+    ],
+    "correctIndex": 2,
+    "explanation": "Before: 15^2 + 10^2 = 225 + 100 = 325. After: 25^2 = 625. Increase = 625 - 325 = 300, which equals 2 x 15 x 10."
+  },
+  {
+    "question": "Which statement about cyclical and defensive industries is most accurate?",
+    "options": [
+      "Defensive industries have highly volatile earnings because demand is discretionary",
+      "Cyclical industries' earnings are highly sensitive to the business cycle, as for autos and airlines",
+      "Cyclical industries are those that grow faster than the economy",
+      "Utilities and food retailers are typical cyclical industries"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cyclical industries (autos, airlines, capital goods) have demand and earnings that swing with the economy. Defensive industries (utilities, staples, healthcare) have stable demand. Cyclicality concerns sensitivity to the cycle, not growth rate."
+  },
+  {
+    "question": "A company sells a standard product, has no cost advantage, offers no features that distinguish it from competitors and serves the whole market. According to Porter's generic strategies, this company is best described as:",
+    "options": [
+      "A differentiator",
+      "A focus player",
+      "A cost leader",
+      "Stuck in the middle"
+    ],
+    "correctIndex": 3,
+    "explanation": "A firm that is neither the lowest-cost producer nor clearly differentiated, and does not focus on a niche, is 'stuck in the middle' and usually earns below-average returns."
+  },
+  {
+    "question": "An industry sells undifferentiated products to a few large customers who can easily switch suppliers. In Porter's framework, the force most clearly working against industry profitability is:",
+    "options": [
+      "Strong bargaining power of buyers",
+      "Weak threat of substitutes",
+      "High barriers to entry",
+      "Low rivalry"
+    ],
+    "correctIndex": 0,
+    "explanation": "Few large buyers, undifferentiated products and low switching costs give buyers strong bargaining power, forcing prices down and cutting margins. The other options are favourable to profitability."
+  }
+]

@@ -1,0 +1,44 @@
+graph TD
+    IA["Industry and Competitive Analysis"] --> CLS["Classification<br/>and Peer Groups"]
+    IA --> CYC["Business-Cycle Sensitivity"]
+    IA --> LC["Industry Life Cycle"]
+    IA --> PORT["Porter's Five Forces"]
+    IA --> EXT["External Factors<br/>(PESTLE)"]
+    IA --> STRAT["Competitive Strategy"]
+    IA --> CONC["Industry Concentration"]
+
+    CLS --> C1["GICS / ICB / TRBC<br/>(principal business activity)"]
+    CLS --> C2["Peer group:<br/>similar drivers and correlated returns"]
+
+    CYC --> CY1["Cyclical<br/>(volatile earnings)"]
+    CYC --> CY2["Defensive<br/>(stable demand)"]
+
+    LC --> L1["Embryonic"]
+    L1 --> L2["Growth"]
+    L2 --> L3["Shakeout"]
+    L3 --> L4["Mature"]
+    L4 --> L5["Decline"]
+
+    PORT --> P1["New entrants<br/>(barriers to entry)"]
+    PORT --> P2["Supplier power"]
+    PORT --> P3["Buyer power"]
+    PORT --> P4["Substitutes"]
+    PORT --> P5["Rivalry"]
+
+    EXT --> E1["Macro, technology,<br/>demographics"]
+    EXT --> E2["Government, social,<br/>environmental"]
+
+    STRAT --> S1["Cost leadership"]
+    STRAT --> S2["Differentiation"]
+    STRAT --> S3["Focus (niche)"]
+
+    CONC --> K1["CR(N) = sum of top N shares"]
+    CONC --> K2["HHI = sum of squared shares"]
+
+    P1 --> OUT["Industry profitability<br/>and pricing power"]
+    P2 --> OUT
+    P3 --> OUT
+    P4 --> OUT
+    P5 --> OUT
+    K2 --> OUT
+    OUT --> FC["Forecasts of growth,<br/>margins and returns"]
