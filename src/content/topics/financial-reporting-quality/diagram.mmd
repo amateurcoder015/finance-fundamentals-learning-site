@@ -1,0 +1,34 @@
+graph TD
+    FRQ["Financial Reporting Quality"] --> RQ["Reporting quality<br/>GAAP-compliant and decision-useful"]
+    FRQ --> EQ["Earnings quality<br/>Sustainable and adequate return"]
+    RQ -->|"Prerequisite for"| EQ
+
+    FRQ --> SP["Spectrum of quality"]
+    SP --> S1["Best: compliant, sustainable earnings"]
+    SP --> S2["Compliant, low-quality earnings"]
+    SP --> S3["Compliant but biased choices"]
+    SP --> S4["Earnings management<br/>(smoothing, cookie jar)"]
+    SP --> S5["Non-compliant"]
+    SP --> S6["Fictitious (fraud)"]
+
+    FRQ --> FT["Fraud triangle"]
+    FT --> M["Motivation"]
+    FT --> O["Opportunity"]
+    FT --> R["Rationalization"]
+
+    FRQ --> MECH["Constraints"]
+    MECH --> AUD["Auditors"]
+    MECH --> GOV["Audit committee<br/>and internal controls"]
+    MECH --> REG["Regulators and<br/>management certification"]
+
+    FRQ --> RF["Red flags"]
+    RF --> REV["Revenue: rising DSO,<br/>channel stuffing"]
+    RF --> EXP["Expenses: capitalizing,<br/>long useful lives, reserves"]
+    RF --> CF["Cash flow: NI above CFO"]
+    RF --> GV["Governance: restatements,<br/>auditor changes"]
+
+    REV --> QI["Quantitative indicators"]
+    CF --> QI
+    QI --> DSO["Days sales outstanding"]
+    QI --> ACC["Accrual ratios<br/>(balance sheet and cash flow)"]
+    QI --> CN["CFO / net income"]

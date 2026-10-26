@@ -1,0 +1,29 @@
+graph TD
+    IR["Interest Rate Risk and Return"] --> SRC["Sources of return"]
+    SRC --> CP["Coupon and principal"]
+    SRC --> RI["Reinvestment income"]
+    SRC --> CG["Capital gain or loss"]
+
+    IR --> CH["Yields change after purchase"]
+    CH --> PE["Price effect<br/>Yield up = price down"]
+    CH --> RE["Reinvestment effect<br/>Yield up = coupons earn more"]
+
+    PE --> HZ{"Investment horizon<br/>vs Macaulay duration"}
+    RE --> HZ
+    HZ -->|"Horizon shorter"| PD["Price risk dominates<br/>Rate rise lowers return"]
+    HZ -->|"Horizon equal"| OF["Effects offset<br/>Return near YTM"]
+    HZ -->|"Horizon longer"| RD["Reinvestment risk dominates<br/>Rate rise raises return"]
+
+    IR --> HY["Horizon yield<br/>(Terminal value / Price)^(1/H) - 1"]
+    HY --> TV["Terminal value =<br/>FV of coupons + sale price"]
+
+    IR --> DUR["Duration"]
+    DUR --> MAC["Macaulay duration<br/>Weighted average time to cash flows"]
+    MAC --> MOD["Modified duration<br/>MacDur / (1 + y/m)"]
+    MOD --> AP["Price change<br/>approx -ModDur x change in yield"]
+    AP --> CX["Convexity<br/>Duration overstates falls,<br/>understates gains"]
+
+    IR --> SENS["Sensitivity increases with"]
+    SENS --> L1["Longer maturity"]
+    SENS --> L2["Lower coupon"]
+    SENS --> L3["Lower yield level"]

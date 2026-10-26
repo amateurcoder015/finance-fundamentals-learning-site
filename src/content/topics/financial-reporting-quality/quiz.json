@@ -1,0 +1,79 @@
+[
+  {
+    "question": "Which statement best distinguishes financial reporting quality from earnings quality?",
+    "options": [
+      "Reporting quality is about whether results are sustainable; earnings quality is about GAAP compliance",
+      "Reporting quality is about whether reports are compliant and decision-useful; earnings quality is about whether results are sustainable and earn an adequate return",
+      "They are the same concept measured with different ratios",
+      "Earnings quality is a prerequisite for assessing reporting quality"
+    ],
+    "correctIndex": 1,
+    "explanation": "Reporting quality concerns the faithfulness, completeness and compliance of the reports. Earnings quality concerns whether the results are sustainable and provide an adequate return. Reporting quality is the prerequisite for judging earnings quality, not the reverse."
+  },
+  {
+    "question": "A company's financial statements comply fully with the applicable standards, but a third of this year's net income comes from the one-time sale of a division. The statements are best described as:",
+    "options": [
+      "Fraudulent, because the gain is not recurring",
+      "Non-compliant but reflecting real economic activity",
+      "High reporting quality but low earnings quality",
+      "Low reporting quality but high earnings quality"
+    ],
+    "correctIndex": 2,
+    "explanation": "The reports are compliant and faithful, so reporting quality is high. A one-time gain is not sustainable, so earnings quality is low. Compliance does not guarantee sustainable earnings."
+  },
+  {
+    "question": "A company's net operating assets (NOA) were 800 at the start of the year and 1,000 at the end. The balance sheet accrual ratio is closest to:",
+    "options": [
+      "20.0%",
+      "25.0%",
+      "18.0%",
+      "22.2%"
+    ],
+    "correctIndex": 3,
+    "explanation": "Balance sheet accrual ratio = change in NOA / average NOA = (1,000 - 800) / ((800 + 1,000)/2) = 200/900 = 22.2%. Using beginning NOA gives 25.0% and using ending NOA gives 20.0%; the ratio uses the average."
+  },
+  {
+    "question": "A company has net income of 150, cash flow from operations of 90, cash flow from investing of -60, and average NOA of 800. The cash flow accrual ratio is closest to:",
+    "options": [
+      "15.0%",
+      "3.8%",
+      "7.5%",
+      "11.3%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cash flow accrual ratio = (NI - CFO - CFI) / average NOA = (150 - 90 - (-60)) / 800 = 120/800 = 15.0%. Forgetting the negative sign on CFI gives (150 - 90 - 60)/800 = 0%."
+  },
+  {
+    "question": "A company capitalizes a 200 cost with a 4-year useful life instead of expensing it immediately. Compared with expensing it, in Year 1 the company reports:",
+    "options": [
+      "Pretax earnings 150 higher and operating cash flow 200 higher",
+      "Pretax earnings 150 higher and operating cash flow unchanged",
+      "Pretax earnings 200 higher and operating cash flow 200 higher",
+      "Pretax earnings 50 higher and operating cash flow 200 higher"
+    ],
+    "correctIndex": 0,
+    "explanation": "Expensing reduces Year 1 pretax earnings by 200; capitalizing reduces it by only 200/4 = 50 of depreciation, so earnings are 150 higher. The cash spent is classified as investing rather than operating, so CFO is 200 higher. Total cash is the same; only the classification and earnings timing change."
+  },
+  {
+    "question": "Revenue grew from 1,000 to 1,200 while accounts receivable grew from 150 to 270. Using ending receivables and 365 days, days sales outstanding changed from 54.75 days to approximately:",
+    "options": [
+      "54.75 days",
+      "68.4 days",
+      "82.1 days",
+      "90.0 days"
+    ],
+    "correctIndex": 2,
+    "explanation": "DSO = 270/1,200 x 365 = 82.1 days. Receivables rose 80% against revenue growth of 20%, so DSO lengthened by about 27 days. This is a red flag for early revenue recognition or weak collectability."
+  },
+  {
+    "question": "Which of the following is a component of the fraud triangle?",
+    "options": [
+      "Materiality",
+      "Verification",
+      "Rationalization",
+      "Comparability"
+    ],
+    "correctIndex": 2,
+    "explanation": "The fraud triangle has three elements: motivation (pressure or incentive), opportunity and rationalization. Materiality, verifiability and comparability are concepts from financial reporting standards, not parts of the fraud triangle."
+  }
+]

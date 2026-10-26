@@ -1,0 +1,50 @@
+[
+  {
+    "front": "Financial reporting quality: definition",
+    "back": "The extent to which reports are compliant with standards, decision-useful (relevant and faithfully represented), complete, neutral and free from error."
+  },
+  {
+    "front": "Quality of earnings: two criteria",
+    "back": "Earnings are sustainable (will recur) and provide an adequate return, at least equal to the company's cost of capital."
+  },
+  {
+    "front": "Can a company have high reporting quality and low earnings quality?",
+    "back": "Yes. For example, fully compliant statements that include a large one-time gain: the reporting is high quality, the earnings are not sustainable."
+  },
+  {
+    "front": "Aggressive versus conservative accounting",
+    "back": "Aggressive: raises current earnings and assets, lowers future earnings. Conservative: lowers current earnings and assets, raises future earnings. Both are biases."
+  },
+  {
+    "front": "Fraud triangle",
+    "back": "Motivation (pressure or incentive), opportunity (weak controls or oversight), rationalization (justifying the act)."
+  },
+  {
+    "front": "What is a cookie jar reserve?",
+    "back": "Over-accruing expenses or reserves in a strong year so they can be released in a weak year to smooth reported earnings."
+  },
+  {
+    "front": "Effect of capitalizing a cost instead of expensing it",
+    "back": "Raises current pretax earnings and CFO (the outflow moves to investing), lowers earnings in later years through depreciation. Total cash is unchanged."
+  },
+  {
+    "front": "Days sales outstanding formula and warning sign",
+    "back": "DSO = receivables / revenue x 365. A sharp rise while revenue grows suggests early recognition, loose credit or collectability problems."
+  },
+  {
+    "front": "Net operating assets (NOA)",
+    "back": "(Total assets - cash and marketable securities) - (total liabilities - total debt)."
+  },
+  {
+    "front": "Balance sheet accrual ratio",
+    "back": "(NOA end - NOA begin) / average NOA. Higher ratios suggest lower earnings quality."
+  },
+  {
+    "front": "Cash flow accrual ratio",
+    "back": "(Net income - CFO - CFI) / average NOA, with CFI carried with its usual sign (negative when cash is spent). Higher ratios suggest lower earnings quality."
+  },
+  {
+    "front": "Common revenue red flags",
+    "back": "Receivables growing faster than revenue, a surge in last-quarter sales (channel stuffing), bill-and-hold sales, round-trip transactions and changes in recognition policy."
+  }
+]

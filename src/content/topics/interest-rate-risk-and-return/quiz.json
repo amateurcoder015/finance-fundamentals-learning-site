@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which of the following is NOT one of the three sources of return on a fixed-rate bond held over an investment horizon?",
+    "options": [
+      "Reinvestment of coupon payments",
+      "Capital gain or loss on sale",
+      "Accrued credit spread widening",
+      "Coupon and principal payments"
+    ],
+    "correctIndex": 2,
+    "explanation": "The three sources are (1) coupon and principal payments, (2) reinvestment income on the coupons, and (3) capital gain or loss when the bond is sold. Spread widening affects the price, and so shows up inside the capital gain or loss; it is not a separate source of return."
+  },
+  {
+    "question": "An investor buys a 3-year, 6% annual-coupon bond (par 1,000) at par. Immediately after purchase, yields rise to 7% and stay there. The investor sells after 2 years. The annualized horizon yield is closest to:",
+    "options": [
+      "5.59%",
+      "6.00%",
+      "6.48%",
+      "7.00%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Future value of coupons at 7% = 60 x 1.07 + 60 = 124.20. Sale price of a 1-year bond at 7% = 1,060/1.07 = 990.65. Terminal value = 1,114.85. Horizon yield = (1,114.85/1,000)^(1/2) - 1 = 5.59%. The horizon is shorter than the Macaulay duration (about 2.83 years), so price risk dominates and the return is below the 6% YTM."
+  },
+  {
+    "question": "A bond has a Macaulay duration of 7 years. An investor with a 4-year horizon buys it and yields rise immediately and stay higher. Compared with the original yield to maturity, the investor's realized return is most likely:",
+    "options": [
+      "Higher, because reinvestment income dominates",
+      "Equal, because yields were reinvested",
+      "Unaffected, because the bond is held to its horizon",
+      "Lower, because price risk dominates"
+    ],
+    "correctIndex": 3,
+    "explanation": "The horizon (4 years) is shorter than the Macaulay duration (7 years), so the price effect outweighs the reinvestment effect. The bond is sold at a lower price than if yields had not risen, and the extra reinvestment income does not make up for it."
+  },
+  {
+    "question": "A bond has a Macaulay duration of 7.25 years and a yield to maturity of 8.00% with annual compounding. Its modified duration is closest to:",
+    "options": [
+      "7.25",
+      "6.71",
+      "7.83",
+      "6.96"
+    ],
+    "correctIndex": 1,
+    "explanation": "Modified duration = MacDur / (1 + y/m) = 7.25 / 1.08 = 6.71. The Macaulay duration is divided by one plus the yield per period; multiplying (7.83) is a common error."
+  },
+  {
+    "question": "A bond has a modified duration of 6.0. If its yield rises by 50 basis points, the approximate percentage price change is closest to:",
+    "options": [
+      "-0.30%",
+      "+3.00%",
+      "-6.50%",
+      "-3.00%"
+    ],
+    "correctIndex": 3,
+    "explanation": "%change in price is approximately -ModDur x change in yield = -6.0 x 0.005 = -3.00%. The sign is negative because price and yield move in opposite directions. Convexity is ignored in this approximation."
+  },
+  {
+    "question": "Holding yield to maturity constant, which bond has the greatest price sensitivity to a change in yield?",
+    "options": [
+      "A 10-year, 3% coupon bond",
+      "A 5-year, 8% coupon bond",
+      "A 10-year, 8% coupon bond",
+      "A 5-year, 3% coupon bond"
+    ],
+    "correctIndex": 0,
+    "explanation": "Duration rises with longer maturity and falls with higher coupon. The 10-year, 3% coupon bond has both the longer maturity and the lower coupon, so it has the highest duration and the largest percentage price change."
+  },
+  {
+    "question": "An investor holds a 5-year zero-coupon bond to maturity. Compared with an otherwise similar 5-year coupon bond, the zero-coupon bond has:",
+    "options": [
+      "Higher reinvestment risk, because all of the return comes at maturity",
+      "No reinvestment risk, so its realized return equals the YTM at purchase",
+      "Lower price risk, because its duration is below its maturity",
+      "Equal duration, because both mature in 5 years"
+    ],
+    "correctIndex": 1,
+    "explanation": "A zero-coupon bond pays no coupons, so there is nothing to reinvest. Held to maturity, the realized return equals the purchase YTM. Its Macaulay duration equals its maturity (5 years), which is higher than that of a coupon bond with the same maturity."
+  },
+  {
+    "question": "A bond's price rises by 7.02% when its yield falls by 100 bp, and falls by 6.42% when its yield rises by 100 bp. This asymmetry is best explained by the bond's:",
+    "options": [
+      "Convexity",
+      "Reinvestment risk",
+      "Credit spread",
+      "Macaulay duration"
+    ],
+    "correctIndex": 0,
+    "explanation": "The price-yield relationship is convex (curved), so for equal yield changes the price gain from a fall exceeds the price loss from a rise. Duration is a linear estimate and cannot capture this difference; convexity does."
+  }
+]

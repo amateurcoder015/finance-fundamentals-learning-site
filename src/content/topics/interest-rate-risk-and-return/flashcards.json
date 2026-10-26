@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What are the three sources of return on a bond over a holding period?",
+    "back": "Coupon and principal payments, reinvestment income on the coupons, and capital gain or loss on the sale (or at maturity)."
+  },
+  {
+    "front": "When does the YTM equal the realized return?",
+    "back": "Only if the bond is held to maturity, all payments are made in full and on time, and all coupons are reinvested at the YTM at purchase."
+  },
+  {
+    "front": "Which two effects does a yield change have on a bond investment?",
+    "back": "A price effect (yield up, price down) and an opposing reinvestment effect (yield up, coupons reinvested at higher rates). Net effect depends on the horizon."
+  },
+  {
+    "front": "Horizon yield formula",
+    "back": "(Terminal value / Purchase price)^(1/H) - 1, where terminal value = future value of reinvested coupons + sale price at the horizon."
+  },
+  {
+    "front": "Macaulay duration: definition",
+    "back": "The weighted-average time to receipt of a bond's cash flows, weighted by the present value of each cash flow as a share of the bond's price. Measured in years."
+  },
+  {
+    "front": "Macaulay duration of a zero-coupon bond versus a coupon bond",
+    "back": "A zero-coupon bond's Macaulay duration equals its maturity. A coupon bond's Macaulay duration is shorter than its maturity."
+  },
+  {
+    "front": "Horizon versus Macaulay duration",
+    "back": "Horizon shorter than MacDur: price risk dominates. Horizon equal to MacDur: effects offset, return near YTM. Horizon longer than MacDur: reinvestment risk dominates."
+  },
+  {
+    "front": "Modified duration and price change approximation",
+    "back": "ModDur = MacDur / (1 + y/m). %change in price is approximately -ModDur x change in yield."
+  },
+  {
+    "front": "What does convexity do to the duration estimate?",
+    "back": "Because the price-yield curve is convex, duration overstates the price fall for a yield rise and understates the price gain for a yield fall."
+  },
+  {
+    "front": "What increases a bond's interest rate (price) sensitivity?",
+    "back": "Longer maturity, lower coupon rate and lower yield level. The opposites reduce sensitivity."
+  },
+  {
+    "front": "Which bond has no reinvestment risk if held to maturity?",
+    "back": "A zero-coupon bond: there are no coupons to reinvest, so the realized return equals the purchase YTM."
+  }
+]

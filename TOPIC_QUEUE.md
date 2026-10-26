@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Interest Rate Risk and Return | Fixed Income | intermediate
-- [ ] Financial Reporting Quality | Financial Statements | advanced
 - [ ] The Behavioral Biases of Individuals | Portfolio Management | intermediate
 - [ ] Capital Investments and Capital Allocation | Corporate Finance | intermediate
 - [ ] Yield-Based Bond Duration Measures and Properties | Fixed Income | advanced
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Analysis of Income Taxes | Financial Statements | advanced | 2026-10-24
 - [x] Monetary Policy | Economics | intermediate | 2026-10-25
 - [x] Industry and Competitive Analysis | Equities | intermediate | 2026-10-25
+- [x] Interest Rate Risk and Return | Fixed Income | intermediate | 2026-10-26
+- [x] Financial Reporting Quality | Financial Statements | advanced | 2026-10-26

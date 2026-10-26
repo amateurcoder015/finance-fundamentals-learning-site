@@ -1,0 +1,224 @@
+---
+title: "Interest Rate Risk and Return"
+description: "How a bond's return over an investment horizon splits into coupon income, reinvestment income and capital gain or loss, why Macaulay duration marks the horizon at which price risk and reinvestment risk offset, and how coupon, maturity and yield level drive price sensitivity."
+category: "Fixed Income"
+difficulty: "intermediate"
+dateAdded: "2026-10-26"
+tags: ["interest-rate-risk", "horizon-yield", "reinvestment-risk", "macaulay-duration", "price-risk", "bond-return"]
+---
+
+# Interest Rate Risk and Return
+
+A bond's yield to maturity is a promise only under strict conditions. An investor who buys a bond and holds it to maturity earns the yield to maturity only if every coupon is paid in full and every coupon is reinvested at that same yield. In practice interest rates move after purchase, and an investor who sells before maturity earns something quite different. **Interest rate risk** is the risk that a change in market rates changes the investor's realized return, and it has two opposing parts: a **price effect** and a **reinvestment effect**. This chapter breaks a bond's return into its sources, shows how to compute the realized return over a holding period, and uses **Macaulay duration** to decide which of the two effects dominates.
+
+---
+
+## 1. Sources of Return on a Fixed-Rate Bond
+
+An investor who buys a fixed-rate bond and holds it for a period receives return from three sources:
+
+| Source | What it is |
+| --- | --- |
+| **Coupon and principal payments** | The scheduled cash flows: coupons while the bond is held, and principal if the bond is held to maturity |
+| **Reinvestment income** | Interest earned by investing each coupon received until the end of the horizon ("interest on interest") |
+| **Capital gain or loss** | The difference between the sale price at the end of the horizon and the purchase price (or par, if held to maturity) |
+
+The **yield to maturity** (YTM) is the single discount rate that equates the bond's price to the present value of all promised cash flows. It is an accurate measure of the return actually earned only if three conditions hold:
+
+1. The investor **holds the bond to maturity**.
+2. The issuer makes **all payments on time and in full** (no default).
+3. All coupons are **reinvested at the YTM** that prevailed at purchase.
+
+Any departure from these conditions makes the realized return differ from the YTM. Default is credit risk. The other two departures, selling early and reinvesting at a different rate, are interest rate risk.
+
+<Note>
+The longer the bond and the higher the coupon, the larger the share of total return that comes from reinvesting coupons. For a long-maturity bond with a high coupon, reinvestment income can be a large part of the yield to maturity, which makes the YTM a fragile forecast.
+</Note>
+
+---
+
+## 2. Two Opposing Effects of a Rate Change
+
+Suppose market yields change immediately after the bond is bought and then stay at the new level.
+
+| If yields **rise** | If yields **fall** |
+| --- | --- |
+| Bond price **falls** (price risk) | Bond price **rises** |
+| Coupons are reinvested at **higher** rates (reinvestment gain) | Coupons are reinvested at **lower** rates (reinvestment risk) |
+
+The price effect and the reinvestment effect always pull in opposite directions. Which one wins depends on the **length of the investment horizon**:
+
+- **Short horizon:** the bond is sold soon, so there is little time for reinvestment to matter. The price effect dominates. A rate rise lowers the realized return.
+- **Long horizon:** there is a lot of time to reinvest coupons, and the bond has little time left to run at the sale date, so its price is close to par. The reinvestment effect dominates. A rate rise raises the realized return.
+
+A **zero-coupon bond** held to maturity has no reinvestment risk at all, because there are no coupons to reinvest. Its realized return over a horizon equal to its maturity is exactly the YTM at purchase, whatever happens to rates.
+
+---
+
+## 3. Computing the Horizon Return
+
+The **horizon yield** (also called the realized return or holding-period yield) over $H$ years is the annualized rate that links the purchase price to the **terminal value** at the end of the horizon:
+
+$$\text{Horizon yield} = \left(\frac{\text{Terminal value}}{\text{Purchase price}}\right)^{1/H} - 1$$
+
+where the terminal value is the sum of:
+
+$$\text{Terminal value} = \underbrace{\text{coupons} + \text{reinvestment income}}_{\text{future value of coupons}} + \underbrace{\text{sale price at horizon}}_{\text{remaining cash flows at the new yield}}$$
+
+For an annual-pay bond with coupon $C$, horizon $H$, and a new yield $y_1$ that applies from the start:
+
+$$FV_{\text{coupons}} = C\,\frac{(1+y_1)^H - 1}{y_1}, \qquad P_H = \sum_{t=1}^{N-H}\frac{C}{(1+y_1)^t} + \frac{\text{Par}}{(1+y_1)^{N-H}}$$
+
+### Worked example: a 10-year bond held for 5 years
+
+An investor buys a 10-year, 8% annual-coupon bond with par 1,000 at par (YTM 8%, price 1,000). Yields change **immediately** to 9% and stay there. The investor sells after 5 years.
+
+**Rates rise to 9%:**
+
+1. Coupons received: $5 \times 80 = 400$.
+2. Future value of coupons reinvested at 9%: $80 \times \dfrac{1.09^5 - 1}{0.09} = 80 \times 5.98471 = 478.78$. Reinvestment income is $478.78 - 400 = 78.78$.
+3. Sale price at year 5 (a 5-year, 8% bond at 9%): $\dfrac{80}{1.09}+\dfrac{80}{1.09^2}+\dfrac{80}{1.09^3}+\dfrac{80}{1.09^4}+\dfrac{1{,}080}{1.09^5} = 961.10$. Capital loss is $961.10 - 1{,}000 = -38.90$.
+4. Terminal value: $478.78 + 961.10 = 1{,}439.88$.
+5. Horizon yield: $(1{,}439.88 / 1{,}000)^{1/5} - 1 = \mathbf{7.56\%}$.
+
+**Rates fall to 7%:**
+
+1. Future value of coupons: $80 \times \dfrac{1.07^5 - 1}{0.07} = 80 \times 5.75074 = 460.06$ (reinvestment income $60.06$).
+2. Sale price at year 5 (5-year, 8% bond at 7%): $1{,}041.00$ (capital gain $41.00$).
+3. Terminal value: $460.06 + 1{,}041.00 = 1{,}501.06$.
+4. Horizon yield: $(1{,}501.06 / 1{,}000)^{1/5} - 1 = \mathbf{8.46\%}$.
+
+| Yield after purchase | Reinvestment income | Capital gain / loss | Terminal value | Horizon yield |
+| --- | --- | --- | --- | --- |
+| 9% (rise) | 78.78 | -38.90 | 1,439.88 | 7.56% |
+| 8% (unchanged) | 69.33 | 0.00 | 1,469.33 | 8.00% |
+| 7% (fall) | 60.06 | +41.00 | 1,501.06 | 8.46% |
+
+With a 5-year horizon on a 10-year bond, the capital loss from the rate rise (38.90) outweighs the extra reinvestment income (78.78 against 69.33, an extra 9.45). The investor earns less than the 8% YTM when rates rise, and more when they fall. **The price effect dominates.**
+
+---
+
+## 4. Macaulay Duration and the Investment Horizon
+
+**Macaulay duration** is the weighted average time to receipt of a bond's cash flows, where the weights are the present values of the cash flows as a share of the bond's price:
+
+$$\text{MacDur} = \sum_{t=1}^{N} t \times \frac{PV(CF_t)}{\text{Price}}$$
+
+It is measured in years. Two properties matter here:
+
+- A zero-coupon bond's Macaulay duration equals its maturity.
+- A coupon bond's Macaulay duration is **shorter than its maturity**, because coupons arrive before maturity.
+
+### Worked example: Macaulay duration of a 3-year bond
+
+A 3-year, 6% annual-coupon bond with par 1,000 trades at par (YTM 6%).
+
+| Year $t$ | Cash flow | PV at 6% | Weight (PV/1,000) | $t \times$ weight |
+| --- | --- | --- | --- | --- |
+| 1 | 60 | 56.60 | 0.05660 | 0.05660 |
+| 2 | 60 | 53.40 | 0.05340 | 0.10680 |
+| 3 | 1,060 | 890.00 | 0.89000 | 2.67000 |
+| **Total** | | **1,000.00** | **1.00000** | **2.8334** |
+
+MacDur $= \mathbf{2.83}$ years, less than the 3-year maturity.
+
+### The duration-matching result
+
+When the investment horizon **equals the bond's Macaulay duration**, the price effect and the reinvestment effect approximately offset, and the horizon yield is close to the original YTM no matter which way yields move (for a small, one-time, parallel shift).
+
+| Horizon compared with MacDur | Dominant effect | Rates rise | Rates fall |
+| --- | --- | --- | --- |
+| Horizon **shorter** than MacDur | Price risk | Realized return **below** YTM | Realized return **above** YTM |
+| Horizon **equal** to MacDur | Offsetting | Return about equal to YTM | Return about equal to YTM |
+| Horizon **longer** than MacDur | Reinvestment risk | Realized return **above** YTM | Realized return **below** YTM |
+
+### Worked example: matching the horizon to duration
+
+The 10-year, 8% annual bond at 8% has a Macaulay duration of 7.25 years. Now hold it for **7 years** (close to its duration) and repeat the exercise with a one-time yield change.
+
+| Yield after purchase | FV of coupons | Sale price (3-year bond) | Terminal value | Horizon yield |
+| --- | --- | --- | --- | --- |
+| 9% | 736.03 | 974.69 | 1,710.72 | 7.97% |
+| 8% | 713.82 | 1,000.00 | 1,713.82 | 8.00% |
+| 7% | 692.32 | 1,026.24 | 1,718.56 | 8.04% |
+
+Check the 9% row: coupons $80 \times (1.09^7 - 1)/0.09 = 80 \times 9.20043 = 736.03$; sale price of a 3-year, 8% bond at 9% is $974.69$; the sum is $1{,}710.72$ and $(1{,}710.72/1{,}000)^{1/7} - 1 = 7.97\%$.
+
+All three horizon yields lie within 4 basis points of the 8% YTM, compared with a spread of about 90 basis points in the 5-year case. This is the idea behind **immunization**: choose a bond whose Macaulay duration matches the liability date and the bond's return is nearly protected from a parallel rate shift.
+
+<Note>
+The match is approximate. It holds for a single, immediate, parallel change in yields. Over time the bond's duration drifts, and non-parallel changes in the yield curve leave some residual risk.
+</Note>
+
+---
+
+## 5. Modified Duration and Price Sensitivity
+
+For measuring the **price effect** alone, convert Macaulay duration into **modified duration**:
+
+$$\text{ModDur} = \frac{\text{MacDur}}{1 + y/m}$$
+
+where $y$ is the annual yield and $m$ is the number of periods per year (periodicity). For the 10-year, 8% annual bond: $7.2469/1.08 = 6.71$.
+
+The approximate percentage price change for a small yield change $\Delta y$ is:
+
+$$\%\Delta P \approx -\text{ModDur} \times \Delta y$$
+
+A 1 percentage point rise in yield on that bond gives $-6.71 \times 0.01 = -6.71\%$. The exact repricing gives:
+
+| Yield change | Duration estimate | Exact change |
+| --- | --- | --- |
+| +100 bp (8% to 9%) | -6.71% | -6.42% (price 935.82) |
+| -100 bp (8% to 7%) | +6.71% | +7.02% (price 1,070.24) |
+
+Duration overestimates the price fall and underestimates the price gain. The gap is the effect of **convexity**: the price-yield curve bends, so a yield fall raises price by more than an equal yield rise lowers it. Duration is a linear approximation to a convex curve, and it is accurate only for small changes.
+
+---
+
+## 6. What Drives a Bond's Price Sensitivity
+
+Holding other terms constant, a bond's sensitivity to a yield change (its duration) depends on its features.
+
+| Feature | Effect on interest rate risk | Reason |
+| --- | --- | --- |
+| **Longer maturity** | Higher | Cash flows are further away and discounted over more periods |
+| **Lower coupon rate** | Higher | More of the value is in the distant principal payment |
+| **Lower yield level** | Higher | Distant cash flows are discounted less, so they weigh more |
+| Higher coupon rate | Lower | More value arrives early |
+| Shorter maturity | Lower | Principal is repaid soon |
+
+The following exact price changes for a **+100 bp** rise (6% starting yield unless stated) illustrate the pattern:
+
+| Bond (annual pay, par 1,000) | Price change for +100 bp |
+| --- | --- |
+| 5-year, 6% coupon at 6% | -4.10% |
+| 10-year, 6% coupon at 6% | -7.02% |
+| 20-year, 6% coupon at 6% | -10.59% |
+| 10-year, **3%** coupon at 6% | **-7.72%** (price 779.20 to 719.06) |
+| 10-year, 6% coupon at **4%** yield | **-7.31%** |
+| 10-year, 6% coupon at **8%** yield | -6.74% |
+
+Longer maturity, a lower coupon and a lower starting yield each produce a larger percentage price fall for the same rise in yield.
+
+---
+
+## 7. Interest Rate Risk and Reinvestment Risk Together
+
+| Risk | Meaning | Who is hurt |
+| --- | --- | --- |
+| **Price (market value) risk** | Bond must be sold at a price that moved because yields rose | Investors who sell before maturity, especially those with horizons shorter than duration |
+| **Reinvestment risk** | Coupons (and principal) must be reinvested at lower rates | Investors with horizons longer than duration, and anyone who depends on a fixed reinvestment rate |
+
+Features that increase reinvestment risk: high coupon rates and long horizons. A **zero-coupon bond** removes it. Features that increase price risk: long maturity, low coupons, and a horizon shorter than the maturity.
+
+---
+
+## Key takeaways
+
+- A bond's return comes from **coupon and principal payments, reinvestment income and capital gain or loss**.
+- YTM equals the realized return only if the bond is **held to maturity, no default occurs and coupons are reinvested at the YTM**.
+- A rate change causes a **price effect** and an opposing **reinvestment effect**. Short horizons are dominated by price risk; long horizons by reinvestment risk.
+- Horizon yield $= (\text{terminal value}/\text{purchase price})^{1/H} - 1$, with terminal value $=$ future value of coupons $+$ sale price at the horizon.
+- **Macaulay duration** is the weighted-average time to receive cash flows. When the horizon equals MacDur, the two effects approximately offset (for a one-time parallel shift).
+- $\text{ModDur} = \text{MacDur}/(1+y/m)$ and $\%\Delta P \approx -\text{ModDur}\times\Delta y$; convexity makes the approximation overstate losses and understate gains.
+- Longer maturity, lower coupon and lower yield level all **increase** price sensitivity. A zero-coupon bond has no reinvestment risk when held to maturity.
