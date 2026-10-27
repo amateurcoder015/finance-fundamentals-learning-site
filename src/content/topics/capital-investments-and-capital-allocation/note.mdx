@@ -1,0 +1,246 @@
+---
+title: "Capital Investments and Capital Allocation"
+description: "How a company decides which long-term projects to fund: project categories and the capital allocation process, incremental after-tax cash flows, NPV, IRR, payback and profitability index, conflicts between methods, capital rationing, real options and common pitfalls."
+category: "Corporate Finance"
+difficulty: "intermediate"
+dateAdded: "2026-10-27"
+tags: ["capital-budgeting", "npv", "irr", "payback", "capital-rationing", "real-options"]
+---
+
+# Capital Investments and Capital Allocation
+
+**Capital investments** are long-lived expenditures, such as new plants, equipment, products or acquisitions, whose benefits arrive over many years. **Capital allocation** (capital budgeting) is the process of deciding which of these opportunities to fund. Because the amounts are large and hard to reverse, they largely determine a company's future cash flows and value.
+
+---
+
+## 1. Categories of Capital Projects
+
+| Category | Purpose | Typical risk and analysis |
+| --- | --- | --- |
+| **Replacement (maintenance)** | Replace worn-out assets to keep operations running | Lowest risk; often a simple decision |
+| **Replacement (cost reduction)** | Replace working assets with more efficient ones | Needs estimates of savings |
+| **Expansion** | Increase capacity for existing products or markets | Needs demand forecasts |
+| **New products and services** | Enter new lines of business | Highest uncertainty; detailed analysis |
+| **Regulatory, safety and environmental** | Required by law or to reduce risk | May have no direct financial return; often mandatory |
+| **Other** | Pet projects, research and similar items that are hard to analyze | Judgment-based |
+
+---
+
+## 2. The Capital Allocation Process
+
+1. **Idea generation**: ideas come from employees, managers, customers and strategy reviews.
+2. **Analyzing proposals**: forecast the project's cash flows and evaluate them with the methods below.
+3. **Capital allocation planning**: choose projects consistent with strategy, rank and prioritize them, and fit them within the company's budget and capacity to raise capital.
+4. **Monitoring and post-audit**: compare actual results with forecasts, investigate differences, and use the lessons to improve future forecasts. Post-audits also discourage biased, over-optimistic proposals.
+
+**Project relationships**
+
+- **Independent projects**: each can be accepted or rejected on its own merits.
+- **Mutually exclusive projects**: only one can be chosen (for example, two machines for the same job). The decision is to choose the best.
+- **Project sequencing**: some investments depend on earlier ones (a later expansion depends on the first phase succeeding).
+- **Unlimited funds versus capital rationing**: with unlimited funds the company accepts every positive-NPV project; with a fixed budget it must choose the combination that maximizes total NPV.
+
+---
+
+## 3. Basic Principles of Capital Budgeting
+
+- Decisions are based on **cash flows**, not accounting income.
+- Use **incremental cash flows**: the change in company cash flows that results from the project, with versus without it.
+- Use **after-tax** cash flows and cash flows at the time they occur.
+- **Financing costs are excluded** from the cash flows because they are reflected in the discount rate (the required return, usually the project's cost of capital).
+- **Sunk costs** (already spent, not recoverable) are **ignored**.
+- **Opportunity costs** (the value of the best alternative use of a resource) are **included**.
+- **Externalities** are included: **cannibalization** (lost sales of existing products) lowers the project's incremental cash flows, while positive spillovers raise them.
+- Include the **change in net working capital** (an outflow when it rises, recovered at the end) and the **after-tax salvage value**.
+
+**Conventional** cash flows have one outflow followed by inflows only (one sign change). **Nonconventional** cash flows change sign more than once, for example a project with a large cleanup cost at the end.
+
+### After-tax operating cash flow
+
+With sales $S$, cash operating costs $C$, depreciation $D$ and tax rate $T$:
+
+$$\text{CF} = (S - C)(1 - T) + D \times T$$
+
+The second term is the **depreciation tax shield**: depreciation is not a cash cost, but it reduces taxable income, and so reduces taxes paid. An equivalent form is $\text{CF} = \text{Net income} + D$ (with no interest in the project cash flows).
+
+---
+
+## 4. Investment Decision Criteria
+
+### Net present value (NPV)
+
+$$\text{NPV} = \sum_{t=0}^{n} \frac{CF_t}{(1+r)^t} = -\text{Outlay} + \sum_{t=1}^{n} \frac{CF_t}{(1+r)^t}$$
+
+- **Accept** if NPV > 0; reject if NPV < 0. NPV is the **expected change in firm value** from the project, in currency terms.
+- Assumes interim cash flows are reinvested at the discount rate $r$, which is realistic because $r$ is the opportunity cost of capital.
+
+### Internal rate of return (IRR)
+
+The IRR is the discount rate that makes NPV equal to zero:
+
+$$\sum_{t=0}^{n} \frac{CF_t}{(1+\text{IRR})^t} = 0$$
+
+- **Accept** if IRR > required rate of return (hurdle rate).
+- Must be found by trial and error or a financial calculator. For one cash inflow after $n$ years: $\text{IRR} = (\text{Inflow}/\text{Outlay})^{1/n} - 1$.
+- Implicitly assumes interim cash flows are reinvested **at the IRR**, which can overstate attractiveness when the IRR is high.
+- With nonconventional cash flows there can be **multiple IRRs** or none.
+
+### Payback period
+
+The time needed for cumulative undiscounted cash flows to recover the initial outlay (with a fraction for the final year, assuming even flows within the year).
+
+- Simple, and a rough measure of **liquidity and risk**, but ignores the time value of money and **ignores all cash flows after the payback date**. It does not measure profitability.
+
+### Discounted payback period
+
+The time needed for cumulative **discounted** cash flows to recover the outlay. It accounts for the time value of money, but still ignores cash flows after the payback point.
+
+### Profitability index (PI)
+
+$$\text{PI} = \frac{PV \text{ of future cash flows}}{\text{Initial outlay}} = 1 + \frac{\text{NPV}}{\text{Outlay}}$$
+
+- **Accept** if PI > 1 (equivalent to NPV > 0). PI is the NPV per unit of investment, so it is useful for ranking projects under capital rationing, though with caveats (see below).
+
+### Summary
+
+| Method | Considers time value | Uses all cash flows | Decision rule |
+| --- | --- | --- | --- |
+| Payback | No | No | Accept if payback < cutoff |
+| Discounted payback | Yes | No | Accept if discounted payback < cutoff |
+| NPV | Yes | Yes | Accept if NPV > 0 |
+| IRR | Yes | Yes | Accept if IRR > hurdle |
+| PI | Yes | Yes | Accept if PI > 1 |
+
+---
+
+## 5. NPV Versus IRR: Conflicts and Rankings
+
+For **independent** projects with conventional cash flows, NPV and IRR give the same accept/reject decision. For **mutually exclusive** projects, they can **rank projects differently** because of:
+
+- **Scale differences**: a large project with a lower IRR can add more NPV than a small project with a higher IRR.
+- **Timing differences**: cash flows that arrive earlier versus later respond differently to the discount rate.
+
+The **NPV profile** plots NPV against the discount rate. The profile crosses the horizontal axis at the IRR. The **crossover rate** is the discount rate at which two projects' NPVs are equal. If the required return is **below** the crossover rate, the project with the lower IRR and later cash flows may have the higher NPV.
+
+When NPV and IRR conflict, **choose the project with the higher NPV**. NPV measures value added in currency terms and uses the more realistic reinvestment assumption.
+
+### Capital rationing
+
+When the budget is fixed, rank projects, but remember that projects are indivisible. **Choose the combination of projects that maximizes total NPV within the budget**. Ranking by PI can be suboptimal, because the highest-PI projects may leave part of the budget unused.
+
+---
+
+## 6. Real Options in Capital Budgeting
+
+A **real option** is the flexibility management has to alter a project after it is begun. Standard NPV, which assumes a fixed plan, can undervalue projects that contain such options. Common types:
+
+| Real option | Description |
+| --- | --- |
+| **Timing option** | Delay an investment until conditions improve |
+| **Sizing options: abandonment** | Shut down or sell a project that performs poorly (a put-like option) |
+| **Sizing options: expansion (growth)** | Expand if the project succeeds (a call-like option) |
+| **Flexibility options: price-setting and production-flexibility** | Adjust prices or switch inputs and outputs as conditions change |
+| **Fundamental options** | The project's payoff depends on the outcome of a future event (an oil well whose value depends on the oil price) |
+
+Value of a project with real options $\approx$ NPV of the base case + value of the options. Options are most valuable where uncertainty is high.
+
+---
+
+## 7. Capital Allocation, Value and Common Pitfalls
+
+**Link to value.** A company's value equals the present value of its existing assets plus the NPV of its future investment opportunities. A positive-NPV project increases value, and so the share price, **to the extent it was not already anticipated by the market**. Investors will bid up shares when a company announces a project better than expected, not merely one with a positive NPV.
+
+**Common pitfalls**
+
+- **Mixing up average and incremental analysis**, including sunk costs or omitting opportunity costs and externalities.
+- **Using accounting numbers** (EPS, book return) instead of cash flows, or focusing on **short-term earnings** at the expense of long-term value.
+- **Forecasting errors**: over-optimism, ignoring working capital and taxes, and using a discount rate that does not match the project's risk.
+- **Behavioral biases**: overconfidence, confirmation, anchoring on an earlier estimate, and reluctance to abandon failing projects (loss aversion and sunk-cost thinking).
+- **Poor capital allocation process**: ignoring strategy, lack of post-audits, and **internal politics** or "empire building" that favors pet projects over value.
+- **Ignoring real options** or interdependencies among projects.
+
+<Note>
+When the project's risk differs from the company's average risk, discount at a rate that reflects the **project's** risk, not the company's overall WACC.
+</Note>
+
+---
+
+## 8. Worked Examples
+
+### Example A: NPV, IRR, payback and PI
+
+A project costs 1,000 now and returns 300, 400, 500 and 300 at the end of years 1 to 4. The required return is 10%.
+
+1. PV of year 1: $300 / 1.10 = 272.73$
+2. PV of year 2: $400 / 1.10^2 = 330.58$
+3. PV of year 3: $500 / 1.10^3 = 375.66$
+4. PV of year 4: $300 / 1.10^4 = 204.90$
+5. Total PV $= 272.73 + 330.58 + 375.66 + 204.90 = 1{,}183.87$
+6. $\text{NPV} = 1{,}183.87 - 1{,}000 = \mathbf{+183.87}$
+7. $\text{PI} = 1{,}183.87 / 1{,}000 = \mathbf{1.18}$
+8. **IRR**: the rate at which NPV = 0 is $\mathbf{18.03\%}$ (check: at 18.03% the four PVs sum to 1,000). Since 18.03% > 10%, accept.
+9. **Payback**: cumulative cash flows are 300, 700, 1,200. Payback is in year 3: $2 + (1{,}000 - 700)/500 = \mathbf{2.60}$ years.
+10. **Discounted payback**: cumulative PVs are 272.73, 603.31, 978.96, 1,183.87. After year 3 the shortfall is $1{,}000 - 978.96 = 21.04$, so discounted payback $= 3 + 21.04/204.90 = \mathbf{3.10}$ years.
+
+All methods agree to accept this project.
+
+### Example B: After-tax cash flow with a depreciation tax shield
+
+A machine costs 600 and is depreciated straight-line over 5 years to zero salvage. It adds 250 per year of sales minus cash costs, ($S - C = 250$). The tax rate is 30% and the required return is 9%.
+
+1. Annual depreciation $D = 600/5 = 120$
+2. After-tax operating cash flow $= 250(1 - 0.30) + 120(0.30) = 175 + 36 = \mathbf{211}$
+3. Check using net income: $(250 - 120)(0.70) = 91$, then $91 + 120 = 211$ ✓
+4. PV annuity factor, 5 years at 9%: $[1 - 1.09^{-5}]/0.09 = 3.8897$
+5. PV of cash flows $= 211 \times 3.8897 = 820.72$
+6. $\text{NPV} = 820.72 - 600 = \mathbf{+220.72}$. Accept.
+
+### Example C: NPV and IRR conflict (mutually exclusive projects)
+
+Both projects cost 1,000. Required return 10%.
+
+| Year | Project A | Project B |
+| --- | --- | --- |
+| 0 | −1,000 | −1,000 |
+| 1 | 800 | 0 |
+| 2 | 400 | 0 |
+| 3 | 0 | 1,500 |
+
+1. NPV of A at 10% $= 800/1.10 + 400/1.10^2 - 1{,}000 = 727.27 + 330.58 - 1{,}000 = \mathbf{57.85}$
+2. NPV of B at 10% $= 1{,}500/1.10^3 - 1{,}000 = 1{,}126.97 - 1{,}000 = \mathbf{126.97}$
+3. IRR of A $= 14.83\%$; IRR of B $= (1{,}500/1{,}000)^{1/3} - 1 = 14.47\%$
+4. IRR ranks **A** first, but NPV ranks **B** first.
+5. **Crossover rate**: set the difference in cash flows (A − B) equal to zero: $\dfrac{800}{1+x} + \dfrac{400}{(1+x)^2} - \dfrac{1{,}500}{(1+x)^3} = 0$, which gives $x \approx \mathbf{14.19\%}$. At any required return below 14.19%, B has the higher NPV; above it, A does.
+
+The required return of 10% is below the crossover, so choose **B** (higher NPV).
+
+### Example D: Capital rationing
+
+The budget is 1,000. Projects (outlay, NPV):
+
+| Project | Outlay | NPV | PI |
+| --- | --- | --- | --- |
+| P1 | 600 | 120 | 1.20 |
+| P2 | 400 | 100 | 1.25 |
+| P3 | 500 | 110 | 1.22 |
+| P4 | 400 | 70 | 1.175 |
+
+1. **Rank by PI**: P2 (1.25), P3 (1.22), P1 (1.20), P4 (1.175). Take P2 (400), then P3 (total 900). P1 (600) no longer fits, and P4 (400) would exceed the budget. Total NPV $= 100 + 110 = 210$.
+2. **Test combinations within 1,000**: P1 + P2 = 1,000 outlay, NPV 220; P1 + P4 = 1,000, NPV 190; P2 + P3 = 900, NPV 210; P3 + P4 = 900, NPV 180; P2 + P4 = 800, NPV 170.
+3. The best combination is **P1 + P2 with NPV = 220**, higher than the PI-ranking result of 210.
+
+With indivisible projects, maximize total NPV over feasible combinations.
+
+---
+
+## Key takeaways
+
+- Capital projects are classed as replacement, expansion, new product, regulatory or other; the process runs from idea generation to analysis, allocation planning and **post-audit**.
+- Use **incremental, after-tax cash flows**; ignore **sunk costs**; include **opportunity costs, externalities (cannibalization) and working capital**; exclude financing costs (they are in the discount rate).
+- After-tax operating CF $= (S - C)(1 - T) + D \times T$.
+- **NPV > 0** adds value; **IRR** is the discount rate where NPV = 0; **PI** $= 1 + \text{NPV}/\text{Outlay}$.
+- **Payback** ignores time value and later cash flows; **discounted payback** fixes the first but not the second.
+- For mutually exclusive projects, scale and timing differences can make IRR and NPV conflict: **choose the higher NPV**. The **crossover rate** is where two NPV profiles meet.
+- Under **capital rationing**, choose the **combination** of projects with the highest total NPV within the budget.
+- **Real options** (timing, sizing, flexibility, fundamental) add value that a static NPV misses.
+- A positive-NPV project raises the share price only to the extent that it is **better than the market expected**.

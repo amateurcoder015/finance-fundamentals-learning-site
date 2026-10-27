@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which statement best distinguishes cognitive errors from emotional biases?",
+    "options": [
+      "Cognitive errors stem from faulty reasoning or information processing and are generally easier to correct; emotional biases stem from feelings and are harder to correct.",
+      "Cognitive errors stem from feelings and impulses and cannot be corrected; emotional biases stem from faulty reasoning and are easily corrected.",
+      "Cognitive errors affect only individual investors; emotional biases affect only institutional investors.",
+      "Cognitive errors and emotional biases are both fully eliminated by more information."
+    ],
+    "correctIndex": 0,
+    "explanation": "Cognitive errors are reasoning, memory or information-processing mistakes, so education and better information can reduce them. Emotional biases arise from feelings and intuition and are harder to change, so advisers usually adapt the plan to them."
+  },
+  {
+    "question": "An investor refuses to sell a stock that has fallen well below the purchase price, saying, \"I'll sell when it gets back to what I paid.\" The bias most directly illustrated is:",
+    "options": [
+      "Hindsight bias",
+      "Loss aversion (the disposition effect)",
+      "Availability bias",
+      "Framing bias"
+    ],
+    "correctIndex": 1,
+    "explanation": "Reluctance to realize a loss, so that losers are held too long, is the disposition effect, which is driven by loss aversion. The purchase price also acts as an anchor, but the unwillingness to take the loss is the defining behavior."
+  },
+  {
+    "question": "A loss-averse investor with a loss-aversion coefficient of 2.5 is offered a 50/50 gamble to win 150 or lose 100. The perceived (loss-adjusted) value of the gamble is closest to:",
+    "options": [
+      "+25",
+      "-25",
+      "-50",
+      "+75"
+    ],
+    "correctIndex": 2,
+    "explanation": "Perceived value = 0.5(150) + 0.5(-2.5 x 100) = 75 - 125 = -50. The expected monetary value is +25 (0.5 x 150 - 0.5 x 100), but because the loss is weighted 2.5 times, the investor perceives the gamble as negative and declines it."
+  },
+  {
+    "question": "An analyst revises an earnings forecast only partway toward a level that new information clearly supports, because the old forecast remains a reference point. This is best described as:",
+    "options": [
+      "Anchoring and adjustment (with conservatism)",
+      "Illusion of control",
+      "Endowment bias",
+      "Self-attribution bias"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anchoring and adjustment means fixing on an initial value and adjusting too little. Conservatism, the slow updating of beliefs when new information arrives, produces the same underreaction. Both are cognitive errors."
+  },
+  {
+    "question": "Of all fund managers, 5% are truly skilled. A screen identifies 80% of skilled managers but also wrongly flags 20% of unskilled managers. The probability that a flagged manager is skilled is closest to:",
+    "options": [
+      "80.0%",
+      "20.0%",
+      "4.0%",
+      "17.4%"
+    ],
+    "correctIndex": 3,
+    "explanation": "Flagged and skilled = 0.05 x 0.80 = 0.040. Flagged and unskilled = 0.95 x 0.20 = 0.190. P(skilled | flagged) = 0.040 / 0.230 = 17.4%. Ignoring the 5% base rate and answering 80% is base-rate neglect, a form of representativeness."
+  },
+  {
+    "question": "A client inherited a large block of shares in the family company and will not sell any, even though it makes up most of the portfolio. The adviser should recognize this primarily as:",
+    "options": [
+      "A cognitive error that further education will most likely eliminate",
+      "Hindsight bias",
+      "An emotional bias (endowment) that is hard to correct, so the plan may need to be adapted to it",
+      "Representativeness"
+    ],
+    "correctIndex": 2,
+    "explanation": "Valuing an asset more because one owns it is endowment bias, an emotional bias. Emotional biases are harder to correct, so the adviser may adapt the portfolio (for example, a gradual diversification plan or hedging) rather than expect the attachment to disappear."
+  },
+  {
+    "question": "Which pair correctly matches a bias with its typical effect on investor behavior?",
+    "options": [
+      "Overconfidence: excessive trading and under-diversification",
+      "Status quo: frequent portfolio turnover",
+      "Confirmation bias: prompt updating of beliefs when evidence changes",
+      "Self-control bias: holding too much cash to avoid regret"
+    ],
+    "correctIndex": 0,
+    "explanation": "Overconfident investors overestimate their skill and the precision of their forecasts, so they trade too much and hold concentrated portfolios. Status quo bias produces inertia (too little trading), confirmation bias resists updating, and self-control bias favors immediate gratification (under-saving), not cash hoarding."
+  },
+  {
+    "question": "Which statement about behavioral biases and markets is most accurate?",
+    "options": [
+      "Behavioral biases prove that financial markets can never be efficient.",
+      "Shared biases such as herding, overconfidence and confirmation can help explain features like bubbles and momentum, but anomalies may also reflect risk compensation or data mining.",
+      "Bubbles are reliably identified in real time by investors who study behavioral finance.",
+      "Anomalies disappear as soon as individual investors learn about them."
+    ],
+    "correctIndex": 1,
+    "explanation": "Common biases can help explain momentum, bubbles and crashes. However, behavioral explanations do not by themselves prove inefficiency; many anomalies are hard to exploit after costs and may be compensation for risk. Bubbles are generally recognized only in hindsight."
+  }
+]

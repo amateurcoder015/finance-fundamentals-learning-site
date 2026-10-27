@@ -1,0 +1,23 @@
+graph TD
+    CA["Capital Investments and<br/>Capital Allocation"] --> PROC["Allocation Process"]
+    CA --> CF["Incremental After-Tax Cash Flows"]
+    CA --> CRIT["Decision Criteria"]
+    CA --> ISSUES["Complications"]
+
+    PROC --> P1["1. Idea generation"]
+    P1 --> P2["2. Analyze proposals"]
+    P2 --> P3["3. Capital allocation planning"]
+    P3 --> P4["4. Monitoring and post-audit"]
+
+    CF --> CF1["Include: opportunity costs,<br/>externalities, working capital"]
+    CF --> CF2["Exclude: sunk costs,<br/>financing costs"]
+    CF --> CF3["CF = (S - C)(1 - T) + D x T"]
+
+    CRIT --> NPV["NPV > 0<br/>(Preferred: value added)"]
+    CRIT --> IRR["IRR > hurdle rate"]
+    CRIT --> PI["PI > 1"]
+    CRIT --> PB["Payback / Discounted payback<br/>(Ignore later cash flows)"]
+
+    ISSUES --> CONF["NPV vs IRR conflict<br/>(Scale and timing)<br/>Choose higher NPV"]
+    ISSUES --> RAT["Capital rationing<br/>Maximize total NPV in budget"]
+    ISSUES --> RO["Real options<br/>(Timing, sizing, flexibility, fundamental)"]

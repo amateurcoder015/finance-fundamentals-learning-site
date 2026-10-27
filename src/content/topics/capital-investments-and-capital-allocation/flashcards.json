@@ -1,0 +1,50 @@
+[
+  {
+    "front": "Net present value (NPV) and its decision rule",
+    "back": "NPV = sum of CF_t / (1+r)^t including the initial outlay at t = 0. Accept if NPV > 0. NPV is the expected change in firm value from the project."
+  },
+  {
+    "front": "Internal rate of return (IRR)",
+    "back": "The discount rate at which NPV = 0. Accept if IRR exceeds the required return (hurdle rate). Implicitly assumes reinvestment at the IRR; nonconventional cash flows can give multiple IRRs or none."
+  },
+  {
+    "front": "Profitability index (PI)",
+    "back": "PI = PV of future cash flows / initial outlay = 1 + NPV/outlay. Accept if PI > 1. Measures NPV per unit of investment."
+  },
+  {
+    "front": "Weaknesses of the payback period",
+    "back": "Ignores the time value of money and ignores all cash flows after the payback date. It is a rough gauge of liquidity and risk, not of profitability. Discounted payback fixes only the first problem."
+  },
+  {
+    "front": "After-tax operating cash flow formula",
+    "back": "CF = (S - C)(1 - T) + D x T, where D x T is the depreciation tax shield. Equivalent to net income + depreciation (excluding financing costs)."
+  },
+  {
+    "front": "Which items are included or excluded in incremental cash flows?",
+    "back": "Included: opportunity costs, externalities (cannibalization), change in net working capital, after-tax salvage. Excluded: sunk costs and financing costs (these are captured in the discount rate)."
+  },
+  {
+    "front": "Why can NPV and IRR rank mutually exclusive projects differently?",
+    "back": "Differences in project scale and in the timing of cash flows. Resolution: choose the project with the higher NPV."
+  },
+  {
+    "front": "Crossover rate",
+    "back": "The discount rate at which the NPVs of two projects are equal (where their NPV profiles intersect). It is the IRR of the difference in the two projects' cash flows."
+  },
+  {
+    "front": "Capital rationing: how should projects be chosen?",
+    "back": "Choose the combination of projects that maximizes total NPV within the budget. Ranking by PI can be suboptimal when projects are indivisible."
+  },
+  {
+    "front": "Name the types of real options",
+    "back": "Timing (delay), sizing (abandonment and expansion), flexibility (price-setting and production flexibility) and fundamental options. They add value that a static NPV misses."
+  },
+  {
+    "front": "Four stages of the capital allocation process",
+    "back": "1. Idea generation. 2. Analyzing proposals. 3. Capital allocation planning. 4. Monitoring and post-audit."
+  },
+  {
+    "front": "When does a positive-NPV project raise the share price?",
+    "back": "Only to the extent that it is better than the market already expected. Value = PV of existing assets + NPV of future growth opportunities."
+  }
+]

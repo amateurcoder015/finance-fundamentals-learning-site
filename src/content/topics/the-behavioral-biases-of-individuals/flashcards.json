@@ -1,0 +1,50 @@
+[
+  {
+    "front": "Cognitive errors vs emotional biases",
+    "back": "Cognitive errors come from faulty reasoning, memory or information processing and are easier to correct with education and better information (moderate the bias). Emotional biases come from feelings and intuition and are harder to correct (adapt the plan to the bias)."
+  },
+  {
+    "front": "Prospect theory: key features of the value function",
+    "back": "Outcomes are judged as gains or losses relative to a reference point. The function is concave for gains (risk averse), convex for losses (risk seeking) and steeper for losses than gains (loss aversion)."
+  },
+  {
+    "front": "List the belief perseverance biases",
+    "back": "Conservatism, confirmation, representativeness, illusion of control and hindsight."
+  },
+  {
+    "front": "List the information-processing biases",
+    "back": "Anchoring and adjustment, mental accounting, framing and availability."
+  },
+  {
+    "front": "List the emotional biases",
+    "back": "Loss aversion, overconfidence, self-control, status quo, endowment and regret aversion."
+  },
+  {
+    "front": "What is the disposition effect?",
+    "back": "The tendency to sell winning positions too early and hold losing positions too long, driven by loss aversion and reluctance to realize losses."
+  },
+  {
+    "front": "Base-rate neglect vs sample-size neglect (representativeness)",
+    "back": "Base-rate neglect: ignoring how common a category is when classifying an item. Sample-size neglect: treating a small sample as representative of the population (for example judging a manager skilled after three good years)."
+  },
+  {
+    "front": "Overconfidence: two forms and a related bias",
+    "back": "Prediction overconfidence (forecast ranges too narrow) and certainty overconfidence (too sure of being right). Related: self-attribution bias, crediting success to skill and failure to bad luck. Effects: excessive trading and under-diversification."
+  },
+  {
+    "front": "What is mental accounting and how can it hurt a portfolio?",
+    "back": "Treating money differently depending on mental categories (income vs gains, safe vs play money). It leads investors to ignore correlations across assets and to hold low-yield assets while carrying high-cost debt."
+  },
+  {
+    "front": "Endowment bias vs status quo bias",
+    "back": "Endowment: valuing an asset more because you own it (willingness to accept exceeds willingness to pay). Status quo: preferring to leave things unchanged out of inertia, so portfolios are not rebalanced or reviewed."
+  },
+  {
+    "front": "Behavioral portfolio theory",
+    "back": "Investors build a layered pyramid, from downside protection at the base to upside potential at the top. Each layer has its own goal and risk attitude, and correlations between layers are mostly ignored."
+  },
+  {
+    "front": "Which market features can behavioral biases help explain?",
+    "back": "Momentum, bubbles and crashes (herding, overconfidence, confirmation), the value effect and home bias. This does not by itself prove markets are inefficient."
+  }
+]

@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] The Behavioral Biases of Individuals | Portfolio Management | intermediate
-- [ ] Capital Investments and Capital Allocation | Corporate Finance | intermediate
 - [ ] Yield-Based Bond Duration Measures and Properties | Fixed Income | advanced
 - [ ] Financial Analysis Techniques | Financial Statements | intermediate
 - [ ] Introduction to Geopolitics | Economics | beginner
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Industry and Competitive Analysis | Equities | intermediate | 2026-10-25
 - [x] Interest Rate Risk and Return | Fixed Income | intermediate | 2026-10-26
 - [x] Financial Reporting Quality | Financial Statements | advanced | 2026-10-26
+- [x] The Behavioral Biases of Individuals | Portfolio Management | intermediate | 2026-10-27
+- [x] Capital Investments and Capital Allocation | Corporate Finance | intermediate | 2026-10-27

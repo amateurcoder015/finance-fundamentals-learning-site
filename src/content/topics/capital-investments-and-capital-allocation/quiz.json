@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A project requires an outlay of 500 and returns 200, 250 and 300 at the end of years 1, 2 and 3. At a required return of 12%, the NPV is closest to:",
+    "options": [
+      "250.00",
+      "-91.40",
+      "141.40",
+      "91.40"
+    ],
+    "correctIndex": 3,
+    "explanation": "PV = 200/1.12 + 250/1.12^2 + 300/1.12^3 = 178.57 + 199.30 + 213.53 = 591.40. NPV = 591.40 - 500 = +91.40. The undiscounted sum less the outlay (250) ignores the time value of money."
+  },
+  {
+    "question": "Which of the following should be excluded from the incremental cash flows of a proposed project?",
+    "options": [
+      "Lost sales on an existing product caused by the new product (cannibalization)",
+      "The market value of land the company already owns and would use for the project",
+      "A market study costing 40 that was paid last year and cannot be recovered",
+      "An increase in net working capital required to support the project"
+    ],
+    "correctIndex": 2,
+    "explanation": "The market study is a sunk cost: it has already been spent and is unaffected by the decision, so it is ignored. Cannibalization (an externality), the opportunity cost of owned land and working capital investment are all incremental effects and must be included."
+  },
+  {
+    "question": "A project costs 800 today and produces a single cash inflow of 1,100 at the end of year 3. Its IRR is closest to:",
+    "options": [
+      "37.5%",
+      "12.5%",
+      "11.2%",
+      "9.3%"
+    ],
+    "correctIndex": 2,
+    "explanation": "With a single inflow, IRR = (1,100 / 800)^(1/3) - 1 = 1.375^(0.3333) - 1 = 11.2%. The 37.5% figure is the total (not annualized) return over three years."
+  },
+  {
+    "question": "A new machine adds sales minus cash operating costs of 400 per year and is depreciated at 100 per year. The tax rate is 25%. The annual after-tax operating cash flow is:",
+    "options": [
+      "300",
+      "325",
+      "375",
+      "400"
+    ],
+    "correctIndex": 1,
+    "explanation": "CF = (S - C)(1 - T) + D x T = 400(0.75) + 100(0.25) = 300 + 25 = 325. Check: net income = (400 - 100)(0.75) = 225, plus depreciation 100 = 325. The 25 is the depreciation tax shield."
+  },
+  {
+    "question": "A project has PV of future cash flows of 1,320 and an initial outlay of 1,100. Its profitability index and the implied decision are:",
+    "options": [
+      "PI = 0.83; reject",
+      "PI = 1.20; accept",
+      "PI = 0.20; accept",
+      "PI = 1.20; reject"
+    ],
+    "correctIndex": 1,
+    "explanation": "PI = PV of future cash flows / initial outlay = 1,320 / 1,100 = 1.20. A PI above 1 means NPV (220) is positive, so accept."
+  },
+  {
+    "question": "A project costs 900 and returns 300, 400 and 500 at the end of years 1 to 3. At a 10% required return, the payback and discounted payback periods are closest to:",
+    "options": [
+      "Payback 2.40 years; discounted payback 2.79 years",
+      "Payback 2.79 years; discounted payback 2.40 years",
+      "Payback 2.40 years; discounted payback 2.40 years",
+      "Payback 3.00 years; discounted payback 3.00 years"
+    ],
+    "correctIndex": 0,
+    "explanation": "Payback: after 2 years 700 is recovered, so 2 + 200/500 = 2.40 years. Discounted: PVs are 272.73, 330.58 and 375.66; after 2 years 603.31 is recovered, so 2 + (900 - 603.31)/375.66 = 2.79 years. Discounted payback is always longer than payback for positive discount rates."
+  },
+  {
+    "question": "Two mutually exclusive projects have conventional cash flows. Project X has the higher IRR, but Project Y has the higher NPV at the company's required return. The analyst should:",
+    "options": [
+      "Choose X because IRR is a percentage and is easier to compare",
+      "Choose Y because NPV measures the expected increase in firm value",
+      "Accept both projects",
+      "Choose the project with the shorter payback regardless of NPV"
+    ],
+    "correctIndex": 1,
+    "explanation": "When NPV and IRR conflict for mutually exclusive projects (because of scale or timing differences), choose the higher-NPV project. NPV gives the value added in currency terms and assumes reinvestment at the cost of capital, which is more realistic than reinvestment at the IRR."
+  },
+  {
+    "question": "A company with a fixed budget of 1,000 can invest in P1 (outlay 600, NPV 120), P2 (outlay 400, NPV 100) and P3 (outlay 500, NPV 110). Projects are indivisible. The NPV-maximizing choice is:",
+    "options": [
+      "P2 and P3, total NPV 210",
+      "P1 and P3, total NPV 230",
+      "P1 and P2, total NPV 220",
+      "P1 only, total NPV 120"
+    ],
+    "correctIndex": 2,
+    "explanation": "P1 + P2 costs exactly 1,000 and gives NPV 220. P2 + P3 costs 900 and gives 210. P1 + P3 costs 1,100 and breaches the budget, so it is infeasible. Under capital rationing, choose the feasible combination with the highest total NPV."
+  }
+]
