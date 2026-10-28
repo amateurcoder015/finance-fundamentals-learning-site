@@ -1,0 +1,70 @@
+[
+  {
+    "question": "A semiannual-pay bond has a Macaulay duration of 7.80 years and a yield to maturity of 6% (annual, compounded semiannually). What is its modified duration?",
+    "options": ["7.80", "7.57", "8.03", "7.65"],
+    "correctIndex": 1,
+    "explanation": "ModDur = MacDur / (1 + y/m) = 7.80 / (1 + 0.06/2) = 7.80 / 1.03 = 7.57. Dividing by 1.02 would give 7.65, and multiplying by 1.03 (8.03) reverses the relationship."
+  },
+  {
+    "question": "A bond has a modified duration of 6.2. Using duration alone, what is the approximate percentage price change if its yield rises by 25 basis points?",
+    "options": ["+1.55%", "-3.10%", "-1.55%", "-6.20%"],
+    "correctIndex": 2,
+    "explanation": "%ΔP ≈ -ModDur × Δy = -6.2 × 0.0025 = -1.55%. The sign is negative because price and yield move in opposite directions."
+  },
+  {
+    "question": "A bond is priced at 100.00 at its current yield. At a yield 50 bp lower its price is 101.80, and at a yield 50 bp higher its price is 98.25. What is the approximate modified duration?",
+    "options": ["3.55", "1.78", "7.10", "3.60"],
+    "correctIndex": 0,
+    "explanation": "ApproxModDur = (PV- − PV+) / (2 × PV0 × Δy) = (101.80 − 98.25) / (2 × 100 × 0.005) = 3.55 / 1.00 = 3.55. Using the full 50 bp as the divisor without the factor of 2 (1.78 is half of 3.55) or doubling the result (7.10) are common slips."
+  },
+  {
+    "question": "A position has a full price of 98,000 and a modified duration of 5.0. What is its price value of a basis point (PVBP)?",
+    "options": ["4.90", "49.00", "490.00", "0.49"],
+    "correctIndex": 1,
+    "explanation": "Money duration = ModDur × full price = 5.0 × 98,000 = 490,000. PVBP = money duration × 0.0001 = 49.00. A 1 bp rise in yield lowers the position's value by about 49."
+  },
+  {
+    "question": "Holding other features constant, which bond has the highest Macaulay duration?",
+    "options": [
+      "A 10-year bond with a 10% coupon and a 6% yield",
+      "A 10-year bond with a 2% coupon and a 6% yield",
+      "A 10-year bond with a 2% coupon and a 10% yield",
+      "A 5-year bond with a 2% coupon and a 6% yield"
+    ],
+    "correctIndex": 1,
+    "explanation": "Duration is higher for lower coupons, longer maturities and lower yields. The 10-year, 2% coupon bond at 6% has the lowest coupon and lowest yield among the 10-year choices (MacDur about 8.96 years against about 7.17 for the 10% coupon bond), and the 5-year bond has a shorter maturity."
+  },
+  {
+    "question": "A portfolio consists of 30 million of Bond A (modified duration 3.2) and 70 million of Bond B (modified duration 6.0). What is the portfolio's modified duration using the market-value-weighted average, and what does the method assume?",
+    "options": [
+      "5.16; a parallel shift in the yield curve",
+      "4.60; a parallel shift in the yield curve",
+      "5.16; yields move only if the bonds have the same maturity",
+      "4.60; a steepening of the yield curve"
+    ],
+    "correctIndex": 0,
+    "explanation": "Weights are 0.30 and 0.70: 0.30 × 3.2 + 0.70 × 6.0 = 0.96 + 4.20 = 5.16. (4.60 is the unweighted average of 3.2 and 6.0.) The weighted-average method implicitly assumes all the bonds' yields change by the same amount, a parallel shift."
+  },
+  {
+    "question": "Holding a bond's yield to maturity constant, how does its Macaulay duration behave as time passes from just after one coupon payment to just after the next?",
+    "options": [
+      "It rises steadily and falls when the coupon is paid.",
+      "It stays constant throughout.",
+      "It falls steadily and jumps up when the coupon is paid.",
+      "It falls steadily and keeps falling after the coupon is paid."
+    ],
+    "correctIndex": 2,
+    "explanation": "Between coupon dates every remaining cash flow gets closer by the same time, so duration falls by about one year per year. When a coupon is paid, that early cash flow drops out of the average, so duration jumps up."
+  },
+  {
+    "question": "Why is a yield-based duration measure unreliable for a callable bond?",
+    "options": [
+      "A callable bond always has a Macaulay duration equal to its maturity.",
+      "Yield-based measures assume the bond's cash flows are fixed, but the call option makes them depend on interest rates.",
+      "Callable bonds do not have a yield to maturity.",
+      "Modified duration cannot be computed for a bond priced at a discount."
+    ],
+    "correctIndex": 1,
+    "explanation": "Yield-based duration assumes the cash flows do not change when yields change. For a callable bond, a yield fall can lead to early redemption, changing the cash flows, so an effective duration based on a full repricing is needed."
+  }
+]

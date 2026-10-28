@@ -1,0 +1,22 @@
+graph TD
+    YD["Yield-based duration measures"] --> MAC["Macaulay duration<br/>PV-weighted average time<br/>to receipt of cash flows (years)"]
+    MAC --> MOD["Modified duration<br/>MacDur / (1 + y/m)"]
+    MOD --> EST["Price change estimate<br/>-ModDur x change in yield"]
+    MOD --> MD["Money duration<br/>ModDur x full price"]
+    MD --> PV["PVBP<br/>Money duration x 0.0001"]
+    YD --> AMD["Approximate modified duration<br/>(PV- minus PV+) / (2 x PV0 x change in yield)"]
+    AMD --> AMAC["Approximate Macaulay duration<br/>ApproxModDur x (1 + y/m)"]
+
+    YD --> PROP["Properties"]
+    PROP --> P1["Lower coupon = higher duration"]
+    PROP --> P2["Longer maturity = higher duration<br/>(deep-discount exception)"]
+    PROP --> P3["Lower yield = higher duration"]
+    PROP --> P4["Time passing: falls between coupons,<br/>jumps up when a coupon is paid"]
+
+    YD --> PORT["Portfolio duration"]
+    PORT --> PW["Market-value-weighted average<br/>of bond durations<br/>(assumes parallel shift)"]
+    PORT --> PC["Time to receipt of aggregate<br/>cash flows (cash-flow yield)"]
+
+    YD --> LIM["Limitation"]
+    LIM --> OPT["Cash flows assumed fixed:<br/>unreliable with embedded options"]
+    EST --> CVX["Convexity<br/>Duration overstates falls,<br/>understates gains"]

@@ -1,0 +1,42 @@
+[
+  {
+    "front": "Define Macaulay duration.",
+    "back": "The weighted average of the times at which a bond's cash flows are received, with weights equal to each cash flow's present value (at the YTM) as a share of the full price. It is measured in years: MacDur = Σ t × PV(CF_t) / Price."
+  },
+  {
+    "front": "How do you convert Macaulay duration into modified duration?",
+    "back": "ModDur = MacDur / (1 + y/m), where y is the annual yield and m the number of periods per year."
+  },
+  {
+    "front": "What is the duration-based estimate of the percentage price change?",
+    "back": "%ΔP ≈ -ModDur × Δy. For example, ModDur 6.2 and a +25 bp yield change gives about -1.55%. It is accurate only for small yield changes."
+  },
+  {
+    "front": "Write the formula for approximate modified duration.",
+    "back": "ApproxModDur = (PV- − PV+) / (2 × PV0 × Δy), where PV- and PV+ are the prices after the yield falls and rises by Δy. ApproxMacDur = ApproxModDur × (1 + y/m)."
+  },
+  {
+    "front": "What are money duration and PVBP?",
+    "back": "Money duration = ModDur × full price (currency sensitivity to a 100% yield change). PVBP = money duration × 0.0001, the estimated price change for a 1 basis point change in yield."
+  },
+  {
+    "front": "What is the Macaulay duration of a zero-coupon bond?",
+    "back": "Its maturity, because the only cash flow arrives at maturity. A coupon bond's MacDur is shorter than its maturity (for a perpetuity it is (1 + y) / y)."
+  },
+  {
+    "front": "How does duration change with coupon rate, maturity and yield?",
+    "back": "Lower coupon: higher duration. Longer maturity: higher duration (with an exception for deep-discount low-coupon bonds, which can exceed the perpetuity value). Lower yield: higher duration."
+  },
+  {
+    "front": "How does Macaulay duration change as time passes with a constant yield?",
+    "back": "It falls by about one year per year between coupon dates, then jumps up when a coupon is paid, because an early cash flow drops out of the average."
+  },
+  {
+    "front": "How is portfolio duration usually measured, and what is the main limitation?",
+    "back": "As the market-value-weighted average of the individual bond durations. It assumes a parallel shift in yields, so it can misstate the effect of non-parallel yield-curve changes."
+  },
+  {
+    "front": "Why do yield-based duration measures fail for bonds with embedded options?",
+    "back": "They assume cash flows are fixed as the yield changes. With a call or put option the cash flows depend on interest rates, so effective duration (based on full repricing) is needed instead."
+  }
+]

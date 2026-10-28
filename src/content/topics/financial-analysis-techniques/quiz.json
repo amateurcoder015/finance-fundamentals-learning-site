@@ -1,0 +1,65 @@
+[
+  {
+    "question": "A company has revenue of 1,200 and average accounts receivable of 150. Using a 365-day year, what is its days sales outstanding (DSO)?",
+    "options": ["8.0 days", "30.0 days", "45.6 days", "365.0 days"],
+    "correctIndex": 2,
+    "explanation": "Receivables turnover = 1,200 / 150 = 8.0. DSO = 365 / 8.0 = 45.6 days. The 8.0 figure is the turnover, not the number of days."
+  },
+  {
+    "question": "A company has a net profit margin of 8%, total asset turnover of 1.5 and financial leverage of 2.0. What is its ROE under three-component DuPont analysis?",
+    "options": ["12.0%", "16.0%", "24.0%", "6.0%"],
+    "correctIndex": 2,
+    "explanation": "ROE = net margin × asset turnover × financial leverage = 0.08 × 1.5 × 2.0 = 0.24, or 24.0%. Omitting the leverage term gives ROA of 12.0%."
+  },
+  {
+    "question": "A company reports cash of 40, marketable securities of 30, receivables of 80, inventory of 100 and current liabilities of 150. What is the quick ratio?",
+    "options": ["1.00", "1.67", "0.47", "1.43"],
+    "correctIndex": 0,
+    "explanation": "Quick ratio = (cash + marketable securities + receivables) / current liabilities = (40 + 30 + 80) / 150 = 1.00. Including inventory would give the current ratio of 250 / 150 = 1.67."
+  },
+  {
+    "question": "A firm has days of inventory on hand of 60, days sales outstanding of 40 and days payables outstanding of 50. What is its cash conversion cycle?",
+    "options": ["150 days", "70 days", "50 days", "30 days"],
+    "correctIndex": 2,
+    "explanation": "CCC = DOH + DSO − DPO = 60 + 40 − 50 = 50 days. Payables financing is subtracted because the firm pays suppliers after the inventory arrives."
+  },
+  {
+    "question": "In a five-component DuPont analysis a company has a tax burden of 0.70, an interest burden of 0.90, an EBIT margin of 10%, asset turnover of 1.2 and financial leverage of 2.0. What is its ROE?",
+    "options": ["15.12%", "21.60%", "7.56%", "12.60%"],
+    "correctIndex": 0,
+    "explanation": "ROE = 0.70 × 0.90 × 0.10 × 1.2 × 2.0 = 0.1512, or 15.12%. The first three factors multiply to the net margin of 6.3%."
+  },
+  {
+    "question": "A company's ROE rises from 15% to 20%, while its net profit margin and total asset turnover are unchanged. What does DuPont analysis indicate?",
+    "options": [
+      "Profitability improved.",
+      "Asset efficiency improved.",
+      "Financial leverage increased, so the improvement comes with more risk.",
+      "The tax burden fell."
+    ],
+    "correctIndex": 2,
+    "explanation": "With margin and asset turnover unchanged, the only remaining component that can raise ROE is financial leverage (assets per unit of equity). Higher leverage raises ROE but also raises financial risk."
+  },
+  {
+    "question": "A company has EBIT of 240 and interest expense of 30. Which statement about its interest coverage is correct?",
+    "options": [
+      "Interest coverage is 0.125 times.",
+      "Interest coverage is 8.0 times, meaning EBIT covers interest eight times.",
+      "Interest coverage is 8.0 times, meaning interest consumes 8% of EBIT.",
+      "Interest coverage cannot be computed without the tax rate."
+    ],
+    "correctIndex": 1,
+    "explanation": "Interest coverage = EBIT / interest expense = 240 / 30 = 8.0 times. The tax rate is not needed because coverage is measured before tax."
+  },
+  {
+    "question": "Which is the main reason for using common-size financial statements?",
+    "options": [
+      "They adjust all accounting policies to a single standard.",
+      "They remove the effect of size, so statements can be compared across years or companies.",
+      "They forecast future earnings automatically.",
+      "They replace the need to read the notes to the statements."
+    ],
+    "correctIndex": 1,
+    "explanation": "Common-size statements express each line as a percentage of a base such as revenue or total assets, so differences in size do not obscure differences in structure. They do not harmonize accounting policies, so comparability still needs checking."
+  }
+]

@@ -1,0 +1,23 @@
+graph TD
+    FA["Financial analysis techniques"] --> TOOLS["Tools"]
+    TOOLS --> CS["Common-size<br/>(vertical)"]
+    TOOLS --> TR["Trend<br/>(horizontal)"]
+    TOOLS --> XS["Cross-sectional<br/>vs peers"]
+
+    FA --> RAT["Ratio groups"]
+    RAT --> ACT["Activity<br/>DSO, DOH, DPO, CCC,<br/>asset turnover"]
+    RAT --> LIQ["Liquidity<br/>current, quick, cash"]
+    RAT --> SOL["Solvency<br/>debt ratios, leverage,<br/>interest coverage"]
+    RAT --> PRO["Profitability<br/>margins, ROA, ROE"]
+    RAT --> VAL["Valuation<br/>EPS, P/E, P/B, payout"]
+
+    PRO --> DP["DuPont decomposition of ROE"]
+    ACT --> DP
+    SOL --> DP
+    DP --> D3["3-way:<br/>net margin x asset turnover x leverage"]
+    D3 --> D5["5-way adds:<br/>tax burden x interest burden<br/>x EBIT margin"]
+    DP --> SG["Sustainable growth<br/>g = retention x ROE"]
+
+    FA --> CR["Credit analysis<br/>coverage, leverage, liquidity"]
+    FA --> SEG["Segment analysis<br/>business and geographic"]
+    FA --> FC["Forecasting<br/>drivers, scenarios, sensitivity"]

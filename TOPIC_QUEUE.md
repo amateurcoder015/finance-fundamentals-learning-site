@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Yield-Based Bond Duration Measures and Properties | Fixed Income | advanced
-- [ ] Financial Analysis Techniques | Financial Statements | intermediate
 - [ ] Introduction to Geopolitics | Economics | beginner
 - [ ] Company Analysis: Forecasting | Equities | advanced
 - [ ] Yield-Based Bond Convexity and Portfolio Properties | Fixed Income | advanced
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Financial Reporting Quality | Financial Statements | advanced | 2026-10-26
 - [x] The Behavioral Biases of Individuals | Portfolio Management | intermediate | 2026-10-27
 - [x] Capital Investments and Capital Allocation | Corporate Finance | intermediate | 2026-10-27
+- [x] Yield-Based Bond Duration Measures and Properties | Fixed Income | advanced | 2026-10-28
+- [x] Financial Analysis Techniques | Financial Statements | intermediate | 2026-10-28

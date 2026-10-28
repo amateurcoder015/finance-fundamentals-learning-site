@@ -1,0 +1,239 @@
+---
+title: "Yield-Based Bond Duration Measures and Properties"
+description: "How Macaulay, modified and approximate modified duration, money duration and the price value of a basis point measure a bond's sensitivity to its own yield, how duration behaves with coupon, maturity, yield and the passage of time, and how to measure the duration of a bond portfolio."
+category: "Fixed Income"
+difficulty: "advanced"
+dateAdded: "2026-10-28"
+tags: ["macaulay-duration", "modified-duration", "money-duration", "pvbp", "portfolio-duration", "interest-rate-risk"]
+---
+
+# Yield-Based Bond Duration Measures and Properties
+
+A bond's price moves in the opposite direction to its yield to maturity, and **duration** summarizes how much. A yield-based duration measure treats the bond's own yield to maturity as the only source of change: the cash flows are assumed fixed and the yield moves up or down by a small amount. This chapter defines the standard yield-based measures (Macaulay duration, modified duration, approximate modified duration, money duration and the price value of a basis point), shows how duration depends on a bond's coupon, maturity and yield, and extends the idea to portfolios.
+
+---
+
+## 1. Macaulay Duration
+
+**Macaulay duration** (MacDur) is the weighted average of the times at which a bond's cash flows are received. The weight on each time is that cash flow's present value, discounted at the yield to maturity, as a share of the bond's full price:
+
+$$\text{MacDur} = \sum_{t=1}^{N} t \times \frac{PV(CF_t)}{\text{Price}} = \frac{\sum_{t=1}^{N} t \times \dfrac{CF_t}{(1+y)^t}}{\text{Price}}$$
+
+It is measured in **years**. For a bond that pays $m$ times a year, compute with periodic cash flows and the periodic yield $y/m$, then divide the result (in periods) by $m$.
+
+### Worked example: Macaulay duration of a 3-year, 5% annual-pay bond
+
+A 3-year bond with par 100 pays an annual coupon of 5 and has a yield to maturity of 4%.
+
+| Year $t$ | Cash flow | PV at 4% | Weight (PV / Price) | $t \times$ weight |
+| --- | --- | --- | --- | --- |
+| 1 | 5 | 4.8077 | 0.04678 | 0.04678 |
+| 2 | 5 | 4.6228 | 0.04498 | 0.08996 |
+| 3 | 105 | 93.3446 | 0.90824 | 2.72472 |
+| **Total** | | **102.7751** | **1.00000** | **2.8615** |
+
+The price is 102.7751 and MacDur $= \mathbf{2.86}$ years: below the 3-year maturity, because the coupons arrive earlier than the principal.
+
+### Closed-form expression
+
+For a fixed-rate bond priced on a coupon date, with periodic yield $r = y/m$, periodic coupon rate $c = \text{coupon}/(m \times \text{par})$ and $N$ periods to maturity, the Macaulay duration in **periods** is:
+
+$$\text{MacDur} = \frac{1+r}{r} - \frac{(1+r) + N\,(c-r)}{c\left[(1+r)^N - 1\right] + r}$$
+
+Divide by $m$ to convert to years.
+
+**Example.** A 5-year, 6% semiannual-pay bond with par 100 and a yield of 7% (compounded semiannually): $r = 0.035$, $c = 0.03$, $N = 10$.
+
+1. $(1+r)/r = 1.035/0.035 = 29.5714$.
+2. Numerator of the second term: $1.035 + 10(0.03 - 0.035) = 0.985$.
+3. Denominator: $0.03\,(1.035^{10} - 1) + 0.035 = 0.03 \times 0.410599 + 0.035 = 0.047318$.
+4. Second term: $0.985 / 0.047318 = 20.8166$.
+5. MacDur $= 29.5714 - 20.8166 = 8.7548$ periods $= 8.7548 / 2 = \mathbf{4.377}$ years.
+
+The price of this bond is 95.8417. The formula is a shortcut for the cash-flow-weighted calculation and gives the same answer.
+
+<Note>
+Two special cases anchor the formula. A **zero-coupon bond** has MacDur equal to its maturity, because its only cash flow is at maturity. A **perpetuity-style bond** with no maturity has MacDur $= (1+y)/y$ (for example $1.06/0.06 = 17.67$ years at a 6% yield).
+</Note>
+
+---
+
+## 2. Modified Duration
+
+Macaulay duration is a time; **modified duration** (ModDur) converts it into a price sensitivity. It is the Macaulay duration divided by one plus the periodic yield:
+
+$$\text{ModDur} = \frac{\text{MacDur}}{1 + y/m}$$
+
+where $y$ is the annual yield and $m$ the number of periods per year. For an annual-pay bond, $m = 1$. Modified duration is also the (negative) proportional slope of the price-yield curve:
+
+$$\text{ModDur} = -\frac{1}{P}\frac{dP}{dy}$$
+
+The **estimated percentage price change** for a yield change $\Delta y$ is:
+
+$$\%\Delta P \approx -\text{ModDur} \times \Delta y$$
+
+Continuing the 3-year, 5% bond at a 4% yield: $\text{ModDur} = 2.8615 / 1.04 = \mathbf{2.7514}$.
+
+| Yield change | Estimate: $-\text{ModDur} \times \Delta y$ | Exact repricing | Exact change |
+| --- | --- | --- | --- |
+| +100 bp (4% to 5%) | -2.75% | Price 100.00 | -2.70% |
+| -100 bp (4% to 3%) | +2.75% | Price 105.66 | +2.80% |
+
+The estimate is symmetric, but the exact price change is not. For a bond with no embedded options the price-yield curve is **convex**: a yield fall raises the price by more than an equal yield rise lowers it. Duration is the first-order (linear) approximation and is reliable only for small yield changes; correcting for the curvature is the job of convexity.
+
+---
+
+## 3. Approximate Modified Duration
+
+When a closed form is awkward, modified duration can be estimated by repricing the bond at a slightly higher and a slightly lower yield:
+
+$$\text{ApproxModDur} = \frac{PV_{-} - PV_{+}}{2 \times PV_0 \times \Delta y}$$
+
+where $PV_0$ is the price at the starting yield, $PV_{-}$ the price when the yield is lowered by $\Delta y$, and $PV_{+}$ the price when it is raised by $\Delta y$. The same repricing gives an approximation of Macaulay duration:
+
+$$\text{ApproxMacDur} = \text{ApproxModDur} \times (1 + y/m)$$
+
+### Worked example
+
+Take the 3-year, 5% bond at a 4% yield and use $\Delta y = 0.01\%$ (1 basis point):
+
+1. $PV_0 = 102.775091$.
+2. $PV_{-}$ (yield 3.99%) $= 102.803374$ and $PV_{+}$ (yield 4.01%) $= 102.746819$.
+3. $\text{ApproxModDur} = \dfrac{102.803374 - 102.746819}{2 \times 102.775091 \times 0.0001} = \dfrac{0.056555}{0.0205550} = \mathbf{2.7514}$.
+4. $\text{ApproxMacDur} = 2.7514 \times 1.04 = 2.8615$.
+
+Both agree with the closed-form results. A smaller $\Delta y$ gives a closer match to the true slope.
+
+---
+
+## 4. Money Duration and the Price Value of a Basis Point
+
+Modified duration is a **percentage** measure. Two companion measures express the same sensitivity in currency.
+
+**Money duration** is modified duration times the bond's full price (or position value):
+
+$$\text{MoneyDur} = \text{ModDur} \times \text{Full price}$$
+
+The estimated price change in currency is $\Delta P \approx -\text{MoneyDur} \times \Delta y$.
+
+**Price value of a basis point (PVBP)**, also called BPV or DV01, is the estimated change in price for a 1 basis point (0.01%) change in yield:
+
+$$\text{PVBP} = \text{MoneyDur} \times 0.0001$$
+
+For the 3-year, 5% bond (per 100 of par):
+
+- $\text{MoneyDur} = 2.7514 \times 102.7751 = 282.78$.
+- $\text{PVBP} = 282.78 \times 0.0001 = \mathbf{0.0283}$ per 100 of par.
+
+For a position of 5 million par value this is $0.0283 \times 50{,}000 = 1{,}414$ currency units per basis point.
+
+Money duration and PVBP are useful when comparing positions of different sizes, or for sizing a hedge: two bonds can have the same modified duration but very different currency exposure.
+
+| Measure | Units | Answers the question |
+| --- | --- | --- |
+| Macaulay duration | Years | How long, on a present-value-weighted basis, until the cash flows arrive? |
+| Modified duration | % price change per 1% yield change | How sensitive is the price in percentage terms? |
+| Money duration | Currency per 1.00 (100%) yield change | How sensitive is the position in currency terms? |
+| PVBP | Currency per 1 bp | How much does the price change for a 1 bp yield move? |
+
+---
+
+## 5. Properties of Duration
+
+Duration depends on a bond's cash-flow pattern and its yield. The following figures use annual-pay bonds with par 100.
+
+### Coupon rate
+
+A lower coupon rate means more of the bond's value is in the distant principal payment, so **duration is higher**. 10-year bonds at a 6% yield:
+
+| Coupon rate | 0% | 2% | 4% | 6% | 10% |
+| --- | --- | --- | --- | --- | --- |
+| MacDur (years) | 10.00 | 8.96 | 8.28 | 7.80 | 7.17 |
+
+### Maturity
+
+For a given coupon and yield, a longer maturity usually means a **higher duration**. 6% coupon bonds at a 6% yield:
+
+| Maturity | 5 | 10 | 20 | 30 | 100 | Perpetuity |
+| --- | --- | --- | --- | --- | --- | --- |
+| MacDur (years) | 4.47 | 7.80 | 12.16 | 14.59 | 17.61 | 17.67 |
+
+Duration rises more and more slowly with maturity and is capped by the perpetuity value $(1+y)/y$ for a bond priced at par or at a premium. A **deep-discount, low-coupon** bond is the exception: a 2% coupon bond at a 6% yield has MacDur 18.57 at 30 years and 19.97 at 50 years, above the perpetuity's 17.67, before it falls back toward 17.67 at very long maturities (18.10 at 100 years). Maturity is therefore not a reliable proxy for duration.
+
+### Yield to maturity
+
+A higher yield discounts distant cash flows more heavily, reducing their weight, so **duration is lower**. 10-year, 6% bonds:
+
+| Yield | 2% | 4% | 6% | 8% | 10% |
+| --- | --- | --- | --- | --- | --- |
+| MacDur (years) | 8.15 | 7.98 | 7.80 | 7.62 | 7.42 |
+
+### Summary
+
+| Feature | Effect on duration | Reason |
+| --- | --- | --- |
+| Lower coupon rate | Higher | More weight on the final payment |
+| Longer maturity | Higher (with the discount-bond exception) | Cash flows arrive later |
+| Lower yield | Higher | Distant cash flows are discounted less |
+
+### Duration and the passage of time
+
+Between coupon dates, with the yield held constant, every cash flow's time to receipt falls by the same amount while the weights stay the same. Macaulay duration therefore **declines one year per year**. When a coupon is paid, that early cash flow drops out and duration **jumps upward**. Over a bond's life, duration follows a saw-tooth path with a downward trend that ends at zero at maturity. This is why a position's duration must be recalculated regularly.
+
+### Embedded options and floating-rate notes
+
+Yield-based measures assume the cash flows do not change when the yield changes. For a bond with an embedded option (callable, putable), the cash flows depend on interest rates, so a yield-based duration is unreliable. A **floating-rate note** resets its coupon to market rates, so its price is stable and its duration is close to the time remaining until the next reset, not its maturity.
+
+---
+
+## 6. Duration of a Bond Portfolio
+
+There are two ways to measure a portfolio's duration.
+
+**Method 1: weighted average of time to receipt of aggregate cash flows.** Treat the portfolio as one set of cash flows, find its single yield (the cash-flow yield or internal rate of return), and compute the Macaulay duration of the combined flows. This is the theoretically correct measure of exposure to a change in the portfolio's own yield. It is hard to use in practice: the portfolio's yield is not tied to market yields in a simple way, and the calculation has to be redone as the portfolio changes.
+
+**Method 2: weighted average of the individual bond durations.** Weight each bond's duration by its **market value** share of the portfolio:
+
+$$D_P = \sum_{i=1}^{n} w_i D_i, \qquad w_i = \frac{MV_i}{\sum MV}$$
+
+This is the standard practical approach. It is easy to update and to use for hedging. Its main limitation is that it implicitly assumes a **parallel shift** in the yield curve, that is, all the bonds' yields change by the same amount. Because bonds with different maturities do not necessarily move together, it can misstate the effect of a non-parallel change. Money durations and PVBPs add directly across positions, which is often the cleaner way to aggregate.
+
+### Worked example
+
+A portfolio holds two bonds:
+
+| Bond | Market value | ModDur |
+| --- | --- | --- |
+| X | 6 million | 4.0 |
+| Y | 4 million | 7.5 |
+
+1. Weights: $6/10 = 0.60$ and $4/10 = 0.40$.
+2. Portfolio ModDur $= 0.60 \times 4.0 + 0.40 \times 7.5 = 2.4 + 3.0 = \mathbf{5.4}$.
+3. Portfolio money duration $= 5.4 \times 10 \text{ million} = 54$ million; PVBP $= 54{,}000{,}000 \times 0.0001 = 5{,}400$.
+4. For a parallel rise of 50 bp: $\%\Delta P \approx -5.4 \times 0.50\% = -2.70\%$, a loss of about $0.027 \times 10\text{ million} = 270{,}000$, which equals $50 \times 5{,}400$.
+
+---
+
+## 7. Putting It Together
+
+| Question | Use |
+| --- | --- |
+| Time-weighted average life of the cash flows | Macaulay duration |
+| Percentage price change for a small yield change | Modified duration |
+| Duration of a bond with no closed form | Approximate modified duration |
+| Currency exposure of a position, or hedge sizing | Money duration, PVBP |
+| Portfolio interest rate exposure | Market-value-weighted duration (parallel shifts) |
+| Bond with a call or put option | Not yield-based; use effective duration |
+
+---
+
+## Key takeaways
+
+- **Macaulay duration** is the present-value-weighted average time to receipt of a bond's cash flows, in years. A zero-coupon bond's MacDur equals its maturity.
+- $\text{ModDur} = \text{MacDur}/(1+y/m)$ and $\%\Delta P \approx -\text{ModDur}\times\Delta y$. The estimate is accurate for small yield changes and understates gains and overstates losses because of convexity.
+- $\text{ApproxModDur} = (PV_{-} - PV_{+})/(2\,PV_0\,\Delta y)$; $\text{ApproxMacDur} = \text{ApproxModDur}\times(1+y/m)$.
+- $\text{MoneyDur} = \text{ModDur}\times\text{Full price}$ and $\text{PVBP} = \text{MoneyDur}\times 0.0001$.
+- Duration is higher for lower coupons, longer maturities (with a deep-discount exception) and lower yields.
+- With a constant yield, Macaulay duration falls over time between coupons and jumps up when a coupon is paid.
+- Portfolio duration is usually the market-value-weighted average of bond durations, which assumes a parallel yield curve shift.
+- Yield-based measures assume fixed cash flows, so they do not suit bonds with embedded options.

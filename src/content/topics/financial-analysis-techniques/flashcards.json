@@ -1,0 +1,42 @@
+[
+  {
+    "front": "What is the difference between vertical and horizontal analysis?",
+    "back": "Vertical (common-size) analysis expresses each line as a percentage of a base within one period (revenue or total assets). Horizontal (trend) analysis follows line items or ratios across periods, often indexed to a base year."
+  },
+  {
+    "front": "How are DSO, DOH and DPO computed?",
+    "back": "DSO = 365 / receivables turnover (revenue / average receivables). DOH = 365 / inventory turnover (COGS / average inventory). DPO = 365 / payables turnover (purchases / average payables)."
+  },
+  {
+    "front": "What is the cash conversion cycle?",
+    "back": "CCC = DOH + DSO − DPO. It measures the days between paying suppliers for inventory and collecting cash from customers."
+  },
+  {
+    "front": "List the current, quick and cash ratios.",
+    "back": "Current = current assets / current liabilities. Quick = (cash + marketable securities + receivables) / current liabilities. Cash = (cash + marketable securities) / current liabilities."
+  },
+  {
+    "front": "How is interest coverage computed?",
+    "back": "EBIT / interest expense. It shows how many times operating income covers interest payments."
+  },
+  {
+    "front": "What are the three components of DuPont ROE?",
+    "back": "ROE = net profit margin × total asset turnover × financial leverage, where leverage = average total assets / average equity."
+  },
+  {
+    "front": "What are the five components of extended DuPont ROE?",
+    "back": "ROE = tax burden (NI/EBT) × interest burden (EBT/EBIT) × EBIT margin (EBIT/revenue) × asset turnover × financial leverage."
+  },
+  {
+    "front": "What is the sustainable growth rate?",
+    "back": "g = retention ratio × ROE, the growth supported by internal equity at a constant ROE. The retention ratio b = 1 − dividend payout ratio."
+  },
+  {
+    "front": "Why can a higher ROE be a warning sign?",
+    "back": "If the rise comes from higher financial leverage rather than higher margin or asset turnover, the firm is carrying more financial risk for the same underlying operating performance."
+  },
+  {
+    "front": "Why is segment analysis useful?",
+    "back": "Consolidated ratios blend all businesses. Segment margins, returns on assets and turnover show which businesses or regions drive profit and which tie up capital."
+  }
+]

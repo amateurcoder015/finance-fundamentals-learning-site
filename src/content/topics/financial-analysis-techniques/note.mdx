@@ -1,0 +1,254 @@
+---
+title: "Financial Analysis Techniques"
+description: "The toolkit for analyzing financial statements: common-size and trend analysis, activity, liquidity, solvency and profitability ratios, three- and five-component DuPont analysis, valuation and credit ratios, and segment analysis, with one set of statements worked end to end."
+category: "Financial Statements"
+difficulty: "intermediate"
+dateAdded: "2026-10-28"
+tags: ["financial-ratios", "dupont-analysis", "common-size", "liquidity-ratios", "solvency-ratios", "segment-analysis"]
+---
+
+# Financial Analysis Techniques
+
+Financial statements report numbers; analysis turns them into judgments about a company's performance, liquidity, leverage and value. The raw figures are hard to compare across years or across companies of different sizes, so analysts convert them into **ratios** and **common-size statements**, then interpret the results against history, peers and the company's strategy. This chapter introduces the standard tools and applies them to a single illustrative company so every number can be traced.
+
+---
+
+## 1. Tools and Their Limits
+
+| Tool | What it does |
+| --- | --- |
+| **Ratio analysis** | Relates one financial statement figure to another (for example, net income to revenue) |
+| **Common-size analysis** | Restates each line as a percentage of a base: revenue on the income statement, total assets on the balance sheet (**vertical** analysis) |
+| **Trend analysis** | Follows a ratio or line item over several periods, often as an index to a base year (**horizontal** analysis) |
+| **Cross-sectional analysis** | Compares a company with peers, an industry or a benchmark at one point in time |
+| **Graphs and regression** | Show relationships and drivers, such as sales growth against a macro variable |
+
+Limits to keep in mind:
+
+- Ratios are only as comparable as the accounting behind them. Different policies (inventory method, depreciation, leases) distort comparisons.
+- A single ratio is rarely conclusive. Judge it with related ratios and the business model.
+- Year-end balances can be unrepresentative for seasonal businesses; averages help but do not remove the issue.
+- Ratio values depend on the definitions used, so be consistent and state which one you apply.
+
+---
+
+## 2. The Example Company
+
+All the ratios in this chapter use these statements (amounts in millions; the tax rate is 25%).
+
+**Income statement, current year**
+
+| Item | Amount | % of revenue |
+| --- | --- | --- |
+| Revenue | 2,400 | 100.0% |
+| Cost of goods sold | 1,440 | 60.0% |
+| **Gross profit** | 960 | 40.0% |
+| Selling, general and administrative | 480 | 20.0% |
+| **Operating income (EBIT)** | 480 | 20.0% |
+| Interest expense | 60 | 2.5% |
+| **Pre-tax income (EBT)** | 420 | 17.5% |
+| Income tax (25%) | 105 | 4.375% |
+| **Net income** | 315 | 13.125% |
+
+**Balance sheet**
+
+| Item | Year-end | Beginning |
+| --- | --- | --- |
+| Cash | 150 | 130 |
+| Accounts receivable | 300 | 260 |
+| Inventory | 360 | 340 |
+| **Current assets** | 810 | 730 |
+| Net property, plant and equipment | 1,190 | 1,070 |
+| **Total assets** | 2,000 | 1,800 |
+| Accounts payable | 180 | 160 |
+| Accrued liabilities | 40 | 40 |
+| Short-term debt | 100 | 80 |
+| **Current liabilities** | 320 | 280 |
+| Long-term debt | 600 | 560 |
+| **Total liabilities** | 920 | 840 |
+| **Shareholders' equity** | 1,080 | 960 |
+
+Dividends paid during the year were 195, so equity rose by $315 - 195 = 120$. The company has 100 million shares outstanding and a share price of 47.25.
+
+The percentages in the income statement above are its common-size form. Reading it: cost of goods sold takes 60 cents of each revenue dollar, and 13.1 cents reach net income. Applied to the balance sheet, the same method shows, for example, that receivables are $300/2{,}000 = 15\%$ of assets and total debt is $700/2{,}000 = 35\%$.
+
+---
+
+## 3. Activity Ratios
+
+Activity (efficiency) ratios show how effectively the company uses its assets. Turnover ratios use **average** balances for flows measured over the year.
+
+$$\text{Receivables turnover} = \frac{\text{Revenue}}{\text{Average receivables}}, \qquad \text{DSO} = \frac{365}{\text{Receivables turnover}}$$
+
+$$\text{Inventory turnover} = \frac{\text{COGS}}{\text{Average inventory}}, \qquad \text{DOH} = \frac{365}{\text{Inventory turnover}}$$
+
+$$\text{Payables turnover} = \frac{\text{Purchases}}{\text{Average payables}}, \qquad \text{DPO} = \frac{365}{\text{Payables turnover}}$$
+
+where $\text{Purchases} = \text{COGS} + \text{Ending inventory} - \text{Beginning inventory}$.
+
+| Measure | Calculation | Result |
+| --- | --- | --- |
+| Average receivables | $(300 + 260)/2$ | 280 |
+| Receivables turnover | $2{,}400 / 280$ | 8.57 |
+| DSO | $365 / 8.571$ | **42.6 days** |
+| Average inventory | $(360 + 340)/2$ | 350 |
+| Inventory turnover | $1{,}440 / 350$ | 4.11 |
+| DOH | $365 / 4.114$ | **88.7 days** |
+| Purchases | $1{,}440 + 360 - 340$ | 1,460 |
+| Average payables | $(180 + 160)/2$ | 170 |
+| Payables turnover | $1{,}460 / 170$ | 8.59 |
+| DPO | $365 / 8.588$ | **42.5 days** |
+
+The **cash conversion cycle** (net operating cycle) is the time between paying suppliers and collecting from customers:
+
+$$\text{CCC} = \text{DOH} + \text{DSO} - \text{DPO} = 88.7 + 42.6 - 42.5 = \mathbf{88.8 \text{ days}}$$
+
+A shorter cycle frees cash. The company also turns over its assets: **total asset turnover** $= 2{,}400 / 1{,}900 = 1.26$ (average assets $(2{,}000+1{,}800)/2 = 1{,}900$).
+
+---
+
+## 4. Liquidity Ratios
+
+Liquidity ratios measure the ability to meet short-term obligations.
+
+$$\text{Current ratio} = \frac{\text{Current assets}}{\text{Current liabilities}}, \quad \text{Quick ratio} = \frac{\text{Cash} + \text{Marketable securities} + \text{Receivables}}{\text{Current liabilities}}, \quad \text{Cash ratio} = \frac{\text{Cash} + \text{Marketable securities}}{\text{Current liabilities}}$$
+
+| Ratio | Calculation | Result |
+| --- | --- | --- |
+| Current ratio | $810 / 320$ | 2.53 |
+| Quick ratio | $(150 + 300) / 320$ | 1.41 |
+| Cash ratio | $150 / 320$ | 0.47 |
+
+The three ratios are ordered from the broadest to the most conservative. A high current ratio built on slow-moving inventory is weaker than the same ratio built on cash, which is why the quick and cash ratios are used alongside it.
+
+---
+
+## 5. Solvency Ratios
+
+Solvency ratios measure long-term financial leverage and the ability to meet obligations over time.
+
+| Ratio | Formula | Example |
+| --- | --- | --- |
+| Debt-to-assets | Total debt / Total assets | $700/2{,}000 = 0.35$ |
+| Debt-to-equity | Total debt / Total equity | $700/1{,}080 = 0.65$ |
+| Financial leverage | Average total assets / Average equity | $1{,}900/1{,}020 = 1.86$ |
+| Interest coverage | EBIT / Interest expense | $480/60 = 8.0\times$ |
+
+Total debt is short-term plus long-term debt $= 100 + 600 = 700$. Average equity is $(1{,}080+960)/2 = 1{,}020$. The company's operating income covers interest 8 times, a comfortable margin.
+
+---
+
+## 6. Profitability Ratios
+
+| Ratio | Formula | Example |
+| --- | --- | --- |
+| Gross profit margin | Gross profit / Revenue | $960/2{,}400 = 40.0\%$ |
+| Operating profit margin | EBIT / Revenue | $480/2{,}400 = 20.0\%$ |
+| Net profit margin | Net income / Revenue | $315/2{,}400 = 13.125\%$ |
+| Return on assets (ROA) | Net income / Average total assets | $315/1{,}900 = 16.6\%$ |
+| Return on equity (ROE) | Net income / Average equity | $315/1{,}020 = 30.9\%$ |
+
+Margins show how much profit each unit of revenue generates; ROA and ROE show how well the capital employed is used.
+
+---
+
+## 7. Integrated Analysis: DuPont Decomposition
+
+**DuPont analysis** splits ROE into components so you can see what drives it.
+
+### Three-component DuPont
+
+$$\text{ROE} = \underbrace{\frac{NI}{\text{Revenue}}}_{\text{net margin}} \times \underbrace{\frac{\text{Revenue}}{\text{Avg assets}}}_{\text{asset turnover}} \times \underbrace{\frac{\text{Avg assets}}{\text{Avg equity}}}_{\text{financial leverage}}$$
+
+$$\text{ROE} = 0.13125 \times 1.2632 \times 1.8627 = \mathbf{30.9\%}$$
+
+This matches $315/1{,}020$. The decomposition says ROE comes from profitability (13.1% margin), asset efficiency (1.26 turns) and leverage (1.86 times).
+
+### Five-component DuPont
+
+The net margin is broken down further into tax and interest effects:
+
+$$\text{ROE} = \underbrace{\frac{NI}{EBT}}_{\text{tax burden}} \times \underbrace{\frac{EBT}{EBIT}}_{\text{interest burden}} \times \underbrace{\frac{EBIT}{\text{Revenue}}}_{\text{EBIT margin}} \times \text{Asset turnover} \times \text{Financial leverage}$$
+
+| Component | Calculation | Value |
+| --- | --- | --- |
+| Tax burden | $315/420$ | 0.750 |
+| Interest burden | $420/480$ | 0.875 |
+| EBIT margin | $480/2{,}400$ | 0.200 |
+| Asset turnover | $2{,}400/1{,}900$ | 1.263 |
+| Financial leverage | $1{,}900/1{,}020$ | 1.863 |
+
+$$\text{ROE} = 0.750 \times 0.875 \times 0.200 \times 1.2632 \times 1.8627 = 0.65625 \times 0.2 \times 1.2632 \times 1.8627 = \mathbf{30.9\%}$$
+
+<Note>
+A rising ROE is not automatically good news. If it comes from higher leverage while the margin and asset turnover are flat or falling, the company is taking more risk for the same underlying performance. The decomposition separates the sources.
+</Note>
+
+### Sustainable growth
+
+With a retention ratio $b$ (the share of earnings retained), the growth rate supported by internal funds at a constant ROE is:
+
+$$g = b \times \text{ROE}$$
+
+Retained earnings were 120 out of 315, so $b = 0.381$, and $g = 0.381 \times 0.3088 = \mathbf{11.8\%}$. Equivalently, retained earnings divided by average equity: $120/1{,}020 = 11.8\%$.
+
+---
+
+## 8. Valuation Ratios and Per-Share Data
+
+| Measure | Formula | Example |
+| --- | --- | --- |
+| Earnings per share (EPS) | Net income / Shares | $315/100 = 3.15$ |
+| Price-to-earnings (P/E) | Price / EPS | $47.25/3.15 = 15.0\times$ |
+| Dividends per share | Dividends / Shares | $195/100 = 1.95$ |
+| Dividend payout ratio | Dividends / Net income | $195/315 = 61.9\%$ |
+| Book value per share | Equity / Shares | $1{,}080/100 = 10.80$ |
+| Price-to-book (P/B) | Price / Book value per share | $47.25/10.80 = 4.38\times$ |
+
+The retention ratio is $1 - 0.619 = 0.381$, the figure used in the sustainable-growth calculation above.
+
+---
+
+## 9. Credit Analysis
+
+Lenders and bond analysts focus on the ability to repay. The measures combine the solvency and liquidity tools above:
+
+- **Coverage:** EBIT or EBITDA divided by interest, and cash flow from operations to debt.
+- **Leverage:** debt to assets, debt to equity, and debt to EBITDA.
+- **Liquidity:** current, quick and cash ratios, and the size of undrawn credit facilities.
+- **Qualitative factors:** industry stability, business model, covenants and asset quality.
+
+Our company has interest coverage of 8.0 times and debt to assets of 35%, which would typically be viewed as a modest leverage profile.
+
+---
+
+## 10. Business and Geographic Segment Analysis
+
+Large companies report results by **business segment** (product line) and sometimes by **geographic** area. This reveals differences hidden in consolidated numbers.
+
+| Segment | Revenue | Operating profit | Assets | Operating margin | Return on assets | Asset turnover |
+| --- | --- | --- | --- | --- | --- | --- |
+| A | 1,500 | 330 | 1,000 | 22.0% | 33.0% | 1.50 |
+| B | 900 | 150 | 800 | 16.7% | 18.75% | 1.125 |
+| **Total** | 2,400 | 480 | 1,800 | 20.0% | 26.7% | 1.33 |
+
+Segment A earns both higher margins and higher returns on assets, so the company's consolidated 20% margin blends a stronger and a weaker business. Questions this prompts: Is segment A growing? Is B worth its capital? Is segment disclosure consistent across years, and are shared costs allocated fairly?
+
+---
+
+## 11. Forecasting and Model Building
+
+Ratios feed projections: forecast revenue, apply margin and turnover assumptions, and derive the statements. Sensitivity (varying assumptions) and scenario analysis (consistent sets of assumptions) show the range of outcomes. A forecast is only as good as its drivers, so tie assumptions to the business model, industry conditions and the company's history.
+
+---
+
+## Key takeaways
+
+- Use **common-size** and **trend** analysis to remove size effects and see changes over time, and **cross-sectional** comparison to benchmark against peers.
+- Activity: $\text{DSO} = 365/\text{receivables turnover}$, $\text{DOH} = 365/\text{inventory turnover}$, $\text{DPO} = 365/\text{payables turnover}$, $\text{CCC} = \text{DOH} + \text{DSO} - \text{DPO}$.
+- Liquidity: current ratio $\ge$ quick ratio $\ge$ cash ratio; weigh asset quality, not just the number.
+- Solvency: debt-to-assets, debt-to-equity, financial leverage and interest coverage (EBIT / interest).
+- **DuPont:** $\text{ROE} = \text{net margin} \times \text{asset turnover} \times \text{leverage}$; the five-way version adds tax burden and interest burden.
+- Sustainable growth $g = b \times \text{ROE}$, where $b$ is the retention ratio.
+- Segment data shows which businesses create the consolidated margin and return.
+- Compare ratios only when the accounting policies and definitions are consistent.
