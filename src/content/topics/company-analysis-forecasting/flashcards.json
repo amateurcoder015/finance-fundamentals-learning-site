@@ -1,0 +1,50 @@
+[
+  {
+    "front": "Top-down revenue forecast formula.",
+    "back": "Revenue = market size x market share, with market size grown at the expected market growth rate (often linked to nominal GDP or industry volume plus price)."
+  },
+  {
+    "front": "Bottom-up revenue forecast formula.",
+    "back": "Revenue = sum over segments of (volume x price). Other versions: same-store sales plus new stores, capacity x utilisation x price, customers x revenue per customer."
+  },
+  {
+    "front": "Top-down versus bottom-up: strengths and weaknesses.",
+    "back": "Top-down: fast and ties to industry trends, but may miss company specifics. Bottom-up: detailed and company-specific, but time-consuming and may ignore market limits. Best practice: use both and reconcile."
+  },
+  {
+    "front": "How are costs usually forecast?",
+    "back": "COGS as a percentage of revenue (or gross margin); SG&A as fixed plus variable parts; D&A from the asset base and capex; interest = rate x debt balance; tax = effective rate x pre-tax income."
+  },
+  {
+    "front": "Why not hold margins constant across revenue scenarios?",
+    "back": "Fixed costs create operating leverage: profit changes by a larger percentage than revenue. A constant margin overstates profit when revenue is low and understates it when revenue is high."
+  },
+  {
+    "front": "Working capital forecasting formulas.",
+    "back": "Receivables = revenue x DSO/365; Inventory = COGS x DIO/365; Payables = COGS x DPO/365. Operating NWC = receivables + inventory - payables. A rise in NWC is a cash outflow."
+  },
+  {
+    "front": "Net PP&E roll-forward.",
+    "back": "Closing net PP&E = opening net PP&E + capex - depreciation."
+  },
+  {
+    "front": "FCFF formula (from EBIT).",
+    "back": "FCFF = EBIT(1 - t) + D&A - capex - change in net working capital. Example: 180(0.75) + 60 - 90 - 11.6 = 93.4."
+  },
+  {
+    "front": "FCFE from FCFF.",
+    "back": "FCFE = FCFF - interest x (1 - t) + net borrowing."
+  },
+  {
+    "front": "Sensitivity analysis versus scenario analysis.",
+    "back": "Sensitivity: change one input at a time to find key drivers. Scenario: change several inputs together into coherent cases (base, upside, downside) with probabilities, giving a probability-weighted expected value."
+  },
+  {
+    "front": "Name common forecasting errors.",
+    "back": "Extrapolating recent trends, ignoring mean reversion of growth and returns, anchoring and overconfidence, inconsistent assumptions (growth without investment), using peak or trough earnings as normal, and uncritically accepting management guidance."
+  },
+  {
+    "front": "Why does interest cause circularity, and how is it avoided?",
+    "back": "Interest on average debt depends on closing debt, which depends on cash flow, which depends on interest. Avoid by using opening debt balances or an iterative calculation."
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A market is currently 8,000 and is expected to grow 5% next year. The company holds a 15% share and expects it to remain unchanged. Using a top-down approach, forecast revenue is:",
+    "options": [
+      "1,200",
+      "1,260",
+      "1,134",
+      "1,290"
+    ],
+    "correctIndex": 1,
+    "explanation": "Market next year = 8,000 x 1.05 = 8,400. Revenue = 8,400 x 15% = 1,260. Using last year's market (8,000 x 15% = 1,200) ignores market growth."
+  },
+  {
+    "question": "Revenue is forecast at 500. COGS is 62% of revenue, and SG&A has a fixed component of 80 plus a variable component of 10% of revenue. Forecast EBITDA is:",
+    "options": [
+      "40",
+      "60",
+      "110",
+      "190"
+    ],
+    "correctIndex": 1,
+    "explanation": "COGS = 0.62 x 500 = 310, so gross profit = 190. SG&A = 80 + 0.10 x 500 = 130. EBITDA = 190 - 130 = 60. (190 is gross profit; 40 would be EBIT if D&A were 20.)"
+  },
+  {
+    "question": "Next year's revenue is forecast at 1,460 and DSO is expected to be 30 days (365-day year). Forecast year-end receivables are:",
+    "options": [
+      "100",
+      "120",
+      "146",
+      "180"
+    ],
+    "correctIndex": 1,
+    "explanation": "Receivables = revenue x DSO / 365 = 1,460 x 30 / 365 = 120."
+  },
+  {
+    "question": "Which of the following is the main advantage of a bottom-up revenue forecast over a top-down forecast?",
+    "options": [
+      "It automatically ensures that the company's growth is consistent with overall market size.",
+      "It reflects company-specific details such as products, segments, stores and capacity.",
+      "It requires less data and is quicker to prepare.",
+      "It eliminates the need for sensitivity analysis."
+    ],
+    "correctIndex": 1,
+    "explanation": "Bottom-up forecasts build from the company's own products, segments or capacity and so capture company-specific factors. Their weakness is that they can ignore market limits, which is why analysts cross-check against a top-down view."
+  },
+  {
+    "question": "A firm has EBIT of 200, a tax rate of 25%, D&A of 50, capex of 80 and an increase in net working capital of 15. Free cash flow to the firm is:",
+    "options": [
+      "85",
+      "95",
+      "105",
+      "135"
+    ],
+    "correctIndex": 2,
+    "explanation": "FCFF = EBIT(1 - t) + D&A - capex - change in NWC = 200 x 0.75 + 50 - 80 - 15 = 150 + 50 - 80 - 15 = 105."
+  },
+  {
+    "question": "An analyst forecasts EPS of 1.80 in a downside scenario (probability 30%), 2.40 in the base case (50%) and 3.00 in an upside scenario (20%). The probability-weighted EPS is:",
+    "options": [
+      "2.34",
+      "2.40",
+      "2.46",
+      "2.55"
+    ],
+    "correctIndex": 0,
+    "explanation": "E[EPS] = 0.30 x 1.80 + 0.50 x 2.40 + 0.20 x 3.00 = 0.54 + 1.20 + 0.60 = 2.34. It is below the base case because the downside carries more weight than the upside."
+  },
+  {
+    "question": "Which of the following is the most likely reason a forecasting model becomes circular?",
+    "options": [
+      "Depreciation is calculated as a percentage of opening net PP&E.",
+      "Interest expense is calculated on average debt, while closing debt depends on cash flow that is itself affected by interest.",
+      "Receivables are forecast using days sales outstanding.",
+      "Tax is calculated using the effective tax rate."
+    ],
+    "correctIndex": 1,
+    "explanation": "If interest is computed on average debt, interest depends on closing debt, closing debt depends on free cash flow, and free cash flow depends on interest. Using opening balances or iterative calculation removes the problem."
+  },
+  {
+    "question": "A firm's EBIT margin has risen for five years and its ROIC is well above its cost of capital. Which forecast assumption is most consistent with sound practice?",
+    "options": [
+      "Margins and ROIC remain at current levels forever because the trend is established.",
+      "Margins and ROIC drift toward industry norms over the forecast period unless a durable competitive advantage is identified.",
+      "Margins continue to expand by the same amount each year.",
+      "Revenue growth stays constant, while capex falls to zero."
+    ],
+    "correctIndex": 1,
+    "explanation": "Competition tends to erode abnormally high returns, so forecasts should allow for mean reversion unless there is a clear, durable moat. Straight-line extrapolation of recent trends is a common forecasting error."
+  }
+]

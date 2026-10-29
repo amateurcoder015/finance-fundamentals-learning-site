@@ -1,0 +1,42 @@
+[
+  {
+    "front": "Define geopolitics.",
+    "back": "The study of how geography, politics, power and national interests shape the behaviour of states and the relations between them, and through that, economies and markets."
+  },
+  {
+    "front": "Who are the main actors in geopolitics?",
+    "back": "Nation-states (the principal actors), non-state actors (multinationals, international organisations, NGOs, terrorist or criminal groups) and individuals (heads of state, influential leaders)."
+  },
+  {
+    "front": "Cooperation versus competition in geopolitics.",
+    "back": "Cooperation seeks shared gains (alliances, trade agreements, treaties; bilateral or multilateral). Competition seeks relative gains (rivalry, tariffs, sanctions, arms build-ups). Most relationships contain both."
+  },
+  {
+    "front": "Globalization versus nationalism.",
+    "back": "Globalization = growing cross-border integration of trade, capital, people, technology. Nationalism / protectionism = putting national interests first through tariffs, quotas, investment limits, subsidies or reshoring."
+  },
+  {
+    "front": "Name the three families of geopolitical tools with examples.",
+    "back": "National security (military force, intelligence, cyber); economic (tariffs, quotas, embargoes, export controls, subsidies, sanctions); financial (asset freezes, capital controls, payment-system restrictions)."
+  },
+  {
+    "front": "What is event risk?",
+    "back": "A scheduled event with a known date but an uncertain outcome, such as an election, referendum or summit. Investors can build scenarios in advance."
+  },
+  {
+    "front": "What is exogenous risk?",
+    "back": "A sudden, unexpected shock that arrives with no known date (for example a terrorist attack, surprise invasion or major cyber attack). It cannot be forecast, so resilience (diversification, liquidity) is the main defence."
+  },
+  {
+    "front": "What is thematic risk?",
+    "back": "A slow-building geopolitical trend that unfolds over years (for example trade fragmentation, great-power rivalry, resource scarcity). Direction is visible but the path is uncertain; it calls for long-term positioning."
+  },
+  {
+    "front": "Framework for assessing geopolitical risk.",
+    "back": "1) Identify the risk and actors; 2) assess likelihood, magnitude and timing; 3) trace transmission channels (trade, commodities, inflation, currencies, risk premia); 4) respond (hedge, diversify, resize or accept)."
+  },
+  {
+    "front": "Formula for probability-weighted scenario impact.",
+    "back": "E[impact] = sum of (probability of scenario i x impact in scenario i). Probabilities must sum to 100%. Example: 25% x (-12%) + 55% x 2% + 20% x 6% = -0.7%."
+  }
+]

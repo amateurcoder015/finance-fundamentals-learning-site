@@ -1,0 +1,79 @@
+[
+  {
+    "question": "A government announces that a scheduled national referendum on trade-bloc membership will be held in three months. Investors do not know the result. Which type of geopolitical risk does this represent?",
+    "options": [
+      "Exogenous risk",
+      "Event risk",
+      "Thematic risk",
+      "Systematic liquidity risk"
+    ],
+    "correctIndex": 1,
+    "explanation": "Event risk is a scheduled event with a known date but an uncertain outcome (elections, referendums, summits). Exogenous risk is a sudden, unexpected shock, and thematic risk is a slow-building trend."
+  },
+  {
+    "question": "A sudden, unannounced cyber attack disables a country's payment infrastructure. This is best classified as:",
+    "options": [
+      "Event risk",
+      "Thematic risk",
+      "Exogenous risk",
+      "Cooperation risk"
+    ],
+    "correctIndex": 2,
+    "explanation": "An unexpected shock that arrives without a known date is exogenous risk. Because it cannot be forecast, the main defences are diversification and liquidity rather than scenario planning around a known date."
+  },
+  {
+    "question": "Which of the following is a financial (rather than economic or national security) tool of geopolitics?",
+    "options": [
+      "Imposing a 10% tariff on imported steel",
+      "Placing an export control on advanced semiconductors",
+      "Freezing a foreign central bank's overseas assets",
+      "Conducting a military exercise near a border"
+    ],
+    "correctIndex": 2,
+    "explanation": "Asset freezes, payment-system restrictions and capital controls are financial tools. Tariffs and export controls are economic tools, and military exercises are national security tools."
+  },
+  {
+    "question": "Three outcomes are assigned to a trade dispute: escalation (probability 30%, portfolio impact -10%), status quo (50%, +1%) and agreement (20%, +5%). The probability-weighted expected impact on the portfolio is closest to:",
+    "options": [
+      "-1.5%",
+      "-0.5%",
+      "+1.5%",
+      "-3.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "E = 0.30(-10%) + 0.50(1%) + 0.20(5%) = -3.0% + 0.5% + 1.0% = -1.5%. Probabilities sum to 100%, and the downside scenario dominates the expected value."
+  },
+  {
+    "question": "Which statement about globalization and nationalism is most accurate?",
+    "options": [
+      "Globalization restricts cross-border capital and favours domestic suppliers.",
+      "Nationalism typically leads to lower trade barriers and longer supply chains.",
+      "Globalization integrates trade, capital and people across borders, while nationalism favours national interests over integration and may bring tariffs or reshoring.",
+      "Globalization and nationalism cannot occur in the same country at different times."
+    ],
+    "correctIndex": 2,
+    "explanation": "Globalization is growing cross-border integration; nationalism / protectionism puts national interests first, using tariffs, investment restrictions or reshoring. Their relative strength shifts over time within the same country."
+  },
+  {
+    "question": "A firm with revenue of 1,000 and EBIT of 200 faces a new tariff that adds 40 to its annual costs. It can pass through 50% of the extra cost to customers with no volume loss. EBIT after the tariff is:",
+    "options": [
+      "160",
+      "180",
+      "200",
+      "220"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cost absorbed = 40 x (1 - 0.50) = 20, so EBIT = 200 - 20 = 180 (equivalently 200 + 20 recovered - 40 cost). With no pass-through EBIT would be 160."
+  },
+  {
+    "question": "Which of the following best describes thematic geopolitical risk?",
+    "options": [
+      "A scheduled central bank meeting with an uncertain rate decision",
+      "A surprise military attack",
+      "A one-day market sell-off caused by a rumour",
+      "A slow-building trend such as trade fragmentation or great-power rivalry that unfolds over years"
+    ],
+    "correctIndex": 3,
+    "explanation": "Thematic risks are long-evolving trends whose direction is visible but whose path is uncertain. They require long-term positioning, since effects accumulate over time."
+  }
+]

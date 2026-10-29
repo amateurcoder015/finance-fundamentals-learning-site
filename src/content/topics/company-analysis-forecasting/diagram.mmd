@@ -1,0 +1,30 @@
+graph TD
+    START["Historical analysis<br/>(business model, past results, current position)"] --> DRV["Identify key drivers<br/>(market growth, share, price, volume, margins)"]
+    DRV --> REV["Revenue forecast"]
+
+    REV --> TD["Top-down<br/>Market size x market share"]
+    REV --> BU["Bottom-up<br/>Segment volume x price"]
+    TD --> REC["Reconcile and sanity-check"]
+    BU --> REC
+
+    REC --> COST["Cost forecast<br/>COGS % of sales, SG&A fixed + variable"]
+    COST --> IS["Income statement<br/>EBITDA, EBIT, interest, tax, EPS"]
+
+    REC --> WC["Working capital<br/>DSO, DIO, DPO"]
+    REC --> CAPEX["Capex and D&A<br/>Closing PP&E = opening + capex - depreciation"]
+    IS --> FIN["Financing<br/>Debt, interest, dividends"]
+
+    IS --> FCF["Free cash flow<br/>FCFF = EBIT(1-t) + D&A - Capex - change in NWC"]
+    WC --> FCF
+    CAPEX --> FCF
+    FIN --> FCFE["FCFE = FCFF - Interest(1-t) + Net borrowing"]
+    FCF --> FCFE
+
+    FCF --> TEST["Test the forecast"]
+    TEST --> SENS["Sensitivity analysis<br/>(one driver at a time)"]
+    TEST --> SCEN["Scenario analysis<br/>(base, upside, downside, probabilities)"]
+    TEST --> CHK["Consistency checks<br/>(ROIC, margins, balance sheet, mean reversion)"]
+
+    SENS --> VAL["Valuation inputs"]
+    SCEN --> VAL
+    CHK --> VAL

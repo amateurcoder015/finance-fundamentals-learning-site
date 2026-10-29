@@ -1,0 +1,29 @@
+graph TD
+    GEO["Geopolitics<br/>(States pursuing national interests)"] --> ACT["Actors"]
+    GEO --> REL["Relationships"]
+    GEO --> TOOLS["Tools of Geopolitics"]
+    GEO --> RISK["Geopolitical Risk"]
+
+    ACT --> A1["Nation-states"]
+    ACT --> A2["Non-state actors<br/>(companies, institutions, groups)"]
+    ACT --> A3["Individuals"]
+
+    REL --> COOP["Cooperation<br/>(alliances, trade agreements)"]
+    REL --> COMP["Competition<br/>(rivalry, relative gains)"]
+    COOP --> GLOB["Globalization<br/>(open trade, capital, people)"]
+    COMP --> NAT["Nationalism / Protectionism<br/>(tariffs, reshoring)"]
+
+    TOOLS --> T1["National security<br/>(military, cyber, intelligence)"]
+    TOOLS --> T2["Economic<br/>(tariffs, quotas, export controls, sanctions)"]
+    TOOLS --> T3["Financial<br/>(asset freezes, capital controls)"]
+
+    RISK --> R1["Event risk<br/>(scheduled, outcome unknown)"]
+    RISK --> R2["Exogenous risk<br/>(sudden, unexpected)"]
+    RISK --> R3["Thematic risk<br/>(slow-building trend)"]
+
+    R1 --> ASSESS["Assess likelihood,<br/>magnitude and timing"]
+    R2 --> ASSESS
+    R3 --> ASSESS
+    ASSESS --> CHAN["Transmission channels<br/>(trade, commodities, inflation,<br/>currencies, risk premia)"]
+    CHAN --> SCEN["Scenario analysis<br/>(probability-weighted impact)"]
+    SCEN --> RESP["Response<br/>(diversify, hedge, resize)"]

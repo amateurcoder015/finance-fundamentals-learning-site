@@ -1,0 +1,264 @@
+---
+title: "Company Analysis: Forecasting"
+description: "How analysts build forecasts of revenue, costs, earnings, working capital, capital spending and free cash flow, test them with scenarios and sensitivity analysis, and avoid common forecasting errors."
+category: "Equities"
+difficulty: "advanced"
+dateAdded: "2026-10-29"
+tags: ["forecasting", "revenue-forecast", "scenario-analysis", "sensitivity", "free-cash-flow", "financial-modeling"]
+---
+
+# Company Analysis: Forecasting
+
+Historical analysis explains where a company has been; valuation depends on where it is going. **Forecasting** turns the understanding of the business model, past performance and current position into explicit estimates of future revenue, margins, earnings and cash flow. These estimates feed discounted cash flow, residual income and multiple-based valuation. This chapter covers forecasting approaches, revenue, costs, income statement and balance-sheet items, free cash flow, scenarios and sensitivity, and the common errors that make forecasts unreliable.
+
+---
+
+## 1. Forecasting Approaches and Model Structure
+
+### A good forecast
+
+- is built from a **small number of key drivers** (market growth, market share, price, volume, margin, capital intensity) rather than dozens of unconnected line items;
+- is **internally consistent** (the income statement, balance sheet and cash flow statement agree with each other);
+- is **anchored on history, peers and industry data**, with explicit reasons for any departure from them;
+- states its **assumptions** so that they can be challenged and updated.
+
+### Top-down, bottom-up and hybrid
+
+| Approach | Method | Strengths | Weaknesses |
+| --- | --- | --- | --- |
+| **Top-down** | Start with the economy or industry (market size and growth), then apply the company's market share | Fast; ties company to macro and industry trends | Can overlook company-specific factors; share is hard to estimate |
+| **Bottom-up** | Build from the company's units: products, segments, stores, customers, capacity | Detailed; reflects company specifics | Time-consuming; errors in many small pieces; may ignore market limits |
+| **Hybrid** | Use both and reconcile the results | Cross-check each method against the other | Needs more data and judgement |
+
+A sensible practice is to build the forecast one way and sanity-check it the other way: if a bottom-up forecast implies the company's market share rises from 12% to 20% in three years, ask whether that is plausible.
+
+### Time horizon
+
+Explicit forecasts usually cover 3 to 10 years (the period in which the company's growth and margins differ from their long-run level), followed by a **terminal value** that assumes a steady state. Near-term years can be detailed; later years should converge toward sustainable growth and returns.
+
+---
+
+## 2. Forecasting Revenue
+
+### Top-down revenue
+
+$$\text{Revenue}_t = \text{Market size}_t \times \text{Market share}_t$$
+
+$$\text{Market size}_t = \text{Market size}_{t-1}\times(1 + g_{\text{market}})$$
+
+The market growth rate is often linked to nominal GDP growth, industry volume growth plus price inflation, or demographic drivers.
+
+### Bottom-up revenue
+
+$$\text{Revenue} = \sum_{\text{segments}} \text{Volume}_i \times \text{Price}_i$$
+
+Alternatives for specific business models: same-store sales growth plus new stores (retail), capacity times utilisation times price (manufacturing, airlines, hotels), customers times revenue per customer (subscription), and backlog or order book (aerospace, construction).
+
+### Time-series and statistical methods
+
+- **Trend extrapolation**: apply a historical compound growth rate. $\text{CAGR} = (\text{Revenue}_n / \text{Revenue}_0)^{1/n} - 1$.
+- **Regression**: relate company revenue to drivers such as GDP, industry volume or housing starts.
+- **Moving averages** to smooth volatile series.
+
+Statistical methods describe the past; they are a starting point, not a forecast. Adjust for known changes such as new products, price changes, acquisitions and disposals, currency effects and the stage of the business cycle.
+
+<Note>
+Revenue growth should fade over time. Growth far above the economy's growth cannot continue indefinitely because the company eventually saturates its market or faces competition. A common error is carrying a high growth rate unchanged through the whole forecast.
+</Note>
+
+### Worked example: reconciling top-down and bottom-up
+
+A company sold 1,200 (in millions of currency) last year, a 12.0% share of a market of 10,000. The market is expected to grow 4% and the company expects to gain half a point of share.
+
+**Top-down**
+
+1. Market size next year: $10{,}000 \times 1.04 = 10{,}400$.
+2. Market share: $12.0\% + 0.5\% = 12.5\%$.
+3. Revenue: $10{,}400 \times 12.5\% = 1{,}300$ (growth of $1{,}300/1{,}200 - 1 = 8.33\%$).
+
+**Bottom-up** (units in millions, prices in currency units; revenue in millions)
+
+| Product | Units | Price | Revenue |
+| --- | --- | --- | --- |
+| A | 2.0 | 250 | 500 |
+| B | 1.5 | 200 | 300 |
+| C | 5.0 | 100 | 500 |
+| **Total** | | | **1,300** |
+
+4. The two methods agree at 1,300, which gives more confidence in the forecast. If the bottom-up total were 1,400, the implied share would be $1{,}400/10{,}400 = 13.5\%$, a 1.5-point gain, and the analyst would need to justify it.
+
+---
+
+## 3. Forecasting Costs and Profitability
+
+Costs are forecast from their relationship with revenue. Separate costs into those that vary with revenue and those that are fixed or step-fixed.
+
+| Item | Typical forecasting approach |
+| --- | --- |
+| **Cost of goods sold** | Percentage of revenue (or gross margin), adjusted for input prices, mix, efficiency and scale |
+| **SG&A** | Fixed part (grows with inflation) plus a variable part (percentage of revenue) |
+| **R&D, marketing** | Percentage of revenue, or a policy decision of management |
+| **Depreciation and amortisation** | Percentage of opening gross or net fixed assets, or based on the capex schedule and useful lives |
+| **Interest expense** | Interest rate times debt balance (opening or average) |
+| **Tax** | Effective tax rate times pre-tax income |
+
+### Operating leverage in forecasts
+
+Because fixed costs do not grow with revenue, operating profit changes by a larger percentage than revenue. Forecasts that apply a constant margin to every revenue scenario miss this effect: they overstate profit when revenue is low and understate it when revenue is high.
+
+### Margin assumptions
+
+Study the history and peers, then ask what will change. Margins tend to revert toward the industry norm in competitive industries, while firms with durable competitive advantages (brand, scale, switching costs) can sustain above-average margins. Be sceptical of forecasts of steadily expanding margins with no identified cause.
+
+### Tax
+
+Use the **effective tax rate** for the income statement forecast. If a low rate is due to temporary items (tax holidays, one-off credits, use of loss carry-forwards), move the forecast toward the statutory rate as these expire. Cash taxes can differ from book taxes because of deferred taxes.
+
+---
+
+## 4. Forecasting the Balance Sheet, Capital Spending and Financing
+
+### Working capital
+
+Use turnover or day-count ratios and hold them constant, or trend them with a stated reason:
+
+$$\text{Receivables} = \text{Revenue}\times\frac{\text{DSO}}{365}, \quad \text{Inventory} = \text{COGS}\times\frac{\text{DIO}}{365}, \quad \text{Payables} = \text{COGS}\times\frac{\text{DPO}}{365}$$
+
+$$\text{Net working capital (operating)} = \text{Receivables} + \text{Inventory} - \text{Payables}$$
+
+A growing company needs more working capital, so $\Delta\text{NWC}$ is a cash outflow that reduces free cash flow.
+
+### Fixed assets
+
+$$\text{Closing net PP\&E} = \text{Opening net PP\&E} + \text{Capex} - \text{Depreciation}$$
+
+Capex is linked to growth: capacity must expand as revenue grows. Use **capex as a percentage of revenue**, **sales-to-capital** ratios, or an explicit project list. Capex should exceed depreciation in a growing business; if it does not, ask whether the company is under-investing or whether the forecast is flattering free cash flow.
+
+### Financing
+
+Debt levels follow from the company's target capital structure, maturities and cash needs. Equity changes through retained earnings, dividends, buybacks and share issuance. Two modelling issues:
+
+- **Circularity**: if interest is calculated on **average** debt and debt depends on cash flow (which depends on interest), the model becomes circular. Calculating interest on the **opening** balance avoids this; so does an iterative calculation.
+- **Balance sheet check**: the cash balance (or the revolver) should be the balancing item so that $\text{Assets} = \text{Liabilities} + \text{Equity}$ holds in every forecast year.
+
+---
+
+## 5. From Forecast to Free Cash Flow
+
+Free cash flow to the firm (FCFF) is the cash available to all capital providers after operating needs and investment:
+
+$$\text{FCFF} = \text{EBIT}(1 - t) + \text{D\&A} - \text{Capex} - \Delta\text{NWC}$$
+
+Free cash flow to equity (FCFE) additionally deducts net interest after tax and adds net borrowing:
+
+$$\text{FCFE} = \text{FCFF} - \text{Interest}(1 - t) + \text{Net borrowing}$$
+
+### Worked example: a one-year forecast
+
+Assumptions (end of Year 0 to end of Year 1):
+
+- Revenue: 1,300 (from the previous section).
+- COGS: 58% of revenue. SG&A: fixed 150 plus 12% of revenue.
+- Opening net PP&E 600; depreciation 10% of opening net PP&E; capex 90.
+- Opening debt 400 at 6% interest. Tax rate 25%. 100 million shares.
+- DSO 45, DIO 60, DPO 40 (365-day year). Opening operating NWC is 190.0.
+
+**Income statement**
+
+| Line | Calculation | Amount |
+| --- | --- | --- |
+| Revenue | | 1,300.0 |
+| COGS | $58\% \times 1{,}300$ | 754.0 |
+| Gross profit | $1{,}300 - 754$ | 546.0 |
+| SG&A | $150 + 12\% \times 1{,}300 = 150 + 156$ | 306.0 |
+| EBITDA | $546 - 306$ | 240.0 |
+| Depreciation | $10\% \times 600$ | 60.0 |
+| EBIT | $240 - 60$ | 180.0 |
+| Interest | $6\% \times 400$ | 24.0 |
+| Pre-tax income | $180 - 24$ | 156.0 |
+| Tax (25%) | $25\% \times 156$ | 39.0 |
+| Net income | $156 - 39$ | 117.0 |
+| EPS | $117 / 100$ | 1.17 |
+
+**Working capital** (rounded to one decimal)
+
+1. Receivables: $1{,}300 \times 45/365 = 160.3$.
+2. Inventory: $754 \times 60/365 = 123.9$.
+3. Payables: $754 \times 40/365 = 82.6$.
+4. Operating NWC: $160.3 + 123.9 - 82.6 = 201.6$; change: $201.6 - 190.0 = 11.6$ (a cash outflow).
+
+**Fixed assets**: closing net PP&E $= 600 + 90 - 60 = 630$.
+
+**Free cash flow to the firm**
+
+5. NOPAT: $180 \times (1 - 0.25) = 135.0$.
+6. $\text{FCFF} = 135.0 + 60 - 90 - 11.6 = 93.4$.
+
+The forecast shows EBITDA margin of $240/1{,}300 = 18.5\%$ and EBIT margin of $180/1{,}300 = 13.8\%$, to be compared with history and peers.
+
+---
+
+## 6. Scenario and Sensitivity Analysis
+
+A single point estimate hides uncertainty. Two tools show how much the answer depends on the assumptions.
+
+- **Sensitivity analysis** changes one input at a time (for example market share or gross margin) and shows the effect on earnings or value. It identifies the **key drivers**.
+- **Scenario analysis** changes several inputs together into coherent stories (base, upside, downside) and assigns probabilities. The probability-weighted result is the expected outcome.
+
+### Worked example: sensitivity to market share
+
+Same company, same cost structure, but market share is 12.0% instead of 12.5%.
+
+1. Revenue: $10{,}400 \times 12.0\% = 1{,}248$ (4.0% lower).
+2. Gross profit: $42\% \times 1{,}248 = 524.16$.
+3. SG&A: $150 + 12\% \times 1{,}248 = 299.76$.
+4. EBITDA $= 524.16 - 299.76 = 224.40$; EBIT $= 224.40 - 60 = 164.40$.
+5. EBIT falls $(180 - 164.40)/180 = 8.67\%$ for a 4.0% fall in revenue, a ratio of about 2.2, reflecting operating leverage (fixed SG&A and depreciation).
+6. Net income: $(164.40 - 24) \times 0.75 = 105.30$; EPS $= 1.053$, which is 10.0% below the base 1.17.
+
+### Worked example: probability-weighted EPS
+
+Using the same method for a 13.0% share gives revenue 1,352, EBIT 195.6, net income 128.7 and EPS 1.287.
+
+| Scenario | Market share | EPS | Probability |
+| --- | --- | --- | --- |
+| Downside | 12.0% | 1.053 | 30% |
+| Base | 12.5% | 1.170 | 50% |
+| Upside | 13.0% | 1.287 | 20% |
+
+$$E[\text{EPS}] = 0.30\times1.053 + 0.50\times1.170 + 0.20\times1.287 = 0.3159 + 0.5850 + 0.2574 = 1.1583$$
+
+The expected EPS (about 1.158) is slightly below the base case because the downside is weighted more heavily than the upside.
+
+---
+
+## 7. Common Forecasting Problems
+
+| Problem | Description | Remedy |
+| --- | --- | --- |
+| **Extrapolating recent trends** | Assuming recent growth or margin continues unchanged | Fade growth and margins toward long-run levels; use industry base rates |
+| **Ignoring mean reversion** | Returns on capital far above the cost of capital attract competition | Let ROIC drift toward the cost of capital unless a moat is identified |
+| **Anchoring and overconfidence** | Sticking to an initial number; too narrow a range | Use scenarios; compare with consensus and history; seek disconfirming evidence |
+| **Inconsistent assumptions** | High growth with low capex and no working capital investment | Link capex and NWC to revenue; check implied sales-to-capital |
+| **Ignoring the cycle** | Treating peak or trough earnings as normal | Use **normalised** earnings through the cycle |
+| **Over-precision** | Many decimals on uncertain inputs | Focus effort on the few drivers that matter most |
+| **Bias in company guidance** | Management guidance tends to be optimistic or conservative as a matter of habit | Test guidance against track record |
+
+### Consistency checks
+
+- **Implied returns**: compute ROIC, ROE and margins in each forecast year and compare with history and peers.
+- **Reinvestment link**: growth requires investment; $g \approx \text{reinvestment rate} \times \text{ROIC}$.
+- **Balance sheet and cash flow**: the three statements must articulate.
+- **Terminal year**: growth must not exceed long-run nominal economic growth, and reinvestment should be consistent with that growth.
+
+---
+
+## Key takeaways
+
+- Forecasts should be built from **a few key drivers**, linked across the three statements, and benchmarked against history, peers and industry.
+- **Top-down** revenue = market size x share; **bottom-up** revenue = sum of volume x price by segment. Use both and reconcile.
+- Forecast costs by splitting **variable and fixed** elements; fixed costs create **operating leverage**, so margins should not be held constant across scenarios.
+- Working capital via **DSO, DIO, DPO**; fixed assets via **opening PP&E + capex − depreciation**; avoid interest circularity by using opening balances (or iteration).
+- $\text{FCFF} = \text{EBIT}(1-t) + \text{D\&A} - \text{Capex} - \Delta\text{NWC}$.
+- Use **sensitivity** analysis to find key drivers and **scenario** analysis to produce probability-weighted estimates.
+- Avoid extrapolation, ignoring mean reversion, anchoring, inconsistency and treating peak earnings as normal.
