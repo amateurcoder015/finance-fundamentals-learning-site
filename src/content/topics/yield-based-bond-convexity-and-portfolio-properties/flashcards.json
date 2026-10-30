@@ -1,0 +1,42 @@
+[
+  {
+    "front": "What does convexity measure?",
+    "back": "The curvature of the price-yield relationship: how quickly a bond's duration (the slope of the price-yield curve) changes as yield changes. Convexity = (1/P) × d²P/dy², in years squared."
+  },
+  {
+    "front": "Write the duration-plus-convexity estimate of the percentage price change.",
+    "back": "%ΔP ≈ -ModDur × Δy + ½ × Convexity × (Δy)², with Δy in decimal form (100 bp = 0.01)."
+  },
+  {
+    "front": "Why does the convexity term always have a positive sign in the price change estimate?",
+    "back": "Because (Δy)² is always positive. For an option-free bond, convexity adds to the gain when yields fall and reduces the loss when yields rise."
+  },
+  {
+    "front": "Write the approximate convexity formula.",
+    "back": "ApproxCon = (PV- + PV+ - 2 × PV0) / ((Δy)² × PV0), where PV- and PV+ are the prices at yields lowered and raised by Δy."
+  },
+  {
+    "front": "Define money convexity and give the currency price-change estimate.",
+    "back": "MoneyCon = Convexity × full price. ΔP ≈ -MoneyDur × Δy + ½ × MoneyCon × (Δy)²."
+  },
+  {
+    "front": "What determines a bond's convexity?",
+    "back": "Higher with longer maturity, lower coupon rate, lower yield, and more dispersed cash flows (for the same duration). Convexity grows roughly with the square of time."
+  },
+  {
+    "front": "What is the convexity of a zero-coupon bond?",
+    "back": "N(N+1)/(1+y)² for an annual-pay zero with N years to maturity. For N = 10 and y = 6%: 110/1.1236 = 97.90."
+  },
+  {
+    "front": "What is negative convexity and which bonds show it?",
+    "back": "A price-yield curve that bends the 'wrong' way. Callable bonds at low yields: the price rise is capped near the call price as yields fall. Use effective duration and effective convexity for bonds with embedded options."
+  },
+  {
+    "front": "How are portfolio duration and convexity calculated in practice?",
+    "back": "As market-value-weighted averages of the individual bond durations and convexities. This assumes a parallel shift in the yield curve."
+  },
+  {
+    "front": "Compare a barbell and a bullet portfolio of equal duration.",
+    "back": "The barbell (short and long maturities) has more dispersed cash flows and therefore higher convexity than the bullet (concentrated maturities). It benefits more from large parallel shifts but is exposed to non-parallel curve changes and usually gives up yield."
+  }
+]

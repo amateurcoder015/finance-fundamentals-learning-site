@@ -1,0 +1,23 @@
+graph TD
+    CVX["Convexity<br/>Curvature of the price-yield curve<br/>(years squared)"] --> WHY["Why it matters<br/>Duration is only a linear estimate"]
+    WHY --> ASYM["Duration alone understates gains<br/>and overstates losses"]
+    CVX --> EST["Price change estimate<br/>-ModDur x change in y<br/>+ 1/2 x Con x (change in y) squared"]
+    CVX --> APP["Approximate convexity<br/>(PV- + PV+ - 2 x PV0)<br/>/ (change in y squared x PV0)"]
+    CVX --> MC["Money convexity<br/>Con x full price"]
+    MC --> MEST["Currency change estimate<br/>-MoneyDur x change in y<br/>+ 1/2 x MoneyCon x (change in y) squared"]
+
+    CVX --> DET["Determinants"]
+    DET --> D1["Longer maturity = higher"]
+    DET --> D2["Lower coupon = higher"]
+    DET --> D3["Lower yield = higher"]
+    DET --> D4["More dispersed cash flows<br/>(same duration) = higher"]
+
+    CVX --> OPT["Embedded options"]
+    OPT --> CALL["Callable: negative convexity<br/>at low yields"]
+    OPT --> PUT["Putable: extra positive convexity"]
+    OPT --> EFF["Use effective duration<br/>and effective convexity"]
+
+    CVX --> PORT["Portfolio properties"]
+    PORT --> PW["Market-value-weighted<br/>duration and convexity<br/>(assumes parallel shift)"]
+    PORT --> BB["Barbell vs bullet<br/>Same duration:<br/>barbell has higher convexity"]
+    BB --> NP["Risk: non-parallel<br/>yield curve shifts"]

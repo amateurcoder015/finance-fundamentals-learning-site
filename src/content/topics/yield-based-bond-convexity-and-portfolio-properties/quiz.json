@@ -1,0 +1,70 @@
+[
+  {
+    "question": "A bond has a modified duration of 5.2 and a convexity of 38. Using both measures, what is the approximate percentage price change if its yield rises by 100 basis points?",
+    "options": ["-5.20%", "-5.39%", "-5.01%", "-4.82%"],
+    "correctIndex": 2,
+    "explanation": "%ΔP ≈ -ModDur × Δy + ½ × Convexity × (Δy)² = -5.2 × 0.01 + 0.5 × 38 × (0.01)² = -0.0520 + 0.0019 = -0.0501, or -5.01%. The convexity term is added, not subtracted (-5.39% subtracts it), and -4.82% omits the ½ factor (-5.2% + 0.38%)."
+  },
+  {
+    "question": "A bond is priced at 100.00. If its yield falls by 50 bp the price is 103.00, and if its yield rises by 50 bp the price is 97.20. What is the approximate convexity?",
+    "options": ["40", "160", "80", "0.2"],
+    "correctIndex": 2,
+    "explanation": "ApproxCon = (PV- + PV+ - 2 × PV0) / ((Δy)² × PV0) = (103.00 + 97.20 - 200.00) / (0.005² × 100) = 0.20 / 0.0025 = 80. The result is not 0.2 (that is only the numerator); the denominator (Δy)² × PV0 = 0.0025 must be divided out."
+  },
+  {
+    "question": "A position has a full price of 98,000, a modified duration of 5.0 and a convexity of 60. Using duration and convexity, what is the estimated change in its value if the yield falls by 100 bp?",
+    "options": ["+4,900", "+5,194", "+5,488", "+4,606"],
+    "correctIndex": 1,
+    "explanation": "MoneyDur = 5.0 × 98,000 = 490,000 and MoneyCon = 60 × 98,000 = 5,880,000. ΔP ≈ -490,000 × (-0.01) + ½ × 5,880,000 × (0.01)² = 4,900 + 294 = +5,194. 4,900 is duration only, 5,488 forgets the ½ factor, and 4,606 subtracts the convexity term."
+  },
+  {
+    "question": "For an option-free bond, how does the duration-only estimate of a price change compare with the actual change when yields move by a large amount?",
+    "options": [
+      "It understates the price gain when yields fall and overstates the price loss when yields rise",
+      "It overstates the price gain when yields fall and understates the price loss when yields rise",
+      "It is exact for increases in yield and too low for decreases",
+      "It overstates both the gain and the loss"
+    ],
+    "correctIndex": 0,
+    "explanation": "The price-yield curve of an option-free bond is convex and lies above its tangent line (the duration estimate) on both sides. The actual price is therefore higher than the duration estimate, so gains are understated and losses are overstated."
+  },
+  {
+    "question": "Which of the following 10-year, annual-pay bonds, each priced to yield 6%, is likely to have the highest convexity?",
+    "options": [
+      "A 10% coupon bond",
+      "A 6% coupon bond",
+      "A 2% coupon bond",
+      "All have the same convexity because maturity and yield are equal"
+    ],
+    "correctIndex": 2,
+    "explanation": "With maturity and yield held constant, a lower coupon rate puts more of the value in the distant principal payment and gives higher convexity. Approximate convexities are about 84.6 (2% coupon), 69.7 (6%) and 61.6 (10%)."
+  },
+  {
+    "question": "A callable bond is trading at a yield well below its coupon rate, so a call is likely. Which statement best describes the bond's convexity?",
+    "options": [
+      "It has greater positive convexity than an otherwise identical option-free bond",
+      "It may show negative convexity because its price rise is limited as yields fall",
+      "Its convexity is the same as an option-free bond because yield-based measures capture the call",
+      "Its convexity is zero because price and yield are unrelated"
+    ],
+    "correctIndex": 1,
+    "explanation": "As yields fall, the issuer is more likely to call the bond, so the price is held down near the call price and rises by less than the option-free price. The curve bends the other way (negative convexity). Yield-based measures assume fixed cash flows and cannot capture this, so effective duration and effective convexity are used."
+  },
+  {
+    "question": "A portfolio holds 30% of its market value in Bond X with convexity 50 and 70% in Bond Y with convexity 120. What is the portfolio's convexity?",
+    "options": ["85.0", "99.0", "170.0", "75.0"],
+    "correctIndex": 1,
+    "explanation": "Portfolio convexity is the market-value-weighted average: 0.30 × 50 + 0.70 × 120 = 15 + 84 = 99.0. A simple average (85.0) ignores the weights, and the sum (170.0) is not a weighted average."
+  },
+  {
+    "question": "Two portfolios have the same modified duration. Portfolio P is a barbell of short-term and long-term bonds, and Portfolio Q is a bullet concentrated in intermediate maturities. For a large parallel shift in yields, which statement is most accurate?",
+    "options": [
+      "Q performs better because intermediate bonds have higher convexity",
+      "P and Q perform identically because duration is equal",
+      "P performs better, whichever way yields move, because it has higher convexity",
+      "P performs better only when yields rise"
+    ],
+    "correctIndex": 2,
+    "explanation": "A barbell has more dispersed cash flows and therefore higher convexity for the same duration. Its convexity term ½ × Con × (Δy)² is larger and is positive for both rises and falls in yield, so for a parallel shift of either sign it outperforms. This ignores yield differences and non-parallel shifts, which can reverse the result."
+  }
+]

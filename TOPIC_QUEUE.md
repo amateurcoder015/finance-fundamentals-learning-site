@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Yield-Based Bond Convexity and Portfolio Properties | Fixed Income | advanced
-- [ ] Introduction to Financial Statement Modeling | Financial Statements | advanced
 - [ ] Introduction to Risk Management | Portfolio Management | intermediate
 - [ ] Capital Structure | Corporate Finance | advanced
 - [ ] Curve-Based and Empirical Fixed-Income Risk Measures | Fixed Income | advanced
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Financial Analysis Techniques | Financial Statements | intermediate | 2026-10-28
 - [x] Introduction to Geopolitics | Economics | beginner | 2026-10-29
 - [x] Company Analysis: Forecasting | Equities | advanced | 2026-10-29
+- [x] Yield-Based Bond Convexity and Portfolio Properties | Fixed Income | advanced | 2026-10-30
+- [x] Introduction to Financial Statement Modeling | Financial Statements | advanced | 2026-10-30

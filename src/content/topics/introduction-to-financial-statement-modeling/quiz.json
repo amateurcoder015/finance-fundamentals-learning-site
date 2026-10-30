@@ -1,0 +1,60 @@
+[
+  {
+    "question": "An analyst forecasts that a company's market will be 18,250 (millions) and that the company will hold a 6% share. What is the forecast revenue using a top-down approach?",
+    "options": ["1,095", "3,042", "10,950", "109.5"],
+    "correctIndex": 0,
+    "explanation": "Top-down revenue = Market size × Market share = 18,250 × 0.06 = 1,095. A top-down forecast starts from the size of the market, not from the company's own units and prices (that is the bottom-up approach)."
+  },
+  {
+    "question": "Forecast revenue is 1,095 and forecast COGS is 60% of revenue. If days inventory outstanding is 60 and a 365-day year is used, what is the forecast inventory?",
+    "options": ["180.00", "108.00", "65.70", "197.10"],
+    "correctIndex": 1,
+    "explanation": "COGS = 1,095 × 0.60 = 657. Inventory = COGS × DIO / 365 = 657 × 60 / 365 = 108.00. Using revenue instead of COGS gives 180.00, which is the common error."
+  },
+  {
+    "question": "Beginning net PP&E is 500, capital expenditures are 80 and depreciation is 50. What is ending net PP&E?",
+    "options": ["630", "570", "530", "450"],
+    "correctIndex": 2,
+    "explanation": "Ending net PP&E = Beginning + Capital expenditures − Depreciation = 500 + 80 − 50 = 530. Adding depreciation (630) or ignoring capital expenditures (450) are the typical mistakes."
+  },
+  {
+    "question": "A company forecasts net income of 113.25 and pays out 40% as dividends. Beginning retained earnings are 460. What is ending retained earnings?",
+    "options": ["527.95", "573.25", "505.30", "414.70"],
+    "correctIndex": 0,
+    "explanation": "Dividends = 0.40 × 113.25 = 45.30. Ending retained earnings = 460 + 113.25 − 45.30 = 527.95. 573.25 ignores dividends and 505.30 subtracts the dividends from the beginning balance without adding net income."
+  },
+  {
+    "question": "In a forecast cash flow statement (indirect method), receivables rise by 10, inventory rises by 8 and payables fall by 8. What is the combined effect of these three changes on cash flow from operations?",
+    "options": ["+26", "-10", "-26", "+10"],
+    "correctIndex": 2,
+    "explanation": "An increase in receivables (−10) and in inventory (−8) uses cash. A decrease in payables (−8) also uses cash. The total effect is −10 − 8 − 8 = −26."
+  },
+  {
+    "question": "In a three-statement forecast, total assets are 879.95 but total liabilities and equity are 872.00. What is the most appropriate response?",
+    "options": [
+      "Reduce cash by 7.95 so the balance sheet balances",
+      "Treat the difference as rounding and proceed",
+      "Look for a broken link between the statements, such as a sign error in a working capital change",
+      "Increase equity by 7.95 as a balancing item"
+    ],
+    "correctIndex": 2,
+    "explanation": "In a properly linked model, cash comes from the cash flow statement and the balance sheet must balance exactly. A 7.95 gap signals an error, such as a wrong sign or omitted item, that should be found and fixed rather than hidden with a plug."
+  },
+  {
+    "question": "Revenue is 1,095. The gross margin falls from 40% to 38% while SG&A (219), depreciation (50) and interest (18) are unchanged and the tax rate is 25%. Base-case net income is 113.25. What is the new net income and its percentage change?",
+    "options": [
+      "96.83, a fall of 14.5%",
+      "110.25, a fall of 2.6%",
+      "96.83, a fall of 2.0%",
+      "129.10, a rise of 14.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gross profit = 1,095 × 0.38 = 416.10. EBIT = 416.10 − 219 − 50 = 147.10; pre-tax income = 129.10; net income = 129.10 × 0.75 = 96.825. The change is 96.825 / 113.25 − 1 = −14.5%. A 2-point margin change has an outsized effect because fixed costs and interest are unchanged."
+  },
+  {
+    "question": "An analyst assigns net income of 106.50 (downside, 25%), 113.25 (base, 50%) and 117.00 (upside, 25%). What is the probability-weighted net income?",
+    "options": ["112.25", "112.50", "112.92", "113.25"],
+    "correctIndex": 1,
+    "explanation": "Expected net income = 0.25 × 106.50 + 0.50 × 113.25 + 0.25 × 117.00 = 26.625 + 56.625 + 29.25 = 112.50. The simple average of the three scenarios is 112.25, which ignores the probabilities."
+  }
+]

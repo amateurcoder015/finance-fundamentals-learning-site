@@ -1,0 +1,42 @@
+[
+  {
+    "front": "What are the main steps in building a financial statement model?",
+    "back": "Understand the business and drivers; analyze historical results; set forecast assumptions; forecast the income statement, balance sheet and cash flow statement; check that the model balances and is reasonable; run sensitivity and scenario analysis and update as new information arrives."
+  },
+  {
+    "front": "Name three approaches to forecasting revenue.",
+    "back": "Growth rate (trend): prior revenue × (1 + g). Top-down: market size × market share. Bottom-up: units sold × average price, summed across products or segments."
+  },
+  {
+    "front": "How are COGS, SG&A and taxes typically forecast?",
+    "back": "COGS and SG&A as a percentage of revenue (COGS = (1 − gross margin) × revenue), with fixed costs modeled separately; taxes as an effective tax rate × pre-tax income."
+  },
+  {
+    "front": "Write the days-based forecasts for receivables, inventory and payables.",
+    "back": "AR = Revenue × DSO / 365. Inventory = COGS × DIO / 365. Payables = COGS × DPO / 365."
+  },
+  {
+    "front": "What is the net PP&E roll-forward?",
+    "back": "Ending net PP&E = Beginning net PP&E + Capital expenditures − Depreciation (adjusted for acquisitions and disposals)."
+  },
+  {
+    "front": "What is the retained earnings roll-forward?",
+    "back": "Ending retained earnings = Beginning retained earnings + Net income − Dividends. Dividends = payout ratio × net income."
+  },
+  {
+    "front": "How do changes in working capital affect cash flow from operations?",
+    "back": "An increase in receivables or inventory uses cash (subtract); an increase in payables provides cash (add). Add back depreciation, a non-cash expense."
+  },
+  {
+    "front": "Why is cash the balancing item in a three-statement model?",
+    "back": "Ending cash comes from the cash flow statement (beginning cash + CFO + CFI + CFF). The balance sheet must then balance; if it does not, a link or sign is wrong and should be corrected rather than plugged."
+  },
+  {
+    "front": "Why is interest often calculated on the beginning debt balance in a model?",
+    "back": "Interest on the average balance makes interest depend on cash, which depends on interest, creating a circular reference. Using the beginning balance avoids the circularity at a small cost in precision."
+  },
+  {
+    "front": "Distinguish sensitivity analysis from scenario analysis.",
+    "back": "Sensitivity analysis changes one assumption at a time to see its effect on an output. Scenario analysis changes several assumptions together to describe a coherent outcome (e.g. downside, base, upside), usually with probabilities."
+  }
+]

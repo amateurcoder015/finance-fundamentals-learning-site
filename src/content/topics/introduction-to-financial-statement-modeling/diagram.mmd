@@ -1,0 +1,21 @@
+graph TD
+    START["Understand business and drivers<br/>Analyze historical results"] --> ASSUME["Set forecast assumptions<br/>growth, margins, days, capex,<br/>tax rate, payout"]
+    ASSUME --> REV["Revenue<br/>Growth rate, or market size x share,<br/>or units x price"]
+    REV --> IS["Income statement<br/>COGS, SG&A, D&A, interest, tax<br/>= net income"]
+    IS --> BS["Balance sheet"]
+    BS --> WC["Working capital<br/>AR, inventory, AP from<br/>DSO, DIO, DPO"]
+    BS --> PPE["Net PP&E<br/>beginning + capex - depreciation"]
+    BS --> DEBT["Debt<br/>beginning + issuance - repayment"]
+    BS --> EQ["Retained earnings<br/>beginning + net income - dividends"]
+    IS --> CF["Cash flow statement<br/>CFO, CFI, CFF"]
+    WC --> CF
+    PPE --> CF
+    DEBT --> CF
+    EQ --> CF
+    CF --> CASH["Ending cash<br/>balancing item"]
+    CASH --> CHECK["Check<br/>Assets = Liabilities + Equity"]
+    CHECK --> TEST["Test assumptions"]
+    TEST --> SENS["Sensitivity analysis<br/>one assumption at a time"]
+    TEST --> SCEN["Scenario analysis<br/>several assumptions together,<br/>with probabilities"]
+    SENS --> USE["Valuation and comparison<br/>with consensus"]
+    SCEN --> USE

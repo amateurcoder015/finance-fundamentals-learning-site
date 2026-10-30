@@ -1,0 +1,249 @@
+---
+title: "Introduction to Financial Statement Modeling"
+description: "How analysts build a linked forecast of the income statement, balance sheet and cash flow statement: forecasting revenue and costs, working capital, PP&E, debt and equity, checking that the model balances, and testing assumptions with sensitivity and scenario analysis."
+category: "Financial Statements"
+difficulty: "advanced"
+dateAdded: "2026-10-30"
+tags: ["financial-modeling", "forecasting", "three-statement-model", "sensitivity-analysis", "scenario-analysis", "working-capital"]
+---
+
+# Introduction to Financial Statement Modeling
+
+A **financial statement model** is a set of linked forecasts of a company's income statement, balance sheet and statement of cash flows. Analysts use such models to estimate future earnings and cash flows for valuation, to test how results respond to changes in assumptions, and to compare a company's outlook with the market's expectations. This chapter walks through the steps of building a model, the standard forecasting method for each statement, a complete worked one-year forecast, and the use of sensitivity and scenario analysis.
+
+---
+
+## 1. The Modeling Process
+
+A model is built in stages, and the output is only as good as the assumptions that feed it.
+
+1. **Understand the business and its drivers.** Review the company's segments, products, customers, competitive position and the economic and industry conditions that affect them.
+2. **Analyze historical results.** Compute growth rates, margins, turnover ratios and capital intensity from past statements, and adjust for unusual or non-recurring items.
+3. **Choose forecast drivers and assumptions.** Decide what will drive each line item and set the assumed values, with a rationale.
+4. **Forecast the statements.** Project the income statement, then the balance sheet, then derive the cash flow statement.
+5. **Check and revise.** Confirm the model balances, test results for reasonableness against history and peers, and revisit assumptions.
+6. **Use and update.** Run sensitivity and scenario analysis, feed the output into a valuation, and update the model as new information arrives.
+
+<Note>
+The three statements are linked. Net income flows into retained earnings; capital spending and depreciation determine net PP&E; the cash flow statement explains the change in cash on the balance sheet. A model that is built on these links is internally consistent.
+</Note>
+
+---
+
+## 2. Forecasting Revenue
+
+Revenue is the starting point for almost every other line, so its forecast matters most. Common approaches:
+
+- **Growth-rate (trend) approach.** Apply an assumed growth rate to the prior year: $\text{Revenue}_{t} = \text{Revenue}_{t-1}\times(1+g)$. Simple, but ignores the underlying drivers.
+- **Top-down approach.** Start with the size of the market and multiply by the company's share: $\text{Revenue} = \text{Market size}\times\text{Market share}$. The market is forecast from economy-wide drivers such as GDP growth.
+- **Bottom-up approach.** Build revenue from the company's own operations: $\text{Revenue} = \text{Units sold}\times\text{Average price}$, summed over products, segments or stores.
+
+### Worked example
+
+A company has base-year revenue of 1,000 (millions).
+
+- **Growth rate:** $1{,}000\times1.095 = 1{,}095$.
+- **Top-down:** the market is forecast at 18,250 and the company's share is 6%: $18{,}250\times0.06 = 1{,}095$.
+- **Bottom-up:** 73 million units at an average price of 15: $73\times15 = 1{,}095$.
+
+The three methods agree, which is a useful cross-check. In practice they rarely do, and a gap signals an assumption that needs review.
+
+---
+
+## 3. Forecasting the Income Statement
+
+| Line item | Common forecasting method |
+| --- | --- |
+| Revenue | Growth rate, market size × share, or units × price |
+| Cost of goods sold (COGS) | % of revenue, equivalent to $(1-\text{gross margin})\times$ revenue |
+| Selling, general and administrative (SG&A) | % of revenue, or a fixed amount plus a variable part |
+| Depreciation and amortization | % of beginning net PP&E (or gross PP&E), or from the PP&E schedule |
+| Interest expense | Interest rate × debt balance (beginning or average) |
+| Income tax expense | Effective tax rate × pre-tax income |
+| Net income | Pre-tax income less taxes |
+| Dividends | Payout ratio × net income |
+
+### Operating leverage
+
+Costs split into **variable** costs that move with revenue (usually most of COGS) and **fixed** costs that do not (such as many fixed overheads and depreciation). A company with a high fixed-cost share has high **operating leverage**: a 1% change in revenue produces a larger percentage change in operating income. When SG&A or depreciation is modeled as a fixed amount rather than a percentage of revenue, the model captures this effect.
+
+### Interest and circularity
+
+If interest expense is computed on the **average** debt balance and the debt balance depends on cash that depends on interest, the model contains a **circular reference**. Using the **beginning-of-period** balance removes the circularity at the cost of some precision.
+
+---
+
+## 4. Forecasting the Balance Sheet
+
+### Working capital
+
+Operating working capital items are usually forecast with turnover or days measures, using a 365-day year:
+
+$$\text{Accounts receivable} = \frac{\text{Revenue}\times\text{DSO}}{365}$$
+
+$$\text{Inventory} = \frac{\text{COGS}\times\text{DIO}}{365}$$
+
+$$\text{Accounts payable} = \frac{\text{COGS}\times\text{DPO}}{365}$$
+
+where DSO, DIO and DPO are days sales outstanding, days inventory outstanding and days payables outstanding. Other current assets and liabilities are often set as a percentage of revenue.
+
+### Property, plant and equipment
+
+Net PP&E is forecast with a roll-forward:
+
+$$\text{Ending net PP\&E} = \text{Beginning net PP\&E} + \text{Capital expenditures} - \text{Depreciation}$$
+
+(Add the book value of any acquired assets, and subtract the book value of assets sold, if relevant.) Capital expenditures can be set as a percentage of revenue, from management guidance, or as a multiple of depreciation.
+
+### Debt and equity
+
+- **Debt:** begin with the scheduled repayments and any new borrowing assumed: $\text{Ending debt} = \text{Beginning debt} + \text{Issuance} - \text{Repayment}$.
+- **Equity:** the roll-forward of retained earnings is $\text{Ending retained earnings} = \text{Beginning} + \text{Net income} - \text{Dividends}$. Share issuance and buybacks, if assumed, change contributed capital.
+
+### Cash
+
+Cash is the **balancing item**: it is taken from the cash flow statement, not set directly. If the company's other assumptions would push cash below a minimum level, the model needs a **revolver** (a short-term borrowing line) assumption, which in turn raises the interest expense.
+
+---
+
+## 5. Forecasting the Cash Flow Statement
+
+With the income statement and balance sheet forecast, the cash flow statement is derived by differences. Using the indirect method:
+
+$$\text{CFO} = \text{Net income} + \text{D\&A} - \Delta\text{(non-cash working capital assets)} + \Delta\text{(operating liabilities)}$$
+
+- An **increase** in receivables or inventory is a **use** of cash (subtract it).
+- An **increase** in payables is a **source** of cash (add it).
+- $\text{CFI}$ is mainly the negative of capital expenditures.
+- $\text{CFF}$ is net debt issuance (or repayment), share issuance (or buybacks), and dividends paid.
+
+$$\text{Ending cash} = \text{Beginning cash} + \text{CFO} + \text{CFI} + \text{CFF}$$
+
+---
+
+## 6. A Complete One-Year Forecast
+
+### Base-year balance sheet (Year 0) and assumptions
+
+| Balance sheet, Year 0 | Amount | | Liabilities and equity, Year 0 | Amount |
+| --- | --- | --- | --- | --- |
+| Cash | 100 | | Accounts payable | 80 |
+| Accounts receivable | 140 | | Debt | 300 |
+| Inventory | 100 | | Equity (all retained earnings) | 460 |
+| Net PP&E | 500 | | | |
+| **Total assets** | **840** | | **Total liabilities and equity** | **840** |
+
+Year 1 assumptions:
+
+- Revenue = 1,095 (growth of 9.5% on base revenue of 1,000).
+- Gross margin 40% (COGS is 60% of revenue); SG&A 20% of revenue.
+- Depreciation = 50; capital expenditures = 80.
+- DSO 50 days, DIO 60 days, DPO 40 days (365-day year, DIO and DPO on COGS).
+- Interest rate 6% on the **beginning** debt balance; debt repayment 20.
+- Tax rate 25%; dividend payout ratio 40% of net income.
+
+### Step 1: Income statement
+
+| Line | Calculation | Year 1 |
+| --- | --- | --- |
+| Revenue | | 1,095.00 |
+| COGS | $1{,}095\times0.60$ | 657.00 |
+| Gross profit | $1{,}095-657$ | 438.00 |
+| SG&A | $1{,}095\times0.20$ | 219.00 |
+| Depreciation | assumed | 50.00 |
+| Operating income (EBIT) | $438-219-50$ | 169.00 |
+| Interest expense | $0.06\times300$ | 18.00 |
+| Pre-tax income | $169-18$ | 151.00 |
+| Income tax | $0.25\times151$ | 37.75 |
+| **Net income** | $151-37.75$ | **113.25** |
+| Dividends | $0.40\times113.25$ | 45.30 |
+| Addition to retained earnings | $113.25-45.30$ | 67.95 |
+
+### Step 2: Balance sheet items other than cash
+
+- Receivables $= 1{,}095\times50/365 = 150.00$.
+- Inventory $= 657\times60/365 = 108.00$.
+- Payables $= 657\times40/365 = 72.00$.
+- Net PP&E $= 500 + 80 - 50 = 530.00$.
+- Debt $= 300 - 20 = 280.00$.
+- Equity $= 460 + 113.25 - 45.30 = 527.95$.
+
+### Step 3: Cash flow statement
+
+| Line | Calculation | Year 1 |
+| --- | --- | --- |
+| Net income | | 113.25 |
+| Add: depreciation | | 50.00 |
+| Change in receivables | $-(150-140)$ | -10.00 |
+| Change in inventory | $-(108-100)$ | -8.00 |
+| Change in payables | $+(72-80)$ | -8.00 |
+| **CFO** | | **137.25** |
+| Capital expenditures (CFI) | | -80.00 |
+| Debt repayment | | -20.00 |
+| Dividends | | -45.30 |
+| **CFF** | | **-65.30** |
+| **Net change in cash** | $137.25-80.00-65.30$ | **-8.05** |
+| Ending cash | $100-8.05$ | 91.95 |
+
+### Step 4: Check that the balance sheet balances
+
+- Total assets $= 91.95 + 150.00 + 108.00 + 530.00 = \mathbf{879.95}$.
+- Total liabilities and equity $= 72.00 + 280.00 + 527.95 = \mathbf{879.95}$.
+
+The two sides agree, so the three statements are consistent. If they did not, a link has been broken (for example, depreciation omitted from the PP&E roll-forward, or a working-capital change entered with the wrong sign).
+
+---
+
+## 7. Sensitivity and Scenario Analysis
+
+### Sensitivity analysis
+
+A **sensitivity analysis** changes one assumption at a time to show how much an output depends on it.
+
+*Gross margin falls from 40% to 38%* (all other assumptions unchanged):
+
+1. Gross profit $= 1{,}095\times0.38 = 416.10$.
+2. EBIT $= 416.10 - 219 - 50 = 147.10$.
+3. Pre-tax income $= 147.10 - 18 = 129.10$; tax $= 32.275$; net income $= \mathbf{96.825}$.
+4. The change is $96.825/113.25 - 1 = -14.5\%$.
+
+A two-percentage-point margin change moves net income by 14.5%, because the fixed depreciation and interest costs magnify the effect: margin is a critical assumption.
+
+### Scenario analysis
+
+A **scenario analysis** changes several assumptions together to describe a coherent outcome, and each scenario is assigned a probability. With SG&A at 20% of revenue and COGS at 60% (so operating profit before depreciation is 20% of revenue), depreciation of 50, interest of 18 and a 25% tax rate, net income is $(0.20\times\text{Revenue} - 68)\times0.75$.
+
+| Scenario | Revenue growth | Revenue | Net income | Probability |
+| --- | --- | --- | --- | --- |
+| Downside | 5.0% | 1,050 | 106.50 | 25% |
+| Base | 9.5% | 1,095 | 113.25 | 50% |
+| Upside | 12.0% | 1,120 | 117.00 | 25% |
+
+Probability-weighted net income $= 0.25\times106.50 + 0.50\times113.25 + 0.25\times117.00 = 26.625 + 56.625 + 29.25 = \mathbf{112.50}$.
+
+### Using the results
+
+Sensitivity analysis identifies **which** assumptions matter most; scenario analysis shows **how a combination** of assumptions plays out. Analysts compare the model's forecast with consensus expectations: a forecast above consensus supports a more favorable view only if its assumptions are better supported than the market's.
+
+---
+
+## 8. Common Pitfalls
+
+- **Overly optimistic growth.** Extrapolating a recent high growth rate indefinitely, or assuming share gains without a reason.
+- **Ignoring links.** Forecasting each statement separately, so that capital spending, working capital and financing do not agree with earnings.
+- **Hard-coded plugs.** Forcing the balance sheet to balance with an unexplained number rather than finding the error.
+- **Margins that ignore operating leverage.** Holding all costs as a fixed percentage of revenue when some are fixed.
+- **False precision.** A model produces exact numbers from uncertain inputs; the reasonableness of the assumptions matters more than the decimals.
+
+---
+
+## Key takeaways
+
+- A financial statement model links the income statement, balance sheet and cash flow statement through net income, PP&E, working capital, debt, equity and cash.
+- Revenue can be forecast by growth rate, top-down (market size × share) or bottom-up (units × price); costs are usually forecast as a percentage of revenue, with fixed costs handled separately.
+- Working capital uses days measures: AR $= \text{Revenue}\times\text{DSO}/365$; inventory and payables use COGS.
+- PP&E roll-forward: beginning + capital expenditures − depreciation. Retained earnings roll-forward: beginning + net income − dividends.
+- Cash is the balancing item from the cash flow statement; use beginning-of-period balances to avoid circular interest calculations.
+- Always confirm that total assets equal total liabilities plus equity.
+- Sensitivity analysis varies one assumption at a time; scenario analysis varies several at once with probabilities.
+- Model quality depends on the reasonableness of the assumptions, not on the number of decimals.

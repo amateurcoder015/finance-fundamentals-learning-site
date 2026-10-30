@@ -1,0 +1,235 @@
+---
+title: "Yield-Based Bond Convexity and Portfolio Properties"
+description: "How convexity corrects the duration estimate of a bond's price change, how approximate convexity and money convexity are calculated, what drives convexity, and how duration and convexity behave for bond portfolios, including barbell and bullet structures."
+category: "Fixed Income"
+difficulty: "advanced"
+dateAdded: "2026-10-30"
+tags: ["convexity", "money-convexity", "price-yield-curve", "portfolio-convexity", "barbell-bullet", "interest-rate-risk"]
+---
+
+# Yield-Based Bond Convexity and Portfolio Properties
+
+Duration is a **linear** approximation of the relationship between a bond's price and its yield to maturity. The actual price-yield relationship is a curve, so duration alone is accurate only for small yield changes. **Convexity** measures the curvature of that relationship and supplies the second-order correction. This chapter defines convexity, shows how to estimate it from repriced bonds, adds it to the duration estimate of a price change, examines what makes a bond more or less convex, and extends duration and convexity to portfolios.
+
+---
+
+## 1. Why Duration Is Not Enough
+
+For an option-free bond, the price-yield curve is **convex** (it bows toward the origin). Modified duration is the slope of the line tangent to the curve at the current yield. Because the curve lies above that tangent line on both sides:
+
+- when yields **fall**, the actual price rise is **larger** than the duration estimate;
+- when yields **rise**, the actual price fall is **smaller** than the duration estimate.
+
+So duration alone understates gains and overstates losses, and the error grows with the size of the yield change. The positive effect of convexity is a benefit to the bondholder: for the same duration, a more convex bond gains more when yields fall and loses less when they rise.
+
+<Note>
+Convexity is a second-derivative measure. Duration is about the **slope** of the price-yield curve; convexity is about how quickly that slope **changes**.
+</Note>
+
+---
+
+## 2. Convexity and the Price Change Estimate
+
+Convexity is the second derivative of price with respect to yield, divided by price:
+
+$$\text{Convexity} = \frac{1}{P}\frac{d^2P}{dy^2}$$
+
+Its units are years squared. For a bond with fixed cash flows it is positive, and a larger value means a more curved price-yield relationship.
+
+### Duration-plus-convexity estimate
+
+Adding the second-order term to the duration estimate gives:
+
+$$\%\Delta P \approx -\text{ModDur}\times\Delta y + \tfrac{1}{2}\,\text{Convexity}\times(\Delta y)^2$$
+
+Here $\Delta y$ is the change in the annual yield **in decimal form** (100 bp is 0.01). Because $(\Delta y)^2$ is always positive, the convexity term always **adds** to the estimate, whichever way yields move. The factor of one half comes from the second-order Taylor expansion and must not be dropped.
+
+---
+
+## 3. Approximate Convexity
+
+Convexity can be estimated by repricing the bond at a slightly higher and a slightly lower yield:
+
+$$\text{ApproxCon} = \frac{PV_{-} + PV_{+} - 2\,PV_0}{(\Delta y)^2\,PV_0}$$
+
+where $PV_0$ is the price at the starting yield, $PV_{-}$ the price when the yield falls by $\Delta y$, and $PV_{+}$ the price when it rises by $\Delta y$. The same three prices give approximate modified duration:
+
+$$\text{ApproxModDur} = \frac{PV_{-} - PV_{+}}{2\,PV_0\,\Delta y}$$
+
+### Worked example: a 3-year, 5% annual-pay bond at a 4% yield
+
+Par is 100 and the yield change used is $\Delta y = 0.01\%$ (1 bp, or 0.0001).
+
+1. $PV_0 = 102.775091$, $PV_{-}$ (yield 3.99%) $= 102.803374$, $PV_{+}$ (yield 4.01%) $= 102.746819$.
+2. Numerator: $102.803374 + 102.746819 - 2\times 102.775091 = 0.000011$.
+3. Denominator: $(0.0001)^2 \times 102.775091 = 1.02775\times10^{-6}$.
+4. $\text{ApproxCon} = 0.000011 / 0.00000102775 \approx \mathbf{10.41}$.
+5. $\text{ApproxModDur} = (102.803374 - 102.746819)/(2\times102.775091\times0.0001) = \mathbf{2.7514}$.
+
+The numerator is a very small difference of large numbers, so the prices must be carried to six or more decimal places (the unrounded result is 10.4127).
+
+### Applying the estimate
+
+| Yield change | Duration only | Duration + convexity | Exact repricing |
+| --- | --- | --- | --- |
+| +100 bp (4% to 5%) | -2.7514% | -2.7514% + 0.0521% = -2.6993% | -2.7002% |
+| -100 bp (4% to 3%) | +2.7514% | +2.7514% + 0.0521% = +2.8035% | +2.8043% |
+| +200 bp (4% to 6%) | -5.5028% | -5.5028% + 0.2083% = -5.2946% | -5.3010% |
+| -200 bp (4% to 2%) | +5.5028% | +5.5028% + 0.2083% = +5.7111% | +5.7179% |
+
+The convexity term for 100 bp is $\tfrac12\times10.4127\times(0.01)^2 = 0.000521$ (0.0521%), and for 200 bp it is $\tfrac12\times10.4127\times(0.02)^2 = 0.002083$ (0.2083%). Adding it moves each estimate much closer to the exact change, and the gap in the duration-only estimate widens as the yield change grows.
+
+---
+
+## 4. Money Convexity
+
+Like duration, convexity has a currency version. **Money convexity** is convexity multiplied by the bond's full price (or the position's value):
+
+$$\text{MoneyCon} = \text{Convexity}\times\text{Full price}$$
+
+The estimated change in currency terms is:
+
+$$\Delta P \approx -\text{MoneyDur}\times\Delta y + \tfrac{1}{2}\,\text{MoneyCon}\times(\Delta y)^2$$
+
+### Worked example
+
+For the 3-year, 5% bond at 4% (full price 102.7751 per 100 of par):
+
+- $\text{MoneyDur} = 2.7514 \times 102.7751 = 282.78$.
+- $\text{MoneyCon} = 10.4127 \times 102.7751 = 1{,}070.16$.
+- For a +100 bp move: $\Delta P \approx -282.78\times0.01 + \tfrac12\times1{,}070.16\times0.0001 = -2.8278 + 0.0535 = -2.7743$.
+- Estimated new price $= 102.7751 - 2.7743 = 100.0008$, against an exact repriced value of 100.0000.
+
+---
+
+## 5. What Determines Convexity
+
+Convexity depends on the same features as duration, and it is also affected by how widely the cash flows are spread out in time. The figures below are for annual-pay bonds with par 100, using approximate convexity (units: years squared).
+
+### Maturity
+
+Convexity rises quickly with maturity (6% coupon, 6% yield):
+
+| Maturity | 5 years | 10 years | 20 years | 30 years |
+| --- | --- | --- | --- | --- |
+| ModDur | 4.21 | 7.36 | 11.47 | 13.76 |
+| Convexity | 22.92 | 69.74 | 186.23 | 294.57 |
+
+Convexity grows roughly with the **square** of time, so it rises much faster than duration does.
+
+### Coupon rate
+
+A lower coupon rate means more of the value is in the distant principal, so convexity is higher (10-year bonds, 6% yield):
+
+| Coupon rate | 0% | 2% | 4% | 6% | 10% |
+| --- | --- | --- | --- | --- | --- |
+| Convexity | 97.90 | 84.60 | 75.89 | 69.74 | 61.64 |
+
+For a zero-coupon bond, convexity has a simple closed form: $\dfrac{N(N+1)}{(1+y)^2}$. For $N=10$ and $y=6\%$ this is $110/1.1236 = 97.90$.
+
+### Yield to maturity
+
+Convexity is higher at lower yields (10-year, 6% coupon):
+
+| Yield | 2% | 4% | 6% | 8% | 10% |
+| --- | --- | --- | --- | --- | --- |
+| Convexity | 79.83 | 74.67 | 69.74 | 65.05 | 60.59 |
+
+### Dispersion of cash flows
+
+For equal duration, the bond whose cash flows are more **spread out** in time has the higher convexity. A zero-coupon bond has all its value at one date and a low dispersion for its duration; a coupon bond of the same Macaulay duration has cash flows both earlier and later and so is more convex.
+
+| Feature | Effect on convexity |
+| --- | --- |
+| Longer maturity | Higher (grows faster than duration) |
+| Lower coupon rate | Higher |
+| Lower yield | Higher |
+| More dispersed cash flows (same duration) | Higher |
+
+### Bonds with embedded options
+
+The convexity measured here is a **yield-based** (or "approximate") measure that assumes the cash flows do not change when yields change. It does not capture embedded options:
+
+- A **callable bond** shows **negative convexity** at low yields. As yields fall, the call becomes more likely, and the price rises more slowly (it is capped near the call price). The price-yield curve bends the "wrong" way.
+- A **putable bond** has more positive convexity than a similar option-free bond, because the put limits the price decline when yields rise.
+
+For such bonds, **effective duration and effective convexity** are used instead. They reprice the bond with a valuation model that lets the cash flows change with the curve.
+
+---
+
+## 6. Portfolio Duration and Convexity
+
+### Duration of a portfolio
+
+The practical measure is the **market-value-weighted average** of the individual bond durations:
+
+$$D_P = \sum_i w_i D_i, \qquad w_i = \frac{MV_i}{\sum MV}$$
+
+It assumes a **parallel shift** in the yield curve, that is, the same yield change for every bond. If the curve moves in a non-parallel way (a steepening or flattening), the portfolio's actual price change differs from the estimate. The alternative is the Macaulay duration of the portfolio's aggregate cash flows, found from the portfolio's cash-flow yield; it is theoretically sound but hard to apply.
+
+### Convexity of a portfolio
+
+Convexity of a portfolio is likewise the market-value-weighted average of the individual convexities:
+
+$$\text{Con}_P = \sum_i w_i\,\text{Con}_i$$
+
+Money duration, PVBP and money convexity all **add** across positions.
+
+### Worked example
+
+| Bond | Market value | ModDur | Convexity | Weight |
+| --- | --- | --- | --- | --- |
+| A | 6 million | 4.0 | 20 | 0.60 |
+| B | 4 million | 7.5 | 70 | 0.40 |
+
+1. $\text{ModDur}_P = 0.60\times4.0 + 0.40\times7.5 = 2.4 + 3.0 = 5.4$.
+2. $\text{Con}_P = 0.60\times20 + 0.40\times70 = 12 + 28 = 40$.
+3. For a parallel **+50 bp** change: $\%\Delta P \approx -5.4\times0.005 + \tfrac12\times40\times(0.005)^2 = -2.70\% + 0.05\% = -2.65\%$.
+4. On a 10 million portfolio the estimated loss is $0.0265\times10\text{ million} = 265{,}000$.
+5. For a parallel **-50 bp** change the estimate is $+2.70\% + 0.05\% = +2.75\%$, a gain of 275,000.
+
+The convexity term adds 0.05 percentage points in both directions: it is a pure benefit to a long position.
+
+---
+
+## 7. Barbell, Bullet and Duration-Matched Portfolios
+
+Two portfolios can have the same duration but different convexity.
+
+- A **bullet** portfolio concentrates holdings around one maturity.
+- A **barbell** portfolio holds short and long maturities and little in between.
+
+The barbell's cash flows are more dispersed, so it has **higher convexity** for the same duration.
+
+| Portfolio | Holdings | ModDur | Convexity |
+| --- | --- | --- | --- |
+| Bullet | 100% 5-year bond | 4.6 | 25 |
+| Barbell | 50% 2-year (ModDur 1.9, Con 4.5) and 50% 10-year (ModDur 7.3, Con 65) | $0.5(1.9)+0.5(7.3)=4.6$ | $0.5(4.5)+0.5(65)=34.75$ |
+
+*(Illustrative values.)* With equal duration, a parallel yield change of either sign leaves the barbell better off than the bullet by the extra convexity term, $\tfrac12\times(34.75-25)\times(\Delta y)^2$. The higher convexity is not free: the market usually prices it in, so the barbell may give up yield, and it is exposed to **non-parallel** curve moves that the duration-and-convexity estimate ignores.
+
+---
+
+## 8. Putting It Together
+
+| Question | Use |
+| --- | --- |
+| Price change for a small yield change | $-\text{ModDur}\times\Delta y$ |
+| Price change for a larger yield change | Add $\tfrac12\,\text{Con}\times(\Delta y)^2$ |
+| Estimate convexity from repriced bonds | $(PV_{-}+PV_{+}-2PV_0)/((\Delta y)^2PV_0)$ |
+| Currency effect of convexity on a position | Money convexity |
+| Portfolio exposure | Market-value-weighted duration and convexity (parallel shift) |
+| Callable or putable bond | Effective duration and effective convexity |
+
+---
+
+## Key takeaways
+
+- Duration is a linear approximation; **convexity** measures the curvature of the price-yield curve.
+- $\%\Delta P \approx -\text{ModDur}\times\Delta y + \tfrac12\,\text{Con}\times(\Delta y)^2$. The convexity term is always positive for an option-free bond, so duration alone understates gains and overstates losses.
+- $\text{ApproxCon} = (PV_{-}+PV_{+}-2PV_0)/((\Delta y)^2PV_0)$, in years squared. Carry the prices to many decimal places.
+- $\text{MoneyCon} = \text{Con}\times\text{Full price}$, and $\Delta P \approx -\text{MoneyDur}\,\Delta y + \tfrac12\text{MoneyCon}(\Delta y)^2$.
+- Convexity is higher for longer maturity, lower coupon, lower yield and more dispersed cash flows.
+- Callable bonds can have negative convexity at low yields; use effective measures for bonds with embedded options.
+- Portfolio duration and convexity are market-value-weighted averages and assume a parallel curve shift.
+- Barbells have higher convexity than bullets of the same duration, but they are exposed to non-parallel shifts.
