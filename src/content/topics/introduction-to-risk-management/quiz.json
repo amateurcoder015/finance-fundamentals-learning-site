@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which statement best describes the objective of risk management?",
+    "options": [
+      "Eliminate all sources of risk from the organization.",
+      "Align the risk actually taken with the level the organization is willing and able to bear, in support of its objectives.",
+      "Minimize the standard deviation of returns in every business unit.",
+      "Transfer all risk to insurers and derivative counterparties."
+    ],
+    "correctIndex": 1,
+    "explanation": "Risk management aims to take the right amount of risk, not the minimum. It identifies and measures risk and then modifies it so that actual exposure matches the desired level set by risk tolerance."
+  },
+  {
+    "question": "A firm's management is eager to take large risks, but the firm has thin capital and volatile cash flows. Its risk tolerance should most appropriately be set by:",
+    "options": [
+      "its willingness to take risk, because management is accountable for strategy.",
+      "the average of its willingness and its ability.",
+      "the risk tolerance of its largest competitor.",
+      "its ability to take risk, because the lower of willingness and ability should generally govern."
+    ],
+    "correctIndex": 3,
+    "explanation": "Risk tolerance reflects both willingness and ability. When they conflict, the lower one should generally govern: a firm that cannot absorb large losses should not take them, however willing it is."
+  },
+  {
+    "question": "Which of the following is a non-financial risk?",
+    "options": [
+      "Credit risk",
+      "Liquidity risk",
+      "Model risk",
+      "Interest rate risk"
+    ],
+    "correctIndex": 2,
+    "explanation": "Model risk, the risk of loss from a flawed or misapplied model, is a non-financial risk. Credit, liquidity and interest rate (market) risks are financial risks arising from financial markets and counterparties."
+  },
+  {
+    "question": "A portfolio of $200 million has an expected monthly return of 0.60% and a monthly standard deviation of 3.0%. Assuming normally distributed returns, the 5% one-month parametric VaR is closest to:",
+    "options": [
+      "$8.70 million",
+      "$9.90 million",
+      "$12.78 million",
+      "$4.35 million"
+    ],
+    "correctIndex": 0,
+    "explanation": "The 5% VaR return is 0.60% - 1.65 x 3.0% = -4.35%. In dollars: 4.35% x $200 million = $8.70 million. $9.90 million ignores the expected return (4.95% x $200m); $12.78 million is the 1% VaR; $4.35 million is the percentage, not the dollar amount."
+  },
+  {
+    "question": "Which statement about value at risk (VaR) is most accurate?",
+    "options": [
+      "VaR is the maximum loss that can occur over the horizon.",
+      "VaR is the minimum loss expected with a given probability over a given horizon, and says nothing about losses beyond that threshold.",
+      "VaR is the average loss in the tail beyond the confidence threshold.",
+      "VaR is unaffected by the choice of confidence level."
+    ],
+    "correctIndex": 1,
+    "explanation": "VaR gives the minimum loss at the stated probability and horizon. It does not bound the worst case. The average loss beyond the threshold is conditional VaR (expected shortfall). A higher confidence level produces a larger VaR."
+  },
+  {
+    "question": "A bond portfolio worth $100 million has a modified duration of 5.0. If yields rise by 0.50%, the approximate change in portfolio value is:",
+    "options": [
+      "-$2.50 million",
+      "-$0.50 million",
+      "+$2.50 million",
+      "-$25.0 million"
+    ],
+    "correctIndex": 0,
+    "explanation": "Percentage price change is approximately -modified duration x change in yield = -5.0 x 0.50% = -2.5%. Applied to $100 million, the loss is about $2.50 million. Rising yields reduce bond prices, so the sign is negative."
+  },
+  {
+    "question": "A manufacturer buys a forward contract to lock in the price of a commodity input. In terms of risk modification, this is best described as:",
+    "options": [
+      "risk avoidance.",
+      "risk acceptance through self-insurance.",
+      "risk shifting.",
+      "risk transfer through an insurance contract."
+    ],
+    "correctIndex": 2,
+    "explanation": "Using derivatives such as forwards, futures, options and swaps changes the distribution of outcomes and is called risk shifting. Risk transfer refers to passing the risk of loss to another party, typically through insurance or a surety bond."
+  },
+  {
+    "question": "Which of the following is the best description of risk budgeting?",
+    "options": [
+      "Buying insurance for each business unit up to a premium limit.",
+      "Setting aside cash reserves equal to expected annual losses.",
+      "Calculating the VaR of the whole firm once per year.",
+      "Allocating the total amount of risk the organization is willing to take among its units, portfolios or strategies."
+    ],
+    "correctIndex": 3,
+    "explanation": "Risk budgeting allocates the organization's total acceptable risk among units or strategies, often using limits on a risk measure such as VaR, tracking error or standard deviation, so that risk is spent where the expected return per unit of risk is highest."
+  }
+]

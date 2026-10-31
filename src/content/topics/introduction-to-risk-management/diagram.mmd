@@ -1,0 +1,26 @@
+graph TD
+    RM["Risk Management"] --> GOV["Risk Governance<br/>(Board, CRO, ERM, risk culture)"]
+    RM --> PROC["Risk Management Process"]
+
+    GOV --> TOL["Risk Tolerance<br/>(Willingness and ability to take risk)"]
+    TOL --> BUD["Risk Budgeting<br/>(Allocate total risk to units and strategies)"]
+
+    PROC --> ID["1. Identify risks"]
+    ID --> MEAS["2. Measure risks"]
+    MEAS --> GAP["3. Compare actual with desired risk"]
+    GAP --> MOD["4. Modify risks"]
+    MOD --> MON["5. Monitor and communicate"]
+    MON -.-> ID
+    BUD --> GAP
+
+    ID --> FIN["Financial Risks<br/>(Market, credit, liquidity)"]
+    ID --> NONFIN["Non-Financial Risks<br/>(Operational, model, legal, regulatory,<br/>sovereign, ESG, solvency)"]
+
+    MEAS --> SENS["Sensitivity Measures<br/>(Beta, duration, delta, gamma, vega)"]
+    MEAS --> VAR["Value at Risk<br/>(Parametric, historical, Monte Carlo)"]
+    VAR --> CVAR["CVaR, stress tests, scenario analysis<br/>(Cover VaR's tail blind spot)"]
+
+    MOD --> AVOID["Prevention / Avoidance<br/>(Do not take the risk)"]
+    MOD --> ACCEPT["Acceptance<br/>(Self-insure or diversify)"]
+    MOD --> TRANSFER["Transfer<br/>(Insurance, surety bonds)"]
+    MOD --> SHIFT["Shifting<br/>(Derivatives change the distribution)"]

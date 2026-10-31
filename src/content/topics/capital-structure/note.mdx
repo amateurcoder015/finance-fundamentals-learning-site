@@ -1,0 +1,213 @@
+---
+title: "Capital Structure"
+description: "Capital structure and the cost of capital, business risk versus financial risk and the degrees of leverage, Modigliani-Miller propositions with and without taxes, costs of financial distress, agency costs, the static trade-off and pecking order theories, and practical target capital structure decisions."
+category: "Corporate Finance"
+difficulty: "advanced"
+dateAdded: "2026-10-31"
+tags: ["capital-structure", "wacc", "modigliani-miller", "financial-leverage", "trade-off-theory", "pecking-order"]
+---
+
+# Capital Structure
+
+A company funds its assets with a mix of **debt** and **equity**. That mix is its **capital structure**. Financing choices change the firm's risk, the return shareholders demand and the taxes it pays. This chapter asks two questions: *does the mix affect firm value*, and if so, *what is the best mix*?
+
+---
+
+## 1. Capital Structure and the Cost of Capital
+
+The firm's **weighted average cost of capital (WACC)** is the average cost of its financing sources, weighted by their market-value proportions:
+
+$$\text{WACC} = \frac{E}{V}\,r_e + \frac{D}{V}\,r_d\,(1 - t)$$
+
+where $V = D + E$ (market values), $r_e$ is the cost of equity, $r_d$ the pre-tax cost of debt and $t$ the marginal tax rate. WACC is the discount rate for the firm's free cash flows, so:
+
+$$V = \frac{\text{FCFF}}{\text{WACC}} \quad \text{(for a no-growth perpetuity)}$$
+
+**Lower WACC means higher firm value** (for the same operating cash flows). The **optimal capital structure** is the mix of debt and equity that **minimizes WACC** and therefore **maximizes firm value**. The **target capital structure** is the mix management aims for in the long run.
+
+Two reasons debt looks cheaper than equity:
+
+1. Debt holders have a prior claim and a contractual payment, so they demand a lower return than shareholders ($r_d < r_e$).
+2. Interest is **tax-deductible**, so the after-tax cost is $r_d(1 - t)$.
+
+But adding debt raises the risk of equity, so $r_e$ rises. The theories below explain how these effects net out.
+
+---
+
+## 2. Business Risk, Financial Risk and Leverage
+
+| Risk | Meaning | Driven by |
+| --- | --- | --- |
+| **Sales risk** | Uncertainty of revenue | Demand, competition, pricing |
+| **Operating risk** | Uncertainty of operating income (EBIT) given sales | Cost structure: the share of **fixed operating costs** |
+| **Business risk** | Sales risk plus operating risk | Industry and the firm's operations |
+| **Financial risk** | Additional variability of net income and EPS from using **fixed financing costs** (interest) | Capital structure |
+
+Total risk to shareholders $=$ business risk $+$ financial risk. A firm with high business risk usually should carry **less** debt, because it cannot also afford high financial risk.
+
+### Degrees of leverage
+
+$$\text{DOL} = \frac{\%\Delta \text{EBIT}}{\%\Delta \text{Sales}} = \frac{Q(P - V)}{Q(P - V) - F}$$
+
+$$\text{DFL} = \frac{\%\Delta \text{EPS}}{\%\Delta \text{EBIT}} = \frac{\text{EBIT}}{\text{EBIT} - \text{Interest}}$$
+
+$$\text{DTL} = \text{DOL} \times \text{DFL} = \frac{\%\Delta \text{EPS}}{\%\Delta \text{Sales}} = \frac{Q(P - V)}{Q(P - V) - F - \text{Interest}}$$
+
+where $Q(P-V)$ is total contribution margin and $F$ is fixed operating cost.
+
+**Worked example.** A firm has sales of \$1,000, variable costs of \$600, fixed operating costs of \$200 and interest expense of \$50.
+
+1. Contribution margin $= 1000 - 600 = \mathdollar 400$.
+2. EBIT $= 400 - 200 = \mathdollar 200$.
+3. $\text{DOL} = 400 / 200 = 2.00$.
+4. $\text{EBT} = 200 - 50 = \mathdollar 150$, so $\text{DFL} = 200 / 150 = 1.33$.
+5. $\text{DTL} = 2.00 \times 1.33 = 2.67$ (check: $400 / 150 = 2.67$).
+
+A 10% rise in sales raises EBIT by $2.00 \times 10\% = 20\%$ and EPS by $2.67 \times 10\% = 26.7\%$. The same leverage amplifies a 10% *fall* in sales to a 26.7% fall in EPS.
+
+<Note>Operating leverage comes from fixed **operating** costs; financial leverage comes from fixed **financing** costs. Both magnify the effect of changes in sales on the earnings that shareholders receive.</Note>
+
+---
+
+## 3. Modigliani-Miller Propositions
+
+Modigliani and Miller (MM) analyzed capital structure under idealized assumptions: no taxes, no transaction or bankruptcy costs, no agency costs, symmetric information, and the ability of investors to borrow at the same rate as the firm. They then relaxed the tax assumption.
+
+### MM without taxes
+
+- **Proposition I**: the **value of the firm is independent of its capital structure**. Value is determined by the firm's operating cash flows and business risk, not by how those flows are split between debt and equity.
+
+$$V_L = V_U$$
+
+Investors can create or undo the firm's leverage themselves ("homemade leverage"), so the firm cannot add value by doing it.
+
+- **Proposition II**: the **cost of equity rises linearly with leverage**:
+
+$$r_e = r_0 + (r_0 - r_d)\frac{D}{E}$$
+
+where $r_0$ is the cost of capital of the **unlevered** firm. The higher cost of equity exactly offsets the use of cheaper debt, so **WACC is constant** and equals $r_0$ at every capital structure.
+
+**Example (no taxes).** $r_0 = 10\%$, $r_d = 6\%$, $V = \mathdollar 700$m, $D = \mathdollar 300$m, so $E = \mathdollar 400$m.
+
+1. $r_e = 10\% + (10\% - 6\%) \times 300/400 = 10\% + 3\% = 13\%$.
+2. $\text{WACC} = (400/700)(13\%) + (300/700)(6\%) = 7.43\% + 2.57\% = 10.0\% = r_0$.
+
+### MM with taxes
+
+When interest is tax-deductible, debt creates a **tax shield** worth $t \times D$ (assuming permanent debt):
+
+- **Proposition I (with taxes)**:
+
+$$V_L = V_U + t\,D$$
+
+Value rises with debt. Taken to the extreme, the firm would use almost 100% debt.
+
+- **Proposition II (with taxes)**:
+
+$$r_e = r_0 + (r_0 - r_d)(1 - t)\frac{D}{E}$$
+
+The cost of equity still rises with leverage, but **more slowly** than without taxes, and WACC **falls** as debt rises:
+
+$$\text{WACC} = r_0\left(1 - t\,\frac{D}{V}\right)$$
+
+**Worked example (with taxes).** An all-equity firm has perpetual EBIT of \$100m, a tax rate $t = 30\%$ and an unlevered cost of equity $r_0 = 10\%$. It issues $D = \mathdollar 300$m of perpetual debt at $r_d = 6\%$ and uses the proceeds to repurchase shares.
+
+1. Unlevered value: $V_U = \dfrac{100 \times (1 - 0.30)}{0.10} = \dfrac{70}{0.10} = \mathdollar 700\text{m}$.
+2. Tax shield: $t \times D = 0.30 \times 300 = \mathdollar 90\text{m}$.
+3. Levered value: $V_L = 700 + 90 = \mathdollar 790\text{m}$, so $E = 790 - 300 = \mathdollar 490\text{m}$.
+4. Cost of equity: $r_e = 10\% + (10\% - 6\%)(1 - 0.30)\dfrac{300}{490} = 10\% + 2.8\% \times 0.6122 = 11.71\%$.
+5. WACC: $\dfrac{490}{790}(11.71\%) + \dfrac{300}{790}(6\%)(0.70) = 7.27\% + 1.59\% = 8.86\%$.
+6. Check with the shortcut: $10\% \times (1 - 0.30 \times 300/790) = 10\% \times 0.8861 = 8.86\%$. 
+7. Check the value: $70 / 0.0886 = \mathdollar 790\text{m}$. 
+
+Debt lowered WACC from $10.0\%$ to $8.86\%$ and added \$90m of value, all from the tax shield.
+
+---
+
+## 4. Costs of Financial Distress
+
+MM with taxes predicts that firms should use almost all debt. They do not, because **debt also has costs**. **Financial distress** is the situation in which a firm struggles to meet its debt obligations.
+
+| Cost | Examples |
+| --- | --- |
+| **Direct costs** | Legal, accounting and administrative fees of bankruptcy or restructuring |
+| **Indirect costs** | Lost customers who doubt the firm will honor warranties, suppliers demanding cash terms, key employees leaving, forced asset sales, management distracted from operations |
+
+The **expected cost of financial distress** depends on:
+
+- the **probability** of distress, which rises with leverage and with business risk (high operating leverage, volatile cash flows, cyclical sales); and
+- the **magnitude** of the costs if distress occurs, which is greater for firms with specialized or intangible assets (little liquidation value) than for firms with tangible assets that can be sold.
+
+### Agency costs
+
+Conflicts between managers, shareholders and creditors create **agency costs** that also depend on leverage:
+
+- **Free cash flow problem**: managers with large free cash flow may waste it on empire building and perks. **More debt reduces this** by committing cash to interest and principal, which disciplines management.
+- **Asset substitution**: once debt is in place, shareholders may favor riskier projects (they keep the upside, creditors bear the downside). Creditors anticipate this and demand higher yields or covenants.
+- **Underinvestment (debt overhang)**: a heavily indebted firm may pass up positive-NPV projects because the benefits would mainly go to creditors.
+- **Monitoring and bonding costs**: covenants, audits and reporting needed to control these conflicts.
+
+---
+
+## 5. Static Trade-Off Theory
+
+The **static trade-off theory** combines MM's tax benefit with the costs of distress. Value of a levered firm:
+
+$$V_L = V_U + PV(\text{tax shield}) - PV(\text{costs of financial distress})$$
+
+- At low debt, the **tax shield dominates** and each extra unit of debt adds value.
+- As debt rises, the **probability and cost of distress** (and agency costs of debt) rise at an increasing rate.
+- The **optimal capital structure** is at the debt level where the **marginal benefit** of the tax shield equals the **marginal cost** of financial distress. This is also the point of **minimum WACC**.
+
+Beyond the optimum, more debt reduces firm value. The optimum is a **range** rather than a single exact point, and it is lower for firms with high business risk or few tangible assets.
+
+<Note>The theory is "static" because it treats the firm as choosing one target ratio and weighing costs and benefits at a point in time. It explains why firms in stable industries with tangible assets (utilities, real estate) use more debt than high-growth, intangible-heavy firms (software, biotech).</Note>
+
+---
+
+## 6. Pecking Order Theory
+
+The **pecking order theory** (Myers and Majluf) says firms do not aim at a target ratio at all. Because managers know more about the firm than outside investors (**asymmetric information**), the choice of financing sends a signal and has a cost:
+
+1. **Internal funds (retained earnings)** first: no signal, no issue cost.
+2. **Debt** second: cheaper to issue than equity and a weaker negative signal.
+3. **New equity last**: investors suspect managers issue equity when shares are **overvalued**, so the share price tends to fall on announcement.
+
+Predictions: profitable firms borrow less because they have retained earnings; leverage rises when internal funds are insufficient to cover investment needs; and the observed debt ratio is the **cumulative result** of financing needs, not a target.
+
+| | **Static trade-off** | **Pecking order** |
+| --- | --- | --- |
+| Is there an optimal D/E? | Yes: minimizes WACC | No: a by-product of financing needs |
+| Main forces | Tax shield vs. distress and agency costs | Asymmetric information and issue costs |
+| Most profitable firms | Borrow **more** (more tax to shield, lower distress risk) | Borrow **less** (use retained earnings) |
+
+---
+
+## 7. Target Capital Structure and Practical Considerations
+
+A firm's **target capital structure** is set by management and the board with attention to:
+
+- **Business risk** and operating leverage: higher business risk supports less debt.
+- **Industry norms**: peers' debt ratios are a benchmark. Large departures need justification.
+- **Asset tangibility and cash-flow stability**: tangible, predictable assets support more debt.
+- **Taxes**: a high marginal tax rate raises the value of the interest tax shield.
+- **Growth opportunities and need for flexibility**: firms want unused borrowing capacity ("financial flexibility") to exploit future opportunities.
+- **Credit rating goals**: many firms aim to hold an investment-grade rating; this limits leverage (debt/EBITDA, interest coverage).
+- **Market conditions**: relative cost and availability of debt versus equity at the time.
+- **Management and shareholder preferences**: e.g., reluctance to dilute ownership, or the signaling effect of an equity issue.
+
+Firms **evaluate** capital structure policy using market-based and accounting ratios (debt-to-equity, debt/EBITDA, interest coverage), by comparing with peers, and by monitoring credit rating and market-cost indicators. The firm's actual capital structure may deviate from the target at times (as share prices move or when it pursues a large acquisition), and management gradually rebalances back toward it.
+
+**Differences across countries.** Capital structures vary internationally because of differences in legal systems and creditor protection, the **tax treatment** of interest and dividends, the development of **bond and equity markets**, the role of **banks** (bank-centered systems tend to see more debt financing), and the quality of accounting disclosure.
+
+---
+
+## Key takeaways
+
+- **Optimal capital structure** minimizes WACC and maximizes firm value. $\text{WACC} = \frac{E}{V}r_e + \frac{D}{V}r_d(1-t)$.
+- **Business risk** (sales plus operating risk) is separate from **financial risk** (fixed interest costs). $\text{DOL} = \frac{Q(P-V)}{Q(P-V)-F}$, $\text{DFL} = \frac{\text{EBIT}}{\text{EBIT}-I}$, $\text{DTL} = \text{DOL}\times\text{DFL}$.
+- **MM without taxes**: $V_L = V_U$; $r_e = r_0 + (r_0 - r_d)\frac{D}{E}$; WACC is constant at $r_0$.
+- **MM with taxes**: $V_L = V_U + tD$; $r_e = r_0 + (r_0 - r_d)(1-t)\frac{D}{E}$; WACC falls as debt rises, so taxes alone imply 100% debt.
+- Real firms stop short because of **costs of financial distress** (direct and indirect) and **agency costs**. **Static trade-off**: $V_L = V_U + PV(\text{tax shield}) - PV(\text{distress costs})$, with the optimum where marginal benefit equals marginal cost.
+- **Pecking order**: internal funds, then debt, then equity, because of asymmetric information. There is no target ratio.
+- Practical targets reflect business risk, peers, tangibility, taxes, flexibility, credit rating goals and country-specific institutions.

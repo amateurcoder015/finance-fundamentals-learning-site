@@ -1,0 +1,25 @@
+graph TD
+    CS["Capital Structure<br/>(Mix of debt and equity)"] --> GOAL["Goal: minimize WACC<br/>and maximize firm value"]
+    CS --> RISK["Risk and Leverage"]
+    CS --> THEORY["Theories of Capital Structure"]
+    CS --> POLICY["Target Capital Structure"]
+
+    RISK --> BR["Business Risk<br/>(Sales risk + operating risk)"]
+    RISK --> FR["Financial Risk<br/>(Fixed interest costs)"]
+    BR --> DOL["DOL = %ΔEBIT / %ΔSales"]
+    FR --> DFL["DFL = %ΔEPS / %ΔEBIT"]
+    DOL --> DTL["DTL = DOL x DFL"]
+    DFL --> DTL
+
+    THEORY --> MM1["MM without taxes<br/>V(L) = V(U)<br/>WACC constant"]
+    THEORY --> MM2["MM with taxes<br/>V(L) = V(U) + tD<br/>WACC falls as debt rises"]
+    THEORY --> TO["Static Trade-Off<br/>V(L) = V(U) + PV(tax shield)<br/>- PV(distress costs)"]
+    THEORY --> PO["Pecking Order<br/>Internal funds, then debt, then equity"]
+
+    MM2 --> TO
+    DIST["Costs of Financial Distress<br/>(Direct and indirect)"] --> TO
+    AGENCY["Agency Costs<br/>(Free cash flow, asset substitution,<br/>underinvestment)"] --> TO
+    TO --> OPT["Optimal D/E<br/>(Marginal tax benefit = marginal distress cost)"]
+
+    POLICY --> FACT["Business risk, peers, asset tangibility,<br/>taxes, flexibility, credit rating"]
+    OPT --> POLICY

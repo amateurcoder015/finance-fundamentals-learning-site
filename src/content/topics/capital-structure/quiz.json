@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Under Modigliani-Miller Proposition I without taxes, increasing the proportion of debt in the capital structure will:",
+    "options": [
+      "increase firm value because debt is cheaper than equity.",
+      "decrease firm value because of higher bankruptcy risk.",
+      "leave firm value unchanged, because value depends on operating cash flows and business risk.",
+      "decrease WACC and increase the cost of equity by the same amount."
+    ],
+    "correctIndex": 2,
+    "explanation": "MM Proposition I (no taxes) states that V(L) = V(U): firm value is independent of capital structure. The cost of equity rises as debt rises, exactly offsetting the cheaper debt, so WACC does not change either."
+  },
+  {
+    "question": "An unlevered firm has a cost of capital (r0) of 12%. It can borrow at 7%. Ignoring taxes, according to MM Proposition II, the cost of equity at a debt-to-equity ratio of 0.5 is:",
+    "options": [
+      "12.0%",
+      "9.5%",
+      "15.0%",
+      "14.5%"
+    ],
+    "correctIndex": 3,
+    "explanation": "r_e = r0 + (r0 - r_d) x D/E = 12% + (12% - 7%) x 0.5 = 12% + 2.5% = 14.5%."
+  },
+  {
+    "question": "An unlevered firm is worth $500 million. It issues $200 million of permanent debt and the tax rate is 25%. Assuming MM with taxes and no costs of distress, the value of the levered firm is:",
+    "options": [
+      "$550 million",
+      "$500 million",
+      "$700 million",
+      "$650 million"
+    ],
+    "correctIndex": 0,
+    "explanation": "V(L) = V(U) + t x D = 500 + 0.25 x 200 = 500 + 50 = $550 million."
+  },
+  {
+    "question": "A firm has sales of $1,000, variable costs of $600, fixed operating costs of $200 and interest expense of $50. Its degree of total leverage is closest to:",
+    "options": [
+      "1.33",
+      "2.00",
+      "2.67",
+      "3.33"
+    ],
+    "correctIndex": 2,
+    "explanation": "Contribution margin = 400; EBIT = 200; EBT = 150. DOL = 400/200 = 2.00; DFL = 200/150 = 1.33; DTL = 2.00 x 1.33 = 2.67 (equivalently 400/150)."
+  },
+  {
+    "question": "Which factor does the static trade-off theory identify as the main reason a firm will not finance entirely with debt, even though interest is tax-deductible?",
+    "options": [
+      "Debt holders have a residual claim on assets.",
+      "Managers prefer to issue new equity before using internal funds.",
+      "The cost of equity falls as leverage increases.",
+      "Costs of financial distress and agency costs of debt rise with leverage."
+    ],
+    "correctIndex": 3,
+    "explanation": "The trade-off theory balances the tax shield benefit of debt against the expected costs of financial distress (and agency costs). The optimum is where the marginal benefit equals the marginal cost. Debt holders have a prior, not residual, claim, and the cost of equity rises with leverage."
+  },
+  {
+    "question": "According to the pecking order theory, the order in which a firm prefers to raise funds is:",
+    "options": [
+      "new equity, debt, retained earnings.",
+      "debt, retained earnings, new equity.",
+      "retained earnings, debt, new equity.",
+      "retained earnings, new equity, debt."
+    ],
+    "correctIndex": 2,
+    "explanation": "Because of asymmetric information, managers prefer internal funds first, then debt, and issue new equity last because an equity issue signals that managers think the shares may be overvalued."
+  },
+  {
+    "question": "A firm has $600 of equity (cost 12%) and $400 of debt (pre-tax cost 6%). The marginal tax rate is 30%. The firm's WACC is closest to:",
+    "options": [
+      "7.20%",
+      "8.88%",
+      "9.60%",
+      "10.20%"
+    ],
+    "correctIndex": 1,
+    "explanation": "WACC = 0.60 x 12% + 0.40 x 6% x (1 - 0.30) = 7.20% + 1.68% = 8.88%. 9.60% ignores the tax deductibility of interest (7.20% + 2.40%), and 7.20% counts only the equity component."
+  },
+  {
+    "question": "Compared with a firm with low operating leverage, a firm with high business risk should, all else equal, most appropriately use:",
+    "options": [
+      "less financial leverage, because it cannot also bear high financial risk.",
+      "more financial leverage, to offset its high operating leverage.",
+      "the same financial leverage, since the two risks are independent.",
+      "only equity, because debt is not available to cyclical firms."
+    ],
+    "correctIndex": 0,
+    "explanation": "Total risk to shareholders combines business risk and financial risk. A firm with high business risk has a higher probability of distress at any given debt level, so its optimal debt ratio is lower."
+  }
+]

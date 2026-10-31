@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What is the goal of risk management?",
+    "back": "To align the risk actually taken with the level the organization is willing and able to take, in support of its objectives. The goal is the right amount of risk, not the minimum."
+  },
+  {
+    "front": "What is risk governance, and how does it differ from the risk management framework?",
+    "back": "Risk governance is the top-level structure that sets risk-taking and oversight policy, with board, management and CRO accountability. The framework is the infrastructure (identification, measurement, policies, processes, mitigation, communication) that implements it."
+  },
+  {
+    "front": "What is enterprise risk management (ERM)?",
+    "back": "A firm-wide, holistic approach that aggregates risks across the organization and considers how they interact, rather than managing each business unit's risks in isolation."
+  },
+  {
+    "front": "What determines an organization's risk tolerance?",
+    "back": "Its willingness to take risk (objectives, culture) and its ability to take risk (capital, liquidity, cash-flow stability, time horizon). When the two conflict, the lower generally governs."
+  },
+  {
+    "front": "What is risk budgeting?",
+    "back": "Allocating the total risk the organization is willing to take among its business units, portfolios or strategies, using limits on measures such as VaR, tracking error or standard deviation."
+  },
+  {
+    "front": "Name the three financial risks and give examples of non-financial risks.",
+    "back": "Financial: market, credit, liquidity. Non-financial: operational, settlement, model, legal/compliance, regulatory, tax, sovereign, political, ESG, solvency, reputational."
+  },
+  {
+    "front": "Which risk measure applies to equities, bonds and options?",
+    "back": "Equities: standard deviation and beta. Bonds: duration (and convexity). Options and derivatives: delta, gamma, vega (the Greeks). Portfolios and firms: VaR, CVaR, tracking error."
+  },
+  {
+    "front": "Define value at risk (VaR).",
+    "back": "The minimum loss expected to occur with a given probability over a given horizon. Example: a 5% one-month VaR of $8.7m means losses of at least $8.7m are expected in 5% of months."
+  },
+  {
+    "front": "Parametric VaR formula and the z-values used.",
+    "back": "VaR = [E(R) - z x sigma] x (-1) x portfolio value. z = 1.65 for 5% (95% confidence) and z = 2.33 for 1% (99% confidence). Over short horizons, scale by the square root of time."
+  },
+  {
+    "front": "Compare the parametric, historical and Monte Carlo VaR methods.",
+    "back": "Parametric: assumes a (normal) distribution; fast but weak for options and fat tails. Historical: uses actual past returns; no distribution assumption but assumes the past repeats. Monte Carlo: simulates scenarios; most flexible but computationally heavy and model-dependent."
+  },
+  {
+    "front": "What are the limitations of VaR, and what complements it?",
+    "back": "VaR is a minimum tail loss, not a maximum; it is sensitive to method, horizon and confidence level, subject to model risk, and misses liquidity effects. Complement it with CVaR (expected shortfall), stress tests and scenario analysis."
+  },
+  {
+    "front": "What are the four methods of risk modification?",
+    "back": "Prevention/avoidance (do not take the risk), acceptance (self-insure or diversify), transfer (insurance, surety bonds), and shifting (derivatives that change the distribution of outcomes)."
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What is the optimal capital structure?",
+    "back": "The mix of debt and equity that minimizes WACC and therefore maximizes firm value."
+  },
+  {
+    "front": "WACC formula",
+    "back": "WACC = (E/V) x r_e + (D/V) x r_d x (1 - t), using market-value weights. For a no-growth perpetuity, firm value = FCFF / WACC."
+  },
+  {
+    "front": "Distinguish business risk from financial risk.",
+    "back": "Business risk = sales risk + operating risk (fixed operating costs). Financial risk = extra variability of net income and EPS from fixed financing costs (interest). Total shareholder risk is the sum of both."
+  },
+  {
+    "front": "Formulas for DOL, DFL and DTL",
+    "back": "DOL = Q(P-V) / [Q(P-V) - F]. DFL = EBIT / (EBIT - Interest). DTL = DOL x DFL = Q(P-V) / [Q(P-V) - F - Interest]."
+  },
+  {
+    "front": "MM Propositions I and II without taxes",
+    "back": "I: V(L) = V(U); firm value is independent of capital structure. II: r_e = r0 + (r0 - r_d) x D/E; the cost of equity rises linearly with leverage and WACC stays constant at r0."
+  },
+  {
+    "front": "MM Propositions I and II with taxes",
+    "back": "I: V(L) = V(U) + tD. II: r_e = r0 + (r0 - r_d)(1 - t) x D/E. WACC = r0 x (1 - tD/V) falls as debt rises, which implies the firm should use nearly 100% debt."
+  },
+  {
+    "front": "What are the costs of financial distress?",
+    "back": "Direct: legal, accounting and administrative bankruptcy costs. Indirect: lost customers and suppliers, departing employees, forced asset sales, distracted management. Expected cost = probability x magnitude."
+  },
+  {
+    "front": "Name the main agency costs related to leverage.",
+    "back": "Free cash flow problem (debt disciplines managers), asset substitution (shareholders favor riskier projects), underinvestment/debt overhang (positive-NPV projects passed up), and monitoring and bonding costs such as covenants."
+  },
+  {
+    "front": "State the static trade-off theory.",
+    "back": "V(L) = V(U) + PV(tax shield) - PV(costs of financial distress). The optimal D/E is where the marginal tax benefit of debt equals the marginal expected cost of distress; WACC is lowest there."
+  },
+  {
+    "front": "State the pecking order theory.",
+    "back": "Because of asymmetric information, firms prefer internal funds first, then debt, and new equity last (an issue signals overvaluation). There is no target D/E; the ratio results from financing needs."
+  },
+  {
+    "front": "What factors influence a firm's target capital structure?",
+    "back": "Business risk, peer/industry norms, asset tangibility and cash-flow stability, tax rate, growth opportunities and need for financial flexibility, credit rating goals, market conditions, and management/shareholder preferences."
+  },
+  {
+    "front": "Why do capital structures differ across countries?",
+    "back": "Differences in legal systems and creditor protection, tax treatment of interest and dividends, development of bond and equity markets, the role of banks, and quality of accounting disclosure."
+  }
+]

@@ -1,0 +1,216 @@
+---
+title: "Introduction to Risk Management"
+description: "The risk management process and framework, risk governance, risk tolerance and risk budgeting, financial and non-financial risks, measures of risk (standard deviation, beta, duration, delta, VaR), and the four methods of risk modification."
+category: "Portfolio Management"
+difficulty: "intermediate"
+dateAdded: "2026-10-31"
+tags: ["risk-management", "risk-governance", "risk-budgeting", "value-at-risk", "risk-tolerance", "enterprise-risk"]
+---
+
+# Introduction to Risk Management
+
+**Risk** is exposure to uncertainty about outcomes. **Risk management** is the process of identifying the level of risk an organization wants, measuring the level it actually has, and taking actions to close the gap. The goal is **not** to minimize risk: it is to take the *right* amount of risk, the amount that is consistent with the organization's objectives and ability to bear losses.
+
+This applies to any entity: a bank, an asset manager, a corporation, a pension fund or an individual household.
+
+---
+
+## 1. The Risk Management Process
+
+Risk management is a continuous, repeating process rather than a one-time exercise:
+
+1. **Set the risk governance and strategy**: decide who is responsible for risk, and what the organization's goals and constraints are.
+2. **Identify risks**: list every exposure, including financial and non-financial ones.
+3. **Measure risks**: quantify the size and likelihood of potential losses.
+4. **Decide on the desired level** of each risk: this is set by **risk tolerance** and **risk budgeting**.
+5. **Modify risks** to move the actual exposure toward the desired exposure (prevent, accept, transfer, shift).
+6. **Monitor and communicate**: track results, report to the board and stakeholders, and adjust as conditions change.
+
+<Note>Risk management is a **process**, not a department. Its job is to give decision makers the information and tools to take risk deliberately, not to remove it.</Note>
+
+---
+
+## 2. Risk Governance and the Risk Management Framework
+
+**Risk governance** is the top-level structure that sets risk-taking and risk-oversight policy for the whole organization. Good governance:
+
+- Aligns risk-taking with the organization's **strategic objectives**.
+- Defines **roles and accountability**: the board approves the risk appetite; senior management implements it; a **chief risk officer (CRO)** typically leads the risk function.
+- Creates **independent risk oversight** so that those who take risk are not the only ones who measure it.
+- Promotes a **risk culture** in which employees understand the risks they run.
+
+A **risk management framework** is the infrastructure that puts governance into practice. It includes:
+
+| Element | Purpose |
+| --- | --- |
+| Risk governance structure | Who sets policy and who is accountable |
+| Risk identification and measurement | Systems and models to find and quantify exposures |
+| Risk infrastructure | People, data, technology and processes to monitor risk |
+| Policies and processes | Written limits, escalation rules and reporting lines |
+| Risk mitigation and management | Tools to modify risk (Section 6) |
+| Communication | Regular reporting to the board and management |
+| Strategic risk analysis | Integrating risk into planning, capital allocation and performance review |
+
+### Enterprise risk management (ERM)
+
+**Enterprise risk management** takes a **firm-wide (holistic)** view. Instead of each business unit managing its own risks in a silo, ERM aggregates risks across the organization, recognizes how they interact (they may offset or reinforce each other), and manages the total. The result is a clearer view of the organization's overall risk exposure.
+
+---
+
+## 3. Risk Tolerance and Risk Budgeting
+
+### Risk tolerance
+
+**Risk tolerance** is the level of risk an organization is **willing and able** to take. It is set by weighing two things:
+
+- **Willingness** to take risk (a function of objectives, culture and preferences).
+- **Ability** to take risk (a function of capital, income, liquidity and time horizon).
+
+When willingness and ability conflict, the **lower** of the two should generally govern. A firm that is eager to take risk but has thin capital cannot responsibly do so.
+
+Setting risk tolerance requires looking at the whole organization: its **financial position**, the **cash-flow variability** of the business, the cost of **financial distress**, and the expectations of its stakeholders.
+
+### Risk budgeting
+
+**Risk budgeting** is the process of **allocating the total risk the organization is willing to take** among its business units, portfolios or strategies, for example by assigning each a limit on tracking error, VaR or standard deviation.
+
+- It forces trade-offs: risk is a scarce resource to be spent where the expected return per unit of risk is highest.
+- The budget can be expressed in different **risk measures** (standard deviation, VaR, beta, etc.) and may be allocated top-down (from total risk to units) or built bottom-up.
+- It helps align risk-taking with return expectations and prevents any single unit from consuming a disproportionate share of risk capacity.
+
+---
+
+## 4. Financial and Non-Financial Risks
+
+Risks fall into two broad groups.
+
+### Financial risks
+
+Losses arising from **exposure to financial markets or counterparties**:
+
+| Risk | Definition |
+| --- | --- |
+| **Market risk** | Losses from changes in interest rates, exchange rates, equity prices or commodity prices |
+| **Credit risk** | Loss from a counterparty failing to meet its obligations (default) or from deterioration in its credit quality |
+| **Liquidity risk** | Loss from being unable to buy or sell an asset quickly without significantly moving its price, or from being unable to meet cash needs |
+
+### Non-financial risks
+
+Risks arising from **operations, people, the legal setting or the external environment**:
+
+| Risk | Definition |
+| --- | --- |
+| **Operational risk** | Loss from failed internal processes, people, systems or external events (fraud, error, outages) |
+| **Settlement (Herstatt) risk** | One side of a trade is delivered but the counterparty fails to deliver its side |
+| **Model risk** | Loss from using a flawed or misapplied valuation or risk model |
+| **Legal and compliance risk** | Loss from breaching laws, regulations or contracts |
+| **Regulatory risk** | Loss from changes in law or regulation |
+| **Tax risk** | Loss from changes in tax rules or their interpretation |
+| **Accounting risk** | Loss from misapplication or misinterpretation of accounting rules |
+| **Sovereign risk** | Risk that a government fails to honor its obligations |
+| **Political / geopolitical risk** | Risk from political events, conflict or policy change |
+| **ESG risk** | Risk from environmental, social and governance factors |
+| **Solvency risk** | Risk that an organization cannot meet its obligations because it lacks enough capital |
+| **Strategic and reputational risk** | Risk from poor strategy or from damage to the organization's standing |
+
+<Note>Risks **interact**. A market shock can raise liquidity risk and credit risk at the same time, and an operational failure can become a reputational crisis. This is why a firm-wide view (ERM) matters.</Note>
+
+---
+
+## 5. Measuring Risk
+
+No single number captures risk. Different instruments need different measures.
+
+| Measure | Applies to | What it captures |
+| --- | --- | --- |
+| **Standard deviation** (and variance) | Any asset or portfolio | Total dispersion of returns |
+| **Beta** | Equities | Sensitivity to market returns (systematic risk) |
+| **Duration** | Fixed income | Sensitivity of price to a change in yield |
+| **Delta, gamma, vega** | Derivatives | Sensitivity to price, to the change in delta, and to volatility ("the Greeks") |
+| **Value at risk (VaR)** | Portfolios, firms | Minimum loss over a horizon at a given probability |
+| **Conditional VaR (CVaR)** / expected shortfall | Portfolios, firms | Average loss *given* that the VaR threshold has been breached |
+| **Tracking error** | Active portfolios | Standard deviation of returns relative to a benchmark |
+
+### Sensitivity measures: quick examples
+
+- **Beta**: a portfolio with $\beta = 1.2$ is expected to fall about $1.2 \times 10\% = 12\%$ if the market falls 10%.
+- **Duration**: the approximate price change is $\Delta P/P \approx -D_{\text{mod}} \times \Delta y$. A \$100 million bond portfolio with modified duration $5.0$ and a $+0.50\%$ yield rise loses about $5.0 \times 0.50\% = 2.5\%$, or \$2.5 million.
+- **Delta**: an option with delta $0.50$ changes in value by about \$0.50 for each \$1 move in the underlying.
+
+These measures describe **local** sensitivity to one factor. They do not give a probability-based loss estimate. VaR does.
+
+### Value at risk (VaR)
+
+**VaR** is the **minimum loss that would be expected to occur with a given probability over a given time horizon**. A 5% one-month VaR of \$8.7 million means: in 5% of months, losses are expected to be **at least** \$8.7 million. VaR has three inputs: the **probability** (or confidence level, 95% or 99%), the **horizon**, and the **method**.
+
+**Parametric (variance-covariance) method.** Assuming returns are normally distributed:
+
+$$\text{VaR} = \left[\,E(R_P) - z\,\sigma_P\,\right] \times (-1) \times \text{Portfolio value}$$
+
+where $z = 1.65$ for 5% (95% confidence) and $z = 2.33$ for 1% (99% confidence), using the one-tailed normal values.
+
+**Worked example.** A \$200 million portfolio has an expected monthly return of $0.60\%$ and a monthly standard deviation of $3.0\%$.
+
+1. 5% VaR as a return: $0.60\% - 1.65 \times 3.0\% = 0.60\% - 4.95\% = -4.35\%$.
+2. 5% VaR in dollars: $4.35\% \times \mathdollar 200\text{m} = \mathdollar 8.70\text{m}$.
+3. 1% VaR as a return: $0.60\% - 2.33 \times 3.0\% = 0.60\% - 6.99\% = -6.39\%$.
+4. 1% VaR in dollars: $6.39\% \times \mathdollar 200\text{m} = \mathdollar 12.78\text{m}$.
+
+Interpretation: in 1 month out of 20 we expect to lose at least \$8.70 million; in 1 month out of 100, at least \$12.78 million. A higher confidence level gives a larger VaR.
+
+**Changing the horizon.** If the mean is small relative to volatility, VaR scales with the **square root of time**: a 1-day VaR of \$1 million becomes about $\mathdollar 1\text{m} \times \sqrt{4} = \mathdollar 2$ million over 4 days.
+
+**The three methods:**
+
+| Method | How it works | Strengths | Weaknesses |
+| --- | --- | --- | --- |
+| **Parametric** | Assumes a distribution (usually normal); uses mean, standard deviation and correlations | Fast, simple, easy to decompose | Poor for options and for fat-tailed returns |
+| **Historical** | Re-prices today's portfolio with actual past returns and reads off the loss percentile | No distribution assumption; captures fat tails seen in the sample | Assumes the past repeats; sample-dependent |
+| **Monte Carlo** | Simulates many random scenarios from a specified model | Flexible; handles options and non-normal returns | Computationally heavy; depends on model assumptions (model risk) |
+
+For the historical method with 100 daily observations, the 5% VaR is the **5th-worst** outcome.
+
+### Limitations of VaR
+
+- It gives a **minimum** loss in the tail, not the **maximum**: it says nothing about how bad losses can be *beyond* the threshold. CVaR addresses this.
+- Results depend on the **method, horizon and confidence level** chosen.
+- It is exposed to **model risk** and to data limitations; estimates can be unreliable in a crisis when correlations spike.
+- It does not capture **liquidity risk** or the risk of rare events well, so it should be paired with **stress tests** and **scenario analysis**.
+
+**Stress testing** asks "what if a specific severe event happens?" (for example a 300 bp rate rise). **Scenario analysis** examines the effect of a defined set of changes in several risk factors together. Both complement VaR.
+
+---
+
+## 6. Methods of Risk Modification
+
+Once risks are measured and compared with the desired level, the organization can modify them. There are four basic responses:
+
+| Method | Idea | Example |
+| --- | --- | --- |
+| **Risk prevention and avoidance** | Do not take the risk at all, or stop the activity | Declining to enter a market; choosing not to underwrite a risky client |
+| **Risk acceptance** | Retain the risk deliberately | *Self-insure* by setting aside reserves; *diversify* so that only systematic risk is retained |
+| **Risk transfer** | Pass the risk to another party for a payment | Buy **insurance**; obtain a **surety bond** or guarantee |
+| **Risk shifting** | Change the *distribution* of outcomes, usually with derivatives | Use futures, forwards, options or swaps to hedge price, rate or currency exposure |
+
+Two important distinctions:
+
+- **Transfer** moves risk of loss to a third party (usually through a contract with fixed terms), while **shifting** reshapes the probability distribution of outcomes: it reduces the probability of large losses but may give up some upside.
+- **Diversification** is a form of risk *acceptance* that exploits imperfect correlation: it reduces non-systematic risk at no cost in expected return.
+
+<Note>Hedging is not free and not always desirable. A derivative hedge removes variability, but it also gives up gains, adds counterparty and basis risk, and may be a poor use of the risk budget if the organization is in fact paid for bearing that risk.</Note>
+
+### Evaluating the result: risk-adjusted performance
+
+Risk-taking should be judged against return. Common **risk-adjusted return** measures (Sharpe ratio, Treynor ratio, return on VaR) divide return by a measure of risk. A business unit that earns a high return only because it consumes a large share of the risk budget has not necessarily added value. Risk-adjusted measures help allocate the budget to where it earns the most per unit of risk.
+
+---
+
+## Key takeaways
+
+- Risk management is a **continuous process** that aligns the risk actually taken with the risk the organization is **willing and able** to take. It does not aim to eliminate risk.
+- **Risk governance** sets policy and accountability; the **framework** is the infrastructure; **ERM** manages risk on a firm-wide basis, including interactions among risks.
+- **Risk tolerance** combines willingness and ability to bear risk; **risk budgeting** allocates the total risk among units and strategies.
+- **Financial risks**: market, credit, liquidity. **Non-financial risks**: operational, model, legal, regulatory, tax, sovereign, ESG, solvency and others. They interact.
+- Use the right measure: **standard deviation and beta** (equity), **duration** (bonds), **delta, gamma and vega** (derivatives), **VaR and CVaR** (portfolio loss).
+- **Parametric VaR** $= [E(R_P) - z\sigma_P] \times (-1) \times$ value, with $z = 1.65$ (5%) and $2.33$ (1%). VaR is a **minimum** loss in the tail; supplement it with CVaR, stress tests and scenario analysis.
+- The four modification methods are **avoid, accept (self-insure or diversify), transfer (insurance, surety)** and **shift (derivatives)**.
