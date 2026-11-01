@@ -1,0 +1,212 @@
+---
+title: "Curve-Based and Empirical Fixed-Income Risk Measures"
+description: "Why yield-based duration fails for bonds with embedded options or non-parallel curve shifts, and how effective duration, effective convexity, one-sided durations, key rate duration and empirical duration fill the gap."
+category: "Fixed Income"
+difficulty: "advanced"
+dateAdded: "2026-11-01"
+tags: ["effective-duration", "effective-convexity", "key-rate-duration", "empirical-duration", "yield-curve-shifts", "embedded-options"]
+---
+
+# Curve-Based and Empirical Fixed-Income Risk Measures
+
+Yield-based measures (Macaulay, modified duration and convexity) assume that a bond's cash flows are fixed and that all of its interest rate risk can be summarised by a single yield to maturity. Both assumptions break down for bonds with embedded options and for portfolios exposed to changes in the *shape* of the yield curve. This chapter covers the **curve-based** measures that reprice a bond off a shifted benchmark curve (effective duration, effective convexity, one-sided durations and key rate durations) and the **empirical** approach that estimates sensitivity from historical data.
+
+---
+
+## 1. Why Yield-Based Measures Are Not Enough
+
+Modified duration is derived from the yield to maturity, so it assumes that:
+
+- the cash flows do not change when yields change; and
+- every cash flow is discounted at the same single rate, so the whole curve effectively moves in parallel.
+
+Neither holds in practice:
+
+- A **callable bond** will be called if rates fall far enough, and a **putable bond** will be put if rates rise far enough. The expected cash flows depend on the interest rate path, so there is no fixed cash flow stream from which to compute a yield-based duration.
+- A **mortgage-backed security** has cash flows that depend on borrowers' prepayment behaviour, which in turn depends on interest rates.
+- A portfolio of bonds with different maturities is hit unevenly when the short end and the long end of the curve move by different amounts.
+
+Curve-based measures solve both problems: the bond is repriced using a **benchmark yield curve** that is shifted up and down, and the pricing model (for example a binomial interest rate tree) lets the expected cash flows change as rates change.
+
+---
+
+## 2. Types of Yield Curve Movement
+
+| Movement | Description | Duration measure that captures it |
+| --- | --- | --- |
+| **Parallel shift** | All maturities change by the same number of basis points | Effective duration |
+| **Steepening / flattening** (slope change) | Long rates rise relative to short rates (steepen) or fall relative to them (flatten) | Key rate durations |
+| **Butterfly** (curvature change) | Short and long rates move one way, intermediate rates move the other | Key rate durations |
+
+Historically, most of the variation in government bond returns is explained by the **level** (parallel) factor, then by **slope**, then by **curvature**. A single duration number can only describe the level factor, which is why key rate durations are needed for slope and curvature risk.
+
+---
+
+## 3. Effective Duration
+
+**Effective duration** is the sensitivity of a bond's price to a parallel shift in the benchmark yield curve. The bond is repriced twice, once with the curve shifted down and once with it shifted up, by the same amount $\Delta\text{Curve}$ (in decimal form):
+
+$$\text{EffDur} = \frac{PV_{-} - PV_{+}}{2\times PV_0 \times \Delta\text{Curve}}$$
+
+where $PV_0$ is the current price, $PV_{-}$ the price after the curve falls by $\Delta\text{Curve}$ and $PV_{+}$ the price after it rises by $\Delta\text{Curve}$.
+
+The formula has the same form as approximate modified duration. The difference is *what is shifted*: the benchmark curve (with the option-adjusted pricing model re-run each time) rather than the bond's own yield to maturity. For a bond with no embedded options the two measures are very close.
+
+<Note>
+Effective duration is a **price sensitivity** measure, not a time measure. For a bond with an embedded option it cannot be read as a weighted average time to cash flows.
+</Note>
+
+### Useful reference points
+
+- A **zero-coupon bond** has an effective duration approximately equal to its maturity.
+- A **floating-rate note** has a low effective duration, roughly the time to the next reset, because its coupon (and so its price) resets to market rates.
+- A **callable bond** has an effective duration **no higher than** that of an otherwise identical non-callable bond; the call option shortens it, especially when rates are low.
+- A **putable bond** has an effective duration no higher than that of an otherwise identical non-putable bond, especially when rates are high.
+
+---
+
+## 4. Effective Convexity
+
+**Effective convexity** measures the curvature of the price-curve relationship using the same three prices:
+
+$$\text{EffCon} = \frac{PV_{-} + PV_{+} - 2\times PV_0}{PV_0 \times (\Delta\text{Curve})^2}$$
+
+Combined with effective duration, it gives the estimated percentage price change for a parallel shift of $\Delta\text{Curve}$:
+
+$$\%\Delta PV \approx -\text{EffDur}\times\Delta\text{Curve} + \tfrac{1}{2}\,\text{EffCon}\times(\Delta\text{Curve})^2$$
+
+- An **option-free** bond has **positive** convexity.
+- A **putable** bond has positive convexity (the put sets a price floor when rates rise).
+- A **callable** bond has **negative convexity** when rates are low enough that the call is likely (the call sets a price ceiling when rates fall).
+
+### Worked example: an option-free bond
+
+A bond has $PV_0 = 100.00$. A parallel shift of $\pm 50$ bp ($\Delta\text{Curve} = 0.005$) gives $PV_{-} = 103.20$ and $PV_{+} = 97.00$.
+
+1. $\text{EffDur} = (103.20 - 97.00)/(2\times100\times0.005) = 6.20/1.00 = \mathbf{6.20}$.
+2. Numerator of convexity: $103.20 + 97.00 - 2\times100 = 0.20$.
+3. Denominator: $100\times(0.005)^2 = 0.0025$.
+4. $\text{EffCon} = 0.20/0.0025 = \mathbf{80}$.
+
+Estimated price change for a **+100 bp** shift ($\Delta\text{Curve}=0.01$):
+
+$$\%\Delta PV \approx -6.20\times0.01 + \tfrac12\times80\times(0.01)^2 = -6.20\% + 0.40\% = \mathbf{-5.80\%}$$
+
+For a **-100 bp** shift: $+6.20\% + 0.40\% = \mathbf{+6.60\%}$. The convexity term adds in both directions, so the bondholder gains more than duration predicts when rates fall and loses less when rates rise.
+
+---
+
+## 5. Embedded Options and One-Sided Durations
+
+Because the call option caps a callable bond's price rise but not its price fall, the bond is **more sensitive to rising rates than to falling rates**. A single effective duration averages these two behaviours and hides the asymmetry. **One-sided durations** measure each direction separately:
+
+$$\text{Dur}_{\uparrow} = \frac{PV_0 - PV_{+}}{PV_0\times\Delta\text{Curve}} \qquad \text{Dur}_{\downarrow} = \frac{PV_{-} - PV_0}{PV_0\times\Delta\text{Curve}}$$
+
+Effective duration is the average of the two: $\text{EffDur} = (\text{Dur}_\uparrow + \text{Dur}_\downarrow)/2$.
+
+### Worked example: a callable bond
+
+A callable bond has $PV_0 = 100.00$. A $\pm100$ bp parallel shift ($\Delta\text{Curve}=0.01$) gives $PV_{-} = 102.00$ (price rise is capped by the call) and $PV_{+} = 95.00$.
+
+1. $\text{Dur}_\uparrow = (100 - 95)/(100\times0.01) = \mathbf{5.0}$.
+2. $\text{Dur}_\downarrow = (102 - 100)/(100\times0.01) = \mathbf{2.0}$.
+3. $\text{EffDur} = (102 - 95)/(2\times100\times0.01) = 7/2 = \mathbf{3.5}$, which equals $(5.0+2.0)/2$.
+4. $\text{EffCon} = (102 + 95 - 200)/(100\times0.0001) = -3/0.01 = \mathbf{-300}$ (negative convexity).
+5. For a -100 bp move: $+3.5\% + \tfrac12(-300)(0.0001) = 3.5\% - 1.5\% = +2.0\%$, matching the repriced $+2.00$.
+6. For a +100 bp move: $-3.5\% - 1.5\% = -5.0\%$, matching $95.00$.
+
+The convexity term here is **negative** in both directions, so duration overstates the gain when rates fall and understates the loss when rates rise. Callable bonds show the reverse of the favourable pattern of option-free bonds.
+
+| Bond | $\text{Dur}_\uparrow$ vs $\text{Dur}_\downarrow$ | Convexity |
+| --- | --- | --- |
+| Option-free | Similar (slightly lower for rate rises) | Positive |
+| Callable (call likely) | $\text{Dur}_\uparrow > \text{Dur}_\downarrow$ | Negative |
+| Putable (put likely) | $\text{Dur}_\downarrow > \text{Dur}_\uparrow$ | Positive |
+
+For a putable bond, the put protects against rate rises, so price falls less when rates rise (lower $\text{Dur}_\uparrow$) while price gains when rates fall are uncapped.
+
+---
+
+## 6. Key Rate Duration
+
+**Key rate duration** (KRD, also called partial duration) measures a bond's or portfolio's sensitivity to a change in the yield at **one maturity point** on the benchmark curve while all other points are held constant. For key maturity $k$:
+
+$$\text{KRD}_k = \frac{PV_{-,k} - PV_{+,k}}{2\times PV_0\times\Delta y_k}$$
+
+where $PV_{-,k}$ and $PV_{+,k}$ are the prices when only the $k$-year benchmark rate falls or rises by $\Delta y_k$ (the curve between key points is re-interpolated).
+
+Key properties:
+
+- The sum of the key rate durations approximates the bond's effective duration: $\sum_k \text{KRD}_k \approx \text{EffDur}$. A parallel shift moves every key rate by the same amount, so the total sensitivity is the sum.
+- A **zero-coupon bond** has all of its KRD at its own maturity point. Its KRD there is approximately its maturity.
+- A **coupon bond** has KRD spread across every maturity at which it pays cash flows, with the largest share at maturity, where the principal is repaid.
+- A **portfolio** KRD at point $k$ is the market-value-weighted average of the KRDs of its holdings.
+
+### Worked example: a non-parallel shift
+
+A bond portfolio has the following key rate durations:
+
+| Key rate | 2-year | 5-year | 10-year | 30-year | Sum |
+| --- | --- | --- | --- | --- | --- |
+| KRD | 0.25 | 1.10 | 3.40 | 1.50 | 6.25 |
+
+So its effective duration is about 6.25. A *steepening* scenario occurs: the 2-year rate falls 20 bp, the 5-year falls 10 bp, the 10-year rises 10 bp and the 30-year rises 30 bp.
+
+$$\%\Delta PV \approx -\sum_k \text{KRD}_k\times\Delta y_k$$
+
+| Key rate | KRD | $\Delta y$ (%) | $\text{KRD}\times\Delta y$ |
+| --- | --- | --- | --- |
+| 2-year | 0.25 | -0.20 | -0.050 |
+| 5-year | 1.10 | -0.10 | -0.110 |
+| 10-year | 3.40 | +0.10 | +0.340 |
+| 30-year | 1.50 | +0.30 | +0.450 |
+| **Total** | | | **+0.630** |
+
+$\%\Delta PV \approx -0.630\%$. By contrast, a parallel +100 bp shift would give about $-6.25\%$. The portfolio is most exposed to the 10-year and 30-year points, so it loses when the long end rises even though the short end falls.
+
+---
+
+## 7. Empirical Duration
+
+**Analytical duration** (yield-based or effective) is computed from a pricing model. **Empirical duration** is estimated from observed market prices. A regression of the bond's (or portfolio's) historical percentage price changes on the changes in a benchmark yield is run:
+
+$$\frac{\Delta P}{P} = a + b\,\Delta y + \varepsilon \qquad \text{EmpDur} = -b$$
+
+The slope $b$ is negative, so empirical duration is its negative. For example, if the fitted slope is $b=-4.8$, the empirical duration is 4.8 and a 25 bp rise in the benchmark yield is estimated to change price by about $-4.8\times0.0025 = -1.20\%$ (ignoring the intercept).
+
+### When empirical duration is useful
+
+Analytical duration assumes the bond's yield moves one-for-one with the benchmark yield. This is a poor assumption for **credit-risky bonds** (particularly high yield), where the spread over the benchmark also changes, and for bonds whose cash flows are driven by borrower behaviour. For these, the regression of actual price behaviour on benchmark yield changes can reveal a lower or less stable sensitivity than the model's duration.
+
+- *Example:* when government yields rise because the economy is strengthening, credit spreads often narrow, partly offsetting the price effect. A high-yield bond's empirical duration is then typically lower than its analytical duration.
+
+### Limitations of empirical duration
+
+- The estimate depends on the **sample period, data frequency** (daily vs monthly) and the choice of **benchmark rate**.
+- Past relationships may not hold in the future, particularly after changes in regime or in the bond's own characteristics (for example, rating, remaining maturity, call status).
+- It needs reliable, frequent price data, which can be scarce for illiquid bonds.
+- Regression statistics (R-squared, standard error of $b$) should be checked; a poor fit means the estimate is unreliable.
+
+---
+
+## 8. Choosing the Right Measure
+
+| Situation | Preferred measure |
+| --- | --- |
+| Option-free bond, small parallel yield change | Modified duration (plus convexity) |
+| Bond with embedded call or put | Effective duration and effective convexity |
+| Callable bond, asymmetric behaviour | One-sided durations |
+| Exposure to slope or curvature changes | Key rate durations |
+| Credit-risky bond, spread not tied to benchmark | Empirical duration |
+
+---
+
+## Key takeaways
+
+- Yield-based duration assumes fixed cash flows and a single yield, so it fails for bonds with embedded options and for non-parallel curve shifts.
+- $\text{EffDur} = (PV_{-}-PV_{+})/(2\,PV_0\,\Delta\text{Curve})$ and $\text{EffCon} = (PV_{-}+PV_{+}-2PV_0)/(PV_0(\Delta\text{Curve})^2)$ reprice the bond off a shifted benchmark curve.
+- $\%\Delta PV \approx -\text{EffDur}\,\Delta\text{Curve} + \tfrac12\text{EffCon}(\Delta\text{Curve})^2$.
+- Callable bonds have negative convexity when rates are low and larger duration for rate rises than for rate falls; putable bonds have positive convexity.
+- One-sided durations $\text{Dur}_\uparrow$ and $\text{Dur}_\downarrow$ expose option-driven asymmetry; effective duration is their average.
+- Key rate durations measure sensitivity at each maturity; their sum approximates effective duration, and $\%\Delta PV \approx -\sum \text{KRD}_k\,\Delta y_k$ handles slope and curvature shifts.
+- Empirical duration is the negative of the slope in a regression of price returns on yield changes; it is useful for credit-risky bonds but depends on sample and benchmark choice.

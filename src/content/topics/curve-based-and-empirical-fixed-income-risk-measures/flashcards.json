@@ -1,0 +1,46 @@
+[
+  {
+    "front": "Why do embedded options require curve-based duration measures?",
+    "back": "Expected cash flows change with interest rates (the bond may be called or put), so there is no fixed cash flow stream for a yield-based duration. The bond must be repriced off a shifted benchmark curve with an option-adjusted model."
+  },
+  {
+    "front": "Effective duration formula",
+    "back": "EffDur = (PV- - PV+) / (2 x PV0 x change in curve). PV- and PV+ are prices after the benchmark curve falls and rises by the same amount; it measures sensitivity to a parallel shift."
+  },
+  {
+    "front": "Effective convexity formula",
+    "back": "EffCon = (PV- + PV+ - 2 x PV0) / (PV0 x (change in curve)^2). Units are years squared."
+  },
+  {
+    "front": "Price change estimate using effective duration and convexity",
+    "back": "%change in PV = -EffDur x change in curve + 1/2 x EffCon x (change in curve)^2. The change is in decimal form (100 bp = 0.01)."
+  },
+  {
+    "front": "Convexity of option-free, callable and putable bonds",
+    "back": "Option-free: positive. Putable: positive (the put sets a price floor). Callable: negative when rates are low enough that a call is likely (the call caps price gains)."
+  },
+  {
+    "front": "One-sided durations",
+    "back": "Dur-up = (PV0 - PV+) / (PV0 x change); Dur-down = (PV- - PV0) / (PV0 x change). Effective duration is their average. For a callable bond Dur-up exceeds Dur-down."
+  },
+  {
+    "front": "What is key rate duration?",
+    "back": "Sensitivity of price to a change in the benchmark yield at one maturity point, holding other points constant: KRD = (PV-,k - PV+,k) / (2 x PV0 x change in y_k)."
+  },
+  {
+    "front": "How do key rate durations relate to effective duration?",
+    "back": "Their sum approximates effective duration. For non-parallel shifts, %change in PV is about -sum(KRD_k x change in y_k)."
+  },
+  {
+    "front": "Which yield curve movements do KRDs address that a single duration cannot?",
+    "back": "Slope changes (steepening and flattening) and curvature changes (butterfly), in addition to parallel shifts."
+  },
+  {
+    "front": "What is empirical duration?",
+    "back": "Duration estimated by regressing historical percentage price changes on benchmark yield changes; empirical duration is the negative of the slope. Useful for credit-risky bonds."
+  },
+  {
+    "front": "Limitations of empirical duration",
+    "back": "Results depend on sample period, data frequency and benchmark choice; past relationships may not persist; needs reliable price data; check regression fit before relying on it."
+  }
+]

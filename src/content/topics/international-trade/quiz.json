@@ -1,0 +1,79 @@
+[
+  {
+    "question": "Country X needs 10 hours to make one laptop or 5 hours to make one tonne of coffee. Country Y needs 12 hours for one laptop or 3 hours for one tonne of coffee. Which statement is correct?",
+    "options": [
+      "Y has a comparative advantage in laptops because its coffee productivity is higher.",
+      "X has a comparative advantage in laptops and Y has a comparative advantage in coffee.",
+      "X has a comparative advantage in both goods because it makes laptops faster.",
+      "Neither country gains from trade because X has an absolute advantage in laptops."
+    ],
+    "correctIndex": 1,
+    "explanation": "Opportunity cost of one laptop is 10/5 = 2 coffee in X and 12/3 = 4 coffee in Y, so X has the comparative advantage in laptops. Opportunity cost of coffee is 0.5 laptops in X and 0.25 in Y, so Y has the comparative advantage in coffee. Mutually beneficial trade exists because the opportunity costs differ."
+  },
+  {
+    "question": "A country's export price index is 110 and its import price index is 125. What are its terms of trade, and what has happened?",
+    "options": [
+      "88.0, a deterioration",
+      "113.6, an improvement",
+      "91.7, a deterioration",
+      "12.0, an improvement"
+    ],
+    "correctIndex": 0,
+    "explanation": "Terms of trade = export price index / import price index x 100 = 110 / 125 x 100 = 88.0. Each unit of exports now buys fewer imports, so the terms of trade have deteriorated (113.6 is the inverse ratio)."
+  },
+  {
+    "question": "A small country imports a good at a world price of 40. It imposes a 25% tariff. Domestic supply rises from 30 to 40 and domestic demand falls from 120 to 100. What is the deadweight loss from the tariff?",
+    "options": [
+      "100",
+      "250",
+      "150",
+      "600"
+    ],
+    "correctIndex": 2,
+    "explanation": "The tariff is 25% x 40 = 10. Deadweight loss = 1/2 x 10 x (40 - 30) + 1/2 x 10 x (120 - 100) = 50 + 100 = 150. Tariff revenue is 10 x imports of (100 - 40) = 60, or 600, which is a transfer, not a deadweight loss."
+  },
+  {
+    "question": "Compared with an equivalent tariff, an import quota whose licences are held by foreign exporters (or a voluntary export restraint) results in:",
+    "options": [
+      "The same national welfare, because the domestic price is identical.",
+      "Higher national welfare, because the government keeps control of the quantity.",
+      "Lower consumer surplus than a tariff, but higher producer surplus.",
+      "Lower national welfare, because the quota rent that a tariff would give the government goes to foreigners."
+    ],
+    "correctIndex": 3,
+    "explanation": "A quota and a tariff that give the same import quantity produce the same domestic price and the same surplus changes for consumers and producers. The difference is who captures the area equal to the price gap times imports. A tariff gives it to the government; with foreign-held licences or a VER it goes abroad, so national welfare is lower."
+  },
+  {
+    "question": "A group of countries has eliminated internal trade barriers and adopted a common external tariff, but labour and capital cannot move freely among members. This arrangement is a:",
+    "options": [
+      "Free trade area",
+      "Customs union",
+      "Common market",
+      "Economic union"
+    ],
+    "correctIndex": 1,
+    "explanation": "A free trade area removes internal barriers only. Adding a common external tariff makes it a customs union. Free movement of labour and capital would make it a common market, and policy harmonisation would make it an economic union."
+  },
+  {
+    "question": "Under the Heckscher-Ohlin model, a country that is relatively abundant in capital will:",
+    "options": [
+      "Export labour-intensive goods because its labour is scarce.",
+      "Not trade, because it can produce all goods itself.",
+      "Export capital-intensive goods and import labour-intensive goods.",
+      "Export whichever good it produces with fewer hours of labour."
+    ],
+    "correctIndex": 2,
+    "explanation": "Heckscher-Ohlin says a country exports goods that make intensive use of its relatively abundant factor and imports goods that use its scarce factor. The last option describes the Ricardian (technology) basis for trade."
+  },
+  {
+    "question": "What is the effect of an export subsidy on the subsidising country?",
+    "options": [
+      "Domestic consumers gain from lower prices and producers lose.",
+      "Domestic producers gain, domestic consumers lose, the government bears a cost, and there is a net welfare loss.",
+      "Domestic producers and consumers both gain at the expense of foreign producers.",
+      "Domestic producers gain, domestic consumers lose, and the government collects revenue."
+    ],
+    "correctIndex": 1,
+    "explanation": "The subsidy raises the price received by exporters and the domestic price, so producers gain and consumers lose. The government pays for the subsidy rather than collecting revenue, and the distortion causes deadweight loss, so national welfare falls."
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "question": "Why is yield-based modified duration unsuitable for a callable bond?",
+    "options": [
+      "A callable bond has no coupon payments, so duration is undefined.",
+      "The bond's expected cash flows change with interest rates because of the call option, so there is no fixed cash flow stream to derive a yield-based duration from.",
+      "Modified duration can only be computed for bonds that trade at par.",
+      "Callable bonds always have a duration equal to their maturity."
+    ],
+    "correctIndex": 1,
+    "explanation": "Yield-based duration assumes cash flows are fixed when yields change. A call option makes the cash flows depend on the rate path, so the bond must be repriced off a benchmark curve using an option-adjusted model, giving effective duration."
+  },
+  {
+    "question": "A bond is priced at 100.00. When the benchmark curve falls 25 bp the price is 101.25, and when it rises 25 bp the price is 98.80. What is the effective duration?",
+    "options": [
+      "2.45",
+      "0.49",
+      "4.90",
+      "9.80"
+    ],
+    "correctIndex": 2,
+    "explanation": "EffDur = (PV- - PV+) / (2 x PV0 x change) = (101.25 - 98.80) / (2 x 100 x 0.0025) = 2.45 / 0.50 = 4.90."
+  },
+  {
+    "question": "A bond is priced at 100.00. After a 50 bp parallel fall in the curve it is priced at 103.20, and after a 50 bp rise it is priced at 97.00. What is the effective convexity?",
+    "options": [
+      "40",
+      "80",
+      "160",
+      "0.2"
+    ],
+    "correctIndex": 1,
+    "explanation": "EffCon = (PV- + PV+ - 2 x PV0) / (PV0 x change squared) = (103.20 + 97.00 - 200) / (100 x 0.005^2) = 0.20 / 0.0025 = 80."
+  },
+  {
+    "question": "A bond has an effective duration of 6.20 and an effective convexity of 80. Using both, what is the estimated percentage price change for a +100 bp parallel shift in the benchmark curve?",
+    "options": [
+      "-6.60%",
+      "-6.20%",
+      "-5.40%",
+      "-5.80%"
+    ],
+    "correctIndex": 3,
+    "explanation": "Price change = -6.20 x 0.01 + 0.5 x 80 x 0.01^2 = -6.20% + 0.40% = -5.80%. The -5.40% option omits the one-half factor on the convexity term, and -6.60% subtracts the convexity term instead of adding it."
+  },
+  {
+    "question": "A callable bond is priced at 100.00. A 100 bp fall in the curve takes the price to 102.00 and a 100 bp rise takes it to 95.00. What is the one-sided duration for rising rates (Dur-up)?",
+    "options": [
+      "2.0",
+      "3.5",
+      "7.0",
+      "5.0"
+    ],
+    "correctIndex": 3,
+    "explanation": "Dur-up = (PV0 - PV+) / (PV0 x change) = (100 - 95) / (100 x 0.01) = 5.0. Dur-down is (102 - 100) / 1 = 2.0, and the effective duration is their average, 3.5. The asymmetry reflects the call option capping price gains."
+  },
+  {
+    "question": "A portfolio has key rate durations of 0.25 (2-year), 1.10 (5-year), 3.40 (10-year) and 1.50 (30-year). The 2-year rate falls 20 bp, the 5-year falls 10 bp, the 10-year rises 10 bp and the 30-year rises 30 bp. What is the approximate percentage change in portfolio value?",
+    "options": [
+      "+0.63%",
+      "-6.25%",
+      "-0.63%",
+      "+6.25%"
+    ],
+    "correctIndex": 2,
+    "explanation": "Price change = -sum(KRD x change) = -[0.25(-0.20) + 1.10(-0.10) + 3.40(0.10) + 1.50(0.30)] = -[-0.05 - 0.11 + 0.34 + 0.45] = -0.63%. The sum of KRDs (6.25) would only apply to a parallel shift."
+  },
+  {
+    "question": "Why is the empirical duration of a high-yield bond often lower than its analytical duration?",
+    "options": [
+      "High-yield bonds have shorter maturities than investment-grade bonds by definition.",
+      "Empirical duration ignores the bond's coupon.",
+      "The bond's yield does not move one-for-one with the benchmark yield; credit spreads often narrow when benchmark yields rise, offsetting part of the price effect.",
+      "Regression always understates duration for any bond."
+    ],
+    "correctIndex": 2,
+    "explanation": "Analytical duration assumes the bond's yield changes by the same amount as the benchmark. For credit-risky bonds, spreads often move in the opposite direction to government yields, so observed price sensitivity to benchmark changes is lower."
+  }
+]

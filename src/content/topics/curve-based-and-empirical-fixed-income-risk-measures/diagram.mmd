@@ -1,0 +1,22 @@
+graph TD
+    START["Yield-based duration<br/>assumes fixed cash flows<br/>and a parallel shift"] --> PROB["Fails for"]
+    PROB --> P1["Embedded options<br/>(callable, putable)"]
+    PROB --> P2["Non-parallel shifts<br/>(slope, curvature)"]
+    PROB --> P3["Credit-risky bonds<br/>(spread moves)"]
+
+    P1 --> CURVE["Curve-based approach<br/>Shift benchmark curve +/- and reprice"]
+    CURVE --> ED["Effective duration<br/>(PV- minus PV+) / (2 x PV0 x change)"]
+    CURVE --> EC["Effective convexity<br/>(PV- + PV+ - 2 x PV0) / (PV0 x change squared)"]
+    CURVE --> OS["One-sided durations<br/>Up: (PV0 - PV+) / (PV0 x change)<br/>Down: (PV- - PV0) / (PV0 x change)"]
+    OS --> CALL["Callable: Up > Down<br/>negative convexity"]
+    OS --> PUT["Putable: Down > Up<br/>positive convexity"]
+
+    P2 --> KRD["Key rate duration<br/>Sensitivity to one maturity point"]
+    KRD --> SUM["Sum of KRDs = effective duration"]
+    KRD --> EST["Price change = minus sum of<br/>KRD x change in key rate"]
+
+    P3 --> EMP["Empirical duration<br/>Regress price returns on yield changes<br/>Duration = minus slope"]
+    EMP --> LIM["Limits: sample period,<br/>frequency, benchmark choice"]
+
+    ED --> EST2["Price change =<br/>minus EffDur x change<br/>+ 1/2 x EffCon x change squared"]
+    EC --> EST2

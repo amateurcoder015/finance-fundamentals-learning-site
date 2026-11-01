@@ -1,0 +1,46 @@
+[
+  {
+    "front": "Autarky vs free trade",
+    "back": "Autarky is no trade: prices are set by domestic supply and demand. Under free trade, domestic prices converge to the world price and the country gains overall."
+  },
+  {
+    "front": "Absolute vs comparative advantage",
+    "back": "Absolute: can produce a good with fewer resources. Comparative: lower opportunity cost of producing it. Trade gains come from comparative advantage."
+  },
+  {
+    "front": "How do you calculate opportunity cost from hours per unit?",
+    "back": "If a good needs h1 hours and another needs h2 hours per unit, the opportunity cost of one unit of good 1 is h1/h2 units of good 2."
+  },
+  {
+    "front": "Between what values must the terms of trade lie for both countries to gain?",
+    "back": "Between the two countries' opportunity costs of the good. A country will not trade at a worse rate than it can get at home."
+  },
+  {
+    "front": "Ricardian vs Heckscher-Ohlin model",
+    "back": "Ricardian: comparative advantage arises from differences in technology or labour productivity. Heckscher-Ohlin: it arises from differences in factor endowments; countries export goods intensive in their abundant factor."
+  },
+  {
+    "front": "Terms of trade formula",
+    "back": "Index of export prices / index of import prices x 100. A rise is an improvement; a fall is a deterioration."
+  },
+  {
+    "front": "Effects of a tariff in a small country",
+    "back": "Domestic price rises by the tariff; consumer surplus falls; producer surplus and government revenue rise; deadweight loss from over-production and under-consumption; net national loss."
+  },
+  {
+    "front": "Tariff vs quota vs VER",
+    "back": "Same domestic price effect. Tariff: government captures the revenue. Quota: licence holders capture the rent. VER: foreign exporters capture the rent, so the importing country's loss is larger."
+  },
+  {
+    "front": "Effects of an export subsidy",
+    "back": "Exporters gain, domestic consumers lose, government pays, net welfare loss. A large exporter also lowers the world price and worsens its terms of trade."
+  },
+  {
+    "front": "Levels of regional economic integration (least to most)",
+    "back": "Free trade area, customs union (common external tariff), common market (free movement of labour and capital), economic union (harmonised policies), monetary union (common currency)."
+  },
+  {
+    "front": "Trade creation vs trade diversion",
+    "back": "Creation: members switch from high-cost domestic production to low-cost member imports (welfare up). Diversion: members switch from low-cost non-member imports to higher-cost member imports (welfare down)."
+  }
+]
