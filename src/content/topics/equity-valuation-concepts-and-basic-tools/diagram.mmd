@@ -1,0 +1,29 @@
+graph TD
+    VAL["Equity Valuation"] --> PROC["Valuation Process"]
+    VAL --> IV["Intrinsic Value vs Market Price"]
+    VAL --> MODELS["Valuation Model Families"]
+
+    PROC --> P1["1. Understand the business"]
+    P1 --> P2["2. Forecast performance"]
+    P2 --> P3["3. Select the model"]
+    P3 --> P4["4. Convert forecasts to value"]
+    P4 --> P5["5. Apply the conclusions"]
+
+    IV --> UNDER["Price below intrinsic value<br/>Undervalued"]
+    IV --> OVER["Price above intrinsic value<br/>Overvalued"]
+
+    MODELS --> PV["Present Value Models"]
+    MODELS --> MULT["Multiplier Models"]
+    MODELS --> ASSET["Asset-Based Models<br/>(Fair value of assets less liabilities)"]
+
+    PV --> DDM["Dividend Discount Model<br/>V0 = D1 / (r - g)"]
+    PV --> FCF["FCFF at WACC<br/>FCFE at cost of equity"]
+    PV --> RI["Residual Income<br/>V0 = B0 + PV(RI)"]
+
+    DDM --> TWO["Multistage DDM<br/>(Terminal value at end of high growth)"]
+    DDM --> SG["Sustainable growth<br/>g = b x ROE"]
+
+    MULT --> PE["P/E, P/B, P/S, P/CF"]
+    MULT --> EV["EV/EBITDA<br/>(EV = Market cap + Debt + Preferred - Cash)"]
+    PE --> JPE["Justified P/E = payout / (r - g)"]
+    DDM --> JPE

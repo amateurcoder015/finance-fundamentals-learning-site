@@ -1,0 +1,30 @@
+graph TD
+    CR["Credit Risk<br/>(Loss from borrower non-payment)"] --> COMP["Components"]
+    CR --> PRI["Priority of Claims"]
+    CR --> RAT["Credit Ratings"]
+    CR --> SPR["Credit Spreads and Spread Risk"]
+
+    COMP --> PD["Probability of Default (PD)"]
+    COMP --> LGD["Loss Given Default<br/>LGD = 1 - Recovery rate"]
+    COMP --> EAD["Exposure at Default (EAD)"]
+    PD --> EL["Expected Loss<br/>EL = PD x LGD x EAD"]
+    LGD --> EL
+    EAD --> EL
+
+    PRI --> S1["1. Secured debt"]
+    S1 --> S2["2. Senior unsecured"]
+    S2 --> S3["3. Subordinated"]
+    S3 --> S4["4. Preferred equity"]
+    S4 --> S5["5. Common equity"]
+    PRI --> REC["Higher priority<br/>= higher recovery, lower LGD"]
+
+    RAT --> IG["Investment grade<br/>(BBB-/Baa3 and above)"]
+    RAT --> HY["High yield<br/>(BB+/Ba1 and below)"]
+    RAT --> LIM["Limitations: lag, event risk,<br/>no liquidity view, conflicts"]
+
+    SPR --> SPREAD["Yield = Benchmark + Credit spread<br/>Spread ~ PD x LGD + risk premium + liquidity"]
+    SPR --> MIG["Credit migration risk<br/>(Downgrade widens spread)"]
+    SPR --> LIQ["Market liquidity risk<br/>(Wide bid-ask, thin trading)"]
+    MIG --> PX["Price impact<br/>%dP ~ -ModDur x dSpread + 1/2 Convexity x dSpread^2"]
+    LIQ --> PX
+    EL -.-> SPREAD

@@ -1,0 +1,90 @@
+[
+  {
+    "question": "An analyst estimates a stock's intrinsic value at $48 while it trades at $55. Based on this estimate, the stock is most likely:",
+    "options": [
+      "Undervalued, so a potential buy.",
+      "Fairly valued, because the difference is small.",
+      "Overvalued, so a potential sell or short.",
+      "Impossible to classify without a P/E ratio."
+    ],
+    "correctIndex": 2,
+    "explanation": "When market price ($55) exceeds the estimated intrinsic value ($48), the stock is classified as overvalued. The classification depends on the analyst's intrinsic value estimate, not on a particular multiple."
+  },
+  {
+    "question": "A company just paid a dividend of $3.00. Dividends are expected to grow at 5% indefinitely and the required return is 10%. Using the Gordon growth model, the intrinsic value per share is closest to:",
+    "options": [
+      "$60.00",
+      "$63.00",
+      "$31.50",
+      "$66.15"
+    ],
+    "correctIndex": 1,
+    "explanation": "D1 = 3.00 × 1.05 = $3.15. V0 = D1 / (r − g) = 3.15 / (0.10 − 0.05) = $63.00. $60.00 forgets to grow D0; $31.50 divides D1 by r alone (ignoring g); $66.15 grows the answer by another 5%."
+  },
+  {
+    "question": "A share trades at $40 and is expected to pay a dividend of $1.60 next year, with dividends growing at 6% indefinitely. The implied required return on equity is closest to:",
+    "options": [
+      "4.0%",
+      "6.0%",
+      "8.0%",
+      "10.0%"
+    ],
+    "correctIndex": 3,
+    "explanation": "From the Gordon growth model, r = D1/P0 + g = 1.60/40 + 0.06 = 0.04 + 0.06 = 10.0%. The 4.0% is only the dividend yield."
+  },
+  {
+    "question": "A company has an ROE of 12% and a dividend payout ratio of 25%. Its sustainable growth rate is closest to:",
+    "options": [
+      "9.0%",
+      "3.0%",
+      "12.0%",
+      "4.0%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Retention ratio b = 1 − 0.25 = 0.75. g = b × ROE = 0.75 × 12% = 9.0%. Using the payout ratio (25% × 12% = 3.0%) is a common error."
+  },
+  {
+    "question": "A firm has a market capitalisation of $500 million, debt with a market value of $200 million, preferred stock of $40 million and cash and short-term investments of $80 million. Its enterprise value is closest to:",
+    "options": [
+      "$620 million",
+      "$740 million",
+      "$660 million",
+      "$580 million"
+    ],
+    "correctIndex": 2,
+    "explanation": "EV = market cap + debt + preferred − cash = 500 + 200 + 40 − 80 = $660 million. Cash is subtracted because it can be used to pay down claims; debt and preferred stock are added because they are claims on the enterprise."
+  },
+  {
+    "question": "A company has beginning book value of equity of $80, a required return on equity of 9% and expects net income of $10 next year. Its expected residual income for next year is closest to:",
+    "options": [
+      "$10.00",
+      "$7.20",
+      "$2.80",
+      "$0.80"
+    ],
+    "correctIndex": 2,
+    "explanation": "RI = NI − r × B0 = 10 − 0.09 × 80 = 10 − 7.20 = $2.80. The $7.20 is the equity charge, not the residual income."
+  },
+  {
+    "question": "Which valuation model is generally most appropriate for a company that pays no dividends, has negative free cash flow because of heavy investment, but has reliable book value and forecastable earnings?",
+    "options": [
+      "The residual income model.",
+      "The Gordon growth dividend discount model.",
+      "A liquidation-value asset-based model only.",
+      "Price-to-dividend multiple."
+    ],
+    "correctIndex": 0,
+    "explanation": "Residual income values the company as book value plus the PV of earnings in excess of the equity charge, so it does not require dividends or positive free cash flow. The Gordon model needs stable, positive dividends."
+  },
+  {
+    "question": "A firm has a retention ratio of 40% and an ROE of 10%, so its sustainable growth rate is 4%. With a required return of 9%, its justified leading P/E is closest to:",
+    "options": [
+      "7.2",
+      "8.0",
+      "12.48",
+      "12.0"
+    ],
+    "correctIndex": 3,
+    "explanation": "Payout = 1 − 0.40 = 0.60. Justified leading P/E = payout / (r − g) = 0.60 / (0.09 − 0.04) = 12.0. The 12.48 is the justified trailing P/E (12.0 × 1.04)."
+  }
+]

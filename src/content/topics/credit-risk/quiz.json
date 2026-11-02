@@ -1,0 +1,90 @@
+[
+  {
+    "question": "An investor holds a $1,500,000 bond position. The one-year probability of default is 3% and the expected recovery rate is 35%. The expected loss is closest to:",
+    "options": [
+      "$15,750",
+      "$29,250",
+      "$45,000",
+      "$975,000"
+    ],
+    "correctIndex": 1,
+    "explanation": "LGD = 1 − 0.35 = 65%. EL = PD × LGD × EAD = 0.03 × 0.65 × 1,500,000 = $29,250. $15,750 wrongly uses the recovery rate instead of the loss severity; $45,000 ignores recovery; $975,000 is the loss if default actually occurs."
+  },
+  {
+    "question": "A bond has a recovery rate of 45% in the event of default. Its loss given default is:",
+    "options": [
+      "45%",
+      "100%",
+      "65%",
+      "55%"
+    ],
+    "correctIndex": 3,
+    "explanation": "LGD = 1 − recovery rate = 1 − 0.45 = 55%."
+  },
+  {
+    "question": "In a bankruptcy that follows the absolute priority rule, which claim is paid first?",
+    "options": [
+      "Secured debt, up to the value of its collateral.",
+      "Subordinated debt.",
+      "Preferred equity.",
+      "All debt holders pro rata, regardless of rank."
+    ],
+    "correctIndex": 0,
+    "explanation": "Under absolute priority, secured creditors are paid first from their collateral, then senior unsecured, then subordinated debt, then preferred and common equity. Only claims of the same rank share pari passu."
+  },
+  {
+    "question": "A company liquidates for net proceeds of $400. Claims are senior secured $250, senior unsecured $300 and subordinated $100. Assuming strict priority, the recovery rate on the senior unsecured claim is:",
+    "options": [
+      "50%",
+      "100%",
+      "0%",
+      "80%"
+    ],
+    "correctIndex": 0,
+    "explanation": "The senior secured class takes $250, leaving $150. The senior unsecured claim is $300, so it recovers 150 / 300 = 50%. Subordinated debt then receives nothing."
+  },
+  {
+    "question": "A bond has a modified duration of 5.0 and convexity of 40. Its credit spread widens by 60 bps with no change in the benchmark yield. The estimated percentage price change is closest to:",
+    "options": [
+      "−3.07%",
+      "−2.93%",
+      "−3.00%",
+      "+2.93%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Duration effect = −5.0 × 0.006 = −3.00%. Convexity effect = ½ × 40 × 0.006² = +0.072%. Total ≈ −3.00% + 0.072% = −2.93%. Ignoring convexity gives −3.00%; subtracting it gives −3.07%."
+  },
+  {
+    "question": "Which statement about credit migration risk is most accurate?",
+    "options": [
+      "It is the risk that the issuer's credit quality is downgraded, widening the credit spread and lowering the bond price.",
+      "It is the risk that a bond is hard to sell at a fair price.",
+      "It is the risk that the recovery rate is higher than expected.",
+      "It applies only to bonds that default."
+    ],
+    "correctIndex": 0,
+    "explanation": "Credit migration (downgrade) risk is the chance that a deterioration in credit quality leads the market to demand a wider spread, reducing the price even without a default. Difficulty selling is market liquidity risk."
+  },
+  {
+    "question": "Which of the following is the lowest rating still considered investment grade?",
+    "options": [
+      "BB+ (S&P)",
+      "Baa3 (Moody's)",
+      "Ba1 (Moody's)",
+      "B+ (S&P)"
+    ],
+    "correctIndex": 1,
+    "explanation": "Investment grade ends at BBB− (S&P/Fitch) or Baa3 (Moody's). BB+, Ba1 and B+ are all non-investment grade."
+  },
+  {
+    "question": "Which of the following is a recognised limitation of credit ratings?",
+    "options": [
+      "They measure only liquidity risk.",
+      "They are updated daily with market prices.",
+      "They may lag market information and do not fully capture event risk or liquidity.",
+      "They are never affected by issuer-pays conflicts of interest."
+    ],
+    "correctIndex": 2,
+    "explanation": "Ratings are generally slow-moving (through-the-cycle), can lag spreads, cannot predict sudden event risk and do not cover liquidity. The issuer-pays model also creates potential conflicts of interest."
+  }
+]

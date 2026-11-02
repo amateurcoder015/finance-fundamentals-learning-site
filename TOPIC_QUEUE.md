@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Equity Valuation: Concepts and Basic Tools | Equities | intermediate
-- [ ] Credit Risk | Fixed Income | intermediate
 - [ ] Business Models | Corporate Finance | beginner
 - [ ] Capital Flows and the FX Market | Economics | intermediate
 - [ ] Credit Analysis for Government Issuers | Fixed Income | intermediate
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Capital Structure | Corporate Finance | advanced | 2026-10-31
 - [x] Curve-Based and Empirical Fixed-Income Risk Measures | Fixed Income | advanced | 2026-11-01
 - [x] International Trade | Economics | intermediate | 2026-11-01
+- [x] Equity Valuation: Concepts and Basic Tools | Equities | intermediate | 2026-11-02
+- [x] Credit Risk | Fixed Income | intermediate | 2026-11-02

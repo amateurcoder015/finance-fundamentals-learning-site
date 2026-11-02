@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What are the five steps of the equity valuation process?",
+    "back": "1. Understand the business\n2. Forecast company performance\n3. Select the appropriate valuation model\n4. Convert forecasts into a valuation\n5. Apply the valuation conclusions (recommendation, decision)"
+  },
+  {
+    "front": "What is intrinsic value, and how does it relate to market price?",
+    "back": "The value of an asset given a hypothetically complete understanding of its investment characteristics. If market price < intrinsic value, the asset is undervalued; if > intrinsic value, overvalued; if equal, fairly valued."
+  },
+  {
+    "front": "What are the three families of equity valuation models?",
+    "back": "Present value (DDM, FCFE, FCFF, residual income), multiplier/market-based (P/E, P/B, P/S, EV/EBITDA) and asset-based (fair value of assets minus fair value of liabilities)."
+  },
+  {
+    "front": "State the Gordon growth model and its condition.",
+    "back": "V0 = D1 / (r − g) = D0(1 + g) / (r − g). Requires constant dividend growth forever and g < r."
+  },
+  {
+    "front": "How do you back out required return and implied growth from the Gordon model?",
+    "back": "r = D1/V0 + g (dividend yield plus growth). Implied growth g = (V0·r − D0) / (V0 + D0)."
+  },
+  {
+    "front": "What is the sustainable growth rate?",
+    "back": "g = b × ROE, where b = retention ratio = 1 − payout ratio. Growth funded by retained earnings at a constant ROE."
+  },
+  {
+    "front": "When is a multistage DDM used, and what is its main weakness?",
+    "back": "When growth is not yet stable (high growth for a period, then a lower stable rate). The terminal value at the end of the high-growth stage often accounts for most of the value, so results are very sensitive to long-run g and r."
+  },
+  {
+    "front": "Formula for the justified leading and trailing P/E.",
+    "back": "Leading P0/E1 = payout / (r − g). Trailing P0/E0 = payout × (1 + g) / (r − g)."
+  },
+  {
+    "front": "How is enterprise value calculated?",
+    "back": "EV = market cap + market value of debt + preferred stock + non-controlling interests − cash and short-term investments. EV/EBITDA is capital-structure neutral."
+  },
+  {
+    "front": "What is residual income and the residual income valuation formula?",
+    "back": "RI = NI − r × B(t−1) = (ROE − r) × B(t−1). V0 = B0 + PV of expected residual income. If ROE = r, RI = 0 and V0 = book value."
+  },
+  {
+    "front": "FCFF versus FCFE: what do they measure and how are they discounted?",
+    "back": "FCFF is cash flow available to all capital providers, discounted at WACC to give firm value (then subtract debt and preferred). FCFE is cash flow to common shareholders after debt service, discounted at the cost of equity to give equity value."
+  }
+]

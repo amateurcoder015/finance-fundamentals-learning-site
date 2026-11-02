@@ -1,0 +1,158 @@
+---
+title: "Credit Risk"
+description: "Credit risk and its components (default probability, loss severity, exposure), expected loss, priority of claims and recovery rates, credit ratings and their limitations, credit spreads, and spread risk including credit migration and market liquidity risk."
+category: "Fixed Income"
+difficulty: "intermediate"
+dateAdded: "2026-11-02"
+tags: ["credit-risk", "expected-loss", "recovery-rate", "credit-ratings", "credit-spread", "priority-of-claims"]
+---
+
+# Credit Risk
+
+**Credit risk** is the risk of loss caused by a borrower or counterparty failing to make a promised payment on time and in full. For a bond investor it is the risk that the issuer misses a coupon or principal payment, or that the market's view of the issuer's creditworthiness deteriorates and the bond's price falls. Government bonds issued in a country's own currency are often treated as the benchmark with the least credit risk; corporate, sub-sovereign and structured bonds carry more.
+
+---
+
+## 1. Components of Credit Risk
+
+Credit risk has two main components, plus the exposure to which they apply.
+
+| Component | Meaning |
+| --- | --- |
+| **Default risk (probability of default, PD)** | The probability that a borrower fails to pay interest or principal as promised |
+| **Loss severity (loss given default, LGD)** | The share of the exposure lost if default occurs; the portion not recovered |
+| **Exposure at default (EAD)** | The amount owed (principal plus accrued interest) at the time of default |
+
+Recovery and loss are two sides of one coin:
+
+$$\text{LGD} = 1 - \text{recovery rate}$$
+
+For a bond, the **recovery rate** is the percentage of the claim (principal plus accrued interest) the investor gets back after default. A bond with a recovery rate of 40% has a loss severity of 60%.
+
+### Expected loss
+
+$$\text{Expected loss} = \text{PD} \times \text{LGD} \times \text{EAD}$$
+
+**Worked example.** An investor holds a \$1,500,000 position in a bond. The one-year probability of default is 3% and the recovery rate would be 35%.
+
+1. $\text{LGD} = 1 - 0.35 = 0.65$.
+2. $\text{Expected loss} = 0.03 \times 0.65 \times 1{,}500{,}000$.
+3. $0.03 \times 1{,}500{,}000 = 45{,}000$, and $45{,}000 \times 0.65 = 29{,}250$, so the expected loss is \$29,250.
+
+The expected loss is an average over many outcomes. In reality the investor either loses \$975,000 (with 3% probability: $0.65 \times 1{,}500{,}000$) or nothing.
+
+<Note>Credit risk is asymmetric. Bondholders earn the promised yield if all goes well, but a default costs far more than a good outcome adds. This is why credit analysis focuses on the downside.</Note>
+
+---
+
+## 2. Capital Structure, Priority of Claims and Recovery
+
+When a company fails, its assets are distributed to claimants in an order set by the **priority (seniority) of claims**. A typical ordering, from highest to lowest:
+
+1. **Secured debt**: backed by specific collateral (first-lien, second-lien).
+2. **Senior unsecured debt**: no specific collateral, but ranks above subordinated debt.
+3. **Subordinated (junior) debt**.
+4. **Preferred equity**.
+5. **Common equity** (residual claim).
+
+Claims of the same rank are **pari passu** (share losses proportionally). The **absolute priority rule** says each class must be paid in full before a lower class receives anything. In practice, negotiated restructurings sometimes depart from it, so lower classes can recover something and senior classes less than in strict liquidation.
+
+Higher priority means a **higher recovery rate**, lower loss severity and, for the same issuer, usually a higher credit rating and lower yield.
+
+**Worked example (strict priority).** A company liquidates and the net proceeds are \$400. Claims: senior secured \$250, senior unsecured \$300, subordinated \$100.
+
+1. Senior secured is paid first: \$250 of \$250, a **100%** recovery. Remaining proceeds $= 400 - 250 = \mathdollar 150$.
+2. Senior unsecured has a claim of \$300, so it receives \$150: $150 / 300 = $ **50%** recovery. Remaining proceeds $= 0$.
+3. Subordinated receives nothing: **0%** recovery. Equity is also wiped out.
+
+If the senior unsecured creditors had instead shared the proceeds equally (pari passu) with the secured class on a total claim of \$550, each would recover $400 / 550 = 72.7\%$. Seniority matters.
+
+---
+
+## 3. Credit Ratings
+
+**Credit rating agencies** (S&P, Moody's, Fitch) assess creditworthiness and publish ratings on a letter scale.
+
+| Category | S&P / Fitch | Moody's |
+| --- | --- | --- |
+| Investment grade | AAA, AA, A, BBB (with $+/-$) | Aaa, Aa, A, Baa (with 1, 2, 3) |
+| Non-investment grade (high yield, "junk") | BB, B, CCC, CC, C | Ba, B, Caa, Ca, C |
+| Default | D | C / D |
+
+- The lowest investment-grade rating is **BBB-** (S&P/Fitch) or **Baa3** (Moody's). BB+ / Ba1 and below is non-investment grade.
+- **Issuer ratings** (issuer credit ratings) address the borrower's overall ability to pay, closer to probability of default. **Issue ratings** address a specific bond and also reflect its seniority and collateral, so they include expected loss severity.
+- **Notching** adjusts an issue rating relative to the issuer rating: senior secured debt may be notched up, subordinated debt notched down.
+- Many mandates restrict holdings to investment grade; a downgrade to high yield can force selling (the "fallen angel" problem).
+
+### Limitations of credit ratings
+
+- **Lag**: ratings change slowly and often after prices and spreads have already reacted.
+- **Point-in-time versus through-the-cycle**: agencies target a stable through-the-cycle view, so ratings may not capture current conditions or spikes in risk.
+- **Cliff effects and event risk**: sudden events (a leveraged buyout, litigation, fraud, natural disaster) can cause jumps that a rating cannot anticipate.
+- **Limited scope**: ratings capture default risk and loss severity but not **liquidity**, interest rate or price volatility.
+- **Conflicts of interest**: in the issuer-pays model the borrower pays for its own rating.
+- **Correlation and complexity**: ratings of structured products proved overly optimistic before the 2007-2008 crisis.
+
+Analysts therefore treat ratings as an input to, not a replacement for, their own credit analysis, and also look at market-implied measures such as credit spreads.
+
+---
+
+## 4. Credit Spreads
+
+A bond's yield compensates for the benchmark risk-free rate plus credit and other risks:
+
+$$\text{Yield} = \text{Benchmark yield} + \text{Credit spread}$$
+
+The **credit spread** is the extra yield over a comparable-maturity benchmark (typically a government bond). It compensates investors for:
+
+1. **Expected loss** from default.
+2. A **credit risk premium** for the uncertainty around that loss.
+3. **Liquidity** risk (and sometimes tax or other effects).
+
+A rough rule of thumb for the part of the spread that covers expected loss per year is:
+
+$$\text{Credit spread} \approx \text{PD} \times \text{LGD}$$
+
+**Worked example.** A bond has an annual PD of 2% and a recovery rate of 40%. $\text{LGD} = 60\%$, so the expected-loss component of the spread is $0.02 \times 0.60 = 1.20\%$ (120 bps). The observed spread is usually wider, because investors also demand a risk premium and liquidity compensation.
+
+Patterns to know:
+
+- Spreads are wider for **lower-rated** issuers and generally for **longer maturities**.
+- Spreads **widen in recessions and risk-off markets** and narrow in expansions.
+- A distressed issuer can show an *inverted* spread curve, with short-term spreads above long-term ones, because the near-term default risk dominates.
+
+---
+
+## 5. Spread Risk
+
+**Credit spread risk** (or just spread risk) is the risk that the bond's price falls because its credit spread widens. It has two main drivers:
+
+- **Credit migration (downgrade) risk**: the risk that the issuer's credit quality is downgraded, so the market demands a higher spread. A bond rated BBB moving to BB is a particularly costly migration because the spread jump is large and some holders must sell.
+- **Market liquidity risk**: the risk that, when selling, the investor must accept a lower price because of wide bid-ask spreads or thin trading. It is larger for lower-rated, smaller, or stressed-market issues.
+
+Because the spread is part of the discount rate, the price impact is estimated with duration (and convexity):
+
+$$\%\Delta P \approx -\text{ModDur} \times \Delta\text{Spread} + \tfrac{1}{2}\,\text{Convexity} \times (\Delta\text{Spread})^2$$
+
+**Worked example.** A bond priced at \$98.00 has a modified duration of 6.5 and convexity of 55. Its spread widens by 100 bps ($\Delta\text{Spread} = 0.01$).
+
+1. Duration effect: $-6.5 \times 0.01 = -6.50\%$.
+2. Convexity effect: $\tfrac{1}{2} \times 55 \times 0.01^2 = +0.275\%$.
+3. Total: $-6.50\% + 0.275\% = -6.225\%$.
+4. New price $\approx 98.00 \times (1 - 0.06225) = 98.00 - 6.10 = \mathdollar 91.90$.
+
+If the bond defaults, the loss is far larger; spread risk is the *mark-to-market* risk that exists even if the issuer never defaults.
+
+<Note>Credit risk is the broad category (default, loss severity and spread changes). Spread risk is the part that affects market value before any default happens, and the one that duration measures.</Note>
+
+---
+
+## Key takeaways
+
+- Credit risk $=$ probability of default $\times$ loss given default, applied to the exposure at default.
+- $\text{LGD} = 1 - \text{recovery rate}$; $\text{EL} = \text{PD} \times \text{LGD} \times \text{EAD}$.
+- Priority of claims: secured, senior unsecured, subordinated, preferred, common. Higher priority means higher recovery.
+- Investment grade stops at BBB- / Baa3. Issue ratings include notching for seniority.
+- Ratings lag, miss event risk, ignore liquidity and carry conflicts of interest.
+- Credit spread compensates for expected loss, a risk premium and liquidity: spread $\approx \text{PD} \times \text{LGD}$ is only the expected-loss part.
+- Spread risk (credit migration and market liquidity) moves price by about $-\text{ModDur} \times \Delta\text{Spread}$ plus the convexity term.

@@ -1,0 +1,50 @@
+[
+  {
+    "front": "Define credit risk.",
+    "back": "The risk of loss because a borrower or counterparty fails to make a promised payment on time and in full; for bondholders it also includes the price loss from a deterioration in perceived creditworthiness."
+  },
+  {
+    "front": "What are the two main components of credit risk?",
+    "back": "Default risk (probability of default, PD) and loss severity (loss given default, LGD). Applied to the exposure at default (EAD)."
+  },
+  {
+    "front": "Expected loss formula.",
+    "back": "Expected loss = PD × LGD × EAD, where LGD = 1 − recovery rate."
+  },
+  {
+    "front": "Recovery rate versus loss given default.",
+    "back": "LGD = 1 − recovery rate. A 40% recovery means a 60% loss severity."
+  },
+  {
+    "front": "Order of priority of claims in bankruptcy.",
+    "back": "Secured debt, senior unsecured debt, subordinated debt, preferred equity, common equity. Higher priority means higher recovery."
+  },
+  {
+    "front": "What does pari passu mean?",
+    "back": "Claims of the same rank that share losses proportionally; for example, all senior unsecured bondholders of one issuer."
+  },
+  {
+    "front": "What is the absolute priority rule and how does practice differ?",
+    "back": "Each class must be paid in full before a lower class receives anything. Negotiated restructurings often deviate, so junior classes may recover something and senior classes less."
+  },
+  {
+    "front": "Where does investment grade end?",
+    "back": "At BBB− (S&P/Fitch) and Baa3 (Moody's). BB+/Ba1 and below is non-investment grade (high yield)."
+  },
+  {
+    "front": "Issuer rating versus issue rating; what is notching?",
+    "back": "An issuer rating reflects the borrower's ability to pay (mainly default risk). An issue rating reflects a specific bond and its seniority/collateral. Notching adjusts the issue rating up or down relative to the issuer rating."
+  },
+  {
+    "front": "List key limitations of credit ratings.",
+    "back": "They lag the market, are through-the-cycle, miss event risk, ignore liquidity, may suffer from issuer-pays conflicts, and can misjudge complex structures."
+  },
+  {
+    "front": "What does the credit spread compensate for, and what is the approximation for its expected-loss part?",
+    "back": "Expected loss, a credit risk premium and liquidity risk. Expected-loss component ≈ PD × LGD per year."
+  },
+  {
+    "front": "Name the two drivers of credit spread risk and give the price formula.",
+    "back": "Credit migration (downgrade) risk and market liquidity risk. %ΔP ≈ −ModDur × ΔSpread + ½ × Convexity × (ΔSpread)²."
+  }
+]

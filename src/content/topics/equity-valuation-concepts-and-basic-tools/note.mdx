@@ -1,0 +1,193 @@
+---
+title: "Equity Valuation: Concepts and Basic Tools"
+description: "The equity valuation process, intrinsic value versus market price, the three families of valuation models (present value, multiplier and asset-based), the dividend discount model with Gordon growth and two-stage examples, price and enterprise-value multiples, and the residual income model."
+category: "Equities"
+difficulty: "intermediate"
+dateAdded: "2026-11-02"
+tags: ["equity-valuation", "intrinsic-value", "dividend-discount-model", "gordon-growth", "price-multiples", "residual-income"]
+---
+
+# Equity Valuation: Concepts and Basic Tools
+
+**Valuation** is the estimation of an asset's value, either from the value of its expected future benefits (an *absolute* or intrinsic approach) or from how similar assets are priced in the market (a *relative* approach). Analysts value equities to decide whether a security is a good buy at today's price, to pick stocks, to value a business for a deal, and to judge a company's fundamentals.
+
+---
+
+## 1. The Valuation Process and Intrinsic Value
+
+The process has five steps:
+
+1. **Understand the business**: industry, strategy, competitive position, the quality of reported financials.
+2. **Forecast company performance**: sales, margins, capital needs and so on.
+3. **Select the appropriate valuation model**: it must suit the company and the available data.
+4. **Convert forecasts into a valuation**: apply the model, run sensitivity and scenario analysis.
+5. **Apply the valuation conclusions**: make a recommendation, a pricing or a transaction decision.
+
+**Intrinsic value** is the value of an asset *given a hypothetically complete understanding of its investment characteristics*. The market price is only an estimate of that value. The gap between the two drives the decision:
+
+| Comparison | Conclusion |
+| --- | --- |
+| Market price $<$ intrinsic value | **Undervalued** (potential buy) |
+| Market price $=$ intrinsic value | **Fairly valued** |
+| Market price $>$ intrinsic value | **Overvalued** (potential sell or short) |
+
+Only an estimate of intrinsic value is observable, and it is only as good as the inputs. Analysts who believe markets are not perfectly efficient look for mispricing; the more efficient the market, the smaller and shorter-lived the gaps.
+
+### Other definitions of value
+
+- **Going-concern value**: the value of the company assuming it continues to operate.
+- **Liquidation value**: the net amount realised if the assets are sold off and the liabilities paid (a floor in distress).
+- **Fair market value**: the price at which a willing, informed buyer and seller would transact.
+- **Investment value**: the value to a *specific* buyer, including their synergies and required return.
+
+<Note>Valuation is a forecast, not a fact. Two analysts with different growth and discount-rate inputs reach different values, which is why the model's sensitivity matters as much as the headline number.</Note>
+
+---
+
+## 2. Three Families of Valuation Models
+
+| Family | Idea | Examples |
+| --- | --- | --- |
+| **Present value (discounted cash flow)** | Value $=$ PV of expected future cash flows to investors | Dividend discount model, free cash flow to equity (FCFE), free cash flow to the firm (FCFF), residual income |
+| **Multiplier (market-based)** | Value $=$ a multiple of a fundamental, benchmarked against comparable firms or history | P/E, P/B, P/S, EV/EBITDA |
+| **Asset-based** | Value of equity $=$ fair value of assets $-$ fair value of liabilities | Used for holding companies, natural-resource firms and in liquidation |
+
+Cash-flow definitions you will meet:
+
+- **FCFF** is cash flow available to *all* capital providers; discount at WACC to get firm value, then subtract debt (and preferred) to get equity value.
+- **FCFE** is cash flow available to *common shareholders* after debt service; discount at the cost of equity to get equity value directly.
+
+---
+
+## 3. The Dividend Discount Model (DDM)
+
+Equity is a claim on future dividends. If an investor holds the share forever, its value is the present value of all future dividends:
+
+$$V_0 = \sum_{t=1}^{\infty} \frac{D_t}{(1 + r)^t}$$
+
+where $r$ is the required return on equity. If the share is sold at time $n$, the sale price $V_n$ is itself the PV of later dividends, so the model also reads $V_0 = \sum_{t=1}^{n} \frac{D_t}{(1+r)^t} + \frac{V_n}{(1+r)^n}$.
+
+### Gordon growth (constant growth) model
+
+If dividends grow at a constant rate $g$ forever and $g < r$:
+
+$$V_0 = \frac{D_1}{r - g} = \frac{D_0\,(1 + g)}{r - g}$$
+
+Rearranged, it gives two useful by-products:
+
+$$r = \frac{D_1}{V_0} + g \qquad\qquad g = \frac{V_0\,r - D_0}{V_0 + D_0}$$
+
+The first says the required return is the **dividend yield plus the growth rate**. The second backs out the growth rate implied by the market price. The model needs $g < r$, applies to mature, stable dividend payers, and is very sensitive to $r - g$.
+
+**Worked example (Gordon growth).** A company just paid $D_0 = \mathdollar 2.00$. Dividends are expected to grow at 4% a year and the required return is 9%.
+
+1. $D_1 = 2.00 \times 1.04 = \mathdollar 2.08$.
+2. $V_0 = 2.08 / (0.09 - 0.04) = 2.08 / 0.05 = \mathdollar 41.60$.
+
+If the share trades at \$50, the market-implied growth rate is
+$g = (50 \times 0.09 - 2.00) / (50 + 2.00) = 2.50 / 52 = 4.81\%$. Check: $D_1 = 2.00 \times 1.0481 = 2.0962$ and $2.0962 / (0.09 - 0.0481) = 50.0$. The \$41.60 intrinsic value is below \$50, so on these inputs the share is overvalued; the market is pricing in about 4.81% growth rather than 4%.
+
+### Sustainable growth rate
+
+When growth comes from retained earnings and a stable return on equity:
+
+$$g = b \times \text{ROE} = (1 - \text{payout ratio}) \times \text{ROE}$$
+
+where $b$ is the retention ratio. A firm with ROE of 15% that pays out 40% of earnings retains $b = 0.60$, so $g = 0.60 \times 15\% = 9\%$.
+
+### Multistage models
+
+Fast-growing firms do not grow forever at a constant rate. A **two-stage** model uses a high growth rate for a finite period, then a stable rate afterward, and values the shares at the end of stage one with Gordon growth.
+
+**Worked example (two-stage).** $D_0 = \mathdollar 1.00$. Dividends grow 10% for 2 years, then 4% forever. Required return 9%.
+
+1. $D_1 = 1.00 \times 1.10 = 1.1000$ and $D_2 = 1.1000 \times 1.10 = 1.2100$.
+2. $D_3 = 1.2100 \times 1.04 = 1.2584$.
+3. Terminal value at $t = 2$: $V_2 = 1.2584 / (0.09 - 0.04) = 25.168$.
+4. PV of $D_1$: $1.10 / 1.09 = 1.0092$. PV of $D_2$: $1.21 / 1.09^2 = 1.0184$. PV of $V_2$: $25.168 / 1.09^2 = 21.1834$.
+5. $V_0 = 1.0092 + 1.0184 + 21.1834 = \mathdollar 23.21$.
+
+Most of the value (over 90%) comes from the terminal value, a reminder of how much a valuation depends on the long-run growth and discount-rate assumptions.
+
+<Note>The DDM suits firms with a stable, understood dividend policy. For non-payers, or payers whose dividends do not reflect earning power, use FCFE, FCFF or residual income instead.</Note>
+
+---
+
+## 4. Multiplier Models
+
+A **multiple** is a price (or enterprise value) divided by a fundamental. The *method of comparables* compares a firm's multiple with those of similar firms or its own history. A premium or discount needs a reason (growth, risk, quality).
+
+| Multiple | Formula | Notes |
+| --- | --- | --- |
+| **P/E** | Price $\div$ EPS | Most popular; undefined or meaningless when EPS $\le 0$; earnings can be distorted by accounting choices |
+| **P/B** | Price $\div$ book value per share | Useful for financial firms and asset-heavy firms; weak when book value is negative or distorted |
+| **P/S** | Price $\div$ sales per share | Works for loss-making firms; ignores profitability |
+| **P/CF** | Price $\div$ cash flow per share | Harder to manipulate than earnings |
+| **EV/EBITDA** | Enterprise value $\div$ EBITDA | Capital-structure neutral; good for comparing firms with different leverage |
+| **Dividend yield** | $D_1 \div$ Price | Inverse of a price multiple of dividends |
+
+**Trailing** multiples use past (last twelve months) fundamentals; **forward** (leading) multiples use forecasts.
+
+### Justified P/E from the Gordon growth model
+
+Since $V_0 = D_1/(r - g)$ and $D_1 = \text{payout} \times E_1$:
+
+$$\text{Justified leading } \frac{P_0}{E_1} = \frac{\text{payout}}{r - g} \qquad\qquad \text{Justified trailing } \frac{P_0}{E_0} = \frac{\text{payout} \times (1 + g)}{r - g}$$
+
+The justified P/E rises with the payout ratio and growth, and falls with the required return.
+
+**Worked example.** A firm earns an ROE of 10% and pays out 60% of earnings, so $g = 0.40 \times 10\% = 4\%$. The required return is 9%.
+
+1. Leading justified P/E $= 0.60 / (0.09 - 0.04) = 12.0$.
+2. Trailing justified P/E $= 12.0 \times 1.04 = 12.48$.
+
+If next year's EPS is \$3.00, the justified price is $12.0 \times 3.00 = \mathdollar 36.00$.
+
+### Enterprise value
+
+$$\text{EV} = \text{market capitalisation} + \text{market value of debt} + \text{preferred stock} + \text{non-controlling interests} - \text{cash and short-term investments}$$
+
+**Worked example.** Market cap \$800m, debt \$300m, preferred stock \$50m, cash \$100m, no non-controlling interests. $\text{EV} = 800 + 300 + 50 - 100 = 1050$, i.e. \$1,050m. With EBITDA of \$150m, $\text{EV/EBITDA} = 1050 / 150 = 7.0\times$.
+
+<Note>EV/EBITDA compares the whole operating business, so it is unaffected by how much debt funds it. P/E is a *levered* equity multiple and moves with leverage.</Note>
+
+---
+
+## 5. Asset-Based Valuation
+
+$$\text{Equity value} = \text{fair value of assets} - \text{fair value of liabilities}$$
+
+This works best when assets are liquid and easily valued (holding companies, investment funds, natural-resource reserves). It is less reliable for firms whose value lies in intangibles and growth options, because balance-sheet carrying amounts, not fair values, are usually what the analyst sees.
+
+---
+
+## 6. The Residual Income Model
+
+**Residual income (RI)** is net income minus a charge for the cost of the equity capital used:
+
+$$\text{RI}_t = \text{NI}_t - r \times B_{t-1} = (\text{ROE}_t - r) \times B_{t-1}$$
+
+where $B_{t-1}$ is beginning book value of equity. A firm creates value only when ROE exceeds the required return. The intrinsic value is book value plus the present value of expected residual income:
+
+$$V_0 = B_0 + \sum_{t=1}^{\infty} \frac{\text{RI}_t}{(1 + r)^t}$$
+
+**Worked example.** $B_0 = \mathdollar 100$, required return 10%, expected ROE of 14% each year, and the excess return persists indefinitely with RI constant (no growth).
+
+1. $\text{RI} = (0.14 - 0.10) \times 100 = \mathdollar 4.00$ per year (check: $\text{NI} = 14$, equity charge $= 10$).
+2. PV of a constant perpetuity: $4.00 / 0.10 = \mathdollar 40.00$.
+3. $V_0 = 100 + 40 = \mathdollar 140.00$, giving $P/B = 1.40$.
+
+A positive RI means value above book ($P/B > 1$); if ROE equals $r$, RI is zero and $V_0 = B_0$.
+
+**When it is useful:** firms that pay no dividends, or have negative free cash flow in the near term (heavy investment), where book value is reliable and earnings are forecastable. **Limits:** it relies on accounting numbers, which can be affected by choices and clean-surplus violations (items that bypass net income).
+
+---
+
+## Key takeaways
+
+- Intrinsic value is an estimate; compare it to market price to label a stock under-, fairly or overvalued.
+- Three families: present value, multiplier, asset-based. Pick the model to fit the firm and the data.
+- Gordon growth: $V_0 = D_1/(r - g)$ with $g < r$; $r = D_1/V_0 + g$; sustainable $g = b \times \text{ROE}$.
+- Use multistage DDMs when growth is not yet stable, and watch how much value sits in the terminal value.
+- Justified P/E (leading) $= \text{payout}/(r - g)$; EV subtracts cash and adds debt, preferred and non-controlling interests.
+- Residual income $= \text{NI} - r \times$ beginning equity; $V_0 = B_0 + \text{PV(RI)}$.
