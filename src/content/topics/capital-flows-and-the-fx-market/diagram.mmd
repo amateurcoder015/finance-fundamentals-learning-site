@@ -1,0 +1,30 @@
+graph TD
+    FX["FX Market and Capital Flows"] --> MKT["FX Market"]
+    FX --> RATE["Exchange Rates"]
+    FX --> REG["Exchange Rate Regimes"]
+    FX --> BOP["Balance of Payments"]
+
+    MKT --> PART["Participants<br/>(Dealers, corporates, real money, hedge funds, central banks)"]
+    MKT --> INST["Instruments<br/>(Spot, forward, FX swap, options, NDF)"]
+
+    RATE --> QUOTE["Quote P/B<br/>USD/EUR = 1.10 means 1 EUR costs 1.10 USD"]
+    RATE --> CHG["% change in base = S1/S0 - 1"]
+    RATE --> NOM["Nominal rate"]
+    NOM --> REAL["Real rate = S x Pf / Pd"]
+
+    REG --> FIXED["Fixed end<br/>(Dollarization, currency board, peg)"]
+    REG --> MID["Intermediate<br/>(Target zone, crawling peg and band)"]
+    REG --> FLOAT["Floating end<br/>(Managed float, independent float)"]
+    REG --> TRI["Impossible trinity<br/>Fixed rate, free capital flows, independent policy: pick two"]
+
+    BOP --> CA["Current account<br/>(Goods, services, income, transfers)"]
+    BOP --> KA["Capital account<br/>(Capital transfers)"]
+    BOP --> FA["Financial account<br/>(FDI, portfolio, other, reserves)"]
+    CA --> IDENT["CA + KA + FA = 0"]
+    KA --> IDENT
+    FA --> IDENT
+
+    IDENT --> FLOWS["Capital Flows<br/>(Drivers: returns, rate gaps, risk appetite)"]
+    FLOWS --> EFF["Effects<br/>(Currency appreciation, credit boom, sudden stop)"]
+    RATE --> TRADE["Trade effect<br/>Marshall-Lerner: sum of elasticities > 1<br/>J-curve in the short run"]
+    EFF --> TRADE

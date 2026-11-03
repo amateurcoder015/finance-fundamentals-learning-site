@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What do the main FX market functions include?",
+    "back": "Facilitating international trade and cross-border investment, allowing hedging of currency risk, and enabling speculation and price discovery."
+  },
+  {
+    "front": "Who are the sell-side and buy-side participants in FX?",
+    "back": "Sell side: large banks that act as dealers and quote two-way prices. Buy side: corporations, real-money investors (funds, pensions, insurers, sovereign wealth funds), leveraged accounts (hedge funds) and retail. Governments and central banks also participate."
+  },
+  {
+    "front": "What does a quote of USD/EUR = 1.10 mean?",
+    "back": "In the price/base convention, 1 euro (the base currency) costs 1.10 US dollars (the price currency). The reciprocal EUR/USD = 1/1.10 = 0.9091."
+  },
+  {
+    "front": "Bid, offer and spread?",
+    "back": "The dealer buys the base currency at the bid and sells it at the offer. The bid-offer spread (in pips) is the dealer's compensation. Clients buy at the offer and sell at the bid."
+  },
+  {
+    "front": "How do you compute the percentage change in the base currency?",
+    "back": "%Change = S1/S0 - 1, where S is the price/base quote. The change in the other currency is computed from the reciprocal quote (it is not simply the negative)."
+  },
+  {
+    "front": "Formula for the real exchange rate?",
+    "back": "Real rate (d/f) = S(d/f) x Pf / Pd, where S is the nominal rate (domestic per foreign) and P are price indices. It adjusts the nominal rate for relative price levels."
+  },
+  {
+    "front": "List the exchange rate regimes from most fixed to most flexible.",
+    "back": "Dollarization or monetary union, currency board, conventional fixed peg, target zone, crawling peg, crawling band, managed float, independent float."
+  },
+  {
+    "front": "State the impossible trinity.",
+    "back": "A country cannot simultaneously have a fixed exchange rate, free capital mobility and independent monetary policy. It can have only two of the three."
+  },
+  {
+    "front": "What are the three accounts of the balance of payments and the BOP identity?",
+    "back": "Current account (goods, services, income, transfers), capital account (capital transfers), and financial account (direct, portfolio, other investment, reserves). CA + KA + FA = 0 (apart from statistical discrepancy)."
+  },
+  {
+    "front": "What is the saving-investment identity for the current account?",
+    "back": "CA = (S_private - I) + (T - G). A country that invests more than it saves, or runs a budget deficit, tends to run a current account deficit."
+  },
+  {
+    "front": "FDI vs portfolio flows?",
+    "back": "FDI is lasting, controlling investment in a foreign firm (commonly 10% or more of voting shares) and is relatively stable. Portfolio flows (equities, bonds) are liquid and can reverse quickly, creating sudden-stop risk."
+  },
+  {
+    "front": "What is the Marshall-Lerner condition?",
+    "back": "Starting from balanced trade, a depreciation improves the trade balance if |elasticity of export demand| + |elasticity of import demand| > 1. In the short run, the J-curve may show worsening first."
+  }
+]

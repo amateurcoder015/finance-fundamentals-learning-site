@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which statement best distinguishes a business model from a strategy?",
+    "options": [
+      "A business model is the set of competitive choices, while strategy is the revenue model.",
+      "They are identical terms for a company's mission statement.",
+      "A business model refers only to the cost structure of the company.",
+      "A business model describes how a company creates, delivers and captures value, while strategy is the set of choices about how to compete."
+    ],
+    "correctIndex": 3,
+    "explanation": "Strategy is the set of choices about how the firm will compete (for example cost leadership or differentiation). The business model is the working system that turns those choices into value creation, delivery and capture, covering customers, channels, revenue model and cost structure."
+  },
+  {
+    "question": "A company sells a printer at a low price and earns most of its profit from proprietary ink cartridges. This is best described as a:",
+    "options": [
+      "Razor-and-blade (captive product) model",
+      "Franchise model",
+      "Advertising model",
+      "Freemium model"
+    ],
+    "correctIndex": 0,
+    "explanation": "In a razor-and-blade model the base product is sold cheaply (sometimes at a loss) to build an installed base, and the profit comes from repeat purchases of the high-margin consumable."
+  },
+  {
+    "question": "Which feature is most characteristic of a platform business model?",
+    "options": [
+      "Profit depends mainly on owning large amounts of production equipment.",
+      "Revenue is earned exclusively from a one-off sale to each customer.",
+      "Value rises with the number of users because of network effects, and marginal cost per extra transaction is low.",
+      "The firm sells only to government agencies."
+    ],
+    "correctIndex": 2,
+    "explanation": "Platforms connect groups of users and become more valuable as more join (network effects). They are typically asset-light with low marginal cost per additional transaction, although reaching critical mass is expensive."
+  },
+  {
+    "question": "Firm X sells 20,000 units at a price of 40, variable cost is 25 per unit, and fixed costs are 150,000. What is its degree of operating leverage?",
+    "options": [
+      "1.00",
+      "1.50",
+      "2.00",
+      "3.00"
+    ],
+    "correctIndex": 2,
+    "explanation": "Contribution = 20,000 x (40 - 25) = 300,000. EBIT = 300,000 - 150,000 = 150,000. DOL = contribution / EBIT = 300,000 / 150,000 = 2.00. A 10% rise in sales would raise EBIT by 20%."
+  },
+  {
+    "question": "A firm has a price of 50, variable cost of 30 and fixed costs of 200,000. What is the break-even quantity?",
+    "options": [
+      "4,000 units",
+      "6,667 units",
+      "10,000 units",
+      "20,000 units"
+    ],
+    "correctIndex": 2,
+    "explanation": "Contribution margin per unit = 50 - 30 = 20. Break-even quantity = fixed costs / contribution margin = 200,000 / 20 = 10,000 units."
+  },
+  {
+    "question": "A subscription firm earns gross profit of 9 per customer per month, has monthly churn of 2.5%, and spends 180 to acquire each customer. Using simple undiscounted lifetime value, LTV/CAC is closest to:",
+    "options": [
+      "1.0",
+      "2.0",
+      "2.5",
+      "5.0"
+    ],
+    "correctIndex": 1,
+    "explanation": "Expected lifetime = 1 / 0.025 = 40 months. LTV = 9 x 40 = 360. LTV/CAC = 360 / 180 = 2.0."
+  },
+  {
+    "question": "Compared with an otherwise similar asset-light competitor, a capital-intensive business model is most likely to have:",
+    "options": [
+      "Lower fixed costs and a lower break-even point.",
+      "Negative working capital because customers prepay.",
+      "No exposure to the economic cycle.",
+      "Higher operating leverage, larger capital expenditure needs and greater profit sensitivity to sales changes."
+    ],
+    "correctIndex": 3,
+    "explanation": "Capital-intensive models carry large fixed assets and depreciation, so a higher share of costs is fixed. That raises operating leverage and the break-even level, magnifies the effect of sales changes on profit and requires heavy capex."
+  },
+  {
+    "question": "Which of the following is most likely a favourable working-capital feature of a subscription model billed annually in advance?",
+    "options": [
+      "Deferred (unearned) revenue, because cash is collected before the service is delivered",
+      "Large inventories financed by suppliers",
+      "High accounts receivable from slow-paying customers",
+      "A longer operating cycle"
+    ],
+    "correctIndex": 0,
+    "explanation": "When customers pay up front, the firm records deferred revenue (a liability) and holds the cash before delivering the service. This can make working capital negative and so a source of funding."
+  }
+]

@@ -1,0 +1,26 @@
+graph TD
+    BM["Business Model<br/>(How a firm creates, delivers and captures value)"] --> ELE["Key Elements"]
+    BM --> TYPES["Common Model Types"]
+    BM --> FIN["Effect on Financial Performance"]
+
+    ELE --> VP["Value Proposition"]
+    ELE --> CUST["Customers<br/>(B2C, B2B, B2G, segments)"]
+    ELE --> CH["Channels<br/>(Direct vs indirect)"]
+    ELE --> REV["Revenue Model and Pricing<br/>(Sale, subscription, usage, take rate, ads)"]
+    ELE --> COST["Cost Structure<br/>(Fixed vs variable, asset-light vs capital-intensive)"]
+
+    TYPES --> PURE["Pure-play vs Diversified"]
+    TYPES --> PLAT["Platform<br/>(Network effects, take rate)"]
+    TYPES --> SUBS["Subscription<br/>(Churn, CAC, LTV)"]
+    TYPES --> FRAN["Franchise / Licence<br/>(Fees and royalties)"]
+
+    COST --> OL["Operating Leverage<br/>DOL = Q(P-V) / (Q(P-V) - F)"]
+    OL --> FIN
+    SUBS --> UE["Unit Economics<br/>LTV = Monthly gross profit / churn<br/>Check LTV/CAC and payback"]
+    UE --> FIN
+    REV --> FIN
+
+    FIN --> M["Margins and Growth"]
+    FIN --> CAP["Capital Intensity and Returns"]
+    FIN --> WC["Working Capital<br/>(Deferred revenue, inventory, receivables)"]
+    FIN --> RISK["Risk<br/>(Cyclicality, concentration, barriers to entry)"]

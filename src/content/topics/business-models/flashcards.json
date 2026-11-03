@@ -1,0 +1,42 @@
+[
+  {
+    "front": "What is a business model?",
+    "back": "A description of how a company creates, delivers and captures value: who its customers are, what it offers, how it reaches them, how it earns revenue and what it costs to operate."
+  },
+  {
+    "front": "List the key elements of a business model.",
+    "back": "Value proposition, customer segments, channels, revenue model and pricing, cost structure and operating model, and key resources and partners."
+  },
+  {
+    "front": "B2C vs B2B vs B2G?",
+    "back": "B2C sells to consumers (many small transactions, brand matters). B2B sells to businesses (fewer, larger customers, longer sales cycles, concentration risk). B2G sells to governments (procurement rules, long contracts)."
+  },
+  {
+    "front": "What is the razor-and-blade model?",
+    "back": "A cheap base product builds an installed base, and the company earns most of its profit on repeat sales of high-margin consumables (for example printers and ink)."
+  },
+  {
+    "front": "What is a platform business model and its key advantage?",
+    "back": "It connects two or more user groups and earns a take rate, fees or advertising. Network effects make it more valuable as users join, and marginal cost per transaction is low. Reaching critical mass is costly."
+  },
+  {
+    "front": "What is operating leverage and how is DOL calculated?",
+    "back": "Operating leverage is the degree to which costs are fixed. DOL = %change in EBIT / %change in sales = Q(P - V) / [Q(P - V) - F]."
+  },
+  {
+    "front": "Break-even quantity formula?",
+    "back": "Fixed costs / (Price - Variable cost per unit) = fixed costs / contribution margin per unit."
+  },
+  {
+    "front": "How do you estimate expected customer lifetime and LTV in a subscription model?",
+    "back": "Lifetime is approximately 1 / churn rate. LTV (simple) = gross profit per period x expected lifetime. LTV/CAC and payback period (CAC / monthly gross profit) show whether growth creates value."
+  },
+  {
+    "front": "Why can subscription models have negative working capital?",
+    "back": "Customers often pay in advance, creating deferred (unearned) revenue. The firm holds the cash before delivering the service."
+  },
+  {
+    "front": "Asset-light vs capital-intensive business models?",
+    "back": "Asset-light models (platforms, software, franchisors) need little capital and tend to have high returns on capital and flexible costs. Capital-intensive models (utilities, airlines, steel) need heavy capex, have high fixed costs, higher operating leverage and greater sensitivity to demand."
+  }
+]
