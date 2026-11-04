@@ -1,0 +1,29 @@
+graph TD
+    GOV["Government Issuers"] --> SOV["Sovereign"]
+    GOV --> NON["Non-Sovereign"]
+
+    SOV --> ATP["Ability to Pay<br/>(Taxes, central bank, FX reserves)"]
+    SOV --> WTP["Willingness to Pay<br/>(Institutions, political risk, history)"]
+    SOV --> CUR["Currency of Debt"]
+    CUR --> LC["Local currency<br/>(Rating equal or higher: can tax and print money)"]
+    CUR --> FC["Foreign currency<br/>(Rating equal or lower: needs FX)"]
+
+    ATP --> FAC["Rating Factors"]
+    WTP --> FAC
+    FAC --> F1["Institutions and political risk"]
+    FAC --> F2["Economic prospects"]
+    FAC --> F3["International investment position<br/>and external debt"]
+    FAC --> F4["Fiscal strength<br/>(Debt ratio, primary balance)"]
+    FAC --> F5["Monetary flexibility"]
+    FAC --> F6["External liquidity<br/>(Reserves, current account)"]
+
+    F4 --> DYN["Debt dynamics<br/>d_t = d_t-1 x (1+r)/(1+g) - pb"]
+
+    NON --> SUB["Sub-sovereign"]
+    NON --> QUA["Quasi-government agencies"]
+    NON --> SUP["Supranationals"]
+
+    SUB --> GO["General obligation bonds<br/>(Backed by taxing power)"]
+    SUB --> REV["Revenue bonds<br/>(Backed by project cash flow, DSCR)"]
+    QUA --> SUPPORT["Credit depends on<br/>strength of government support"]
+    SUP --> CAP["Member support, callable capital,<br/>preferred creditor status"]

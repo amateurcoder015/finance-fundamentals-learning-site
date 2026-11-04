@@ -1,0 +1,177 @@
+---
+title: "Exchange Rate Calculations"
+description: "Cross rates from two currency quotes (including bid-offer cross rates), triangular arbitrage, forward points and forward premiums, covered interest rate parity, and marking a forward contract to market."
+category: "Economics"
+difficulty: "intermediate"
+dateAdded: "2026-11-04"
+tags: ["cross-rates", "triangular-arbitrage", "forward-points", "covered-interest-parity", "forward-contracts", "fx-calculations"]
+---
+
+# Exchange Rate Calculations
+
+Once you know how exchange rates are quoted, the next skill is to calculate with them: to turn two quotes into a third, to spot an inconsistent set of quotes that allows a riskless profit, to price a forward rate from interest rates, and to value an existing forward contract. These calculations are mechanical, but they are easy to get wrong if you lose track of which currency is the base and which is the price. Always write the quote as **price currency / base currency (P/B)** and read it as "units of P per one unit of B".
+
+---
+
+## 1. Quote Conventions Refresher
+
+A quote $\text{USD/EUR} = 1.1000$ means **1 EUR costs 1.1000 USD**. EUR is the base currency, USD the price currency.
+
+- **Inverse quote**: $\text{EUR/USD} = 1 / \text{USD/EUR}$. Here $1/1.1000 = 0.9091$.
+- A dealer's quote has a **bid** (price at which the dealer buys the base currency) and an **offer** (price at which the dealer sells the base currency), with the bid always below the offer.
+- The **bid-offer spread** is measured in pips. For a quote to four decimals, one pip is 0.0001.
+
+### 1.1 Inverting a bid-offer quote
+
+When the quote is inverted the roles of bid and offer swap, because buying the base currency in one quote is selling the price currency in the other:
+
+$$\text{B/P bid} = \frac{1}{\text{P/B offer}} \qquad\qquad \text{B/P offer} = \frac{1}{\text{P/B bid}}$$
+
+**Worked example.** USD/EUR is 1.1048 / 1.1052.
+
+1. EUR/USD bid $= 1/1.1052 = 0.90481$.
+2. EUR/USD offer $= 1/1.1048 = 0.90514$.
+3. So EUR/USD is quoted $0.90481 / 0.90514$. The bid is still lower than the offer.
+
+<Note>Never invert bid to bid. Invert the offer to get the new bid, and the bid to get the new offer.</Note>
+
+---
+
+## 2. Cross Rates
+
+A **cross rate** is the exchange rate between two currencies, neither of which is the dollar (or other major quote currency), derived from each one's rate against a common third currency. The method is a chain: arrange the quotes so that the unwanted currency cancels.
+
+$$\frac{A}{C} = \frac{A}{B}\times\frac{B}{C}$$
+
+### 2.1 Chain method (multiplying)
+
+When the common currency is the price currency in one quote and the base currency in the other, multiply.
+
+**Worked example.** USD/EUR $= 1.1000$ and JPY/USD $= 150.00$. Find JPY/EUR.
+
+1. Chain: $\dfrac{\text{JPY}}{\text{EUR}} = \dfrac{\text{JPY}}{\text{USD}} \times \dfrac{\text{USD}}{\text{EUR}}$. The USD cancels.
+2. $\text{JPY/EUR} = 150.00 \times 1.1000 = \mathbf{165.00}$.
+
+One euro costs 165 yen.
+
+### 2.2 Division method (common currency in the same position)
+
+When both quotes have the common currency as the base, or both as the price currency, one quote must be inverted, so you divide.
+
+**Worked example.** USD/EUR $= 1.1000$ and USD/GBP $= 1.3000$. Find GBP/EUR (price of 1 EUR in GBP).
+
+1. Both quotes are in USD. $\dfrac{\text{GBP}}{\text{EUR}} = \dfrac{\text{USD/EUR}}{\text{USD/GBP}}$, since $\dfrac{\text{USD}}{\text{EUR}} \times \dfrac{\text{GBP}}{\text{USD}}$ and $\text{GBP/USD} = 1/\text{USD/GBP}$.
+2. $\text{GBP/EUR} = 1.1000 / 1.3000 = \mathbf{0.84615}$.
+
+One euro costs 0.84615 pounds. A check: 1 EUR buys 1.1000 USD, and 1.1000 USD buys $1.1000/1.3000$ GBP.
+
+### 2.3 Bid-offer cross rates
+
+A dealer's cross-rate quote is built so that the dealer never gives a better price than the two underlying legs allow. With the multiply method the cross bid uses both bids and the cross offer uses both offers; with the divide method the cross bid pairs a bid (numerator) with an offer (denominator), and the cross offer pairs an offer with a bid.
+
+**Multiply method.** USD/EUR $= 1.1048 / 1.1052$ and JPY/USD $= 149.90 / 150.10$. Find JPY/EUR.
+
+1. Bid: the dealer buys EUR and pays USD at 1.1048, then sells that USD for yen at the bid 149.90. $\text{JPY/EUR bid} = 1.1048 \times 149.90 = 165.6095$.
+2. Offer: the dealer sells EUR and receives USD at 1.1052, then buys USD at the offer 150.10. $\text{JPY/EUR offer} = 1.1052 \times 150.10 = 165.8905$.
+3. Quote: $\mathbf{165.6095 / 165.8905}$. The spread is wider than either leg because the spreads compound.
+
+**Divide method.** USD/EUR $= 1.1048 / 1.1052$ and USD/GBP $= 1.2990 / 1.3010$. Find GBP/EUR.
+
+1. $\text{GBP/EUR bid} = \dfrac{\text{USD/EUR bid}}{\text{USD/GBP offer}} = \dfrac{1.1048}{1.3010} = 0.84919$.
+2. $\text{GBP/EUR offer} = \dfrac{\text{USD/EUR offer}}{\text{USD/GBP bid}} = \dfrac{1.1052}{1.2990} = 0.85081$.
+3. Quote: $\mathbf{0.84919 / 0.85081}$.
+
+Why bid over offer? To get the lowest price at which the dealer will buy EUR in GBP, take the cheapest EUR purchase (the USD/EUR bid) and the dearest GBP purchase (the USD/GBP offer).
+
+---
+
+## 3. Triangular Arbitrage
+
+If a directly quoted cross rate differs from the cross rate implied by the other two quotes, a **triangular arbitrage** is possible: a sequence of three trades that starts and ends in the same currency and earns a riskless profit.
+
+**Worked example.** Market quotes (ignoring spreads): USD/EUR $= 1.1000$, JPY/USD $= 150.00$ and JPY/EUR $= 163.00$.
+
+1. Implied JPY/EUR $= 1.1000 \times 150.00 = 165.00$.
+2. The direct quote of 163.00 is **below** the implied 165.00, so EUR is cheap in yen terms in the direct market and dear in the synthetic market.
+3. Start with JPY 163,000,000.
+   - Buy EUR directly at 163.00: $163{,}000{,}000 / 163 = $ EUR 1,000,000.
+   - Sell the EUR for USD at 1.1000: EUR 1,000,000 $\times$ 1.1000 = USD 1,100,000.
+   - Sell the USD for yen at 150.00: USD 1,100,000 $\times$ 150 = JPY 165,000,000.
+4. Profit $= 165{,}000{,}000 - 163{,}000{,}000 = \mathbf{JPY\ 2{,}000{,}000}$ with no net exposure.
+
+Trading pressure pushes the direct rate up and the other rates until the three quotes are consistent. With real bid-offer quotes the arbitrage exists only if the profit exceeds the transaction costs, that is if the direct quote falls outside the bid-offer cross rate computed in section 2.3.
+
+---
+
+## 4. Forward Quotes and Forward Points
+
+A **forward rate** is the exchange rate agreed today for exchange at a future date. Dealers often quote forwards as **forward points**: the difference between the forward and spot rates, scaled so that the points are an easy whole number.
+
+$$F = S + \frac{\text{points}}{\text{scale}}$$
+
+The scale is usually 10,000 for rates quoted to four decimals (one point is one pip), and 100 for yen crosses quoted to two decimals.
+
+- The base currency trades at a **forward premium** when $F > S$ (positive points).
+- The base currency trades at a **forward discount** when $F < S$ (negative points).
+
+**Worked example.** Spot USD/EUR $= 1.1050$ and the 3-month forward points are $+25.0$.
+
+$F = 1.1050 + 25.0/10{,}000 = 1.1050 + 0.0025 = \mathbf{1.1075}$. The euro is at a forward premium: it buys more USD for delivery in three months than today. The premium in percent is $(1.1075/1.1050 - 1) = 0.226\%$ over three months.
+
+---
+
+## 5. Covered Interest Rate Parity
+
+Forward rates are not arbitrary. **Covered interest rate parity (CIRP)** says that, with no arbitrage, investing in either currency and hedging the exchange risk with a forward must give the same return. For a P/B quote, with simple money-market interest rates $i_P$ and $i_B$ over a period of $T$ years (fraction of the year):
+
+$$F_{P/B} = S_{P/B}\times\frac{1 + i_P\,T}{1 + i_B\,T}$$
+
+The currency with the **higher** interest rate trades at a forward **discount**, and the currency with the lower rate at a forward premium. The forward rate reflects the interest rate difference, not a forecast of the future spot rate.
+
+Money-market conventions: use the day-count of each currency (for example actual/360 for USD and EUR, actual/365 for GBP). The examples below use 90/360.
+
+**Worked example.** USD/EUR spot $= 1.1000$, 3-month USD rate $= 4.00\%$ and 3-month EUR rate $= 2.00\%$ (annualised), with $T = 90/360 = 0.25$. Find the 3-month forward rate.
+
+1. USD growth factor: $1 + 0.04 \times 0.25 = 1.0100$.
+2. EUR growth factor: $1 + 0.02 \times 0.25 = 1.0050$.
+3. $F = 1.1000 \times 1.0100 / 1.0050 = 1.1000 \times 1.004975 = \mathbf{1.10547}$.
+4. Forward points $= (1.10547 - 1.1000) \times 10{,}000 \approx 54.7$. EUR has the lower rate, so it is at a forward premium.
+
+**Arbitrage check.** Start with EUR 1,000,000.
+
+- Route 1 (invest in EUR): EUR 1,000,000 $\times$ 1.005 $=$ EUR 1,005,000. Convert at the forward rate 1.10547: USD 1,111,000.
+- Route 2 (invest in USD): convert at spot to USD 1,100,000 and invest at 1.01: USD 1,111,000.
+
+Both routes give USD 1,111,000, so there is no arbitrage. If the market forward were different, a trader would borrow in one currency, invest in the other and lock in the profit with the forward.
+
+---
+
+## 6. Marking a Forward Contract to Market
+
+A forward contract has zero value at inception, but its value changes as the spot rate and interest rates move. To value it before maturity, **find the current forward rate for the remaining term, compare it with the contract rate, and discount the difference** at the price-currency interest rate.
+
+$$V_t = \frac{(F_t - F_0)\times \text{contract size (base currency)}}{1 + i_P\,\dfrac{(T-t)}{360}}$$
+
+for a long position in the base currency, where $F_0$ is the contract rate and $F_t$ is the current forward rate for the remaining term. A short position has the opposite sign.
+
+**Worked example.** A trader bought EUR 1,000,000 forward at USD/EUR $= 1.1000$, maturity 90 days. After 30 days, 60 days remain. The new spot is USD/EUR 1.1200, the 60-day USD rate is 4.50% and the 60-day EUR rate is 2.50%.
+
+1. Remaining term: $60/360 = 1/6$ year.
+2. New forward rate: $F_t = 1.1200 \times \dfrac{1 + 0.045/6}{1 + 0.025/6} = 1.1200 \times \dfrac{1.0075}{1.004167} = \mathbf{1.12372}$.
+3. Gain at maturity per EUR: $1.12372 - 1.1000 = 0.02372$. For EUR 1,000,000: USD 23,718.
+4. Discount at the USD rate for 60 days: $23{,}718 / 1.0075 = \mathbf{USD\ 23{,}541}$.
+
+The long position has a **positive value** of about USD 23,541, because the euro has strengthened. The counterparty's short position has the opposite value (a liability).
+
+<Note>Only the price-currency rate is used to discount the value. The value is a USD amount paid at maturity, so it is discounted with the USD rate.</Note>
+
+---
+
+## Key takeaways
+
+- Write every quote as P/B and read it as "units of P per one unit of B". Inverse of a bid-offer quote: invert the offer to get the bid, the bid to get the offer.
+- **Cross rates**: multiply when the common currency is the price currency in one quote and the base in the other; divide when it is in the same position in both. Bid-offer cross rates pair the less favourable sides, so the cross spread is wider than either leg.
+- **Triangular arbitrage** exists when the direct cross rate differs from the implied one; buy the currency where it is cheap, sell where it is dear, and finish in the starting currency.
+- **Forward points** $= (F - S)\times$ scale (10,000 normally, 100 for yen). Positive points = base currency at a forward premium.
+- **CIRP**: $F_{P/B} = S_{P/B}(1+i_P T)/(1+i_B T)$. The higher-interest-rate currency trades at a forward discount.
+- **Marking a forward to market**: new forward rate for the remaining term, minus the contract rate, times the size, discounted at the price-currency rate.

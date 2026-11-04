@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What is the difference between ability to pay and willingness to pay for a sovereign?",
+    "back": "Ability to pay is the capacity to service debt (tax base, budget, reserves, central bank). Willingness to pay is the intent to do so, driven by political stability, institutions and track record. Sovereigns cannot be forced into bankruptcy, so both matter."
+  },
+  {
+    "front": "Why are local-currency sovereign ratings usually equal to or higher than foreign-currency ratings?",
+    "back": "The government can raise taxes and the central bank can create local currency to repay local-currency debt, but it cannot print foreign currency. Local-currency debt still carries inflation risk."
+  },
+  {
+    "front": "List the main factors in sovereign credit analysis.",
+    "back": "Institutions and political risk; economic prospects; international investment position and external debt; fiscal strength; monetary flexibility; external liquidity."
+  },
+  {
+    "front": "What is the debt-ratio identity for a government?",
+    "back": "d_t = d_(t-1) x (1 + r)/(1 + g) - pb_t, where d is debt/GDP, r the average nominal interest rate, g nominal GDP growth and pb the primary balance/GDP (positive = surplus)."
+  },
+  {
+    "front": "What primary surplus stabilises the debt-to-GDP ratio?",
+    "back": "pb* = d x (r - g)/(1 + g). When r > g a surplus is needed; when g > r the ratio can be stable with a deficit."
+  },
+  {
+    "front": "What is the primary balance?",
+    "back": "The government budget balance excluding interest payments. A primary surplus means revenue exceeds non-interest spending."
+  },
+  {
+    "front": "How is import cover calculated?",
+    "back": "Foreign-exchange reserves divided by monthly imports (annual imports/12). Analysts also compare reserves to short-term external debt."
+  },
+  {
+    "front": "What is the difference between a general obligation bond and a revenue bond?",
+    "back": "A GO bond is backed by the issuer's general taxing power. A revenue bond is repaid only from the cash flows of a specific project and is usually riskier."
+  },
+  {
+    "front": "How is the debt service coverage ratio computed?",
+    "back": "DSCR = net revenue available for debt service / debt service (interest plus principal). Below 1.0 means project cash flow cannot cover debt service."
+  },
+  {
+    "front": "What drives the credit quality of a quasi-government issuer?",
+    "back": "The strength of government support (explicit guarantee, implicit support or none), the entity's own finances, and its public-policy importance."
+  },
+  {
+    "front": "Why are supranational bonds highly rated?",
+    "back": "Callable capital from highly rated member governments, preferred creditor status on loans, strong capital and liquidity, and conservative lending."
+  },
+  {
+    "front": "What are collective action clauses?",
+    "back": "Bond provisions allowing a qualified majority of holders to agree a restructuring that binds all holders, reducing the holdout problem in sovereign restructurings."
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "question": "USD/EUR is quoted by a dealer at 1.1048 / 1.1052. The dealer's quote for EUR/USD (EUR per 1 USD) is closest to:",
+    "options": [
+      "0.90514 / 0.90481",
+      "0.90481 / 0.90514",
+      "0.90481 / 0.90481",
+      "1.1048 / 1.1052"
+    ],
+    "correctIndex": 1,
+    "explanation": "Invert and swap: EUR/USD bid = 1/1.1052 = 0.90481 and EUR/USD offer = 1/1.1048 = 0.90514. The bid stays below the offer."
+  },
+  {
+    "question": "USD/EUR is 1.1000 and JPY/USD is 150.00. The JPY/EUR cross rate is:",
+    "options": [
+      "136.36",
+      "0.00667",
+      "151.10",
+      "165.00"
+    ],
+    "correctIndex": 3,
+    "explanation": "JPY/EUR = JPY/USD x USD/EUR = 150.00 x 1.1000 = 165.00. USD cancels in the chain. 136.36 is 150/1.1, which divides when it should multiply."
+  },
+  {
+    "question": "USD/EUR is 1.1000 and USD/GBP is 1.3000. The GBP/EUR rate (GBP per 1 EUR) is closest to:",
+    "options": [
+      "0.8462",
+      "1.4300",
+      "1.1818",
+      "0.6993"
+    ],
+    "correctIndex": 0,
+    "explanation": "Both quotes are USD per unit, so divide: GBP/EUR = (USD/EUR)/(USD/GBP) = 1.1000/1.3000 = 0.8462."
+  },
+  {
+    "question": "USD/EUR is quoted 1.1048 / 1.1052 and USD/GBP 1.2990 / 1.3010. The dealer's GBP/EUR bid is:",
+    "options": [
+      "0.84919",
+      "0.85081",
+      "0.84813",
+      "0.85000"
+    ],
+    "correctIndex": 0,
+    "explanation": "GBP/EUR bid = USD/EUR bid / USD/GBP offer = 1.1048/1.3010 = 0.84919. The offer would be 1.1052/1.2990 = 0.85081."
+  },
+  {
+    "question": "Quotes: USD/EUR 1.1000, JPY/USD 150.00, JPY/EUR 163.00. Ignoring costs, what triangular arbitrage is available, starting with JPY 163,000,000?",
+    "options": [
+      "None: the quotes are consistent.",
+      "Sell EUR for JPY, buy USD with JPY, buy EUR with USD: profit of JPY 2,000,000.",
+      "Buy EUR with JPY, sell EUR for USD, sell USD for JPY: profit of JPY 2,000,000.",
+      "Buy EUR with JPY, sell EUR for USD, sell USD for JPY: profit of JPY 1,000,000."
+    ],
+    "correctIndex": 2,
+    "explanation": "Implied JPY/EUR = 165.00 but the direct quote is 163.00, so EUR is cheap for yen. JPY 163m buys EUR 1m, which sells for USD 1.1m, which sells for JPY 165m: profit JPY 2m."
+  },
+  {
+    "question": "Spot USD/EUR is 1.1050 and 3-month forward points are +25.0. The 3-month forward rate and the status of the euro are:",
+    "options": [
+      "1.1075, euro at a forward premium",
+      "1.1075, euro at a forward discount",
+      "1.1025, euro at a forward discount",
+      "1.1300, euro at a forward premium"
+    ],
+    "correctIndex": 0,
+    "explanation": "F = 1.1050 + 25/10,000 = 1.1075. F is above spot, so the base currency (EUR) is at a forward premium."
+  },
+  {
+    "question": "Spot USD/EUR is 1.1000, the 3-month USD rate is 4.00% and the 3-month EUR rate is 2.00% (90/360 day count). The 3-month forward rate is closest to:",
+    "options": [
+      "1.0945",
+      "1.1000",
+      "1.1055",
+      "1.1220"
+    ],
+    "correctIndex": 2,
+    "explanation": "F = 1.1000 x (1 + 0.04 x 0.25)/(1 + 0.02 x 0.25) = 1.1000 x 1.0100/1.0050 = 1.10547. The lower-rate currency (EUR) trades at a forward premium."
+  },
+  {
+    "question": "According to covered interest rate parity, a currency with a higher interest rate than the other currency will trade at a forward:",
+    "options": [
+      "Premium, because it earns more interest.",
+      "Rate equal to spot, because rates cancel.",
+      "Premium or discount depending on expected future spot rates.",
+      "Discount, because the higher interest earned is offset by the forward rate."
+    ],
+    "correctIndex": 3,
+    "explanation": "CIRP implies F/S = (1 + iP T)/(1 + iB T). The currency with the higher interest rate must trade at a forward discount to remove any riskless gain; the forward does not forecast future spot."
+  }
+]

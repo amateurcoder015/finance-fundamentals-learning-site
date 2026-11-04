@@ -1,0 +1,19 @@
+graph TD
+    START["Exchange Rate Calculations"] --> Q["Quote P/B<br/>USD/EUR = 1.10: 1 EUR costs 1.10 USD"]
+    Q --> INV["Invert a bid-offer quote<br/>New bid = 1 / old offer<br/>New offer = 1 / old bid"]
+    Q --> CROSS["Cross Rates"]
+    CROSS --> MUL["Multiply<br/>Common currency is price in one quote, base in the other<br/>JPY/EUR = JPY/USD x USD/EUR"]
+    CROSS --> DIV["Divide<br/>Common currency in same position in both<br/>GBP/EUR = USD/EUR / USD/GBP"]
+    CROSS --> BO["Bid-offer cross<br/>Pair less favourable sides<br/>Spread is wider than either leg"]
+
+    CROSS --> ARB["Triangular Arbitrage"]
+    ARB --> ARB1["Compare direct quote with implied cross"]
+    ARB1 --> ARB2["Buy where cheap, sell where dear<br/>Finish in starting currency"]
+
+    Q --> FWD["Forward Rates"]
+    FWD --> PTS["Forward points<br/>F = S + points / scale<br/>Positive points: base at premium"]
+    FWD --> CIRP["Covered Interest Parity<br/>F = S x (1 + iP T) / (1 + iB T)"]
+    CIRP --> RULE["Higher-rate currency trades<br/>at a forward discount"]
+    FWD --> MTM["Mark-to-Market of a forward"]
+    MTM --> MTM1["New forward for remaining term minus contract rate"]
+    MTM1 --> MTM2["Multiply by size<br/>Discount at price-currency rate"]

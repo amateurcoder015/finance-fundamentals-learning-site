@@ -1,0 +1,90 @@
+[
+  {
+    "question": "A sovereign issues bonds in its own currency and also bonds in a foreign currency. Which statement about the credit ratings is most accurate?",
+    "options": [
+      "The local-currency rating is usually equal to or higher than the foreign-currency rating, because the government can tax and create local money.",
+      "The foreign-currency rating is usually higher, because foreign investors demand stricter covenants.",
+      "The two ratings must always be identical, since the issuer is the same.",
+      "The local-currency rating is always lower, because printing money causes default."
+    ],
+    "correctIndex": 0,
+    "explanation": "A government can raise taxes or have its central bank create local currency to repay local-currency debt, but it cannot print foreign currency. Local-currency ratings are therefore equal to or higher than foreign-currency ratings."
+  },
+  {
+    "question": "Which of the following is a measure of willingness to pay, as distinct from ability to pay, in sovereign credit analysis?",
+    "options": [
+      "The country's debt-to-GDP ratio.",
+      "The level of foreign-exchange reserves.",
+      "The government's record of honouring past debts and the strength of its institutions.",
+      "The current-account deficit as a percentage of GDP."
+    ],
+    "correctIndex": 2,
+    "explanation": "Willingness to pay relates to political stability, institutional quality, rule of law and track record. Debt-to-GDP, reserves and the current account describe ability to pay."
+  },
+  {
+    "question": "A country has debt equal to 80% of GDP, an average interest rate of 5% and nominal GDP growth of 3%. What primary surplus (as a percentage of GDP) is needed to keep the debt ratio constant?",
+    "options": [
+      "1.55%",
+      "1.60%",
+      "2.00%",
+      "0.00%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stabilising primary surplus = d x (r - g)/(1 + g) = 80% x 0.02/1.03 = 1.553%, about 1.55%. Using 80% x 0.02 = 1.60% ignores the (1 + g) denominator."
+  },
+  {
+    "question": "A country begins the year with debt of 60% of GDP. The average interest rate is 4%, nominal GDP growth is 2% and the primary balance is a surplus of 1.0% of GDP. What is the end-of-year debt ratio?",
+    "options": [
+      "59.00%",
+      "60.18%",
+      "61.18%",
+      "62.00%"
+    ],
+    "correctIndex": 1,
+    "explanation": "d1 = 60% x 1.04/1.02 - 1.0% = 61.176% - 1.0% = 60.176%, about 60.18%. The surplus is smaller than the 1.18% needed to stabilise the ratio, so it rises slightly."
+  },
+  {
+    "question": "A country holds foreign-exchange reserves of 90 billion USD and imports 360 billion USD of goods and services per year. Its import cover in months is closest to:",
+    "options": [
+      "2.0 months",
+      "4.0 months",
+      "3.0 months",
+      "12.0 months"
+    ],
+    "correctIndex": 2,
+    "explanation": "Monthly imports = 360/12 = 30 billion USD. Import cover = 90/30 = 3.0 months."
+  },
+  {
+    "question": "A toll road has annual revenue of 48 million, operating expenses of 30 million and debt service of 12 million. The debt service coverage ratio is:",
+    "options": [
+      "0.67",
+      "2.50",
+      "4.00",
+      "1.50"
+    ],
+    "correctIndex": 3,
+    "explanation": "DSCR = (48 - 30)/12 = 18/12 = 1.50. A value above 1.0 means net revenue exceeds debt service."
+  },
+  {
+    "question": "Compared with a general obligation bond issued by a city, a revenue bond issued by the same city is:",
+    "options": [
+      "Repaid from the cash flows of a specific project and therefore usually riskier.",
+      "Backed by the city's full taxing power and therefore safer.",
+      "Guaranteed by the national government.",
+      "Immune to demand risk because the project is publicly owned."
+    ],
+    "correctIndex": 0,
+    "explanation": "Revenue bonds depend on the cash flows of the financed project, not the issuer's general taxing power, so they carry project-specific risk and are usually riskier than GO bonds of the same issuer."
+  },
+  {
+    "question": "Which feature most directly supports the high credit quality of a supranational agency such as a multilateral development bank?",
+    "options": [
+      "The power to levy taxes on its borrowers.",
+      "A monopoly on creating its own currency.",
+      "Collateral in the form of mortgages on borrower property.",
+      "Callable capital commitments from highly rated member governments and preferred creditor status."
+    ],
+    "correctIndex": 3,
+    "explanation": "Supranationals rely on shareholder (member-government) support, including callable capital, and on preferred creditor status that gives their loans priority in repayment."
+  }
+]

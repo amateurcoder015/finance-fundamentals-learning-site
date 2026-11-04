@@ -1,0 +1,46 @@
+[
+  {
+    "front": "How do you read a quote USD/EUR = 1.1000?",
+    "back": "Price currency / base currency: 1 EUR (base) costs 1.1000 USD (price)."
+  },
+  {
+    "front": "How do you invert a bid-offer quote?",
+    "back": "New bid = 1 / old offer; new offer = 1 / old bid. The bid stays below the offer."
+  },
+  {
+    "front": "When do you multiply and when do you divide to get a cross rate?",
+    "back": "Multiply when the common currency is the price currency in one quote and the base currency in the other (chain A/B x B/C). Divide when it appears in the same position in both quotes."
+  },
+  {
+    "front": "How is a bid-offer cross rate built by division?",
+    "back": "Cross bid = bid of numerator quote / offer of denominator quote; cross offer = offer of numerator quote / bid of denominator quote. Example: GBP/EUR bid = USD/EUR bid / USD/GBP offer."
+  },
+  {
+    "front": "What is triangular arbitrage?",
+    "back": "A three-trade loop that starts and ends in the same currency and earns a riskless profit because the direct cross rate differs from the one implied by two other quotes."
+  },
+  {
+    "front": "How do you find the arbitrage direction?",
+    "back": "Compare the direct cross with the implied cross. Buy the currency where it is cheaper, sell where it is dearer, and finish in the starting currency."
+  },
+  {
+    "front": "What are forward points and how are they used?",
+    "back": "The forward rate minus spot, in pips (scale 10,000, or 100 for yen quotes). F = S + points/scale. Positive points mean the base currency is at a forward premium."
+  },
+  {
+    "front": "State covered interest rate parity.",
+    "back": "F(P/B) = S(P/B) x (1 + iP x T)/(1 + iB x T), using simple money-market rates over the same period with the correct day-count."
+  },
+  {
+    "front": "Which currency trades at a forward premium under CIRP?",
+    "back": "The one with the lower interest rate. The higher-rate currency trades at a forward discount."
+  },
+  {
+    "front": "Does the forward rate predict the future spot rate?",
+    "back": "No. Under CIRP the forward rate reflects the interest rate differential and no-arbitrage, not an expectation of the future spot rate."
+  },
+  {
+    "front": "How do you mark a long forward contract to market?",
+    "back": "Value = (current forward rate for the remaining term - contract rate) x size, discounted at the price-currency interest rate for the remaining term."
+  }
+]
