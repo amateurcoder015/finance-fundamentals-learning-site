@@ -1,0 +1,90 @@
+[
+  {
+    "question": "When a forward contract is initiated at the no-arbitrage forward price, what is the value of the contract to each party?",
+    "options": [
+      "Positive to the long and negative to the short",
+      "Equal to the spot price of the underlying",
+      "Zero to both parties",
+      "Equal to the present value of the forward price"
+    ],
+    "correctIndex": 2,
+    "explanation": "The forward price is set so that the contract has zero value at initiation and no upfront payment is needed. Value emerges later as the spot price and interest rates change."
+  },
+  {
+    "question": "An asset with no income or storage costs has a spot price of 80. The risk-free rate is 5% per year (annual compounding). What is the no-arbitrage price of a 6-month forward?",
+    "options": [
+      "80.00",
+      "82.00",
+      "81.98",
+      "84.00"
+    ],
+    "correctIndex": 2,
+    "explanation": "F0 = S0(1+r)^T = 80 x 1.05^0.5 = 80 x 1.024695 = 81.98. Using 1.05 x 80 = 84 ignores that only half a year of interest accrues, and 82.00 uses simple interest."
+  },
+  {
+    "question": "A stock trades at 60 and will pay a dividend of 1.20 in 6 months. The risk-free rate is 3% (annual compounding). What is the 1-year forward price?",
+    "options": [
+      "60.58",
+      "61.80",
+      "58.80",
+      "59.38"
+    ],
+    "correctIndex": 0,
+    "explanation": "PV of dividend = 1.20 / 1.03^0.5 = 1.1824. F0 = (60 - 1.1824) x 1.03 = 58.8176 x 1.03 = 60.58. Without the dividend F0 would be 61.80."
+  },
+  {
+    "question": "A trader entered a long 1-year forward on a non-dividend-paying stock at a forward price of 61.80. Four months later the stock trades at 62 and the risk-free rate is 3%. What is the value of the long position now?",
+    "options": [
+      "0.20",
+      "1.41",
+      "2.41",
+      "0.00"
+    ],
+    "correctIndex": 1,
+    "explanation": "Remaining time is 8/12 years. V = S_t - F0/(1+r)^(T-t) = 62 - 61.80 / 1.03^(0.6667) = 62 - 60.594 = 1.41. Simply subtracting 61.80 from 62 (0.20) fails to discount the forward price."
+  },
+  {
+    "question": "The CHF/USD spot rate is 0.9000 USD per CHF. The 6-month USD rate is 4% per year and the CHF rate is 1% per year (both compounded annually). Which forward price is consistent with covered interest rate parity?",
+    "options": [
+      "0.8870 USD per CHF",
+      "0.9000 USD per CHF",
+      "0.9133 USD per CHF",
+      "0.9270 USD per CHF"
+    ],
+    "correctIndex": 2,
+    "explanation": "F0 = S0 x ((1 + r_USD)/(1 + r_CHF))^T = 0.9000 x (1.04/1.01)^0.5 = 0.9000 x 1.01474 = 0.9133. CHF has the lower interest rate, so it trades at a forward premium."
+  },
+  {
+    "question": "A forward contract on a stock is quoted at a price above its no-arbitrage value. Which trade captures the arbitrage?",
+    "options": [
+      "Reverse cash-and-carry: short sell the stock, invest proceeds, and buy the forward",
+      "Cash-and-carry: borrow at the risk-free rate, buy the stock, and sell the forward",
+      "Buy the stock and buy the forward",
+      "Do nothing, since forward prices are forecasts of spot prices"
+    ],
+    "correctIndex": 1,
+    "explanation": "When the forward is overpriced, the arbitrageur sells it and replicates the delivery obligation by buying the stock with borrowed money. At expiry the stock is delivered at the high forward price and the loan is repaid, leaving a risk-free profit."
+  },
+  {
+    "question": "Which of the following changes would decrease the no-arbitrage forward price of a stock, all else equal?",
+    "options": [
+      "An increase in the risk-free rate",
+      "A longer time to expiration with no dividends",
+      "A higher present value of dividends expected before expiration",
+      "An increase in storage costs"
+    ],
+    "correctIndex": 2,
+    "explanation": "The forward buyer does not receive dividends, so larger expected dividends reduce the forward price, as F0 = (S0 - PV(dividends))(1+r)^T. A higher rate, longer maturity, or storage costs all raise it."
+  },
+  {
+    "question": "A 3 x 6 FRA has a notional of 5,000,000, a fixed rate of 3.00% and a 90-day period (actual/360). At the start of the period the reference rate is 3.50%. What is the settlement amount to the party that pays fixed?",
+    "options": [
+      "6,250 paid",
+      "6,196 received",
+      "6,196 paid",
+      "6,250 received"
+    ],
+    "correctIndex": 1,
+    "explanation": "The fixed payer is long and gains when rates rise. Settlement = 5,000,000 x (0.0350 - 0.0300) x 0.25 / (1 + 0.0350 x 0.25) = 6,250 / 1.00875 = 6,196 received. The division discounts the payment from the end of the period to its start."
+  }
+]

@@ -1,0 +1,21 @@
+graph TD
+    FWD["Forward Contract<br/>(Pricing vs Valuation)"] --> PRICE["Pricing at Initiation<br/>(Value = 0, find F0)"]
+    FWD --> VAL["Valuation After Initiation<br/>(F0 fixed, value changes)"]
+
+    PRICE --> NA["No-arbitrage principle"]
+    NA --> CC["Cash-and-carry<br/>(Forward too high:<br/>borrow, buy spot, sell forward)"]
+    NA --> RCC["Reverse cash-and-carry<br/>(Forward too low:<br/>short spot, buy forward)"]
+
+    PRICE --> BASE["Base formula<br/>F0 = S0 (1+r)^T"]
+    BASE --> ADJ["Adjust for carry"]
+    ADJ --> BEN["Benefits lower F0<br/>(Dividends, coupons)"]
+    ADJ --> COST["Costs raise F0<br/>(Storage, insurance)"]
+
+    PRICE --> TYPES["Contract Types"]
+    TYPES --> EQ["Equity<br/>F0 = (S0 - PV dividends)(1+r)^T"]
+    TYPES --> FI["Fixed income<br/>F0 = (B0 - PV coupons)(1+r)^T"]
+    TYPES --> FX["Currency<br/>F0 = S0 (1+rP)^T / (1+rB)^T"]
+    TYPES --> FRA["FRA<br/>Implied forward rate"]
+
+    VAL --> VT["Value of long at t<br/>Vt = St - PV benefits + PV costs - F0/(1+r)^(T-t)"]
+    VAL --> VEXP["At expiration<br/>VT = ST - F0"]

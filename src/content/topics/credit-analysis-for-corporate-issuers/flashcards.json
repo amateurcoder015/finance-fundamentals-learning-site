@@ -1,0 +1,42 @@
+[
+  {
+    "front": "Why does credit analysis focus on the downside, unlike equity analysis?",
+    "back": "A bondholder's payoff is capped at coupons plus principal, so there is no upside from outperformance. The creditor's concern is the probability of default and the loss severity if the issuer fails."
+  },
+  {
+    "front": "What are the four Cs of credit analysis?",
+    "back": "Capacity (ability to pay from cash flow), Collateral (quality and value of assets behind the debt), Covenants (contractual protections and restrictions), Character (quality, strategy and governance of management and its record with creditors)."
+  },
+  {
+    "front": "Affirmative vs negative covenants?",
+    "back": "Affirmative covenants say what the issuer MUST do (pay on time, maintain insurance, provide financial statements). Negative covenants say what it must NOT do or may do only within limits (limit additional debt, dividends, asset sales, liens)."
+  },
+  {
+    "front": "Maintenance vs incurrence covenants?",
+    "back": "Maintenance covenants are tested regularly (e.g. every quarter) against a financial ratio threshold. Incurrence covenants are tested only when the issuer takes a specified action, such as issuing new debt. Maintenance covenants give earlier warning."
+  },
+  {
+    "front": "Define FOCF, DCF and RCF.",
+    "back": "FOCF = CFO - capital expenditures. DCF = FOCF - dividends. RCF = FFO - dividends. CFO = FFO adjusted for working-capital investment; FFO = net income + D&A and other non-cash items."
+  },
+  {
+    "front": "What is the main weakness of EBITDA in credit analysis?",
+    "back": "It ignores capital expenditure, working-capital needs and taxes, which the company must pay in cash. FFO and FOCF are closer to the cash actually available to repay debt."
+  },
+  {
+    "front": "List the main leverage and coverage ratios.",
+    "back": "Leverage: Debt/EBITDA, Net debt/EBITDA, FFO/Debt, FOCF/Debt, RCF/Net debt, Debt/Capital. Coverage: EBITDA/Interest and EBIT/Interest. EBIT coverage is stricter because it deducts depreciation."
+  },
+  {
+    "front": "What is structural subordination?",
+    "back": "In a holding company structure, creditors of the operating subsidiaries are paid first from the subsidiaries' assets; holdco creditors only have a claim on the residual equity value. So holdco debt ranks effectively behind opco debt, even if both are senior unsecured. Subsidiary guarantees can remove it."
+  },
+  {
+    "front": "What is notching?",
+    "back": "Adjusting an issue's rating up or down from the issuer (corporate family) rating to reflect its seniority and security, e.g. senior secured debt rated higher and subordinated debt rated lower, because recovery differs."
+  },
+  {
+    "front": "How does high-yield credit analysis differ from investment-grade analysis?",
+    "back": "High-yield analysis emphasises liquidity (and refinancing risk), covenants, capital structure (structural subordination), recovery analysis and equity-sponsor behaviour, since default risk is much higher. Investment-grade analysis is more about capacity, ratio benchmarking, and spread and ratings-migration risk."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "front": "What is the difference between the price and the value of a forward contract?",
+    "back": "The forward price is the fixed delivery price agreed at initiation, set so the contract has zero value. The value is what the contract is worth later; it changes with the spot price and interest rates. Value is zero at initiation and equals S_T - F0 for the long at expiration."
+  },
+  {
+    "front": "Forward price for an asset with no income or costs?",
+    "back": "F0(T) = S0(1+r)^T, or S0 e^(rT) with continuous compounding. It is the spot price financed at the risk-free rate until delivery."
+  },
+  {
+    "front": "How do dividends, coupons and storage costs affect the forward price?",
+    "back": "Benefits the long forgoes (dividends, coupons, convenience yield) lower the price; costs (storage, insurance) raise it. F0 = (S0 - PV(benefits) + PV(costs))(1+r)^T. With a continuous yield q: F0 = S0 e^((r-q)T)."
+  },
+  {
+    "front": "Describe cash-and-carry and reverse cash-and-carry arbitrage.",
+    "back": "Cash-and-carry (forward overpriced): borrow, buy the asset, sell the forward, deliver at T and repay. Reverse cash-and-carry (forward underpriced): short sell the asset, invest proceeds at the risk-free rate, buy the forward."
+  },
+  {
+    "front": "Formula for the value of a long forward at time t before expiry?",
+    "back": "V_t = [S_t - PV_t(benefits) + PV_t(costs)] - F0 / (1+r)^(T-t). Equivalently the PV of (F_t - F0). At expiry, V_T = S_T - F0."
+  },
+  {
+    "front": "How is a bond forward priced?",
+    "back": "F0 = (B0 - PV(coupons))(1+r)^T, using the bond's full price (clean price plus accrued interest). Coupons paid before delivery belong to the spot holder, so they lower the forward price. Quoted forward prices are clean, so accrued interest at delivery is subtracted."
+  },
+  {
+    "front": "State covered interest rate parity for a currency forward.",
+    "back": "F0 = S0 x (1+r_P)^T / (1+r_B)^T, with the exchange rate quoted as units of price currency per one unit of base currency. The base currency trades at a forward premium if its interest rate is lower than the price currency's."
+  },
+  {
+    "front": "What are forward points?",
+    "back": "The difference between the forward exchange rate and the spot rate (F0 - S0), usually quoted in pips. Positive points mean the base currency is at a forward premium."
+  },
+  {
+    "front": "How is the fixed rate of a 3 x 6 FRA determined?",
+    "back": "It is the implied forward rate from spot rates: (1 + R6 x 180/360) = (1 + R3 x 90/360)(1 + f x 90/360). The long pays fixed and receives floating, so gains when rates rise."
+  },
+  {
+    "front": "Why is the FRA settlement amount divided by (1 + L x d/360)?",
+    "back": "The interest on the notional would be paid at the end of the period, but the FRA settles at the start. Dividing by 1 + L x d/360 discounts the payoff back to the settlement date."
+  }
+]

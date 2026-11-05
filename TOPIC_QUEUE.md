@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Credit Analysis for Corporate Issuers | Fixed Income | advanced
-- [ ] Pricing and Valuation of Forward Contracts | Derivatives | advanced
 - [ ] Fixed-Income Securitization | Fixed Income | intermediate
 - [ ] Pricing and Valuation of Interest Rate and Other Swaps | Derivatives | advanced
 - [ ] Asset-Backed Security Instrument and Market Features | Fixed Income | advanced
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Capital Flows and the FX Market | Economics | intermediate | 2026-11-03
 - [x] Credit Analysis for Government Issuers | Fixed Income | intermediate | 2026-11-04
 - [x] Exchange Rate Calculations | Economics | intermediate | 2026-11-04
+- [x] Credit Analysis for Corporate Issuers | Fixed Income | advanced | 2026-11-05
+- [x] Pricing and Valuation of Forward Contracts | Derivatives | advanced | 2026-11-05

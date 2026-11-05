@@ -1,0 +1,27 @@
+graph TD
+    CA["Credit Analysis<br/>for Corporate Issuers"] --> FOUR["The Four Cs"]
+    CA --> RAT["Financial Ratios"]
+    CA --> STR["Capital Structure<br/>and Recovery"]
+    CA --> TYPE["Issuer Type"]
+
+    FOUR --> CAP["Capacity<br/>(Ability to pay from cash flow)"]
+    FOUR --> COL["Collateral<br/>(Asset quality and value)"]
+    FOUR --> COV["Covenants<br/>(Contract protections)"]
+    FOUR --> CHA["Character<br/>(Management and governance)"]
+
+    CAP --> IND["Industry structure<br/>(Porter's five forces)"]
+    CAP --> FUN["Industry and company<br/>fundamentals (cyclicality)"]
+
+    COV --> AFF["Affirmative<br/>(What issuer must do)"]
+    COV --> NEG["Negative<br/>(What issuer must not do)"]
+
+    RAT --> CF["Cash flow: EBITDA, FFO,<br/>FOCF, DCF, RCF"]
+    RAT --> LEV["Leverage: Debt/EBITDA,<br/>FFO/Debt, Debt/Capital"]
+    RAT --> COVR["Coverage: EBITDA/Interest,<br/>EBIT/Interest"]
+
+    STR --> PRI["Priority of claims<br/>(Secured, senior, subordinated, equity)"]
+    STR --> NOT["Issue ratings notched<br/>from issuer rating"]
+    STR --> SS["Structural subordination<br/>(Holdco behind opco creditors)"]
+
+    TYPE --> IG["Investment grade<br/>(Capacity, spread and migration risk)"]
+    TYPE --> HY["High yield<br/>(Liquidity, covenants, recovery)"]

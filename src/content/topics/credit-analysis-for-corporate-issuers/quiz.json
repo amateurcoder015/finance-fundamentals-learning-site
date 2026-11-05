@@ -1,0 +1,79 @@
+[
+  {
+    "question": "A credit analyst reviews a bond indenture and finds a clause restricting the issuer from paying dividends above a set level. Which of the four Cs does this clause address, and what type of provision is it?",
+    "options": [
+      "Capacity; an affirmative covenant",
+      "Collateral; a negative pledge",
+      "Covenants; a negative covenant",
+      "Character; an affirmative covenant"
+    ],
+    "correctIndex": 2,
+    "explanation": "Contractual restrictions on issuer behaviour are covenants. A limit on dividends tells the issuer what it must NOT do, so it is a negative covenant. Affirmative covenants require actions such as paying obligations on time or delivering financial statements."
+  },
+  {
+    "question": "An issuer has total debt of 840 million, cash of 90 million and EBITDA of 300 million. What is its net debt/EBITDA ratio?",
+    "options": [
+      "2.50x",
+      "2.80x",
+      "3.10x",
+      "0.36x"
+    ],
+    "correctIndex": 0,
+    "explanation": "Net debt = 840 - 90 = 750. Net debt/EBITDA = 750 / 300 = 2.50x. The 2.80x figure ignores cash (this is gross debt/EBITDA)."
+  },
+  {
+    "question": "A company reports funds from operations of 310 million, an increase in working capital of 30 million, capital expenditures of 190 million and dividends of 45 million. What is its discretionary cash flow (DCF)?",
+    "options": [
+      "35 million",
+      "45 million",
+      "90 million",
+      "120 million"
+    ],
+    "correctIndex": 1,
+    "explanation": "CFO = FFO - increase in working capital = 310 - 30 = 280. FOCF = CFO - capex = 280 - 190 = 90. DCF = FOCF - dividends = 90 - 45 = 45. The 90 figure is FOCF before dividends."
+  },
+  {
+    "question": "Which statement about structural subordination is most accurate?",
+    "options": [
+      "It means subordinated bonds always rank behind secured bonds of the same issuer.",
+      "Creditors of a holding company have only a residual claim on subsidiary assets after subsidiary creditors are paid, so holdco debt is effectively subordinated to opco debt.",
+      "It occurs when a subsidiary guarantees the parent's bonds, which pushes the parent's creditors behind everyone else.",
+      "It refers to covenants that prevent a company from issuing additional senior debt."
+    ],
+    "correctIndex": 1,
+    "explanation": "In a holding company structure the operating assets sit in subsidiaries. Subsidiary creditors have a direct claim on those assets; holdco creditors only have a claim on what remains for the equity. A subsidiary guarantee would reduce, not create, structural subordination."
+  },
+  {
+    "question": "Compared with investment-grade credit analysis, high-yield credit analysis typically places greater emphasis on:",
+    "options": [
+      "benchmarking ratios against industry peers only",
+      "ignoring covenant packages because they are rarely enforced",
+      "the issuer's equity valuation multiples rather than its cash flows",
+      "liquidity, covenants, capital structure and recovery analysis"
+    ],
+    "correctIndex": 3,
+    "explanation": "High-yield issuers have a materially higher chance of default, so analysts concentrate on near-term liquidity, the covenants that protect creditors, the layers of debt in the capital structure, and the likely recovery if default occurs."
+  },
+  {
+    "question": "A firm has EBIT of 220 million, depreciation and amortization of 150 million and interest expense of 55 million. What are its EBITDA/interest and EBIT/interest coverage ratios?",
+    "options": [
+      "6.73x and 4.00x",
+      "4.00x and 6.73x",
+      "6.73x and 2.73x",
+      "5.00x and 4.00x"
+    ],
+    "correctIndex": 0,
+    "explanation": "EBITDA = EBIT + D&A = 220 + 150 = 370. EBITDA/interest = 370 / 55 = 6.73x. EBIT/interest = 220 / 55 = 4.00x. EBIT coverage is always lower than EBITDA coverage when D&A is positive."
+  },
+  {
+    "question": "Why do analysts generally require lower leverage from an issuer in a highly cyclical industry than from an issuer in a stable industry for the same credit rating?",
+    "options": [
+      "Cyclical issuers cannot issue secured debt",
+      "Rating agencies ignore cash flow for cyclical industries",
+      "Cash flow falls sharply in downturns, so the same debt load is much harder to service in a bad year",
+      "Cyclical issuers have no covenants"
+    ],
+    "correctIndex": 2,
+    "explanation": "Creditors care about the downside. In cyclical industries EBITDA and cash flow can drop significantly in a recession, causing leverage ratios to spike and coverage to fall, so a lower starting leverage is needed to maintain the same capacity to pay."
+  }
+]

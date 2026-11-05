@@ -1,0 +1,216 @@
+---
+title: "Pricing and Valuation of Forward Contracts"
+description: "How forward prices are set by no-arbitrage (carry arbitrage), how forward contracts are valued during their life and at expiration, and worked pricing of equity, fixed-income, currency and forward rate agreement (FRA) contracts."
+category: "Derivatives"
+difficulty: "advanced"
+dateAdded: "2026-11-05"
+tags: ["forwards", "no-arbitrage", "carry-arbitrage", "forward-valuation", "fra", "covered-interest-parity"]
+---
+
+# Pricing and Valuation of Forward Contracts
+
+A **forward contract** is an over-the-counter agreement to buy or sell an underlying asset at a fixed price (the **forward price**) on a future date. Two questions are easy to confuse:
+
+- **Pricing**: what forward price makes the contract worth **zero** to both sides when it is initiated?
+- **Valuation**: what is an existing contract **worth** to each party at a later date, after the underlying price and interest rates have moved?
+
+The forward price is set once, at initiation, and does not change. The **value** of the contract changes every day. This chapter derives both using the **no-arbitrage** principle.
+
+---
+
+## 1. Notation and Principles
+
+| Symbol | Meaning |
+| --- | --- |
+| $S_0$, $S_t$, $S_T$ | Spot price of the underlying at time 0, $t$ and expiration $T$ |
+| $F_0(T)$ | Forward price agreed at time 0 for delivery at $T$ |
+| $V_t(T)$ | Value of the **long** forward at time $t$ (the short's value is $-V_t(T)$) |
+| $r$ | Risk-free rate for the period (annual, compounded annually unless stated) |
+| $T$ | Time to expiration in years; $T - t$ is the time remaining at $t$ |
+
+The principles behind forward pricing:
+
+1. **Law of one price / no arbitrage**: two positions with identical cash flows must have the same price, otherwise a risk-free profit with no net investment would exist.
+2. **Replication**: a forward can be replicated by buying the underlying with borrowed money and holding it until $T$.
+3. **Assumptions**: no transaction costs, borrowing and lending at the risk-free rate, no default (counterparty) risk, and the ability to short sell. In practice the price lies within a band around the theoretical value that reflects transaction costs.
+
+A forward is a **zero-sum** contract: one party's gain equals the other's loss. It has no upfront payment and, at initiation, a value of **zero**.
+
+---
+
+## 2. Forward Price at Initiation
+
+### 2.1 Underlying with no costs or benefits
+
+Buying the asset today costs $S_0$, financed at $r$. At $T$ the financing has grown to $S_0(1+r)^T$. To avoid arbitrage the forward price must equal that:
+
+$$F_0(T) = S_0(1+r)^T$$
+
+With continuous compounding:
+
+$$F_0(T) = S_0\, e^{rT}$$
+
+If the forward price were **higher**, an arbitrageur would run a **cash-and-carry** trade: borrow $S_0$, buy the asset, sell the forward, deliver the asset at $T$ and repay the loan, keeping $F_0 - S_0(1+r)^T$. If the forward price were **lower**, the arbitrageur would run a **reverse cash-and-carry**: short sell the asset, invest the proceeds at $r$, and buy the forward; at $T$ buy the asset via the forward and close the short, keeping $S_0(1+r)^T - F_0$.
+
+### 2.2 Underlying with benefits and costs
+
+If holding the asset pays **benefits** (dividends, coupons, a convenience yield) the forward buyer does not receive them, so they lower the forward price. **Costs** (storage, insurance) raise it:
+
+$$F_0(T) = \big(S_0 - PV_0(\text{benefits}) + PV_0(\text{costs})\big)(1+r)^T$$
+
+Equivalently $F_0(T) = S_0(1+r)^T - FV(\text{benefits}) + FV(\text{costs})$.
+
+With a continuous dividend yield $q$:
+
+$$F_0(T) = S_0\, e^{(r-q)T}$$
+
+### 2.3 Equity forward: worked example
+
+A stock trades at 100. A 6-month forward is to be priced. The risk-free rate is 4% per year (annual compounding). The stock pays a dividend of 1.00 in 2 months and another of 1.00 in 5 months.
+
+**Step 1: present value of the dividends.**
+
+$$PV_0(D) = \frac{1.00}{1.04^{2/12}} + \frac{1.00}{1.04^{5/12}} = 0.99348 + 0.98379 = 1.97727$$
+
+**Step 2: forward price.**
+
+$$F_0(0.5) = (100 - 1.97727)\times 1.04^{0.5} = 98.02273 \times 1.019804 = 99.964$$
+
+Without dividends the forward price would be $100 \times 1.04^{0.5} = 101.980$. The dividends the forward buyer does not receive reduce the price by about 2.02.
+
+---
+
+## 3. Valuing a Forward During Its Life
+
+At initiation $V_0 = 0$. Afterwards, the value to the long is the difference between what the underlying is now worth (net of benefits and costs still to come) and the present value of the price the long has agreed to pay:
+
+$$V_t(T) = \big[S_t - PV_t(\text{benefits}) + PV_t(\text{costs})\big] - \frac{F_0(T)}{(1+r)^{T-t}}$$
+
+Another way to see it: $V_t(T) = \dfrac{F_t(T) - F_0(T)}{(1+r)^{T-t}}$, i.e. the present value of the difference between the **new** forward price for the remaining term and the original price.
+
+At **expiration**, $t = T$, nothing is left to discount:
+
+$$V_T(T) = S_T - F_0(T)$$
+
+The long gains if the spot price at expiry exceeds the forward price, and loses if it is lower; the short's value is the negative.
+
+### Worked example: valuing the equity forward
+
+Three months later, the stock trades at 105. The 2-month dividend has already been paid. Remaining: the 1.00 dividend in 2 more months (5 months from initiation minus 3 months elapsed), and 3 months to expiry. The risk-free rate is still 4%.
+
+$$PV_t(D) = \frac{1.00}{1.04^{2/12}} = 0.99348$$
+
+$$PV\ \text{of forward price} = \frac{99.964}{1.04^{0.25}} = \frac{99.964}{1.009853} = 98.989$$
+
+$$V_t = 105 - 0.99348 - 98.989 = 5.018$$
+
+The long forward is worth about **5.02** (the short's value is -5.02), because the stock has risen since the price was fixed.
+
+---
+
+## 4. Fixed-Income Forwards
+
+A forward on a bond works like an equity forward in which the **coupons** are the benefits. Use the bond's **full price** (clean price plus accrued interest) when applying the formula:
+
+$$F_0(T) = \big(B_0 - PV_0(\text{coupons})\big)(1+r)^T$$
+
+**Worked example.** A bond has a full price of 102.50 and pays a coupon of 3.00 in 3 months. A 6-month forward is priced with a risk-free rate of 3%.
+
+$$PV_0(C) = \frac{3.00}{1.03^{0.25}} = 2.9779$$
+
+$$F_0(0.5) = (102.50 - 2.9779)\times 1.03^{0.5} = 99.5221 \times 1.014889 = 101.004$$
+
+This forward price is a full price; the quoted (clean) forward price would subtract the accrued interest at the delivery date. The coupon the long does not receive lowers the forward price from $102.50 \times 1.03^{0.5} = 104.03$ to 101.00.
+
+---
+
+## 5. Currency Forwards (Covered Interest Rate Parity)
+
+Quote exchange rates as the **price of one unit of the base currency in units of the price currency**. Let $r_P$ be the interest rate in the price currency and $r_B$ the interest rate in the base currency. A currency forward has no storage cost, but holding the base currency earns interest $r_B$, which acts as a benefit:
+
+$$F_0(T) = S_0\,\frac{(1+r_P)^T}{(1+r_B)^T}$$
+
+With continuous compounding: $F_0 = S_0\, e^{(r_P - r_B)T}$.
+
+This is **covered interest rate parity**. The base currency trades at a **forward premium** when its interest rate is **lower** than the price currency's (and at a discount when it is higher). The forward price compensates for the interest differential, so a hedged investor earns the same return in either currency and cannot earn a risk-free profit by moving funds abroad.
+
+**Worked example.** EUR/USD spot is 1.0800 (1 EUR = 1.0800 USD). The USD (price currency) rate is 5% and the EUR (base currency) rate is 3%. The 1-year forward price is:
+
+$$F_0 = 1.0800 \times \frac{1.05}{1.03} = 1.0800 \times 1.019417 = 1.1010$$
+
+**Forward points** $= 1.1010 - 1.0800 = 0.0210$ (210 pips). The EUR trades at a forward **premium** because the EUR interest rate is lower. If instead the market quoted 1.1200, one could borrow 1.0800 USD, convert it to 1 EUR at spot, invest the EUR at 3% to get 1.03 EUR, and sell those EUR forward at 1.1200 for 1.1536 USD. Repaying the USD loan costs $1.0800 \times 1.05 = 1.1340$, so the arbitrage locks in a risk-free profit of 0.0196 USD per EUR of spot notional.
+
+---
+
+## 6. Forward Rate Agreements (FRAs)
+
+A **forward rate agreement** is a forward contract on an interest rate: the two parties agree today on a fixed rate that will be applied to a notional amount over a future period. The **long** (the borrower-side party) **pays fixed and receives floating**, so gains when rates rise.
+
+A "$3 \times 6$" FRA covers a 90-day period beginning in 3 months and ending in 6 months. The reference rate is a market rate quoted on an add-on basis with an actual/360 day count (for example Term SOFR). The FRA settles at the **start** of the period (3 months), so the payoff is discounted for the interest that would have accrued.
+
+### 6.1 FRA fixed rate at initiation
+
+The FRA rate is the **implied forward rate** that makes investing for the long period equal to investing for the short period and then rolling over. Using $R_3$, $R_6$ as the spot rates for 90 and 180 days:
+
+$$\left(1 + R_6\frac{180}{360}\right) = \left(1 + R_3\frac{90}{360}\right)\left(1 + f\frac{90}{360}\right)$$
+
+**Example.** $R_3 = 2.00\%$ and $R_6 = 2.40\%$:
+
+$$1 + f \times 0.25 = \frac{1.012}{1.005} = 1.0069652 \;\Rightarrow\; f = 0.0069652 \times 4 = 2.786\%$$
+
+The FRA fixed rate is **2.786%**.
+
+### 6.2 Settlement and valuation
+
+At the FRA's start date $h$, with floating rate $L$ and fixed rate $K$, the long receives (per notional $N$, period $d$ days):
+
+$$\text{Settlement at start} = \frac{N\,(L - K)\,\dfrac{d}{360}}{1 + L\,\dfrac{d}{360}}$$
+
+The division by $1 + L\,d/360$ discounts the payment, which would have been paid at the end of the period, back to its start.
+
+**Valuation before the start date.** After some time passes, calculate the **new** FRA rate $f'$ for the remaining period (from the current term structure), form the difference with the original rate $K$, and discount to today at the spot rate to the FRA start:
+
+$$V = \frac{N\,(f' - K)\,\dfrac{d}{360}}{\left(1 + f'\dfrac{d}{360}\right)\left(1 + R_{t,h}\dfrac{h-t}{360}\right)}$$
+
+**Worked example.** One month (30 days) after the 3 x 6 FRA above (fixed 2.786%, notional 10,000,000, d = 90) was entered, the FRA start is 60 days away and its end is 150 days away. New spot rates: 60-day = 2.60%, 150-day = 3.10%.
+
+**Step 1: new forward rate for the remaining 90 days.**
+
+$$1 + f' \times 0.25 = \frac{1 + 0.031 \times 150/360}{1 + 0.026 \times 60/360} = \frac{1.0129167}{1.0043333} = 1.0085460$$
+
+$$f' = 0.0085460 \times 4 = 3.418\%$$
+
+**Step 2: settlement-equivalent at the start date.**
+
+$$\frac{10{,}000{,}000 \times (0.0341852 - 0.0278607) \times 0.25}{1 + 0.0341852 \times 0.25} = \frac{15{,}811}{1.008546} \approx 15{,}677$$
+
+**Step 3: discount 60 days at 2.60%.**
+
+$$V = \frac{15{,}677}{1 + 0.026 \times 60/360} = \frac{15{,}677}{1.004333} \approx 15{,}610$$
+
+The long (who locked in 2.786%) holds an FRA worth about **15,610** because rates have risen; the short owes that amount.
+
+---
+
+## 7. Summary of Forward Prices
+
+| Underlying | Forward price formula | What lowers or raises it |
+| --- | --- | --- |
+| No cash flows | $S_0(1+r)^T$ | Higher $r$ or longer $T$ raises it |
+| Equity with dividends | $(S_0 - PV(D))(1+r)^T$ | Dividends lower it |
+| Bond with coupons | $(B_0 - PV(C))(1+r)^T$ | Coupons lower it (use full price) |
+| Currency (price/base) | $S_0\,(1+r_P)^T/(1+r_B)^T$ | Higher base-currency rate lowers it |
+| Commodity | $(S_0 + PV(\text{costs}) - PV(\text{convenience}))(1+r)^T$ | Storage raises it, convenience yield lowers it |
+| FRA | Implied forward rate from the spot curve | Steeper curve means higher rate |
+
+---
+
+## Key takeaways
+
+- The **forward price** is fixed at initiation so that the contract's value is **zero**; the **value** then changes with the spot price and interest rates.
+- No-arbitrage pricing: $F_0 = S_0(1+r)^T$; benefits (dividends, coupons) **lower** it and costs (storage) **raise** it; with a continuous yield, $F_0 = S_0e^{(r-q)T}$.
+- A price above the model value allows a **cash-and-carry** arbitrage; a price below allows a **reverse cash-and-carry**.
+- Value of the long during the life: $V_t = S_t - PV(\text{benefits}) + PV(\text{costs}) - F_0/(1+r)^{T-t}$; at expiration $V_T = S_T - F_0$.
+- Fixed-income forwards use the full price and subtract the PV of coupons; the quoted forward price is clean.
+- Currency forwards follow **covered interest rate parity**: $F_0 = S_0(1+r_P)^T/(1+r_B)^T$; the base currency trades at a forward premium when its interest rate is lower than the price currency's.
+- An **FRA** rate is the implied forward rate from spot rates; the long pays fixed and profits when rates rise, and settlement is discounted because it occurs at the start of the period.
