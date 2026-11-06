@@ -1,0 +1,264 @@
+---
+title: "Pricing and Valuation of Interest Rate and Other Swaps"
+description: "How the fixed rate on a plain-vanilla interest rate swap is set from the discount-factor curve, how an existing swap is valued during its life, and how equity and currency swaps are priced and valued."
+category: "Derivatives"
+difficulty: "advanced"
+dateAdded: "2026-11-06"
+tags: ["swaps", "interest-rate-swap", "swap-rate", "discount-factors", "currency-swap", "equity-swap"]
+---
+
+# Pricing and Valuation of Interest Rate and Other Swaps
+
+A **swap** is an over-the-counter contract in which two parties agree to exchange a series of cash flows on specified dates. In a **plain-vanilla interest rate swap** one party pays a **fixed rate** and the other pays a **floating rate** (a reference rate such as SOFR) on a **notional principal** that is never exchanged. Only the net interest is paid on each date.
+
+As with forwards, there are two questions:
+
+- **Pricing**: what fixed rate (the **swap rate**) makes the swap worth **zero** at initiation?
+- **Valuation**: what is the swap worth to each party later, after interest rates have moved?
+
+---
+
+## 1. Swaps as Portfolios of Forwards and Bonds
+
+A swap can be viewed in two equivalent ways.
+
+1. **A series of forward rate agreements (FRAs)**, one for each period, all with the same fixed rate. The swap's fixed rate is a blend of the implied forward rates, so it is **not** equal to each individual forward rate. Early periods are in-the-money for one side and late periods for the other, with the total at zero.
+2. **A long position in one bond and a short position in another**. The **fixed-rate payer** is like someone who has **issued a fixed-rate bond** and bought a floating-rate note (FRN) with the same notional. The **fixed-rate receiver** is long the fixed-rate bond and short the FRN.
+
+Because the notional is the same at both ends, the principals cancel, leaving only the interest flows.
+
+### Terminology
+
+| Term | Meaning |
+| --- | --- |
+| **Pay-fixed / payer swap** | Pays fixed, receives floating; gains when rates rise |
+| **Receive-fixed / receiver swap** | Receives fixed, pays floating; gains when rates fall |
+| **Swap rate** ($c$ or $S$) | The fixed rate that gives the swap a value of zero at initiation |
+| **Reset date** | Date on which the floating rate for the next period is set, usually in advance |
+| **Settlement** | Net payment at the end of the period (the floating rate set at the start is paid at the end) |
+| **Swap spread** | Swap rate minus the yield on a government bond of the same maturity |
+
+---
+
+## 2. Discount Factors
+
+All swap pricing is based on **discount factors** $Z_i$ (the present value of 1 paid at time $t_i$). From a spot rate $r_i$ quoted on an add-on, actual/360 basis for $d_i$ days:
+
+$$Z_i = \frac{1}{1 + r_i \dfrac{d_i}{360}}$$
+
+The **implied forward rate** between $t_{i-1}$ and $t_i$ follows from discount factors:
+
+$$f_i = \left(\frac{Z_{i-1}}{Z_i} - 1\right)\frac{360}{\text{days in period}}, \qquad Z_0 = 1$$
+
+---
+
+## 3. The Fixed Rate on a Par Swap
+
+### 3.1 Logic
+
+At initiation, the present value of the fixed leg must equal the present value of the floating leg. The floating leg has a special property: just after any reset date, the **floating-rate leg (including notional at the end) is worth par**. Hence, with the notional added at the end to both legs, the PV of the floating payments (excluding notional) equals $1 - Z_n$ per unit of notional.
+
+For a swap with $n$ periods, where the fixed payment each period is $c \times \dfrac{\text{days}}{360}$ per unit of notional:
+
+$$\text{PV(fixed)} = c\sum_{i=1}^{n} \frac{\text{days}_i}{360}\, Z_i, \qquad \text{PV(floating)} = 1 - Z_n$$
+
+Setting them equal gives the **swap rate**:
+
+$$c = \frac{1 - Z_n}{\sum_{i=1}^{n} \dfrac{\text{days}_i}{360}\, Z_i}$$
+
+With equal periods, the fixed rate **per period** is $\dfrac{1 - Z_n}{\sum Z_i}$ and the annualized rate multiplies by the number of periods per year. The swap rate is also the **par rate** of a bond with the same maturity and payment dates.
+
+### 3.2 Worked example: pricing a 1-year quarterly swap
+
+Spot rates (annualized, actual/360 add-on; each period is 90 days):
+
+| Period end | Days | Spot rate | Discount factor $Z_i$ |
+| --- | --- | --- | --- |
+| $t_1$ | 90 | 2.00% | $1/(1+0.02\times 0.25) = 0.995025$ |
+| $t_2$ | 180 | 2.20% | $1/(1+0.022\times 0.5) = 0.989120$ |
+| $t_3$ | 270 | 2.40% | $1/(1+0.024\times 0.75) = 0.982318$ |
+| $t_4$ | 360 | 2.60% | $1/(1+0.026\times 1.0) = 0.974659$ |
+
+**Step 1: sum of discount factors.**
+
+$$\sum Z_i = 0.995025 + 0.989120 + 0.982318 + 0.974659 = 3.941122$$
+
+**Step 2: floating-leg value per unit of notional.**
+
+$$1 - Z_4 = 1 - 0.974659 = 0.025341$$
+
+**Step 3: fixed rate per quarter.**
+
+$$\frac{0.025341}{3.941122} = 0.0064299 = 0.64299\%\ \text{per quarter}$$
+
+**Step 4: annualize.**
+
+$$c = 0.0064299 \times 4 = 2.572\%$$
+
+The swap rate is **2.572%**. Note that it is higher than the first forward rate and lower than the last. The implied forward rates are:
+
+| Period | Forward rate $f_i$ |
+| --- | --- |
+| 1 | $(1/0.995025 - 1)\times 4 = 2.000\%$ |
+| 2 | $(0.995025/0.989120 - 1)\times 4 = 2.388\%$ |
+| 3 | $(0.989120/0.982318 - 1)\times 4 = 2.770\%$ |
+| 4 | $(0.982318/0.974659 - 1)\times 4 = 3.143\%$ |
+
+The swap rate 2.572% is a weighted average of these four forward rates, with the weights based on the discount factors.
+
+On a notional of 10,000,000 the fixed payment each quarter is $10{,}000{,}000 \times 0.0064299 = 64{,}299$. The floating payment equals $10{,}000{,}000 \times L \times 90/360$ where $L$ is the rate set at the start of the quarter.
+
+---
+
+## 4. Valuing an Existing Swap
+
+After initiation the fixed rate $c$ is locked, but market rates move, so discount factors and forward rates change. The value of the swap to the **fixed-rate payer** is:
+
+$$V_{\text{payer}} = PV(\text{floating leg}) - PV(\text{fixed leg})$$
+
+and the receiver's value is the negative.
+
+### 4.1 Valuation just after a reset date
+
+Just after a reset date (and the corresponding payment) the floating leg is again worth par, so only the remaining discount factors are needed:
+
+$$V_{\text{payer}} = N\Big[(1 - Z_n^{\text{new}}) - c_{\text{per period}}\sum_{i} Z_i^{\text{new}}\Big]$$
+
+An equivalent form uses the **new market swap rate** $c_{\text{new}}$ for the remaining term:
+
+$$V_{\text{payer}} = N\,(c_{\text{new}} - c)\sum_i \frac{\text{days}_i}{360}\,Z_i^{\text{new}}$$
+
+The payer gains when the market swap rate rises above the contracted rate (like a forward contract whose price rose).
+
+### 4.2 Worked example: valuing the swap after 180 days
+
+Continue the swap above (notional 10,000,000, fixed rate 0.64299% per quarter). Two payments have been made; two remain (days 270 and 360 from inception, i.e. 90 and 180 days from now). Just after the second reset, new spot rates are:
+
+| Remaining | Days from now | Spot rate | Discount factor |
+| --- | --- | --- | --- |
+| Payment 3 | 90 | 3.00% | $1/(1+0.03\times 0.25) = 0.992556$ |
+| Payment 4 | 180 | 3.20% | $1/(1+0.032\times 0.5) = 0.984252$ |
+
+**Step 1: PV of the fixed leg.**
+
+$$10{,}000{,}000 \times 0.0064299 \times (0.992556 + 0.984252) = 64{,}299 \times 1.976808 = 127{,}107$$
+
+**Step 2: PV of the floating leg (par minus final discounted notional).**
+
+$$10{,}000{,}000 \times (1 - 0.984252) = 157{,}480$$
+
+**Step 3: value to the payer.**
+
+$$V_{\text{payer}} = 157{,}480 - 127{,}107 = 30{,}373$$
+
+**Check using the new swap rate.** The new par rate is $(1 - 0.984252)/1.976808 = 0.0079665$ per quarter, i.e. $3.187\%$ annualized. Then
+
+$$10{,}000{,}000 \times (0.0079665 - 0.0064299) \times 1.976808 = 30{,}373$$
+
+The pay-fixed party holds a swap worth **+30,373** (rates rose, so paying 2.572% beats the current 3.187%); the receive-fixed party is at **-30,373**.
+
+### 4.3 Valuation between reset dates
+
+Between resets the floating leg is not at par. Its value just before the next payment is the next payment's amount plus par, discounted: with the floating rate $L$ already set for the current period of $d$ days, and $Z$ the discount factor to the next payment date,
+
+$$PV(\text{floating leg incl. notional}) = N\left(1 + L\frac{d}{360}\right)Z_{\text{next}}$$
+
+The fixed leg is the PV of remaining fixed payments plus the notional (each at the new discount factors). The swap's value is the difference.
+
+### 4.4 Credit risk
+
+At initiation neither party has an exposure. Afterwards the party with a **positive value** has **credit exposure** to the counterparty (the amount it would lose on default). Only the net amount, not the notional, is at risk.
+
+---
+
+## 5. Equity Swaps
+
+In an **equity swap** one party pays the return on a stock or index and the other pays a fixed rate, a floating rate, or the return on another equity. A **total return swap** includes dividends and price change.
+
+Payments each period for the party **receiving the equity return**:
+
+$$\text{Equity payment} = N\left(\frac{S_t}{S_{t-1}} - 1\right)$$
+
+(plus dividends in a total return swap). If the return is negative, the receiver of the equity return **pays** the amount.
+
+### 5.1 Worked example: equity vs. fixed
+
+A fund receives the return on an index and pays the 0.64299% quarterly fixed rate on a notional of 10,000,000. The index moves from 4,000 to 4,120 over the quarter.
+
+$$\text{Equity return} = \frac{4{,}120}{4{,}000} - 1 = 3.00\%,\qquad \text{Equity payment} = 300{,}000$$
+
+$$\text{Fixed payment} = 64{,}299$$
+
+$$\text{Net received by the fund} = 300{,}000 - 64{,}299 = 235{,}701$$
+
+If the index had fallen to 3,900, the equity return is $-2.50\%$ and the fund pays $250{,}000 + 64{,}299 = 314{,}299$.
+
+### 5.2 Pricing and valuation
+
+- **Pay-fixed / receive-equity**: the fixed rate is set exactly like a plain-vanilla swap fixed rate (Section 3), because just after a reset the equity leg also has a value equal to the notional (an investment in the index of value $N$ restarts at each reset).
+- **Valuation**: the equity leg is worth $N \times S_t / S_{\text{last reset}}$ per unit at time $t$ (adding dividends received), while the fixed leg is valued like a bond. The value to the equity receiver is $V = N\,\dfrac{S_t}{S_0} - PV(\text{fixed payments and notional})$.
+- An **equity vs. equity** swap has no fixed rate; the value depends only on the relative performance of the two equities.
+
+---
+
+## 6. Currency Swaps
+
+In a **currency swap** two parties exchange principal and interest in **two different currencies**. Unlike interest rate swaps, **notional principal is exchanged** at the start and at maturity (at the same initial exchange rate), because the amounts are in different currencies. The four types are fixed-for-fixed, fixed-for-floating, floating-for-fixed and floating-for-floating.
+
+### 6.1 Pricing: one fixed rate per currency
+
+For each currency, the fixed rate is derived from **that currency's own** discount factors using the same swap-rate formula (Section 3). Each leg is a par bond in its own currency, so both legs start with equal value after conversion at the spot exchange rate.
+
+**Worked example.** A 2-year annual-pay fixed-for-fixed swap between USD and EUR. Spot exchange rate $1.10$ USD per EUR. EUR notional 10,000,000, USD notional 11,000,000.
+
+| | 1-year spot | 2-year spot | $Z_1$ | $Z_2$ |
+| --- | --- | --- | --- | --- |
+| USD | 3.00% | 4.00% | $1/1.03 = 0.970874$ | $1/1.04^2 = 0.924556$ |
+| EUR | 1.00% | 1.50% | $1/1.01 = 0.990099$ | $1/1.015^2 = 0.970662$ |
+
+$$c_{USD} = \frac{1 - 0.924556}{0.970874 + 0.924556} = \frac{0.075444}{1.895430} = 3.980\%$$
+
+$$c_{EUR} = \frac{1 - 0.970662}{0.990099 + 0.970662} = \frac{0.029338}{1.960761} = 1.496\%$$
+
+The USD-fixed payments are $11{,}000{,}000 \times 3.980\% = 437{,}833$ per year; the EUR-fixed payments are $10{,}000{,}000\times 1.496\% = 149{,}627$ per year. At the end, 11,000,000 USD is exchanged for 10,000,000 EUR.
+
+### 6.2 Valuation after initiation
+
+The value in USD is the PV of the USD cash flows minus the PV of the EUR cash flows converted at the **current spot rate**.
+
+**Worked example.** One year later (just after the first payment) the remaining flows are one final payment. New 1-year rates: USD 3.50%, EUR 1.20%; spot exchange rate 1.15 USD per EUR. For the party **receiving USD fixed and paying EUR fixed**:
+
+$$PV_{USD} = \frac{437{,}833 + 11{,}000{,}000}{1.035} = \frac{11{,}437{,}833}{1.035} = 11{,}051{,}046$$
+
+$$PV_{EUR} = \frac{149{,}627 + 10{,}000{,}000}{1.012} = \frac{10{,}149{,}627}{1.012} = 10{,}029{,}276\ \text{EUR}$$
+
+$$PV_{EUR\ in\ USD} = 10{,}029{,}276 \times 1.15 = 11{,}533{,}667$$
+
+$$V = 11{,}051{,}046 - 11{,}533{,}667 = -482{,}621\ \text{USD}$$
+
+The USD receiver has a **negative** value of about 482,621 USD because the EUR it owes has appreciated against the dollar (1.10 to 1.15). The counterparty holds the positive value.
+
+---
+
+## 7. Summary
+
+| Item | Key relation |
+| --- | --- |
+| Discount factor | $Z_i = 1/(1 + r_i\,d_i/360)$ |
+| Implied forward rate | $f_i = (Z_{i-1}/Z_i - 1)\times 360/\text{days}$ |
+| Par swap rate | $c = (1 - Z_n)/\sum (\text{days}_i/360)Z_i$ |
+| Value of a payer swap | PV(floating) $-$ PV(fixed) $= N(c_{\text{new}} - c)\sum(\text{days}_i/360)Z_i^{\text{new}}$ at a reset date |
+| Floating leg just after reset | Worth par (value $N$ including notional) |
+| Equity swap | Equity leg is worth $N\,S_t/S_0$; fixed rate is set like an interest rate swap |
+| Currency swap | One swap rate per currency; notional exchanged at start and end |
+
+---
+
+## Key takeaways
+
+- A plain-vanilla swap is equivalent to a **series of FRAs** with one fixed rate, or to a **long fixed-rate bond and short floating-rate note** (for the receive-fixed side).
+- The **swap rate** makes the swap worth zero: $c = (1 - Z_n)/\sum(\text{days}_i/360)Z_i$. It is a weighted average of the implied forward rates and equals the par yield for the swap's maturity.
+- Just after a reset the **floating leg is worth par**, which makes valuation simple: value to the payer $= N[(1 - Z_n) - c\sum Z_i]$.
+- If market swap rates rise above the contract rate, the **pay-fixed** party gains; if they fall, the **receive-fixed** party gains. Only the net value (not notional) is at credit risk.
+- In an **equity swap**, the equity leg's value tracks $S_t/S_0$; its fixed rate is derived like an interest-rate swap.
+- A **currency swap** exchanges notional at both ends; each currency's fixed rate comes from its own discount curve, and value is the difference of PVs converted at the current spot exchange rate.

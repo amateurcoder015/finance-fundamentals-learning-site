@@ -1,0 +1,90 @@
+[
+  {
+    "question": "In a plain-vanilla interest rate swap, which description of the pay-fixed party is correct?",
+    "options": [
+      "Long a fixed-rate bond and short a floating-rate note",
+      "Short a fixed-rate bond and long a floating-rate note",
+      "Exchanges notional principal with the counterparty at maturity",
+      "Gains when interest rates fall"
+    ],
+    "correctIndex": 1,
+    "explanation": "The fixed-rate payer is economically short a fixed-rate bond (it pays fixed coupons) and long a floating-rate note (it receives floating). It gains when rates rise. Notional principal is not exchanged in an interest rate swap."
+  },
+  {
+    "question": "The 180-day spot rate is 3.00% on an add-on, actual/360 basis. What is the 180-day discount factor?",
+    "options": [
+      "0.97087",
+      "0.98507",
+      "0.98522",
+      "0.97000"
+    ],
+    "correctIndex": 2,
+    "explanation": "Z = 1/(1 + 0.03 x 180/360) = 1/1.015 = 0.98522. 0.97087 comes from ignoring the half-year fraction (1/1.03), and 0.97000 from computing 1 - 0.03."
+  },
+  {
+    "question": "Discount factors for a 1-year quarterly-pay swap are 0.9900, 0.9800, 0.9700 and 0.9600. What is the annualized swap rate?",
+    "options": [
+      "4.00%",
+      "4.10%",
+      "4.20%",
+      "3.90%"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sum of discount factors = 3.9000. Fixed rate per quarter = (1 - 0.9600)/3.9000 = 1.0256%. Annualized = 1.0256% x 4 = 4.10%."
+  },
+  {
+    "question": "Just after a reset date, what is the value (per unit of notional, including notional repaid at the end) of the floating-rate leg of a swap?",
+    "options": [
+      "Par (1.00)",
+      "The discount factor to the next payment date",
+      "Zero",
+      "The swap rate"
+    ],
+    "correctIndex": 0,
+    "explanation": "A floating-rate note that pays the market rate set at the reset date is worth par just after each reset. This is why the floating leg's PV, excluding the final notional, equals 1 - Z_n."
+  },
+  {
+    "question": "A 10 million swap has a contracted fixed rate of 0.64299% per quarter. Two quarterly payments remain and the current discount factors are 0.992556 and 0.984252. Just after a reset, what is the value to the pay-fixed party?",
+    "options": [
+      "127,107",
+      "157,480",
+      "-30,373",
+      "30,373"
+    ],
+    "correctIndex": 3,
+    "explanation": "PV fixed = 10,000,000 x 0.0064299 x (0.992556 + 0.984252) = 127,107. PV floating = 10,000,000 x (1 - 0.984252) = 157,480. Payer value = 157,480 - 127,107 = +30,373, because rates have risen above the contracted level."
+  },
+  {
+    "question": "A fund receives the return on an equity index and pays a fixed rate of 0.50% per quarter on a notional of 20 million. The index rises from 2,500 to 2,575 over the quarter. What is the net payment to the fund?",
+    "options": [
+      "Fund receives 500,000",
+      "Fund receives 600,000",
+      "Fund pays 100,000",
+      "Fund receives 700,000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Equity return = 2,575/2,500 - 1 = 3.0%, so the equity payment is 20,000,000 x 3.0% = 600,000. Fixed payment = 20,000,000 x 0.50% = 100,000. Net received = 500,000."
+  },
+  {
+    "question": "Which statement about a fixed-for-fixed currency swap is correct?",
+    "options": [
+      "Notional principal is never exchanged",
+      "Notional principal is exchanged at initiation and at maturity at the initial exchange rate",
+      "Each leg uses the same discount curve",
+      "Only the net notional difference is exchanged"
+    ],
+    "correctIndex": 1,
+    "explanation": "Because the two legs are in different currencies, notionals are exchanged at the start and re-exchanged at maturity, normally at the same exchange rate. Each currency's fixed rate comes from its own discount curve."
+  },
+  {
+    "question": "The 90-day and 180-day discount factors are 0.995025 and 0.989120. What is the annualized implied forward rate for the second 90-day period?",
+    "options": [
+      "2.00%",
+      "2.39%",
+      "2.77%",
+      "4.78%"
+    ],
+    "correctIndex": 1,
+    "explanation": "f = (0.995025/0.989120 - 1) x 360/90 = 0.005970 x 4 = 2.388%, about 2.39%. The 4.78% option forgets that the period is a quarter and uses 8 instead of 4 as the annualizing factor, and 2.00% is the first-period rate."
+  }
+]

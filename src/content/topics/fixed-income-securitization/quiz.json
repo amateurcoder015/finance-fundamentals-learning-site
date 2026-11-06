@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Which feature of the special purpose entity (SPE) is MOST important in separating investors' risk from the originator's credit risk?",
+    "options": [
+      "It is domiciled in a low-tax jurisdiction",
+      "It is bankruptcy remote because the assets are sold in a true sale",
+      "It guarantees all securities issued",
+      "It services the loans itself"
+    ],
+    "correctIndex": 1,
+    "explanation": "A true sale of the assets to a bankruptcy-remote SPE means the originator's creditors cannot claim the pool if the originator fails, so investors depend on the collateral and structure. Tax domicile and servicing are secondary, and an SPE does not guarantee the securities."
+  },
+  {
+    "question": "A pool of 200 million is financed with a 140 million senior tranche, a 40 million mezzanine tranche and a 20 million equity tranche. Cumulative collateral losses are 50 million with no other enhancement. What loss does the mezzanine tranche suffer?",
+    "options": [
+      "Nothing",
+      "20 million (50% of its principal)",
+      "30 million (75% of its principal)",
+      "40 million (100% of its principal)"
+    ],
+    "correctIndex": 2,
+    "explanation": "The equity tranche absorbs the first 20 million. The remaining 30 million falls on the mezzanine tranche (30/40 = 75%). The senior tranche is untouched because total losses (50) are below the 60 million of subordination."
+  },
+  {
+    "question": "In a sequential-pay structure with Tranches A, B and C, when prepayments on the underlying pool unexpectedly speed up, which statement is MOST accurate?",
+    "options": [
+      "Tranche A receives principal later than expected",
+      "Prepayment risk is eliminated for all tranches",
+      "Principal goes to A first, so A's average life shortens (contraction risk), and later tranches are also affected",
+      "Interest is paid to C first"
+    ],
+    "correctIndex": 2,
+    "explanation": "All principal, including prepayments, goes to Tranche A first, so faster prepayments shorten A's life and also pull forward repayment of B and C. Time tranching redistributes prepayment risk; it does not remove it."
+  },
+  {
+    "question": "A pool of 100 million earns a weighted average coupon of 6.5%. The securities issued pay a weighted average coupon of 4.8% on 100 million, and the servicing fee is 0.4% of the pool. What is the annual excess spread?",
+    "options": [
+      "1.3 million",
+      "1.7 million",
+      "2.1 million",
+      "6.5 million"
+    ],
+    "correctIndex": 0,
+    "explanation": "Excess spread = 6.5 - 4.8 - 0.4 = 1.3 million, or 1.3% of the pool. It is available to absorb losses or to be trapped in a reserve account."
+  },
+  {
+    "question": "Which of the following is an EXTERNAL credit enhancement?",
+    "options": [
+      "Overcollateralization",
+      "A senior-subordinated structure",
+      "A financial guarantee from a monoline insurer",
+      "Excess spread"
+    ],
+    "correctIndex": 2,
+    "explanation": "A guarantee or bond insurance comes from a third party and adds the provider's credit risk. Overcollateralization, subordination and excess spread are all internal because they come from the deal's own structure."
+  },
+  {
+    "question": "Compared with an asset-backed security, a covered bond:",
+    "options": [
+      "Has recourse only to the asset pool",
+      "Has dual recourse and a dynamic cover pool kept on the issuer's balance sheet",
+      "Is issued by a bankruptcy-remote SPE that buys the loans",
+      "Is usually issued in multiple tranches with a static pool"
+    ],
+    "correctIndex": 1,
+    "explanation": "Covered bonds give investors a claim on the cover pool and, if it falls short, on the issuer as a senior unsecured creditor (dual recourse). The issuer must replace non-performing assets, so the pool is dynamic. ABS have recourse only to the static pool through an SPE."
+  },
+  {
+    "question": "A credit-card ABS is in its revolving period. What happens to the principal collected from cardholders?",
+    "options": [
+      "It is passed to senior noteholders immediately",
+      "It is used to buy new receivables, and investors receive only interest",
+      "It is paid to the equity tranche",
+      "It is returned to the servicer as a fee"
+    ],
+    "correctIndex": 1,
+    "explanation": "Credit-card receivables are non-amortizing. During the lockout/revolving period, principal collections are used to purchase new receivables so the pool balance stays level; principal is passed through only in the amortization period, which an early amortization trigger can start early."
+  },
+  {
+    "question": "Why can securitization lower an originator's funding cost?",
+    "options": [
+      "Investors price the securities on the quality of the collateral and structure, which can be better than the originator's own credit",
+      "Regulators require securitized bonds to carry lower coupons",
+      "The SPE is exempt from servicing fees",
+      "Securitized bonds never default"
+    ],
+    "correctIndex": 0,
+    "explanation": "Because the assets are legally separated, investors assess the collateral and structure, so the senior tranches can earn a higher rating than the originator and be funded at a lower yield. The other options are untrue."
+  }
+]

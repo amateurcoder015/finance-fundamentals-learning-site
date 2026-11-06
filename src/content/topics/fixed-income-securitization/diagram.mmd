@@ -1,0 +1,30 @@
+graph TD
+    SELLER["Seller / Originator<br/>(Bank, finance company)"] -->|"1. Sells loan pool<br/>(true sale)"| SPE["Special Purpose Entity (SPE)<br/>Bankruptcy remote"]
+    SPE -->|"2. Cash from investors<br/>funds purchase price"| SELLER
+    BORROWERS["Borrowers<br/>(Mortgages, autos, cards)"] -->|"Loan payments"| SERVICER["Servicer<br/>(Collects & distributes)"]
+    SERVICER --> TRUSTEE["Trustee<br/>(Holds assets, enforces waterfall)"]
+    TRUSTEE --> WF["Priority of Payments (Waterfall)"]
+    SPE -->|"Issues securities"| TR["Tranches"]
+
+    subgraph TRANCHES ["Credit Tranching: losses absorbed bottom-up"]
+        SEN["Senior Tranche<br/>(Paid first, lowest yield)"]
+        MEZ["Mezzanine Tranche"]
+        EQ["Equity / Residual Tranche<br/>(First loss, highest yield)"]
+    end
+
+    TR --> SEN
+    TR --> MEZ
+    TR --> EQ
+    WF --> SEN
+    WF --> MEZ
+    WF --> EQ
+
+    subgraph CE ["Credit Enhancement"]
+        INT["Internal<br/>Subordination • Overcollateralization<br/>Excess spread • Reserve account"]
+        EXT["External<br/>Bond insurance • Guarantees<br/>Letters of credit"]
+    end
+
+    CE -.->|"Protects"| SEN
+
+    SEQ["Time Tranching (Sequential pay)<br/>Principal to A, then B, then C<br/>Redistributes prepayment risk"] -.-> SEN
+    COV["Covered Bond (contrast)<br/>Assets stay on balance sheet<br/>Dual recourse • Dynamic cover pool"] -.-> SELLER

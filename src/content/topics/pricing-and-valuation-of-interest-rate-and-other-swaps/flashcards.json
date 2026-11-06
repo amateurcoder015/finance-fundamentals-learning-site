@@ -1,0 +1,50 @@
+[
+  {
+    "front": "What is the 'swap rate'?",
+    "back": "The fixed rate on a swap that makes its value zero at initiation: PV(fixed leg) = PV(floating leg). It equals the par yield for the swap's maturity."
+  },
+  {
+    "front": "Swap rate formula in terms of discount factors?",
+    "back": "c = (1 - Z_n) / Σ (days_i/360 · Z_i). For equal periods, the rate per period is (1 - Z_n)/ΣZ_i; multiply by periods per year to annualize."
+  },
+  {
+    "front": "Discount factor from a spot rate (add-on, actual/360)?",
+    "back": "Z = 1/(1 + r · d/360), where d is the number of days to the cash flow."
+  },
+  {
+    "front": "Implied forward rate from discount factors?",
+    "back": "f_i = (Z_(i-1)/Z_i - 1) × 360/days in the period, with Z_0 = 1."
+  },
+  {
+    "front": "Two equivalent ways to view a pay-fixed swap?",
+    "back": "(1) A series of FRAs with the same fixed rate. (2) Short a fixed-rate bond and long a floating-rate note of equal notional."
+  },
+  {
+    "front": "Why is the floating leg worth par just after a reset?",
+    "back": "The floating rate is reset to the current market rate, so a floating-rate note then trades at par. Its PV excluding final notional is 1 - Z_n per unit of notional."
+  },
+  {
+    "front": "How do you value an existing swap just after a reset?",
+    "back": "Payer value = N[(1 - Z_n,new) - c·ΣZ_i,new] or N(c_new - c)·Σ(days_i/360)·Z_i,new. The receiver's value is the negative."
+  },
+  {
+    "front": "Who gains when the market swap rate rises above the contracted rate?",
+    "back": "The pay-fixed party: it pays below-market fixed and receives floating. The receive-fixed party gains when rates fall."
+  },
+  {
+    "front": "What is the swap spread?",
+    "back": "The swap rate minus the yield on a government bond of the same maturity, reflecting credit and liquidity premiums."
+  },
+  {
+    "front": "How is an equity swap's equity leg valued?",
+    "back": "Equity payment = N(S_t/S_(t-1) - 1) per period. The equity leg's value is N·S_t/S_0 (plus dividends in a total return swap); the fixed rate is set like an interest rate swap."
+  },
+  {
+    "front": "How does a currency swap differ from an interest rate swap?",
+    "back": "Notional principal is exchanged at inception and maturity (at the initial exchange rate); each currency has its own swap rate; value = PV of one currency's flows minus PV of the other's converted at the spot rate."
+  },
+  {
+    "front": "Who bears credit risk in a swap after initiation?",
+    "back": "The party with the positive value is exposed to the counterparty; the exposure is the net value (not the notional)."
+  }
+]

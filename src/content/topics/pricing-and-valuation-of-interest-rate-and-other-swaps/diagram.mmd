@@ -1,0 +1,21 @@
+graph TD
+    SW["Swap<br/>(Exchange of cash flows)"] --> PRICE["Pricing at Initiation<br/>(Value = 0, find swap rate)"]
+    SW --> VAL["Valuation After Initiation<br/>(Fixed rate locked, value changes)"]
+
+    SW --> VIEW["Two equivalent views"]
+    VIEW --> FRAS["Series of FRAs<br/>(One fixed rate for all periods)"]
+    VIEW --> BONDS["Fixed-rate bond vs FRN<br/>(Payer = short fixed bond, long FRN)"]
+
+    PRICE --> DF["Discount factors<br/>Zi = 1 / (1 + ri x days/360)"]
+    DF --> RATE["Par swap rate<br/>c = (1 - Zn) / Sum(days/360 x Zi)"]
+    DF --> FWD["Implied forward rates<br/>fi = (Z(i-1)/Zi - 1) x 360/days"]
+
+    VAL --> FLT["Floating leg just after reset<br/>worth par"]
+    VAL --> VP["Payer value<br/>PV floating - PV fixed<br/>= N (c_new - c) x Sum(days/360 x Zi)"]
+    VP --> RISE["Rates rise: payer gains"]
+    VP --> FALL["Rates fall: receiver gains"]
+
+    SW --> OTHER["Other Swaps"]
+    OTHER --> EQ["Equity swap<br/>Equity leg = N x St/S0<br/>Fixed rate set like IR swap"]
+    OTHER --> FX["Currency swap<br/>Notional exchanged at start and end<br/>One swap rate per currency"]
+    FX --> FXV["Value = PV of one currency<br/>- PV of other x spot rate"]

@@ -1,0 +1,198 @@
+---
+title: "Fixed-Income Securitization"
+description: "How pools of loans and receivables are transformed into tradable securities through a special purpose entity, who the parties are, how cash flows are tranched and credit-enhanced, and how covered bonds differ from securitized bonds."
+category: "Fixed Income"
+difficulty: "intermediate"
+dateAdded: "2026-11-06"
+tags: ["securitization", "spe", "tranching", "credit-enhancement", "abs", "covered-bonds"]
+---
+
+# Fixed-Income Securitization
+
+**Securitization** is the process by which a company (the **originator**) pools financial assets that generate cash flows, such as mortgages, auto loans, credit-card receivables or student loans, transfers them to a separate legal entity, and that entity issues **securities** whose payments are funded by the pool. Investors buy the securities and are repaid from the cash flows of the **collateral**, not from the originator's general credit.
+
+Securities created this way are called **asset-backed securities (ABS)** in the broad sense. When the collateral is a pool of mortgage loans they are **mortgage-backed securities (MBS)**.
+
+---
+
+## 1. Why Securitize?
+
+Securitization turns illiquid assets into liquid, tradable bonds. It benefits several groups:
+
+| Party | Benefit |
+| --- | --- |
+| **Originator / seller** | Moves assets off its balance sheet (when the sale qualifies as a true sale), freeing capital, getting funding that is often **cheaper** than its own bond yield, and recycling capital into new lending |
+| **Investors** | Access to credit exposures not otherwise available, a wide choice of risk and maturity profiles through tranching, and often a yield pick-up over similarly rated corporate bonds |
+| **Financial markets** | Greater liquidity, a broader investor base for credit risk, and more efficient allocation of capital and risk |
+
+Funding can be cheaper because investors price the securities on the **quality of the collateral and the structure**, which may be better than the originator's own credit. A weak originator can therefore raise funds at a rate tied to the pool, not to itself.
+
+---
+
+## 2. The Securitization Process and Its Parties
+
+### 2.1 Parties
+
+- **Seller (originator / depositor)**: the entity that originated the loans or receivables and sells them to the issuer. Examples: a bank, an auto finance company, a credit-card issuer.
+- **Special purpose entity (SPE)**, also called a **special purpose vehicle (SPV)** or special purpose company: the legal entity that buys the pool and issues the securities. It is created only for this purpose.
+- **Servicer**: collects payments from the borrowers, passes them to the SPE/trustee, handles delinquencies and defaults, and keeps records. The servicer is often the originator and earns a servicing fee. The servicer's quality matters because poor servicing raises losses.
+- **Trustee** (or **trustee agent**): holds the assets for the benefit of investors, monitors the servicer's compliance with the terms, and makes sure payments follow the priority of payments.
+- **Other parties**: credit rating agencies, underwriters, legal counsel, and external providers of credit enhancement (insurers, guarantors).
+
+### 2.2 The transaction
+
+1. The seller **sells the pool of assets to the SPE** in exchange for cash.
+2. The SPE issues securities (usually in several **tranches**) to investors through underwriters.
+3. Proceeds from the securities fund the SPE's purchase price paid to the seller.
+4. The servicer collects borrower payments; they flow through the SPE's **waterfall** to investors.
+
+### 2.3 Why the SPE matters: bankruptcy remoteness
+
+The sale to the SPE must be a **true sale**: legally, the assets leave the seller's estate. The SPE is **bankruptcy remote**, meaning that if the originator becomes insolvent, its creditors **cannot claim** the transferred assets, and the SPE cannot go bankrupt from the seller's other liabilities. As a result:
+
+- Investors' risk depends on the **collateral and structure**, not on the originator's credit risk (apart from servicing and certain representations and warranties).
+- The securities can earn a higher credit rating than the originator, which lowers the funding cost.
+
+If the sale is not a true sale, the pool could be pulled back into the originator's bankruptcy and the whole benefit of the structure is lost.
+
+<Note>
+Investors are exposed to the originator in only two ways: the **servicer** role (if the originator is the servicer) and any **repurchase obligations** for loans that breach the stated eligibility criteria.
+</Note>
+
+---
+
+## 3. Structures: Amortizing, Non-Amortizing and Waterfalls
+
+The collateral determines the shape of the cash flows:
+
+- **Amortizing assets** (mortgages, auto loans) make scheduled payments of **interest plus principal**, so the pool balance falls over time. They may also **prepay**.
+- **Non-amortizing assets** (credit-card receivables) have no fixed principal schedule. Balances revolve: borrowers repay and re-borrow.
+
+For non-amortizing pools the securities have:
+
+1. a **lockout / revolving period** during which principal collected is used to buy **new receivables**, so investors receive only interest and the pool balance stays level; then
+2. an **amortization period** (the principal is passed to investors) that begins at the end of the revolving period or earlier if an **early amortization trigger** is hit (for example, collateral performance deteriorates or credit enhancement is breached).
+
+### 3.1 Single class (pass-through) vs. multiple classes
+
+- A **pass-through** structure has one class of security; every holder shares **pro rata** in interest and principal collected, net of fees.
+- A **multi-class (tranched)** structure splits the securities into classes with different priority in receiving cash and absorbing losses. This is the standard approach for ABS and for structured MBS.
+
+The priority is set out in the **waterfall** (priority of payments): fees and expenses first, then interest and principal to the most senior class, and so on down to the most junior tranche (often called the **equity** or **residual** tranche).
+
+---
+
+## 4. Tranching: Reallocating Risk
+
+Tranching creates securities with different risk and return from the same pool. Two basic dimensions exist.
+
+### 4.1 Credit tranching (senior / subordinated)
+
+In a **senior-subordinated structure** (also called credit tranching), losses are allocated from the bottom up:
+
+- **Senior tranche**: first to be paid, last to absorb losses; highest rating and lowest yield.
+- **Mezzanine / subordinated tranches**: absorb losses after the junior tranche is exhausted.
+- **Junior / equity (residual) tranche**: absorbs the first losses; unrated or lowest rated and offers the highest yield.
+
+The amount of the pool that ranks below a tranche is its **subordination**, which acts as built-in **credit enhancement** (Section 5). The tranche's loss exposure begins only after all junior tranches are wiped out.
+
+**Worked example: loss allocation.** A pool of 100 million is financed with:
+
+| Tranche | Size (million) | % of pool |
+| --- | --- | --- |
+| Senior | 70 | 70% |
+| Mezzanine | 20 | 20% |
+| Equity (junior) | 10 | 10% |
+
+Suppose cumulative collateral losses over the life of the deal total 12 million, and no excess spread or other enhancement is available.
+
+1. The equity tranche absorbs the first 10 million: it is **wiped out** (100% loss).
+2. The remaining 2 million falls on the mezzanine tranche: loss $= 2/20 = 10\%$ of its principal.
+3. The senior tranche is untouched: loss $= 0$.
+
+The senior tranche is protected by **30%** subordination (20 + 10). It starts to lose only if cumulative losses exceed 30 million, i.e. 30% of the pool.
+
+### 4.2 Time tranching (sequential-pay structures)
+
+**Time tranching** divides principal repayment by **timing**, mainly to manage **prepayment risk** in pools of amortizing assets. In a **sequential-pay** structure:
+
+- All principal collected (scheduled and prepaid) goes first to **Tranche A** until it is fully repaid;
+- then to **Tranche B**, then **Tranche C**, and so on;
+- interest is paid to each tranche on its outstanding balance.
+
+Tranche A has the shortest expected life and Tranche C the longest, so investors can choose their preferred maturity. Time tranching **redistributes** prepayment risk, but does not remove it: if prepayments change, the average lives of the tranches change (**contraction risk** when prepayments speed up, **extension risk** when they slow down).
+
+Real deals often combine both: senior and subordinate classes (credit tranching), and within the senior class several sequential-pay tranches (time tranching).
+
+---
+
+## 5. Credit Enhancement
+
+**Credit enhancement** reduces the credit risk of the securities, mainly for the senior tranches. It is divided into two kinds.
+
+### 5.1 Internal credit enhancement
+
+Provided within the deal's own structure:
+
+- **Subordination** (senior-subordinated structure): junior tranches absorb losses first, as in Section 4.1.
+- **Overcollateralization (OC)**: the collateral pool's balance **exceeds** the face value of securities issued. The excess is a cushion for losses. Example: collateral 105 million vs. securities 100 million gives OC of 5 million. As losses occur, the cushion shrinks first.
+- **Excess spread**: the pool's interest income exceeds the interest paid on the securities plus servicing fees and other costs. The surplus can absorb losses or be trapped in a reserve account.
+- **Reserve account**: cash held back to cover shortfalls. A **cash reserve fund** is funded at the start from deal proceeds; an **excess spread account** is built up from the excess spread over time.
+
+**Worked example: excess spread.** A pool of 100 million earns a weighted average coupon of 7.00% (7.0 million a year). The securities have a weighted average coupon of 5.00% on 100 million (5.0 million). The servicing fee is 0.50% of the pool (0.5 million).
+
+$$\text{Excess spread} = 7.0 - 5.0 - 0.5 = 1.5\ \text{million}$$
+
+which is $1.5\%$ of the pool per year. If the pool loses 1.0 million to defaults in a year, the excess spread absorbs it and 0.5 million is left over to trap in a reserve account. Investors are not harmed, even though the pool has defaults.
+
+### 5.2 External credit enhancement
+
+Provided by a **third party**, which adds counterparty risk:
+
+- **Bond insurance / financial guarantees** (a "wrap") from a monoline insurer, which guarantees timely payment of interest and principal.
+- **Letters of credit** from a bank.
+- **Corporate guarantees** from the sponsor or another entity.
+- **Cash collateral accounts** funded by a third party.
+
+External enhancement is only as good as the credit of the provider: if the guarantor is downgraded, the securities' rating may also fall. Internal enhancement avoids that dependence.
+
+---
+
+## 6. Covered Bonds vs. Securitized Bonds
+
+A **covered bond** is a senior debt obligation of a bank or financial institution that is backed by a segregated **cover pool** of high-quality assets (typically residential mortgages or public-sector loans). It resembles securitization but differs in important respects.
+
+| Feature | Covered bond | Securitization (ABS/MBS) |
+| --- | --- | --- |
+| Issuer | The **bank itself** (or a subsidiary); assets stay on the bank's balance sheet | A separate **SPE**; assets are legally sold |
+| Investor recourse | **Dual recourse**: first to the cover pool, then (if the pool is insufficient) a claim against the issuer as an unsecured senior creditor | Recourse is **only** to the collateral pool (and the structure) |
+| Cover pool | **Dynamic**: the issuer must replace non-performing or prepaid loans so the pool keeps its quality and size | **Static** (or fixed during the revolving period): defaults and prepayments are borne by investors through the structure |
+| Tranching | Typically a single class | Often multiple tranches |
+| Prepayment/extension | Investors are insulated from prepayment risk since bad or prepaid assets are replaced | Investors bear prepayment and default risk |
+| Structure | Bullet payments, often with a soft or hard maturity extension | Amortizing or revolving; sequential or pro-rata |
+
+Because of the dual recourse and the dynamic pool, covered bonds are generally rated **higher** than the issuer's own unsecured debt and trade tighter than comparable ABS. The cover pool is usually protected by law or contract if the issuer fails.
+
+---
+
+## 7. Putting the Pieces Together
+
+The typical credit-card ABS illustrates the whole architecture:
+
+1. A bank (**seller**) sells credit-card receivables to a **master trust SPE**.
+2. The trust issues **tranched notes** (AAA, A, BBB) plus a residual interest.
+3. During the **revolving period**, principal collected buys new receivables; investors get interest and the pool balance stays constant.
+4. Internal enhancement: subordination, excess spread, reserve account, and a seller's interest (overcollateralization).
+5. If performance drops below thresholds, an **early amortization trigger** switches the deal to repay principal to investors, starting with the senior note.
+
+---
+
+## Key takeaways
+
+- **Securitization** transfers a pool of assets to a **bankruptcy-remote SPE**, which issues securities repaid from the pool's cash flows. The sale must be a **true sale**.
+- Parties: **seller/originator**, **SPE**, **servicer**, **trustee**, plus rating agencies, underwriters and credit-enhancement providers.
+- Benefits: lower funding cost and balance-sheet relief for the originator; liquidity and customized risk for investors.
+- **Amortizing** collateral passes through scheduled principal and prepayments; **non-amortizing** collateral (credit cards) has a revolving period followed by amortization, which may begin early under a **trigger**.
+- **Credit tranching** (senior/subordinated) allocates losses bottom-up; **time tranching** (sequential pay) redistributes **prepayment** risk, creating contraction and extension risk in different tranches.
+- **Internal enhancement**: subordination, overcollateralization, excess spread, reserve accounts. **External enhancement**: guarantees, bond insurance, letters of credit, which add provider credit risk.
+- **Covered bonds** stay on the issuer's balance sheet, give **dual recourse**, and have a **dynamic** cover pool; ABS/MBS have recourse only to a **static** pool via an SPE.

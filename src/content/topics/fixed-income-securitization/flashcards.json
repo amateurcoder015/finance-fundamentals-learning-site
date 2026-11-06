@@ -1,0 +1,46 @@
+[
+  {
+    "front": "What is securitization?",
+    "back": "Pooling cash-flow-generating financial assets, selling them to a special purpose entity (SPE), and having the SPE issue securities that are repaid from the pool's cash flows."
+  },
+  {
+    "front": "Who are the main parties in a securitization?",
+    "back": "Seller/originator, special purpose entity (issuer), servicer, and trustee, plus rating agencies, underwriters and credit-enhancement providers."
+  },
+  {
+    "front": "Why must the sale to the SPE be a 'true sale'?",
+    "back": "So the assets are legally separated from the originator and the SPE is bankruptcy remote: the originator's creditors cannot claim the pool, and investor risk depends on the collateral and structure."
+  },
+  {
+    "front": "What does the servicer do?",
+    "back": "Collects payments from borrowers, passes them to the trustee/SPE, manages delinquencies and defaults, and keeps records, earning a servicing fee."
+  },
+  {
+    "front": "Credit tranching vs. time tranching?",
+    "back": "Credit tranching (senior/subordinated) allocates losses bottom-up. Time tranching (sequential pay) allocates principal by timing, redistributing prepayment risk (contraction and extension)."
+  },
+  {
+    "front": "What is subordination?",
+    "back": "The portion of the pool financed by tranches ranking below a given tranche. It absorbs losses first and acts as internal credit enhancement for the senior tranche."
+  },
+  {
+    "front": "What is overcollateralization?",
+    "back": "The collateral balance exceeds the face value of securities issued; the excess is a loss cushion. Example: 105 collateral vs. 100 securities gives 5 of OC."
+  },
+  {
+    "front": "How is excess spread calculated?",
+    "back": "Pool interest income minus interest paid on the securities minus servicing fees and costs. It can absorb losses or be trapped in a reserve account."
+  },
+  {
+    "front": "Internal vs. external credit enhancement?",
+    "back": "Internal: subordination, overcollateralization, excess spread, reserve accounts. External: third-party guarantees, bond insurance (wraps), letters of credit, which add the provider's credit risk."
+  },
+  {
+    "front": "What is a covered bond and how does it differ from an ABS?",
+    "back": "A bank bond backed by a cover pool that stays on the issuer's balance sheet, with dual recourse (pool, then issuer) and a dynamic pool that is replenished. ABS have recourse only to a static pool via an SPE."
+  },
+  {
+    "front": "What happens in a non-amortizing (credit-card) deal's revolving period?",
+    "back": "Principal collections buy new receivables, so investors receive interest only and the pool balance stays level; amortization follows at the end or earlier on a trigger."
+  }
+]
