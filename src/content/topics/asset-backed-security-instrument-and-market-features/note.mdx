@@ -1,0 +1,182 @@
+---
+title: "Asset-Backed Security Instrument and Market Features"
+description: "How non-mortgage asset-backed securities (ABS) work: collateral types, amortizing versus revolving structures, auto loan and credit card ABS, collateralized loan obligations, prepayment measurement, credit enhancement and performance tests."
+category: "Fixed Income"
+difficulty: "advanced"
+dateAdded: "2026-11-07"
+tags: ["abs", "auto-loan-abs", "credit-card-abs", "clo", "excess-spread", "early-amortization"]
+---
+
+# Asset-Backed Security Instrument and Market Features
+
+The chapter on securitization explained the general structure: a seller transfers a pool of assets to a bankruptcy-remote **special purpose entity (SPE)**, which issues securities repaid from the pool's cash flows. This chapter looks at the instruments themselves. An **asset-backed security (ABS)** is a security backed by a pool of **non-mortgage** financial assets (auto loans, credit card receivables, student loans, equipment leases, corporate loans). Pools of mortgage loans create **mortgage-backed securities (MBS)**, which are covered separately.
+
+The key question for each type of ABS is: **how do the collateral's cash flows behave** (amortizing or revolving, how it prepays, how it defaults) **and what protects the investor**?
+
+---
+
+## 1. The ABS Market: Collateral Types
+
+| Collateral | Typical cash flow | Main risks |
+| --- | --- | --- |
+| **Auto loans and leases** | Fully amortizing, level monthly payments, short maturity (roughly 3–6 years) | Defaults and loss severity (car depreciates), some prepayment |
+| **Credit card receivables** | Non-amortizing, revolving balances | Charge-offs, falling payment rates, yield compression |
+| **Student loans** | Amortizing after a deferment period; government-guaranteed or private | Default (private loans), deferral, extension |
+| **Equipment loans and leases** | Amortizing, fixed payments | Obligor default, residual value of leased equipment |
+| **Corporate loans (CLOs)** | Floating-rate bullet loans, managed pool | Credit losses, manager skill, loan reinvestment |
+| **Trade receivables, small business loans, others** | Short, self-liquidating or amortizing | Concentration, obligor credit |
+
+ABS are usually issued in **tranches** with different seniority and are typically **rated**. Unlike mortgage pools, many ABS collateral pools have **little prepayment sensitivity**, so credit risk (defaults and loss severity) is the dominant concern.
+
+### 1.1 Two ways to hold the collateral
+
+- **Pool of homogeneous loans**: thousands of similar small loans (auto loans, cards). Performance is predicted statistically from historical pools.
+- **Loan-by-loan / managed portfolio**: fewer, larger and heterogeneous loans (CLOs, some equipment deals). The manager's credit selection matters.
+
+### 1.2 Amortizing versus non-amortizing (revolving) structures
+
+- **Amortizing structure**: borrowers make scheduled interest and principal payments, plus any prepayments. All principal collected is passed through to investors. The pool balance declines to zero. Example: auto loan ABS.
+- **Revolving structure**: principal collected during the **revolving (lockout) period** is used to buy **new receivables**, so the pool balance and the securities' principal stay constant. After this period, an **amortization (accumulation) period** begins and principal is returned to investors. Example: credit card ABS, and CLOs during the reinvestment period.
+
+---
+
+## 2. Auto Loan ABS
+
+An auto loan pool consists of fixed-rate, level-payment, fully amortizing loans. Because each loan is small and the pool is large, the pool's payments are predictable apart from prepayments and defaults.
+
+### 2.1 Prepayments and the ABS speed
+
+Auto loan prepayments are small and driven by trade-ins, sales, insurance payoffs after accidents, and refinancing at lower rates. They are measured by the **absolute prepayment speed (ABS)**, which expresses prepayments as a percentage of the **original number of loans** each month. This is different from the conditional prepayment rate (CPR) used for mortgages, which is relative to the *current* balance.
+
+The **single monthly mortality rate (SMM)**, the fraction of the *remaining* pool prepaying in month $t$, is
+
+$$SMM_t = \frac{ABS}{1 - ABS\,(t - 1)}$$
+
+**Worked example.** An auto pool prepays at **ABS = 1.5%** per month (that is, 1.5% of the original loans prepay each month).
+
+- Month 1: $SMM_1 = 0.015 / (1 - 0.015 \times 0) = 1.50\%$.
+- After 12 months, $12 \times 1.5\% = 18\%$ of the original loans have prepaid, leaving $82\%$ outstanding.
+- Month 13: $SMM_{13} = 0.015 / (1 - 0.015 \times 12) = 0.015/0.82 = 1.829\%$.
+
+Check: 1.5% of the *original* loans is $1.5/82 = 1.829\%$ of the *remaining* 82%. The SMM rises over time even though ABS is constant.
+
+### 2.2 Credit protection
+
+Losses depend on defaults and **loss severity** (the car's resale value is less than the loan balance). Investors are protected by **subordination**, **overcollateralization**, **excess spread** (the loans' coupons are above the securities' coupons) and **reserve accounts**.
+
+---
+
+## 3. Credit Card Receivable ABS
+
+Credit card balances have no fixed maturity or amortization schedule: cardholders pay down and re-borrow. The securities therefore have a **revolving period** followed by an **amortization period**.
+
+### 3.1 Cash flow components
+
+- **Finance charge collections**: interest, fees. These pay interest on the notes, the servicing fee, and absorb charge-offs.
+- **Principal collections**: reinvested in new receivables during the revolving period; passed to investors during amortization.
+- **Charge-offs**: receivables written off as uncollectible.
+
+The **monthly payment rate (MPR)** is principal collected divided by beginning pool balance. Higher MPR means faster repayment and shorter average life.
+
+### 3.2 Excess spread and early amortization
+
+**Excess spread (annualized, % of pool)**:
+
+$$\text{Excess spread} = \text{portfolio yield} - \text{charge-offs} - \text{coupon on notes} - \text{servicing fee}$$
+
+**Worked example.** A credit card trust has a portfolio yield of 16.0%, annualized charge-offs of 5.0%, a weighted average coupon on the notes of 4.5%, and a servicing fee of 1.5%.
+
+$$\text{Excess spread} = 16.0 - 5.0 - 4.5 - 1.5 = 5.0\%$$
+
+If charge-offs rise to 11.0%, excess spread becomes $16.0 - 11.0 - 4.5 - 1.5 = -1.0\%$ and the deal is under stress.
+
+An **early amortization (pay-out) trigger** ends the revolving period early to protect investors. Typical triggers:
+
+- the **three-month average excess spread falls below zero** (or a threshold);
+- the **payment rate** falls below a minimum;
+- credit enhancement drops below a required level;
+- servicer or seller bankruptcy, or breach of covenants.
+
+When triggered, all principal collections are used to repay the notes, normally **sequentially from senior to junior**. A pay-out shortens the notes' expected maturity, but it also reduces the risk that collateral deterioration reaches the notes.
+
+<Note>
+Credit card ABS carry little prepayment risk in the mortgage sense, because there is nothing to refinance. The relevant "timing" risks are early amortization (shorter life) and a slow payment rate (longer life).
+</Note>
+
+---
+
+## 4. Collateralized Loan Obligations (CLOs)
+
+A **collateralized loan obligation (CLO)** holds a managed portfolio of **senior secured leveraged loans** (typically floating rate) financed with tranches of notes and an **equity** tranche.
+
+| Feature | Description |
+| --- | --- |
+| **Collateral manager** | Actively buys and sells loans within covenant limits; a CLO is a *managed* vehicle |
+| **Reinvestment period** | Several years in which repayments and sale proceeds are reinvested in new loans |
+| **Amortization period** | After reinvestment, principal collected repays the notes in order of seniority |
+| **Tranches** | Senior (AAA), mezzanine (AA to BB) notes, then **equity** (residual, first loss, receives the leftover cash) |
+| **Coverage tests** | Overcollateralization (par value) and interest coverage tests that protect senior notes |
+
+### 4.1 Coverage tests
+
+- **Overcollateralization (OC / par value) test** for a tranche = collateral par value divided by the par value of that tranche *plus all tranches senior to it*.
+- **Interest coverage (IC) test** = interest collected on the collateral divided by interest due on that tranche and all tranches senior to it.
+
+If a test is **breached**, cash that would go to equity and junior notes is **diverted** to repay the senior notes until the test is cured.
+
+**Worked example.** A CLO holds 500 million of loans, financed by 300 million Class A notes (4.0% coupon), 100 million Class B notes (6.0%) and 100 million equity. Loans earn 6.0%.
+
+*OC ratios:*
+
+- Class A: $500/300 = 166.7\%$.
+- Class B: $500/(300+100) = 125.0\%$.
+
+Suppose the Class B OC trigger is 120%. If 40 million of loans default with zero recovery, collateral par falls to 460 million:
+
+$$\text{Class B OC} = \frac{460}{400} = 115.0\% < 120\%$$
+
+The test fails, so cash flows that would go to equity are redirected to repay Class A (and then B) principal until the ratio is restored.
+
+*Interest coverage (before the defaults):*
+
+- Interest collected: $500 \times 6\% = 30$ million.
+- Class B IC: $30 / (300 \times 4\% + 100 \times 6\%) = 30/(12 + 6) = 1.67\times$.
+
+---
+
+## 5. Credit Enhancement and Waterfalls in ABS
+
+ABS rely on the same toolkit of credit enhancement as other securitizations, but different collateral emphasizes different tools:
+
+| Tool | Auto loan ABS | Credit card ABS | CLO |
+| --- | --- | --- | --- |
+| Subordination | Yes, senior/subordinate classes | Yes, class A/B/C notes | Yes, strongest feature |
+| Overcollateralization | Common | Seller's interest, minimum | Par value tests |
+| Excess spread | Yes (loan coupons exceed note coupons) | Central, drives trigger | Spread between loan yield and note cost; diverted when tests fail |
+| Reserve accounts | Yes | Yes (spread account) | Sometimes |
+| Triggers | Cumulative net loss, delinquency triggers | Early amortization | OC and IC tests |
+
+A **waterfall** specifies the order: fees and expenses, then interest on the senior class, then junior classes, then principal, then excess to the residual. Under **sequential pay** principal goes to the most senior class first; under **pro rata** pay all classes receive principal in proportion until a trigger switches the deal to sequential.
+
+---
+
+## 6. Comparing ABS Types
+
+| Aspect | Auto loan ABS | Credit card ABS | CLO |
+| --- | --- | --- | --- |
+| Amortization | Amortizing | Revolving, then amortizing | Reinvestment, then amortizing |
+| Prepayment risk | Small, measured by ABS | None of mortgage type | Loans can be repaid or refinanced; managed |
+| Main risk | Defaults / loss severity | Charge-offs, payment rate | Credit losses and manager decisions |
+| Coupon | Mostly fixed | Fixed or floating | Floating |
+| Key protection | Subordination, excess spread | Excess spread, early amortization | OC and IC tests, subordination |
+
+---
+
+## Key takeaways
+
+- **ABS** are backed by non-mortgage collateral; credit risk is usually more important than prepayment risk.
+- **Amortizing** pools (auto loans) pass through principal and prepayments; **revolving** pools (credit cards, CLOs) reinvest principal during a lockout period, then amortize.
+- Auto loan prepayments are measured by the **ABS speed**, relative to the *original* number of loans: $SMM_t = ABS/[1 - ABS(t-1)]$. With ABS = 1.5%, $SMM_{13} = 1.829\%$.
+- Credit card **excess spread** = yield − charge-offs − note coupon − servicing fee (here 16.0 − 5.0 − 4.5 − 1.5 = 5.0%). **Early amortization triggers** (such as negative excess spread) protect investors.
+- **CLOs** are managed loan portfolios financed by senior and mezzanine notes and equity; **OC and IC tests** divert cash from junior holders to senior notes when breached (in the example, Class B OC falls from 125% to 115%).
+- Credit enhancement: **subordination**, **overcollateralization**, **excess spread**, **reserve accounts**, and **triggers**, applied differently by collateral type.

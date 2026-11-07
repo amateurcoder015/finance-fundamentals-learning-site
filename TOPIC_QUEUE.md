@@ -8,8 +8,6 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 
 ## Queue
 
-- [ ] Asset-Backed Security Instrument and Market Features | Fixed Income | advanced
-- [ ] Valuing a Derivative Using a One-Period Binomial Model | Derivatives | advanced
 - [ ] Mortgage-Backed Security Instrument and Market Features | Fixed Income | advanced
 - [ ] Option Replication Using Put-Call Parity | Derivatives | advanced
 
@@ -72,3 +70,5 @@ Source: CFA Level I curriculum readings not yet covered on the site. Quantitativ
 - [x] Pricing and Valuation of Forward Contracts | Derivatives | advanced | 2026-11-05
 - [x] Fixed-Income Securitization | Fixed Income | intermediate | 2026-11-06
 - [x] Pricing and Valuation of Interest Rate and Other Swaps | Derivatives | advanced | 2026-11-06
+- [x] Asset-Backed Security Instrument and Market Features | Fixed Income | advanced | 2026-11-07
+- [x] Valuing a Derivative Using a One-Period Binomial Model | Derivatives | advanced | 2026-11-07

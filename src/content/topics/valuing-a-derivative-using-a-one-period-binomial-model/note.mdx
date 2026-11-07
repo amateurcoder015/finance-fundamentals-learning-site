@@ -1,0 +1,216 @@
+---
+title: "Valuing a Derivative Using a One-Period Binomial Model"
+description: "How to value European and American options with a one-period binomial tree: up and down factors, the hedge ratio, replication, risk-neutral probabilities, and why real-world probabilities do not matter."
+category: "Derivatives"
+difficulty: "advanced"
+dateAdded: "2026-11-07"
+tags: ["binomial-model", "option-pricing", "replication", "risk-neutral-probability", "hedge-ratio", "no-arbitrage"]
+---
+
+# Valuing a Derivative Using a One-Period Binomial Model
+
+The **binomial model** values a derivative by assuming that over one period the underlying can move to only **two** possible prices: an **up** price and a **down** price. The model is simple, but it contains the whole logic of modern derivative pricing: **replicate** the payoff with the underlying and a risk-free bond, and the derivative must cost the same as the replicating portfolio, otherwise an arbitrage exists.
+
+---
+
+## 1. The One-Period Binomial Tree
+
+| Symbol | Meaning |
+| --- | --- |
+| $S_0$ | Underlying price today |
+| $u$ | Up factor: $S^+ = S_0\,u$ (with $u > 1$) |
+| $d$ | Down factor: $S^- = S_0\,d$ (with $d < 1$) |
+| $r$ | Risk-free rate for the one period (the period, not necessarily a year) |
+| $K$ | Exercise price of the option |
+| $c_0,\ c^+,\ c^-$ | Call value today, in the up state, in the down state |
+| $p_0,\ p^+,\ p^-$ | Put value today, in the up state, in the down state |
+
+A requirement for the model to make sense is
+
+$$d < 1 + r < u$$
+
+If $1+r$ were above $u$, cash would beat the stock in both states, and if it were below $d$, the stock would beat cash in both states. Either way an arbitrage would exist before any option is considered.
+
+### 1.1 Option payoffs at the end of the period
+
+For a European option with exercise price $K$, the value at expiration is its payoff:
+
+$$c^{\pm} = \max(0,\ S^{\pm} - K) \qquad p^{\pm} = \max(0,\ K - S^{\pm})$$
+
+The tree has three nodes: today ($S_0$), the up node ($S^+$) and the down node ($S^-$). The only unknown is the value at today's node.
+
+---
+
+## 2. Valuation by Replication (Hedge Ratio Approach)
+
+Because there are two states, a portfolio of the underlying and a risk-free bond can match the option's payoff in **both** states. Equivalently, a long position in the underlying combined with a short option can be made **riskless**.
+
+### 2.1 The hedge ratio
+
+The **hedge ratio** $h$ is the number of units of the underlying that make the combined position risk-free. It is the change in option value divided by the change in the underlying across the two states:
+
+$$h = \frac{c^+ - c^-}{S^+ - S^-}$$
+
+For a put, replace $c$ by $p$: $h_{put} = (p^+ - p^-)/(S^+ - S^-)$, which is **negative** (a put loses value when the underlying rises).
+
+Interpretation: for a call, being long $h$ units of the underlying and short one call produces the **same value in both states**. This is **delta hedging** in its simplest form, and $h$ is the option's delta for this one-period tree.
+
+### 2.2 Value of the option
+
+The hedged portfolio (long $h$ units, short one call) has a state-independent end value:
+
+$$V^+ = hS^+ - c^+ \qquad V^- = hS^- - c^- \qquad V^+ = V^-$$
+
+Because it is risk-free, its present value is $V^+/(1+r)$, and it must equal today's cost, $hS_0 - c_0$:
+
+$$hS_0 - c_0 = \frac{hS^- - c^-}{1+r} \;\;\Longrightarrow\;\; c_0 = hS_0 - \frac{hS^- - c^-}{1+r}$$
+
+Equivalently, the call equals a **long position in $h$ units of the underlying financed by borrowing** the present value of $hS^- - c^-$.
+
+### 2.3 Worked example: pricing a call by replication
+
+A stock trades at $S_0 = 100$. In one period it will either rise by 25% or fall by 20%, so $u = 1.25$ and $d = 0.80$. The risk-free rate for the period is $r = 5\%$. Value a European call with $K = 100$.
+
+**Step 1: terminal stock prices.**
+
+$$S^+ = 100 \times 1.25 = 125 \qquad S^- = 100 \times 0.80 = 80$$
+
+**Step 2: terminal call values.**
+
+$$c^+ = \max(0, 125 - 100) = 25 \qquad c^- = \max(0, 80 - 100) = 0$$
+
+**Step 3: hedge ratio.**
+
+$$h = \frac{25 - 0}{125 - 80} = \frac{25}{45} = 0.5556$$
+
+**Step 4: check that the hedged portfolio is riskless.** Long 0.5556 shares and short one call:
+
+- Up: $0.5556 \times 125 - 25 = 69.444 - 25 = 44.444$
+- Down: $0.5556 \times 80 - 0 = 44.444$
+
+Both states give 44.444.
+
+**Step 5: present value and call price.**
+
+$$PV = \frac{44.444}{1.05} = 42.328$$
+
+$$c_0 = hS_0 - PV = 0.5556 \times 100 - 42.328 = 55.556 - 42.328 = 13.228$$
+
+The call is worth **13.23**. If it traded at 15, an arbitrageur would sell it, buy 0.5556 shares, and borrow the rest, locking in the 1.77 difference with no risk.
+
+<Note>
+Check by replication: buy 0.5556 shares (cost 55.556) and borrow 42.328. Next period the loan costs $42.328 \times 1.05 = 44.444$. In the up state the shares are worth 69.444, leaving 25 (the call payoff). In the down state they are worth 44.444, leaving 0 (the call payoff). The portfolio costs $55.556 - 42.328 = 13.228$.
+</Note>
+
+---
+
+## 3. Valuation by Risk-Neutral Probabilities
+
+The same answer can be found without computing the hedge ratio. Define the **risk-neutral probability of an up move**:
+
+$$\pi = \frac{1 + r - d}{u - d} \qquad 1 - \pi = \frac{u - (1+r)}{u - d}$$
+
+Then the value of any derivative is the **expected payoff under $\pi$, discounted at the risk-free rate**:
+
+$$c_0 = \frac{\pi\, c^+ + (1-\pi)\, c^-}{1+r} \qquad p_0 = \frac{\pi\, p^+ + (1-\pi)\, p^-}{1+r}$$
+
+The probability $\pi$ is the one that makes the underlying itself earn exactly the risk-free rate in expectation:
+
+$$S_0 = \frac{\pi S^+ + (1-\pi) S^-}{1+r}$$
+
+It is **not** the true probability that the stock rises. It is a mathematical device, and it lies strictly between 0 and 1 exactly when $d < 1+r < u$.
+
+### 3.1 Worked example: the same call
+
+With $u = 1.25$, $d = 0.80$ and $r = 5\%$:
+
+$$\pi = \frac{1.05 - 0.80}{1.25 - 0.80} = \frac{0.25}{0.45} = 0.5556 \qquad 1 - \pi = 0.4444$$
+
+Check on the stock: $(0.5556 \times 125 + 0.4444 \times 80)/1.05 = (69.444 + 35.556)/1.05 = 105/1.05 = 100$ ✓.
+
+$$c_0 = \frac{0.5556 \times 25 + 0.4444 \times 0}{1.05} = \frac{13.889}{1.05} = 13.228$$
+
+This matches the replication result.
+
+### 3.2 Worked example: the European put
+
+Same tree, $K = 100$:
+
+$$p^+ = \max(0, 100 - 125) = 0 \qquad p^- = \max(0, 100 - 80) = 20$$
+
+$$p_0 = \frac{0.5556 \times 0 + 0.4444 \times 20}{1.05} = \frac{8.889}{1.05} = 8.466$$
+
+The put hedge ratio is $(0 - 20)/(125 - 80) = -0.4444$.
+
+### 3.3 Consistency with put-call parity
+
+For European options on a non-dividend-paying asset:
+
+$$c_0 + \frac{K}{1+r} = p_0 + S_0$$
+
+Left side: $13.228 + 100/1.05 = 13.228 + 95.238 = 108.466$. Right side: $8.466 + 100 = 108.466$ ✓. The binomial model is built on no-arbitrage, so it automatically satisfies parity.
+
+---
+
+## 4. Why Real-World Probabilities Do Not Matter
+
+Suppose investors believe the stock has a 70% chance of rising. The option price is still 13.228. The reason is replication: the option's payoff is perfectly reproduced by the stock and the bond, so its price depends only on the **stock's current price**, the **possible end values**, and the **interest rate**. The stock's current price already reflects investors' beliefs and risk aversion.
+
+| Question | Answer |
+| --- | --- |
+| Does the option price depend on the true probability of an up move? | **No** |
+| Does it depend on investors' risk preferences? | **No**, hence "risk-neutral" valuation is valid for everyone |
+| What inputs matter? | $S_0$, $u$, $d$, $K$, $r$ (and the option type) |
+| Why call $\pi$ "risk-neutral"? | It is the probability that would apply in a world where investors require only the risk-free return on every asset |
+
+Note that increasing the spread between $u$ and $d$ (more volatility) raises the value of both calls and puts, because the payoff is asymmetric: the holder gains from the favourable state but is protected in the other.
+
+---
+
+## 5. American Options and Early Exercise
+
+An **American** option can be exercised at any time. In a one-period tree, the holder compares two values at time 0:
+
+$$\text{American value} = \max\big(\text{exercise value now},\ \text{European continuation value}\big)$$
+
+### 5.1 Worked example: American put
+
+Use the same tree ($S_0 = 100$, $u = 1.25$, $d = 0.80$, $r = 5\%$, $\pi = 0.5556$) but with a put of $K = 120$.
+
+**End-of-period payoffs:**
+
+$$p^+ = \max(0, 120 - 125) = 0 \qquad p^- = \max(0, 120 - 80) = 40$$
+
+**European put value:**
+
+$$p_0^{Eur} = \frac{0.5556 \times 0 + 0.4444 \times 40}{1.05} = \frac{17.778}{1.05} = 16.931$$
+
+**Immediate exercise value:** $120 - 100 = 20$.
+
+Since $20 > 16.931$, early exercise is optimal, and the American put is worth **20.00**, not 16.93. The early exercise premium is $20 - 16.931 = 3.069$.
+
+Reason: a deep in-the-money put has a limited remaining upside (the stock cannot go below zero), so receiving $K$ now and earning interest on it is worth more than waiting.
+
+### 5.2 American calls
+
+For a call on an asset with **no cash flows** (no dividends), early exercise is **never optimal**: the call is worth more alive than dead, because exercising throws away the time value and the interest earned on the exercise price. Early exercise of a call can only be rational just before a large dividend. In the K = 120 tree, the European call is $0.5556 \times 5 / 1.05 = 2.646$; exercising now would give only $\max(0, 100 - 120) = 0$.
+
+---
+
+## 6. Practical Notes
+
+- **Choosing $u$ and $d$.** In practice $u$ and $d$ are derived from the asset's volatility: a common choice is $u = e^{\sigma\sqrt{\Delta t}}$ and $d = 1/u$. A single step is too coarse for real pricing, but chaining many steps gives the multi-period binomial model, which converges toward the Black–Scholes–Merton value.
+- **The same logic prices other derivatives.** Any derivative whose payoff depends on the two end states (forwards, interest rate options, bond options) can be replicated and priced in this way; only the payoff function and discount rate change.
+- **Dividends / carry.** If the underlying pays income, the expected growth of the stock under $\pi$ is the risk-free rate **less** the income yield, and the probability formula changes accordingly. The reading assumes no cash flows on the underlying unless stated.
+- **Arbitrage if mispriced.** If the option market price exceeds the model price, sell the option and buy $h$ units of the underlying funded by borrowing; if it is below, buy the option and short $h$ units, investing the proceeds at $r$.
+
+---
+
+## Key takeaways
+
+- The one-period binomial model assumes the underlying moves to $S^+ = S_0 u$ or $S^- = S_0 d$, and requires $d < 1+r < u$.
+- **Hedge ratio:** $h = (c^+ - c^-)/(S^+ - S^-)$. A long position in $h$ units of the underlying with a short call is riskless; its value is $c_0 = hS_0 - PV(hS^- - c^-)$.
+- **Risk-neutral probability:** $\pi = (1+r-d)/(u-d)$, and $c_0 = [\pi c^+ + (1-\pi)c^-]/(1+r)$. The two methods give identical values.
+- In the worked tree ($u=1.25$, $d=0.80$, $r=5\%$, $K=100$): $h = 0.5556$, $\pi = 0.5556$, call $= 13.228$, put $= 8.466$, and put-call parity holds.
+- The **real-world probability** of an up move and investor risk aversion do not affect the price: replication ties the option to the underlying.
+- **American** option value $= \max$(exercise value, continuation value). An American put can be exercised early (here 20.00 vs. 16.93); an American call on a no-income asset never should be.

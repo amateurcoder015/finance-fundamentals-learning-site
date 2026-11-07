@@ -1,0 +1,25 @@
+graph TD
+    S0["Today: underlying S0 = 100<br/>Option value c0 = ?"] -->|"Up: u = 1.25"| SU["Up state: S+ = 125<br/>Call payoff c+ = 25"]
+    S0 -->|"Down: d = 0.80"| SD["Down state: S- = 80<br/>Call payoff c- = 0"]
+
+    subgraph METHOD1 ["Method 1: Replication (hedge ratio)"]
+        H["Hedge ratio<br/>h = (c+ - c-) / (S+ - S-) = 0.5556"]
+        HP["Long h shares + short 1 call<br/>= same value in both states (44.444)"]
+        H --> HP
+    end
+
+    subgraph METHOD2 ["Method 2: Risk-neutral probability"]
+        PI["pi = (1 + r - d) / (u - d) = 0.5556"]
+        EV["c0 = [pi x c+ + (1 - pi) x c-] / (1 + r)"]
+        PI --> EV
+    end
+
+    SU --> H
+    SD --> H
+    SU --> PI
+    SD --> PI
+
+    HP --> PRICE["Call value c0 = 13.228<br/>(both methods agree)"]
+    EV --> PRICE
+    PRICE --> PARITY["Check: put-call parity<br/>c0 + K/(1+r) = p0 + S0"]
+    PRICE --> AM["American option?<br/>Value = max(exercise value, continuation value)"]

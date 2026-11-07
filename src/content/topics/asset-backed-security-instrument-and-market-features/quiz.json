@@ -1,0 +1,64 @@
+[
+  {
+    "question": "Which of the following BEST describes a revolving structure in an ABS?",
+    "options": [
+      "All principal collected is passed through to investors every month",
+      "Principal collected during a lockout period is used to buy new receivables, so investor principal stays constant",
+      "The SPE sells new tranches each month to repay old ones",
+      "Interest is capitalized until the amortization period begins"
+    ],
+    "correctIndex": 1,
+    "explanation": "In a revolving structure (credit cards, CLOs during reinvestment) principal collections are reinvested in new collateral during the lockout or reinvestment period. Investors receive interest only until amortization begins. Option A describes an amortizing pass-through."
+  },
+  {
+    "question": "An auto loan ABS pool prepays at an ABS speed of 1.5% per month. What is the single monthly mortality rate (SMM) in month 13?",
+    "options": ["1.50%", "1.83%", "2.25%", "18.00%"],
+    "correctIndex": 1,
+    "explanation": "SMM = ABS/[1 - ABS(t - 1)] = 0.015/(1 - 0.015 × 12) = 0.015/0.82 = 1.829%, because ABS is measured against the original number of loans, and only 82% of them remain."
+  },
+  {
+    "question": "A credit card trust has a portfolio yield of 16.0%, charge-offs of 5.0%, a weighted average note coupon of 4.5% and a servicing fee of 1.5%. Excess spread is:",
+    "options": ["5.0%", "9.5%", "10.5%", "16.0%"],
+    "correctIndex": 0,
+    "explanation": "Excess spread = yield - charge-offs - coupon - servicing fee = 16.0 - 5.0 - 4.5 - 1.5 = 5.0%."
+  },
+  {
+    "question": "Which event is MOST likely to trigger early amortization in a credit card ABS?",
+    "options": [
+      "A decline in short-term interest rates",
+      "The three-month average excess spread falling below zero",
+      "Higher than expected prepayments from refinancing",
+      "A rating upgrade of the servicer"
+    ],
+    "correctIndex": 1,
+    "explanation": "Negative (or below-threshold) average excess spread signals that collateral performance is deteriorating, which is a standard early amortization trigger, as are low payment rates and a servicer bankruptcy. Credit card pools have no mortgage-style refinancing."
+  },
+  {
+    "question": "A CLO holds 500 million of loans, financed by 300 million Class A notes, 100 million Class B notes and 100 million equity. What is the Class B overcollateralization ratio?",
+    "options": ["125.0%", "166.7%", "500.0%", "100.0%"],
+    "correctIndex": 0,
+    "explanation": "The OC ratio for Class B includes all notes ranking at or above Class B: 500/(300 + 100) = 125.0%. The 166.7% figure (500/300) is the Class A ratio."
+  },
+  {
+    "question": "In the same CLO, 40 million of loans default with zero recovery. If the Class B OC trigger is 120%, what is the result?",
+    "options": [
+      "The ratio is 115% and the test fails, so cash is diverted from equity to repay senior notes",
+      "The ratio is 115% and the test passes",
+      "The ratio is 125% and the test passes because defaults do not change the par value",
+      "The ratio is 92% and the CLO is liquidated"
+    ],
+    "correctIndex": 0,
+    "explanation": "Collateral par falls to 460 million: 460/400 = 115%, below 120%. The test fails, so cash that would go to equity is diverted to pay down senior principal until the ratio is cured."
+  },
+  {
+    "question": "Compared with mortgage-backed securities, non-mortgage ABS such as auto loan and credit card ABS are generally characterized by:",
+    "options": [
+      "Greater sensitivity to refinancing when rates fall",
+      "Less prepayment sensitivity, with credit risk being the dominant concern",
+      "No credit risk because of the SPE structure",
+      "No use of credit enhancement"
+    ],
+    "correctIndex": 1,
+    "explanation": "Auto loan prepayments are small and not rate driven, and credit card receivables do not prepay in the mortgage sense. The main risk is credit, mitigated by subordination, overcollateralization, excess spread and reserve accounts."
+  }
+]

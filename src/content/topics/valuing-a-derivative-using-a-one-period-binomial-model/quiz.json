@@ -1,0 +1,79 @@
+[
+  {
+    "question": "In a one-period binomial model, a stock priced at 50 can rise to 60 or fall to 40. A European call has an exercise price of 50. What is the hedge ratio (number of shares per short call) that creates a riskless position?",
+    "options": [
+      "0.25",
+      "0.50",
+      "0.75",
+      "1.00"
+    ],
+    "correctIndex": 1,
+    "explanation": "Call payoffs are c+ = 60 - 50 = 10 and c- = 0 (since 40 < 50). h = (10 - 0)/(60 - 40) = 0.50."
+  },
+  {
+    "question": "A stock is 100. It can go up by 20% (u = 1.20) or down by 10% (d = 0.90). The one-period risk-free rate is 5%. What is the risk-neutral probability of an up move?",
+    "options": [
+      "0.40",
+      "0.45",
+      "0.50",
+      "0.60"
+    ],
+    "correctIndex": 2,
+    "explanation": "π = (1 + r - d)/(u - d) = (1.05 - 0.90)/(1.20 - 0.90) = 0.15/0.30 = 0.50."
+  },
+  {
+    "question": "Using the tree S0 = 100, u = 1.25, d = 0.80, r = 5% and a European call with K = 100, the call value is closest to:",
+    "options": [
+      "8.47",
+      "11.90",
+      "13.23",
+      "25.00"
+    ],
+    "correctIndex": 2,
+    "explanation": "π = (1.05 - 0.80)/(1.25 - 0.80) = 0.5556. c0 = [0.5556 × 25 + 0.4444 × 0]/1.05 = 13.889/1.05 = 13.23. The same value arises from replication with h = 25/45 = 0.5556."
+  },
+  {
+    "question": "A trader believes the stock in a binomial tree is much more likely to rise than the risk-neutral probability implies. Which statement about the option's no-arbitrage value is correct?",
+    "options": [
+      "It should be higher, because the true probability of an up move is higher",
+      "It is unchanged, because the option can be replicated using the stock and a risk-free bond",
+      "It should be lower, because investors are risk averse",
+      "It cannot be determined without the stock's expected return"
+    ],
+    "correctIndex": 1,
+    "explanation": "Replication ties the option's price to the current stock price, the end-of-period prices and the risk-free rate. The true probability and risk aversion are already embedded in the stock price and do not enter the option value."
+  },
+  {
+    "question": "Using the same tree (S0 = 100, u = 1.25, d = 0.80, r = 5%), the European put with K = 100 is worth 8.47 and the call is worth 13.23. Which statement about put-call parity is correct?",
+    "options": [
+      "c + K/(1+r) = 108.47 and p + S = 108.47, so parity holds",
+      "c + K/(1+r) = 113.23 and p + S = 108.47, so an arbitrage exists",
+      "c - p = K, so parity holds",
+      "Parity cannot be tested in a one-period tree"
+    ],
+    "correctIndex": 0,
+    "explanation": "c + K/(1+r) = 13.23 + 95.24 = 108.47 and p + S = 8.47 + 100 = 108.47. The binomial model is built on no-arbitrage, so it satisfies put-call parity."
+  },
+  {
+    "question": "S0 = 100, u = 1.25, d = 0.80, r = 5%. An American put with K = 120 is available. The European put value is 16.93. The value of the American put is:",
+    "options": [
+      "16.93",
+      "20.00",
+      "40.00",
+      "3.07"
+    ],
+    "correctIndex": 1,
+    "explanation": "Immediate exercise is worth 120 - 100 = 20, which exceeds the continuation (European) value of 16.93. The American value is max(20, 16.93) = 20.00; the early exercise premium is 3.07."
+  },
+  {
+    "question": "Which condition must hold for the risk-neutral probability to lie between 0 and 1 in the one-period binomial model?",
+    "options": [
+      "u > 1 + r > d",
+      "u = 1/d",
+      "r > u",
+      "u - d = 1"
+    ],
+    "correctIndex": 0,
+    "explanation": "π = (1 + r - d)/(u - d) is between 0 and 1 only when d < 1 + r < u. Otherwise one asset (stock or cash) dominates the other in both states, creating an arbitrage."
+  }
+]

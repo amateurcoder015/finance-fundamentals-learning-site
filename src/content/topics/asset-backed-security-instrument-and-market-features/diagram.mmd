@@ -1,0 +1,31 @@
+graph TD
+    ABS["Asset-Backed Securities (non-mortgage collateral)"] --> AUTO["Auto Loan ABS<br/>Amortizing pool"]
+    ABS --> CARD["Credit Card ABS<br/>Revolving pool"]
+    ABS --> CLO["CLO<br/>Managed loan portfolio"]
+    ABS --> OTHER["Student loans, equipment,<br/>small business loans"]
+
+    AUTO --> A1["Prepayments measured by<br/>ABS speed (% of original loans)"]
+    A1 --> A2["SMM = ABS / (1 - ABS x (t - 1))"]
+    AUTO --> A3["Main risk: defaults and loss severity"]
+
+    CARD --> C1["Revolving (lockout) period<br/>Principal buys new receivables"]
+    C1 --> C2["Amortization period<br/>Principal repaid to notes"]
+    CARD --> C3["Excess spread =<br/>yield - charge-offs - coupon - fee"]
+    C3 -->|"Negative or below threshold"| C4["Early amortization trigger<br/>Revolving period ends early"]
+    C4 --> C2
+
+    CLO --> L1["Reinvestment period<br/>Manager buys and sells loans"]
+    L1 --> L2["Amortization period"]
+    CLO --> L3["Coverage tests:<br/>OC (par value) and IC"]
+    L3 -->|"Test breached"| L4["Cash diverted from equity<br/>to repay senior notes"]
+
+    subgraph CE ["Credit enhancement"]
+        SUB["Subordination"]
+        OC["Overcollateralization"]
+        XS["Excess spread"]
+        RES["Reserve account"]
+    end
+
+    AUTO -.-> CE
+    CARD -.-> CE
+    CLO -.-> CE

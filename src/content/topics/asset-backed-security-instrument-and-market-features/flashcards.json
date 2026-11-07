@@ -1,0 +1,13 @@
+[
+  {"front": "What is an asset-backed security (ABS) as distinct from an MBS?", "back": "A security backed by a pool of non-mortgage assets such as auto loans, credit card receivables, student loans, equipment loans and corporate loans (CLOs)."},
+  {"front": "Amortizing vs. revolving ABS structure?", "back": "Amortizing: principal collected is passed to investors (auto loans). Revolving: principal buys new receivables during a lockout or reinvestment period, then the deal amortizes (credit cards, CLOs)."},
+  {"front": "What is the ABS speed?", "back": "The absolute prepayment speed: monthly prepayments as a percentage of the ORIGINAL number of loans; used for auto loan ABS."},
+  {"front": "SMM from the ABS speed?", "back": "SMM_t = ABS / [1 - ABS × (t - 1)]. For ABS = 1.5%, SMM in month 13 = 0.015/0.82 = 1.829%."},
+  {"front": "Credit card excess spread formula?", "back": "Portfolio yield - charge-offs - coupon on notes - servicing fee (annualized, % of pool)."},
+  {"front": "What triggers early amortization in a credit card ABS?", "back": "E.g. three-month average excess spread below zero or a threshold, a low payment rate, credit enhancement below its minimum, servicer or seller bankruptcy."},
+  {"front": "What is a CLO?", "back": "A collateralized loan obligation: a managed portfolio of leveraged loans financed by senior, mezzanine and equity tranches, with a reinvestment period and then an amortization period."},
+  {"front": "How is a CLO overcollateralization (par value) ratio computed?", "back": "Collateral par value ÷ par value of that tranche plus all tranches senior to it. Breach diverts cash from equity and juniors to repay senior notes."},
+  {"front": "What is the monthly payment rate (MPR) in credit card ABS?", "back": "Principal collected in the month divided by the beginning pool balance; a higher MPR shortens average life."},
+  {"front": "Main risk of non-mortgage ABS vs. MBS?", "back": "Credit risk (defaults, loss severity, charge-offs) is dominant; prepayment sensitivity is low or absent."},
+  {"front": "Typical credit enhancement for ABS?", "back": "Subordination, overcollateralization, excess spread, reserve accounts, plus performance triggers such as early amortization or OC/IC tests."}
+]

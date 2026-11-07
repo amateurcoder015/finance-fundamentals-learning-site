@@ -1,0 +1,12 @@
+[
+  {"front": "What does the one-period binomial model assume about the underlying?", "back": "Over one period the underlying moves to only two prices: up, S+ = S0·u, or down, S- = S0·d, with d < 1 + r < u."},
+  {"front": "Hedge ratio (call) formula?", "back": "h = (c+ - c-)/(S+ - S-): the units of the underlying held against one short call to make the position riskless."},
+  {"front": "Call value from the hedge ratio approach?", "back": "c0 = h·S0 - PV(h·S- - c-), where PV discounts at the one-period risk-free rate."},
+  {"front": "Risk-neutral probability of an up move?", "back": "π = (1 + r - d)/(u - d); the probability of a down move is 1 - π = (u - (1 + r))/(u - d)."},
+  {"front": "Option value using risk-neutral probabilities?", "back": "c0 = [π·c+ + (1 - π)·c-]/(1 + r); the same method gives puts, using p+ and p-."},
+  {"front": "Why do real-world probabilities not affect the option price?", "back": "The option payoff is replicated by the underlying and a risk-free bond, so its price depends only on S0, the end states and r; beliefs and risk aversion are already in S0."},
+  {"front": "Why must d < 1 + r < u?", "back": "Otherwise one of the stock or the risk-free asset beats the other in both states, creating an arbitrage independent of any option."},
+  {"front": "How is an American option valued in a one-period tree?", "back": "Max of immediate exercise value and the European continuation value (discounted risk-neutral expected payoff)."},
+  {"front": "When can early exercise of an American call be optimal?", "back": "Only when the underlying pays income (such as a dividend); a call on an asset with no cash flows is never exercised early."},
+  {"front": "How does the binomial model relate to put-call parity?", "back": "It satisfies parity automatically: c0 + K/(1 + r) = p0 + S0, since both are derived from no-arbitrage replication."}
+]
